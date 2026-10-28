@@ -65,9 +65,11 @@ document.addEventListener('click', (e) => {
   lenis?.stop();
   buzz(10);
   root.classList.add('curtain-close');
-  const go = () => (location.href = a.href);
-  curtain.querySelector('.r')!.addEventListener('animationend', go, { once: true });
-  setTimeout(go, 700); // safety net if animationend never fires
+  // hold the closed sheet a beat so the destination can be read
+  let gone = false;
+  const go = () => { if (!gone) { gone = true; location.href = a.href; } };
+  curtain.querySelector('.r')!.addEventListener('animationend', () => setTimeout(go, 200), { once: true });
+  setTimeout(go, 1200); // safety net if animationend never fires
 });
 
 // Arrival: the head script already showed the curtain closed (html.curtain-in); rip it open.
@@ -81,9 +83,9 @@ if (arrived && root.classList.contains('curtain-in')) {
   requestAnimationFrame(() => {
     root.classList.add('curtain-open');
     buzz([6, 40, 12]);
-    setTimeout(reveal, 260);
+    setTimeout(reveal, 520);
     curtain.querySelector('.r')!.addEventListener('animationend', () => root.classList.remove('curtain-in', 'curtain-open'), { once: true });
-    setTimeout(() => root.classList.remove('curtain-in', 'curtain-open'), 1200);
+    setTimeout(() => root.classList.remove('curtain-in', 'curtain-open'), 2000);
   });
 } else {
   reveal();
@@ -99,35 +101,8 @@ if (root.classList.contains('intro')) {
   if (root.classList.contains('revealed')) run(); else addEventListener('fs:revealed', run, { once: true });
 }
 
-// ---------- Pointer micro-interactions (desktop only) ----------
+// ---------- Pointer micro-interactions (desktop only): magnetic buttons, cover tilt ----------
 if (fine && !reduce) {
-  // Cursor follower with context labels
-  const cur = document.querySelector<HTMLElement>('.cursor')!;
-  const label = cur.querySelector<HTMLElement>('span')!;
-  let x = innerWidth / 2, y = innerHeight / 2, cx = x, cy = y;
-  addEventListener('pointermove', (e) => { x = e.clientX; y = e.clientY; root.classList.add('cursor-on'); }, { passive: true });
-  document.addEventListener('pointerleave', () => root.classList.remove('cursor-on'));
-  const loop = () => {
-    cx += (x - cx) * 0.2; cy += (y - cy) * 0.2;
-    cur.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
-    requestAnimationFrame(loop);
-  };
-  loop();
-  const labelFor = (el: Element) => {
-    if (el.closest('[data-cursor]')) return (el.closest('[data-cursor]') as HTMLElement).dataset.cursor!;
-    if (el.closest('[data-add]')) return 'Add';
-    if (el.closest('[data-copy], [data-md-copy]')) return 'Copy';
-    const a = el.closest('a');
-    if (a) return a.target === '_blank' ? 'Visit' : 'Open';
-    if (el.closest('button, label, [role="option"]')) return 'Press';
-    return '';
-  };
-  document.addEventListener('pointerover', (e) => {
-    const l = labelFor(e.target as Element);
-    label.textContent = l;
-    cur.classList.toggle('active', !!l);
-  });
-
   // Magnetic buttons
   document.querySelectorAll<HTMLElement>('[data-magnetic], .btn.blue, .btn.solid').forEach((b) => {
     b.addEventListener('pointermove', (e) => {

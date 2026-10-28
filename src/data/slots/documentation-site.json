@@ -1,0 +1,89 @@
+{
+  "slug": "documentation-site",
+  "slot": "Documentation site",
+  "track": "sales",
+  "stage": "sell",
+  "region": "Global",
+  "order": 7202,
+  "pick": {
+    "name": "Starlight (Astro)",
+    "url": "https://starlight.astro.build/",
+    "what": "Astro's docs theme: search, i18n, MDX",
+    "why": "Same framework as the marketing site (one stack, one free Cloudflare deploy), MIT, and Claude Code handles it well",
+    "cost": "free",
+    "free_limits": "Free",
+    "windows_fit": "native (Node)",
+    "maintained": "@astrojs/starlight 0.42.7 published 2026-10-23",
+    "install": "npm create astro@latest -- --template starlight",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/withastro/starlight",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Mintlify (Starter)",
+      "url": "https://www.mintlify.com/pricing",
+      "what": "Hosted docs platform with API playground",
+      "why": "Zero-maintenance hosted docs; free includes custom domain, 5 editors and an MCP server; Pro jumps to USD 450/mo",
+      "cost": "freemium",
+      "free_limits": "Starter free: custom domain, 5 editors, MCP server; no AI assistant",
+      "windows_fit": "web",
+      "maintained": "CLI 4.2.1157 published 2026-10-28",
+      "install": "npm i -g mintlify",
+      "license": "Elastic-2.0 (CLI)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.mintlify.com/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Fumadocs",
+      "url": "https://www.fumadocs.dev/",
+      "what": "React docs framework (Next.js, TanStack Start, React Router)",
+      "why": "Best when docs live inside a Next.js app; OpenAPI playground, llms.txt",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "native",
+      "maintained": "fumadocs-core 16.17.8 published 2026-10-23",
+      "install": "npm create fumadocs-app",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.fumadocs.dev/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Starlight",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Mintlify Starter",
+      "verdict": "Pick for hosted, API-heavy docs with zero upkeep"
+    },
+    {
+      "name": "Fumadocs",
+      "verdict": "Pick for docs inside a Next.js app"
+    },
+    {
+      "name": "GitBook",
+      "verdict": "Free has no custom domain; Essential USD 65/site/mo"
+    },
+    {
+      "name": "Docusaurus / Nextra",
+      "verdict": "Fine, but no edge over the three above"
+    }
+  ],
+  "decision": "Starlight keeps docs and marketing site in one Astro codebase on one free host. Switch to Mintlify if API reference + hosted MCP for docs matters more than control, or to Fumadocs if docs must sit inside the Next.js app.",
+  "note": "",
+  "details": "Starlight pages were not fetched; version/licence are from the npm registry.",
+  "verify": {
+    "verdict": "ok",
+    "note": "@astrojs/starlight 0.42.7 (2026-10-23, MIT) confirmed. Mintlify Starter confirmed: free with custom domain, 5 editors, MCP server, no AI; Pro USD 450/mo annual.",
+    "url": "https://www.mintlify.com/pricing"
+  },
+  "better_pick": null
+}

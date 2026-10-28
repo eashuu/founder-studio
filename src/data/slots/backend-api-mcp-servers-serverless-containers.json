@@ -1,0 +1,101 @@
+{
+  "slug": "backend-api-mcp-servers-serverless-containers",
+  "slot": "Backend / API / MCP servers (serverless + containers)",
+  "track": "ship",
+  "stage": "ship",
+  "region": "Global",
+  "order": 6102,
+  "pick": {
+    "name": "Cloudflare Workers (+ Durable Objects)",
+    "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+    "what": "TypeScript/Python APIs and remote MCP servers at the edge",
+    "why": "Free commercial tier, no cold starts, official remote-MCP template (Streamable HTTP) + Workers OAuth Provider for MCP auth",
+    "cost": "freemium",
+    "free_limits": "100k req/day, 10 ms CPU/invocation, 50 subrequests, 128 MB; Durable Objects free: 100k req/day, 13,000 GB-s/day, SQLite only; Paid $5/mo",
+    "windows_fit": "web + wrangler CLI on Windows",
+    "maintained": "wrangler 4.154.0 2026-10-27",
+    "install": "npm create cloudflare@latest -- remote-mcp-server-authless --template=cloudflare/ai/demos/remote-mcp-authless",
+    "license": "service",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://developers.cloudflare.com/agents/guides/remote-mcp-server/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Google Cloud Run",
+      "url": "https://cloud.google.com/run/pricing",
+      "what": "Serverless containers (any language, Docker)",
+      "why": "Best free option for Python/FastAPI, long requests or anything that breaks the Workers runtime",
+      "cost": "freemium",
+      "free_limits": "Request-based: 2M requests, 180,000 vCPU-s, 360,000 GiB-s per month (us-central1 basis; via Google locale pages, main page fetch truncated); needs billing account/card",
+      "windows_fit": "web + gcloud CLI (native Windows)",
+      "maintained": "Google, active",
+      "install": "gcloud run deploy",
+      "license": "service",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://cloud.google.com/run/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Railway Hobby",
+      "url": "https://railway.com/pricing",
+      "what": "PaaS for containers, workers and DBs",
+      "why": "Pay-later pick: simplest container DX at $5/mo",
+      "cost": "paid",
+      "free_limits": "Free: $1/mo credit, NO custom domains, 1 project/3 services; Hobby $5/mo incl. $5 usage, 2 custom domains, 50 services",
+      "windows_fit": "web + CLI (npm)",
+      "maintained": "active",
+      "install": "npm i -g @railway/cli",
+      "license": "service",
+      "commercial_ok": "yes (paid)",
+      "needs_company": "no",
+      "source_url": "https://railway.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Cloudflare Workers",
+      "verdict": "PICK: free + commercial, edge, first-class MCP template"
+    },
+    {
+      "name": "Google Cloud Run",
+      "verdict": "Alt: best free container runtime; card required"
+    },
+    {
+      "name": "Railway Hobby",
+      "verdict": "Alt: $5/mo, nicest DX, free tier has no custom domains"
+    },
+    {
+      "name": "Render Free",
+      "verdict": "Rejected for prod: docs say 'Do not use them for production', spin-down after 15 min, SMTP blocked"
+    },
+    {
+      "name": "Fly.io",
+      "verdict": "No free tier for new orgs (2h/7-day trial); $2.19/mo for 256 MB is cheap pay-later"
+    },
+    {
+      "name": "Koyeb",
+      "verdict": "Rejected: joining Mistral AI (announced 2026-02-17); new users can only sign up for paid plans"
+    },
+    {
+      "name": "Vercel Functions",
+      "verdict": "Hobby non-commercial; Pro $20/mo"
+    },
+    {
+      "name": "Deno Deploy / Netlify Functions",
+      "verdict": "Viable but smaller ecosystems for MCP/agents than Workers"
+    }
+  ],
+  "decision": "Workers is the default for TS APIs and MCP servers because the free tier is commercial-OK and Cloudflare ships the reference remote-MCP template with OAuth. Switch a service to Cloud Run when it needs >10 ms CPU on Free, native Python libs, long jobs or a Dockerfile; pay Workers $5/mo first if the only problem is CPU.",
+  "note": "",
+  "details": "Workers Free 10 ms CPU can be blown by password hashing (scrypt) or heavy SSR; prefer OAuth/magic-link/passkeys or move to Workers Paid. Koyeb free-tier end is a 2026 cut.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Limits confirmed: 50 subrequests, 128 MB, DO free 100k req/day + 13,000 GB-s/day (+5 GB SQLite storage). Remote MCP template command matches the guide exactly (createMcpHandler, Streamable HTTP, Workers OAuth Provider). Koyeb note confirmed: koyeb.com/pricing lists no free compute tier and carries a 'Koyeb is joining Mistral AI' banner (TechCrunch 2026-02-17 on the acquisition).",
+    "url": "https://developers.cloudflare.com/agents/guides/remote-mcp-server/"
+  },
+  "better_pick": null
+}

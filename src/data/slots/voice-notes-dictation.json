@@ -1,0 +1,89 @@
+{
+  "slug": "voice-notes-dictation",
+  "slot": "voice notes + dictation",
+  "track": "productivity",
+  "stage": "run",
+  "region": "Global",
+  "order": 11215,
+  "pick": {
+    "name": "Handy",
+    "url": "https://handy.computer",
+    "what": "Open-source push-to-talk dictation that transcribes locally and pastes into any app",
+    "why": "Runs fully offline on this no-GPU laptop with the CPU-optimised Parakeet V3 model, so nothing leaves the company machine; free",
+    "cost": "free",
+    "free_limits": "Free",
+    "windows_fit": "native (Windows)",
+    "maintained": "v0.9.8 2026-10-03; commits 2026-10-27",
+    "install": "winget install cjpais.Handy (community-maintained package)",
+    "license": "MIT (name/logo excluded)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/cjpais/Handy",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Windows voice typing (Win+H)",
+      "url": "https://support.microsoft.com/en-us/windows/use-voice-typing-to-talk-instead-of-type-on-your-pc-fec94565-c4bd-329d-e59a-af033fa5689f",
+      "what": "Built-in Windows dictation (Azure online speech recognition, India English supported)",
+      "why": "Zero install; fallback when you cannot install apps (for example on a work laptop); needs internet (cloud processing)",
+      "cost": "free",
+      "free_limits": "Free, built in",
+      "windows_fit": "native",
+      "maintained": "Windows 11 built-in",
+      "install": "none (press Win+H)",
+      "license": "Proprietary (Windows)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://support.microsoft.com/en-us/windows/use-voice-typing-to-talk-instead-of-type-on-your-pc-fec94565-c4bd-329d-e59a-af033fa5689f",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Wispr Flow (Free)",
+      "url": "https://wisprflow.ai",
+      "what": "Cloud AI dictation with formatting, on Windows and Android",
+      "why": "Best accuracy/formatting and the only one that also covers Android dictation; free cap is the limit",
+      "cost": "freemium",
+      "free_limits": "Free: 2,000 words/week on desktop, limited mobile; Pro $12/user/mo annual",
+      "windows_fit": "native + Android",
+      "maintained": "SaaS, current",
+      "install": "https://wisprflow.ai",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "unclear",
+      "source_url": "https://wisprflow.ai/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Handy",
+      "verdict": "PICK: local, MIT, CPU model, free"
+    },
+    {
+      "name": "Windows voice typing",
+      "verdict": "Built in, but cloud and weaker formatting"
+    },
+    {
+      "name": "Wispr Flow",
+      "verdict": "Best polish + Android, 2k words/week free; cloud processing"
+    },
+    {
+      "name": "Vibe",
+      "verdict": "MIT offline file transcription with diarization (v3.2.2 2026-09-05); use for recorded voice memos, not live dictation"
+    },
+    {
+      "name": "Superwhisper",
+      "verdict": "Not evaluated for Windows here"
+    }
+  ],
+  "decision": "Handy is the best fit: offline, open source, works without a GPU and costs nothing, which matters on a company-managed laptop. Use Vibe to batch-transcribe voice memos recorded on the phone, and Wispr Flow if you want the same dictation on Android and accept cloud processing.",
+  "note": "",
+  "details": "Voice memos on Android: record, then batch-transcribe locally with Vibe.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Handy: MIT (brand assets excluded), Windows/macOS/Linux, Parakeet V3 'CPU-optimized', winget cjpais.Handy noted as not maintained by the Handy devs. v0.9.8 date not re-confirmed.",
+    "url": "https://github.com/cjpais/Handy"
+  },
+  "better_pick": null
+}

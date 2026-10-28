@@ -1,0 +1,97 @@
+{
+  "slug": "icons",
+  "slot": "Icons",
+  "track": "design",
+  "stage": "discover",
+  "region": "Global",
+  "order": 1153,
+  "pick": {
+    "name": "Lucide",
+    "url": "https://lucide.dev",
+    "what": "Consistent open-source stroke icon set (shadcn default)",
+    "why": "Default in shadcn, tree-shakable React/RN packages, permissive licence, daily releases.",
+    "cost": "free",
+    "free_limits": "Free; keep licence notice in copies, no UI credit",
+    "windows_fit": "n/a",
+    "maintained": "1.63.0, 28 Oct",
+    "install": "npm i lucide-react",
+    "license": "ISC (some MIT)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://lucide.dev/license",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Tabler Icons",
+      "url": "https://tabler.io/icons",
+      "what": "6,250+ MIT icons",
+      "why": "Biggest single consistent free set; fills Lucide gaps.",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "n/a",
+      "maintained": "v3.50.0, 27 Oct",
+      "install": "npm i @tabler/icons-react",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://tabler.io/icons",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Iconify",
+      "url": "https://iconify.design",
+      "what": "Aggregator: 300k+ icons from 200+ sets",
+      "why": "One API for any icon set; check each set's licence.",
+      "cost": "free",
+      "free_limits": "Free; per-set licences",
+      "windows_fit": "n/a",
+      "maintained": "active",
+      "install": "npm i @iconify/react",
+      "license": "MIT (tooling); per-set icon licences",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://iconify.design/docs/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Lucide",
+      "verdict": "pick"
+    },
+    {
+      "name": "Tabler",
+      "verdict": "alt"
+    },
+    {
+      "name": "Iconify",
+      "verdict": "alt"
+    },
+    {
+      "name": "Phosphor",
+      "verdict": "MIT, slower releases"
+    },
+    {
+      "name": "Heroicons",
+      "verdict": "small, stale (v2.2.0)"
+    },
+    {
+      "name": "Material Symbols",
+      "verdict": "Apache-2.0, Material look"
+    },
+    {
+      "name": "Hugeicons free",
+      "verdict": "free tier is personal/learning; commercial terms unclear"
+    }
+  ],
+  "decision": "Lucide is what the component library and generators already use. Pull extra glyphs from Tabler (same stroke style) via Iconify.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "lucide-react 1.63.0 (2026-10-28), ISC + MIT for Feather-derived icons.",
+    "url": "https://lucide.dev/license"
+  },
+  "better_pick": null
+}

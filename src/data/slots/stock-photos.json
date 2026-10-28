@@ -1,0 +1,85 @@
+{
+  "slug": "stock-photos",
+  "slot": "Stock photos",
+  "track": "design",
+  "stage": "discover",
+  "region": "Global",
+  "order": 1155,
+  "pick": {
+    "name": "Unsplash",
+    "url": "https://unsplash.com/license",
+    "what": "Free high-quality photos",
+    "why": "Largest quality library, free commercial use, no attribution, has an API.",
+    "cost": "free",
+    "free_limits": "Free commercial use; cannot sell unmodified copies or build a competing service",
+    "windows_fit": "web",
+    "maintained": "live",
+    "install": "web",
+    "license": "Unsplash Licence",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://unsplash.com/license",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Pexels",
+      "url": "https://www.pexels.com/license/",
+      "what": "Free photos + video clips",
+      "why": "Adds free stock video for demos.",
+      "cost": "free",
+      "free_limits": "Free commercial use; no unaltered resale, no implied endorsement",
+      "windows_fit": "web",
+      "maintained": "live",
+      "install": "web",
+      "license": "Pexels Licence",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.pexels.com/license/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Pixabay",
+      "url": "https://pixabay.com/service/license-summary/",
+      "what": "Photos, video, music",
+      "why": "One licence for photos, video and music.",
+      "cost": "free",
+      "free_limits": "Free, no attribution; no standalone resale",
+      "windows_fit": "web",
+      "maintained": "live",
+      "install": "web",
+      "license": "Pixabay Content Licence",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://pixabay.com/service/license-summary/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Unsplash",
+      "verdict": "pick"
+    },
+    {
+      "name": "Pexels",
+      "verdict": "alt"
+    },
+    {
+      "name": "Pixabay",
+      "verdict": "alt"
+    },
+    {
+      "name": "AI-generated photos",
+      "verdict": "avoid for testimonials/people (misleading)"
+    }
+  ],
+  "decision": "All three are free for commercial use; Unsplash has the best quality, Pexels the best free video.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Licence terms confirmed.",
+    "url": "https://unsplash.com/license"
+  },
+  "better_pick": null
+}

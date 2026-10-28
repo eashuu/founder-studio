@@ -1,0 +1,81 @@
+{
+  "slug": "errors-monitoring-mcp",
+  "slot": "errors / monitoring MCP",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2023,
+  "pick": {
+    "name": "Sentry (official plugin)",
+    "url": "https://github.com/getsentry/toolkit",
+    "what": "Read Sentry issues/traces from Claude",
+    "why": "Vendor-official; match whatever error tracker the ops track picks",
+    "cost": "freemium",
+    "free_limits": "Sentry Developer plan (limits not checked)",
+    "windows_fit": "native (hosted)",
+    "maintained": "pushed 2026-10-28",
+    "install": "/plugin install sentry@claude-plugins-official",
+    "license": "FSL (Sentry) / MCP Apache-2.0 (unverified)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/getsentry/toolkit",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "PostHog (official plugin)",
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "what": "Analytics, flags, errors in one",
+      "why": "If PostHog is your product analytics",
+      "cost": "freemium",
+      "free_limits": "not verified",
+      "windows_fit": "native",
+      "maintained": "listed 2026-10-28",
+      "install": "/plugin install posthog@claude-plugins-official",
+      "license": "MIT (core)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/anthropics/claude-plugins-official",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Channels (built-in)",
+      "url": "https://code.claude.com/docs/en/channels.md",
+      "what": "Push CI/monitor events into a session",
+      "why": "Event-driven fixes",
+      "cost": "owned",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "core",
+      "install": "see doc",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/en/channels.md",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Sentry",
+      "verdict": "pick if Sentry adopted"
+    },
+    {
+      "name": "PostHog",
+      "verdict": "if PostHog adopted"
+    },
+    {
+      "name": "Channels",
+      "verdict": "event push"
+    }
+  ],
+  "decision": "Install the MCP that matches the monitoring tool chosen in the ops track; not before.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "sentry plugin present in marketplace.json; free limits left unverified by the author.",
+    "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins"
+  },
+  "better_pick": null
+}

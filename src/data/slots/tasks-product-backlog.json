@@ -1,0 +1,89 @@
+{
+  "slug": "tasks-product-backlog",
+  "slot": "tasks + product backlog",
+  "track": "productivity",
+  "stage": "run",
+  "region": "Global",
+  "order": 11209,
+  "pick": {
+    "name": "GitHub Issues + Projects",
+    "url": "https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects",
+    "what": "Issues, milestones and Projects boards/tables/roadmaps next to the code",
+    "why": "Claude Code already drives it through gh CLI and the GitHub MCP; no issue cap; issues link to PRs and releases, which double as your public changelog",
+    "cost": "free",
+    "free_limits": "Included on GitHub Free; up to 50 fields per project; 50,000 items per project (GitHub changelog Feb 2025)",
+    "windows_fit": "web (+ gh CLI native)",
+    "maintained": "GitHub SaaS, continuously updated",
+    "install": "web; CLI: winget install -e --id GitHub.cli",
+    "license": "Proprietary SaaS",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Linear (Free)",
+      "url": "https://linear.app",
+      "what": "Fast keyboard-first issue tracker with official remote MCP",
+      "why": "Best UX and cycles/roadmaps; official MCP (claude mcp add --transport http linear-server https://mcp.linear.app/mcp); flips when you add a collaborator who lives outside GitHub",
+      "cost": "freemium",
+      "free_limits": "Free: 250 issues total, 2 teams, unlimited members, 10 MB uploads; Basic $10/user/mo (annual)",
+      "windows_fit": "web + native app",
+      "maintained": "SaaS; MCP docs current",
+      "install": "web",
+      "license": "Proprietary SaaS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://linear.app/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Todoist (Beginner)",
+      "url": "https://www.todoist.com",
+      "what": "Personal task manager with official hosted MCP (ai.todoist.net/mcp)",
+      "why": "Best for non-code personal/admin tasks captured from phone; Doist ships an official MCP (todoist-ai v13.7.1 2026-10-27)",
+      "cost": "freemium",
+      "free_limits": "Free: 5 personal projects, 3 filter views, 5 MB uploads, no calendar layout or custom reminders; Pro $5/mo annual",
+      "windows_fit": "native + Android",
+      "maintained": "todoist-ai v13.7.1 2026-10-27",
+      "install": "web or Microsoft Store",
+      "license": "Proprietary SaaS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.todoist.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "GitHub Issues + Projects",
+      "verdict": "PICK: zero extra tool, unlimited, native to Claude Code workflow"
+    },
+    {
+      "name": "Linear Free",
+      "verdict": "Best UX + MCP but 250-issue cap bites fast for a multi-product solo founder"
+    },
+    {
+      "name": "Todoist",
+      "verdict": "Great for personal errands; 5-project cap; not where code work belongs"
+    },
+    {
+      "name": "TickTick",
+      "verdict": "Free: 9 lists, 99 tasks/list; Premium $49.99/yr; good habit+pomodoro but no official MCP"
+    },
+    {
+      "name": "Super Productivity",
+      "verdict": "Used below as the daily planner that imports GitHub issues, not as the backlog"
+    }
+  ],
+  "decision": "Keep the product backlog where the code and Claude Code already are: GitHub Issues + Projects, free and uncapped. Linear is the better tracker UX and has an official MCP, but the 250-issue free cap is the trigger; switch when you hire or have a client/PM who needs a non-GitHub view (Basic $10/user/mo). Personal non-code tasks go in the daily planner slot.",
+  "note": "",
+  "details": "Use one private 'ops' repo for non-product founder tasks (sales, compliance, admin) so everything is in one gh query.",
+  "verify": {
+    "verdict": "ok",
+    "note": "GitHub Projects item cap is 50,000 (raised from 1,200 in 2025); docs page itself does not state it; gh winget ID fine.",
+    "url": "https://github.blog/changelog/2025-02-26-increased-items-in-github-projects-now-in-public-preview"
+  },
+  "better_pick": null
+}

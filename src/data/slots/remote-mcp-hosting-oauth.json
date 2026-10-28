@@ -1,0 +1,89 @@
+{
+  "slug": "remote-mcp-hosting-oauth",
+  "slot": "remote MCP hosting + OAuth",
+  "track": "app-stacks",
+  "stage": "build",
+  "region": "Global",
+  "order": 5098,
+  "pick": {
+    "name": "Cloudflare Workers (createMcpHandler) + Workers OAuth Provider",
+    "url": "https://developers.cloudflare.com/agents/guides/remote-mcp-server/",
+    "what": "Stateless Streamable-HTTP MCP on Workers; OAuthAuthorizationServer + OAuthResourceServer",
+    "why": "Free-tier edge hosting with a built-in OAuth 2.1 flow MCP clients expect",
+    "cost": "freemium",
+    "free_limits": "Workers Free: 100,000 requests/day, 10 ms CPU/request, 128 MB, 50 subrequests, 5 cron triggers, 100 Workers. Durable Object availability on Free not shown on limits page (check DO pricing page)",
+    "windows_fit": "web (wrangler native on Windows)",
+    "maintained": "workers-oauth-provider 1.2.4 (2026-10-22)",
+    "install": "npm create cloudflare@latest -- my-mcp --template=cloudflare/ai/demos/remote-mcp-authless",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://developers.cloudflare.com/agents/guides/remote-mcp-server/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Hono + @hono/mcp on your API host",
+      "url": "https://www.npmjs.com/package/@hono/mcp",
+      "what": "MCP endpoint inside the main API",
+      "why": "No extra deploy; reuse API auth",
+      "cost": "free",
+      "free_limits": "host-dependent",
+      "windows_fit": "native",
+      "maintained": "0.3.5 (2026-10-28)",
+      "install": "npm i @hono/mcp",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.npmjs.com/package/@hono/mcp",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "FastMCP on a Python host",
+      "url": "https://pypi.org/project/fastmcp/",
+      "what": "Python remote MCP with auth providers",
+      "why": "Python services",
+      "cost": "free",
+      "free_limits": "host-dependent",
+      "windows_fit": "native",
+      "maintained": "4.1.4 (2026-10-26)",
+      "install": "pip install fastmcp",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://pypi.org/project/fastmcp/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Cloudflare Workers (pick)",
+      "verdict": "Free edge + OAuth provider."
+    },
+    {
+      "name": "Hono + @hono/mcp",
+      "verdict": "Wins when the MCP server is a face of the existing API."
+    },
+    {
+      "name": "FastMCP",
+      "verdict": "Python."
+    },
+    {
+      "name": "mcp-handler on Vercel",
+      "verdict": "Hobby is non-commercial - Pro needed for paid products."
+    },
+    {
+      "name": "McpAgent (Cloudflare)",
+      "verdict": "Deprecated - use createMcpHandler."
+    }
+  ],
+  "decision": "Workers gives free hosting plus a ready OAuth server for MCP clients. Mount @hono/mcp in the main API instead when the MCP tools are thin wrappers over existing endpoints.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Limits filled in.",
+    "url": "https://developers.cloudflare.com/workers/platform/limits/"
+  },
+  "better_pick": null
+}

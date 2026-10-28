@@ -1,0 +1,89 @@
+{
+  "slug": "trademark",
+  "slot": "Trademark",
+  "track": "legal",
+  "stage": "run",
+  "region": "India",
+  "order": 10173,
+  "pick": {
+    "name": "Self-file on IP India (classes 9 + 42)",
+    "url": "https://ipindia.gov.in/",
+    "what": "Online TM-A filing at the Indian Trade Marks Registry",
+    "why": "Rs 4,500 per class for individuals/startups/small enterprises (Rs 9,000 others); class 9 (software/apps) + 42 (SaaS) covers the product; India filing is the base for Madrid",
+    "cost": "paid",
+    "free_limits": "TM-A e-filing Rs 4,500 per class per mark (individual/startup/small enterprise), Rs 9,000 others; expedited exam Rs 20,000 (individual/startup/small) or Rs 40,000 per class, e-filing only",
+    "windows_fit": "web",
+    "maintained": "fee table checked 2026-10-28 (ipindia fee page 404)",
+    "install": "web",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://ipindia.gov.in/pages/trade-marks/learn/forms-and-official-fees",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "WIPO Madrid System (via IP India)",
+      "url": "https://www.wipo.int/madrid/en/",
+      "what": "One international application designating many countries",
+      "why": "Cheapest way to extend to US/EU/UK later: base fee CHF 653 (CHF 903 colour) + per-country fees; needs the Indian application as the base",
+      "cost": "paid",
+      "free_limits": "No free tier; use the fee calculator",
+      "windows_fit": "web",
+      "maintained": "page live 2026-10-28",
+      "install": "web (https://madrid.wipo.int/feecalcapp)",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.wipo.int/madrid/en/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Trademark agent/attorney filing",
+      "url": "https://ssrana.in/ip-laws/trademarks-in-india/tm-filing-fees-forms-india/",
+      "what": "Paid attorney handles search, filing, objections",
+      "why": "Worth it if the examiner objects or opposition is filed",
+      "cost": "paid",
+      "free_limits": "Professional fees on top of govt fees (unverified)",
+      "windows_fit": "web",
+      "maintained": "n/a",
+      "install": "n/a",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://ssrana.in/ip-laws/trademarks-in-india/tm-filing-fees-forms-india/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Self-file on IP India",
+      "verdict": "PICK: lowest cost; Claude can draft the goods/services spec"
+    },
+    {
+      "name": "Madrid Protocol",
+      "verdict": "Add once you have US/EU revenue (base CHF 653 + designations)"
+    },
+    {
+      "name": "Direct USPTO filing",
+      "verdict": "Only if you need US-only fast; fees not verified"
+    },
+    {
+      "name": "Agent filing (Vakilsearch, law firms)",
+      "verdict": "Use for objections/oppositions, not for the first filing"
+    },
+    {
+      "name": "Class 35/41",
+      "verdict": "Add 35 only for services/consulting branding; skip otherwise"
+    }
+  ],
+  "decision": "File the word mark yourself on IP India in classes 9 and 42 at the reduced rate (Udyam makes a company a small enterprise). Search the IP India public search and the WIPO Global Brand Database first. Go to Madrid when a foreign market matters.",
+  "note": "",
+  "details": "India's Madrid membership (since 2013) is from memory and was not confirmed on the page fetched (unverified).",
+  "verify": {
+    "verdict": "fixed",
+    "note": "The official IP India fee table (which did load) confirms TM-A e-filing at Rs 4,500 for individual/startup/small enterprise and Rs 9,000 for others, per class and per mark (physical Rs 5,000/10,000). Expedited exam (TM-M) is Rs 20,000 or Rs 40,000, e-filing only, per class, which resolves the conflict. Swap source_url to the official page.",
+    "url": "https://ipindia.gov.in/pages/trade-marks/learn/forms-and-official-fees"
+  },
+  "better_pick": null
+}

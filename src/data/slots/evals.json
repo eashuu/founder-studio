@@ -1,0 +1,105 @@
+{
+  "slug": "evals",
+  "slot": "evals",
+  "track": "ai-eng",
+  "stage": "build",
+  "region": "Global",
+  "order": 4063,
+  "pick": {
+    "name": "promptfoo",
+    "url": "https://github.com/promptfoo/promptfoo",
+    "what": "CLI/YAML eval and red-team harness with CI, model comparison, local runs",
+    "why": "Language-neutral (TS monorepo + Python backends), declarative YAML Claude Code writes easily, red-teaming built in, runs locally on Windows",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native (npm)",
+    "maintained": "0.125.1 on 2026-10-25; acquired by OpenAI 2026-03-09 (README: 'remains open source and MIT licensed')",
+    "install": "npx promptfoo@latest init",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/promptfoo/promptfoo",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "DeepEval",
+      "url": "https://github.com/confident-ai/deepeval",
+      "what": "Pytest-style LLM evals: many metrics (RAG, agents, MCP), synthesizer",
+      "why": "Best Python-native option; partial TS integrations",
+      "cost": "freemium",
+      "free_limits": "Confident AI cloud optional (free account, limits unverified)",
+      "windows_fit": "native",
+      "maintained": "4.3.2 on 2026-10-27",
+      "install": "pip install -U deepeval",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/confident-ai/deepeval",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Inspect AI (UK AISI)",
+      "url": "https://inspect.aisi.org.uk/",
+      "what": "Research-grade eval framework: agents, sandboxes, 200+ benchmarks, log viewer",
+      "why": "Best for agent/tool-use evals and benchmark runs",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "wsl/docker for sandboxes",
+      "maintained": "0.3.285 on 2026-10-25",
+      "install": "pip install inspect-ai",
+      "license": "MIT (PyPI metadata)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://inspect.aisi.org.uk/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "promptfoo",
+      "verdict": "Pick: language-neutral YAML+CI, red team; OpenAI-owned but MIT"
+    },
+    {
+      "name": "DeepEval",
+      "verdict": "Alt: Python pytest-style metrics"
+    },
+    {
+      "name": "Inspect AI",
+      "verdict": "Alt: agent/benchmark evals"
+    },
+    {
+      "name": "Ragas 0.4.3 (2026-01-13)",
+      "verdict": "RAG metrics; slower cadence"
+    },
+    {
+      "name": "Mastra evals (@mastra/evals 1.10.8)",
+      "verdict": "Good if on Mastra"
+    },
+    {
+      "name": "Pydantic Evals",
+      "verdict": "Good if on Pydantic AI"
+    },
+    {
+      "name": "Braintrust autoevals 0.4.1",
+      "verdict": "MIT lib; platform paid"
+    },
+    {
+      "name": "Evalite 0.19.0 (2025-11)",
+      "verdict": "Stale, no licence in npm metadata"
+    },
+    {
+      "name": "LangSmith",
+      "verdict": "Paid hosted, LangChain-centric"
+    }
+  ],
+  "decision": "promptfoo remains the pick for cross-language CI-friendly evals, but OpenAI now owns it; MIT licence and local-only runs limit the risk (fork if governance changes). Use DeepEval if everything is Python, Inspect for deep agent evals.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Version/licence/limits match registry or official page.",
+    "url": "https://registry.npmjs.org/"
+  },
+  "better_pick": null
+}

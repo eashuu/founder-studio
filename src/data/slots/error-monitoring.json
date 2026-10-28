@@ -1,0 +1,93 @@
+{
+  "slug": "error-monitoring",
+  "slot": "Error monitoring",
+  "track": "ship",
+  "stage": "ship",
+  "region": "Global",
+  "order": 6111,
+  "pick": {
+    "name": "Sentry Developer",
+    "url": "https://sentry.io/pricing/",
+    "what": "Errors, tracing, replays, logs, cron monitors",
+    "why": "Gold-standard SDKs incl. Cloudflare Workers; free tier also gives 5 GB logs and cron/uptime monitors",
+    "cost": "freemium",
+    "free_limits": "1 user, 5k errors, 5M spans, 50 replays, 5 GB logs, 1 uptime + 1 cron monitor, 30-day lookback; Team $26/mo annual ($29 monthly)",
+    "windows_fit": "web",
+    "maintained": "@sentry/node 11.9.0 2026-10-23",
+    "install": "npx @sentry/wizard@latest -i nextjs",
+    "license": "service (SDK MIT; server FSL)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://sentry.io/pricing/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "PostHog Error Tracking",
+      "url": "https://posthog.com/pricing",
+      "what": "Exceptions inside PostHog",
+      "why": "Free-volume alt: 100k exceptions/mo and already in the stack",
+      "cost": "freemium",
+      "free_limits": "100k exceptions/mo free (pricing page per search; page fetch truncated)",
+      "windows_fit": "web",
+      "maintained": "posthog-js 1.441.0 2026-10-28",
+      "install": "via PostHog SDK",
+      "license": "MIT core",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://posthog.com/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "GlitchTip (self-host)",
+      "url": "https://glitchtip.com/documentation/install",
+      "what": "Sentry-compatible OSS",
+      "why": "Unlimited, $0 on your VM",
+      "cost": "free",
+      "free_limits": "Self-host via Docker Compose + Postgres",
+      "windows_fit": "linux VM",
+      "maintained": "active (not re-checked)",
+      "install": "docker compose up",
+      "license": "MIT (per project site, not re-checked)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://glitchtip.com/documentation/install",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Sentry",
+      "verdict": "PICK"
+    },
+    {
+      "name": "PostHog Error Tracking",
+      "verdict": "Alt: 20x free volume, younger product"
+    },
+    {
+      "name": "GlitchTip",
+      "verdict": "Alt: self-host"
+    },
+    {
+      "name": "Better Stack Errors",
+      "verdict": "Free tier labelled 'for personal projects'"
+    },
+    {
+      "name": "Highlight.io",
+      "verdict": "Shut down after LaunchDarkly acquisition (2025, not re-verified)"
+    },
+    {
+      "name": "Bugsnag/Rollbar",
+      "verdict": "Smaller free tiers"
+    }
+  ],
+  "decision": "Sentry's tooling (source maps, Workers SDK, alerts) is still the best; its ToS limits use to internal business purposes, which is commercial-OK. If 5k errors/mo is too few before you're paying, route errors to PostHog instead of paying $26.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Sentry Developer: 1 user, 5k errors, 5M spans, 50 replays, 5 GB logs, 1 uptime + 1 cron, 30-day lookback; Team $29 monthly / $26 annual. Confirmed. @sentry/node 11.9.0 (2026-10-23) confirmed.",
+    "url": "https://sentry.io/pricing/"
+  },
+  "better_pick": null
+}

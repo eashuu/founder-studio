@@ -1,0 +1,48 @@
+{
+  "slug": "app-store-legal-requirements",
+  "slot": "App-store legal requirements",
+  "track": "legal",
+  "stage": "run",
+  "region": "Global",
+  "order": 10184,
+  "pick": {
+    "name": "Google Play Data safety form + privacy policy + deletion path",
+    "url": "https://support.google.com/googleplay/android-developer/answer/10787469",
+    "what": "Mandatory Play Console declarations for every published app",
+    "why": "Required for Android (shipping now); a privacy policy link is mandatory even if you collect nothing",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "web",
+    "maintained": "page live 2026-10-28",
+    "install": "web (Play Console)",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://support.google.com/googleplay/android-developer/answer/10787469",
+    "checked": "2026-10-28"
+  },
+  "alts": [],
+  "candidates": [
+    {
+      "name": "Play Data safety + policy",
+      "verdict": "PICK: required now"
+    },
+    {
+      "name": "Apple App Privacy",
+      "verdict": "When iOS ships (not verified this pass)"
+    },
+    {
+      "name": "Termly/iubenda app policies",
+      "verdict": "Optional generators"
+    }
+  ],
+  "decision": "Fill the Data safety form from your real SDK list (analytics, crash, auth), host the privacy policy on your site, and give users a discoverable deletion request (in-app or web form). Deleting/anonymising within 90 days lets you claim the deletion badge.",
+  "note": "",
+  "details": "Play's separate account-deletion policy (web link + in-app) was not re-read this pass (unverified).",
+  "verify": {
+    "verdict": "ok",
+    "note": "Confirmed: a privacy policy is required even with no data collected, and the deletion badge applies if data is deleted within 90 days. Also confirmed: apps with account creation must provide BOTH an in-app deletion path and a web deletion link (answer 13327111), which resolves the note.",
+    "url": "https://support.google.com/googleplay/android-developer/answer/13327111"
+  },
+  "better_pick": null
+}

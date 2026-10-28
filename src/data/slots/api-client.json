@@ -1,0 +1,93 @@
+{
+  "slug": "api-client",
+  "slot": "API client",
+  "track": "windows-dev",
+  "stage": "build",
+  "region": "Global",
+  "order": 3047,
+  "pick": {
+    "name": "Bruno",
+    "url": "https://www.usebruno.com/pricing",
+    "what": "Offline API client, collections as files in git",
+    "why": "No login; Claude can edit collections in the repo",
+    "cost": "freemium",
+    "free_limits": "OSS: 2 workspaces, 5 OpenAPI syncs/mo, public git providers only; Pro $6/user/mo",
+    "windows_fit": "native",
+    "maintained": "v4.3.0 (2026-10-22)",
+    "install": "winget install Bruno.Bruno",
+    "license": "MIT (OSS edition)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.usebruno.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Hoppscotch",
+      "url": "https://github.com/hoppscotch/hoppscotch",
+      "what": "Web/desktop OSS client",
+      "why": "No install needed",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "web/native",
+      "maintained": "2026.9.0 (2026-09-30)",
+      "install": "web: hoppscotch.io",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/hoppscotch/hoppscotch",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Postman",
+      "url": "https://www.postman.com/pricing",
+      "what": "Cloud API platform",
+      "why": "If a client team lives in Postman",
+      "cost": "freemium",
+      "free_limits": "Free 1 user; Solo $9/mo",
+      "windows_fit": "native",
+      "maintained": "live",
+      "install": "winget",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.postman.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Bruno",
+      "verdict": "pick"
+    },
+    {
+      "name": "Hoppscotch",
+      "verdict": "web"
+    },
+    {
+      "name": "Postman",
+      "verdict": "cloud account"
+    },
+    {
+      "name": "Insomnia",
+      "verdict": "Scratch Pad local-only"
+    },
+    {
+      "name": "Yaak",
+      "verdict": "commercial use needs licence"
+    },
+    {
+      "name": "curl/httpie",
+      "verdict": "Claude uses curl anyway"
+    }
+  ],
+  "decision": "Files-in-git suits Claude Code.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "OSS limits match; Pro $6/user/mo billed annually; v4.3.0 (22 Oct 2026).",
+    "url": "https://www.usebruno.com/pricing"
+  },
+  "better_pick": null
+}

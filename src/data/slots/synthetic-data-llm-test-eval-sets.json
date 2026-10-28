@@ -1,0 +1,89 @@
+{
+  "slug": "synthetic-data-llm-test-eval-sets",
+  "slot": "synthetic data: LLM test/eval sets",
+  "track": "ai-eng",
+  "stage": "build",
+  "region": "Global",
+  "order": 4074,
+  "pick": {
+    "name": "DeepEval Synthesizer",
+    "url": "https://github.com/confident-ai/deepeval",
+    "what": "Generates single/multi-turn synthetic datasets for evals",
+    "why": "Integrated with the eval metrics, Apache-2.0",
+    "cost": "free",
+    "free_limits": "LLM calls cost tokens (use Haiku 5.5 / Batch -50%)",
+    "windows_fit": "native",
+    "maintained": "deepeval 4.3.2 on 2026-10-27",
+    "install": "pip install -U deepeval",
+    "license": "Apache-2.0",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/confident-ai/deepeval",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Ragas test-set generation",
+      "url": "https://github.com/vibrantlabsai/ragas",
+      "what": "Test dataset generation for RAG evals",
+      "why": "RAG-specific question sets",
+      "cost": "free",
+      "free_limits": "LLM token cost",
+      "windows_fit": "native",
+      "maintained": "ragas 0.4.3 on 2026-01-13",
+      "install": "pip install ragas",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/vibrantlabsai/ragas",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Claude Message Batches API with Pydantic schemas",
+      "url": "https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers",
+      "what": "Roll-your-own synthetic generation at 50% price",
+      "why": "Full control; covered by Max credits",
+      "cost": "owned",
+      "free_limits": "Batch costs 50% less per credits doc; Batch API not covered by BAA",
+      "windows_fit": "web",
+      "maintained": "Doc 2026-10-28",
+      "install": "pip install anthropic",
+      "license": "Commercial terms",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "DeepEval Synthesizer",
+      "verdict": "Pick: ties to evals"
+    },
+    {
+      "name": "Ragas testset",
+      "verdict": "Alt: RAG-focused"
+    },
+    {
+      "name": "Claude Batch + schemas",
+      "verdict": "Alt: custom, half price"
+    },
+    {
+      "name": "Hugging Face datasets",
+      "verdict": "Hub of existing data; licences vary"
+    },
+    {
+      "name": "Distilabel / Gretel",
+      "verdict": "Not evaluated"
+    }
+  ],
+  "decision": "Use the Synthesizer to bootstrap eval sets, then hand-curate. Never synthesise from real PHI without de-identification.",
+  "note": "",
+  "details": "Retained.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Version/licence/limits match registry or official page.",
+    "url": "https://registry.npmjs.org/"
+  },
+  "better_pick": null
+}

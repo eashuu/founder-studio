@@ -1,0 +1,89 @@
+{
+  "slug": "screenshots-recording",
+  "slot": "screenshots / recording",
+  "track": "windows-dev",
+  "stage": "build",
+  "region": "Global",
+  "order": 3050,
+  "pick": {
+    "name": "ShareX",
+    "url": "https://github.com/ShareX/ShareX",
+    "what": "Screenshots, region GIF/MP4, OCR, annotate",
+    "why": "Free all-rounder for bug reports/docs",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "v21.0.0 (2026-07-03, latest stable); 22.0.0 pre-release 2026-10-20",
+    "install": "winget install ShareX.ShareX",
+    "license": "GPL-3.0",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/ShareX/ShareX",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "OBS Studio",
+      "url": "https://github.com/obsproject/obs-studio",
+      "what": "Recording/streaming",
+      "why": "Long demos; CPU encode OK at 1080p30",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "33.0.0 (2026-10-23)",
+      "install": "winget install OBSProject.OBSStudio",
+      "license": "GPL-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/obsproject/obs-studio",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "OpenScreen",
+      "url": "https://github.com/stablyai/orca",
+      "what": "Your demo-video recorders",
+      "why": "Keep for marketing demos",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "not checked",
+      "install": "installed",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/stablyai/orca",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "ShareX",
+      "verdict": "pick"
+    },
+    {
+      "name": "OBS",
+      "verdict": "long recordings"
+    },
+    {
+      "name": "Snipping Tool",
+      "verdict": "built-in basics"
+    },
+    {
+      "name": "Greenshot",
+      "verdict": "screenshots only"
+    },
+    {
+      "name": "Flameshot",
+      "verdict": "weaker on Windows"
+    }
+  ],
+  "decision": "Snipping Tool covers basics; ShareX when you want OCR/GIF workflows.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "fixed",
+    "note": "22.0.0 (20 Oct) is flagged Pre-release; v21.0.0 is the Latest stable.",
+    "url": "https://github.com/ShareX/ShareX/releases"
+  },
+  "better_pick": null
+}

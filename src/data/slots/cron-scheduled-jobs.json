@@ -1,0 +1,89 @@
+{
+  "slug": "cron-scheduled-jobs",
+  "slot": "Cron / scheduled jobs",
+  "track": "ship",
+  "stage": "ship",
+  "region": "Global",
+  "order": 6121,
+  "pick": {
+    "name": "Cloudflare Cron Triggers",
+    "url": "https://developers.cloudflare.com/workers/platform/limits/",
+    "what": "Scheduled Worker invocations",
+    "why": "Runs inside the default stack, accurate schedules, no repo-activity rules",
+    "cost": "freemium",
+    "free_limits": "5 cron triggers/account on Free, 250 on Paid; each run is a normal Worker invocation (10 ms CPU on Free, up to 15 min CPU on Paid)",
+    "windows_fit": "web",
+    "maintained": "active",
+    "install": "wrangler.jsonc: triggers.crons",
+    "license": "service",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://developers.cloudflare.com/workers/platform/limits/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "GitHub Actions schedule",
+      "url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+      "what": "Cron workflows",
+      "why": "Best for jobs needing binaries (pg_dump)",
+      "cost": "freemium",
+      "free_limits": "Uses Actions minutes (free on public repos); schedules can be delayed under load (known behaviour, not re-verified)",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "on: schedule",
+      "license": "service",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Upstash QStash schedules",
+      "url": "https://upstash.com/pricing/qstash",
+      "what": "HTTP cron + queue",
+      "why": "Host-agnostic cron calling any URL",
+      "cost": "freemium",
+      "free_limits": "1,000 messages/day, 10 active schedules; $1 per 100k",
+      "windows_fit": "web",
+      "maintained": "@upstash/qstash 2.12.1 2026-10-20",
+      "install": "npm i @upstash/qstash",
+      "license": "service",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://upstash.com/pricing/qstash",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Cloudflare Cron Triggers",
+      "verdict": "PICK"
+    },
+    {
+      "name": "GitHub Actions schedule",
+      "verdict": "Alt: for backup/maintenance scripts"
+    },
+    {
+      "name": "QStash",
+      "verdict": "Alt"
+    },
+    {
+      "name": "pg_cron / VM crontab",
+      "verdict": "On Oracle VM"
+    },
+    {
+      "name": "cron-job.org",
+      "verdict": "Free external pinger; not checked"
+    }
+  ],
+  "decision": "App-level schedules belong next to the app (Workers). Use Actions schedule for ops scripts such as backups.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Limits page: 5 cron triggers Free, 250 Paid. QStash alt (1,000 msg/day, 10 schedules, $1/100k) confirmed.",
+    "url": "https://developers.cloudflare.com/workers/platform/limits/"
+  },
+  "better_pick": null
+}

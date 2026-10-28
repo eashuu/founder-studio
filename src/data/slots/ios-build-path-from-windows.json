@@ -1,0 +1,89 @@
+{
+  "slug": "ios-build-path-from-windows",
+  "slot": "iOS build path from Windows",
+  "track": "app-stacks",
+  "stage": "build",
+  "region": "Global",
+  "order": 5091,
+  "pick": {
+    "name": "Expo EAS Build + Submit",
+    "url": "https://expo.dev/pricing",
+    "what": "Cloud macOS builds + App Store submission, manages certs/profiles",
+    "why": "Zero Mac needed and integrated with the Expo pick",
+    "cost": "freemium",
+    "free_limits": "Free: up to 15 iOS + 15 Android builds, low priority, 45-min timeout; Starter $19/mo incl. $45 build credit; Apple $99/yr extra",
+    "windows_fit": "web",
+    "maintained": "eas-cli 26.0.0 (2026-10-26)",
+    "install": "npm i -g eas-cli && eas build -p ios",
+    "license": "MIT (CLI)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://expo.dev/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Codemagic",
+      "url": "https://codemagic.io/pricing/",
+      "what": "CI/CD with Mac mini M2 machines (Flutter, RN, native)",
+      "why": "500 free macOS M2 build minutes/month; framework-agnostic",
+      "cost": "freemium",
+      "free_limits": "Free individual: 500 macOS M2 min/mo, 1 concurrent build; commercial use of free plan not stated",
+      "windows_fit": "web",
+      "maintained": "pricing live 2026-10-28",
+      "install": "web (codemagic.yaml)",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://codemagic.io/pricing/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "GitHub Actions macOS runners",
+      "url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+      "what": "Hosted macOS CI",
+      "why": "Free for public repos; private repos use the 2,000 free minutes with macOS billed higher ($0.062/min base)",
+      "cost": "freemium",
+      "free_limits": "Public repos free on standard runners; private: 2,000 min/mo Free plan, macOS costs more",
+      "windows_fit": "web",
+      "maintained": "docs live 2026-10-28",
+      "install": "runs-on: macos-latest",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "EAS (pick)",
+      "verdict": "Turnkey with Expo."
+    },
+    {
+      "name": "Codemagic",
+      "verdict": "Wins for Flutter/KMP or when EAS free builds run out."
+    },
+    {
+      "name": "GitHub Actions macOS",
+      "verdict": "Wins for open-source repos (free)."
+    },
+    {
+      "name": "Rent a cloud Mac (MacinCloud etc.)",
+      "verdict": "Needed only for Xcode debugging; not checked."
+    },
+    {
+      "name": "Buy a used Mac mini",
+      "verdict": "Best long-term if iOS becomes core."
+    }
+  ],
+  "decision": "EAS is the pick because it pairs with Expo and needs no Mac. Codemagic's 500 free minutes are the fallback when the 15 free EAS builds are exhausted.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Confirmed: EAS Free gives 15 iOS builds/month (resets monthly) on cloud macOS, so iOS builds and App Store submission work from Windows; still needs the $99/yr Apple Developer Program.",
+    "url": "https://docs.expo.dev/billing/plans/"
+  },
+  "better_pick": null
+}

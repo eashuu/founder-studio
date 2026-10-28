@@ -1,0 +1,93 @@
+{
+  "slug": "mcp-server-sdk",
+  "slot": "MCP server SDK",
+  "track": "app-stacks",
+  "stage": "build",
+  "region": "Global",
+  "order": 5095,
+  "pick": {
+    "name": "Official MCP TypeScript SDK (+ @hono/mcp or mcp-handler to mount in your API)",
+    "url": "https://www.npmjs.com/package/@modelcontextprotocol/sdk",
+    "what": "Reference SDK: tools/resources/prompts, Streamable HTTP, OAuth",
+    "why": "Spec-tracking, same TS stack, mounts into Hono/Next/Workers",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "@modelcontextprotocol/sdk 1.32.2 (2026-10-23); @hono/mcp 0.3.5 (2026-10-28)",
+    "install": "npm i @modelcontextprotocol/sdk",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.npmjs.com/package/@modelcontextprotocol/sdk",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "FastMCP (Python)",
+      "url": "https://pypi.org/project/fastmcp/",
+      "what": "High-level Python MCP framework with auth, proxying, OpenAPI->MCP",
+      "why": "Fastest Python path, mounts on FastAPI",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "4.1.4 (2026-10-26)",
+      "install": "pip install fastmcp",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://pypi.org/project/fastmcp/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "xmcp",
+      "url": "https://www.npmjs.com/package/xmcp",
+      "what": "File-based TS MCP framework",
+      "why": "Next.js-like DX for MCP-only projects",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "1.9.0 (2026-10-22)",
+      "install": "npx create-xmcp-app@latest",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.npmjs.com/package/xmcp",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Official TS SDK (pick)",
+      "verdict": "Matches TS stack."
+    },
+    {
+      "name": "FastMCP",
+      "verdict": "Wins for Python services."
+    },
+    {
+      "name": "Official Python SDK (mcp 2.3.0)",
+      "verdict": "Lower level than FastMCP."
+    },
+    {
+      "name": "xmcp",
+      "verdict": "Nice DX, smaller community."
+    },
+    {
+      "name": "mcp-handler 2.3.0 (Vercel)",
+      "verdict": "Adapter for Next route handlers."
+    },
+    {
+      "name": "Cloudflare Agents createMcpHandler",
+      "verdict": "Workers-specific wrapper - see hosting slot."
+    }
+  ],
+  "decision": "The official TS SDK fits the TS-first stack and tracks the spec first. Use FastMCP when the MCP server wraps Python AI code.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Version/licence/limits match registry or official page.",
+    "url": "https://registry.npmjs.org/"
+  },
+  "better_pick": null
+}

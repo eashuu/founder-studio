@@ -1,0 +1,97 @@
+{
+  "slug": "postgres-database",
+  "slot": "Postgres / database",
+  "track": "ship",
+  "stage": "ship",
+  "region": "Global",
+  "order": 6104,
+  "pick": {
+    "name": "Neon Free",
+    "url": "https://neon.com/pricing",
+    "what": "Serverless Postgres with branching and scale-to-zero",
+    "why": "Most generous commercial-OK free Postgres for many small products: 100 projects, no inactivity deletion, branch-per-PR",
+    "cost": "freemium",
+    "free_limits": "100 projects; 100 CU-h/project/mo; 1 GB/project (20 GB total); 5 GB egress/project; 10 branches; 6 h history (no instant restore); suspends after 5 min idle; Launch $0.106/CU-h + $0.35/GB-mo",
+    "windows_fit": "web + neonctl (npm, Windows OK)",
+    "maintained": "active; owned by Databricks since May 2025",
+    "install": "npx neonctl@latest init",
+    "license": "service (Postgres)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://neon.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Supabase Free",
+      "url": "https://supabase.com/pricing",
+      "what": "Postgres + auth + storage + realtime bundle",
+      "why": "Best all-in-one if you want BaaS; weaker free tier for many products",
+      "cost": "freemium",
+      "free_limits": "500 MB DB, 50k MAU, 1 GB storage, 5 GB egress, 2 active projects, pauses after 1 week inactivity, NO backups; Pro $25/mo (daily backups 7 days)",
+      "windows_fit": "web + CLI",
+      "maintained": "active",
+      "install": "npm i -g supabase",
+      "license": "service (Apache-2.0 OSS core)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://supabase.com/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Prisma Postgres Free",
+      "url": "https://www.prisma.io/pricing",
+      "what": "Managed Postgres from the Prisma team",
+      "why": "Alt if you use Prisma ORM; spend fixed at $0",
+      "cost": "freemium",
+      "free_limits": "200k operations/mo, 2 GB storage, 50 DBs; Starter $10/mo (1M ops, 10 GB)",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "npx prisma init --db",
+      "license": "service",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://www.prisma.io/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Neon",
+      "verdict": "PICK: 100 projects, branching, commercial-OK ToS, no pausing deletion"
+    },
+    {
+      "name": "Supabase",
+      "verdict": "Alt: best BaaS bundle but 2 projects, 1-week pause, no free backups"
+    },
+    {
+      "name": "Prisma Postgres",
+      "verdict": "Alt: simple, but 200k ops/mo cap is tight for an API"
+    },
+    {
+      "name": "Cloudflare D1",
+      "verdict": "SQLite not Postgres; 5 GB, 5M rows read/day free; good for Worker-only side projects"
+    },
+    {
+      "name": "Turso",
+      "verdict": "libSQL/SQLite; 100 DBs, 5 GB, 500M reads/mo free; pick for per-tenant SQLite"
+    },
+    {
+      "name": "Koyeb Postgres",
+      "verdict": "Free 5h tier only, company being acquired"
+    },
+    {
+      "name": "Self-host Postgres on Oracle VM",
+      "verdict": "Free but you own backups/HA; fine for internal tools"
+    }
+  ],
+  "decision": "Neon fits a founder shipping many small products: 100 free projects, standard Postgres (no lock-in, pg_dump out anytime), and ToS without a non-commercial clause. Choose Supabase instead if you want auth+storage+realtime in one dashboard and accept the 2-project/pausing limits; pay Neon Launch when a project needs >1 GB or real point-in-time restore.",
+  "note": "",
+  "details": "From Workers, connect via Neon serverless driver or Cloudflare Hyperdrive (Hyperdrive free-plan terms not verified).",
+  "verify": {
+    "verdict": "ok",
+    "note": "Every Neon Free number confirmed (100 projects, 100 CU-h/project, 1 GB/project 20 GB total, 5 GB egress, 10 branches, 6 h history, 5 min suspend; Launch $0.106/CU-h, $0.35/GB-mo; instant restore $0.20/GB-mo). Supabase and Prisma alts also confirmed.",
+    "url": "https://neon.com/pricing"
+  },
+  "better_pick": null
+}

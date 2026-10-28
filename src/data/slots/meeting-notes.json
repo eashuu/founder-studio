@@ -1,0 +1,97 @@
+{
+  "slug": "meeting-notes",
+  "slot": "meeting notes",
+  "track": "productivity",
+  "stage": "run",
+  "region": "Global",
+  "order": 11216,
+  "pick": {
+    "name": "Fathom (Free)",
+    "url": "https://www.fathom.ai",
+    "what": "Meeting recorder bot for Zoom, Meet and Teams with AI summaries",
+    "why": "Best when the prospect hosts on Zoom/Teams; unlimited free recordings",
+    "cost": "freemium",
+    "free_limits": "Free: unlimited recordings + transcription; advanced summaries reportedly capped at 5 calls/mo; Premium $16/mo annual; HIPAA BAA listed (plan unclear)",
+    "windows_fit": "web",
+    "maintained": "SaaS, current",
+    "install": "web",
+    "license": "Proprietary",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.fathom.ai/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Meetily",
+      "url": "https://github.com/Zackriya-Solutions/meeting-minutes",
+      "what": "Local meeting transcriber (Whisper/Parakeet) capturing mic + system audio, summaries via Ollama or Claude API",
+      "why": "Use for healthcare/regulated calls: audio never leaves your machine and no bot joins",
+      "cost": "free",
+      "free_limits": "Free; LLM summary costs depend on provider",
+      "windows_fit": "native (Windows x64, needs AVX2; Vulkan build)",
+      "maintained": "v0.4.1 2026-09-12",
+      "install": "x64-setup.exe from GitHub Releases",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/Zackriya-Solutions/meeting-minutes",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Google Meet 'Take notes for me' (Gemini)",
+      "url": "https://9to5google.com/2026/06/29/google-meet-take-notes-ai-pro-ultra/",
+      "what": "Gemini transcribes calls you host on Meet and writes summary/decisions/next steps into a Google Doc + email",
+      "why": "Already included in your Google AI Pro; no bot joins; notes land in Drive where Gemini/NotebookLM can use them",
+      "cost": "owned (if available on your AI Pro plan in India - test in Meet before relying on it)",
+      "free_limits": "Google AI Pro/Ultra, meetings you host, 8 languages (no Hindi); participants are notified",
+      "windows_fit": "web",
+      "maintained": "Launched for personal AI Pro 2026-06-29; in-person mode Aug 2026",
+      "install": "web (meet.google.com)",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://9to5google.com/2026/06/29/google-meet-take-notes-ai-pro-ultra/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Google Meet Take notes for me",
+      "verdict": "PICK: owned, no bot, notes in Drive"
+    },
+    {
+      "name": "Fathom Free",
+      "verdict": "Best cross-platform free bot"
+    },
+    {
+      "name": "Meetily",
+      "verdict": "Best privacy/local; for PHI calls"
+    },
+    {
+      "name": "Granola",
+      "verdict": "Bot-free, Windows supported per 2026 reviews, but free tier limits conflict (30-day history vs 25 meetings)"
+    },
+    {
+      "name": "Microsoft Teams transcription/Copilot recap",
+      "verdict": "Use for company Teams calls if your tenant licence includes it"
+    },
+    {
+      "name": "Wispr Flow Notetaker",
+      "verdict": "Free weekly cap; disabled on HIPAA accounts"
+    },
+    {
+      "name": "Otter / tl;dv",
+      "verdict": "Not verified this pass"
+    }
+  ],
+  "decision": "Host your own sales and discovery calls on Google Meet and let Gemini take notes: it is already paid for, needs no bot, and writes to Drive. When the other side hosts on Zoom/Teams, use Fathom Free. For healthcare clients or anything with PHI, record only with consent and use Meetily locally (or nothing) unless a BAA is in place.",
+  "note": "Consolidated: Fathom Free is the default because it is confirmed free on Meet, Zoom and Teams. Gemini 'Take notes for me' could not be confirmed for personal AI Pro accounts in India. For healthcare or PHI calls, record only with consent and use Meetily locally.",
+  "details": "Recording consent laws vary by country/state; always announce recording. Not legal advice.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Same tool and free plan verified in the Sales track.",
+    "url": ""
+  },
+  "better_pick": null
+}

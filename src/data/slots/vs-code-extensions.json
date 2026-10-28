@@ -1,0 +1,48 @@
+{
+  "slug": "vs-code-extensions",
+  "slot": "VS Code extensions",
+  "track": "windows-dev",
+  "stage": "build",
+  "region": "Global",
+  "order": 3041,
+  "pick": {
+    "name": "Core set: Claude Code, Remote-WSL, ErrorLens, Biome, Ruff, Playwright, Tailwind",
+    "url": "https://marketplace.visualstudio.com/vscode",
+    "what": "Claude panel, WSL, inline errors, lint/format, E2E, Tailwind, Rust/Tauri",
+    "why": "Covers the stack with minimal overlap",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "not individually verified",
+    "install": "code --install-extension <id>",
+    "license": "various",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://marketplace.visualstudio.com/vscode",
+    "checked": "2026-10-28"
+  },
+  "alts": [],
+  "candidates": [
+    {
+      "name": "Core set",
+      "verdict": "pick"
+    },
+    {
+      "name": "GitLens",
+      "verdict": "lazygit+delta covers it; Pro upsell"
+    },
+    {
+      "name": "Copilot",
+      "verdict": "second AI agent"
+    }
+  ],
+  "decision": "GitLens dropped; Copilot stays off.",
+  "note": "",
+  "details": "Rust/Tauri extensions dropped: the desktop pick is now Electron.",
+  "verify": {
+    "verdict": "doubt",
+    "note": "Only anthropic.claude-code verified; other IDs unchecked (file says so).",
+    "url": "https://marketplace.visualstudio.com/vscode"
+  },
+  "better_pick": null
+}

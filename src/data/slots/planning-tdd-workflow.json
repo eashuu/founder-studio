@@ -1,0 +1,97 @@
+{
+  "slug": "planning-tdd-workflow",
+  "slot": "planning / TDD workflow",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2004,
+  "pick": {
+    "name": "Superpowers (obra)",
+    "url": "https://github.com/obra/superpowers",
+    "what": "Mandatory brainstorm -> worktree -> plan -> subagent execution -> red/green TDD -> review -> finish-branch",
+    "why": "Most adopted methodology (~307k stars), in official marketplace, MIT, very active",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native (no OS-specific notes)",
+    "maintained": "v7.0.1 (21 Oct 2026)",
+    "install": "/plugin install superpowers@claude-plugins-official",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/obra/superpowers/releases",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "feature-dev (official)",
+      "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/feature-dev",
+      "what": "Guided feature workflow with explorer/architect/reviewer agents",
+      "why": "Lighter, first-party; no forced TDD",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "repo pushed 2026-10-28",
+      "install": "/plugin install feature-dev@claude-plugins-official",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/en/plugins/anthropic-marketplaces.md",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "GitHub Spec Kit",
+      "url": "https://github.com/github/spec-kit",
+      "what": "Spec -> plan -> tasks -> implement pipeline, agent-agnostic",
+      "why": "Best for greenfield products or client specs you must hand over",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native (uv)",
+      "maintained": "1.2.4 (27 Oct 2026)",
+      "install": "uvx --from git+https://github.com/github/spec-kit.git specify init",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/github/spec-kit/releases",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Superpowers",
+      "verdict": "pick"
+    },
+    {
+      "name": "feature-dev",
+      "verdict": "lighter first-party option"
+    },
+    {
+      "name": "Spec Kit",
+      "verdict": "wins for spec-first client projects"
+    },
+    {
+      "name": "GSD (get-shit-done)",
+      "verdict": "original repo archived; moved to open-gsd/gsd-core"
+    },
+    {
+      "name": "BMAD",
+      "verdict": "heavy multi-role process; overkill solo"
+    },
+    {
+      "name": "claude-mem make-plan/do",
+      "verdict": "overlaps with other planners; pick one"
+    },
+    {
+      "name": "Built-in plan mode",
+      "verdict": "enough for small tasks"
+    }
+  ],
+  "decision": "Superpowers enforces the TDD + review gates a solo founder has no colleague to enforce, and is the most maintained. Its gates slow small tasks; use plain plan mode for one-file fixes and Spec Kit when a client wants a written spec.",
+  "note": "Consolidated: Superpowers is the one build workflow. Use GitHub Spec Kit only to write a spec or PRD document. Running two plan-and-execute workflows in one repo gives Claude conflicting instructions.",
+  "details": "Disable overlapping planners (claude-mem make-plan/do, orchestration skill) to avoid conflicting instructions.",
+  "verify": {
+    "verdict": "ok",
+    "note": "v7.0.1 on 21 Oct 2026 (v7.0.0 10 Oct), MIT, 306,951 stars (API), pushed 2026-10-23; listed in the official marketplace as 'superpowers'.",
+    "url": "https://github.com/obra/superpowers/releases"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import Tear from '../components/Tear.astro';
+import { meta } from '../lib/data.js';
+---
+<Base title="Playbook" description="Seven phases from a secure machine to a weekly growth routine.">
+  <section class="sheet grain page-head">
+    <span class="label">Playbook</span>
+    <h1>Seven phases, in order</h1>
+    <p>Do the first phase before anything else. After that, start each phase when the work needs it. Each step points at a pick you can read about in the tracks.</p>
+    <Tear seed="pb" side="bottom" />
+  </section>
+  {meta.phases.map((ph, i) => (
+    <section class="strip grain">
+      <Tear seed={`ph${i}t`} side="top" />
+      <div class="stage-head"><span class="label">Phase {i} · {ph.time}</span><h2>{ph.title}</h2></div>
+      <ol class="steps">{ph.steps.map((x) => <li>{x}</li>)}</ol>
+      <Tear seed={`ph${i}b`} side="bottom" />
+    </section>
+  ))}
+</Base>

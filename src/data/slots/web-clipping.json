@@ -1,0 +1,89 @@
+{
+  "slug": "web-clipping",
+  "slot": "web clipping",
+  "track": "productivity",
+  "stage": "run",
+  "region": "Global",
+  "order": 11214,
+  "pick": {
+    "name": "Obsidian Web Clipper",
+    "url": "https://obsidian.md/clipper",
+    "what": "Official browser extension that saves pages/highlights as Markdown into the vault",
+    "why": "Clips land as .md files Claude Code can read; templates per site; in-page highlighter; free and open source",
+    "cost": "free",
+    "free_limits": "Free",
+    "windows_fit": "web (Chrome/Edge/Firefox extension)",
+    "maintained": "1.7.1 2026-07-22; commits 2026-09-22",
+    "install": "Chrome Web Store / Edge Add-ons: 'Obsidian Web Clipper'",
+    "license": "Open source (obsidianmd/obsidian-clipper; licence not re-checked)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://obsidian.md/clipper",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Raindrop.io (Free)",
+      "url": "https://raindrop.io",
+      "what": "Cross-browser bookmark manager with collections and highlights",
+      "why": "Best if you want a visual bookmark library across browsers and phone; free tier unlimited",
+      "cost": "freemium",
+      "free_limits": "Free: unlimited bookmarks/highlights/devices, 100 MB uploads/mo; Pro adds full-text search, permanent copies, AI, MCP",
+      "windows_fit": "web + Android",
+      "maintained": "SaaS, current",
+      "install": "web + extension",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://raindrop.io/pro/buy",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Readwise Reader extension",
+      "url": "https://readwise.io/read",
+      "what": "Save + highlight into Reader, export to Obsidian",
+      "why": "Wins if you already pay for Reader",
+      "cost": "paid",
+      "free_limits": "See Reader pricing",
+      "windows_fit": "web",
+      "maintained": "SaaS",
+      "install": "extension",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://readwise.io/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Obsidian Web Clipper",
+      "verdict": "PICK: output is local Markdown in the notes system"
+    },
+    {
+      "name": "Raindrop.io",
+      "verdict": "Great bookmarks, but data lives in another silo"
+    },
+    {
+      "name": "Readwise Reader",
+      "verdict": "Paid"
+    },
+    {
+      "name": "Karakeep extension",
+      "verdict": "Needs self-hosted server"
+    },
+    {
+      "name": "MarkDownload",
+      "verdict": "Older community extension; official clipper supersedes it"
+    }
+  ],
+  "decision": "Because notes are Obsidian, the official clipper is the obvious best: free, open source and writes straight into the vault. Raindrop is the pick only if you want a separate visual bookmark library. Use Instapaper for 'read later' and the clipper for 'keep forever'.",
+  "note": "",
+  "details": "Mobile clipping on Android: share-to-Obsidian from the browser share sheet (not verified here).",
+  "verify": {
+    "verdict": "ok",
+    "note": "Not deeply checked beyond plausibility.",
+    "url": ""
+  },
+  "better_pick": null
+}

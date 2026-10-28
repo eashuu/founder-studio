@@ -1,0 +1,89 @@
+{
+  "slug": "ui-components-web-desktop-renderer",
+  "slot": "UI components (web + desktop renderer)",
+  "track": "app-stacks",
+  "stage": "build",
+  "region": "Global",
+  "order": 5080,
+  "pick": {
+    "name": "shadcn/ui (Radix/Base UI + Tailwind v4)",
+    "url": "https://ui.shadcn.com",
+    "what": "Copy-in, owned component source + registry/CLI",
+    "why": "You own the code (no lock-in), Claude Code edits it easily, works in Next, TanStack Start and the Electron renderer",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "shadcn 4.23.0 (2026-10-27)",
+    "install": "npx shadcn@latest init",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.npmjs.com/package/shadcn",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Mantine",
+      "url": "https://mantine.dev",
+      "what": "Full component + hooks library",
+      "why": "More ready-made complex components (dates, rich inputs) without copy-in",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "@mantine/core 9.7.4 (2026-10-25)",
+      "install": "npm i @mantine/core @mantine/hooks",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.npmjs.com/package/@mantine/core",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "HeroUI (web)",
+      "url": "https://www.heroui.com",
+      "what": "Tailwind-based component library",
+      "why": "Sister library to HeroUI Native for visual parity across web and mobile",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "@heroui/react 3.2.6 (2026-09-17)",
+      "install": "npm i @heroui/react",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.npmjs.com/package/@heroui/react",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "shadcn/ui (pick)",
+      "verdict": "De-facto default for React+Tailwind; owned code."
+    },
+    {
+      "name": "Mantine",
+      "verdict": "Wins for data-heavy admin UIs needing many prebuilt widgets."
+    },
+    {
+      "name": "HeroUI",
+      "verdict": "Wins if you adopt HeroUI Native on mobile and want matching look."
+    },
+    {
+      "name": "MUI",
+      "verdict": "Mature but heavier, Material look, partly paid (MUI X Pro)."
+    },
+    {
+      "name": "Chakra UI / Radix Themes",
+      "verdict": "Fine, smaller momentum than shadcn."
+    }
+  ],
+  "decision": "shadcn/ui gives owned, Tailwind-based components that the same tokens drive on mobile via Uniwind. Switch to Mantine for admin-heavy B2B apps that need many complex widgets fast.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Version/licence/limits match registry or official page.",
+    "url": "https://registry.npmjs.org/"
+  },
+  "better_pick": null
+}

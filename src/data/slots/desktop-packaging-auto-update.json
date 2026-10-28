@@ -1,0 +1,89 @@
+{
+  "slug": "desktop-packaging-auto-update",
+  "slot": "desktop packaging + auto-update",
+  "track": "app-stacks",
+  "stage": "build",
+  "region": "Global",
+  "order": 5088,
+  "pick": {
+    "name": "electron-builder + electron-updater",
+    "url": "https://www.electron.build",
+    "what": "NSIS/MSIX(AppX)/DMG/AppImage builds + auto-update from GitHub Releases/S3/R2/generic URL",
+    "why": "Most used Electron packager (5.0M/wk); one config builds Store MSIX and direct-download NSIS; updater works with private/static hosting",
+    "cost": "free",
+    "free_limits": "n/a. Note: Electron Forge alt via update.electronjs.org requires a PUBLIC GitHub repo with GitHub Releases (confirmed), so it is unsuitable for closed source; electron-builder pick has no such limit",
+    "windows_fit": "native",
+    "maintained": "electron-builder 26.18.0 (2026-10-20); electron-updater 3.6M/wk",
+    "install": "npm i -D electron-builder && npm i electron-updater",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.npmjs.com/package/electron-builder",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Electron Forge + update-electron-app",
+      "url": "https://www.electronforge.io",
+      "what": "Electron's official packaging/publishing toolchain",
+      "why": "First-party; free update.electronjs.org service for public GitHub repos",
+      "cost": "free",
+      "free_limits": "update service needs public repo (verify)",
+      "windows_fit": "native",
+      "maintained": "@electron-forge/cli 8.0.1 (2026-09-29); update-electron-app 3.3.0",
+      "install": "npm init electron-app@latest",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.npmjs.com/package/@electron-forge/cli",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Tauri bundler + updater plugin",
+      "url": "https://v2.tauri.app/plugin/updater/",
+      "what": "NSIS/MSI + signed latest.json",
+      "why": "If you pick Tauri",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "plugin-updater 2.14.1 (2026-10-28)",
+      "install": "npm run tauri add updater",
+      "license": "MIT OR Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.npmjs.com/package/@tauri-apps/plugin-updater",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "electron-builder (pick)",
+      "verdict": "Broadest targets incl. appx; best for closed-source updates."
+    },
+    {
+      "name": "Electron Forge",
+      "verdict": "Official and simpler for OSS apps; fewer installer options."
+    },
+    {
+      "name": "Tauri bundler",
+      "verdict": "Only with Tauri."
+    },
+    {
+      "name": "Microsoft Store updates",
+      "verdict": "Store handles updates for MSIX installs - use alongside."
+    },
+    {
+      "name": "Velopack",
+      "verdict": "Cross-framework installer/updater; smaller community (not checked)."
+    }
+  ],
+  "decision": "electron-builder builds both the Store MSIX and a direct-download NSIS with auto-update from one config. Use Forge if the app is fully open source and you want the official toolchain.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Alt constraint confirmed.",
+    "url": "https://github.com/electron/update.electronjs.org"
+  },
+  "better_pick": null
+}

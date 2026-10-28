@@ -1,0 +1,93 @@
+{
+  "slug": "editor",
+  "slot": "editor",
+  "track": "windows-dev",
+  "stage": "build",
+  "region": "Global",
+  "order": 3033,
+  "pick": {
+    "name": "VS Code",
+    "url": "https://github.com/microsoft/vscode",
+    "what": "Editor + Claude Code extension",
+    "why": "Largest extension ecosystem for web/Tauri/Electron/Python; first-class Claude extension",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native (user installer)",
+    "maintained": "1.143.1 (2026-10-22)",
+    "install": "installed",
+    "license": "MIT source / MS binary licence",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/microsoft/vscode/releases",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Zed",
+      "url": "https://zed.dev/docs/ai/external-agents",
+      "what": "Fast native editor, Claude via ACP",
+      "why": "Lighter on a no-GPU laptop",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "v1.25.3 (2026-10-23)",
+      "install": "winget install ZedIndustries.Zed",
+      "license": "GPL/Apache mix",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://zed.dev/docs/ai/external-agents",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "IntelliJ IDEA / PyCharm (free unified)",
+      "url": "https://sales.jetbrains.com/hc/en-gb/articles/360021922640",
+      "what": "JetBrains IDEs whose free tier allows commercial use",
+      "why": "Best refactoring for Kotlin/Java",
+      "cost": "free",
+      "free_limits": "free core features, commercial ok; WebStorm free is non-commercial",
+      "windows_fit": "native",
+      "maintained": "2025.3+",
+      "install": "winget/Toolbox",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://sales.jetbrains.com/hc/en-gb/articles/360021922640",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "VS Code",
+      "verdict": "pick"
+    },
+    {
+      "name": "Zed",
+      "verdict": "lighter"
+    },
+    {
+      "name": "IntelliJ/PyCharm free",
+      "verdict": "Kotlin/Python heavy"
+    },
+    {
+      "name": "Cursor / Windsurf (now Devin Desktop) / Antigravity",
+      "verdict": "second AI agent - redundant when Claude Code is the only agent"
+    },
+    {
+      "name": "WebStorm free",
+      "verdict": "non-commercial only"
+    },
+    {
+      "name": "Android Studio",
+      "verdict": "required separately for Android builds"
+    }
+  ],
+  "decision": "With Claude Code as the agent, the editor is for review; VS Code has the best Claude integration and ecosystem.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "1.143.1 (22 Oct 2026).",
+    "url": "https://github.com/microsoft/vscode/releases"
+  },
+  "better_pick": null
+}

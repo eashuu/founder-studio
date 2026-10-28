@@ -1,0 +1,93 @@
+{
+  "slug": "code-review",
+  "slot": "code review",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2005,
+  "pick": {
+    "name": "Built-in /code-review",
+    "url": "https://code.claude.com/docs/en/code-review.md",
+    "what": "Local multi-agent review of your branch or PR on any plan; --comment posts inline",
+    "why": "First-party, on Max at no extra cost; managed Code Review is Team/Enterprise only",
+    "cost": "owned",
+    "free_limits": "uses Max usage",
+    "windows_fit": "native",
+    "maintained": "core",
+    "install": "built-in: /code-review [level] [PR]",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://code.claude.com/docs/en/code-review.md",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Ultrareview",
+      "url": "https://code.claude.com/docs/en/ultrareview.md",
+      "what": "Cloud multi-agent review with verification",
+      "why": "Pre-release deep pass",
+      "cost": "owned",
+      "free_limits": "requires claude.ai sign-in; allowance not checked",
+      "windows_fit": "web",
+      "maintained": "core",
+      "install": "/ultrareview",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/en/code-review.md",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "CodeRabbit",
+      "url": "https://www.coderabbit.ai/pricing",
+      "what": "Hosted PR review bot",
+      "why": "Free forever on public repos - good for open-core repos",
+      "cost": "freemium",
+      "free_limits": "public repos free; Essentials $24-30/dev/mo for private",
+      "windows_fit": "web",
+      "maintained": "live",
+      "install": "GitHub app",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.coderabbit.ai/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "/code-review",
+      "verdict": "pick"
+    },
+    {
+      "name": "Ultrareview",
+      "verdict": "release gate"
+    },
+    {
+      "name": "pr-review-toolkit (official)",
+      "verdict": "role-split agents; overlaps"
+    },
+    {
+      "name": "CodeRabbit",
+      "verdict": "wins for public open-core repos/community PRs"
+    },
+    {
+      "name": "Managed Code Review",
+      "verdict": "Team/Enterprise only"
+    },
+    {
+      "name": "Greptile / Copilot review",
+      "verdict": "paid, second AI vendor"
+    }
+  ],
+  "decision": "Local /code-review is free on Max and first-party. Add CodeRabbit only on public open-core repos where outside contributors send PRs.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "First-party; not re-verified beyond doc existence.",
+    "url": "https://code.claude.com/docs/en/code-review.md"
+  },
+  "better_pick": null
+}

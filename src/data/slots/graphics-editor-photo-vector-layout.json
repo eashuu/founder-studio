@@ -1,0 +1,97 @@
+{
+  "slug": "graphics-editor-photo-vector-layout",
+  "slot": "Graphics editor (photo / vector / layout)",
+  "track": "design",
+  "stage": "discover",
+  "region": "Global",
+  "order": 1159,
+  "pick": {
+    "name": "Affinity (by Canva)",
+    "url": "https://www.affinity.studio",
+    "what": "Pixel, vector and layout studios in one Windows-native app",
+    "why": "Pro-grade and free for individuals, and runs natively on Windows; replaces Photoshop+Illustrator+InDesign.",
+    "cost": "free",
+    "free_limits": "Free for individuals; AI tools need a Canva premium plan; org SSO via Canva Enterprise",
+    "windows_fit": "native (best with a dedicated GPU, runs on mid-range)",
+    "maintained": "relaunched free Oct 2025",
+    "install": "winget/website download (needs free Canva account)",
+    "license": "proprietary freeware",
+    "commercial_ok": "unclear",
+    "needs_company": "no",
+    "source_url": "https://www.affinity.studio",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Canva (free)",
+      "url": "https://www.canva.com",
+      "what": "Template-driven graphics, social posts, docs",
+      "why": "Fastest for social/marketing templates; also Claude Design export target.",
+      "cost": "freemium",
+      "free_limits": "Free tier; Pro ~$120-144/yr (third-party figures)",
+      "windows_fit": "web/native",
+      "maintained": "live",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.canva.com",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Inkscape",
+      "url": "https://inkscape.org",
+      "what": "Open-source vector editor",
+      "why": "Best for hand-tuning SVG logos/icons with zero licence questions.",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "native",
+      "maintained": "1.4.4, 6 May 2026",
+      "install": "winget install Inkscape.Inkscape",
+      "license": "GPL-2.0+",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://inkscape.org",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Affinity",
+      "verdict": "pick"
+    },
+    {
+      "name": "Canva free",
+      "verdict": "alt templates"
+    },
+    {
+      "name": "Inkscape",
+      "verdict": "alt open-source SVG"
+    },
+    {
+      "name": "GIMP 3.2.6",
+      "verdict": "GPL, clunkier UX"
+    },
+    {
+      "name": "Krita 5.3",
+      "verdict": "painting-focused"
+    },
+    {
+      "name": "Photopea",
+      "verdict": "browser Photoshop clone, ads"
+    },
+    {
+      "name": "Adobe Express free",
+      "verdict": "not checked"
+    }
+  ],
+  "decision": "Affinity gives professional raster/vector/layout tools for $0 on Windows. Keep Canva free for quick social templates and Inkscape for SVG cleanup of the logo skill's output.",
+  "note": "",
+  "details": "Affinity's free terms say 'free for individuals'; confirm commercial use by a one-person company in the EULA.",
+  "verify": {
+    "verdict": "doubt",
+    "note": "Official site: 'Affinity is free for individuals (seriously)'; AI tools need a Canva premium plan; Windows build confirmed. Canva's Affinity terms (account-linked, per-device licence) returned 403, so commercial use by a one-person company is still NOT confirmed from a primary source. Keep commercial_ok 'unclear' until the EULA is read. Pick itself is fine for this user.",
+    "url": "https://www.affinity.studio"
+  },
+  "better_pick": null
+}

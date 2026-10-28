@@ -1,0 +1,356 @@
+{
+  "built": "2026-10-28",
+  "stages": [
+    {
+      "key": "discover",
+      "name": "Discover",
+      "blurb": "Find a problem worth solving, size it, and design the answer."
+    },
+    {
+      "key": "build",
+      "name": "Build",
+      "blurb": "Claude Code, the dev machine, the AI stack and the app frameworks."
+    },
+    {
+      "key": "ship",
+      "name": "Ship",
+      "blurb": "Hosting, data, auth, email, monitoring and security on free tiers."
+    },
+    {
+      "key": "sell",
+      "name": "Sell",
+      "blurb": "Pipeline, site, launch, support and the founder's own audience."
+    },
+    {
+      "key": "run",
+      "name": "Run",
+      "blurb": "Money, legal, and the personal system that keeps a solo founder going."
+    }
+  ],
+  "tracks": [
+    {
+      "key": "discover",
+      "name": "Problem + market research",
+      "stage": "discover",
+      "region": "Global",
+      "blurb": "Mining real problems, sizing markets, interviews, validation and specs."
+    },
+    {
+      "key": "design",
+      "name": "Design + brand",
+      "stage": "discover",
+      "region": "Global",
+      "blurb": "Design canvas, UI kits, image/video/voice generation, diagrams and decks."
+    },
+    {
+      "key": "claude-code",
+      "name": "Claude Code",
+      "stage": "build",
+      "region": "Global",
+      "blurb": "Plugins, skills, MCP servers, hooks and workflows for an agent-first build loop."
+    },
+    {
+      "key": "windows-dev",
+      "name": "Windows dev environment",
+      "stage": "build",
+      "region": "Global",
+      "blurb": "Terminal, WSL2, containers, runtimes, secrets and everyday CLI tools on Windows 11."
+    },
+    {
+      "key": "ai-eng",
+      "name": "AI engineering",
+      "stage": "build",
+      "region": "Global",
+      "blurb": "Model access, gateways, agents, RAG, evals, observability, speech and local models without a GPU."
+    },
+    {
+      "key": "app-stacks",
+      "name": "App stacks",
+      "stage": "build",
+      "region": "Global",
+      "blurb": "One TypeScript stack for web, mobile, desktop, APIs and MCP servers, plus store publishing."
+    },
+    {
+      "key": "ship",
+      "name": "Ship + operate",
+      "stage": "ship",
+      "region": "Global",
+      "blurb": "A free, commercial-OK production stack and when to start paying."
+    },
+    {
+      "key": "sales",
+      "name": "Sales + GTM",
+      "stage": "sell",
+      "region": "Global",
+      "blurb": "CRM, outreach, deliverability, site, docs, launches, support and marketplaces."
+    },
+    {
+      "key": "brand",
+      "name": "Personal brand",
+      "stage": "sell",
+      "region": "Global",
+      "blurb": "LinkedIn, X, YouTube, newsletter and a personal site, run in a few hours a week."
+    },
+    {
+      "key": "money",
+      "name": "Money + tax",
+      "stage": "run",
+      "region": "India",
+      "blurb": "Getting paid globally from India: merchant of record, payouts, invoicing, GST and income tax."
+    },
+    {
+      "key": "legal",
+      "name": "Legal + compliance",
+      "stage": "run",
+      "region": "India + global",
+      "blurb": "Entity, trademarks, contracts, DPDP, GDPR, EU AI Act, HIPAA and SOC 2 for a solo founder."
+    },
+    {
+      "key": "productivity",
+      "name": "Productivity",
+      "stage": "run",
+      "region": "Global",
+      "blurb": "Notes, tasks, calendar, meetings, dictation and backups."
+    },
+    {
+      "key": "learning",
+      "name": "Learning radar",
+      "stage": "run",
+      "region": "Global",
+      "blurb": "Newsletters, papers, feeds, courses and a weekly 45-minute radar routine."
+    }
+  ],
+  "decisions": [
+    {
+      "title": "Web framework and hosting",
+      "body": "Next.js stays the web pick for its ecosystem and because Claude Code knows it best. It deploys to Cloudflare Workers through the OpenNext adapter (Next.js 16.2.3+), so it fits the free, commercial-OK default stack. Vercel Hobby is non-commercial, so Vercel is only an option on Pro.",
+      "url": "https://opennext.js.org/cloudflare"
+    },
+    {
+      "title": "One booking tool",
+      "body": "Cal.com Free covers customer interviews and sales calls in one account, with a free Attio sync. It replaces Google appointment schedules in the Discover track.",
+      "url": ""
+    },
+    {
+      "title": "Meeting notes",
+      "body": "Fathom Free is the default, Meetily handles healthcare/PHI calls locally, and Gemini Meet notes are an extra only if your account has them.",
+      "url": ""
+    },
+    {
+      "title": "One build workflow",
+      "body": "Superpowers runs the plan-test-build loop. Spec Kit only writes spec documents. Disable other planners in the same repo.",
+      "url": ""
+    },
+    {
+      "title": "Jobs",
+      "body": "Cloudflare Queues by default. Inngest only for multi-step LLM workflows.",
+      "url": ""
+    },
+    {
+      "title": "Newsletters",
+      "body": "Substack for you, Kit for products. Start with Substack.",
+      "url": ""
+    },
+    {
+      "title": "Sending mail for outreach",
+      "body": "Zoho Mail Forever Free has no IMAP or SMTP access, so sequencers can't send through it. Apollo's free plan connects Gmail only. Put outbound mailboxes on a separate lookalike domain in Google Workspace when outbound starts, and keep Zoho or Cloudflare routing for the main domain.",
+      "url": ""
+    },
+    {
+      "title": "Payouts",
+      "body": "Dodo pays out in USD/GBP/EUR only. Route payouts to a bank account that accepts foreign inward remittance and keep the FIRA for GST export proof. Verify the setup with your CA.",
+      "url": ""
+    },
+    {
+      "title": "Healthcare clients",
+      "body": "None of the free plans in the default stack signs a HIPAA BAA. Before PHI arrives: AWS (self-serve BAA, Bedrock HIPAA-eligible) or Google Cloud (self-serve BAA), Neon Scale, Sentry Business, PostHog Boost or higher. Anthropic and OpenAI BAAs go through sales.",
+      "url": ""
+    }
+  ],
+  "notes": [
+    {
+      "sev": "high",
+      "title": "Bypass mode on native Windows has no sandbox",
+      "body": "Claude Code's Bash sandbox runs in WSL2, not on native Windows. If you skip permission prompts there, every command runs unisolated. Use auto mode with allow and deny rules, and open untrusted repos inside WSL2 with /sandbox."
+    },
+    {
+      "sev": "high",
+      "title": "Keep client and health data off free AI tiers",
+      "body": "Gemini API free-tier terms forbid sending sensitive or personal data and require the paid tier for apps offered in the EEA. Consumer AI subscriptions carry no HIPAA BAA. Use paid, no-training endpoints for customer data. Claude Max API credits may power your own products."
+    },
+    {
+      "sev": "med",
+      "title": "Docker Desktop licence on a company laptop",
+      "body": "Docker Desktop is free only for companies under 250 employees and under $10M revenue, and on a work machine that test applies to your employer. Docker Engine inside WSL2 has no licence test."
+    },
+    {
+      "sev": "med",
+      "title": "Pin GitHub Actions and Python deps",
+      "body": "Trivy's GitHub Action tags were hijacked on 19-20 March 2026 (CVE-2026-33634), and LiteLLM 1.82.7-1.82.8 on PyPI were credential stealers on 24 March 2026. Pin actions to post-incident commit SHAs, pin package versions, and run zizmor on your workflows. If you ever installed those LiteLLM versions, remove litellm_init.pth and rotate secrets."
+    },
+    {
+      "sev": "low",
+      "title": "One free Workers quota for everything",
+      "body": "On Cloudflare's free plan, your MCP server, API, AI Gateway logs and site share 100k requests a day. Move to Workers Paid ($5/mo) or split accounts as traffic grows."
+    }
+  ],
+  "phases": [
+    {
+      "title": "Secure your machine",
+      "time": "1 hour",
+      "steps": [
+        "Turn off bypass permissions in Claude Code; use auto mode with allow and deny rules.",
+        "Install and sign in to the GitHub CLI: gh auth login.",
+        "On a company laptop, check the Docker Desktop licence test; otherwise use Docker Engine in WSL2 Ubuntu 24.04.",
+        "Install uv standalone and keep one global Python.",
+        "Remove MCP servers and plugins you don't use; each one costs context."
+      ]
+    },
+    {
+      "title": "Claude Code core",
+      "time": "half a day",
+      "steps": [
+        "Install the official LSP plugins for TypeScript and Python.",
+        "Install Superpowers as your one build workflow.",
+        "Add the Playwright CLI and skills, Context7 and Exa.",
+        "Install Scoop (user scope) and the CLI set: lazygit, delta, fd, fzf, bat, zoxide.",
+        "Set up Infisical so secrets never sit in plaintext .env files."
+      ]
+    },
+    {
+      "title": "Free accounts",
+      "time": "half a day",
+      "steps": [
+        "Create accounts on GitHub, Cloudflare (Workers, R2, DNS, Email Routing, Web Analytics), Neon, Resend, Sentry, PostHog and UptimeRobot.",
+        "Register your domain at Cloudflare Registrar.",
+        "Get a Gemini API key for prototypes only; claim Claude Max API credits in the Console for products."
+      ]
+    },
+    {
+      "title": "Product stack",
+      "time": "first project",
+      "steps": [
+        "Scaffold with Better-T-Stack: pnpm + Turborepo, Next.js 16.2.3+, Hono, Drizzle on Neon and Expo. Add the Electron app by hand with electron-builder, because Electron isn't a Better-T-Stack option.",
+        "Deploy the web app with @opennextjs/cloudflare, and the API and MCP server on Workers with the OAuth provider.",
+        "Put Langfuse tracing and promptfoo evals in CI from day one.",
+        "Use EAS free builds for mobile and run the Play Console closed test (12 testers, 14 days).",
+        "Ship desktop as MSIX through the Microsoft Store for free signing."
+      ]
+    },
+    {
+      "title": "Money and legal (India)",
+      "time": "before the first invoice",
+      "steps": [
+        "Onboard to Dodo Payments as an individual. Use Razorpay for INR customers and Skydo or Wise for service invoices.",
+        "Keep invoices and books in Zoho Books Free, register on Udyam, and have a CA review GST and Section 58 before the first export invoice.",
+        "Adopt Common Paper templates, DocuSeal for e-signature, and Probo for a trust page.",
+        "File the trademark (classes 9 and 42) once the name is final."
+      ]
+    },
+    {
+      "title": "Sell",
+      "time": "ongoing",
+      "steps": [
+        "Set up Attio Free as the CRM and Apollo for data and sequences, sending from a separate domain with DMARC.",
+        "Use Cal.com Free for interviews and sales, Fathom Free for notes, and Meetily for calls with health data.",
+        "Build an Astro site and Starlight docs on Cloudflare, with Search Console and Ahrefs Webmaster Tools.",
+        "Add Chatwoot, UserJot and Supademo when users arrive. Launch on Show HN, Product Hunt and Peerlist."
+      ]
+    },
+    {
+      "title": "Run and grow",
+      "time": "weekly",
+      "steps": [
+        "Run Obsidian as your second brain, GitHub Projects as the backlog, Super Productivity for daily planning and Reclaim Lite for calendars.",
+        "Post natively on LinkedIn, schedule with Buffer Free, and start a Substack.",
+        "Every Friday, spend 45 minutes on Inoreader, Hugging Face Daily Papers, AINews, Simon Willison and Import AI."
+      ]
+    }
+  ],
+  "unverified": [
+    "15-month export realisation period (Nov 2025 amendment per secondary source)",
+    "AI Tinkerers India chapter 2026 event dates (pages returned 403)",
+    "Agent view behaviour on native Windows (doc mentions Windows quirks, no support matrix)",
+    "Anthropic BAA specifics for Bedrock/Vertex Claude and India data residency",
+    "Anytype free-tier limits and whether its Any Source Available License restricts commercial use",
+    "Banks accepting export receipts into savings accounts and issuing FIRA/eBRC",
+    "Bitwarden Secrets Manager and Phase free tiers; Proton Pass CLI/SSH agent",
+    "Bonterms licence terms; oneNDA",
+    "Brevo free 300/day from third-party reviews (Brevo page returned no content)",
+    "CSA STAR Level 1 listing fee",
+    "Canva free commercial-use terms and Gamma free export limits (official pages 403)",
+    "Cloud Run free quotas taken from Google locale pages/search; main pricing page fetch truncated",
+    "Cloudflare AI Gateway/OpenRouter/Vercel gateway BAA coverage for PHI",
+    "Cloudflare Web Analytics site/retention limits; Hyperdrive free-plan terms; Cloudflare Email Service pricing (beta, Workers Paid)",
+    "Cloudflare Workers free-plan limits for MCP hosting / Durable Objects",
+    "Codemagic free plan: commercial use not stated on pricing page",
+    "Commercial-use terms not read (ToS) for: Oracle Always Free, Netlify Free (forum says yes), Grafana Cloud Free, Axiom Personal, Prisma Postgres Free, Mixpanel Free, Brevo Free, ngrok Free, Doppler Free, Zoho Mail Free, Inngest Free, QStash Free, Cloud Run free tier",
+    "Creem checkout currencies (USD/EUR only per a competitor review)",
+    "Docker Engine current version; Podman/Rancher compose and Testcontainers parity",
+    "Dodo '15c' is unlabeled in the table; FAQ says '15 cents' (assumed USD)",
+    "Dodo payout fees: pricing table says payouts Free, FAQ says $5 if < $1,000, older docs (search snippet) said Rs5 domestic INR / $5 + 1% international; confirm with Dodo",
+    "Electron Forge update.electronjs.org public-repo requirement (from memory)",
+    "Exa MCP calls billed at regular search rates (pricing page doesn't say)",
+    "Exact Gemini app per-day counts for Deep Research, images, video on AI Pro (Google publishes only 4x multiplier, 5-h refresh, weekly cap)",
+    "F5Bot free keyword cap and commercial use on free",
+    "Fontshare app-embedding restriction",
+    "GIFT City relevance for SaaS (not researched)",
+    "GST: Notification 10/2017-IT coverage of export-only suppliers; RCM compulsory registration (s24) interplay with OIDAR; GST treatment of MoR payouts (foreign vs Indian MoR entity); LUT invoice wording -- VERIFY WITH A CA",
+    "Gemma 4 licence is Apache-2.0 only per secondary sources (Google page does not name it)",
+    "GlitchTip licence/last release (GitLab project not checked); Inngest server licence",
+    "Google Play new fee structure rollout timing for India; Microsoft Store not researched",
+    "Google Slides Gemini full-deck generation in AI Pro (search summary of a 30 Jun 2026 Workspace Updates post)",
+    "Google Stitch free quota and commercial terms",
+    "Granola Windows app availability",
+    "Granola Windows app availability (not stated on pricing page)",
+    "Granola free tier limits and Windows support (sources conflict)",
+    "Groq: whether the rate-limit table shows Free or Developer plan values",
+    "HIPAA/BAA availability on any of these vendors' plans (not researched)",
+    "Hetzner exact plan names/prices (page showed 'from EUR 5.99/6.49'); Google Workspace and Zoho Mail Lite India prices",
+    "Income tax: s.58 table limits/rates and assessee-wide disqualification for mixed profession+business income; whether SaaS subscription income is business vs 'information technology' profession -- VERIFY WITH A CA",
+    "India's Madrid Protocol membership date (from memory)",
+    "Indian entity annual compliance costs (blog ranges conflict, Rs 15k-2.5 lakh); verify with a CA",
+    "Instapaper long-term ownership/future (competitor calls it unclear)",
+    "Invoice Ninja free hosted client cap (5 on pricing page vs 20 in reviews); GST-format support",
+    "Kaggle weekly GPU quota hours; Colab limits undisclosed",
+    "Kdenlive Whisper subtitles working on current Windows build (older bug reports only)",
+    "Kit free plan limits (kit.com returned 429; secondary source)",
+    "Kling and Ideogram free-tier limits and commercial terms (pages not readable)",
+    "Langfuse supported self-host Enterprise bundled with ClickHouse plans (secondary source)",
+    "MCP Inspector and MCP Registry exact licences; MCPB latest release date",
+    "Maestro native Windows install (README says WSL; docs reference native) and latest release date",
+    "Matchmaker.fm free plan details (only via Talks.co comparison)",
+    "Maze, Useberry, Ubersuggest, Coolors, Brandfetch pricing",
+    "Mistral Experiment plan limits (docs URL returned 404)",
+    "NotebookLM per-day limits (500 chats, 20 audio, 20 video overviews, 20 Deep Research) come from 9to5Google May 2026, not Google's page",
+    "PI/cyber premiums; sole-proprietor eligibility at BimaKavach",
+    "Pages blocked or unreadable (403/JS-only), facts from search summaries: Canva, Brandfetch, Inkscape, Google Fonts, Ideogram, Kling, Google Cloud TTS pricing, Workspace Updates post",
+    "Photopea ads on free tier",
+    "Portkey->Palo Alto and Helicone->Mintlify acquisitions rest on secondary sources; promptfoo->OpenAI (2026-03-09) confirmed by repo README text",
+    "PostHog free allowances (1M events, 5k recordings, 1M flags, 100k exceptions, 1.5k surveys) from search of pricing page; direct fetch truncated",
+    "PyCon India 2026 dates and CFP",
+    "Razorpay MCP Claude Code command (adapted from Desktop config)",
+    "Real CPU tokens/sec for Gemma 4 / gpt-oss-20b on this AMD laptop; India-language accuracy of whisper.cpp/Kokoro",
+    "Recording/consent law for meeting notes and any HIPAA/PHI handling: verify with a lawyer",
+    "Ref.tools current pricing (only a launch-era article)",
+    "Sentry/PostHog/Vercel/Firebase free limits; Vercel Hobby non-commercial clause; Sentry MCP licence",
+    "Ultrareview allowance on Max",
+    "Uniwind Pro price; PostHog error-tracking free tier; Nx Cloud free tier; Expo Observability pricing",
+    "Upwork fee/Connects (official page 403; secondary 2026 sources); Contra/Upwork payout to India and FIRA",
+    "Vanta/Drata/Sprinto/Secureframe pricing (secondary comparison sites); Comp AI pricing quote-only",
+    "Vercel AI Gateway free monthly credit amount",
+    "Warp Free login requirement and commercial terms",
+    "Wasp/Open SaaS native-Windows support",
+    "WebStorm/DataGrip non-commercial terms (JetBrains page 404; secondary source)",
+    "Whether FastEmbed supports Qwen3-Embedding/EmbeddingGemma checkpoints",
+    "Wise India receive fees, e-FIRA charge and conversion % (competitor blogs only); Payoneer fees (competitor-sourced)",
+    "Workers Free CPU (10 ms) vs Better Auth password hashing in practice",
+    "Zoho Sign paid prices and Aadhaar eSign per-credit cost",
+    "claude-mem local worker port exposure (README silent)",
+    "llama.rn stable (non-RC) release; npm latest is 0.13.0-rc.8",
+    "pgvector licence text (page does not name it; PostgreSQL licence assumed)",
+    "react-native-executorch licence stated on docs page (npm metadata says MIT)",
+    "tl;dv free limits; mail-tester free quota; BetaList pricing; Peerlist backlink rel attribute",
+    "whisper.cpp v1.9.5 release year (page showed '06 Oct'); Moonshine release date and pip package name"
+  ]
+}

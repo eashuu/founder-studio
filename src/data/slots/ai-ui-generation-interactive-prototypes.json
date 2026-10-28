@@ -1,0 +1,93 @@
+{
+  "slug": "ai-ui-generation-interactive-prototypes",
+  "slot": "AI UI generation + interactive prototypes",
+  "track": "design",
+  "stage": "discover",
+  "region": "Global",
+  "order": 1151,
+  "pick": {
+    "name": "Claude Design",
+    "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+    "what": "Chat-to-design canvas: prototypes, wireframes, one-pagers, decks; imports your design system; hands off to Claude Code",
+    "why": "Direct handoff into Claude Code (/design, /design-sync), reads your codebase design system, and exports HTML/PPTX/PDF/Google Slides.",
+    "cost": "owned",
+    "free_limits": "Included on Free/Pro/Max; counts toward the same Claude usage pool as Claude Code (no separate weekly allowance)",
+    "windows_fit": "web/desktop",
+    "maintained": "live; standalone claude.ai/design closes 14 Dec 2026 (moves into Claude)",
+    "install": "web; /design in Claude Code",
+    "license": "Anthropic ToS",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Google Stitch",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/",
+      "what": "Google Labs AI UI design with MCP server/SDK, export to AI Studio/Antigravity/Netlify",
+      "why": "Free and does not consume Claude usage; use for bulk screen exploration.",
+      "cost": "free",
+      "free_limits": "Free; quota unverified",
+      "windows_fit": "web",
+      "maintained": "updates Mar/May 2026",
+      "install": "web",
+      "license": "Google Labs ToS",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "v0 (Vercel)",
+      "url": "https://v0.app/pricing",
+      "what": "Prompt-to-React/shadcn UI with Vercel deploy and GitHub sync",
+      "why": "Best when you want shadcn/Next.js code out of a generator.",
+      "cost": "freemium",
+      "free_limits": "Free: 7 messages/day, $5 one-time credits; Plus $30/user/mo",
+      "windows_fit": "web",
+      "maintained": "live service",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://v0.app/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Claude Design",
+      "verdict": "pick"
+    },
+    {
+      "name": "Google Stitch",
+      "verdict": "alt free, off the Claude meter"
+    },
+    {
+      "name": "v0",
+      "verdict": "alt, 7 msgs/day free"
+    },
+    {
+      "name": "Figma Make",
+      "verdict": "within Figma's 500 AI credits/mo Starter cap"
+    },
+    {
+      "name": "Lovable / Bolt",
+      "verdict": "full-app builders, credit-limited, overlap Claude Code"
+    },
+    {
+      "name": "Magic Patterns / UX Pilot",
+      "verdict": "niche paid tools"
+    }
+  ],
+  "decision": "Claude Design wins on handoff: the prototype becomes code in the same toolchain. When Claude usage is tight (heavy coding weeks), explore in Stitch for free and import the result.",
+  "note": "",
+  "details": "Prototyping slot merged here: Claude Design prototypes are clickable HTML.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Support article: 'The standalone version at claude.ai/design closes on December 14, 2026'; same usage pool as Claude Code, separate weekly allowance retired; exports zip/PDF/PPTX/Google Slides/HTML plus Canva etc.; /design and /design-sync confirmed.",
+    "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design"
+  },
+  "better_pick": null
+}

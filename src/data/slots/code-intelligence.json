@@ -1,0 +1,85 @@
+{
+  "slug": "code-intelligence",
+  "slot": "code intelligence",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2003,
+  "pick": {
+    "name": "Official LSP plugins: typescript-lsp + pyright-lsp (+rust-analyzer-lsp, kotlin-lsp when needed)",
+    "url": "https://code.claude.com/docs/en/plugins/code-intelligence.md",
+    "what": "Diagnostics after every edit + read-only LSP navigation tool",
+    "why": "Catches type errors Claude introduces before build; Anthropic-maintained; no MCP context cost",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "official marketplace pushed 2026-10-28",
+    "install": "npm i -g typescript-language-server typescript pyright; /plugin install typescript-lsp@claude-plugins-official; /plugin install pyright-lsp@claude-plugins-official",
+    "license": "Apache-2.0 (plugins)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://code.claude.com/docs/en/plugins/code-intelligence.md",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Serena (oraios)",
+      "url": "https://github.com/oraios/serena",
+      "what": "LSP-backed MCP with symbol-level edits (rename, replace body, find refs)",
+      "why": "Adds symbol editing the LSP tool lacks; useful on large codebases",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "v2.1.0 (19 Oct 2026)",
+      "install": "installed",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/oraios/serena/releases",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "claude-mem smart-explore",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "what": "Tree-sitter outline/search skill",
+      "why": "Already present if claude-mem stays",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "see memory slot",
+      "install": "installed",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/thedotmack/claude-mem",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Official LSP plugins",
+      "verdict": "pick"
+    },
+    {
+      "name": "Serena",
+      "verdict": "runner-up; keep only if you use its edit tools after LSP plugins land"
+    },
+    {
+      "name": "claude-context (Zilliz)",
+      "verdict": "semantic code search; needs embedding API + vector DB"
+    },
+    {
+      "name": "claude-mem smart-explore",
+      "verdict": "outline only, no diagnostics"
+    }
+  ],
+  "decision": "Post-edit diagnostics are the biggest quality win and only the LSP plugins give them. Re-check Serena after a week: drop it if Claude never calls its symbol-edit tools.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "typescript-lsp and pyright-lsp present in official marketplace.",
+    "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins"
+  },
+  "better_pick": null
+}

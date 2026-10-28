@@ -1,0 +1,85 @@
+{
+  "slug": "work-tracker-mcp",
+  "slot": "work tracker MCP",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2026,
+  "pick": {
+    "name": "GitHub Issues/Projects via gh",
+    "url": "https://cli.github.com",
+    "what": "Tracker with no extra MCP",
+    "why": "$0, one less SaaS, Claude already uses gh",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "installed",
+    "install": "gh auth login",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://cli.github.com",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Linear (via installed design plugin connector)",
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "what": "Linear MCP",
+      "why": "If you outgrow Issues",
+      "cost": "freemium",
+      "free_limits": "Linear free plan",
+      "windows_fit": "native",
+      "maintained": "listed",
+      "install": "authenticate from /mcp",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/anthropics/claude-plugins-official",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Notion (via installed design plugin connector)",
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "what": "Docs + light tracking",
+      "why": "If Notion is your wiki",
+      "cost": "freemium",
+      "free_limits": "Notion free",
+      "windows_fit": "native",
+      "maintained": "listed",
+      "install": "authenticate from /mcp",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/anthropics/claude-plugins-official",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "GitHub Issues",
+      "verdict": "pick"
+    },
+    {
+      "name": "Linear",
+      "verdict": "best UX, add when collaborators join"
+    },
+    {
+      "name": "Notion",
+      "verdict": "wiki"
+    },
+    {
+      "name": "Atlassian/twg",
+      "verdict": "company work - keep separate"
+    }
+  ],
+  "decision": "Solo: one tracker, the one already next to the code.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Consistent with D's GitHub Projects roadmap pick.",
+    "url": "https://cli.github.com"
+  },
+  "better_pick": null
+}

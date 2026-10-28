@@ -1,0 +1,85 @@
+{
+  "slug": "notifications",
+  "slot": "notifications",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2014,
+  "pick": {
+    "name": "Remote Control push notifications",
+    "url": "https://code.claude.com/docs/en/remote-control.md",
+    "what": "Phone push when Claude finishes or needs input",
+    "why": "Already enabled; works away from the desk",
+    "cost": "owned",
+    "free_limits": "Pro/Max",
+    "windows_fit": "native",
+    "maintained": "core",
+    "install": "/config",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://code.claude.com/docs/en/remote-control.md",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Orca notifications",
+      "url": "https://github.com/stablyai/orca",
+      "what": "Desktop alerts when an agent needs input",
+      "why": "Already via Orca",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "v1.4.243",
+      "install": "installed",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/stablyai/orca",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Terminal bell / Notification hook",
+      "url": "https://code.claude.com/docs/en/terminal-config.md",
+      "what": "Windows Terminal has no default desktop notification; set preferredNotifChannel terminal_bell or a PowerShell hook",
+      "why": "Offline fallback",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "doc current",
+      "install": "/config or hooks",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/en/terminal-config.md",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Remote Control push",
+      "verdict": "pick"
+    },
+    {
+      "name": "Orca",
+      "verdict": "desktop"
+    },
+    {
+      "name": "Bell/hook",
+      "verdict": "fallback"
+    },
+    {
+      "name": "ntfy/Pushover hooks",
+      "verdict": "third-party relay; unnecessary"
+    }
+  ],
+  "decision": "Phone push + Orca desktop alerts already cover it; don't add more.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Doc: 'When Remote Control is active, Claude can send push notifications to your phone'; skipped while you focus the terminal.",
+    "url": "https://code.claude.com/docs/en/remote-control.md"
+  },
+  "better_pick": null
+}

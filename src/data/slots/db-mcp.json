@@ -1,0 +1,89 @@
+{
+  "slug": "db-mcp",
+  "slot": "DB MCP",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2016,
+  "pick": {
+    "name": "DBHub (Bytebase)",
+    "url": "https://github.com/bytebase/dbhub",
+    "what": "One MCP for Postgres/MySQL/SQL Server/MariaDB/Oracle/SQLite with read-only mode, row limits, timeouts",
+    "why": "Multi-DB, guardrails, active",
+    "cost": "free",
+    "free_limits": "OSS",
+    "windows_fit": "native (npx)",
+    "maintained": "v1.5.0 (9 Oct 2026)",
+    "install": "claude mcp add dbhub -- npx @bytebase/dbhub@latest --config dbhub.toml  (dbhub.toml: [[sources]] dsn=...; [[tools]] ... readonly = true)",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/bytebase/dbhub/releases",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Postgres MCP Pro (crystaldba)",
+      "url": "https://github.com/crystaldba/postgres-mcp",
+      "what": "Postgres health checks, index tuning, EXPLAIN with hypothetical indexes; restricted mode",
+      "why": "Wins for Postgres performance work",
+      "cost": "free",
+      "free_limits": "OSS",
+      "windows_fit": "native (uv/pipx, Python 3.12+)",
+      "maintained": "last commit 2026-08-16",
+      "install": "uvx postgres-mcp --access-mode=restricted",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/crystaldba/postgres-mcp/commits/main",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Supabase / Neon official plugins",
+      "url": "https://github.com/supabase/mcp",
+      "what": "Hosted-DB MCP incl. branching/auth",
+      "why": "Use the one matching your DB host",
+      "cost": "freemium",
+      "free_limits": "vendor free tiers",
+      "windows_fit": "native (hosted)",
+      "maintained": "pushed 2026-10-28",
+      "install": "/plugin install supabase@claude-plugins-official",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/supabase/mcp",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "DBHub",
+      "verdict": "pick"
+    },
+    {
+      "name": "Postgres MCP Pro",
+      "verdict": "tuning"
+    },
+    {
+      "name": "Supabase/Neon",
+      "verdict": "host-specific"
+    },
+    {
+      "name": "Anthropic reference postgres server",
+      "verdict": "archived reference"
+    },
+    {
+      "name": "psql via Bash",
+      "verdict": "zero install fallback"
+    }
+  ],
+  "decision": "DBHub covers every engine you might touch with read-only guardrails; add Postgres MCP Pro when tuning queries. Never point a write-capable DB MCP at production.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "fixed",
+    "note": "v1.5.0 (9 Oct 2026) is latest. There is no read-only CLI flag: read-only is `readonly = true` inside a [[tools]] block of the TOML config (default false).",
+    "url": "https://dbhub.ai/config/toml"
+  },
+  "better_pick": null
+}

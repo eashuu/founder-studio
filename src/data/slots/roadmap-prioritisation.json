@@ -1,0 +1,101 @@
+{
+  "slug": "roadmap-prioritisation",
+  "slot": "Roadmap + prioritisation",
+  "track": "discover",
+  "stage": "discover",
+  "region": "Global",
+  "order": 149,
+  "pick": {
+    "name": "GitHub Projects",
+    "url": "https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects",
+    "what": "Issues/PRs in table, board and timeline-roadmap views with custom fields and automation",
+    "why": "Lives next to the code; Claude Code drives it with gh, no issue cap, no extra vendor.",
+    "cost": "free",
+    "free_limits": "Free with GitHub; 50 fields per project",
+    "windows_fit": "web",
+    "maintained": "live service",
+    "install": "gh project --help (GitHub CLI)",
+    "license": "proprietary SaaS",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Linear (free)",
+      "url": "https://linear.app/pricing",
+      "what": "Fast issue tracker with roadmaps and MCP",
+      "why": "Best UX and an official MCP; 250-issue cap on free.",
+      "cost": "freemium",
+      "free_limits": "Free: unlimited members, 250 issues, 2 teams, 10 MB uploads. Basic $10/user/mo",
+      "windows_fit": "web/native",
+      "maintained": "live service",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://linear.app/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Featurebase (free)",
+      "url": "https://www.featurebase.app/pricing",
+      "what": "Public feedback board + roadmap + changelog",
+      "why": "Add when customers should vote on the roadmap.",
+      "cost": "freemium",
+      "free_limits": "Free: 1 seat, 1 feedback board, 1 roadmap, 500 survey shows/mo; Growth $29/seat/mo",
+      "windows_fit": "web",
+      "maintained": "live service",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.featurebase.app/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "GitHub Projects",
+      "verdict": "pick"
+    },
+    {
+      "name": "Linear",
+      "verdict": "alt"
+    },
+    {
+      "name": "Featurebase",
+      "verdict": "alt public roadmap"
+    },
+    {
+      "name": "Plane",
+      "verdict": "AGPL, cloud free up to 12 users"
+    },
+    {
+      "name": "Trello",
+      "verdict": "10 boards free"
+    },
+    {
+      "name": "Notion",
+      "verdict": "AI paid"
+    },
+    {
+      "name": "Canny",
+      "verdict": "free 25 tracked users"
+    },
+    {
+      "name": "Fider",
+      "verdict": "AGPL self-host feedback board"
+    }
+  ],
+  "decision": "GitHub Projects has no item cap and sits where Claude Code already works. Switch to Linear when you hire and want its speed; add Featurebase when you need a customer-facing roadmap.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "GitHub Projects; Linear and Featurebase alt limits confirmed.",
+    "url": "https://linear.app/pricing"
+  },
+  "better_pick": null
+}

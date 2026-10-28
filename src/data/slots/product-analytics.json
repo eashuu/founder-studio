@@ -1,0 +1,89 @@
+{
+  "slug": "product-analytics",
+  "slot": "Product analytics",
+  "track": "ship",
+  "stage": "ship",
+  "region": "Global",
+  "order": 6114,
+  "pick": {
+    "name": "PostHog Cloud",
+    "url": "https://posthog.com/pricing",
+    "what": "Analytics, replay, flags, experiments, surveys, errors, LLM analytics",
+    "why": "Largest free bundle; one SDK covers 5 tools; EU or US cloud; MIT core self-hostable",
+    "cost": "freemium",
+    "free_limits": "Monthly free: 1M events, 5k recordings, 1M flag requests, 100k exceptions, 1,500 survey responses (per search of pricing page; fetch truncated); 1 project on free; billing caps per product",
+    "windows_fit": "web",
+    "maintained": "posthog-js 1.441.0 2026-10-28",
+    "install": "npx -y @posthog/wizard@latest",
+    "license": "posthog-js npm: Apache-2.0 AND MIT; PostHog server MIT (ee/ separate)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://posthog.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Mixpanel Free",
+      "url": "https://mixpanel.com/pricing/",
+      "what": "Event analytics",
+      "why": "Strongest pure analytics UI; 1M events + 10k replays",
+      "cost": "freemium",
+      "free_limits": "1M events/mo, 10k replays, unlimited seats, 5 saved reports/seat; Growth starts at $0 with per-event billing above 1M",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "npm i mixpanel-browser",
+      "license": "service",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://mixpanel.com/pricing/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Umami (self-host)",
+      "url": "https://umami.is/pricing",
+      "what": "Simple OSS analytics",
+      "why": "If you only need traffic + custom events",
+      "cost": "free",
+      "free_limits": "Self-host free; Cloud Hobby 100k events, 1 site, 6-month retention",
+      "windows_fit": "web",
+      "maintained": "v3.4.1 2026-10-23",
+      "install": "docker compose up -d",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://umami.is/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "PostHog",
+      "verdict": "PICK; pricing says >90% of companies use it free"
+    },
+    {
+      "name": "Mixpanel",
+      "verdict": "Alt: better funnels UI, fewer extra tools"
+    },
+    {
+      "name": "Umami",
+      "verdict": "Alt: lightweight"
+    },
+    {
+      "name": "Amplitude",
+      "verdict": "Not checked; similar to Mixpanel"
+    },
+    {
+      "name": "June",
+      "verdict": "Shut down (2025, not re-verified)"
+    }
+  ],
+  "decision": "PostHog replaces analytics, replay, flags, surveys and backup error tracking with one SDK and generous free quotas. Never send PHI to it for healthcare clients; use self-host or strip properties.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "doubt",
+    "note": "posthog.com/pricing is JS-rendered (fetch and curl return no allowances). The figures match PostHog's long-standing published allowances but are not primary-confirmed here. posthog-js 1.441.0 (2026-10-28) confirmed; npm licence field is 'Apache-2.0 AND MIT', not plain MIT.",
+    "url": "https://posthog.com/pricing"
+  },
+  "better_pick": null
+}

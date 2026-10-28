@@ -1,0 +1,69 @@
+{
+  "slug": "business-insurance-pi-cyber-in-india",
+  "slot": "Business insurance (PI / cyber) in India",
+  "track": "legal",
+  "stage": "run",
+  "region": "India",
+  "order": 10185,
+  "pick": {
+    "name": "BimaKavach (online broker)",
+    "url": "https://www.bimakavach.com/blog/professional-indemnity-insurance-for-it-companies-what-you-need-to-know/",
+    "what": "Online comparison/purchase of PI and cyber policies from many Indian insurers, incl. a freelancer PI product",
+    "why": "Quotes from 20+ insurers online with digital policies; covers IT-specific PI risks (software failure, data breach claims)",
+    "cost": "paid",
+    "free_limits": "No free tier; premium depends on revenue, client geography, limit",
+    "windows_fit": "web",
+    "maintained": "page live 2026-10-28",
+    "install": "web",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "unclear",
+    "source_url": "https://www.bimakavach.com/blog/professional-indemnity-insurance-for-it-companies-what-you-need-to-know/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Mitigata (broker)",
+      "url": "https://mitigata.com/blog/?p=5452",
+      "what": "PI/cyber broker working with HDFC ERGO, ICICI Lombard, Bajaj Allianz",
+      "why": "Alternative broker; useful for cyber cover; advertises Rs 5 cr PI cover at Rs 75,000/yr (conditions unstated)",
+      "cost": "paid",
+      "free_limits": "Quote-based",
+      "windows_fit": "web",
+      "maintained": "n/a",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "unclear",
+      "source_url": "https://mitigata.com/blog/?p=5452",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "BimaKavach",
+      "verdict": "PICK: multi-insurer quotes online"
+    },
+    {
+      "name": "Mitigata",
+      "verdict": "Alternative broker"
+    },
+    {
+      "name": "Direct insurer (ICICI Lombard, HDFC ERGO, Tata AIG)",
+      "verdict": "When a client names an insurer; ICICI page blocked fetch"
+    },
+    {
+      "name": "No insurance yet",
+      "verdict": "OK until a contract requires it or you touch PHI/enterprise data"
+    }
+  ],
+  "decision": "Buy PI (errors and omissions) plus cyber cover when the first enterprise or healthcare MSA asks for certificates, or before you handle PHI. PI excludes cyber attacks, so the two are separate policies. Size limits to what contracts demand (often USD 1-2M for US enterprises).",
+  "note": "",
+  "details": "BimaKavach asks for an incorporation certificate, so check sole-proprietor eligibility. Premiums unverified.",
+  "verify": {
+    "verdict": "doubt",
+    "note": "Not re-verified (no search budget). Source is a broker's blog, and the file itself flags that sole proprietors may not qualify. Fine as a 'when needed' pointer.",
+    "url": "https://www.bimakavach.com/blog/professional-indemnity-insurance-for-it-companies-what-you-need-to-know/"
+  },
+  "better_pick": null
+}

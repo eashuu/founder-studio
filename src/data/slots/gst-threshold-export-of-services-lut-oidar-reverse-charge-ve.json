@@ -1,0 +1,85 @@
+{
+  "slug": "gst-threshold-export-of-services-lut-oidar-reverse-charge-ve",
+  "slot": "GST: threshold, export of services, LUT, OIDAR, reverse charge (VERIFY WITH A CA)",
+  "track": "money",
+  "stage": "run",
+  "region": "India",
+  "order": 9131,
+  "pick": {
+    "name": "Stay unregistered below Rs20 lakh aggregate turnover; register (Rule 14A fast-track) + file LUT before first zero-rated export once over it",
+    "url": "https://tutorial.gst.gov.in/userguide/refund/Furnishing_of_Letter_of_Undertaking_for_Export_of_Goods_or_Services.htm",
+    "what": "Exports of services are zero-rated; LUT (RFD-11, per FY) lets you export without paying IGST",
+    "why": "Notification 10/2017-Integrated Tax exempts inter-state service suppliers up to Rs20 lakh (Rs10 lakh special-category states) from registration; exports count in aggregate turnover",
+    "cost": "free",
+    "free_limits": "Threshold Rs20 lakh services (unchanged); aggregate turnover INCLUDES exports; LUT needs a GSTIN; Rule 14A (from 2025-11-01) grants registration in 3 working days if B2B output tax <= Rs2.5 lakh/month",
+    "windows_fit": "web (gst.gov.in)",
+    "maintained": "govt",
+    "install": "web (gst.gov.in)",
+    "license": "law",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter6/section22_v1.00.html (s.22); .../chapter6/section24_v1.00.html (s.24); .../gst/rules/cgst_rules/active/chapter10/rule96a_v1.00.html (LUT)",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Voluntary registration from day one",
+      "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter10/rule96a_v1.00.html",
+      "what": "Register early, file LUT, claim ITC",
+      "why": "Needed to sell to GST-registered Indian businesses with ITC, or to recover 18% paid on foreign tools via RCM + refunds",
+      "cost": "free",
+      "free_limits": "Monthly/quarterly returns burden; Rule 96A LUT",
+      "windows_fit": "web",
+      "maintained": "govt",
+      "install": "web",
+      "license": "law",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter10/rule96a_v1.00.html",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Company / LLP",
+      "url": "https://www.mca.gov.in/",
+      "what": "Incorporate",
+      "why": "Enterprise vendor onboarding, Stripe, liability",
+      "cost": "paid",
+      "free_limits": "Incorporation + annual compliance costs",
+      "windows_fit": "web",
+      "maintained": "govt",
+      "install": "web",
+      "license": "law",
+      "commercial_ok": "yes",
+      "needs_company": "yes",
+      "source_url": "https://www.mca.gov.in/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Unregistered until threshold",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Voluntary registration",
+      "verdict": "Alt: when B2B India clients want GST invoices or you want ITC"
+    },
+    {
+      "name": "Company/LLP",
+      "verdict": "Alt: for enterprise/regulated clients"
+    },
+    {
+      "name": "Export with IGST paid + refund (no LUT)",
+      "verdict": "Rejected: blocks cash until refund; LUT is free"
+    }
+  ],
+  "decision": "Below Rs20 lakh (including export receipts) you need not register for pure services under Notification 10/2017-IT, but the moment you need LUT/ITC or Indian B2B invoicing, register via Rule 14A. Foreign SaaS you buy: while unregistered, foreign OIDAR vendors must charge you 18% IGST themselves (since 2023-10-01 any unregistered recipient is a 'non-taxable online recipient'); once registered, give them your GSTIN and pay IGST under reverse charge, then claim ITC.",
+  "note": "",
+  "details": "VERIFY WITH A CA: (1) whether Notification 10/2017-IT covers export-only suppliers; (2) MoR payouts: supply to a foreign MoR entity is likely export of service, but Dodo's INR-wallet payouts for Indian buyers may be a domestic supply to an Indian entity; (3) compulsory registration for RCM payers (s24) vs the OIDAR rule; (4) export invoice wording under LUT.",
+  "verify": {
+    "verdict": "doubt",
+    "note": "Confirmed from CBIC official text: s.22 threshold Rs20L (Rs10L special-category); s.2(6) aggregate turnover INCLUDES 'exports of goods or services'; Rule 96A, where LUT in RFD-11 is available only to a 'registered person'; s.24(i) and (iii) make inter-State suppliers and RCM payers compulsorily registered regardless of threshold. So the whole 'stay unregistered' advice rests on Notification 10/2017-IT exempting inter-State service suppliers, plus the NTOR rule. NOT confirmed officially this session: Notification 10/2017-IT text (CBIC PDF 404), the post-2023 IGST s.2(16) NTOR definition (taxinformation.cbic.gov.in 500), and Rule 14A (500). The source_url is TaxGuru (secondary) and should point to CBIC. Keep VERIFY WITH A CA.",
+    "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter6/section22_v1.00.html"
+  },
+  "better_pick": null
+}

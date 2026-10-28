@@ -1,0 +1,81 @@
+{
+  "slug": "apple-developer-account-macos-notarization-ios",
+  "slot": "Apple developer account (macOS notarization + iOS)",
+  "track": "app-stacks",
+  "stage": "build",
+  "region": "Global",
+  "order": 5090,
+  "pick": {
+    "name": "Apple Developer Program (defer until a paying need)",
+    "url": "https://developer.apple.com/programs/",
+    "what": "Developer ID certs, notarization, App Store, TestFlight",
+    "why": "Mandatory for any iOS distribution and warning-free macOS apps; nothing to evaluate against",
+    "cost": "paid",
+    "free_limits": "$99/yr individual; org enrolment needs D-U-N-S",
+    "windows_fit": "web",
+    "maintained": "page live",
+    "install": "web",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://developer.apple.com/programs/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Ship Windows/Android/web first",
+      "url": "https://developer.apple.com/programs/",
+      "what": "Defer Apple",
+      "why": "Saves $99/yr until demand",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "n/a",
+      "maintained": "n/a",
+      "install": "n/a",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://developer.apple.com/programs/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Unsigned macOS build for testers",
+      "url": "https://developer.apple.com/programs/",
+      "what": "Gatekeeper override",
+      "why": "Internal betas only",
+      "cost": "free",
+      "free_limits": "users must bypass Gatekeeper",
+      "windows_fit": "n/a",
+      "maintained": "n/a",
+      "install": "n/a",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://developer.apple.com/programs/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Apple Developer Program",
+      "verdict": "Required eventually."
+    },
+    {
+      "name": "Defer",
+      "verdict": "Right default today."
+    },
+    {
+      "name": "Unsigned builds",
+      "verdict": "Testers only."
+    }
+  ],
+  "decision": "No alternative exists for App Store/notarization; the decision is only timing. Enrol when the first iOS/macOS customer is committed; EAS handles certificates from Windows.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Version/licence/limits match registry or official page.",
+    "url": "https://registry.npmjs.org/"
+  },
+  "better_pick": null
+}

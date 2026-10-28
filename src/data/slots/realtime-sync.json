@@ -1,0 +1,101 @@
+{
+  "slug": "realtime-sync",
+  "slot": "realtime + sync",
+  "track": "app-stacks",
+  "stage": "build",
+  "region": "Global",
+  "order": 5085,
+  "pick": {
+    "name": "Server-Sent Events from the API (Hono streamSSE / AI SDK streams)",
+    "url": "https://hono.dev/docs/guides/rpc",
+    "what": "One-way server push over HTTP",
+    "why": "Covers LLM token streaming, progress and notifications with no extra service; works in Expo and Electron fetch",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "hono 4.13.14 (2026-10-25)",
+    "install": "built-in (import { streamSSE } from 'hono/streaming')",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.npmjs.com/package/hono",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Cloudflare Durable Objects / Agents SDK (WebSockets)",
+      "url": "https://developers.cloudflare.com/agents/",
+      "what": "Stateful WebSocket rooms/agents on Workers",
+      "why": "Two-way realtime + per-user state when you outgrow SSE",
+      "cost": "freemium",
+      "free_limits": "Workers free limits not re-verified",
+      "windows_fit": "web",
+      "maintained": "agents npm 0.31.0 (2026-10-27)",
+      "install": "npm i agents",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://developers.cloudflare.com/agents/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Zero (Rocicorp) sync engine",
+      "url": "https://www.npmjs.com/package/@rocicorp/zero",
+      "what": "Query-driven Postgres sync to clients",
+      "why": "Local-first instant UI + offline on web/mobile when collaboration matters",
+      "cost": "free",
+      "free_limits": "self-host free",
+      "windows_fit": "native",
+      "maintained": "@rocicorp/zero 1.11.3 (2026-10-23)",
+      "install": "npm i @rocicorp/zero",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.npmjs.com/package/@rocicorp/zero",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "SSE (pick)",
+      "verdict": "Simplest; one-way covers most AI app needs."
+    },
+    {
+      "name": "Durable Objects / Agents SDK",
+      "verdict": "Wins for multiplayer/chat rooms or stateful agents on Cloudflare."
+    },
+    {
+      "name": "Zero",
+      "verdict": "Wins for local-first collaborative apps on Postgres."
+    },
+    {
+      "name": "PowerSync",
+      "verdict": "Best offline-first SQLite sync for mobile (Apache-2.0 SDKs; service source-available) - pick for heavy-offline Expo apps."
+    },
+    {
+      "name": "ElectricSQL / PGlite",
+      "verdict": "Postgres read-path sync; good with TanStack DB."
+    },
+    {
+      "name": "Convex",
+      "verdict": "Reactive backend with realtime by default; bigger platform commitment."
+    },
+    {
+      "name": "Socket.IO",
+      "verdict": "Classic WebSockets; needs sticky servers."
+    },
+    {
+      "name": "PartyKit",
+      "verdict": "Folded into Cloudflare; npm last 2025 - don't start new."
+    }
+  ],
+  "decision": "Start with SSE because it is free and needs no new service. Add Durable Objects for true two-way rooms, or a sync engine (Zero/PowerSync) only when offline or collaborative editing is a product requirement.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Version/licence/limits match registry or official page.",
+    "url": "https://registry.npmjs.org/"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,89 @@
+{
+  "slug": "model-leaderboards-benchmarks",
+  "slot": "model leaderboards / benchmarks",
+  "track": "learning",
+  "stage": "run",
+  "region": "Global",
+  "order": 12241,
+  "pick": {
+    "name": "OpenRouter Rankings",
+    "url": "https://openrouter.ai/rankings",
+    "what": "Real usage share by model/app, open vs closed share, top models by task spend, cost per coding-agent session, plus the Artificial Analysis Intelligence Index",
+    "why": "Shows what developers actually pay for and how much an agent session costs, which is what a founder picking models for products needs",
+    "cost": "free",
+    "free_limits": "Free",
+    "windows_fit": "web",
+    "maintained": "Usage data through 2026-10-27",
+    "install": "web",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://openrouter.ai/rankings",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Arena (ex-LMArena)",
+      "url": "https://arena.ai/leaderboard",
+      "what": "Human-preference leaderboards: text, vision, WebDev, search, agent (with cost/task), image, video",
+      "why": "Best for 'which model do people prefer' and WebDev/agent comparisons; rebranded to Arena Jan 2026",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "web",
+      "maintained": "News post 2026-10-27",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://arena.ai/leaderboard",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Epoch AI Benchmarking Hub",
+      "url": "https://epoch.ai/benchmarks",
+      "what": "412 models x 95 benchmarks, Epoch Capabilities Index, CSV download (CC BY 4.0)",
+      "why": "Best for rigorous capability trends and raw data",
+      "cost": "free",
+      "free_limits": "Free, CC BY 4.0 data",
+      "windows_fit": "web",
+      "maintained": "Current",
+      "install": "web",
+      "license": "CC BY 4.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://epoch.ai/benchmarks",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "OpenRouter Rankings",
+      "verdict": "PICK: usage + cost + AA index in one page"
+    },
+    {
+      "name": "Arena",
+      "verdict": "Human preference + agent cost"
+    },
+    {
+      "name": "Epoch Hub",
+      "verdict": "Rigorous benchmark data"
+    },
+    {
+      "name": "Artificial Analysis",
+      "verdict": "Strong price/speed/quality comparisons; not opened during research (TLS error), so not verified"
+    },
+    {
+      "name": "SWE-bench / Aider leaderboards",
+      "verdict": "Coding-specific; included in Epoch Hub"
+    }
+  ],
+  "decision": "Check OpenRouter Rankings and Arena during the weekly radar; go to Epoch when you need hard numbers for a model decision. Never pick a production model from one leaderboard: run your own promptfoo evals.",
+  "note": "",
+  "details": "LMArena rebranded 'Arena' (arena.ai) on 2026-01-28 per Wikipedia; lmarena.ai redirects.",
+  "verify": {
+    "verdict": "ok",
+    "note": "LMArena renamed 'Arena' on 2026-01-28 (Wikipedia, citing Arena blog 'LMArena is now Arena').",
+    "url": "https://en.wikipedia.org/wiki/LMArena"
+  },
+  "better_pick": null
+}

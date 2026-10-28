@@ -1,0 +1,93 @@
+{
+  "slug": "ui-design-canvas-vector-editor",
+  "slot": "UI design canvas (vector editor)",
+  "track": "design",
+  "stage": "discover",
+  "region": "Global",
+  "order": 1150,
+  "pick": {
+    "name": "Penpot",
+    "url": "https://penpot.app",
+    "what": "Open-source Figma-class design tool (web, self-hostable) with an MCP server",
+    "why": "Free with no tool limits, SVG/CSS-native output, an MCP server without Figma's call caps, and no lock-in.",
+    "cost": "free",
+    "free_limits": "Professional plan $0 per user, 'no limits on tools'; Unlimited $7/editor/mo (cap $175/mo)",
+    "windows_fit": "web (or self-host)",
+    "maintained": "v2.18.5, 26 Oct",
+    "install": "web",
+    "license": "MPL-2.0",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://penpot.app/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Figma",
+      "url": "https://www.figma.com/pricing/",
+      "what": "Industry-standard UI design tool",
+      "why": "Pay-later pick when clients/designers hand you Figma files; free MCP is nearly useless.",
+      "cost": "freemium",
+      "free_limits": "Starter: 150 AI credits/day up to 500/mo; MCP up to 20 tool calls/month on Starter (and on View/Collab seats). Professional Full seat $16/mo (MCP 200 calls/day, 10/min), Dev seat $12/mo",
+      "windows_fit": "web/native",
+      "maintained": "live service",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Google Stitch",
+      "url": "https://stitch.withgoogle.com",
+      "what": "AI-native design canvas (Google Labs) with MCP/SDK and DESIGN.md",
+      "why": "Free AI-first canvas; strong for generating many screen variants fast.",
+      "cost": "free",
+      "free_limits": "Free; exact quota unverified (third-party reports conflict)",
+      "windows_fit": "web",
+      "maintained": "updated 19 May 2026 (I/O)",
+      "install": "web",
+      "license": "Google Labs ToS",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-updates/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Penpot",
+      "verdict": "pick"
+    },
+    {
+      "name": "Figma",
+      "verdict": "alt pay-later: Professional Full seat $16/mo"
+    },
+    {
+      "name": "Google Stitch",
+      "verdict": "alt AI canvas"
+    },
+    {
+      "name": "Lunacy (Icons8)",
+      "verdict": "free Windows-native editor, smaller ecosystem"
+    },
+    {
+      "name": "Framer",
+      "verdict": "site builder, not app UI"
+    },
+    {
+      "name": "Sketch",
+      "verdict": "macOS only"
+    }
+  ],
+  "decision": "Penpot is the strongest free canvas and its MCP lets Claude Code read and write designs without Figma's 20-calls/month Starter cap. Switch to Figma Professional ($16/mo) when collaborators work in Figma or you need its plugin/community ecosystem.",
+  "note": "",
+  "details": "Most real design work for this user should start in Claude Design or Stitch and be refined in code; the canvas is for brand assets, flows and handoff.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Professional $0, Unlimited $7/editor capped at $175/mo, v2.18.5 (26 Oct 2026). Official MCP exists (help.penpot.app/mcp; local: npx @penpot/mcp@stable).",
+    "url": "https://penpot.app/pricing"
+  },
+  "better_pick": null
+}

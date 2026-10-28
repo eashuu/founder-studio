@@ -1,0 +1,93 @@
+{
+  "slug": "fine-tuning-without-a-local-gpu",
+  "slot": "fine-tuning without a local GPU",
+  "track": "ai-eng",
+  "stage": "build",
+  "region": "Global",
+  "order": 4072,
+  "pick": {
+    "name": "Unsloth on free Colab/Kaggle GPUs",
+    "url": "https://unsloth.ai/docs",
+    "what": "Fast LoRA/QLoRA/GRPO training with GGUF export; Studio UI",
+    "why": "Fine-tune 1-8B models free on borrowed GPUs then export GGUF for llama.rn/Ollama",
+    "cost": "freemium",
+    "free_limits": "Colab free: dynamic undisclosed limits, up to 12h session, GPU types vary, may be terminated; Kaggle weekly GPU quota exists but figures not retrievable (unverified)",
+    "windows_fit": "web (notebooks)",
+    "maintained": "unsloth 2026.10.9 on 2026-10-26",
+    "install": "pip install unsloth (inside Colab/Kaggle)",
+    "license": "Apache-2.0 (PyPI metadata)",
+    "commercial_ok": "yes",
+    "needs_company": "no (Google/Kaggle account)",
+    "source_url": "https://unsloth.ai/docs",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Hugging Face TRL",
+      "url": "https://github.com/huggingface/trl",
+      "what": "SFT/DPO/GRPO trainers with PEFT/QLoRA",
+      "why": "Standard library, more portable",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "web/wsl",
+      "maintained": "trl 1.16.0 on 2026-10-15",
+      "install": "pip install trl",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/huggingface/trl",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Modal (pay-per-second GPUs)",
+      "url": "https://modal.com/pricing",
+      "what": "Serverless GPUs for training jobs",
+      "why": "Scriptable, reproducible runs when Colab limits bite",
+      "cost": "freemium",
+      "free_limits": "Starter $0/mo includes $30 free compute/mo; T4 $0.000164/s, L4 $0.000222/s, A10 $0.000306/s; startup credits program",
+      "windows_fit": "web (Python SDK)",
+      "maintained": "Pricing page 2026-10-28",
+      "install": "pip install modal",
+      "license": "Proprietary service",
+      "commercial_ok": "yes",
+      "needs_company": "yes (Modal account)",
+      "source_url": "https://modal.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Unsloth + Colab/Kaggle",
+      "verdict": "Pick: free and fast"
+    },
+    {
+      "name": "TRL",
+      "verdict": "Alt: library standard"
+    },
+    {
+      "name": "Modal $30/mo credit",
+      "verdict": "Alt: scripted GPU runs"
+    },
+    {
+      "name": "Vertex AI tuning",
+      "verdict": "Not verified"
+    },
+    {
+      "name": "Vendor fine-tuning APIs",
+      "verdict": "Paid, not evaluated"
+    },
+    {
+      "name": "Skip fine-tuning (prompt + RAG)",
+      "verdict": "Usually the right first answer"
+    }
+  ],
+  "decision": "Fine-tune only after evals show prompting/RAG failing. Use Unsloth on Colab/Kaggle, never the no-GPU laptop; move to Modal credits for repeatable runs. Do not train on PHI in free notebooks.",
+  "note": "",
+  "details": "Kaggle exact weekly quota unverified.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Version/licence/limits match registry or official page.",
+    "url": "https://registry.npmjs.org/"
+  },
+  "better_pick": null
+}

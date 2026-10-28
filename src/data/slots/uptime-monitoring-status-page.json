@@ -1,0 +1,93 @@
+{
+  "slug": "uptime-monitoring-status-page",
+  "slot": "Uptime monitoring + status page",
+  "track": "ship",
+  "stage": "ship",
+  "region": "Global",
+  "order": 6112,
+  "pick": {
+    "name": "UptimeRobot Free",
+    "url": "https://uptimerobot.com/pricing/",
+    "what": "HTTP/keyword/ping monitors + status page",
+    "why": "Pricing page explicitly says free is 'Good for personal and commercial projects'",
+    "cost": "freemium",
+    "free_limits": "50 monitors, 5-min interval, 1 basic status page, email alerts (SMS/voice credits extra), 5 integrations",
+    "windows_fit": "web",
+    "maintained": "active",
+    "install": "web",
+    "license": "service",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://uptimerobot.com/pricing/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Uptime Kuma (self-host)",
+      "url": "https://github.com/louislam/uptime-kuma",
+      "what": "OSS monitor + status pages",
+      "why": "Unlimited, 20-second checks, on a box that is NOT your prod",
+      "cost": "free",
+      "free_limits": "Self-host",
+      "windows_fit": "Docker on VM; Windows native possible",
+      "maintained": "2.5.8 released 2026-10-27",
+      "install": "docker run -d -p 3001:3001 louislam/uptime-kuma:2",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/louislam/uptime-kuma",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Better Stack Free",
+      "url": "https://betterstack.com/pricing",
+      "what": "Uptime + status + logs + errors",
+      "why": "Nicer status pages/on-call",
+      "cost": "freemium",
+      "free_limits": "10 monitors, 1 status page, 3 GB logs (3-day), 100k exceptions; labelled 'Free for personal projects'",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://betterstack.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "UptimeRobot",
+      "verdict": "PICK: explicit commercial OK"
+    },
+    {
+      "name": "Uptime Kuma",
+      "verdict": "Alt: self-host, unlimited"
+    },
+    {
+      "name": "Better Stack",
+      "verdict": "Alt: polish, but 'personal projects' label"
+    },
+    {
+      "name": "Upptime",
+      "verdict": "GitHub-Actions status page; last tagged release 2020 (template still used)"
+    },
+    {
+      "name": "OpenStatus",
+      "verdict": "AGPL-3.0, hosted free tier not checked"
+    },
+    {
+      "name": "Sentry uptime monitor",
+      "verdict": "Only 1 on free"
+    }
+  ],
+  "decision": "UptimeRobot is the only hosted option whose page explicitly allows commercial use on free. Run Uptime Kuma later if you need faster checks or more status pages.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "UptimeRobot Free: 50 monitors, 5-min checks, 1 basic status page, 5 integrations, 'Good for personal and commercial projects'. Better Stack alt: 'Free for personal projects', 10 monitors, 3 GB logs/3 days, 100k exceptions. Both confirmed.",
+    "url": "https://uptimerobot.com/pricing/"
+  },
+  "better_pick": null
+}

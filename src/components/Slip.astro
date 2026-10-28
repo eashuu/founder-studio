@@ -1,0 +1,17 @@
+---
+import Tear from './Tear.astro';
+import { costKey, verdictLabel } from '../lib/data.js';
+const { s } = Astro.props;
+const v = s.verify?.verdict;
+---
+<a class="slip" href={`/tools/${s.slug}/`}>
+  <span class="label">{s.slot}</span>
+  <strong class="slip-name">{s.pick.name}</strong>
+  <span class="slip-what">{s.pick.what}</span>
+  <span class="meta">
+    <span class={`cost cost-${costKey(s.pick.cost)}`}>{costKey(s.pick.cost)}</span>
+    {s.region === 'India' && <span>India</span>}
+    <span class={v === 'ok' || v === 'fixed' ? 'ok' : 'warn'}>{verdictLabel(v)}</span>
+  </span>
+  <Tear seed={s.slug} side="bottom" />
+</a>

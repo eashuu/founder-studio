@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import Tear from '../components/Tear.astro';
+---
+<Base title="Not found">
+  <section class="sheet grain page-head">
+    <span class="label">404</span>
+    <h1>This page was torn out.</h1>
+    <p>The link may be old. Try <a href="/search/">search</a> or go back to <a href="/">the start</a>.</p>
+    <Tear seed="404" side="bottom" />
+  </section>
+</Base>

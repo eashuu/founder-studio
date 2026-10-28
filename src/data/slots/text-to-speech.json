@@ -1,0 +1,97 @@
+{
+  "slug": "text-to-speech",
+  "slot": "text-to-speech",
+  "track": "ai-eng",
+  "stage": "build",
+  "region": "Global",
+  "order": 4069,
+  "pick": {
+    "name": "Kokoro-82M (kokoro-onnx)",
+    "url": "https://github.com/hexgrad/kokoro",
+    "what": "82M Apache-licensed open-weight TTS; ONNX runner for CPU",
+    "why": "Natural voice on CPU, small; en US/UK, Hindi, es, fr, it, pt, ja, zh",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native (ONNX CPU)",
+    "maintained": "kokoro-onnx 0.6.1 on 2026-08-19; kokoro-js 1.2.1 on 2025-05-03",
+    "install": "pip install kokoro-onnx",
+    "license": "Apache-2.0",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/hexgrad/kokoro",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Piper (piper1-gpl)",
+      "url": "https://github.com/OHF-Voice/piper1-gpl",
+      "what": "Fast tiny local TTS voices",
+      "why": "Lowest resource use, many voices",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "unclear (Windows support not stated on page)",
+      "maintained": "piper-tts 1.8.0 on 2026-09-04; maintainers being sought",
+      "install": "pip install piper-tts",
+      "license": "GPL-3.0 copyleft - avoid in proprietary/open-core products",
+      "commercial_ok": "unclear (GPL obligations)",
+      "needs_company": "no",
+      "source_url": "https://github.com/OHF-Voice/piper1-gpl",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Gemini API TTS (free tier)",
+      "url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "what": "Hosted speech models, several marked free",
+      "why": "Most natural and multilingual (Indian-language support unverified)",
+      "cost": "freemium",
+      "free_limits": "Free tier trains on data; limits unpublished",
+      "windows_fit": "web",
+      "maintained": "Pricing page 2026-10-28",
+      "install": "npm i @google/genai",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Kokoro",
+      "verdict": "Pick: Apache, CPU, small"
+    },
+    {
+      "name": "Piper",
+      "verdict": "Alt: GPL-3.0 trap for open-core"
+    },
+    {
+      "name": "Gemini TTS",
+      "verdict": "Alt: best quality, cloud"
+    },
+    {
+      "name": "Orpheus on Groq",
+      "verdict": "100 requests/day, 3.6K tokens/day - too small"
+    },
+    {
+      "name": "react-native-executorch Kokoro",
+      "verdict": "Mobile packaging of Kokoro"
+    },
+    {
+      "name": "edge-tts",
+      "verdict": "Unofficial Microsoft endpoint, ToS risk (not verified)"
+    },
+    {
+      "name": "Chatterbox / XTTS",
+      "verdict": "GPU-leaning, not evaluated"
+    }
+  ],
+  "decision": "Kokoro locally for Apache-clean CPU TTS; Gemini TTS when you need Indian-language naturalness. Avoid Piper in shipped products because of GPL-3.0.",
+  "note": "",
+  "details": "Retained; Piper licence trap emphasised.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Version/licence/limits match registry or official page.",
+    "url": "https://registry.npmjs.org/"
+  },
+  "better_pick": null
+}

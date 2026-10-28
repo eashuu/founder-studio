@@ -1,0 +1,105 @@
+{
+  "slug": "youtube-channels-curated-set",
+  "slot": "YouTube channels (curated set)",
+  "track": "learning",
+  "stage": "run",
+  "region": "Global",
+  "order": 12243,
+  "pick": {
+    "name": "AI Engineer, Andrej Karpathy, Latent Space, Dwarkesh Patel, Sam Witteveen, AI Explained, Anthropic",
+    "url": "https://www.youtube.com/@aiDotEngineer",
+    "what": "AI Engineer (conference talks, near-daily), Karpathy (deep explainers), Sam Witteveen (hands-on model/tool reviews), AI Explained (paper/news analysis), Anthropic (official), Latent Space, Dwarkesh",
+    "why": "All uploaded in Sep-Oct 2026, mostly practitioner content; each channel has an RSS feed so they can live in the reader",
+    "cost": "free",
+    "free_limits": "Free",
+    "windows_fit": "web / Android",
+    "maintained": "AI Engineer 2026-10-28; Karpathy 2026-10-25; Sam Witteveen 2026-10-26; AI Explained 2026-10-12; Anthropic 2026-09-23",
+    "install": "subscribe; RSS: https://www.youtube.com/feeds/videos.xml?channel_id=<id>",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.youtube.com/@aiDotEngineer",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "No Priors",
+      "url": "https://www.youtube.com/@NoPriorsPodcast",
+      "what": "Founder/investor interviews",
+      "why": "Business angle",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "web",
+      "maintained": "2026-10-27",
+      "install": "subscribe",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.youtube.com/@NoPriorsPodcast",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "3Blue1Brown",
+      "url": "https://www.youtube.com/@3blue1brown",
+      "what": "Math/ML intuition",
+      "why": "Foundations; infrequent uploads",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "web",
+      "maintained": "2026-04-11",
+      "install": "subscribe",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.youtube.com/@3blue1brown",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "AI Engineer",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Karpathy",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Sam Witteveen",
+      "verdict": "PICK"
+    },
+    {
+      "name": "AI Explained",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Anthropic",
+      "verdict": "PICK"
+    },
+    {
+      "name": "No Priors",
+      "verdict": "Alt"
+    },
+    {
+      "name": "3Blue1Brown",
+      "verdict": "Alt, infrequent"
+    },
+    {
+      "name": "Yannic Kilcher",
+      "verdict": "No uploads since 2023-08 in the channel feed; drop"
+    },
+    {
+      "name": "Matthew Berman / hype channels",
+      "verdict": "Low signal"
+    }
+  ],
+  "decision": "Subscribe via RSS in the reader rather than relying on the YouTube home feed, and watch at most two talks per week from AI Engineer. Karpathy and AI Explained are the depth picks.",
+  "note": "",
+  "details": "Channel IDs: AI Engineer UCLKPca3kwwd-B59HNr-_lvA; Karpathy UCYO_jab_esuFRV4b17AJtAw; Anthropic UCrDwWp7EBBv4NwvScIpBDOA; AI Explained UCNJ1Ymd5yFuUPtn21xtRbbw; Sam Witteveen UC55ODQSvARtgSyc8ThfiepQ; Latent Space UCxBcwypKK-W3GHd_RZ9FZrQ; Dwarkesh UCZa18YV7qayTh-MRIrBhDpA.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Not independently re-opened (search budget exhausted); free curated content, low risk, no numeric/legal claims.",
+    "url": ""
+  },
+  "better_pick": null
+}

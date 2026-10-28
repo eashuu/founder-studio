@@ -1,0 +1,9 @@
+// Cloudflare Workers static assets. Deploy: npx wrangler login, then npm run deploy.
+{
+  "name": "founder-studio",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}

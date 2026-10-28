@@ -1,0 +1,101 @@
+{
+  "slug": "component-library-design-system-web",
+  "slot": "Component library / design system (web)",
+  "track": "design",
+  "stage": "discover",
+  "region": "Global",
+  "order": 1152,
+  "pick": {
+    "name": "shadcn/ui",
+    "url": "https://ui.shadcn.com",
+    "what": "Copy-in React + Tailwind components on Radix or Base UI, with an official MCP server and registries",
+    "why": "The default that Claude Code, v0 and Claude Design all generate; you own the code; MCP lets Claude install components.",
+    "cost": "free",
+    "free_limits": "Free",
+    "windows_fit": "n/a",
+    "maintained": "shadcn@4.23.0, 27 Oct",
+    "install": "npx shadcn@latest init ; claude: npx shadcn@latest mcp init --client claude",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://ui.shadcn.com/docs/mcp",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Mantine",
+      "url": "https://mantine.dev",
+      "what": "Batteries-included React component + hooks library",
+      "why": "Pick when you want 100+ ready components (dates, forms, charts) without assembling them.",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "n/a",
+      "maintained": "9.7.4, 25 Oct",
+      "install": "npm i @mantine/core @mantine/hooks",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/mantinedev/mantine/releases",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "MUI (Material UI)",
+      "url": "https://mui.com",
+      "what": "Mature Material Design components",
+      "why": "Enterprise-familiar look; advanced grid/date pickers are paid (MUI X Pro).",
+      "cost": "freemium",
+      "free_limits": "Core free; MUI X Pro/Premium paid",
+      "windows_fit": "n/a",
+      "maintained": "v9.5.0, 9 Oct",
+      "install": "npm i @mui/material @emotion/react @emotion/styled",
+      "license": "MIT core",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/mui/material-ui/releases",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "shadcn/ui",
+      "verdict": "pick"
+    },
+    {
+      "name": "Mantine",
+      "verdict": "alt"
+    },
+    {
+      "name": "MUI",
+      "verdict": "alt"
+    },
+    {
+      "name": "Radix Themes",
+      "verdict": "slow cadence (3.3.0, 31 Jan)"
+    },
+    {
+      "name": "Base UI",
+      "verdict": "headless base under shadcn"
+    },
+    {
+      "name": "HeroUI",
+      "verdict": "v3, smaller ecosystem"
+    },
+    {
+      "name": "Chakra UI",
+      "verdict": "v3, slower releases"
+    },
+    {
+      "name": "Ark/Park UI",
+      "verdict": "multi-framework headless"
+    }
+  ],
+  "decision": "shadcn/ui is what every AI generator and most docs assume, so Claude Code produces it with the fewest mistakes. Choose Mantine if you prefer a packaged library over owning component code.",
+  "note": "",
+  "details": "Mobile/desktop UI kits follow the framework chosen by the app-stack track.",
+  "verify": {
+    "verdict": "ok",
+    "note": "shadcn 4.23.0 (2026-10-27) MIT; docs show `pnpm dlx shadcn@latest mcp init --client claude` (npx equivalent should work).",
+    "url": "https://ui.shadcn.com/docs/mcp"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,97 @@
+{
+  "slug": "podcasts-curated-set",
+  "slot": "podcasts (curated set)",
+  "track": "learning",
+  "stage": "run",
+  "region": "Global",
+  "order": 12238,
+  "pick": {
+    "name": "Latent Space, Dwarkesh Podcast, No Priors, The Cognitive Revolution",
+    "url": "https://www.youtube.com/@LatentSpacePod",
+    "what": "Latent Space (AI engineering), Dwarkesh (deep interviews), No Priors (AI startups/investing), Cognitive Revolution (weekly, broad AI)",
+    "why": "All four published in the last week, cover builder, founder and frontier angles, and are free on YouTube and podcast apps",
+    "cost": "free",
+    "free_limits": "Free",
+    "windows_fit": "web / Android",
+    "maintained": "Latent Space 2026-10-27; Dwarkesh 2026-10-26; No Priors 2026-10-27; Cognitive Revolution weekly (Oct 2026)",
+    "install": "subscribe in player or YouTube",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.youtube.com/@LatentSpacePod",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "AntennaPod (player)",
+      "url": "https://antennapod.org",
+      "what": "Open-source Android podcast player, no account",
+      "why": "Best free player; subscribe by RSS",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "Android",
+      "maintained": "3.12.3 2026-10-15",
+      "install": "F-Droid / Play Store",
+      "license": "GPL-3.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://f-droid.org/packages/de.danoeh.antennapod/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Interconnects podcast",
+      "url": "https://www.interconnects.ai",
+      "what": "Open-model and post-training discussion",
+      "why": "Add if you build on open models",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "web",
+      "maintained": "Episode 2026-10-25",
+      "install": "subscribe",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.interconnects.ai/archive",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Latent Space",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Dwarkesh",
+      "verdict": "PICK"
+    },
+    {
+      "name": "No Priors",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Cognitive Revolution",
+      "verdict": "PICK"
+    },
+    {
+      "name": "AntennaPod",
+      "verdict": "Player"
+    },
+    {
+      "name": "Lex Fridman",
+      "verdict": "Long, less builder-focused; not verified"
+    },
+    {
+      "name": "Practical AI",
+      "verdict": "Not verified this pass"
+    }
+  ],
+  "decision": "Pick two per week based on guest, listen at 1.5x in AntennaPod or YouTube. Latent Space is the must-keep for an AI engineer; the rest rotate.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Not independently re-opened (search budget exhausted); free curated content, low risk, no numeric/legal claims.",
+    "url": ""
+  },
+  "better_pick": null
+}

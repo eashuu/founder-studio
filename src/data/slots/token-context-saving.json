@@ -1,0 +1,89 @@
+{
+  "slug": "token-context-saving",
+  "slot": "token / context saving",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2011,
+  "pick": {
+    "name": "RTK (Rust Token Killer)",
+    "url": "https://github.com/rtk-ai/rtk",
+    "what": "PreToolUse hook that compresses output of 100+ dev commands before Claude reads it",
+    "why": "Targets the biggest input-token sink (test/build/git output); single binary, winget, telemetry off by default",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native: hook installed by `rtk init -g` since v0.37.0, but it only matches the Bash tool; PowerShell-tool commands are not compressed (issue #1319). Re-add 'Bash|PowerShell' matcher manually after each `rtk init`.",
+    "maintained": "v1.1.0 (2026-10-25); 84.8k stars",
+    "install": "winget install rtk-ai.rtk; rtk init -g",
+    "license": "CLI Apache-2.0; engine/proxy BUSL-1.1",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/rtk-ai/rtk",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "caveman",
+      "url": "https://github.com/JuliusBrussee/caveman",
+      "what": "Terse output + read-less rules",
+      "why": "Self-measured 33% fewer input tokens over 54 runs; only ~3% better than 'be concise' on output",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "v4.0.1; ~116k stars",
+      "install": "installed",
+      "license": "Apache-2.0/MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/JuliusBrussee/caveman",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Built-in /context + plugin context-cost pruning",
+      "url": "https://code.claude.com/docs/en/discover-plugins",
+      "what": "See per-plugin always-on cost and drop unused ones",
+      "why": "Removing plugins/MCPs saves more than any compressor",
+      "cost": "owned",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "core",
+      "install": "/context; claude plugin details <name>",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/en/discover-plugins",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "RTK",
+      "verdict": "pick"
+    },
+    {
+      "name": "caveman",
+      "verdict": "keep for output style"
+    },
+    {
+      "name": "Built-in pruning",
+      "verdict": "do first"
+    },
+    {
+      "name": "headroom MCP",
+      "verdict": "MCP mode only helps when Claude calls it; proxy mode intercepts API traffic - overlaps RTK"
+    },
+    {
+      "name": "ponytail",
+      "verdict": "code-minimalism, not token saving"
+    }
+  ],
+  "decision": "Prune plugins first, then RTK compresses command output automatically with no MCP calls. Skip context-compression MCP servers once RTK is in; they overlap and rarely get called.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Native Windows: since v0.37.0 `rtk init -g` installs the native `rtk hook claude` PreToolUse hook (confirmed on v0.42.0, issue #2115; README still says CLAUDE.md fallback, which is stale). BUT the matcher is hardcoded to 'Bash': commands from Claude Code's PowerShell tool are NOT rewritten (open issue #1319, last comment 16 Oct 2026), and `rtk init` overwrites a hand-added 'Bash|PowerShell' matcher. If your sessions use the PowerShell tool heavily, savings will be partial. Latest release v1.1.0 (2026-10-25). Licences and telemetry-off confirmed.",
+    "url": "https://github.com/rtk-ai/rtk/issues/1319"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "remote-mobile-access",
+  "slot": "remote / mobile access",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2028,
+  "pick": {
+    "name": "Remote Control",
+    "url": "https://code.claude.com/docs/en/remote-control.md",
+    "what": "Continue local sessions from the Claude mobile app",
+    "why": "First-party, already on at startup",
+    "cost": "owned",
+    "free_limits": "Pro/Max",
+    "windows_fit": "native",
+    "maintained": "core",
+    "install": "claude --rc",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://code.claude.com/docs/en/remote-control.md",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Claude Code on the web / Projects",
+      "url": "https://code.claude.com/docs/en/claude-code-on-the-web.md",
+      "what": "Cloud sessions that run with laptop off",
+      "why": "Overnight work while your laptop is off",
+      "cost": "owned",
+      "free_limits": "Projects beta on Max",
+      "windows_fit": "web",
+      "maintained": "core",
+      "install": "claude.ai/code",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/en/claude-code-on-the-web.md",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Orca mobile companion",
+      "url": "https://github.com/stablyai/orca",
+      "what": "iOS/Android companion for Orca hosts",
+      "why": "If Orca is your hub",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "v1.4.243",
+      "install": "installed",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/stablyai/orca",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Remote Control",
+      "verdict": "pick"
+    },
+    {
+      "name": "Cloud sessions",
+      "verdict": "laptop off"
+    },
+    {
+      "name": "Orca mobile",
+      "verdict": "Orca users"
+    },
+    {
+      "name": "Happy (slopus)",
+      "verdict": "E2E-encrypted third-party client; unneeded"
+    }
+  ],
+  "decision": "Remote Control for live sessions; cloud sessions for work that must run while your laptop is off (no local plugins/LSP there).",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Pro, Max, Team, Enterprise (not API keys); `claude --remote-control` or `--rc` confirmed.",
+    "url": "https://code.claude.com/docs/en/remote-control.md"
+  },
+  "better_pick": null
+}

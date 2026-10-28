@@ -1,0 +1,81 @@
+{
+  "slug": "headless-ci",
+  "slot": "headless / CI",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2029,
+  "pick": {
+    "name": "anthropics/claude-code-action@v1",
+    "url": "https://github.com/anthropics/claude-code-action",
+    "what": "@claude in issues/PRs, review workflow, scheduled jobs",
+    "why": "Runs on your Max plan via CLAUDE_CODE_OAUTH_TOKEN (doc-confirmed)",
+    "cost": "owned",
+    "free_limits": "GitHub Actions minutes (free on public repos)",
+    "windows_fit": "web (ubuntu runners)",
+    "maintained": "pushed 2026-10-27",
+    "install": "/install-github-app (needs gh auth)",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://code.claude.com/docs/en/github-actions.md",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Routines (/schedule)",
+      "url": "https://code.claude.com/docs/en/routines.md",
+      "what": "Cloud agents on cron/GitHub events",
+      "why": "No runner minutes",
+      "cost": "owned",
+      "free_limits": "plan limits",
+      "windows_fit": "web",
+      "maintained": "core",
+      "install": "/schedule",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/en/routines.md",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "claude -p / Agent SDK",
+      "url": "https://code.claude.com/docs/en/headless.md",
+      "what": "Non-interactive runs",
+      "why": "Local scripts",
+      "cost": "owned",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "core",
+      "install": "claude -p",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/en/headless.md",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "claude-code-action",
+      "verdict": "pick"
+    },
+    {
+      "name": "Routines",
+      "verdict": "scheduled cloud jobs"
+    },
+    {
+      "name": "claude -p",
+      "verdict": "local scripts"
+    }
+  ],
+  "decision": "OAuth token is tied to your personal subscription: fine solo; switch to an API key or OIDC federation when collaborators share the repo.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "v1 is the documented tag; latest v1.0.264 (27 Oct 2026).",
+    "url": "https://github.com/anthropics/claude-code-action/releases"
+  },
+  "better_pick": null
+}

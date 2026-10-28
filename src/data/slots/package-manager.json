@@ -1,0 +1,81 @@
+{
+  "slug": "package-manager",
+  "slot": "package manager",
+  "track": "windows-dev",
+  "stage": "build",
+  "region": "Global",
+  "order": 3038,
+  "pick": {
+    "name": "Scoop (CLIs) + winget (GUI apps)",
+    "url": "https://github.com/ScoopInstaller/Scoop",
+    "what": "Scoop installs per-user into ~\\scoop with no admin; winget for apps",
+    "why": "No UAC prompts on a managed laptop",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "Scoop v0.6.0 (30 Sep); winget v1.29.380",
+    "install": "irm get.scoop.sh | iex",
+    "license": "Unlicense/MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/ScoopInstaller/Scoop/releases",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "winget only",
+      "url": "https://learn.microsoft.com/windows/package-manager/winget",
+      "what": "Built-in",
+      "why": "Fewer tools",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "built-in",
+      "install": "built-in",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://learn.microsoft.com/windows/package-manager/winget",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "mise (tool installs)",
+      "url": "https://github.com/jdx/mise",
+      "what": "Per-project CLI versions",
+      "why": "See runtime slot",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "v2026.10.21",
+      "install": "winget install jdx.mise",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/jdx/mise",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Scoop + winget",
+      "verdict": "pick"
+    },
+    {
+      "name": "winget only",
+      "verdict": "fine"
+    },
+    {
+      "name": "Chocolatey",
+      "verdict": "admin needed; community repo not recommended for org use"
+    }
+  ],
+  "decision": "Scoop for dev CLIs avoids admin; winget for GUI apps.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Scoop v0.6.0 (30 Sep), winget-cli v1.29.380 confirmed.",
+    "url": "https://github.com/ScoopInstaller/Scoop/releases"
+  },
+  "better_pick": null
+}

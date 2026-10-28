@@ -1,0 +1,101 @@
+{
+  "slug": "crm",
+  "slot": "CRM",
+  "track": "sales",
+  "stage": "sell",
+  "region": "Global",
+  "order": 7186,
+  "pick": {
+    "name": "Attio (Free)",
+    "url": "https://attio.com/pricing",
+    "what": "Modern, flexible data-model CRM with email/calendar sync",
+    "why": "Most generous free tier checked (3 seats, 50k records), API + Claude/MCP-friendly, custom objects suit B2C+B2B+services in one workspace",
+    "cost": "freemium",
+    "free_limits": "Free: 3 seats, 3 objects, 50,000 records, 1 email sync/user, 200 emails/mo; Plus USD 35/user/mo annual",
+    "windows_fit": "web",
+    "maintained": "live page 2026-10-28",
+    "install": "web",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://attio.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Twenty",
+      "url": "https://twenty.com/pricing",
+      "what": "Open-source CRM (self-host or cloud)",
+      "why": "Best free-forever exit: self-host on a small always-free VM, REST/GraphQL + MCP server; cloud Pro USD 9/user/mo",
+      "cost": "freemium",
+      "free_limits": "Self-host free; cloud has a 30-day trial only",
+      "windows_fit": "wsl (Docker Compose) or web",
+      "maintained": "v2.52.0 released 2026-10-27",
+      "install": "docker compose (see twenty docs)",
+      "license": "AGPL-3.0 core with commercial parts (verify LICENSE)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://twenty.com/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "HubSpot Free CRM",
+      "url": "https://www.hubspot.com/pricing/crm",
+      "what": "Market-standard CRM with marketing tools",
+      "why": "Wins if you want native Apollo/Cal.com sync and forms/landing pages in one; Starter USD 7-20/seat",
+      "cost": "freemium",
+      "free_limits": "Free: 2 users, 1,000 contacts, 1,000 other records, HubSpot branding",
+      "windows_fit": "web",
+      "maintained": "live page 2026-10-28",
+      "install": "web",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.hubspot.com/pricing/crm",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Attio",
+      "verdict": "PICK: 50k records free, flexible objects"
+    },
+    {
+      "name": "Twenty",
+      "verdict": "Pick if you want open source / self-host and zero lock-in"
+    },
+    {
+      "name": "HubSpot Free",
+      "verdict": "Pick if native Apollo + Cal.com sync matters more than limits (1,000 contacts)"
+    },
+    {
+      "name": "Zoho Bigin",
+      "verdict": "Free: 1 user, 500 records, 1 pipeline; Express USD 7/user"
+    },
+    {
+      "name": "Apollo built-in deals",
+      "verdict": "Fine for prospecting state, weak as the system of record"
+    },
+    {
+      "name": "Pipedrive",
+      "verdict": "No free plan"
+    },
+    {
+      "name": "Folk",
+      "verdict": "Light relationship CRM; not checked"
+    },
+    {
+      "name": "Frappe CRM / Krayin",
+      "verdict": "OSS self-host options (active releases Oct 2026), smaller ecosystems"
+    }
+  ],
+  "decision": "Attio's free tier comfortably holds a solo founder's whole pipeline and its API suits Claude-driven automation. Apollo has no native Attio sync (only Zapier/Stacksync), so push qualified Apollo replies into Attio via webhook or a Claude script. Switch to HubSpot Free if you'd rather have the native Apollo integration, or Twenty if you want self-hosted ownership.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Attio Free confirmed: 3 seats, 3 objects, 50k records, 1 sync/user, 200 emails/mo, API included; Plus USD 35 annual / 44 monthly. Twenty alt confirmed: 30-day cloud trial only, AGPL + '@license Enterprise' files, SDK/CLI/UI MIT. HubSpot alt confirmed (2 users, 1,000 contacts, 1,000 other records). 'Apollo has no native Attio sync' not re-verified.",
+    "url": "https://attio.com/pricing"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,93 @@
+{
+  "slug": "us-entity-cross-border-structure",
+  "slot": "US entity / cross-border structure",
+  "track": "legal",
+  "stage": "run",
+  "region": "Global",
+  "order": 10171,
+  "pick": {
+    "name": "Stripe Atlas (Delaware C-corp), only when a trigger hits",
+    "url": "https://stripe.com/atlas",
+    "what": "Delaware C-corp formation with EIN, 83(b), templates",
+    "why": "Best-known VC-standard C-corp path; USD 500 one-time incl. state fees + first-year registered agent, then USD 100/yr; open to most countries",
+    "cost": "paid",
+    "free_limits": "No free tier; USD 500 refunded if USD 5k deposited in Stripe Treasury (India eligibility unclear)",
+    "windows_fit": "web",
+    "maintained": "live page 2026-10-28",
+    "install": "web",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "yes",
+    "source_url": "https://stripe.com/atlas",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "doola",
+      "url": "https://www.doola.com/pricing/",
+      "what": "LLC or C-corp formation + EIN + address, optional tax/bookkeeping",
+      "why": "Built for non-US founders; Starter USD 297/yr; Tax & Compliance USD 1,999/yr if you want filings handled",
+      "cost": "paid",
+      "free_limits": "No free tier; state fees extra",
+      "windows_fit": "web",
+      "maintained": "live page 2026-10-28",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "yes",
+      "source_url": "https://www.doola.com/pricing/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Firstbase",
+      "url": "https://www.firstbase.io/pricing",
+      "what": "Delaware/Wyoming formation + agent, mailroom, tax add-ons",
+      "why": "Cheapest formation promo (USD 99 + state fee) but registered agent USD 299/yr and tax packages USD 899-1,799/yr",
+      "cost": "paid",
+      "free_limits": "No free tier",
+      "windows_fit": "web",
+      "maintained": "live page 2026-10-28",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "yes",
+      "source_url": "https://www.firstbase.io/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Stay India-only (no US entity)",
+      "verdict": "Default today: global customers can pay an Indian proprietor via MoR"
+    },
+    {
+      "name": "Stripe Atlas",
+      "verdict": "PICK when needed: US VC fundraising, US enterprise/healthcare procurement, or AWS Marketplace global listing"
+    },
+    {
+      "name": "doola",
+      "verdict": "Wins if you want an LLC or bundled US tax filing"
+    },
+    {
+      "name": "Firstbase",
+      "verdict": "Lowest formation fee, higher recurring costs"
+    },
+    {
+      "name": "Clerky",
+      "verdict": "VC-legal-document focused; not checked"
+    },
+    {
+      "name": "GIFT City (IFSC) entity",
+      "verdict": "Aimed at fintech/funds/IFSC units; no evidence it helps a SaaS founder (unverified)"
+    }
+  ],
+  "decision": "Do not form a US entity until a buyer, investor or AWS Marketplace listing needs one. Two new facts change the calculus. AWS Marketplace now accepts India-based sellers, but they can sell only to buyers in India, so global AWS Marketplace sales need a non-India entity (Microsoft Marketplace showed no such restriction). And an Indian resident who owns a Delaware company is making an Overseas Direct Investment under FEMA/RBI OI Rules 2022 (Form ODI via AD bank + annual APR, with penalties for lateness). Do that with a CA.",
+  "note": "",
+  "details": "ODI/FEMA details are from secondary sources; verify with a CA/lawyer. Delaware raised its incorporation fee to USD 109 from 1 Aug 2026 (single secondary source).",
+  "verify": {
+    "verdict": "ok",
+    "note": "Stripe Atlas page confirms USD 500 incl. state fees and first-year agent, USD 100/yr after, and the USD 500 back on a USD 5k Treasury deposit. AWS India-seller restriction confirmed on the AWS FAQ. The FEMA APR due date of 31 Dec is confirmed in FEMA 400/2022-RB Reg 10(4). Delaware's site links a fee schedule PDF named 'AugustFee2026', which corroborates an Aug 2026 fee change; amount not read.",
+    "url": "https://stripe.com/atlas"
+  },
+  "better_pick": null
+}

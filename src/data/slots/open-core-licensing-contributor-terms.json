@@ -1,0 +1,93 @@
+{
+  "slug": "open-core-licensing-contributor-terms",
+  "slot": "Open-core licensing + contributor terms",
+  "track": "legal",
+  "stage": "run",
+  "region": "Global",
+  "order": 10182,
+  "pick": {
+    "name": "Apache-2.0 core + proprietary ee/ folder, DCO sign-off",
+    "url": "https://github.com/apps/dco",
+    "what": "Permissive core for adoption (SDKs, MCP servers, plugins), paid features in a separately licensed folder, DCO on PRs",
+    "why": "Maximises adoption and Claude-ecosystem trust; DCO is lighter than a CLA and enough when you never need to relicense contributed core code",
+    "cost": "free",
+    "free_limits": "DCO GitHub app (third-party, pricing not stated)",
+    "windows_fit": "web",
+    "maintained": "app live 2026-10-28",
+    "install": "Install the DCO GitHub app",
+    "license": "Apache-2.0 (core)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/apps/dco",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "FSL-1.1-ALv2 (Functional Source License)",
+      "url": "https://fsl.software/",
+      "what": "Fair-source: anything except competing use; each version becomes Apache-2.0 after 2 years",
+      "why": "Best for a hosted SaaS where a clone is the main risk; not OSI open source",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "n/a",
+      "maintained": "v1.1",
+      "install": "add LICENSE file",
+      "license": "FSL-1.1-ALv2",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://fsl.software/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "AGPL-3.0 + CLA Assistant (dual licensing)",
+      "url": "https://github.com/cla-assistant/cla-assistant",
+      "what": "Copyleft core, sell commercial licences; CLA lets you relicense contributions",
+      "why": "Strongest anti-cloud-clone protection that is still OSI open source; free hosted CLA bot by SAP",
+      "cost": "free",
+      "free_limits": "cla-assistant.io free",
+      "windows_fit": "web",
+      "maintained": "n/a",
+      "install": "web",
+      "license": "AGPL-3.0 (product); Apache-2.0 (bot)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/cla-assistant/cla-assistant",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Apache-2.0 + ee/",
+      "verdict": "PICK for SDKs, MCP servers, plugins, CLIs"
+    },
+    {
+      "name": "FSL-1.1-ALv2",
+      "verdict": "Pick for a hosted SaaS app's own source"
+    },
+    {
+      "name": "AGPL-3.0 + CLA",
+      "verdict": "Pick if you want OSI-approved but clone-resistant + dual licensing"
+    },
+    {
+      "name": "BSL 1.1",
+      "verdict": "Similar to FSL but longer change dates; FSL is simpler"
+    },
+    {
+      "name": "Elastic-2.0",
+      "verdict": "Source-available; blocks managed-service resale (Mintlify CLI uses it)"
+    },
+    {
+      "name": "MIT",
+      "verdict": "Fine for small libraries; no patent grant"
+    }
+  ],
+  "decision": "Use Apache-2.0 + DCO for anything meant to spread (SDKs, MCP servers, Claude plugins), and FSL for the SaaS app itself if you open its source. Choose AGPL + CLA only if you plan to sell commercial licences.",
+  "note": "",
+  "details": "Licence choice has legal consequences; verify with a lawyer.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Reasonable standard advice. Only shallow checks: DCO app page and FSL not fetched. Dub (alt elsewhere) is confirmed AGPL outside its (ee) folders.",
+    "url": "https://github.com/apps/dco"
+  },
+  "better_pick": null
+}

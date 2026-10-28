@@ -1,0 +1,73 @@
+{
+  "slug": "sales-collateral-one-pagers-case-studies-decks",
+  "slot": "Sales collateral (one-pagers, case studies, decks)",
+  "track": "sales",
+  "stage": "sell",
+  "region": "Global",
+  "order": 7207,
+  "pick": {
+    "name": "Canva Free",
+    "url": "https://www.krea.ai/blog/is-canva-free-what-the-free-plan-and-canva-ai-include-in-2026",
+    "what": "Template-driven design for one-pagers, case studies, decks",
+    "why": "1.6M+ templates, PDF export, commercial use allowed per Canva licence (per secondary source); Claude writes the copy",
+    "cost": "freemium",
+    "free_limits": "Free: templates, 5 GB, 1 brand kit (3 colours), ~20 AI uses/mo; Pro ~USD 144/yr or ~Rs 4,000/yr",
+    "windows_fit": "web",
+    "maintained": "2026-09 (secondary)",
+    "install": "web",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.krea.ai/blog/is-canva-free-what-the-free-plan-and-canva-ai-include-in-2026",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Claude document skills (pptx/docx/pdf)",
+      "url": "https://github.com/anthropics/skills",
+      "what": "Claude generates editable PPTX/DOCX/PDF directly",
+      "why": "Already paid (Max); best for data-heavy case studies and proposals generated from CRM notes",
+      "cost": "owned",
+      "free_limits": "Included with Claude",
+      "windows_fit": "native",
+      "maintained": "2026",
+      "install": "built in",
+      "license": "source-available (document skills)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/anthropics/skills",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Canva Free",
+      "verdict": "PICK for designed collateral"
+    },
+    {
+      "name": "Claude document skills",
+      "verdict": "Use for text-heavy docs and fast drafts"
+    },
+    {
+      "name": "Gamma",
+      "verdict": "AI decks; free 400 one-time credits, watermark (secondary; site blocked fetch)"
+    },
+    {
+      "name": "Google Slides",
+      "verdict": "Free, plain"
+    },
+    {
+      "name": "Figma",
+      "verdict": "Overkill for collateral"
+    }
+  ],
+  "decision": "Claude drafts the copy (one-pager, case study using problem / solution / numbers / quote, security overview), and Canva templates make it look professional. Use Claude's pptx skill when a buyer wants an editable deck.",
+  "note": "",
+  "details": "Canva's official licence page blocked fetch (403); commercial-use statement is secondary (unverified).",
+  "verify": {
+    "verdict": "doubt",
+    "note": "Source is a third-party blog (krea.ai), and Canva's licence page is 403. Commercial use on Canva Free is widely allowed but stays unverified here. Low stakes.",
+    "url": "https://www.krea.ai/blog/is-canva-free-what-the-free-plan-and-canva-ai-include-in-2026"
+  },
+  "better_pick": null
+}

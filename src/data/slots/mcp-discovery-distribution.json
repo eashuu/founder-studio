@@ -1,0 +1,85 @@
+{
+  "slug": "mcp-discovery-distribution",
+  "slot": "MCP discovery / distribution",
+  "track": "app-stacks",
+  "stage": "build",
+  "region": "Global",
+  "order": 5097,
+  "pick": {
+    "name": "Official MCP Registry (server.json) + npm/PyPI package",
+    "url": "https://modelcontextprotocol.io/registry/about",
+    "what": "Metadata registry feeding downstream marketplaces",
+    "why": "One publish reaches aggregators/clients; namespace verified via GitHub/DNS/HTTP",
+    "cost": "free",
+    "free_limits": "Public servers only; still PREVIEW (breaking changes/data resets possible)",
+    "windows_fit": "native (mcp-publisher CLI)",
+    "maintained": "preview as of 2026-10-28",
+    "install": "mcp-publisher init && mcp-publisher login github && mcp-publisher publish",
+    "license": "Mixed MIT to Apache-2.0 transition (permissive); registry v1.8.6 on 2026-10-27",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://modelcontextprotocol.io/registry/about",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Anthropic directory (connector listing)",
+      "url": "https://code.claude.com/docs/en/plugins/publish.md",
+      "what": "List a remote MCP server as a Claude connector",
+      "why": "Reaches claude.ai, Cowork and Claude Code users",
+      "cost": "owned",
+      "free_limits": "Needs paid claude.ai plan; submit at claude.ai/directory/manage",
+      "windows_fit": "web",
+      "maintained": "doc live 2026-10-28",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/en/plugins/publish.md",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "MCP Bundles (.mcpb)",
+      "url": "https://github.com/modelcontextprotocol/mcpb",
+      "what": "One-click local MCP server package (ex-DXT)",
+      "why": "Best for local servers installed in Claude Desktop",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "release date not shown",
+      "install": "npm i -g @anthropic-ai/mcpb && mcpb pack",
+      "license": "Apache-2.0 (new) / MIT (existing)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/modelcontextprotocol/mcpb",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "MCP Registry (pick)",
+      "verdict": "Neutral, multi-client."
+    },
+    {
+      "name": "Anthropic directory",
+      "verdict": "Biggest Claude audience - do both."
+    },
+    {
+      "name": "MCPB",
+      "verdict": "For local/desktop servers."
+    },
+    {
+      "name": "Smithery / PulseMCP / Glama aggregators",
+      "verdict": "Downstream of the registry; not checked individually."
+    }
+  ],
+  "decision": "Publish metadata to the official registry and submit remote servers to the Anthropic directory; ship local servers as .mcpb bundles.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Licence resolved.",
+    "url": "https://raw.githubusercontent.com/modelcontextprotocol/registry/main/LICENSE"
+  },
+  "better_pick": null
+}

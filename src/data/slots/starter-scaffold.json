@@ -1,0 +1,93 @@
+{
+  "slug": "starter-scaffold",
+  "slot": "starter / scaffold",
+  "track": "app-stacks",
+  "stage": "build",
+  "region": "Global",
+  "order": 5078,
+  "pick": {
+    "name": "Better-T-Stack (create-better-t-stack)",
+    "url": "https://www.better-t-stack.dev/docs/cli/options",
+    "what": "CLI scaffolding a typed TS monorepo: Next/TanStack Start + Expo (uniwind) + Hono + Drizzle + Better Auth + oRPC/tRPC + Turborepo + Tauri/Electrobun addons",
+    "why": "Generates almost exactly the recommended one-stack (incl. Expo and Turborepo) in one command; has an MCP server and bts.jsonc for re-runs",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "create-better-t-stack 3.49.0 (2026-10-24)",
+    "install": "pnpm create better-t-stack@latest --frontend next native-uniwind --backend hono --orm drizzle --auth better-auth --api orpc --addons turborepo",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.npmjs.com/package/create-better-t-stack",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Open SaaS (Wasp)",
+      "url": "https://github.com/wasp-lang/open-saas",
+      "what": "Full SaaS template: auth, payments, admin, docs",
+      "why": "Most features out of the box for a web-only SaaS",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "wsl (Wasp CLI, verify Windows-native)",
+      "maintained": "repo active per0.11 (2025-08-01)",
+      "install": "curl -sSL https://get.wasp.sh/installer.sh | sh",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/wasp-lang/open-saas",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "next-forge (Vercel)",
+      "url": "https://github.com/vercel/next-forge",
+      "what": "Turborepo Next.js production monorepo",
+      "why": "Polished web+API monorepo if no mobile",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "6.0.3 (2026-05-28) - slowing",
+      "install": "npx next-forge@latest init",
+      "license": "MIT (verify)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.npmjs.com/package/next-forge",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Better-T-Stack (pick)",
+      "verdict": "Matches web+mobile+desktop+API; options cover Hono, Drizzle, Better Auth, Turborepo, Tauri/Electrobun."
+    },
+    {
+      "name": "Open SaaS / Wasp",
+      "verdict": "Wins for a web-only SaaS with payments/admin prebuilt; Wasp DSL is extra lock-in and no Expo app."
+    },
+    {
+      "name": "next-forge",
+      "verdict": "Good Next-only monorepo; no mobile; last release May 2026."
+    },
+    {
+      "name": "create-t3-turbo",
+      "verdict": "npm package dormant since 2023 (repo may be newer) - superseded."
+    },
+    {
+      "name": "create-expo-stack 2.23.3",
+      "verdict": "Mobile-only scaffold."
+    },
+    {
+      "name": "Paid kits (Makerkit, Supastarter)",
+      "verdict": "Billing/admin prebuilt but paid; not needed for free-first."
+    }
+  ],
+  "decision": "Better-T-Stack scaffolds the cross-platform monorepo in one command; add Electron by hand (it offers Tauri/Electrobun addons, not Electron). Use Open SaaS instead for a quick web-only SaaS where payments/admin matter more than mobile.",
+  "note": "",
+  "details": "Better-T-Stack weekly downloads are low (~2.3k/wk) because it is a one-shot CLI; the templates are what matter.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Better-T-Stack CLI options verified: native-uniwind is a valid frontend, multiple frontends space-separated, turborepo is an addon, Electron is NOT an addon (only tauri/electrobun), as the decision says. 3.49.0, MIT. The command omits --database/--runtime so the CLI will prompt; add --database postgres --runtime node for a non-interactive run.",
+    "url": "https://www.better-t-stack.dev/docs/cli/options"
+  },
+  "better_pick": null
+}

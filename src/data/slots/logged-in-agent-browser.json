@@ -1,0 +1,81 @@
+{
+  "slug": "logged-in-agent-browser",
+  "slot": "logged-in agent browser",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2008,
+  "pick": {
+    "name": "Claude in Chrome",
+    "url": "https://code.claude.com/docs/en/chrome.md",
+    "what": "Anthropic extension that lets Claude drive tabs in Chrome",
+    "why": "First-party, maintained with Claude Code, already connected; run it in a dedicated Chrome profile for founder accounts",
+    "cost": "owned",
+    "free_limits": "Max",
+    "windows_fit": "native",
+    "maintained": "core",
+    "install": "installed (Chrome extension)",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://code.claude.com/docs/llms.txt",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "BrowserOS neo",
+      "url": "https://github.com/browseros-ai/BrowserOS",
+      "what": "Chromium fork with built-in MCP endpoint and persistent agent profile",
+      "why": "Hard separation from your main/company browser",
+      "cost": "free",
+      "free_limits": "anonymous usage events (toggle off)",
+      "windows_fit": "native",
+      "maintained": "14.1k stars; release not shown",
+      "install": "installed",
+      "license": "AGPL-3.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/browseros-ai/BrowserOS",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Playwright CLI with saved storage state",
+      "url": "https://github.com/microsoft/playwright-cli",
+      "what": "Scripted logged-in sessions",
+      "why": "Repeatable automations",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "see E2E slot",
+      "install": "see E2E slot",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/microsoft/playwright-cli",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Claude in Chrome",
+      "verdict": "pick"
+    },
+    {
+      "name": "BrowserOS neo",
+      "verdict": "wins if company policy blocks Chrome extensions or you want a separate binary"
+    },
+    {
+      "name": "Comet/Atlas/other agent browsers",
+      "verdict": "bring a second AI vendor"
+    }
+  ],
+  "decision": "Two browser agents duplicate each other. Claude in Chrome is first-party and needs no extra browser; keep BrowserOS neo only if you value a separate Chromium binary over first-party support.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "First-party; Remote Control doc references Chrome integration flags (--chrome). No issue.",
+    "url": "https://code.claude.com/docs/en/chrome.md"
+  },
+  "better_pick": null
+}

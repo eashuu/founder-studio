@@ -1,0 +1,105 @@
+{
+  "slug": "parallel-agents-worktrees",
+  "slot": "parallel agents / worktrees",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2001,
+  "pick": {
+    "name": "Orca (stablyai)",
+    "url": "https://github.com/stablyai/orca",
+    "what": "Desktop app: parallel Claude Code sessions each in its own git worktree, diff review, GitHub/Linear views, SSH worktrees, mobile companion, notifications",
+    "why": "Only mature Windows-native worktree orchestrator; MIT, ~108.6k stars, releases daily; brings your own Claude subscription",
+    "cost": "free",
+    "free_limits": "No paid tier. Anonymous usage telemetry (app opens, agent starts, OS/version; no file contents, prompts, paths or repo names); default state not stated; opt out in Settings > Privacy or set ORCA_TELEMETRY_DISABLED=1 / DO_NOT_TRACK=1",
+    "windows_fit": "native",
+    "maintained": "v1.4.243 (2026-10-28)",
+    "install": "installed; Windows .exe from onorca.dev or GitHub releases (no winget package documented)",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/stablyai/orca/releases",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Built-in agent view + worktrees (claude agents, --worktree, /batch)",
+      "url": "https://code.claude.com/docs/en/agent-view.md",
+      "what": "First-party background sessions, each auto-moved into .claude/worktrees",
+      "why": "Zero install, first-party; research preview",
+      "cost": "owned",
+      "free_limits": "uses Max usage",
+      "windows_fit": "native (Windows quirks noted in doc)",
+      "maintained": "core, research preview",
+      "install": "claude agents",
+      "license": "proprietary (Claude Code)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/en/agents.md",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Claude desktop app parallel sessions",
+      "url": "https://code.claude.com/docs/en/desktop.md",
+      "what": "GUI parallel sessions with visual diffs",
+      "why": "First-party GUI if you drop Orca",
+      "cost": "owned",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "core",
+      "install": "installed (Claude app)",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/en/agents.md",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Orca",
+      "verdict": "pick: Windows-native, MIT, most active"
+    },
+    {
+      "name": "Built-in agent view",
+      "verdict": "runner-up; wins once it leaves research preview or if you want no third-party app"
+    },
+    {
+      "name": "Claude desktop app",
+      "verdict": "first-party GUI, fewer git/PR features"
+    },
+    {
+      "name": "Conductor",
+      "verdict": "macOS-first, proprietary; no confirmed Windows build"
+    },
+    {
+      "name": "Superset",
+      "verdict": "macOS only; Windows planned"
+    },
+    {
+      "name": "Crystal / Nimbalyst",
+      "verdict": "cross-platform but far smaller adoption"
+    },
+    {
+      "name": "Vibe Kanban",
+      "verdict": "Bloop shut down 2026-04-10; community-maintained now"
+    },
+    {
+      "name": "claude-squad",
+      "verdict": "needs tmux: WSL only"
+    },
+    {
+      "name": "Agent teams",
+      "verdict": "experimental, off by default; no worktree isolation"
+    }
+  ],
+  "decision": "Orca wins on Windows: native app, MIT, daily releases, worktree-per-agent plus PR/diff review and phone notifications. Switch to built-in agent view if Orca's telemetry or hook load bothers you, or when agent view goes GA. Don't drive the same repo from both.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "fixed",
+    "note": "MIT, ~108.6k stars, v1.4.243 dated 2026-10-28 (Latest, stable) all confirmed. The telemetry doc does NOT say telemetry is on by default; it sends no content/paths/repo names. Opt out: Settings > Privacy toggle or DO_NOT_TRACK=1 / ORCA_TELEMETRY_DISABLED=1. README lists no winget package (installer .exe, brew, AUR only).",
+    "url": "https://www.onorca.dev/docs/telemetry"
+  },
+  "better_pick": null
+}

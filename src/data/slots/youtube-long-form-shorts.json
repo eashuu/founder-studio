@@ -1,0 +1,85 @@
+{
+  "slug": "youtube-long-form-shorts",
+  "slot": "YouTube (long-form + Shorts)",
+  "track": "brand",
+  "stage": "sell",
+  "region": "Global",
+  "order": 8224,
+  "pick": {
+    "name": "YouTube + YouTube Studio",
+    "url": "https://support.google.com/youtube/answer/72851",
+    "what": "Long-form demos/tutorials and Shorts; Studio for analytics and, once in YPP, Test & Compare for thumbnails/titles",
+    "why": "Search-discoverable, compounding demo library for every product; Studio analytics and A/B testing are free",
+    "cost": "free",
+    "free_limits": "Free; YPP today: 1,000 subs + 4,000 watch hrs/12 mo or 10M Shorts views/90 days; from 2027-02-01 new applicants need 8,000 hrs or 20M Shorts views (existing partners grandfathered)",
+    "windows_fit": "web + Android Studio app",
+    "maintained": "SaaS",
+    "install": "web",
+    "license": "Proprietary",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://support.google.com/youtube/answer/72851",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "LinkedIn native video",
+      "url": "https://www.linkedin.com",
+      "what": "Upload short demos natively to LinkedIn",
+      "why": "Better B2B reach per view for enterprise buyers; no search afterlife",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "web",
+      "maintained": "SaaS",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://buffer.com/resources/how-to-schedule-linkedin-posts/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Buffer (YouTube Shorts channel)",
+      "url": "https://buffer.com",
+      "what": "Schedule Shorts alongside other posts",
+      "why": "Batch publishing",
+      "cost": "freemium",
+      "free_limits": "3 channels free",
+      "windows_fit": "web",
+      "maintained": "SaaS",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://buffer.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "YouTube",
+      "verdict": "PICK: search + recommendations, compounding"
+    },
+    {
+      "name": "LinkedIn video",
+      "verdict": "Reach to buyers but no long tail"
+    },
+    {
+      "name": "Instagram Reels",
+      "verdict": "Consumer audience; only for B2C apps (not verified)"
+    },
+    {
+      "name": "TikTok",
+      "verdict": "Banned in India since 2020"
+    }
+  ],
+  "decision": "YouTube is the only channel where a demo keeps getting found for years, so make it the home for product walkthroughs and repurpose clips to Shorts and LinkedIn. Use Studio analytics from day one; Test & Compare unlocks with YPP (RouteNote Jul 2025).",
+  "note": "",
+  "details": "Shorts thumbnails/titles A/B: 'Test & Compare' fully rolled out to YPP creators per RouteNote (2025-07-21).",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Current thresholds (1,000 subs + 4,000 hrs/12mo OR 10M Shorts views/90d) correct today, but YouTube announced doubling for NEW applicants from 2027-02-01 (8,000 hrs or 20M Shorts views); Shorts ads limited to 10M-view creators.",
+    "url": "https://blog.youtube/news-and-events/youtube-monetization-qualified-watch-hours-shorts-views/"
+  },
+  "better_pick": null
+}

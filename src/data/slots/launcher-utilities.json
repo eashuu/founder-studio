@@ -1,0 +1,81 @@
+{
+  "slug": "launcher-utilities",
+  "slot": "launcher / utilities",
+  "track": "windows-dev",
+  "stage": "build",
+  "region": "Global",
+  "order": 3049,
+  "pick": {
+    "name": "PowerToys",
+    "url": "https://github.com/microsoft/PowerToys",
+    "what": "Command Palette, Advanced Paste, FancyZones, Text Extractor",
+    "why": "First-party, one install covers several slots",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native (user scope)",
+    "maintained": "v0.102.3001 (2026-10-27)",
+    "install": "winget install Microsoft.PowerToys --scope user",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/microsoft/PowerToys",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Flow Launcher",
+      "url": "https://github.com/Flow-Launcher/Flow.Launcher",
+      "what": "Launcher with Everything plugin",
+      "why": "If Command Palette feels slow",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "v2.1.4 (2026-09-20)",
+      "install": "winget install Flow-Launcher.Flow-Launcher",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/Flow-Launcher/Flow.Launcher",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Raycast for Windows",
+      "url": "https://www.raycast.com/windows",
+      "what": "Launcher",
+      "why": "Free, macOS parity in progress",
+      "cost": "free",
+      "free_limits": "not stated",
+      "windows_fit": "native",
+      "maintained": "v2.9.0.0",
+      "install": "winget",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.raycast.com/windows",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "PowerToys",
+      "verdict": "pick"
+    },
+    {
+      "name": "Flow Launcher",
+      "verdict": "alt"
+    },
+    {
+      "name": "Raycast",
+      "verdict": "young on Windows"
+    }
+  ],
+  "decision": "Optional productivity.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "v0.102.3001.0 (27 Oct 2026) Latest.",
+    "url": "https://github.com/microsoft/PowerToys/releases"
+  },
+  "better_pick": null
+}

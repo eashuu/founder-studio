@@ -1,0 +1,89 @@
+{
+  "slug": "backups",
+  "slot": "Backups",
+  "track": "ship",
+  "stage": "ship",
+  "region": "Global",
+  "order": 6119,
+  "pick": {
+    "name": "Nightly pg_dump to R2 (+B2 copy) via GitHub Actions",
+    "url": "https://developers.cloudflare.com/r2/pricing/",
+    "what": "Provider-independent logical backups",
+    "why": "Neon free keeps only 6 h history; Supabase free has no backups; own dumps are free and portable",
+    "cost": "free",
+    "free_limits": "R2 10 GB free; B2 10 GB free; uses Actions minutes (free on public repo)",
+    "windows_fit": "web",
+    "maintained": "n/a",
+    "install": "workflow: pg_dump $DATABASE_URL | gzip | rclone rcat r2:backups/db-$(date +%F).sql.gz",
+    "license": "n/a (rclone MIT, v1.75.2 2026-10-09)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://developers.cloudflare.com/r2/pricing/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Neon instant restore (Launch)",
+      "url": "https://neon.com/pricing",
+      "what": "Point-in-time restore",
+      "why": "Pay-later: up to 7 days history",
+      "cost": "paid",
+      "free_limits": "$0.20/GB-mo instant restore; Free = 6 h, 1 manual snapshot",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://neon.com/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Supabase Pro backups",
+      "url": "https://supabase.com/pricing",
+      "what": "Daily backups 7 days",
+      "why": "If on Supabase",
+      "cost": "paid",
+      "free_limits": "Pro $25/mo",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://supabase.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "pg_dump to R2/B2",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Neon Launch restore",
+      "verdict": "Alt"
+    },
+    {
+      "name": "Supabase Pro",
+      "verdict": "Alt"
+    },
+    {
+      "name": "Turso PITR",
+      "verdict": "1 day on free"
+    },
+    {
+      "name": "Oracle volume backups",
+      "verdict": "5 free backups for VM disks"
+    }
+  ],
+  "decision": "Your own dumps to two vendors protect against provider lockout and are free; add paid PITR when a customer's data is at stake.",
+  "note": "",
+  "details": "Test a restore monthly.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Sound. rclone v1.75.2 2026-10-09 confirmed. Caveat: run the backup workflow from a PRIVATE ops repo (fits easily in 2,000 free min), because public-repo Actions logs are world-readable and one misconfigured echo leaks DATABASE_URL.",
+    "url": "https://developers.cloudflare.com/r2/pricing/"
+  },
+  "better_pick": null
+}

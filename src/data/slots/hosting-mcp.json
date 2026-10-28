@@ -1,0 +1,81 @@
+{
+  "slug": "hosting-mcp",
+  "slot": "hosting MCP",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2024,
+  "pick": {
+    "name": "Cloudflare (official plugin)",
+    "url": "https://github.com/cloudflare/mcp-server-cloudflare",
+    "what": "Workers/Wrangler skills + Cloudflare MCP",
+    "why": "Match the hosting track's pick",
+    "cost": "freemium",
+    "free_limits": "Cloudflare free plan",
+    "windows_fit": "native",
+    "maintained": "pushed 2026-10-22",
+    "install": "/plugin install cloudflare@claude-plugins-official",
+    "license": "Apache-2.0",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/cloudflare/mcp-server-cloudflare",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Vercel (official plugin)",
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "what": "Deployments, logs, domains",
+      "why": "If on Vercel (Hobby is non-commercial - verify)",
+      "cost": "freemium",
+      "free_limits": "Hobby non-commercial (unverified)",
+      "windows_fit": "native",
+      "maintained": "listed 2026-10-28",
+      "install": "/plugin install vercel@claude-plugins-official",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/anthropics/claude-plugins-official",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Firebase (official plugin)",
+      "url": "https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins",
+      "what": "Firebase MCP",
+      "why": "Android backends",
+      "cost": "freemium",
+      "free_limits": "Spark plan",
+      "windows_fit": "native",
+      "maintained": "listed 2026-10-28",
+      "install": "/plugin install firebase@claude-plugins-official",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Cloudflare",
+      "verdict": "default if hosting track picks it"
+    },
+    {
+      "name": "Vercel",
+      "verdict": "if Vercel"
+    },
+    {
+      "name": "Firebase",
+      "verdict": "if Firebase"
+    }
+  ],
+  "decision": "Install only the host you deploy to; CLIs (wrangler, vercel) via Bash often suffice.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "cloudflare plugin present in marketplace.json.",
+    "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins"
+  },
+  "better_pick": null
+}

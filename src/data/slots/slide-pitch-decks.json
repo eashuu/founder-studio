@@ -1,0 +1,105 @@
+{
+  "slug": "slide-pitch-decks",
+  "slot": "Slide / pitch decks",
+  "track": "design",
+  "stage": "discover",
+  "region": "Global",
+  "order": 1167,
+  "pick": {
+    "name": "Claude Design (decks)",
+    "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+    "what": "Generates decks on your design system; exports PPTX, PDF, Google Slides, HTML, Canva",
+    "why": "On-brand decks from your design system, editable exports to Google Slides/PPTX, and no watermark.",
+    "cost": "owned",
+    "free_limits": "Counts toward Claude usage limits",
+    "windows_fit": "web/desktop",
+    "maintained": "live",
+    "install": "web",
+    "license": "Anthropic ToS",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Google Slides + Gemini (AI Pro)",
+      "url": "https://workspaceupdates.googleblog.com",
+      "what": "Slides with Gemini full-deck generation",
+      "why": "Best place to edit/present/share with investors; full-deck generation included in AI Pro (from 29 Jun 2026, English).",
+      "cost": "owned",
+      "free_limits": "Included in Google AI Pro",
+      "windows_fit": "web",
+      "maintained": "live",
+      "install": "web",
+      "license": "Google ToS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://one.google.com/about/google-ai-plans/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Slidev",
+      "url": "https://github.com/slidevjs/slidev",
+      "what": "Markdown slides for developers (Vue), Git-versioned",
+      "why": "Best for technical talks/demos with live code; Claude Code writes it.",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "native (Node)",
+      "maintained": "v53.0.0, 16 Sep",
+      "install": "npm init slidev@latest",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/slidevjs/slidev/releases",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Claude Design",
+      "verdict": "pick"
+    },
+    {
+      "name": "Google Slides + Gemini",
+      "verdict": "alt edit/present"
+    },
+    {
+      "name": "Slidev",
+      "verdict": "alt dev talks"
+    },
+    {
+      "name": "Gamma",
+      "verdict": "400 one-time credits, watermark on free"
+    },
+    {
+      "name": "Pitch",
+      "verdict": "free has no PPTX export"
+    },
+    {
+      "name": "Beautiful.ai",
+      "verdict": "no free plan"
+    },
+    {
+      "name": "Marp / reveal.js",
+      "verdict": "markdown alternatives"
+    },
+    {
+      "name": "NotebookLM slide decks",
+      "verdict": "from sources; PPTX export announced Feb 2026"
+    },
+    {
+      "name": "anthropic pptx skill",
+      "verdict": "programmatic PPTX"
+    }
+  ],
+  "decision": "Generate in Claude Design on your brand system, export to Google Slides, polish and present there. Use Slidev for technical talks where live code matters.",
+  "note": "",
+  "details": "Gemini-in-Slides inclusion in AI Pro came from a Workspace Updates post found via search (30 Jun 2026); not opened directly.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Same article confirms PPTX, PDF, Google Slides, HTML and Canva integration.",
+    "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design"
+  },
+  "better_pick": null
+}

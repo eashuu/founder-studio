@@ -1,0 +1,97 @@
+{
+  "slug": "music-for-videos",
+  "slot": "Music for videos",
+  "track": "design",
+  "stage": "discover",
+  "region": "Global",
+  "order": 1163,
+  "pick": {
+    "name": "Pixabay Music",
+    "url": "https://pixabay.com/service/license-summary/",
+    "what": "Royalty-free music library",
+    "why": "Free, no attribution, usable in commercial videos anywhere (not just YouTube).",
+    "cost": "free",
+    "free_limits": "Free; no standalone resale; Content ID behaviour per track not stated",
+    "windows_fit": "web",
+    "maintained": "live",
+    "install": "web",
+    "license": "Pixabay Content Licence",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://pixabay.com/service/license-summary/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Flow Music (Google AI Pro)",
+      "url": "https://9to5google.com/2025/12/24/google-ai-pro-ultra-features/",
+      "what": "AI music generation in Google Flow (Lyria)",
+      "why": "Custom tracks matched to your video; included 10,000 Flow Music credits/month.",
+      "cost": "owned",
+      "free_limits": "10,000 Flow Music credits/month on AI Pro; commercial terms unverified",
+      "windows_fit": "web",
+      "maintained": "live",
+      "install": "web",
+      "license": "Google ToS",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://9to5google.com/2025/12/24/google-ai-pro-ultra-features/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "YouTube Audio Library",
+      "url": "https://support.google.com/youtube/answer/3376882",
+      "what": "Free tracks for YouTube videos",
+      "why": "Safe for YouTube uploads; outside-YouTube use not stated.",
+      "cost": "free",
+      "free_limits": "Free; some tracks need attribution",
+      "windows_fit": "web",
+      "maintained": "live",
+      "install": "web (YouTube Studio)",
+      "license": "YouTube Audio Library licence",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://support.google.com/youtube/answer/3376882",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Pixabay Music",
+      "verdict": "pick"
+    },
+    {
+      "name": "Flow Music",
+      "verdict": "alt custom AI music"
+    },
+    {
+      "name": "YouTube Audio Library",
+      "verdict": "alt for YouTube-only"
+    },
+    {
+      "name": "Suno free",
+      "verdict": "non-commercial, even if you subscribe later"
+    },
+    {
+      "name": "Udio",
+      "verdict": "downloads disabled after UMG settlement Oct 2025"
+    },
+    {
+      "name": "Free Music Archive",
+      "verdict": "per-track CC; NC tracks unusable"
+    },
+    {
+      "name": "Uppbeat",
+      "verdict": "not verified"
+    }
+  ],
+  "decision": "Pixabay is the only option with a clear free commercial licence for use on any platform. Use Flow Music for bespoke tracks once Google's commercial terms for generated music are confirmed.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Licence page silent on Content ID, as stated. Flow Music 10,000 credits/mo on AI Pro confirmed on Google's AI plans page.",
+    "url": "https://pixabay.com/service/license-summary/"
+  },
+  "better_pick": null
+}

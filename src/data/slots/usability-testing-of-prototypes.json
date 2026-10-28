@@ -1,0 +1,89 @@
+{
+  "slug": "usability-testing-of-prototypes",
+  "slot": "Usability testing of prototypes",
+  "track": "discover",
+  "stage": "discover",
+  "region": "Global",
+  "order": 147,
+  "pick": {
+    "name": "Lyssna (free)",
+    "url": "https://www.lyssna.com/pricing",
+    "what": "Unmoderated tests: first-click, preference, five-second, prototype tests",
+    "why": "Most usable free tier (unlimited quick studies, 3 seats) and pay-per-use panel when you need strangers.",
+    "cost": "freemium",
+    "free_limits": "Free: 3 seats, 15 self-recruited responses (per-study vs total not stated). Growth $166/mo",
+    "windows_fit": "web",
+    "maintained": "live service",
+    "install": "web",
+    "license": "proprietary SaaS",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.lyssna.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "UXtweak (free)",
+      "url": "https://www.uxtweak.com/pricing",
+      "what": "UX research suite",
+      "why": "Similar free tier; 15 responses/mo, 1 study at a time.",
+      "cost": "freemium",
+      "free_limits": "1 seat, 15 responses/mo, 1 concurrent study, unmoderated only; per-study caps 10 (survey/card sort/tree test) or 3 (first-click/prototype/five-second); results visible 14 days",
+      "windows_fit": "web",
+      "maintained": "live service",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.uxtweak.com/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Maze",
+      "url": "https://maze.co/pricing",
+      "what": "Prototype testing with Figma integration",
+      "why": "Best if designs live in Figma; free limits not shown.",
+      "cost": "freemium",
+      "free_limits": "Free limits not shown on the page",
+      "windows_fit": "web",
+      "maintained": "live service",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://maze.co/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Lyssna",
+      "verdict": "pick"
+    },
+    {
+      "name": "UXtweak",
+      "verdict": "alt"
+    },
+    {
+      "name": "Maze",
+      "verdict": "alt"
+    },
+    {
+      "name": "Useberry",
+      "verdict": "not checked"
+    },
+    {
+      "name": "Moderated Meet call + Meetily",
+      "verdict": "free; often better for 5-user tests"
+    }
+  ],
+  "decision": "For a solo founder, five moderated calls beat any tool; Lyssna's free tier covers quick unmoderated checks. Pay for a panel only when recruiting from your own audience fails.",
+  "note": "",
+  "details": "Maze and Useberry free limits unverified.",
+  "verify": {
+    "verdict": "doubt",
+    "note": "Page shows 3 seats and 15 self-recruited responses but not 'unlimited quick studies' or whether 15 is per study; Growth $166/mo billing period not stated.",
+    "url": "https://www.lyssna.com/pricing/"
+  },
+  "better_pick": null
+}

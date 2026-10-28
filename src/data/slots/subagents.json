@@ -1,0 +1,81 @@
+{
+  "slug": "subagents",
+  "slot": "subagents",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2019,
+  "pick": {
+    "name": "Write your own 3-5 stack subagents + feature-dev/pr-review-toolkit agents",
+    "url": "https://code.claude.com/docs/en/sub-agents.md",
+    "what": "Project subagents in .claude/agents for your stack",
+    "why": "Small, high-signal; imported catalogs bloat routing",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "core",
+    "install": "ask Claude to create them; /plugin install pr-review-toolkit@claude-plugins-official",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://code.claude.com/docs/en/sub-agents.md",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "VoltAgent awesome-claude-code-subagents",
+      "url": "https://github.com/VoltAgent/awesome-claude-code-subagents",
+      "what": "161+ subagents",
+      "why": "Cherry-pick specialists",
+      "cost": "free",
+      "free_limits": "MIT",
+      "windows_fit": "native",
+      "maintained": "pushed 2026-10-11",
+      "install": "copy .md to ~/.claude/agents",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/VoltAgent/awesome-claude-code-subagents",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "wshobson/agents",
+      "url": "https://github.com/wshobson/agents",
+      "what": "Large plugin/agent catalog",
+      "why": "Single language plugins only",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "pushed 2026-10-26",
+      "install": "/plugin marketplace add wshobson/agents",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/wshobson/agents",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Own subagents",
+      "verdict": "pick"
+    },
+    {
+      "name": "VoltAgent",
+      "verdict": "cherry-pick"
+    },
+    {
+      "name": "wshobson",
+      "verdict": "cherry-pick"
+    }
+  ],
+  "decision": "Imported agent catalogs dilute Claude's routing; write a few that encode your stack.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "pr-review-toolkit and feature-dev present in marketplace.json.",
+    "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins"
+  },
+  "better_pick": null
+}

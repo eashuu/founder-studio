@@ -1,0 +1,93 @@
+{
+  "slug": "business-email-on-own-domain",
+  "slot": "Business email on own domain",
+  "track": "ship",
+  "stage": "ship",
+  "region": "Global",
+  "order": 6108,
+  "pick": {
+    "name": "Zoho Mail Forever Free",
+    "url": "https://www.zoho.com/mail/zohomail-pricing.html",
+    "what": "Hosted mailbox on your domain",
+    "why": "Only real free hosted mailbox (send+receive from you@domain with proper DKIM)",
+    "cost": "free",
+    "free_limits": "Up to 5 users, 5 GB/user, 1 domain; NO IMAP/POP/ActiveSync (web + Zoho apps only); 'available only in select data centers'",
+    "windows_fit": "web + Zoho Mail desktop/mobile apps",
+    "maintained": "active",
+    "install": "web",
+    "license": "service",
+    "commercial_ok": "unclear",
+    "needs_company": "no",
+    "source_url": "https://www.zoho.com/mail/zohomail-pricing.html",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Cloudflare Email Routing + a sending relay",
+      "url": "https://developers.cloudflare.com/email-routing/limits/",
+      "what": "Forward you@domain to Gmail; send via Resend/Brevo SMTP",
+      "why": "Free and keeps Gmail UI; good for aliases",
+      "cost": "free",
+      "free_limits": "200 rules/domain, 200 destination addresses/account, 25 MiB inbound; receive-only unless you add an SMTP relay",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "web (Cloudflare dashboard)",
+      "license": "service",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://developers.cloudflare.com/email-routing/limits/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Google Workspace Business Starter",
+      "url": "https://workspace.google.com/pricing",
+      "what": "Paid mailbox + Calendar/Meet/Drive",
+      "why": "Pay-later pick for enterprise/healthcare trust and IMAP",
+      "cost": "paid",
+      "free_limits": "No free plan (price not re-verified this session)",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://workspace.google.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Zoho Mail Forever Free",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Cloudflare Email Routing",
+      "verdict": "Alt: free forwarding, needs relay to send"
+    },
+    {
+      "name": "Google Workspace",
+      "verdict": "Alt: buy when an enterprise buyer expects it"
+    },
+    {
+      "name": "Migadu Micro",
+      "verdict": "$19/yr but 20 outgoing/day"
+    },
+    {
+      "name": "Porkbun email forwarding",
+      "verdict": "Free forwarding (20 forwards) if you register there"
+    },
+    {
+      "name": "Zoho Mail Lite",
+      "verdict": "Cheap paid upgrade with IMAP (price not shown in fetch)"
+    }
+  ],
+  "decision": "Zoho Free is the only $0 real mailbox; the lack of IMAP is acceptable if you use Zoho's apps. Switch to Google Workspace when you start enterprise/healthcare sales cycles.",
+  "note": "",
+  "details": "Set SPF, DKIM and DMARC whichever you pick.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Zoho Mail Forever Free: 5 users, 5 GB/user, 1 domain, no IMAP/POP/ActiveSync, 'available only in select data centers' (which DCs is not stated, so confirm it is offered on the India DC at signup).",
+    "url": "https://www.zoho.com/mail/zohomail-pricing.html"
+  },
+  "better_pick": null
+}

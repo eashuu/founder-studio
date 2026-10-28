@@ -1,0 +1,93 @@
+{
+  "slug": "calendar-time-blocking",
+  "slot": "calendar + time blocking",
+  "track": "productivity",
+  "stage": "run",
+  "region": "Global",
+  "order": 11211,
+  "pick": {
+    "name": "Reclaim.ai (Lite)",
+    "url": "https://reclaim.ai",
+    "what": "AI calendar layer that auto-schedules focus time, habits and buffers and syncs personal<->work calendars",
+    "why": "Free tier supports Outlook and Google together, so it can block company calendar time for personal commitments and protect focus time automatically",
+    "cost": "freemium",
+    "free_limits": "Lite: 2 connected calendars, 1 calendar sync, 1-week scheduling range, 1 scheduling link, 5 AI agents; Todoist/Linear integrations need Starter ($10/seat/mo annual)",
+    "windows_fit": "web",
+    "maintained": "SaaS, pricing page current",
+    "install": "web",
+    "license": "Proprietary SaaS",
+    "commercial_ok": "yes",
+    "needs_company": "unclear",
+    "source_url": "https://reclaim.ai/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Notion Calendar",
+      "url": "https://www.notion.com/product/calendar",
+      "what": "Free calendar app showing Google, Outlook and iCloud calendars together",
+      "why": "Best free unified view for manual time blocking; Outlook support added June 2026; Windows + Android apps",
+      "cost": "free",
+      "free_limits": "Free; no paid tier described",
+      "windows_fit": "native (Windows) + Android",
+      "maintained": "Outlook integration announced 2026-06-29",
+      "install": "web or Windows app from notion.com/product/calendar",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "unclear",
+      "source_url": "https://www.notion.com/product/calendar",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Morgen",
+      "url": "https://www.morgen.so",
+      "what": "Calendar + task time-blocking planner (Google, Outlook, iCloud, CalDAV)",
+      "why": "Best pay-later planner if you want tasks dragged onto a multi-account calendar",
+      "cost": "paid",
+      "free_limits": "14-day trial only; $15/mo annual or $30/mo monthly",
+      "windows_fit": "native",
+      "maintained": "SaaS, current",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "unclear",
+      "source_url": "https://www.morgen.so/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Reclaim.ai Lite",
+      "verdict": "PICK: free automatic focus/habit blocking + cross-account sync"
+    },
+    {
+      "name": "Notion Calendar",
+      "verdict": "Free manual unified view; no automation"
+    },
+    {
+      "name": "Morgen",
+      "verdict": "Paid only after trial"
+    },
+    {
+      "name": "Akiflow",
+      "verdict": "Paid only (~$19-34/mo)"
+    },
+    {
+      "name": "Motion",
+      "verdict": "Paid AI auto-scheduler (~$19-34/mo)"
+    },
+    {
+      "name": "Outlook/Gmail native",
+      "verdict": "Can overlay calendars but no automatic blocking"
+    }
+  ],
+  "decision": "Reclaim Lite is the only free option that both auto-protects focus time and syncs personal Google events into the company Outlook calendar. If company Entra ID blocks third-party calendar consent, fall back to Notion Calendar (free, manual) and block time by hand. Upgrade to Reclaim Starter only if you need Todoist/Linear task scheduling.",
+  "note": "",
+  "details": "Connecting a company M365 calendar to a third-party app may need tenant admin consent (needs_company=unclear).",
+  "verify": {
+    "verdict": "ok",
+    "note": "Reclaim Lite confirmed: 2 connected calendars across Google & Outlook, 1 calendar sync, 1-week range, 1 scheduling link, 5 AI agents; Todoist/Linear etc. need paid; Starter $10/seat/mo yearly ($12 monthly). Linking a company M365 calendar may still need Entra admin consent / company policy.",
+    "url": "https://reclaim.ai/pricing"
+  },
+  "better_pick": null
+}

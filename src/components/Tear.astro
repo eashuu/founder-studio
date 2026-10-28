@@ -1,0 +1,7 @@
+---
+import { tearPath } from '../lib/data.js';
+const { seed, side = 'bottom' } = Astro.props;
+---
+<svg class={`tear tear-${side}`} viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true">
+  <path d={tearPath(seed, side)} />
+</svg>

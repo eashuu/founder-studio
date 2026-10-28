@@ -1,0 +1,93 @@
+{
+  "slug": "terminal",
+  "slot": "terminal",
+  "track": "windows-dev",
+  "stage": "build",
+  "region": "Global",
+  "order": 3032,
+  "pick": {
+    "name": "Windows Terminal",
+    "url": "https://github.com/microsoft/terminal",
+    "what": "Tabs/panes, pwsh + WSL profiles",
+    "why": "Shift+Enter works with Claude Code out of the box; Microsoft-maintained; no login",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native (MSIX per-user)",
+    "maintained": "v1.25.2733.0 (2026-10-02)",
+    "install": "installed (wt)",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/microsoft/terminal/releases",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Alacritty",
+      "url": "https://github.com/alacritty/alacritty",
+      "what": "Fast minimal terminal, kitty keyboard protocol (Shift+Enter ok from 0.16)",
+      "why": "Fastest; no tabs/splits",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native (portable)",
+      "maintained": "v0.17.0 (2026-04-06)",
+      "install": "winget install Alacritty.Alacritty",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/alacritty/alacritty",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "WezTerm",
+      "url": "https://github.com/wezterm/wezterm",
+      "what": "Lua-configured multiplexing terminal",
+      "why": "Most features, but stable release stale since 2024-02-03",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "20240203 (stale)",
+      "install": "winget install wez.wezterm",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/wezterm/wezterm",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Windows Terminal",
+      "verdict": "pick"
+    },
+    {
+      "name": "Alacritty",
+      "verdict": "speed"
+    },
+    {
+      "name": "WezTerm",
+      "verdict": "stale stable channel"
+    },
+    {
+      "name": "Warp",
+      "verdict": "own AI agent duplicates Claude Code; login/commercial terms unconfirmed"
+    },
+    {
+      "name": "Tabby / Wave",
+      "verdict": "Electron, not in Claude docs' key table"
+    },
+    {
+      "name": "Ghostty",
+      "verdict": "no Windows build"
+    }
+  ],
+  "decision": "Windows Terminal ships with Windows 11 and is zero-config with Claude Code. Set Claude's preferredNotifChannel to terminal_bell since WT has no default desktop notification.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "v1.25.2733.0 (2 Oct 2026) stable Latest.",
+    "url": "https://github.com/microsoft/terminal/releases"
+  },
+  "better_pick": null
+}

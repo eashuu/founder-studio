@@ -1,0 +1,93 @@
+{
+  "slug": "prd-spec-writing-with-claude",
+  "slot": "PRD / spec writing with Claude",
+  "track": "discover",
+  "stage": "discover",
+  "region": "Global",
+  "order": 148,
+  "pick": {
+    "name": "GitHub Spec Kit",
+    "url": "https://github.com/github/spec-kit",
+    "what": "Spec-driven development toolkit: constitution -> spec -> plan -> tasks, with Claude Code support",
+    "why": "Free, MIT, GitHub-maintained, and it produces specs that Claude Code then implements in the same repo.",
+    "cost": "free",
+    "free_limits": "Free",
+    "windows_fit": "native (Python/uv CLI)",
+    "maintained": "v1.2.4, 27 Oct",
+    "install": "uvx --from git+https://github.com/github/spec-kit.git specify init <project>",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/github/spec-kit",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "BMAD-METHOD",
+      "url": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "what": "Agent-team method (analyst, PM, architect personas) for PRDs and stories",
+      "why": "Richer PM-persona flow for bigger products; heavier ceremony.",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "native (npx)",
+      "maintained": "stable v6.12.4 (14 Oct 2026); v7 preview",
+      "install": "npx bmad-method install",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "ChatPRD",
+      "url": "https://www.chatprd.ai/pricing",
+      "what": "AI PM assistant for PRDs",
+      "why": "Polished PRD templates if you do not want a repo-based flow.",
+      "cost": "freemium",
+      "free_limits": "Free: 3 chats; Pro $15/mo",
+      "windows_fit": "web",
+      "maintained": "live service",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.chatprd.ai/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "GitHub Spec Kit",
+      "verdict": "pick"
+    },
+    {
+      "name": "BMAD-METHOD",
+      "verdict": "alt"
+    },
+    {
+      "name": "ChatPRD",
+      "verdict": "alt paid"
+    },
+    {
+      "name": "Kiro specs",
+      "verdict": "separate IDE; 50 free credits"
+    },
+    {
+      "name": "Claude Code plan mode only",
+      "verdict": "fine for small features, no durable spec"
+    },
+    {
+      "name": "Notion AI",
+      "verdict": "AI paid"
+    }
+  ],
+  "decision": "Spec Kit keeps the PRD, plan and tasks as files beside the code, which is what Claude Code works best from. Use BMAD when a product needs a fuller PM/architect pass, ChatPRD only for client-facing PRD documents.",
+  "note": "Consolidated: use Spec Kit for the spec/PRD document only, then build with Superpowers (Claude Code track). Install once: uv tool install specify-cli --from git+https://github.com/github/spec-kit.git",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "v1.2.4 (27 Oct 2026) latest. See cross-issue on overlap with Superpowers.",
+    "url": "https://github.com/github/spec-kit/releases"
+  },
+  "better_pick": null
+}

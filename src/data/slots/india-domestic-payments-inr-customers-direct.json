@@ -1,0 +1,93 @@
+{
+  "slug": "india-domestic-payments-inr-customers-direct",
+  "slot": "India domestic payments (INR customers, direct)",
+  "track": "money",
+  "stage": "run",
+  "region": "India",
+  "order": 9127,
+  "pick": {
+    "name": "Razorpay",
+    "url": "https://razorpay.com/pricing/",
+    "what": "Indian PG: UPI, cards, netbanking, subscriptions, payment links",
+    "why": "Lowest-friction direct INR collection; individuals/unregistered businesses can onboard via no-GST route",
+    "cost": "paid",
+    "free_limits": "2% platform fee on domestic (incl. UPI; UPI MDR is 0 but platform fee applies) + 18% GST on fee; card subscriptions +0.9%; intl cards up to 3%; no setup/AMC",
+    "windows_fit": "web",
+    "maintained": "razorpay 2.9.8 2026-07-15",
+    "install": "npm i razorpay",
+    "license": "service (SDK MIT)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://razorpay.com/docs/payments/create-account/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Cashfree Payments",
+      "url": "https://www.cashfree.com/payment-gateway-charges",
+      "what": "Indian PG",
+      "why": "Slightly cheaper standard rate",
+      "cost": "paid",
+      "free_limits": "Standard 1.95% domestic (+GST); intl Visa/MC 2.99%, Amex 2.95%; festive offer: 0% platform fee on first Rs20L GMV until 31-Mar-2027 (ends early if exhausted)",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "npm i cashfree-pg",
+      "license": "service",
+      "commercial_ok": "yes",
+      "needs_company": "unclear",
+      "source_url": "https://www.cashfree.com/payment-gateway-charges",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Dodo Payments (INR via MoR)",
+      "url": "https://dodopayments.com/pricing",
+      "what": "Same MoR handles Indian buyers",
+      "why": "Zero extra integration; MoR handles GST to buyer",
+      "cost": "paid",
+      "free_limits": "4% + 15c India domestic",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "npm i dodopayments",
+      "license": "service",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://dodopayments.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Razorpay",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Cashfree",
+      "verdict": "Alt: ~1.95%"
+    },
+    {
+      "name": "Dodo INR",
+      "verdict": "Alt: simplest at low volume"
+    },
+    {
+      "name": "PhonePe PG",
+      "verdict": "~1.95-1.99% standard per third parties; no official page fetched"
+    },
+    {
+      "name": "PayU",
+      "verdict": "Not checked"
+    }
+  ],
+  "decision": "At first, let Dodo collect INR so you run one billing integration. Add Razorpay when INR revenue is meaningful: ~2.36% all-in vs ~4% + 15c, but then you invoice and charge GST yourself once registered.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "doubt",
+    "note": "Razorpay docs confirm a 2% platform fee (UPI 0 MDR but 2% applies; the doc self-conflicts with UPI QR at 0.99%), +18% GST on the fee, card subscriptions +0.9%, intl up to 3%, no setup/AMC, and that unregistered individuals can onboard with PAN. BUT the Cashfree alt is stale: Cashfree's page shows standard 1.95% and a festive offer of 0% platform fee on the first Rs20L GMV until 31-Mar-2027, not a '1.6% promo ended 2026-07-31'. For a $0-first founder starting INR collection before Apr 2027, Cashfree is cheaper, if it onboards unregistered individuals (not verified).",
+    "url": "https://www.cashfree.com/payment-gateway-charges"
+  },
+  "better_pick": {
+    "name": "Cashfree Payments",
+    "url": "https://www.cashfree.com/payment-gateway-charges",
+    "reason": "1.95% standard vs Razorpay 2%, plus 0% platform fee on first Rs20L GMV until 31-Mar-2027; verify individual onboarding"
+  }
+}

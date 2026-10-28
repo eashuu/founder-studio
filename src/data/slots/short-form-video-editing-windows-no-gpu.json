@@ -1,0 +1,105 @@
+{
+  "slug": "short-form-video-editing-windows-no-gpu",
+  "slot": "short-form video editing (Windows, no GPU)",
+  "track": "brand",
+  "stage": "sell",
+  "region": "Global",
+  "order": 8230,
+  "pick": {
+    "name": "Microsoft Clipchamp (free)",
+    "url": "https://clipchamp.com",
+    "what": "Browser-based editor built into Windows 11 with templates, 9:16 presets and AI auto-subtitles",
+    "why": "Runs fine without a GPU, free 1080p exports with no watermark, auto captions included; nothing extra to install on Windows 11",
+    "cost": "free",
+    "free_limits": "Free: 1080p export, no watermark, AI subtitles, free stock; 4K, brand kit, premium stock need Microsoft 365 Personal/Family",
+    "windows_fit": "native (Windows 11 inbox app) + web",
+    "maintained": "Current",
+    "install": "preinstalled on Windows 11 / web app",
+    "license": "Proprietary",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://clipchamp.com/en/pricing/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Kdenlive",
+      "url": "https://kdenlive.org",
+      "what": "Open-source multitrack editor with local Whisper/VOSK speech-to-text subtitles",
+      "why": "Best free desktop editor with no account; local captions (Whisper slower on CPU, ~2 GB setup)",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "native",
+      "maintained": "v26.08.2 2026-10-08",
+      "install": "winget install -e --id KDE.Kdenlive",
+      "license": "GPL-3.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://docs.kdenlive.org/en/effects_and_filters/speech_to_text.html",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Descript",
+      "url": "https://www.descript.com",
+      "what": "Edit video by editing the transcript; AI clean-up",
+      "why": "Best pay-later tool for talking-head + screen demos; free tier is watermarked 720p",
+      "cost": "freemium",
+      "free_limits": "Free: 60 media min/mo, 720p, watermark, 100 one-time AI credits; Hobbyist $16/mo annual",
+      "windows_fit": "native",
+      "maintained": "SaaS",
+      "install": "https://www.descript.com/download",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.descript.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Clipchamp",
+      "verdict": "PICK: free, no GPU, no watermark, captions"
+    },
+    {
+      "name": "Kdenlive",
+      "verdict": "Best OSS desktop editor; Whisper setup on Windows has had dependency bugs"
+    },
+    {
+      "name": "Descript",
+      "verdict": "Best text-based editing; paid for clean exports"
+    },
+    {
+      "name": "CapCut",
+      "verdict": "Banned in India since 2020-06-29 under IT Act s.69A; still blocked per June 2026 guides; VPN/APK use does not change legal status; do not use"
+    },
+    {
+      "name": "DaVinci Resolve",
+      "verdict": "Free but needs GPU with >=4 GB VRAM and 16 GB RAM; poor fit for a laptop without a GPU"
+    },
+    {
+      "name": "Shotcut",
+      "verdict": "OSS (v26.9.27) but no built-in auto captions"
+    },
+    {
+      "name": "OpenShot",
+      "verdict": "OSS (v4.0.1) simpler, fewer features"
+    },
+    {
+      "name": "VN Video Editor (Android)",
+      "verdict": "Closest mobile CapCut replacement, no watermark (per FluxNote guide)"
+    },
+    {
+      "name": "OpenScreen",
+      "verdict": "Use for screen-recorded demos with auto-zoom/captions, then finish in Clipchamp"
+    }
+  ],
+  "decision": "CapCut is still blocked in India, so Clipchamp is the best Windows replacement on a laptop without a GPU: free, no watermark, auto captions, and it does not need a GPU. Use Kdenlive when you want an offline, open-source editor, and Descript (paid) once you produce weekly talking-head content.",
+  "note": "",
+  "details": "Capture with OpenScreen or ShareX, then edit.",
+  "verify": {
+    "verdict": "ok",
+    "note": "CapCut ban (2020-06-29, IT Act s.69A) is well documented; the PIB primary page returned 403 here, and 'still blocked in 2026' rests on secondary guides. Low risk. | Clipchamp pricing page: free 1080p, no watermark; 4K on paid. Commercial-use terms not on page.",
+    "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=1635206"
+  },
+  "better_pick": null
+}

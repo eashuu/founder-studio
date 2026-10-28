@@ -1,0 +1,81 @@
+{
+  "slug": "cli-helpers",
+  "slot": "CLI helpers",
+  "track": "windows-dev",
+  "stage": "build",
+  "region": "Global",
+  "order": 3043,
+  "pick": {
+    "name": "fd + fzf + bat + zoxide (rg have)",
+    "url": "https://github.com/junegunn/fzf",
+    "what": "find, fuzzy picker, highlighted cat, smart cd",
+    "why": "Speeds you up; Claude already uses rg",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "fzf 0.74.5 (2026-10-11); fd 10.5.0 (2026-08-26); zoxide 0.10.0; bat 0.26.1 (2025-12-02)",
+    "install": "scoop install fd fzf bat zoxide",
+    "license": "MIT/Apache-2.0",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/junegunn/fzf",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Everything",
+      "url": "https://www.voidtools.com",
+      "what": "Instant disk-wide filename search",
+      "why": "Keep",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "1.4.1.1032",
+      "install": "installed",
+      "license": "freeware",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.voidtools.com",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "eza",
+      "url": "https://github.com/eza-community/eza",
+      "what": "Modern ls",
+      "why": "Optional",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "v0.23.5 (2026-07-09)",
+      "install": "scoop install eza",
+      "license": "EUPL-1.2 (unverified)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/eza-community/eza",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "fd/fzf/bat/zoxide",
+      "verdict": "pick"
+    },
+    {
+      "name": "Everything",
+      "verdict": "keep"
+    },
+    {
+      "name": "eza",
+      "verdict": "optional"
+    }
+  ],
+  "decision": "Small, standard set.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "fzf 0.74.5, fd 10.5.0, bat 0.26.1, zoxide 0.10.0 confirmed; all in scoop Main.",
+    "url": "https://github.com/junegunn/fzf"
+  },
+  "better_pick": null
+}

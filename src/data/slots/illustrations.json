@@ -1,0 +1,93 @@
+{
+  "slug": "illustrations",
+  "slot": "Illustrations",
+  "track": "design",
+  "stage": "discover",
+  "region": "Global",
+  "order": 1154,
+  "pick": {
+    "name": "unDraw",
+    "url": "https://undraw.co/license",
+    "what": "Recolourable open SVG illustrations",
+    "why": "Large SaaS-style set, free commercial use without credit, recolour to brand in one click.",
+    "cost": "free",
+    "free_limits": "Free commercial use, no credit. Forbidden: packs/redistribution, competing service, hotlinking/embedding/scraping without consent, any AI/ML use without written permission",
+    "windows_fit": "web",
+    "maintained": "live",
+    "install": "web download",
+    "license": "unDraw licence (custom)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://undraw.co/license",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Open Peeps / Humaaans",
+      "url": "https://www.openpeeps.com",
+      "what": "Mix-and-match people illustrations",
+      "why": "CC0: zero restrictions; best for people-centric scenes.",
+      "cost": "free",
+      "free_limits": "CC0",
+      "windows_fit": "web",
+      "maintained": "static",
+      "install": "web download",
+      "license": "CC0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.openpeeps.com",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Gemini Nano Banana (custom illustrations)",
+      "url": "https://gemini.google.com",
+      "what": "Generate on-brand illustrations from a style prompt",
+      "why": "Unique art in your style; visible watermark on non-Ultra Gemini app images.",
+      "cost": "owned",
+      "free_limits": "AI Pro expanded image limits (shared meter)",
+      "windows_fit": "web",
+      "maintained": "live",
+      "install": "web",
+      "license": "Google ToS (Google claims no ownership)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://policies.google.com/terms",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "unDraw",
+      "verdict": "pick"
+    },
+    {
+      "name": "Open Peeps/Humaaans",
+      "verdict": "alt CC0"
+    },
+    {
+      "name": "Nano Banana",
+      "verdict": "alt custom"
+    },
+    {
+      "name": "Storyset",
+      "verdict": "requires credit unless Flaticon Premium"
+    },
+    {
+      "name": "Blush",
+      "verdict": "free plan commercial OK, SVG export Pro"
+    },
+    {
+      "name": "DrawKit / IRA Design",
+      "verdict": "pages not reachable"
+    }
+  ],
+  "decision": "unDraw covers most SaaS empty-states and landing sections free. Use CC0 sets for people and Nano Banana when you need a unique brand style.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Licence is stricter than listed: no hotlinking/scraping without consent, and the AI clause covers any AI/ML use incl. testing. Fine for download-and-use.",
+    "url": "https://undraw.co/license"
+  },
+  "better_pick": null
+}

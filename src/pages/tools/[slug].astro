@@ -1,0 +1,81 @@
+---
+import Base from '../../layouts/Base.astro';
+import Tear from '../../components/Tear.astro';
+import { slots, track, stage, costKey, verdictLabel, editUrl } from '../../lib/data.js';
+
+export function getStaticPaths() {
+  return slots.map((s) => ({ params: { slug: s.slug }, props: { s } }));
+}
+const { s } = Astro.props;
+const p = s.pick;
+const t = track(s.track);
+const v = s.verify?.verdict;
+const good = v === 'ok' || v === 'fixed';
+const show = (x) => x && x !== 'n/a' && x !== 'unclear';
+const facts = [
+  ['Cost', p.cost], ['Pricing', p.free_limits], ['Commercial use', p.commercial_ok], ['Needs a company', p.needs_company],
+  ['Windows', p.windows_fit], ['Licence', p.license], ['Maintained', p.maintained], ['Region', s.region],
+].filter(([, x]) => show(x));
+const hasInstall = p.install && !/^web$/i.test(p.install);
+---
+<Base title={`${s.slot}: ${p.name}`} description={`${p.name}: ${p.what}`}>
+  <article class="sheet grain">
+    <div class="crumbs"><a href={`/tracks/${t.key}/`}>{t.name}</a> / {stage(t.stage).name}</div>
+    <div class="tool">
+      <div>
+        <span class="label">{s.slot}</span>
+        <h1>{p.name}</h1>
+        <p class="what">{p.what}</p>
+        {p.why && <p class="why">{p.why}</p>}
+        {hasInstall && <div class="cmd"><code>{p.install}</code><button type="button" data-copy={p.install}>Copy</button></div>}
+        <p class="src" style="margin-top:14px"><a href={p.url || p.source_url}>Website</a> · <a href={p.source_url}>Source checked {p.checked}</a></p>
+      </div>
+      <aside>
+        <span class={`stamp ${good ? '' : 'warn'}`}>{verdictLabel(v)}</span>
+        <dl class="facts">{facts.map(([k, x]) => <div><dt>{k}</dt><dd>{x}</dd></div>)}</dl>
+      </aside>
+    </div>
+
+    {(s.decision || s.note) && (
+      <section class="section">
+        <h2>Why this pick</h2>
+        {s.decision && <p class="prose">{s.decision}</p>}
+        {s.note && <p class="margin-note">{s.note}</p>}
+        {s.details && <p class="src" style="margin-top:14px">{s.details}</p>}
+      </section>
+    )}
+
+    {s.alts.length > 0 && <section class="section">
+      <h2>Runners-up</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Option</th><th>What and when</th><th>Cost and free tier</th></tr></thead>
+          <tbody>
+            {s.alts.map((a) => (
+              <tr>
+                <td><a href={a.url || a.source_url}><b>{a.name}</b></a></td>
+                <td>{a.what}{a.why && <small>{a.why}</small>}</td>
+                <td>{costKey(a.cost)}{show(a.free_limits) && <small>{a.free_limits}</small>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>}
+
+    {s.candidates.length > 0 && (
+      <section class="section">
+        <h2>Every option considered</h2>
+        <ul class="cands">{s.candidates.map((c) => <li><b>{c.name}</b>: {c.verdict}</li>)}</ul>
+      </section>
+    )}
+
+    <section class="section">
+      <h2>Verification</h2>
+      {s.verify?.note ? <p class="prose">{s.verify.note} {s.verify.url && <a href={s.verify.url}>Evidence</a>}</p> : <p class="prose">This slot has not been independently verified.</p>}
+      {s.better_pick && <p class="margin-note">The verifier suggests <a href={s.better_pick.url}>{s.better_pick.name}</a>: {s.better_pick.reason}</p>}
+      <p class="src" style="margin-top:18px">Something out of date? <a href={editUrl(s.slug)}>Suggest an edit on GitHub</a>.</p>
+    </section>
+    <Tear seed={`tool-${s.slug}`} side="bottom" />
+  </article>
+</Base>

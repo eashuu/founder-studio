@@ -1,0 +1,69 @@
+{
+  "slug": "pricing-strategy-resources",
+  "slot": "Pricing strategy resources",
+  "track": "sales",
+  "stage": "sell",
+  "region": "Global",
+  "order": 7206,
+  "pick": {
+    "name": "Growth Unhinged (Kyle Poyar)",
+    "url": "https://www.growthunhinged.com/",
+    "what": "Weekly newsletter on SaaS/AI pricing, PLG, GTM",
+    "why": "The most current free source on AI and usage-based pricing (posts through Oct 2026)",
+    "cost": "free",
+    "free_limits": "Free weekly",
+    "windows_fit": "web",
+    "maintained": "latest post 2026-10-28",
+    "install": "web",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.growthunhinged.com/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Stripe Atlas guide: SaaS pricing (Patrick McKenzie)",
+      "url": "https://stripe.com/guides/atlas/saas-pricing",
+      "what": "Long-form guide to pricing/packaging low-touch SaaS",
+      "why": "Timeless fundamentals ('charge more'), free",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "web",
+      "maintained": "live page 2026-10-28",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://stripe.com/guides/atlas/saas-pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Growth Unhinged",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Stripe Atlas pricing guide",
+      "verdict": "Read once"
+    },
+    {
+      "name": "Monetizing Innovation (book)",
+      "verdict": "Classic, paid (not checked)"
+    },
+    {
+      "name": "Paddle/ProfitWell pricing content",
+      "verdict": "Not checked"
+    }
+  ],
+  "decision": "Read the Atlas guide once, follow Growth Unhinged weekly for AI pricing shifts, and price AI products with a usage component through Dodo's metering.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Low-stakes resource pick; not re-fetched.",
+    "url": "https://www.growthunhinged.com/"
+  },
+  "better_pick": null
+}

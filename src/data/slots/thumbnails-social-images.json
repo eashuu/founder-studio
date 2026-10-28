@@ -1,0 +1,89 @@
+{
+  "slug": "thumbnails-social-images",
+  "slot": "thumbnails + social images",
+  "track": "brand",
+  "stage": "sell",
+  "region": "Global",
+  "order": 8231,
+  "pick": {
+    "name": "Canva Free (+ Gemini image generation)",
+    "url": "https://www.eesel.ai/en/blog/canva-ai-pricing",
+    "what": "Templates and layout for YouTube thumbnails, LinkedIn carousels and banners; generate base art in the Gemini app",
+    "why": "Fastest template-to-thumbnail path; free tier now includes background remover and a monthly AI allowance; Gemini (owned) adds ~100 Nano Banana Pro images/day",
+    "cost": "free",
+    "free_limits": "Canva Free: 5 GB, about 20 AI uses/month shared across Standard/Premium tools (Canva help); Pro price unverified",
+    "windows_fit": "web + Android",
+    "maintained": "SaaS (article edited 2026-06-09)",
+    "install": "web",
+    "license": "Proprietary",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.canva.com/pricing/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Gemini app image generation (Nano Banana Pro)",
+      "url": "https://gemini.google.com",
+      "what": "Owned AI image generation and editing",
+      "why": "Best for custom base images and edits; text rendering is strong",
+      "cost": "owned",
+      "free_limits": "AI Pro: 100 Nano Banana Pro + 1,000 Nano Banana images/day (Jan 2026)",
+      "windows_fit": "web + Android",
+      "maintained": "Current",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://9to5google.com/2026/01/12/gemini-nano-banana-pro-milestone/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Photopea",
+      "url": "https://www.photopea.com",
+      "what": "Free browser Photoshop clone with PSD support",
+      "why": "Best free pixel-level editing when Canva templates are not enough",
+      "cost": "free",
+      "free_limits": "Free (ads not confirmed)",
+      "windows_fit": "web",
+      "maintained": "Current",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.photopea.com/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Canva Free",
+      "verdict": "PICK: templates + background remover free"
+    },
+    {
+      "name": "Gemini image gen",
+      "verdict": "Owned; use for the base image"
+    },
+    {
+      "name": "Photopea",
+      "verdict": "Free PSD-level editing"
+    },
+    {
+      "name": "Figma Free",
+      "verdict": "Great for systematic design; not verified this pass"
+    },
+    {
+      "name": "YouTube Test & Compare",
+      "verdict": "Not an editor: use it to A/B the thumbnails once in YPP"
+    }
+  ],
+  "decision": "Generate the hero image in Gemini (owned), lay out text and brand in Canva Free, and A/B test on YouTube once eligible. Upgrade to Canva Pro only if you need brand kits and premium assets weekly.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Canva own pricing/help: Free gets up to 20 AI uses/month in one shared pool (Standard OR Premium), NOT 200 Standard or 20 Premium; 200 is Canva Pro Premium-tier uses. eesel secondary blog wrong. Pro price not verified (pricing page 403).",
+    "url": "https://www.canva.com/en_gb/help/ai-access-variantb/"
+  },
+  "better_pick": null
+}

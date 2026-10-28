@@ -1,0 +1,93 @@
+{
+  "slug": "on-device-ai-desktop-web-tauri-electron-browser",
+  "slot": "on-device AI: desktop + web (Tauri / Electron / browser)",
+  "track": "ai-eng",
+  "stage": "build",
+  "region": "Global",
+  "order": 4058,
+  "pick": {
+    "name": "Transformers.js (@huggingface/transformers v4)",
+    "url": "https://github.com/huggingface/transformers.js",
+    "what": "Run ONNX models (embeddings, Whisper, small LLMs) in browser/Node via WASM or WebGPU",
+    "why": "One library across web app, Electron and Tauri webview; CPU WASM default, WebGPU optional",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native (WASM CPU)",
+    "maintained": "4.3.2 on 2026-10-27",
+    "install": "npm i @huggingface/transformers",
+    "license": "Apache-2.0",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/huggingface/transformers.js",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "node-llama-cpp",
+      "url": "https://www.npmjs.com/package/node-llama-cpp",
+      "what": "llama.cpp bindings for Node/Electron with JSON-schema grammar",
+      "why": "Fastest CPU LLM inference inside Electron main process",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native (prebuilt binaries)",
+      "maintained": "3.22.2 on 2026-10-17",
+      "install": "npm i node-llama-cpp",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://registry.npmjs.org/node-llama-cpp",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "WebLLM (MLC)",
+      "url": "https://www.npmjs.com/package/@mlc-ai/web-llm",
+      "what": "In-browser LLMs via WebGPU",
+      "why": "Only where WebGPU is present",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "web",
+      "maintained": "0.2.86 on 2026-10-11",
+      "install": "npm i @mlc-ai/web-llm",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://registry.npmjs.org/@mlc-ai/web-llm",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Transformers.js",
+      "verdict": "Pick: one lib for web+Electron+Tauri; small models"
+    },
+    {
+      "name": "node-llama-cpp",
+      "verdict": "Alt: Electron-native, larger GGUF LLMs"
+    },
+    {
+      "name": "WebLLM",
+      "verdict": "Alt: WebGPU-only"
+    },
+    {
+      "name": "Ollama / llama-server sidecar",
+      "verdict": "Best for Tauri when users have 16GB RAM"
+    },
+    {
+      "name": "LiteRT-LM (Windows/JS)",
+      "verdict": "Newer Google runtime"
+    },
+    {
+      "name": "ONNX Runtime Web",
+      "verdict": "Underlying engine; use via Transformers.js"
+    }
+  ],
+  "decision": "Use Transformers.js for embeddings/STT/classification in any shell; for chat-grade LLMs run node-llama-cpp (Electron) or a llama-server sidecar (Tauri).",
+  "note": "",
+  "details": "WebGPU still experimental per README.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Version/licence/limits match registry or official page.",
+    "url": "https://registry.npmjs.org/"
+  },
+  "better_pick": null
+}

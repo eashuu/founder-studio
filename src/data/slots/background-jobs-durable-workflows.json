@@ -1,0 +1,101 @@
+{
+  "slug": "background-jobs-durable-workflows",
+  "slot": "background jobs / durable workflows",
+  "track": "app-stacks",
+  "stage": "build",
+  "region": "Global",
+  "order": 5084,
+  "pick": {
+    "name": "Inngest",
+    "url": "https://www.inngest.com/pricing",
+    "what": "Durable step functions, events, crons, retries, flow control (TS/Python/Go)",
+    "why": "Works on serverless and servers with zero queue infra; step-level durability fits AI agent pipelines",
+    "cost": "freemium",
+    "free_limits": "Free: 50,000 executions/mo (each run and each step counts), 5 concurrent steps, 5 seats, 24h traces, pauses at quota; Pro from $99/mo",
+    "windows_fit": "web / native dev server",
+    "maintained": "inngest 4.26.1 (2026-10-27)",
+    "install": "npm i inngest",
+    "license": "SDKs Apache-2.0; server SSPL w/ delayed Apache (DOSP)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.inngest.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "DBOS Transact",
+      "url": "https://docs.dbos.dev/",
+      "what": "Durable workflows + queues as a library on Postgres (TS/Python/Go/Java)",
+      "why": "$0 forever with no vendor or quota - only needs Postgres and a long-running process",
+      "cost": "free",
+      "free_limits": "n/a (Conductor optional, pricing not checked)",
+      "windows_fit": "native",
+      "maintained": "@dbos-inc/dbos-sdk 5.3.0 / dbos (py) 3.3.0 (2026-10-15)",
+      "install": "npm i @dbos-inc/dbos-sdk",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.npmjs.com/package/@dbos-inc/dbos-sdk",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Trigger.dev",
+      "url": "https://trigger.dev/pricing",
+      "what": "Long-running TS tasks with managed compute",
+      "why": "Best for minutes-to-hours AI jobs without your own workers",
+      "cost": "freemium",
+      "free_limits": "Free: $5/mo credits, 20 concurrent runs, 1-day logs, 10 schedules; Hobby $10/mo; self-host free",
+      "windows_fit": "web",
+      "maintained": "@trigger.dev/sdk 4.8.1 (2026-10-23)",
+      "install": "npx trigger.dev@latest init",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://trigger.dev/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Inngest (pick)",
+      "verdict": "Zero-ops durable steps; watch the step-counted quota and the $99 jump."
+    },
+    {
+      "name": "DBOS",
+      "verdict": "Wins when you run a persistent Node/Python server on Postgres: no quota, MIT, lowest exit cost."
+    },
+    {
+      "name": "Trigger.dev",
+      "verdict": "Wins for long compute-heavy tasks; cheaper first paid tier ($10)."
+    },
+    {
+      "name": "pg-boss 12",
+      "verdict": "Simple Postgres queue (MIT); no durable steps."
+    },
+    {
+      "name": "BullMQ 6",
+      "verdict": "Redis queue; adds Redis to run."
+    },
+    {
+      "name": "Hatchet",
+      "verdict": "Durable queue (MIT SDKs); smaller adoption."
+    },
+    {
+      "name": "Temporal",
+      "verdict": "Gold standard but heavy to self-host; cloud is paid."
+    },
+    {
+      "name": "Cloudflare Workflows",
+      "verdict": "Good if everything is on Workers; platform lock-in."
+    }
+  ],
+  "decision": "Inngest is the lowest-effort durable workflow engine that works on any host, which suits a solo dev shipping AI pipelines. Switch to DBOS once you run a long-lived API server on Postgres or approach 50k executions/month, to avoid the $99 tier.",
+  "note": "Consolidated: start with Cloudflare Queues (ship track) and add Inngest only when a job is a multi-step LLM workflow that needs step-level retries.",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Version/licence/limits match registry or official page.",
+    "url": "https://registry.npmjs.org/"
+  },
+  "better_pick": null
+}

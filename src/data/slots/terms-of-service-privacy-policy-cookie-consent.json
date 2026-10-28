@@ -1,0 +1,93 @@
+{
+  "slug": "terms-of-service-privacy-policy-cookie-consent",
+  "slot": "Terms of service, privacy policy, cookie consent",
+  "track": "legal",
+  "stage": "run",
+  "region": "Global",
+  "order": 10176,
+  "pick": {
+    "name": "Common Paper ToS + vanilla-cookieconsent (only if needed)",
+    "url": "https://commonpaper.com/standards/",
+    "what": "Free standard click-through ToS; MIT cookie banner library added only when you set non-essential cookies",
+    "why": "Free, no per-site fees, and works across many products. With cookieless Umami analytics most sites need no banner",
+    "cost": "free",
+    "free_limits": "Unlimited",
+    "windows_fit": "n/a (web/library)",
+    "maintained": "vanilla-cookieconsent 3.1.0 on npm (2025-02-04)",
+    "install": "npm i vanilla-cookieconsent",
+    "license": "CC BY 4.0 (ToS); MIT (cookieconsent)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://commonpaper.com/standards/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Termly",
+      "url": "https://termly.io/pricing/",
+      "what": "Hosted policy generator + consent banner + cookie scanner",
+      "why": "Best free hosted generator if you'd rather not maintain text",
+      "cost": "freemium",
+      "free_limits": "Free: 1 policy, banner 10k views/mo, quarterly scans, no edits; Starter USD 10/mo/site",
+      "windows_fit": "web",
+      "maintained": "live page 2026-10-28",
+      "install": "web",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://termly.io/pricing/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "iubenda",
+      "url": "https://www.iubenda.com/en/pricing",
+      "what": "Lawyer-maintained, multi-jurisdiction policy generator",
+      "why": "Pay-later pick: policies auto-update with law changes",
+      "cost": "freemium",
+      "free_limits": "Essentials USD 5.99/mo/site (annual): 25k pageviews, 1 language",
+      "windows_fit": "web",
+      "maintained": "live page 2026-10-28",
+      "install": "web",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.iubenda.com/en/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Common Paper ToS + own privacy policy",
+      "verdict": "PICK: free across many products"
+    },
+    {
+      "name": "Termly",
+      "verdict": "Free for one site and one policy"
+    },
+    {
+      "name": "iubenda",
+      "verdict": "Best maintained policies, ~USD 6/mo/site"
+    },
+    {
+      "name": "GetTerms",
+      "verdict": "Free with branding; USD 5/mo or USD 199 lifetime"
+    },
+    {
+      "name": "TermsFeed",
+      "verdict": "Page blocked fetch (403), not verified"
+    },
+    {
+      "name": "Cookiebot/Usercentrics",
+      "verdict": "Paid-first CMPs, overkill now"
+    }
+  ],
+  "decision": "Use Common Paper's ToS. Have Claude draft each privacy policy from the actual data flows (sub-processors, retention, DPDP/GDPR rights), then get one lawyer review. Choose cookieless analytics so no banner is needed; add vanilla-cookieconsent only if you add ad pixels. Switch to iubenda if keeping policies current becomes a chore.",
+  "note": "",
+  "details": "A lawyer should review the first privacy policy; verify with a lawyer.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Common Paper ToS exists (click-through). vanilla-cookieconsent 3.1.0 (2025-02-04, MIT) confirmed on npm. Termly alt confirmed (1 policy, 10k banner views, Starter USD 10/mo annual).",
+    "url": "https://registry.npmjs.org/vanilla-cookieconsent"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "hipaa-readiness-baas-us-healthcare-clients",
+  "slot": "HIPAA readiness + BAAs (US healthcare clients)",
+  "track": "legal",
+  "stage": "run",
+  "region": "Global",
+  "order": 10179,
+  "pick": {
+    "name": "AWS BAA via AWS Artifact + Amazon Bedrock (Claude) for PHI",
+    "url": "https://aws.amazon.com/compliance/hipaa-compliance/",
+    "what": "Accept the AWS BAA yourself in AWS Artifact; keep PHI only in HIPAA-eligible services",
+    "why": "Self-serve BAA with no plan minimum (Google Cloud's is also self-accept), and Claude runs on HIPAA-eligible Bedrock; no sales call needed",
+    "cost": "paid",
+    "free_limits": "BAA acceptance itself appears free; pay-as-you-go service costs",
+    "windows_fit": "web",
+    "maintained": "page live 2026-10-28",
+    "install": "web (AWS console > Artifact)",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "unclear",
+    "source_url": "https://aws.amazon.com/compliance/hipaa-compliance/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Google Cloud BAA (Gemini Enterprise Agent Platform / Vertex)",
+      "url": "https://docs.cloud.google.com/docs/security/compliance/hipaa",
+      "what": "Google Cloud BAA covering listed GA services",
+      "why": "Same pricing for HIPAA customers; covers Google's AI platform services",
+      "cost": "paid",
+      "free_limits": "No plan restriction stated; pre-GA services excluded",
+      "windows_fit": "web",
+      "maintained": "page live 2026-10-28",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "unclear",
+      "source_url": "https://docs.cloud.google.com/docs/security/compliance/hipaa",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Anthropic first-party API BAA",
+      "url": "https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers",
+      "what": "BAA for the Claude API (Messages API features) and Claude Enterprise",
+      "why": "Direct Claude with prompt caching etc. once Anthropic sales enables PHI",
+      "cost": "paid",
+      "free_limits": "Requires signing + sales enablement; Batch, Files, Skills API, Code Execution, Web Fetch excluded; covered models need 30-day retention",
+      "windows_fit": "web",
+      "maintained": "page live 2026-10-28",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "unclear",
+      "source_url": "https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "AWS (Artifact BAA + Bedrock)",
+      "verdict": "PICK: self-serve"
+    },
+    {
+      "name": "Google Cloud BAA",
+      "verdict": "Equal choice if you prefer GCP/Gemini"
+    },
+    {
+      "name": "Anthropic API BAA",
+      "verdict": "Use once volume justifies a sales relationship"
+    },
+    {
+      "name": "Vercel Pro HIPAA BAA add-on",
+      "verdict": "Self-serve from Billing on Pro (price not shown)"
+    },
+    {
+      "name": "Supabase",
+      "verdict": "HIPAA is a paid add-on on Team (USD 599/mo+) or Enterprise"
+    },
+    {
+      "name": "Neon Scale plan",
+      "verdict": "BAA on Scale at no extra cost now; 15% surcharge announced for later"
+    },
+    {
+      "name": "Cloudflare",
+      "verdict": "BAA reported Enterprise-only (third-party sources): keep PHI off Workers/R2"
+    },
+    {
+      "name": "OpenAI API BAA",
+      "verdict": "Available via baa@openai.com per secondary source"
+    }
+  ],
+  "decision": "Most free-tier picks in the default stack (Cloudflare Workers/R2, Neon Free, Resend, PostHog Free, Sentry Developer) are not BAA-covered, so PHI must never touch them. For a healthcare client, run a separate PHI stack on AWS under the self-accepted BAA (Bedrock for Claude, RDS/S3/SES/Lambda) and sign Common Paper's BAA downstream. Paid BAA paths if you'd rather stay on the",
+  "note": "",
+  "details": "A BAA does not make you compliant; you still need risk analysis, access controls, audit logs and policies. Verify with a lawyer.",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Correct: BAA accepted in AWS Artifact, no plan stated, and Bedrock (plus AgentCore), RDS, S3, Lambda, SES and CloudFront are on the HIPAA-eligible list. Wrong: 'only self-serve BAA among the big clouds'. Google Cloud's BAA is also self-accepted in the console (IAM & Admin > Privacy > Review and Accept). The AWS pick still stands because Claude is on Bedrock. Sentry is also missing from the not-covered list: its Developer/Team plans have no BAA, only Business+.",
+    "url": "https://aws.amazon.com/compliance/hipaa-eligible-services-reference/"
+  },
+  "better_pick": null
+}

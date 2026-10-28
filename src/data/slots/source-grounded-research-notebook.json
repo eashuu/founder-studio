@@ -1,0 +1,89 @@
+{
+  "slug": "source-grounded-research-notebook",
+  "slot": "Source-grounded research notebook",
+  "track": "discover",
+  "stage": "discover",
+  "region": "Global",
+  "order": 139,
+  "pick": {
+    "name": "Gemini Notebook (formerly NotebookLM; Google AI Pro tier)",
+    "url": "https://notebooklm.google.com",
+    "what": "Upload sources (PDFs, sites, YouTube, Docs) and get cited answers, reports, audio/video overviews, slide decks",
+    "why": "Answers only from your sources, huge Pro limits, and turns interview/market packs into briefings for free.",
+    "cost": "owned",
+    "free_limits": "Pro: 500 notebooks, 300 sources/notebook (Google help). Per-day chats/overviews/Deep Research not published by Google (9to5Google May 2026: 500 chats, 20 audio, 20 video, 20 Deep Research). Visible watermark auto-applied in India, cannot be turned off",
+    "windows_fit": "web",
+    "maintained": "live service",
+    "install": "web",
+    "license": "Google ToS",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://support.google.com/notebooklm/answer/16213268",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Claude Projects",
+      "url": "https://claude.ai",
+      "what": "Project knowledge + chat with Claude over uploaded files",
+      "why": "Better reasoning and writing over the same pack; no audio/video overviews.",
+      "cost": "owned",
+      "free_limits": "Within Claude plan limits",
+      "windows_fit": "web/desktop",
+      "maintained": "live service",
+      "install": "web",
+      "license": "Anthropic ToS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://support.claude.com/en/articles/11088861-using-research-on-claude",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Obsidian + Claude Code (local markdown vault)",
+      "url": "https://obsidian.md",
+      "what": "Local markdown notes that Claude Code can read/grep",
+      "why": "Fully local, no lock-in; choose it for healthcare-client material you must not upload.",
+      "cost": "free",
+      "free_limits": "Free for all purposes incl. commercial; optional paid Commercial licence",
+      "windows_fit": "native",
+      "maintained": "live",
+      "install": "winget install Obsidian.Obsidian",
+      "license": "proprietary freeware",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://obsidian.md/license",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "NotebookLM",
+      "verdict": "pick"
+    },
+    {
+      "name": "Claude Projects",
+      "verdict": "alt"
+    },
+    {
+      "name": "Obsidian + Claude Code",
+      "verdict": "alt for local-only material"
+    },
+    {
+      "name": "Perplexity Spaces",
+      "verdict": "extra subscription"
+    },
+    {
+      "name": "Dovetail",
+      "verdict": "built for research teams, paid"
+    }
+  ],
+  "decision": "NotebookLM is the best free source-grounded workspace and Pro limits are far beyond solo needs. Use a local vault + Claude Code instead whenever sources are client-confidential or health data.",
+  "note": "",
+  "details": "Google's help page now calls the product 'Gemini Notebook'; 9to5Google (May 2026) still says NotebookLM. Treat the rename as unconfirmed.",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Rename is real: both Google's plans help page and the Google AI plans page now say 'Gemini Notebook' and never 'NotebookLM'. 500 notebooks / 300 sources confirmed; per-day chat/overview/Deep Research counts are not on Google's page (9to5Google only). Auto visible watermark in India confirmed (Pro toggle does not override it).",
+    "url": "https://one.google.com/about/google-ai-plans/"
+  },
+  "better_pick": null
+}

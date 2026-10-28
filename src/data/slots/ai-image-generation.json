@@ -1,0 +1,93 @@
+{
+  "slug": "ai-image-generation",
+  "slot": "AI image generation",
+  "track": "design",
+  "stage": "discover",
+  "region": "Global",
+  "order": 1160,
+  "pick": {
+    "name": "Nano Banana in Gemini app / Flow (Google AI Pro)",
+    "url": "https://gemini.google.com",
+    "what": "Google's image generation + editing (Nano Banana family) with strong text rendering and multi-image edits",
+    "why": "Already paid till Jan 2028, top-tier editing and consistency, and Google does not claim ownership of outputs.",
+    "cost": "owned",
+    "free_limits": "AI Pro: 'expanded' image limits on the shared compute meter (4x standard, 5-h refresh, weekly cap); no fixed daily count published. Visible watermark on non-Ultra Gemini-app images; SynthID invisible watermark on all",
+    "windows_fit": "web",
+    "maintained": "live service",
+    "install": "web",
+    "license": "Google ToS (effective 30 Jul 2026: 'Google won't claim ownership')",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://support.google.com/gemini/answer/16275805",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Recraft",
+      "url": "https://www.recraft.ai/pricing",
+      "what": "Image + vector generation with brand styles",
+      "why": "Best when you need SVG output or consistent brand style sets; paid for commercial rights.",
+      "cost": "freemium",
+      "free_limits": "Free: images public, owned by Recraft, not for commercial use",
+      "windows_fit": "web",
+      "maintained": "live",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "no (free) / yes (paid)",
+      "needs_company": "no",
+      "source_url": "https://www.recraft.ai/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Ideogram",
+      "url": "https://ideogram.ai",
+      "what": "Image generator strong at typography/posters",
+      "why": "Best text-in-image layouts; pricing page blocked our fetch.",
+      "cost": "freemium",
+      "free_limits": "Unverified",
+      "windows_fit": "web",
+      "maintained": "live",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://ideogram.ai",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Nano Banana (Gemini)",
+      "verdict": "pick"
+    },
+    {
+      "name": "Recraft",
+      "verdict": "alt for vectors"
+    },
+    {
+      "name": "Ideogram",
+      "verdict": "alt for typography (unverified)"
+    },
+    {
+      "name": "Midjourney",
+      "verdict": "paid only, best aesthetics"
+    },
+    {
+      "name": "ChatGPT image gen",
+      "verdict": "extra subscription"
+    },
+    {
+      "name": "Flux (local)",
+      "verdict": "needs a GPU; no"
+    }
+  ],
+  "decision": "Nano Banana is already in the plan and leads on editing; Flow is the place to generate without the Gemini-app visible watermark if Flow outputs are unmarked (unverified). Pay for Recraft only when you need vector output.",
+  "note": "",
+  "details": "Visible watermark removal is Ultra-only per coverage of the Nano Banana Pro launch.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Same Gemini limits page: image generation (Nano Banana 2) included with Pro on the shared 4x/5-h/weekly meter.",
+    "url": "https://support.google.com/gemini/answer/16275805"
+  },
+  "better_pick": null
+}

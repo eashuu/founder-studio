@@ -1,0 +1,93 @@
+{
+  "slug": "feature-flags",
+  "slot": "Feature flags",
+  "track": "ship",
+  "stage": "ship",
+  "region": "Global",
+  "order": 6116,
+  "pick": {
+    "name": "PostHog Feature Flags",
+    "url": "https://posthog.com/pricing",
+    "what": "Flags + experiments in PostHog",
+    "why": "Already in stack; 1M flag requests free",
+    "cost": "freemium",
+    "free_limits": "1M flag requests/mo free",
+    "windows_fit": "web",
+    "maintained": "active",
+    "install": "PostHog SDK",
+    "license": "MIT core",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://posthog.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "GrowthBook",
+      "url": "https://www.growthbook.io/pricing",
+      "what": "OSS flags + experiments",
+      "why": "Best standalone OSS option; warehouse-native experiments",
+      "cost": "freemium",
+      "free_limits": "Cloud Starter: 3 users, 1 project, unlimited flags, 1M CDN requests, 5 GB CDN; self-host free (unlimited users); Pro $40/seat",
+      "windows_fit": "web/docker",
+      "maintained": "v5.1.0 2026-09-22; SDK 1.8.0 2026-09-29",
+      "install": "npm i @growthbook/growthbook",
+      "license": "MIT core (enterprise dirs separate)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.growthbook.io/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Env var / DB flag table",
+      "url": "https://www.postgresql.org/",
+      "what": "No vendor",
+      "why": "YAGNI default for a solo founder",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "n/a",
+      "maintained": "n/a",
+      "install": "n/a",
+      "license": "PostgreSQL licence",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.postgresql.org/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "PostHog",
+      "verdict": "PICK"
+    },
+    {
+      "name": "GrowthBook",
+      "verdict": "Alt"
+    },
+    {
+      "name": "DB flag table",
+      "verdict": "Alt: simplest"
+    },
+    {
+      "name": "Unleash",
+      "verdict": "Apache-2.0 self-host, v8.3.0 2026-10-27"
+    },
+    {
+      "name": "Flagsmith",
+      "verdict": "BSD-3 SDK; hosted free tier not checked"
+    },
+    {
+      "name": "LaunchDarkly",
+      "verdict": "Paid"
+    }
+  ],
+  "decision": "Flags ride on PostHog for free. A Postgres table is enough until you run real experiments.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Fine as a bundled choice. GrowthBook alt confirmed (3 users, 1 project, unlimited flags, 1M CDN req, 5 GB, Pro $40/seat).",
+    "url": "https://www.growthbook.io/pricing"
+  },
+  "better_pick": null
+}

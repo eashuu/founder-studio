@@ -1,0 +1,97 @@
+{
+  "slug": "rss-reader",
+  "slot": "RSS reader",
+  "track": "learning",
+  "stage": "run",
+  "region": "Global",
+  "order": 12237,
+  "pick": {
+    "name": "Inoreader (Free)",
+    "url": "https://www.inoreader.com",
+    "what": "Web + Android RSS reader with folders, search and newsletter feeds",
+    "why": "Most generous mainstream free tier (150 feeds, unlimited folders) with web and Android apps; enough for the radar routine",
+    "cost": "freemium",
+    "free_limits": "Free: 150 feeds, 20 newsletter + 20 web feeds, ads; rules/filters/AI are Pro ($7.50/mo annual)",
+    "windows_fit": "web + Android",
+    "maintained": "SaaS, current",
+    "install": "web",
+    "license": "Proprietary",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.inoreader.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Miniflux (hosted)",
+      "url": "https://miniflux.app",
+      "what": "Minimal, fast open-source reader with a clean REST API",
+      "why": "Best pay-later/hackable pick: $15/yr hosted or free self-hosted; Claude Code can pull unread items via the API to write your weekly digest",
+      "cost": "paid",
+      "free_limits": "Hosted $15/yr (15-day trial); unread kept 60 days, starred forever; self-host free",
+      "windows_fit": "web (+ third-party Android clients)",
+      "maintained": "Miniflux 2.3.4 2026-10-20",
+      "install": "web (or self-host)",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://miniflux.app/hosting.html",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Feedly (Free)",
+      "url": "https://feedly.com",
+      "what": "Popular RSS reader",
+      "why": "Simplest UX; tighter free cap",
+      "cost": "freemium",
+      "free_limits": "Free: 100 sources, 3 folders, no AI",
+      "windows_fit": "web + Android",
+      "maintained": "SaaS",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.readless.app/blog/feedly-vs-inoreader-free-plan-limits-2026",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Inoreader Free",
+      "verdict": "PICK: 150 feeds free, web + Android"
+    },
+    {
+      "name": "Miniflux",
+      "verdict": "Best API/agent-friendly; $15/yr"
+    },
+    {
+      "name": "Feedly Free",
+      "verdict": "100 feeds, 3 folders"
+    },
+    {
+      "name": "FreshRSS",
+      "verdict": "Self-host OSS (1.30.4 2026-10-21, AGPL); more ops"
+    },
+    {
+      "name": "Folo",
+      "verdict": "OSS AI reader (AGPL), freemium; young"
+    },
+    {
+      "name": "Fluent Reader",
+      "verdict": "Windows OSS desktop reader (v1.3.1 2026-10-15); no phone sync on its own"
+    },
+    {
+      "name": "Readwise Reader",
+      "verdict": "Also does RSS; paid"
+    }
+  ],
+  "decision": "Inoreader Free covers ~150 feeds across laptop and phone at $0. Switch to Miniflux ($15/yr) when you want Claude Code to read your feeds through an API and write the weekly digest automatically.",
+  "note": "",
+  "details": "Feed GitHub releases.atom, YouTube channel feeds and newsletters into the same reader.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Inoreader official: Free 150 feeds, Pro $7.50/mo annual ($9.99 monthly), Pro 2,500 feeds.",
+    "url": "https://www.inoreader.com/pricing"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,93 @@
+{
+  "slug": "papers",
+  "slot": "papers",
+  "track": "learning",
+  "stage": "run",
+  "region": "Global",
+  "order": 12236,
+  "pick": {
+    "name": "Hugging Face Daily Papers",
+    "url": "https://huggingface.co/papers",
+    "what": "Community-curated daily/weekly/monthly trending papers with upvotes, comments, linked models/code, and a daily email",
+    "why": "Best signal-to-noise filter on arXiv for applied AI, linked to code; also hosts Trending Papers (the Papers with Code replacement)",
+    "cost": "free",
+    "free_limits": "Free",
+    "windows_fit": "web",
+    "maintained": "Updated 2026-10-28",
+    "install": "web (optional daily email)",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://huggingface.co/papers",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "alphaXiv",
+      "url": "https://www.alphaxiv.org/",
+      "what": "Paper explorer with summaries, researcher profiles, MCP server and browser extension",
+      "why": "Best for reading/discussing a specific paper and wiring papers into Claude via its MCP",
+      "cost": "free",
+      "free_limits": "Sign-up; pricing not shown",
+      "windows_fit": "web",
+      "maintained": "Active (NeurIPS 2026 pages)",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://www.alphaxiv.org/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "ML Papers of the Week (dair-ai)",
+      "url": "https://github.com/dair-ai/ML-Papers-of-the-Week",
+      "what": "Weekly curated top papers list on GitHub",
+      "why": "Lowest-effort weekly digest; watch the repo",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "web",
+      "maintained": "Commit 2026-10-26",
+      "install": "GitHub watch",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/dair-ai/ML-Papers-of-the-Week",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "HF Daily Papers",
+      "verdict": "PICK: best filter + code links"
+    },
+    {
+      "name": "alphaXiv",
+      "verdict": "Best per-paper reading tool + MCP"
+    },
+    {
+      "name": "ML Papers of the Week",
+      "verdict": "Weekly list"
+    },
+    {
+      "name": "Papers with Code",
+      "verdict": "Sunset July 2025; redirects to HF Trending Papers; remove bookmarks"
+    },
+    {
+      "name": "arXiv listings",
+      "verdict": "Firehose; only via filters"
+    },
+    {
+      "name": "Gemini Notebook",
+      "verdict": "Use to read/compare a pile of chosen papers"
+    }
+  ],
+  "decision": "Skim HF Daily Papers weekly view, open interesting ones in alphaXiv, and load the few that matter into Gemini Notebook. Papers with Code is gone, so drop it.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "paperswithcode.com returns 302 to huggingface.co/papers/trending, confirming the shutdown/redirect. July 2025 date not re-checked.",
+    "url": "https://huggingface.co/papers/trending"
+  },
+  "better_pick": null
+}

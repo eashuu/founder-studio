@@ -1,0 +1,93 @@
+{
+  "slug": "newsletter-personal-audience",
+  "slot": "newsletter (personal audience)",
+  "track": "brand",
+  "stage": "sell",
+  "region": "Global",
+  "order": 8229,
+  "pick": {
+    "name": "Substack (free newsletter)",
+    "url": "https://substack.com",
+    "what": "Newsletter + web archive + Notes social feed + recommendations network",
+    "why": "Free for free newsletters and has a built-in discovery network (recommendations, Notes), which matters most when growing from zero; CSV email export exists",
+    "cost": "free",
+    "free_limits": "Free while unpaid; paid subs: 10% + Stripe fees (Substack currently waives its 10% for India-based creators with Stripe connected, temporary; Stripe India is invite-only for new accounts); custom domain $50 one-time",
+    "windows_fit": "web + Android",
+    "maintained": "SaaS",
+    "install": "web",
+    "license": "Proprietary",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://picktheplatform.pages.dev/guides/substack-cost",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Kit (Newsletter free plan)",
+      "url": "https://kit.com",
+      "what": "Creator email platform (ex-ConvertKit)",
+      "why": "Best when you want your own sending domain, forms and later digital-product sales: free up to 10,000 subscribers but only 1 automation and Kit branding",
+      "cost": "freemium",
+      "free_limits": "Free up to 10,000 subs; 1 automation; Kit branding; Creator ~$33-39/mo",
+      "windows_fit": "web",
+      "maintained": "SaaS (review updated 2026-08-17)",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://skillscouter.com/kit-review/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Buttondown",
+      "url": "https://buttondown.com",
+      "what": "Minimal Markdown-first newsletter with API",
+      "why": "Most developer-friendly (Markdown, API, custom-domain sending) but free only to 100 subscribers",
+      "cost": "freemium",
+      "free_limits": "Free to 100 subscribers incl. custom-domain sending; $9/$29/$79 add-on tiers",
+      "windows_fit": "web",
+      "maintained": "SaaS",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://buttondown.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Substack",
+      "verdict": "PICK: $0 + discovery network"
+    },
+    {
+      "name": "Kit Free",
+      "verdict": "10k subs free, own domain; no discovery"
+    },
+    {
+      "name": "beehiiv Launch",
+      "verdict": "Free to 2,500 subs, no monetization, branding stays; custom domain conflicting on page"
+    },
+    {
+      "name": "Buttondown",
+      "verdict": "Best dev UX; 100-sub free cap"
+    },
+    {
+      "name": "Ghost",
+      "verdict": "Paid/self-host"
+    },
+    {
+      "name": "listmonk",
+      "verdict": "Self-host OSS + SES; too much ops for a personal newsletter"
+    }
+  ],
+  "decision": "Growing a personal audience from zero is the hard part, and Substack is the only free option with a built-in recommendation network. Move to Kit Free (10,000 subs) when you want your own sending domain, lead magnets or to sell products; both allow email export, so lock-in is low.",
+  "note": "Consolidated: two audiences, two tools. Substack for your personal founder audience; Kit (Sales track) for a product's leads and users. Start with Substack only.",
+  "details": "Paid Substack subscriptions need Stripe payouts; Stripe India is invite-only. Keep it free.",
+  "verify": {
+    "verdict": "fixed",
+    "note": "10% + Stripe is the standard fee, but Substack help reportedly waives the 10% for India/Brazil creators with Stripe connected (temporary); Stripe India invite-only for new accounts may block payouts. $50 custom domain confirmed via secondary sources only; source_url is a pages.dev blog and Substack help returned 403.",
+    "url": "https://sacra.com/chat/h/31a40575-f12a-4aa5-93bc-60e6ff2c0f23/"
+  },
+  "better_pick": null
+}

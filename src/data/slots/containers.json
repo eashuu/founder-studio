@@ -1,0 +1,89 @@
+{
+  "slug": "containers",
+  "slot": "containers",
+  "track": "windows-dev",
+  "stage": "build",
+  "region": "Global",
+  "order": 3037,
+  "pick": {
+    "name": "Docker Engine (CE) inside WSL2 Ubuntu",
+    "url": "https://docs.docker.com/engine/install/ubuntu/",
+    "what": "Plain dockerd + compose plugin in WSL",
+    "why": "Free for commercial use on a company-owned laptop, exact Docker CLI/compose/Testcontainers parity",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "wsl",
+    "maintained": "Docker Engine (version not checked)",
+    "install": "in WSL: follow docs.docker.com/engine/install/ubuntu",
+    "license": "Apache-2.0",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://docs.docker.com/engine/install/ubuntu/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Podman Desktop",
+      "url": "https://github.com/podman-desktop/podman-desktop",
+      "what": "Docker-compatible GUI/engine",
+      "why": "Best GUI with no licence threshold",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native (WSL2 backend)",
+      "maintained": "v1.30.5 (2026-10-13)",
+      "install": "winget install RedHat.Podman-Desktop",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/podman-desktop/podman-desktop",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Docker Desktop (Pro subscription)",
+      "url": "https://www.docker.com/pricing/faq/",
+      "what": "Current setup",
+      "why": "Free only if the owning company has <250 employees AND <$10M revenue; otherwise a paid seat ($9-11/mo Pro)",
+      "cost": "paid",
+      "free_limits": "Personal free only within threshold",
+      "windows_fit": "native",
+      "maintained": "installed",
+      "install": "installed",
+      "license": "proprietary",
+      "commercial_ok": "unclear",
+      "needs_company": "unclear",
+      "source_url": "https://www.docker.com/pricing/faq/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Docker CE in WSL2",
+      "verdict": "pick"
+    },
+    {
+      "name": "Podman Desktop",
+      "verdict": "GUI, rootless"
+    },
+    {
+      "name": "Rancher Desktop",
+      "verdict": "local k8s; v1.24.0 (2026-07-29)"
+    },
+    {
+      "name": "Docker Desktop",
+      "verdict": "licence depends on the company, not you"
+    },
+    {
+      "name": "OrbStack / Colima",
+      "verdict": "no Windows"
+    }
+  ],
+  "decision": "Docker Desktop is free only for companies under 250 employees and $10M revenue, and on a company-owned laptop that test applies to your employer. Docker CE in WSL has no such test and identical tooling. Keep Docker Desktop only if the company confirms it's under the threshold or you buy a Pro seat.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Docker FAQ: Desktop free only for non-commercial OSS or a commercial undertaking with <250 employees AND <US$10M revenue; government entities must pay. Pro $11/mo monthly, $9/mo annual. Open-source Engine is not under the subscription. Pick is sound.",
+    "url": "https://www.docker.com/pricing/faq/"
+  },
+  "better_pick": null
+}

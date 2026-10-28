@@ -1,0 +1,85 @@
+{
+  "slug": "shell",
+  "slot": "shell",
+  "track": "windows-dev",
+  "stage": "build",
+  "region": "Global",
+  "order": 3034,
+  "pick": {
+    "name": "PowerShell 7.6 + Git for Windows (Git Bash for Claude's Bash tool)",
+    "url": "https://github.com/PowerShell/PowerShell/releases",
+    "what": "Modern pwsh for you; Claude Code uses Git Bash for its Bash tool and PowerShell tool by default",
+    "why": "Matches how Claude Code runs on Windows (setup doc)",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native (ZIP/MSIX no admin)",
+    "maintained": "v7.6.9 (2026-10-25)",
+    "install": "winget install --id Microsoft.PowerShell --source winget",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://code.claude.com/docs/en/setup",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "bash in WSL2",
+      "url": "https://learn.microsoft.com/windows/wsl/",
+      "what": "Linux shell",
+      "why": "For sandboxed sessions and Linux builds",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "wsl",
+      "maintained": "n/a",
+      "install": "wsl --install Ubuntu-24.04",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://learn.microsoft.com/windows/wsl/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Nushell",
+      "url": "https://github.com/nushell/nushell",
+      "what": "Structured-data shell",
+      "why": "Nice, but Claude doesn't use it",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "0.116.1 (2026-10-04)",
+      "install": "winget install Nushell.Nushell",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/nushell/nushell",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "pwsh 7 + Git Bash",
+      "verdict": "pick"
+    },
+    {
+      "name": "WSL bash",
+      "verdict": "Linux work"
+    },
+    {
+      "name": "Nushell",
+      "verdict": "distraction"
+    },
+    {
+      "name": "Windows PowerShell 5.1",
+      "verdict": "legacy"
+    }
+  ],
+  "decision": "Install pwsh 7 for your own shell; keep Git for Windows so Claude's Bash tool works.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "v7.6.9 (25 Oct 2026) Latest; Microsoft.PowerShell winget ID exists.",
+    "url": "https://github.com/PowerShell/PowerShell/releases"
+  },
+  "better_pick": null
+}

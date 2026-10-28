@@ -1,0 +1,97 @@
+{
+  "slug": "mor-for-desktop-apps-licence-keys-digital-goods",
+  "slot": "MoR for desktop apps / licence keys / digital goods",
+  "track": "money",
+  "stage": "run",
+  "region": "India",
+  "order": 9125,
+  "pick": {
+    "name": "Dodo Payments (one-time + licence keys)",
+    "url": "https://docs.dodopayments.com/features/license-keys",
+    "what": "One-time or subscription sales with licence keys (activation limits, client-side activate/validate)",
+    "why": "Same MoR as your SaaS = one KYC, one payout, cheaper than Polar for one-time sales (no +0.5%)",
+    "cost": "paid",
+    "free_limits": "One-time: 4% + 40c (+1.5% non-US); licence keys included; activate/validate callable from client apps without API secret",
+    "windows_fit": "web",
+    "maintained": "active",
+    "install": "npm i dodopayments",
+    "license": "service",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://docs.dodopayments.com/features/license-keys",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Polar (licence keys benefit)",
+      "url": "https://polar.sh/docs/features/benefits/license-keys",
+      "what": "Licence keys with activation limits, expiry, usage quotas",
+      "why": "Most mature licence-key API; public activate endpoint for desktop/mobile",
+      "cost": "paid",
+      "free_limits": "Starter 5% + 50c +1.5% intl + Stripe payout fees",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "npm i @polar-sh/sdk",
+      "license": "service",
+      "commercial_ok": "yes",
+      "needs_company": "unclear",
+      "source_url": "https://polar.sh/docs/features/benefits/license-keys",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Gumroad",
+      "url": "https://gumroad.com/pricing",
+      "what": "Creator storefront MoR",
+      "why": "Easiest storefront + audience discovery",
+      "cost": "paid",
+      "free_limits": "10% + 50c direct; 30% via Discover; MoR for sales tax since 2025-01-01",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://gumroad.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Dodo",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Polar",
+      "verdict": "Alt: best licence API"
+    },
+    {
+      "name": "Gumroad",
+      "verdict": "Alt: storefront/discovery, expensive"
+    },
+    {
+      "name": "Paddle",
+      "verdict": "No built-in licence keys in Paddle Billing (not re-verified)"
+    },
+    {
+      "name": "Keygen",
+      "verdict": "Licensing server to pair with any MoR (not checked)"
+    },
+    {
+      "name": "Google Play Billing",
+      "verdict": "Mandatory for in-app digital goods on Android: 10%+5% billing fee subs in EEA/UK/US/AU/JP (new structure), 15% elsewhere; India alt-billing 4% lower"
+    },
+    {
+      "name": "Microsoft Store",
+      "verdict": "Not researched"
+    }
+  ],
+  "decision": "Keep desktop licences on the same MoR as SaaS to avoid a second KYC/payout stream; Dodo's licence keys cover activation limits. Use Polar if you need usage-quota keys or prefer its API. Android in-app purchases must go through Google Play Billing regardless.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Licence-key doc: activation limits; 'The activate, deactivate, and validate license endpoints are public and don't require an API key.' Gumroad 10% + 50c direct, 30% Discover, MoR since 2025-01-01 confirmed. The same INR-wallet correction as the SaaS MoR slot applies.",
+    "url": "https://docs.dodopayments.com/features/license-keys"
+  },
+  "better_pick": null
+}

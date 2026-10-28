@@ -1,0 +1,85 @@
+{
+  "slug": "ai-assistant-workflows",
+  "slot": "AI assistant workflows",
+  "track": "productivity",
+  "stage": "run",
+  "region": "Global",
+  "order": 11221,
+  "pick": {
+    "name": "Claude.ai Projects (Max) + connectors",
+    "url": "https://support.claude.com/en/articles/9517075-what-are-projects",
+    "what": "One Project per product/client with instructions + knowledge, plus Gmail/Drive/Calendar connectors",
+    "why": "You already pay for Max; Projects give per-product memory and RAG-expanded knowledge, and sessions move between web, desktop, Chrome and Claude Code",
+    "cost": "owned",
+    "free_limits": "Projects on all plans (free: 5); RAG knowledge expansion on paid plans",
+    "windows_fit": "web + native desktop",
+    "maintained": "Current (new Projects beta rolling out to Pro/Max)",
+    "install": "web / Claude desktop",
+    "license": "Proprietary SaaS",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://support.claude.com/en/articles/9517075-what-are-projects",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Gemini Notebook (ex-NotebookLM) + Gemini Deep Research",
+      "url": "https://notebook.google/",
+      "what": "Source-grounded research notebooks and audio/video overviews",
+      "why": "Owned until Jan 2028; best for reading stacks of papers/PDFs and generating study overviews; notebooklm.google now redirects to notebook.google",
+      "cost": "owned",
+      "free_limits": "'Expanded access' on Google AI Pro (exact limits not listed)",
+      "windows_fit": "web + Android",
+      "maintained": "Current",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://one.google.com/about/plans",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Claude Code on the Obsidian vault",
+      "url": "https://obsidian.md/changelog/2026-02-27-desktop-v1.12.4/",
+      "what": "Run Claude Code inside the notes vault (plus the Obsidian CLI) for summaries, weekly reviews, link-building",
+      "why": "Local, scriptable, no new service; best for recurring personal-knowledge chores",
+      "cost": "owned",
+      "free_limits": "Included in Max",
+      "windows_fit": "native",
+      "maintained": "Obsidian CLI since 1.12.4 (2026-02-27)",
+      "install": "cd <vault> && claude",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://obsidian.md/changelog/2026-02-27-desktop-v1.12.4/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Claude Projects",
+      "verdict": "PICK: owned, per-product context"
+    },
+    {
+      "name": "Gemini Notebook / Deep Research",
+      "verdict": "Owned; best for source-grounded research and media"
+    },
+    {
+      "name": "Claude Code on vault",
+      "verdict": "Best for scripted, recurring knowledge work"
+    },
+    {
+      "name": "ChatGPT Free",
+      "verdict": "Redundant given Claude Max + Gemini Pro"
+    }
+  ],
+  "decision": "Claude Projects is the daily driver because Max is already paid and Projects keep product context separate. Use Gemini Notebook for big reading/research piles and Claude Code directly on the Obsidian vault for scheduled reviews. No third assistant is needed.",
+  "note": "",
+  "details": "NotebookLM appears rebranded 'Gemini Notebook' (redirect + page title); confirm in-app.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Free plan max 5 projects; RAG expansion up to 10x on Pro/Max/Team/Enterprise - confirmed.",
+    "url": "https://support.claude.com/en/articles/9517075-what-are-projects"
+  },
+  "better_pick": null
+}

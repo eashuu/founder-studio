@@ -1,0 +1,81 @@
+{
+  "slug": "play-store-publishing",
+  "slot": "Play Store publishing",
+  "track": "app-stacks",
+  "stage": "build",
+  "region": "Global",
+  "order": 5092,
+  "pick": {
+    "name": "Google Play Console",
+    "url": "https://play.google.com/console",
+    "what": "Android distribution",
+    "why": "Primary Android channel",
+    "cost": "paid",
+    "free_limits": "US$25 one-time; personal accounts created after 2023-11-13 must run a closed test with >=12 testers opted in for 14 consecutive days before production",
+    "windows_fit": "web",
+    "maintained": "help page live 2026-10-28",
+    "install": "web (or eas submit -p android)",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://support.google.com/googleplay/android-developer/answer/14151465",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Organization Play account (D-U-N-S)",
+      "url": "https://support.google.com/googleplay/android-developer/answer/6112435",
+      "what": "Company account",
+      "why": "Reported exempt from the 12-tester rule (verify)",
+      "cost": "paid",
+      "free_limits": "US$25",
+      "windows_fit": "web",
+      "maintained": "n/a",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "yes",
+      "source_url": "https://support.google.com/googleplay/android-developer/answer/6112435",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Direct APK / alternative stores",
+      "url": "https://support.google.com/android-developer-console/answer/16561738",
+      "what": "Sideload or other stores",
+      "why": "Avoids Play review; developer verification rolling out",
+      "cost": "free",
+      "free_limits": "Verification live in Indonesia/Singapore/Thailand from 2026-09-30, global 2027; limited-distribution accounts free up to 20 devices",
+      "windows_fit": "web",
+      "maintained": "page live 2026-10-28",
+      "install": "n/a",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://support.google.com/android-developer-console/answer/16561738",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Play Console (pick)",
+      "verdict": "Required for reach."
+    },
+    {
+      "name": "Organization account",
+      "verdict": "Use once you incorporate."
+    },
+    {
+      "name": "Direct APK / alt stores",
+      "verdict": "Supplementary."
+    }
+  ],
+  "decision": "Play Console is the only mainstream Android channel; start the 12-tester/14-day closed test immediately. Register as an organization once incorporated.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Official help: personal accounts created after 2023-11-13 need >=12 testers opted in continuously for >=14 days. The page is silent on organization accounts (exemption only in secondary sources).",
+    "url": "https://support.google.com/googleplay/android-developer/answer/14151465"
+  },
+  "better_pick": null
+}

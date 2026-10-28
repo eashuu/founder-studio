@@ -1,0 +1,25 @@
+---
+import Base from '../../layouts/Base.astro';
+import Tear from '../../components/Tear.astro';
+import { meta, slotsIn } from '../../lib/data.js';
+---
+<Base title="Tracks" description="All 13 research tracks, grouped by stage.">
+  <section class="sheet grain page-head">
+    <span class="label">Index</span>
+    <h1>Tracks</h1>
+    <p>Thirteen research tracks grouped into five stages. Each track is a stack of slips, one per job to be done.</p>
+    <Tear seed="tracks" side="bottom" />
+  </section>
+  {meta.stages.map((st) => (
+    <section class="strip grain">
+      <Tear seed={`ti-${st.key}`} side="top" />
+      <div class="stage-head"><span class="label">{st.name}</span></div>
+      <ul class="tracklist">
+        {meta.tracks.filter((t) => t.stage === st.key).map((t) => (
+          <li><a href={`/tracks/${t.key}/`}><strong>{t.name}</strong><span class="n">{slotsIn(t.key).length}</span><span class="b">{t.blurb}</span></a></li>
+        ))}
+      </ul>
+      <Tear seed={`tib-${st.key}`} side="bottom" />
+    </section>
+  ))}
+</Base>

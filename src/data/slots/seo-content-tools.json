@@ -1,0 +1,69 @@
+{
+  "slug": "seo-content-tools",
+  "slot": "SEO + content tools",
+  "track": "sales",
+  "stage": "sell",
+  "region": "Global",
+  "order": 7192,
+  "pick": {
+    "name": "Google Search Console + Ahrefs Webmaster Tools",
+    "url": "https://ahrefs.com/webmaster-tools",
+    "what": "GSC for indexing/queries; AWT for site audit, backlinks, keywords of verified sites",
+    "why": "Both free; AWT adds a 170+-issue site audit and Site Explorer data for your own sites",
+    "cost": "free",
+    "free_limits": "AWT: unlimited verified sites, 5,000 crawl credits/project/mo, 1,000 backlinks/keywords visible",
+    "windows_fit": "web",
+    "maintained": "live page 2026-10-28",
+    "install": "web",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://ahrefs.com/webmaster-tools",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Semrush Free",
+      "url": "https://www.semrush.com/prices/",
+      "what": "Keyword/competitor research",
+      "why": "Free 10 reports/day for competitor keyword research; paid USD 117/mo annual",
+      "cost": "freemium",
+      "free_limits": "1 project, 10 reports/day",
+      "windows_fit": "web",
+      "maintained": "live page 2026-10-28",
+      "install": "web",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.semrush.com/prices/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "GSC + Ahrefs Webmaster Tools",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Semrush Free",
+      "verdict": "For competitor keyword checks"
+    },
+    {
+      "name": "Bing Webmaster Tools",
+      "verdict": "Free; worth adding (not checked)"
+    },
+    {
+      "name": "Ubersuggest / Keyword Planner",
+      "verdict": "Weaker data"
+    }
+  ],
+  "decision": "Verify every site in GSC and AWT on day one. Use Semrush's free reports for competitor research. Write content with Claude, and use Gemini Deep Research for research briefs.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "AWT confirmed: unlimited verified sites, 5,000 crawl credits/project/mo, 1,000 backlinks/keywords visible, 170+ issues. Semrush free: 1 project, 10 reports/day (confirmed).",
+    "url": "https://ahrefs.com/webmaster-tools"
+  },
+  "better_pick": null
+}

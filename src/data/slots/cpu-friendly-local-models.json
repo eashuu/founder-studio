@@ -1,0 +1,89 @@
+{
+  "slug": "cpu-friendly-local-models",
+  "slot": "CPU-friendly local models",
+  "track": "ai-eng",
+  "stage": "build",
+  "region": "Global",
+  "order": 4067,
+  "pick": {
+    "name": "Gemma 4 E2B / E4B (Q4)",
+    "url": "https://ai.google.dev/gemma/docs/core",
+    "what": "Google open-weight multimodal small models, 128K context, audio on E2B/E4B",
+    "why": "Best capability per RAM at 2-4B effective params; runs in llama.cpp/Ollama/LiteRT-LM/llama.rn",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "Gemma 4 released 2026-04-02 per secondary sources; docs list E2B, E4B, 12B, 26B-A4B, 31B",
+    "install": "ollama pull gemma4:e4b (tag unverified)",
+    "license": "Apache-2.0 (Google Gemma docs legal link \"Gemma 4 license\" resolves to Apache License 2.0)",
+    "commercial_ok": "yes (verify licence)",
+    "needs_company": "no",
+    "source_url": "https://ai.google.dev/gemma/docs/core",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "gpt-oss-20b (OpenAI, MoE)",
+      "url": "https://console.groq.com/docs/rate-limits",
+      "what": "Open-weight 20B MoE reasoning model",
+      "why": "Strong reasoning, MoE keeps active params small; needs ~16GB RAM (unverified)",
+      "cost": "free",
+      "free_limits": "Also free on Groq (30 RPM, 1K RPD)",
+      "windows_fit": "native (Ollama/llama.cpp)",
+      "maintained": "Listed on Groq 2026-10-28",
+      "install": "ollama pull gpt-oss:20b",
+      "license": "Apache-2.0 (unverified here)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://console.groq.com/docs/rate-limits",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Qwen3.x small models",
+      "url": "https://unsloth.ai/docs",
+      "what": "Qwen3.8 family supported by Unsloth; permissive small models",
+      "why": "Alternative family with multilingual coverage",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "Unsloth lists Qwen3.8 support 2026-10-28",
+      "install": "ollama pull qwen3",
+      "license": "Apache-2.0 for most sizes (unverified)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://unsloth.ai/docs",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Gemma 4 E2B/E4B",
+      "verdict": "Pick: multimodal, small, 128K ctx"
+    },
+    {
+      "name": "gpt-oss-20b",
+      "verdict": "Alt: reasoning, needs RAM"
+    },
+    {
+      "name": "Qwen3 small family",
+      "verdict": "Alt: permissive, multilingual"
+    },
+    {
+      "name": "Liquid LFM small models",
+      "verdict": "Edge-focused, not source-verified"
+    },
+    {
+      "name": "Phi / Llama small",
+      "verdict": "Older, licences vary"
+    }
+  ],
+  "decision": "Gemma 4 E4B Q4 is the default for local features; step up to gpt-oss-20b for reasoning if RAM allows. Local models are for privacy/offline, not quality - keep Claude for hard tasks.",
+  "note": "",
+  "details": "Verify Gemma 4 licence text (secondary sources: Apache-2.0 since 2026-04-02); real CPU tokens/sec unmeasured.",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Licence resolved to Apache-2.0.",
+    "url": "https://ai.google.dev/gemma/docs/gemma_4_license"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "ide-integration",
+  "slot": "IDE integration",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2030,
+  "pick": {
+    "name": "Claude Code VS Code extension",
+    "url": "https://code.claude.com/docs/en/vs-code.md",
+    "what": "Native panel, inline diffs, plan review",
+    "why": "Shares settings/plugins with CLI; needs VS Code >=1.98",
+    "cost": "owned",
+    "free_limits": "paid Claude plan",
+    "windows_fit": "native",
+    "maintained": "core",
+    "install": "code --install-extension anthropic.claude-code",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://code.claude.com/docs/en/vs-code.md",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Zed + Claude Agent (ACP)",
+      "url": "https://zed.dev/docs/ai/external-agents",
+      "what": "Claude Code inside Zed via ACP",
+      "why": "Lighter editor",
+      "cost": "free",
+      "free_limits": "Zed charges nothing for external agents",
+      "windows_fit": "native (Windows builds exist)",
+      "maintained": "Zed v1.25.3 (23 Oct 2026)",
+      "install": "install Claude Agent from ACP registry",
+      "license": "GPL/Apache (unverified)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://zed.dev/docs/ai/external-agents",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "VS Code extension",
+      "verdict": "pick"
+    },
+    {
+      "name": "Zed ACP",
+      "verdict": "alt"
+    },
+    {
+      "name": "JetBrains plugin",
+      "verdict": "if on JetBrains"
+    }
+  ],
+  "decision": "Follows the editor slot.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Extension ID anthropic.claude-code verified (publisher Anthropic, ~28.9M installs). Marketplace says VS Code 1.98+, not 1.94.",
+    "url": "https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code"
+  },
+  "better_pick": null
+}

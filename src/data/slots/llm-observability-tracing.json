@@ -1,0 +1,105 @@
+{
+  "slug": "llm-observability-tracing",
+  "slot": "LLM observability / tracing",
+  "track": "ai-eng",
+  "stage": "build",
+  "region": "Global",
+  "order": 4064,
+  "pick": {
+    "name": "Langfuse",
+    "url": "https://langfuse.com/pricing",
+    "what": "Open-source LLM tracing, prompt management, evals, datasets (OTel-based SDKs)",
+    "why": "Most adopted OSS option, strong TS SDK (@langfuse/tracing 6.0.2), generous free cloud, self-host for PHI",
+    "cost": "freemium",
+    "free_limits": "Hobby: 50k units/mo, 30 days data access, 2 users, 30 req/min API. Core $29/mo (100k units, 90 days data access, unlimited users). HIPAA/BAA on Pro ($199/mo) and Enterprise; 50% off first year for early-stage startups",
+    "windows_fit": "docker/cloud (self-host needs Postgres+ClickHouse+Redis+S3)",
+    "maintained": "langfuse py 5.0.4 on 2026-10-21; @langfuse/tracing 6.0.2 on 2026-10-22; acquired by ClickHouse 2026-01-16, MIT core retained",
+    "install": "pip install langfuse  |  npm i @langfuse/tracing",
+    "license": "MIT (enterprise features separate licence)",
+    "commercial_ok": "yes",
+    "needs_company": "no (cloud account or self-host)",
+    "source_url": "https://langfuse.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Arize Phoenix",
+      "url": "https://github.com/Arize-ai/phoenix",
+      "what": "OTel/OpenInference tracing, evals, datasets, prompt mgmt; pip or single container",
+      "why": "Lightest self-host, MCP endpoint for Claude Code, strong Python coverage",
+      "cost": "freemium",
+      "free_limits": "Self-host free; telemetry on by default (PHOENIX_TELEMETRY_ENABLED=false)",
+      "windows_fit": "native (pip) / docker",
+      "maintained": "arize-phoenix 20.26.1 on 2026-10-25",
+      "install": "pip install arize-phoenix",
+      "license": "Elastic-2.0 (not OSI open source; cannot offer as managed service)",
+      "commercial_ok": "yes (internal use)",
+      "needs_company": "no",
+      "source_url": "https://github.com/Arize-ai/phoenix",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Opik (Comet)",
+      "url": "https://github.com/comet-ml/opik",
+      "what": "Apache-2.0 tracing + evals + pytest integration, Python and TS SDKs",
+      "why": "Fully Apache-licensed with Docker self-host incl. opik.ps1 for Windows",
+      "cost": "freemium",
+      "free_limits": "Free tier on cloud/self-host (limits unverified); HIPAA not stated",
+      "windows_fit": "docker (Windows script)",
+      "maintained": "opik 2.2.129 on 2026-10-28",
+      "install": "pip install opik",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/comet-ml/opik",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Langfuse",
+      "verdict": "Pick: biggest community, MIT, strong TS"
+    },
+    {
+      "name": "Arize Phoenix",
+      "verdict": "Alt: easiest self-host; ELv2 licence"
+    },
+    {
+      "name": "Opik",
+      "verdict": "Alt: pure Apache-2.0"
+    },
+    {
+      "name": "OpenLIT 1.45.0",
+      "verdict": "OTel-native, Apache, smaller"
+    },
+    {
+      "name": "OpenLLMetry / traceloop-sdk 0.62.4",
+      "verdict": "Instrumentation, bring your backend"
+    },
+    {
+      "name": "MLflow 3.17.2",
+      "verdict": "Broad ML platform, heavy"
+    },
+    {
+      "name": "W&B Weave 0.54.0",
+      "verdict": "Vendor cloud"
+    },
+    {
+      "name": "Helicone",
+      "verdict": "Reportedly acquired by Mintlify March 2026, maintenance mode (secondary sources); avoid"
+    },
+    {
+      "name": "LangSmith / Braintrust",
+      "verdict": "Paid SaaS"
+    }
+  ],
+  "decision": "Langfuse Cloud Hobby for dev; for any PHI or enterprise client self-host it (MIT) because Hobby/Core exclude HIPAA. Move to Phoenix if the ClickHouse stack is too heavy for solo ops, or Opik if you need strictly OSI licences.",
+  "note": "",
+  "details": "Retained; ClickHouse acquisition flagged (MIT retained). Supported self-hosted Enterprise reportedly bundled with ClickHouse commercial plans (secondary source). OpenInference: https://github.com/Arize-ai/openinference",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Hobby 50k units, 2 users, 30 req/min; Core $29 (100k, 90 days); Pro $199 with BAA; 50% startup discount year 1 all confirmed. The 30-day figure is data ACCESS per the pricing FAQ, not retention; Core has unlimited users.",
+    "url": "https://langfuse.com/pricing"
+  },
+  "better_pick": null
+}

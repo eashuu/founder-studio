@@ -1,0 +1,77 @@
+---
+import Base from '../layouts/Base.astro';
+import Tear from '../components/Tear.astro';
+import { meta, slotsIn } from '../lib/data.js';
+---
+<Base title="Stack builder" description="Tick the picks you'll use and take your stack with you as Markdown.">
+  <section class="sheet grain page-head">
+    <span class="label">Stack builder</span>
+    <h1>Tape down your stack</h1>
+    <p>Tick the picks you'll use. Your list is saved in this browser only, and you can copy or download it as Markdown.</p>
+    <Tear seed="stack" side="bottom" />
+  </section>
+  <div class="builder" style="margin-top:40px">
+    <div>
+      {meta.tracks.map((t) => (
+        <section class="strip grain" style="padding:20px">
+          <Tear seed={`st-${t.key}`} side="top" />
+          <h2 style="font-size:22px;margin-bottom:8px">{t.name}</h2>
+          {slotsIn(t.key).map((s) => (
+            <label class="pick-row">
+              <input type="checkbox" id={`k-${s.slug}`} data-slug={s.slug} data-name={s.pick.name} data-slot={s.slot} data-track={t.name} data-install={s.pick.install && !/^web$/i.test(s.pick.install) ? s.pick.install : ''} />
+              <div><b>{s.pick.name}</b><span>{s.slot}</span></div>
+            </label>
+          ))}
+          <Tear seed={`stb-${t.key}`} side="bottom" />
+        </section>
+      ))}
+    </div>
+    <aside class="receipt" aria-live="polite">
+      <div class="label">Your stack · <span id="count">0</span> picks</div>
+      <pre id="md">Nothing taped down yet. Tick a pick on the left.</pre>
+      <div class="row">
+        <button type="button" id="copy">Copy Markdown</button>
+        <button type="button" class="ghost" id="dl">Download .md</button>
+        <button type="button" class="ghost" id="clear">Clear</button>
+      </div>
+      <Tear seed="receipt" side="bottom" />
+    </aside>
+  </div>
+  <script>
+    const KEY = 'founder-studio-stack';
+    const boxes = [...document.querySelectorAll<HTMLInputElement>('input[data-slug]')];
+    const md = document.getElementById('md')!;
+    let saved: string[] = [];
+    try { saved = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch {}
+    boxes.forEach((b) => (b.checked = saved.includes(b.dataset.slug!)));
+
+    function render() {
+      const on = boxes.filter((b) => b.checked);
+      document.getElementById('count')!.textContent = String(on.length);
+      try { localStorage.setItem(KEY, JSON.stringify(on.map((b) => b.dataset.slug))); } catch {}
+      if (!on.length) { md.textContent = 'Nothing taped down yet. Tick a pick on the left.'; return; }
+      const lines = ['# My founder stack', ''];
+      let last = '';
+      for (const b of on) {
+        if (b.dataset.track !== last) { lines.push(`## ${b.dataset.track}`); last = b.dataset.track!; }
+        lines.push(`- **${b.dataset.slot}:** ${b.dataset.name}${b.dataset.install ? `  \`${b.dataset.install}\`` : ''}`);
+      }
+      lines.push('', `From ${location.origin}/`);
+      md.textContent = lines.join('\n');
+    }
+    boxes.forEach((b) => b.addEventListener('change', render));
+    document.getElementById('copy')!.addEventListener('click', (e) => {
+      const btn = e.currentTarget as HTMLButtonElement;
+      navigator.clipboard?.writeText(md.textContent || '').then(() => { btn.textContent = 'Copied'; setTimeout(() => (btn.textContent = 'Copy Markdown'), 1400); });
+    });
+    document.getElementById('dl')!.addEventListener('click', () => {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([md.textContent || ''], { type: 'text/markdown' }));
+      a.download = 'founder-stack.md';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    });
+    document.getElementById('clear')!.addEventListener('click', () => { boxes.forEach((b) => (b.checked = false)); render(); });
+    render();
+  </script>
+</Base>

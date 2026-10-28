@@ -1,0 +1,89 @@
+{
+  "slug": "outbound-prospecting-sequencing",
+  "slot": "Outbound prospecting + sequencing",
+  "track": "sales",
+  "stage": "sell",
+  "region": "Global",
+  "order": 7187,
+  "pick": {
+    "name": "Apollo.io",
+    "url": "https://www.apollo.io/pricing",
+    "what": "B2B contact database + enrichment + email sequences + tasks + dialer",
+    "why": "Data and sequencing in one tool, and its MCP server lets Claude search, enrich and draft sequences directly",
+    "cost": "owned",
+    "free_limits": "Plan unknown; credits pooled monthly; free plan connects Gmail only; sequences on Basic+",
+    "windows_fit": "web (+ Chrome extension)",
+    "maintained": "live page 2026-10-28",
+    "install": "web",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.apollo.io/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Instantly",
+      "url": "https://instantly.ai/pricing",
+      "what": "Cold-email sending platform: unlimited inboxes + warmup",
+      "why": "Best at sending at volume across many inboxes; Growth USD 37.6/mo annual (1,000 contacts, 5,000 emails)",
+      "cost": "paid",
+      "free_limits": "Free sign-up/trial, no card",
+      "windows_fit": "web",
+      "maintained": "live page 2026-10-28",
+      "install": "web",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://instantly.ai/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Smartlead",
+      "url": "https://www.smartlead.ai/pricing",
+      "what": "Cold-email platform: unlimited mailboxes, warmup pool",
+      "why": "Cheapest entry (Base USD 32/mo annual, 6,000 sends) with agency features",
+      "cost": "paid",
+      "free_limits": "Free trial, no card",
+      "windows_fit": "web",
+      "maintained": "live page 2026-10-28",
+      "install": "web",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.smartlead.ai/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Apollo.io",
+      "verdict": "PICK: data + sequences + MCP; use for list building, enrichment, low-volume sequences, LinkedIn tasks"
+    },
+    {
+      "name": "Instantly",
+      "verdict": "Add when sending >~1,000 cold emails/week across several inboxes"
+    },
+    {
+      "name": "Smartlead",
+      "verdict": "Cheaper Instantly alternative"
+    },
+    {
+      "name": "lemlist",
+      "verdict": "Multichannel incl. LinkedIn automation USD 87/mo; LinkedIn ToS risk"
+    },
+    {
+      "name": "Woodpecker / Reply.io",
+      "verdict": "Comparable senders; not checked"
+    }
+  ],
+  "decision": "Use Apollo for finding and enriching ICP lists, email verification, and sequences at modest volume. Its MCP connector means Claude can run research-to-draft loops. If cold email becomes the main channel, keep Apollo for data and move sending to Instantly with multiple warmed inboxes on a separate domain.",
+  "note": "",
+  "details": "Check your Apollo plan tier; free-plan sequence and send limits were not shown on the public page.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Apollo's official MCP (https://mcp.apollo.io/mcp, OAuth) confirmed: search, enrich, sequences, tasks, analytics. Claude Code: claude mcp add --transport http apollo https://mcp.apollo.io/mcp. Caveat: free accounts registered with a personal email can't use search/enrich/contact matching via MCP. Free plan connects Gmail only (confirmed).",
+    "url": "https://docs.apollo.io/docs/apollo-mcp"
+  },
+  "better_pick": null
+}

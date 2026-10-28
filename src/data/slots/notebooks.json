@@ -1,0 +1,89 @@
+{
+  "slug": "notebooks",
+  "slot": "notebooks",
+  "track": "ai-eng",
+  "stage": "build",
+  "region": "Global",
+  "order": 4073,
+  "pick": {
+    "name": "marimo",
+    "url": "https://github.com/marimo-team/marimo",
+    "what": "Reactive Python notebooks stored as pure .py; runs as app/script; WASM option",
+    "why": "Git-diffable .py files Claude Code edits cleanly; no hidden state",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native (Windows not stated on page; pure-Python pip)",
+    "maintained": "marimo 0.25.2 on 2026-10-19",
+    "install": "pip install marimo",
+    "license": "Apache-2.0",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/marimo-team/marimo",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Google Colab (free)",
+      "url": "https://research.google.com/colaboratory/faq.html",
+      "what": "Hosted notebooks with free CPU/GPU",
+      "why": "Free GPU for fine-tuning/experiments",
+      "cost": "freemium",
+      "free_limits": "Dynamic undisclosed limits, 12h max session, idle timeouts; GPU not guaranteed; prohibits web-service hosting",
+      "windows_fit": "web",
+      "maintained": "FAQ read 2026-10-28",
+      "install": "web",
+      "license": "Proprietary service",
+      "commercial_ok": "unclear",
+      "needs_company": "yes (Google account)",
+      "source_url": "https://research.google.com/colaboratory/faq.html",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Kaggle Notebooks",
+      "url": "https://www.kaggle.com/docs/efficient-gpu-usage",
+      "what": "Free notebooks with weekly GPU (T4/P100) and TPU quota",
+      "why": "Predictable weekly quota",
+      "cost": "free",
+      "free_limits": "Weekly GPU quota and session limits exist; numbers not retrievable (unverified)",
+      "windows_fit": "web",
+      "maintained": "Docs page read 2026-10-28",
+      "install": "web",
+      "license": "Proprietary service",
+      "commercial_ok": "unclear",
+      "needs_company": "yes (Kaggle account)",
+      "source_url": "https://www.kaggle.com/docs/efficient-gpu-usage",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "marimo",
+      "verdict": "Pick: .py notebooks, AI-friendly"
+    },
+    {
+      "name": "Google Colab",
+      "verdict": "Alt: free GPU"
+    },
+    {
+      "name": "Kaggle",
+      "verdict": "Alt: weekly GPU quota"
+    },
+    {
+      "name": "JupyterLab / VS Code notebooks",
+      "verdict": "Standard; .ipynb JSON diffs poorly"
+    },
+    {
+      "name": "Hex / Deepnote",
+      "verdict": "Paid SaaS"
+    }
+  ],
+  "decision": "marimo locally for data/eval exploration; Colab/Kaggle only when you need a GPU. Switch to Jupyter if a client or library requires .ipynb.",
+  "note": "",
+  "details": "Retained.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Version/licence/limits match registry or official page.",
+    "url": "https://registry.npmjs.org/"
+  },
+  "better_pick": null
+}

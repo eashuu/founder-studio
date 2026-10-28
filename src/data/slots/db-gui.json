@@ -1,0 +1,93 @@
+{
+  "slug": "db-gui",
+  "slot": "DB GUI",
+  "track": "windows-dev",
+  "stage": "build",
+  "region": "Global",
+  "order": 3048,
+  "pick": {
+    "name": "DBeaver Community",
+    "url": "https://github.com/dbeaver/dbeaver",
+    "what": "Universal DB GUI",
+    "why": "Free incl. commercial, covers every engine",
+    "cost": "free",
+    "free_limits": "CE free",
+    "windows_fit": "native",
+    "maintained": "26.2.3 (2026-10-18)",
+    "install": "winget install DBeaver.DBeaver.Community",
+    "license": "Apache-2.0",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/dbeaver/dbeaver",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Beekeeper Studio Community",
+      "url": "https://www.beekeeperstudio.io/pricing",
+      "what": "Lighter, nicer SQL client",
+      "why": "Free while under 10 employees / $1M revenue",
+      "cost": "freemium",
+      "free_limits": "Community free for individuals, students, non-profits and businesses <10 employees and/or <$1M revenue; Indie $9/mo yearly ($18 monthly)",
+      "windows_fit": "native",
+      "maintained": "v6.1.6 (2026-10-07, latest stable)",
+      "install": "winget install beekeeper-studio.beekeeper-studio",
+      "license": "GPL-3.0 core",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.beekeeperstudio.io/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "pgAdmin 4",
+      "url": "https://www.pgadmin.org",
+      "what": "Official Postgres GUI",
+      "why": "Likely bundled with PG18 installer",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "9.18 (2026-09-17)",
+      "install": "installed with PostgreSQL (verify)",
+      "license": "PostgreSQL",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.pgadmin.org",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "DBeaver CE",
+      "verdict": "pick"
+    },
+    {
+      "name": "Beekeeper",
+      "verdict": "nicer, thresholded"
+    },
+    {
+      "name": "pgAdmin",
+      "verdict": "Postgres-only"
+    },
+    {
+      "name": "TablePlus",
+      "verdict": "free capped at 2 tabs"
+    },
+    {
+      "name": "DataGrip",
+      "verdict": "free non-commercial only (unverified)"
+    },
+    {
+      "name": "DbGate / HeidiSQL",
+      "verdict": "smaller"
+    }
+  ],
+  "decision": "DBeaver has no commercial threshold; Beekeeper is nicer while you're tiny.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "fixed",
+    "note": "winget-pkgs has no DBeaver.DBeaver package: manifests/d/DBeaver/DBeaver holds only Community/Enterprise/Lite/Team/Ultimate, so `winget install dbeaver.dbeaver` will fail.",
+    "url": "https://github.com/microsoft/winget-pkgs/tree/master/manifests/d/DBeaver/DBeaver"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "agent-framework-typescript-primary-for-the-app-stack",
+  "slot": "agent framework (TypeScript) - PRIMARY for the app stack",
+  "track": "ai-eng",
+  "stage": "build",
+  "region": "Global",
+  "order": 4055,
+  "pick": {
+    "name": "Vercel AI SDK (ai 7.x)",
+    "url": "https://ai-sdk.dev/docs/introduction",
+    "what": "TS toolkit: unified model API, structured output, tool loop/agents, streaming UI hooks for React/Next/Node",
+    "why": "Fits the TS monorepo (React, Expo, Node), provider-agnostic (Claude, Gemini, Ollama, OpenRouter), most documented so Claude Code writes it reliably",
+    "cost": "free",
+    "free_limits": "n/a (library)",
+    "windows_fit": "native",
+    "maintained": "ai 7.0.155 on 2026-10-27; @ai-sdk/anthropic 4.0.90 on 2026-10-27",
+    "install": "npm i ai @ai-sdk/anthropic zod",
+    "license": "Apache-2.0",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://ai-sdk.dev/docs/introduction",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Claude Agent SDK (TypeScript)",
+      "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+      "what": "Claude Code's agent loop, tools, hooks, subagents, MCP, sessions as a library",
+      "why": "Best for coding/file/ops agents on Claude; covered by Max API credits",
+      "cost": "owned",
+      "free_limits": "Covered by Max credits. Not allowed: offering claude.ai login or limits to your users - API key auth only",
+      "windows_fit": "native (runs Claude Code binary; Node)",
+      "maintained": "@anthropic-ai/claude-agent-sdk 0.3.312 on 2026-10-27 (pre-1.0)",
+      "install": "npm i @anthropic-ai/claude-agent-sdk",
+      "license": "Anthropic Commercial Terms (npm: 'SEE LICENSE IN README')",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/en/agent-sdk/overview",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Mastra",
+      "url": "https://github.com/mastra-ai/mastra",
+      "what": "TS agent framework: workflows, memory, RAG, evals, observability, MCP authoring",
+      "why": "Batteries-included if you want one TS framework with workflow graphs and HITL",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "@mastra/core 1.79.0 on 2026-10-21",
+      "install": "npm create mastra@latest",
+      "license": "Apache-2.0 core; ee/ dirs under source-available Mastra Enterprise License (prod use needs licence)",
+      "commercial_ok": "yes (avoid ee/)",
+      "needs_company": "no",
+      "source_url": "https://github.com/mastra-ai/mastra",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Vercel AI SDK",
+      "verdict": "Pick: ubiquitous, typed, UI hooks, provider-agnostic"
+    },
+    {
+      "name": "Claude Agent SDK (TS)",
+      "verdict": "Alt: strongest agentic tool use, Claude-only, pre-1.0, subprocess runtime"
+    },
+    {
+      "name": "Mastra",
+      "verdict": "Alt: full framework, ee licence carve-out"
+    },
+    {
+      "name": "OpenAI Agents SDK (JS) 0.21.0",
+      "verdict": "MIT, good realtime voice; OpenAI-first"
+    },
+    {
+      "name": "LangGraph.js 1.5.3",
+      "verdict": "Durable/HITL graphs, heavier ecosystem"
+    },
+    {
+      "name": "Google ADK (TS) 2.3.0",
+      "verdict": "Apache-2.0, multi-language, Google-flavoured"
+    },
+    {
+      "name": "VoltAgent 2.11.0",
+      "verdict": "Smaller community"
+    },
+    {
+      "name": "TanStack AI 1.0.0 (2026-10-22)",
+      "verdict": "Brand new; too young"
+    }
+  ],
+  "decision": "AI SDK is the default for product agents in the TS monorepo: one API across web, Expo and Node and Claude Code knows it well. Add the Claude Agent SDK for heavy tool-using agents billed to Max credits; reach for Mastra/LangGraph.js only for durable multi-step workflows with suspend/resume.",
+  "note": "",
+  "details": "TS is primary for the app stack; Python pick is next item. Agent SDK needs the Claude Code binary - fine on a server, awkward in Expo.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Version/licence/limits match registry or official page.",
+    "url": "https://registry.npmjs.org/"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,89 @@
+{
+  "slug": "courses",
+  "slot": "courses",
+  "track": "learning",
+  "stage": "run",
+  "region": "Global",
+  "order": 12240,
+  "pick": {
+    "name": "Anthropic Academy (Skilljar)",
+    "url": "https://academy.claude.com/",
+    "what": "Official courses: Claude Code 101/in Action, Building with the Claude API, Intro + Advanced MCP, agent skills, subagents, Cowork",
+    "why": "Exactly the stack you build on (Claude Code, MCP, skills, plugins), from the vendor, with completion certificates",
+    "cost": "free",
+    "free_limits": "Free (course pages show 'Register | FREE'); Skilljar account needed; completion certificates",
+    "windows_fit": "web",
+    "maintained": "Catalogue current (23 courses incl. 'Introduction to subagents')",
+    "install": "web",
+    "license": "Proprietary content",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://anthropic.skilljar.com/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Hugging Face Learn",
+      "url": "https://huggingface.co/learn",
+      "what": "Free open courses: LLM, Agents, Context, smol course, Audio, Diffusion and more",
+      "why": "Best for open models, fine-tuning and agents beyond Claude",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "web",
+      "maintained": "agents-course/mcp-course repos updated 2026-10-06",
+      "install": "web",
+      "license": "Apache-2.0 (course repos, typical)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://huggingface.co/learn",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "DeepLearning.AI short courses",
+      "url": "https://www.deeplearning.ai/courses/",
+      "what": "1-2 hour vendor-partnered courses (agents, MCP with Anthropic, evals, Claude Code)",
+      "why": "Fast, practical, many co-built with tool vendors",
+      "cost": "free",
+      "free_limits": "Short courses shown with 'Start' (price not on page)",
+      "windows_fit": "web",
+      "maintained": "New courses 2026",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.deeplearning.ai/courses/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Anthropic Academy",
+      "verdict": "PICK: your exact stack"
+    },
+    {
+      "name": "HF Learn",
+      "verdict": "Open models/agents/fine-tuning"
+    },
+    {
+      "name": "DeepLearning.AI short courses",
+      "verdict": "Quick vendor topics"
+    },
+    {
+      "name": "fast.ai Practical Deep Learning",
+      "verdict": "Free but 2022 recording; foundations only, needs Kaggle GPU"
+    },
+    {
+      "name": "Google/Kaggle GenAI intensives",
+      "verdict": "Not verified this pass"
+    }
+  ],
+  "decision": "Do Anthropic Academy first (Claude Code in Action, MCP Advanced, agent skills, subagents) because it maps 1:1 to what you ship. Use HF Learn for open models and DeepLearning.AI for one-off topics like evals.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Anthropic Academy course pages show 'Register | FREE' with completion certificates; anthropic.com/learn now 308-redirects to academy.claude.com.",
+    "url": "https://anthropic.skilljar.com/claude-code-101"
+  },
+  "better_pick": null
+}

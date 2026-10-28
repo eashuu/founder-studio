@@ -1,0 +1,93 @@
+{
+  "slug": "logo-brand-identity",
+  "slot": "Logo + brand identity",
+  "track": "design",
+  "stage": "discover",
+  "region": "Global",
+  "order": 1158,
+  "pick": {
+    "name": "logo-design skill (Claude)",
+    "url": "https://github.com/kaankiziltug/logo-design-skill",
+    "what": "Brief -> concepts -> hand-built geometric SVG -> tests (16 px, mono, reversed) -> brand kit, with audit/export scripts",
+    "why": "Produces real vector SVGs you own plus favicon/app-icon sets and guidelines, which raster AI logo tools cannot.",
+    "cost": "free",
+    "free_limits": "Free",
+    "windows_fit": "native (Python scripts)",
+    "maintained": "25 commits, no tagged releases; installed v1.4.5",
+    "install": "/plugin marketplace add kaankiziltug/logo-design-skill ; /plugin install logo-design@logo-design-skill",
+    "license": "MIT (reference logo SVGs are third-party trademarks)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/kaankiziltug/logo-design-skill",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Recraft",
+      "url": "https://www.recraft.ai/pricing",
+      "what": "AI image generator that outputs vectors",
+      "why": "Fast vector concept exploration; free outputs are public and not licensed for commercial use, so pay before using.",
+      "cost": "freemium",
+      "free_limits": "Free images owned by Recraft, public, not commercial; paid prices not shown",
+      "windows_fit": "web",
+      "maintained": "live",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "no (free) / yes (paid)",
+      "needs_company": "no",
+      "source_url": "https://www.recraft.ai/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Gemini Nano Banana (mood boards)",
+      "url": "https://gemini.google.com",
+      "what": "Raster concept/mood-board generation",
+      "why": "Cheap visual exploration before the skill builds the SVG.",
+      "cost": "owned",
+      "free_limits": "AI Pro shared meter; visible watermark on non-Ultra",
+      "windows_fit": "web",
+      "maintained": "live",
+      "install": "web",
+      "license": "Google ToS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://support.google.com/gemini/answer/16275805",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "logo-design skill",
+      "verdict": "pick"
+    },
+    {
+      "name": "Recraft",
+      "verdict": "alt (paid for commercial)"
+    },
+    {
+      "name": "Nano Banana",
+      "verdict": "alt for mood boards"
+    },
+    {
+      "name": "Looka / Brandmark",
+      "verdict": "paid template logos, weak uniqueness"
+    },
+    {
+      "name": "Canva logo maker",
+      "verdict": "template-based, trademark risk"
+    },
+    {
+      "name": "Freelance designer",
+      "verdict": "best for a flagship brand once revenue allows"
+    }
+  ],
+  "decision": "The skill yields clean, testable SVG marks and a brand kit inside Claude Code. Do a trademark search (IP India + WIPO Global Brand Database) before adopting any mark.",
+  "note": "",
+  "details": "Do not ship AI raster logos: they are hard to trademark and do not scale.",
+  "verify": {
+    "verdict": "ok",
+    "note": "logo-design skill is installed here; Recraft alt terms confirmed (free = public, Recraft-owned, non-commercial).",
+    "url": "https://github.com/kaankiziltug/logo-design-skill"
+  },
+  "better_pick": null
+}

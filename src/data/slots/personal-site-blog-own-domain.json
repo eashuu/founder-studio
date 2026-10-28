@@ -1,0 +1,97 @@
+{
+  "slug": "personal-site-blog-own-domain",
+  "slot": "personal site + blog (own domain)",
+  "track": "brand",
+  "stage": "sell",
+  "region": "Global",
+  "order": 8228,
+  "pick": {
+    "name": "Astro (static) on Cloudflare Workers, cross-posted to dev.to with canonical URLs",
+    "url": "https://astro.build/blog/joining-cloudflare/",
+    "what": "Markdown/MDX content site (blog, portfolio, /now, /changelog) deployed free on Cloudflare",
+    "why": "Typed, popular, Claude-Code-friendly, MIT; Cloudflare acquired the Astro team (2026-01-16) and kept it MIT and multi-host; matches the default hosting pick",
+    "cost": "free",
+    "free_limits": "Astro free; Cloudflare Workers Free static assets (see Ship + operate)",
+    "windows_fit": "native (Node)",
+    "maintained": "create-astro 5.3.1 2026-10-21; commits 2026-10-28",
+    "install": "npm create astro@latest",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://astro.build/blog/joining-cloudflare/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Ghost",
+      "url": "https://ghost.org",
+      "what": "Publishing platform with built-in newsletter and memberships",
+      "why": "Best if site + newsletter + paid memberships should be one product; Ghost(Pro) Starter $18/mo annual (1,000 members) or self-host",
+      "cost": "paid",
+      "free_limits": "Ghost(Pro) Starter $18/mo annual; self-host free",
+      "windows_fit": "web",
+      "maintained": "v6.73.0 2026-10-27",
+      "install": "web or self-host",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://ghost.org/pricing/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Hugo",
+      "url": "https://gohugo.io",
+      "what": "Fast single-binary static site generator",
+      "why": "Best if you want zero Node dependencies; Go templates are less pleasant for Claude Code than Astro components",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "native",
+      "maintained": "v0.169.0 2026-10-27",
+      "install": "winget install -e --id Hugo.Hugo.Extended",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/gohugoio/hugo",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Astro",
+      "verdict": "PICK: typed, popular, MIT, Cloudflare-backed"
+    },
+    {
+      "name": "Ghost",
+      "verdict": "All-in-one with newsletter; paid or self-host"
+    },
+    {
+      "name": "Hugo",
+      "verdict": "Fast, no Node; less component-friendly"
+    },
+    {
+      "name": "Eleventy",
+      "verdict": "Solid (v3.1.7 2026-10-15) but smaller ecosystem"
+    },
+    {
+      "name": "Hashnode",
+      "verdict": "June 2026: custom domains, API, GitHub backup moved to Pro ($5/seat/mo); free = hashnode.dev subdomain only"
+    },
+    {
+      "name": "dev.to",
+      "verdict": "Use as a cross-post channel, not the home"
+    },
+    {
+      "name": "Next.js",
+      "verdict": "Overkill for a content site; Astro ships less JS"
+    }
+  ],
+  "decision": "Astro on Cloudflare gives an owned domain, free hosting and a stack Claude Code writes well; the Cloudflare acquisition adds funding without a licence change. Cross-post to dev.to with canonical URLs for reach. Pick Ghost instead only if you want site + newsletter + paid memberships in one tool.",
+  "note": "",
+  "details": "Hashnode free tier cut (June 2026) is a 2026 free-tier reduction to flag.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Astro post (2026-01-16): the Astro Technology Company team joined Cloudflare; Astro stays MIT and platform-agnostic. Hashnode official pricing confirms custom domain, GraphQL API and GitHub backup are Pro ($5/seat/mo); free = hashnode.dev only. The June 2026 change date comes only from secondary sources. | Cloudflare-Astro item skipped per instructions.",
+    "url": "https://hashnode.com/pricing"
+  },
+  "better_pick": null
+}

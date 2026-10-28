@@ -1,0 +1,85 @@
+{
+  "slug": "git-pr-workflow",
+  "slot": "git / PR workflow",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2015,
+  "pick": {
+    "name": "gh CLI (authenticated) + commit-commands (official)",
+    "url": "https://code.claude.com/docs/en/github-actions.md",
+    "what": "Claude drives gh for PRs/issues; /commit and commit-push-PR commands",
+    "why": "Zero MCP context cost; gh auth is a prerequisite for /install-github-app",
+    "cost": "free",
+    "free_limits": "GitHub API limits",
+    "windows_fit": "native",
+    "maintained": "core/official",
+    "install": "gh auth login; /plugin install commit-commands@claude-plugins-official",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://code.claude.com/docs/en/github-actions.md",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "GitHub MCP (official)",
+      "url": "https://github.com/github/github-mcp-server",
+      "what": "Remote GitHub MCP with toolsets/read-only",
+      "why": "Needed only in cloud sessions without gh",
+      "cost": "free",
+      "free_limits": "API limits",
+      "windows_fit": "native (remote)",
+      "maintained": "pushed 2026-10-28",
+      "install": "/plugin install github@claude-plugins-official",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/github/github-mcp-server",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "claude-mem:babysit",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "what": "Watch a PR until CI/reviews are green",
+      "why": "Common default, little setup",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "see memory slot",
+      "install": "installed",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/thedotmack/claude-mem",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "gh + commit-commands",
+      "verdict": "pick"
+    },
+    {
+      "name": "GitHub MCP",
+      "verdict": "cloud sessions"
+    },
+    {
+      "name": "caveman-commit",
+      "verdict": "style only"
+    },
+    {
+      "name": "GitLab MCP",
+      "verdict": "only if on GitLab"
+    }
+  ],
+  "decision": "Install and authenticate gh (gh auth login) and let Claude use it directly. Add GitHub MCP only for cloud/remote sessions.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "commit-commands present in official marketplace; gh is the right low-context choice.",
+    "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins"
+  },
+  "better_pick": null
+}

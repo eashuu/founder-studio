@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+import { REPO, meta } from '../lib/data.js';
+const { title, description = 'Every tool a solo AI founder needs, from problem to sales: picked, compared and verified, free first.' } = Astro.props;
+const path = Astro.url.pathname;
+const nav = [['/tracks/', 'Tracks'], ['/stack/', 'Stack builder'], ['/playbook/', 'Playbook'], ['/decisions/', 'Decisions'], ['/method/', 'Method'], ['/search/', 'Search']];
+const full = title ? `${title} · Founder Studio` : 'Founder Studio';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{full}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={full} />
+    <meta property="og:description" content={description} />
+    <link rel="canonical" href={new URL(path, Astro.site)} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Schibsted+Grotesk:wght@700;800&display=swap" />
+    <script is:inline src="/tear.js"></script>
+  </head>
+  <body>
+    <header class="top">
+      <div class="wrap">
+        <a class="mark" href="/">Founder<span>/</span>Studio</a>
+        <nav class="nav" aria-label="Main">
+          {nav.map(([href, label]) => <a href={href} aria-current={path.startsWith(href) ? 'page' : undefined}>{label}</a>)}
+        </nav>
+      </div>
+    </header>
+    <main><div class="wrap"><slot /></div></main>
+    <footer>
+      <div class="wrap">
+        <span>Researched and verified {meta.built}. Prices and free tiers change: check before you pay.</span>
+        <span><a href={REPO}>Source and edits on GitHub</a></span>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener('click', (e) => {
+        const b = e.target.closest('[data-copy]');
+        if (!b) return;
+        navigator.clipboard?.writeText(b.dataset.copy).then(() => {
+          const t = b.textContent;
+          b.textContent = 'Copied';
+          setTimeout(() => (b.textContent = t), 1400);
+        });
+      });
+    </script>
+  </body>
+</html>

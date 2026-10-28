@@ -1,0 +1,93 @@
+{
+  "slug": "communities",
+  "slot": "communities",
+  "track": "learning",
+  "stage": "run",
+  "region": "India",
+  "order": 12239,
+  "pick": {
+    "name": "Hacker News + Anthropic Discord + Hasgeek/AI Tinkerers (India)",
+    "url": "https://news.ycombinator.com/",
+    "what": "HN for launches/discussion, Anthropic's official Discord (anthropic.com/discord) for Claude Code/API help, Hasgeek and AI Tinkerers for in-person India network",
+    "why": "Covers global signal, the exact stack you build on (Claude), and local buyers/peers; all free",
+    "cost": "free",
+    "free_limits": "Free",
+    "windows_fit": "web",
+    "maintained": "HN live 2026-10-28; anthropic.com/discord redirects to discord.com/invite/6PPFFzqPDZ",
+    "install": "web",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://news.ycombinator.com/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Hasgeek communities",
+      "url": "https://hasgeek.com/",
+      "what": "Rootconf, Fifth Elephant, Bengaluru Systems meetups",
+      "why": "In-person India network",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "web",
+      "maintained": "Events through Dec 2026",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://hasgeek.com/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "AI Tinkerers",
+      "url": "https://delhi.aitinkerers.org/",
+      "what": "Builder demo nights in Indian cities",
+      "why": "Best peer group for agent builders",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "web",
+      "maintained": "Chapters active",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://delhi.aitinkerers.org/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Hacker News",
+      "verdict": "PICK: launches + feedback"
+    },
+    {
+      "name": "Anthropic Discord",
+      "verdict": "PICK: stack-specific help"
+    },
+    {
+      "name": "Hasgeek / AI Tinkerers",
+      "verdict": "India in-person"
+    },
+    {
+      "name": "r/LocalLLaMA, r/ClaudeAI",
+      "verdict": "Useful, noisy; not fetched this pass"
+    },
+    {
+      "name": "Hugging Face Discord",
+      "verdict": "Open-model help; not verified"
+    },
+    {
+      "name": "Latent Space Discord",
+      "verdict": "Not verified this pass"
+    }
+  ],
+  "decision": "Lurk daily on nothing; check HN and the Anthropic Discord during the weekly radar, and attend one Indian meetup a month. Communities are for asking and launching, not for news, which the reader already covers.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Not independently re-opened (search budget exhausted); free curated content, low risk, no numeric/legal claims.",
+    "url": ""
+  },
+  "better_pick": null
+}

@@ -1,0 +1,56 @@
+---
+import Base from '../layouts/Base.astro';
+import Tear from '../components/Tear.astro';
+import { meta, slots, slotsIn } from '../lib/data.js';
+const options = slots.reduce((n, s) => n + Math.max(s.candidates.length, s.alts.length + 1), 0);
+const verified = slots.filter((s) => ['ok', 'fixed'].includes(s.verify?.verdict)).length;
+const free = slots.filter((s) => /^(free|owned)/i.test(s.pick.cost || 'free')).length;
+---
+<Base>
+  <section class="sheet grain hero">
+    <span class="label">The solo AI founder's toolkit</span>
+    <h1 style="margin-top:14px">From problem to paid, on free tiers.</h1>
+    <p>Every slot a one-person AI company needs, from finding the problem to building, shipping, selling and getting paid. Each one has a pick, its two runners-up, every option that lost, and a verifier's check against primary sources.</p>
+    <div class="tally">
+      <span><b>{slots.length}</b> slots</span>
+      <span><b>{options.toLocaleString('en')}</b> options compared</span>
+      <span><b>{verified}</b> picks verified</span>
+      <span><b>{free}</b> picks free</span>
+    </div>
+    <Tear seed="hero" side="bottom" />
+  </section>
+
+  {meta.stages.map((st) => (
+    <section class="strip grain" id={st.key}>
+      <Tear seed={`${st.key}-t`} side="top" />
+      <div class="stage-head">
+        <span class="label">Stage</span>
+        <h2>{st.name}</h2>
+        <p>{st.blurb}</p>
+      </div>
+      <ul class="tracklist">
+        {meta.tracks.filter((t) => t.stage === st.key).map((t) => (
+          <li>
+            <a href={`/tracks/${t.key}/`}>
+              <strong>{t.name}</strong>
+              <span class="n">{slotsIn(t.key).length}{t.region !== 'Global' ? ` · ${t.region}` : ''}</span>
+              <span class="b">{t.blurb}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <Tear seed={`${st.key}-b`} side="bottom" />
+    </section>
+  ))}
+
+  <section class="sheet grain" style="margin-top:48px">
+    <Tear seed="start-t" side="top" />
+    <span class="label">Start here</span>
+    <h2 style="font-size:clamp(26px,3.6vw,36px);margin-top:8px">Three ways in</h2>
+    <ul class="ledger" style="margin-top:18px">
+      <li><span>Plan</span><div><h3><a href="/playbook/">The playbook</a></h3><p>Seven phases from a secure machine to a weekly growth routine.</p></div></li>
+      <li><span>Pick</span><div><h3><a href="/stack/">Build your stack</a></h3><p>Tick the picks you'll use and take the list with you as Markdown.</p></div></li>
+      <li><span>Trust</span><div><h3><a href="/method/">How it was researched</a></h3><p>How picks were made and checked, and what is still unverified.</p></div></li>
+    </ul>
+  </section>
+</Base>

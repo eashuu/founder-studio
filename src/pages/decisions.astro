@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import Tear from '../components/Tear.astro';
+import { meta } from '../lib/data.js';
+const sev = { high: 'Read first', med: 'Important', low: 'Good to know' };
+---
+<Base title="Decisions" description="Calls made where research tracks overlapped, and security notes for a solo founder's setup.">
+  <section class="sheet grain page-head">
+    <span class="label">Decisions</span>
+    <h1>One stack that fits together</h1>
+    <p>Where two tracks recommended different tools for the same job, or verification changed the advice, one call was made. The affected tool pages carry the same note.</p>
+    <ul class="ledger" style="margin-top:26px">
+      {meta.decisions.map((d) => <li><span>Decision</span><div><h3>{d.title}</h3><p>{d.body} {d.url && <a href={d.url}>Source</a>}</p></div></li>)}
+    </ul>
+    <Tear seed="dec" side="bottom" />
+  </section>
+  <section class="sheet grain" style="margin-top:48px">
+    <Tear seed="notes-t" side="top" />
+    <span class="label">Security notes</span>
+    <h2 style="font-size:clamp(26px,3.6vw,36px);margin-top:8px">Before you install anything</h2>
+    <ul class="ledger" style="margin-top:18px">
+      {meta.notes.map((n) => <li><span class={n.sev === 'high' ? 'sev-high' : ''}>{sev[n.sev]}</span><div><h3>{n.title}</h3><p>{n.body}</p></div></li>)}
+    </ul>
+  </section>
+</Base>

@@ -1,0 +1,89 @@
+{
+  "slug": "default-deploy-stack-saas-api-mcp-server",
+  "slot": "Default deploy stack (SaaS + API + MCP server)",
+  "track": "ship",
+  "stage": "ship",
+  "region": "Global",
+  "order": 6123,
+  "pick": {
+    "name": "Cloudflare Workers + Neon + Better Auth + R2 + Resend + Sentry + PostHog",
+    "url": "https://developers.cloudflare.com/agents/guides/remote-mcp-server/",
+    "what": "One TS monorepo: web app (Workers static/SSR), API (Hono on Workers), remote MCP server (createMcpHandler + Workers OAuth Provider), Postgres on Neon, auth via Better Auth, files on R2",
+    "why": "Every piece has a commercial-OK free tier, typed SDKs Claude Code knows, and no lock-in at the data layer (Postgres, S3 API)",
+    "cost": "freemium",
+    "free_limits": "$0 until: >100k req/day or >10 ms CPU (Workers Paid $5); >1 GB/project or need PITR (Neon Launch, usage-based); >100 emails/day (Resend Pro $20); >5k errors or 2nd user (Sentry Team $26); >1M events (PostHog pay-go with caps); >5 crons or >10k queue ops/day (Workers Paid)",
+    "windows_fit": "web + Windows-native CLIs (wrangler, neonctl, gh)",
+    "maintained": "components checked 2026-10-26..28",
+    "install": "npm create cloudflare@latest; npx neonctl@latest init; npm i better-auth resend @sentry/cloudflare posthog-js",
+    "license": "mixed (MIT libs + services)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://developers.cloudflare.com/agents/guides/remote-mcp-server/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Container path: Cloud Run + Neon + Better Auth",
+      "url": "https://cloud.google.com/run/pricing",
+      "what": "Same stack but Docker on Cloud Run",
+      "why": "For Python/FastAPI agents or long requests",
+      "cost": "freemium",
+      "free_limits": "Cloud Run free 2M req/180k vCPU-s; card required",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "gcloud run deploy --source .",
+      "license": "service",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://cloud.google.com/run/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Vercel Pro + Neon + Better Auth",
+      "url": "https://vercel.com/docs/limits/fair-use-guidelines",
+      "what": "Next.js-first variant",
+      "why": "If you want first-party Next.js and pay $20/mo from day one",
+      "cost": "paid",
+      "free_limits": "Hobby non-commercial; Pro $20/user/mo",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "npm i -g vercel",
+      "license": "service",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://vercel.com/docs/limits/fair-use-guidelines",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Workers-centric stack",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Cloud Run variant",
+      "verdict": "Alt for Python/containers"
+    },
+    {
+      "name": "Vercel Pro variant",
+      "verdict": "Alt if paying from day one"
+    },
+    {
+      "name": "Supabase-centric (Supabase + Workers)",
+      "verdict": "Good BaaS but 2-project/pausing limits"
+    },
+    {
+      "name": "Oracle VM + Coolify",
+      "verdict": "All self-hosted; most ops; good for internal tools"
+    }
+  ],
+  "decision": "Use the Workers stack by default; move individual services to Cloud Run when they need Python or long CPU, and pay Workers $5/mo as the first upgrade since it lifts CPU, cron, queue and log limits at once. For HIPAA/PHI workloads none of these free tiers should hold PHI; budget for BAA-capable paid plans before signing a healthcare client.",
+  "note": "Consolidated: Next.js apps run here through @opennextjs/cloudflare (Next.js 16.2.3+). The MCP server, the API and your personal site share one free Workers quota of 100k requests a day, so move to Workers Paid ($5/mo) or split accounts once traffic grows. No plan in this stack carries a HIPAA BAA; see the HIPAA slot before touching PHI.",
+  "details": "Card checkout must be a hosted/overlay MoR page: Cloudflare Self-Serve Subscription Agreement s.2.2.1(h) forbids processing or collecting credit-card data on any web property receiving Free Services. Sentry: use @sentry/cloudflare (wizard -i nextjs only if you actually use Next.js).",
+  "verify": {
+    "verdict": "fixed",
+    "note": "The ToS claim is confirmed: Cloudflare Self-Serve Subscription Agreement s.2.2.1(h) forbids 'process or collect personal or business credit card information on any web property that is receiving Free Services' (Free Services are defined in s.2.6). A hosted or overlay MoR checkout is fine. The upgrade triggers are correct. The install line uses posthog-js and @sentry/cloudflare, but the error-monitoring slot's install uses the Next.js wizard, which conflicts with the stack's Vite-framework advice.",
+    "url": "https://www.cloudflare.com/terms/"
+  },
+  "better_pick": null
+}

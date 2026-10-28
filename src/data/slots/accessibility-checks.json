@@ -1,0 +1,101 @@
+{
+  "slug": "accessibility-checks",
+  "slot": "Accessibility checks",
+  "track": "design",
+  "stage": "discover",
+  "region": "Global",
+  "order": 1168,
+  "pick": {
+    "name": "axe-core via @axe-core/playwright",
+    "url": "https://github.com/dequelabs/axe-core",
+    "what": "Automated WCAG rule engine run inside Playwright tests/CI",
+    "why": "Catches most automatable WCAG issues on every PR, free; enterprise/healthcare buyers expect WCAG 2.1 AA evidence.",
+    "cost": "free",
+    "free_limits": "Free",
+    "windows_fit": "native (Node)",
+    "maintained": "axe-core 4.14.0, 5 Oct; @axe-core/playwright 4.14.0, 15 Oct",
+    "install": "npm i -D @axe-core/playwright",
+    "license": "MPL-2.0 (axe-core)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/dequelabs/axe-core/releases",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Accessibility Insights for Web",
+      "url": "https://github.com/microsoft/accessibility-insights-web",
+      "what": "Microsoft browser extension with guided manual assessment",
+      "why": "Best free guided manual audit (keyboard, screen reader steps) for a VPAT.",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "browser extension",
+      "maintained": "v2.49.0, 8 Sep",
+      "install": "Edge/Chrome web store",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/microsoft/accessibility-insights-web/releases",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Lighthouse",
+      "url": "https://github.com/GoogleChrome/lighthouse",
+      "what": "Chrome audits incl. accessibility score",
+      "why": "Built into Chrome; quick score plus performance/SEO.",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "built into Chrome",
+      "maintained": "v13.6.0, 27 Oct 2026",
+      "install": "npm i -g lighthouse",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/GoogleChrome/lighthouse/releases",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "@axe-core/playwright",
+      "verdict": "pick"
+    },
+    {
+      "name": "Accessibility Insights",
+      "verdict": "alt manual"
+    },
+    {
+      "name": "Lighthouse",
+      "verdict": "alt"
+    },
+    {
+      "name": "eslint-plugin-jsx-a11y",
+      "verdict": "add as lint, slow releases"
+    },
+    {
+      "name": "Pa11y",
+      "verdict": "LGPL CLI, older"
+    },
+    {
+      "name": "WAVE",
+      "verdict": "free extension"
+    },
+    {
+      "name": "axe DevTools free extension",
+      "verdict": "manual scan"
+    },
+    {
+      "name": "design:accessibility-review skill",
+      "verdict": "design-stage WCAG review"
+    }
+  ],
+  "decision": "Automate axe in Playwright so every build is checked, then do one guided manual pass with Accessibility Insights before enterprise/healthcare deals.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "axe-core 4.14.0 (2026-10-05), @axe-core/playwright 4.14.0 (2026-10-15), MPL-2.0; Lighthouse 13.6.0 (2026-10-27).",
+    "url": "https://github.com/dequelabs/axe-core/releases"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "brand-asset-management",
+  "slot": "Brand asset management",
+  "track": "design",
+  "stage": "discover",
+  "region": "Global",
+  "order": 1169,
+  "pick": {
+    "name": "brand/ folder in a GitHub repo (+ Google Drive for large files)",
+    "url": "https://docs.github.com/en/repositories",
+    "what": "SVG logos, tokens (CSS/JSON), fonts, guidelines PDF versioned in Git; videos/raw files in Drive",
+    "why": "Code consumes tokens directly, Claude Code keeps everything in sync, no vendor; AI Pro includes 5 TB Drive storage.",
+    "cost": "free",
+    "free_limits": "Free; Drive storage from AI Pro (5 TB per Google One plans page)",
+    "windows_fit": "web/native",
+    "maintained": "n/a",
+    "install": "git + web",
+    "license": "your own",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://one.google.com/about/google-ai-plans/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Canva Brand Kit",
+      "url": "https://www.canva.com",
+      "what": "Brand colours/fonts/logos inside Canva templates",
+      "why": "Useful if non-technical helpers make graphics in Canva; free = 1 limited kit.",
+      "cost": "freemium",
+      "free_limits": "Free: 1 kit, limited",
+      "windows_fit": "web",
+      "maintained": "live",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.canva.com",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Brandfetch",
+      "url": "https://brandfetch.com",
+      "what": "Public brand profile + logo API",
+      "why": "Claim your profile so partners/press pull correct logos.",
+      "cost": "freemium",
+      "free_limits": "Pricing unverified (403)",
+      "windows_fit": "web",
+      "maintained": "live",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://brandfetch.com",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Git brand folder + Drive",
+      "verdict": "pick"
+    },
+    {
+      "name": "Canva Brand Kit",
+      "verdict": "alt"
+    },
+    {
+      "name": "Brandfetch",
+      "verdict": "alt public profile"
+    },
+    {
+      "name": "Frontify",
+      "verdict": "enterprise DAM, overkill"
+    }
+  ],
+  "decision": "A versioned brand folder is the source of truth that both code and Claude read. Add Canva Brand Kit only when other people make graphics.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Google AI plans page: AI Pro includes '5 TB of cloud storage across Gmail, Drive and Photos'.",
+    "url": "https://one.google.com/about/google-ai-plans/"
+  },
+  "better_pick": null
+}

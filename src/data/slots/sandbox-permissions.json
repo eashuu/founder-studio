@@ -1,0 +1,85 @@
+{
+  "slug": "sandbox-permissions",
+  "slot": "sandbox / permissions",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2021,
+  "pick": {
+    "name": "Auto mode + allow/deny rules on Windows; WSL2 /sandbox for untrusted repos",
+    "url": "https://code.claude.com/docs/en/permission-modes.md",
+    "what": "Classifier-gated autonomy natively; bubblewrap sandbox only in WSL2",
+    "why": "Native Windows has no Bash sandbox, so bypass mode runs every command unisolated, which matters most on a company-managed laptop",
+    "cost": "owned",
+    "free_limits": "All plans; native Windows needs Claude Code v2.1.233+; auto is the default starting mode from v2.1.283",
+    "windows_fit": "native + wsl",
+    "maintained": "core",
+    "install": "~/.claude/settings.json: \"defaultMode\": \"auto\" (user settings only) + deny rules via /permissions; in WSL: sudo apt-get install bubblewrap socat, then /sandbox",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://code.claude.com/docs/en/setup",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Dev containers",
+      "url": "https://code.claude.com/docs/en/sandbox-environments.md",
+      "what": "Run Claude inside a container",
+      "why": "Strongest isolation for client code",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "wsl",
+      "maintained": "doc current",
+      "install": "see doc",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/en/sandbox-environments.md",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Bypass permissions",
+      "url": "https://code.claude.com/docs/en/permission-modes.md",
+      "what": "No prompts",
+      "why": "Fastest but unsandboxed on Windows",
+      "cost": "owned",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "core",
+      "install": "current",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/en/permission-modes.md",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Auto mode + rules",
+      "verdict": "pick"
+    },
+    {
+      "name": "WSL2 sandbox",
+      "verdict": "untrusted repos"
+    },
+    {
+      "name": "Dev containers",
+      "verdict": "client/healthcare code"
+    },
+    {
+      "name": "Bypass",
+      "verdict": "riskiest on a company machine"
+    }
+  ],
+  "decision": "Swap bypass for auto mode with explicit deny rules; use the WSL2 sandbox or a dev container for unknown repos and healthcare client code.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Auto mode exists as described: a separate classifier reviews actions; available on ALL plans (not a Max feature), needs v2.1.233+ on native Windows, and is the built-in default mode from v2.1.283. Persist it with defaultMode 'auto' in ~/.claude/settings.json (project-level 'auto' does not take effect). Sandbox doc confirms: native Windows runs commands unsandboxed; WSL2 needs bubblewrap + socat.",
+    "url": "https://code.claude.com/docs/en/permission-modes.md"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,97 @@
+{
+  "slug": "mobile-ui-styling-components",
+  "slot": "mobile UI styling + components",
+  "track": "app-stacks",
+  "stage": "build",
+  "region": "Global",
+  "order": 5081,
+  "pick": {
+    "name": "Uniwind (Tailwind v4 for React Native)",
+    "url": "https://uniwind.dev/",
+    "what": "Tailwind className styling for RN/Expo from the Unistyles team",
+    "why": "Same Tailwind v4 tokens/classes as shadcn web; free MIT core; Better-T-Stack default",
+    "cost": "freemium",
+    "free_limits": "Free core MIT incl. Expo Go; Pro adds C++ engine/Reanimated className (price not shown)",
+    "windows_fit": "native",
+    "maintained": "uniwind 1.13.0 (2026-10-19)",
+    "install": "npm i uniwind tailwindcss",
+    "license": "MIT (core)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://uniwind.dev/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "NativeWind",
+      "url": "https://www.nativewind.dev",
+      "what": "Tailwind for React Native",
+      "why": "Most adopted (1.77M/wk); huge example base",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "nativewind 4.2.7 (2026-09-14)",
+      "install": "npm i nativewind",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.npmjs.com/package/nativewind",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Tamagui",
+      "url": "https://tamagui.dev",
+      "what": "Universal styled components + optimizing compiler for RN + web",
+      "why": "Wins if you want one component set on web and native",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "tamagui 3.1.6 (2026-10-27)",
+      "install": "npm create tamagui@latest",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.npmjs.com/package/tamagui",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Uniwind (pick)",
+      "verdict": "Tailwind v4 parity with web; active."
+    },
+    {
+      "name": "NativeWind",
+      "verdict": "Larger adoption; v4 tracks Tailwind v3 semantics - pick if a template you use expects it."
+    },
+    {
+      "name": "Tamagui",
+      "verdict": "Best universal web+native component sharing; own styling DSL, smaller adoption (203k/wk)."
+    },
+    {
+      "name": "HeroUI Native 1.0.11",
+      "verdict": "Good prebuilt components (Apache-2.0, 200k/wk) - layer on top of Uniwind if you want ready components."
+    },
+    {
+      "name": "gluestack-ui 5",
+      "verdict": "Copy-in RN components; last release 2026-06."
+    },
+    {
+      "name": "react-native-reusables (shadcn port)",
+      "verdict": "CLI last released 2026-03 - slower."
+    },
+    {
+      "name": "Expo UI (@expo/ui 58)",
+      "verdict": "Real SwiftUI/Jetpack Compose components; use for platform-native screens."
+    }
+  ],
+  "decision": "Uniwind keeps one Tailwind design language across web, desktop and mobile. Choose NativeWind if a starter/template depends on it; add HeroUI Native for prebuilt components.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Uniwind homepage confirms: free MIT core with full Tailwind v4 and Expo Go; Pro adds C++ engine and Reanimated className, needs a dev build; Pro price not shown; built by the Unistyles team.",
+    "url": "https://uniwind.dev/"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,89 @@
+{
+  "slug": "domains-dns",
+  "slot": "Domains + DNS",
+  "track": "ship",
+  "stage": "ship",
+  "region": "Global",
+  "order": 6109,
+  "pick": {
+    "name": "Cloudflare Registrar + DNS",
+    "url": "https://www.cloudflare.com/tld-policies/",
+    "what": "At-cost registrar + free DNS",
+    "why": "No markup, free DNS/WHOIS privacy, same account as hosting",
+    "cost": "paid",
+    "free_limits": ".com $10.46, .ai $80, .dev $8.20/$12.20 renew, .app $8.20/$14.20, .io $32/$50 (cfdomainpricing.com, 2026-10-21); .in NOT supported (TLD policy page)",
+    "windows_fit": "web",
+    "maintained": "active",
+    "install": "web",
+    "license": "service",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://cfdomainpricing.com/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Porkbun",
+      "url": "https://porkbun.com/products/domains",
+      "what": "Cheap registrar with .in",
+      "why": "Use for .in (and as a non-Cloudflare registrar)",
+      "cost": "paid",
+      "free_limits": ".in $7.83, .com $11.08, .ai $82.70, .dev $12.87 renew; free WHOIS privacy + 20 email forwards",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://porkbun.com/products/domains",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Cloudflare DNS (free zone) with any registrar",
+      "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+      "what": "Keep DNS on Cloudflare even if registrar differs",
+      "why": "Needed for .in domains bought elsewhere",
+      "cost": "free",
+      "free_limits": "Free DNS on Free plan",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "web (change nameservers)",
+      "license": "service",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.cloudflare.com/terms/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Cloudflare Registrar",
+      "verdict": "PICK for gTLDs incl .ai/.dev/.com"
+    },
+    {
+      "name": "Porkbun",
+      "verdict": "Alt: .in and promos"
+    },
+    {
+      "name": "Namecheap",
+      "verdict": "Common; price page blocked fetch"
+    },
+    {
+      "name": "GoDaddy",
+      "verdict": "Higher renewals"
+    },
+    {
+      "name": "Squarespace Domains",
+      "verdict": "Inherited Google Domains; not cheaper"
+    }
+  ],
+  "decision": "Cloudflare at-cost pricing is cheapest on renewals; it can't sell .in, so buy .in at Porkbun and point nameservers to Cloudflare.",
+  "note": "",
+  "details": ".ai usually requires a 2-year minimum registration (not re-verified).",
+  "verify": {
+    "verdict": "ok",
+    "note": "Cloudflare TLD policy page: .in not listed, .ai listed. Price figures come from a third-party tracker (cfdomainpricing.com), not Cloudflare; treat them as indicative.",
+    "url": "https://www.cloudflare.com/tld-policies/"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,97 @@
+{
+  "slug": "app-store-screenshots-device-mockups",
+  "slot": "App-store screenshots + device mockups",
+  "track": "design",
+  "stage": "discover",
+  "region": "Global",
+  "order": 1164,
+  "pick": {
+    "name": "HTML screenshot templates rendered by Playwright (Claude Code)",
+    "url": "https://support.google.com/googleplay/android-developer/answer/9866151",
+    "what": "Claude Code builds a frames/captions template in HTML and Playwright exports PNGs at exact store sizes",
+    "why": "Free, no watermark, versioned in the repo, regenerates for every release and locale; fastlane frameit is macOS-only.",
+    "cost": "free",
+    "free_limits": "Free; Play: 2-8 screenshots per device type, 320-3840 px, long side <=2x short, 9:16 recommended, feature graphic 1024x500. Apple: up to 10 per size; iPhone 6.9in 1320x2868, 1290x2796 or 1260x2736",
+    "windows_fit": "native (Node + Playwright)",
+    "maintained": "Playwright actively maintained",
+    "install": "npm i -D playwright",
+    "license": "Apache-2.0 (Playwright)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://support.google.com/googleplay/android-developer/answer/9866151",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "AppScreens",
+      "url": "https://appscreens.com/pricing",
+      "what": "Web screenshot designer with device frames and localisation",
+      "why": "Fastest no-code route; free tier includes all devices/templates.",
+      "cost": "freemium",
+      "free_limits": "Free: 5 screens/project, 1 project, essential sizes, manual export; Pro $8.25/mo billed annually ($99/yr)",
+      "windows_fit": "web",
+      "maintained": "live",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://appscreens.com/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Previewed",
+      "url": "https://previewed.app/pricing",
+      "what": "3D/2D device mockups and store screenshots",
+      "why": "Best-looking 3D mockups for marketing; commercial licence from $9.99 one-time.",
+      "cost": "freemium",
+      "free_limits": "Lite free: 720p, CC attribution, no commercial licence; Plus $9.99 one-time (commercial)",
+      "windows_fit": "web",
+      "maintained": "live",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "no (free) / yes (Plus)",
+      "needs_company": "no",
+      "source_url": "https://previewed.app/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Playwright HTML templates",
+      "verdict": "pick"
+    },
+    {
+      "name": "AppScreens",
+      "verdict": "alt no-code"
+    },
+    {
+      "name": "Previewed",
+      "verdict": "alt 3D mockups"
+    },
+    {
+      "name": "Screenshots.pro",
+      "verdict": "free 1 project, watermarks"
+    },
+    {
+      "name": "fastlane frameit/screengrab",
+      "verdict": "frameit needs macOS"
+    },
+    {
+      "name": "Rotato",
+      "verdict": "Mac app; Windows browser beta"
+    },
+    {
+      "name": "Figma/Penpot templates",
+      "verdict": "manual"
+    }
+  ],
+  "decision": "Code-rendered screenshots are free and repeatable, which matters when every release and language needs new ones. Use Previewed Plus ($9.99) for a hero 3D mockup on the landing page.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Apple's 6.9-inch accepted sizes are 1320x2868, 1290x2796 or 1260x2736; 1206x2622 and 1179x2556 are not on the 6.9-inch list. Play specs correct.",
+    "url": "https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/"
+  },
+  "better_pick": null
+}

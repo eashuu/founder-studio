@@ -1,0 +1,89 @@
+{
+  "slug": "browser-computer-use-automation",
+  "slot": "browser / computer-use automation",
+  "track": "ai-eng",
+  "stage": "build",
+  "region": "Global",
+  "order": 4071,
+  "pick": {
+    "name": "Playwright (+ Playwright MCP / CLI)",
+    "url": "https://github.com/microsoft/playwright-mcp",
+    "what": "Deterministic browser automation; MCP server exposes accessibility-tree snapshots to Claude Code",
+    "why": "Reliable, free, Windows-native, one-command install in Claude Code; CLI variant more token-efficient",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "playwright 1.64.1 on 2026-10-22 (npm 2026-10-14)",
+    "install": "claude mcp add playwright npx @playwright/mcp@latest",
+    "license": "Apache-2.0",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/microsoft/playwright-mcp",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Stagehand (Browserbase)",
+      "url": "https://github.com/browserbase/stagehand",
+      "what": "TS-first act/observe/extract AI browser SDK (also Python)",
+      "why": "Add natural-language steps to browser flows",
+      "cost": "freemium",
+      "free_limits": "Library free; Browserbase cloud priced separately (not on page)",
+      "windows_fit": "native (needs local Chrome)",
+      "maintained": "@browserbasehq/stagehand 4.3.0 on 2026-10-20",
+      "install": "pnpm add @browserbasehq/stagehand",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/browserbase/stagehand",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "browser-use",
+      "url": "https://github.com/browser-use/browser-use",
+      "what": "Python LLM browser agent",
+      "why": "Autonomous multi-step web tasks",
+      "cost": "freemium",
+      "free_limits": "Cloud browsers $0.02/hr; $1 signup credit",
+      "windows_fit": "wsl recommended (page advises WSL for Bash tool)",
+      "maintained": "0.13.14 on 2026-10-26",
+      "install": "pip install browser-use",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/browser-use/browser-use",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Playwright (+MCP)",
+      "verdict": "Pick: deterministic, free, native"
+    },
+    {
+      "name": "Stagehand",
+      "verdict": "Alt: TS AI-driven steps"
+    },
+    {
+      "name": "browser-use",
+      "verdict": "Alt: Python autonomous agent"
+    },
+    {
+      "name": "Claude computer-use tool",
+      "verdict": "GA on Claude API (computer_toolset_20260801); run in sandbox VM; ZDR eligible"
+    },
+    {
+      "name": "Selenium / Puppeteer",
+      "verdict": "Older; no advantage"
+    }
+  ],
+  "decision": "Plain Playwright for tests and scripted automation, with MCP for Claude Code to explore pages. Use Claude's computer-use tool only for desktop/legacy UIs inside an isolated VM (source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool).",
+  "note": "",
+  "details": "Retained.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Version/licence/limits match registry or official page.",
+    "url": "https://registry.npmjs.org/"
+  },
+  "better_pick": null
+}

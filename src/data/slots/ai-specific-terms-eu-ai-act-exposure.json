@@ -1,0 +1,85 @@
+{
+  "slug": "ai-specific-terms-eu-ai-act-exposure",
+  "slot": "AI-specific terms + EU AI Act exposure",
+  "track": "legal",
+  "stage": "run",
+  "region": "Global",
+  "order": 10183,
+  "pick": {
+    "name": "Common Paper AI Addendum + Article 50 transparency build-in",
+    "url": "https://commonpaper.com/standards/ai-addendum/",
+    "what": "Contract addendum for data use, training rights, IP, liability; product-side AI disclosure and output marking",
+    "why": "Free (CC BY 4.0) and covers what enterprise buyers ask about training on their data and output ownership",
+    "cost": "free",
+    "free_limits": "Free",
+    "windows_fit": "web",
+    "maintained": "v1.0 (2026)",
+    "install": "web",
+    "license": "CC BY 4.0",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://commonpaper.com/standards/ai-addendum/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "EU AI Act timeline after the AI Omnibus",
+      "url": "https://www.addleshawgoddard.com/en/insights/insights-briefings/2026/technology/eu-ai-act-ai-omnibus-formally-adopted/",
+      "what": "Law-firm summary of Regulation (EU) 2026/1744",
+      "why": "Transparency/marking duties from 2 Aug 2026 (grace for systems already on the market to 2 Dec 2026); standalone high-risk moved to 2 Dec 2027; product-embedded high-risk 2 Aug 2028",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "web",
+      "maintained": "July 2026",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.addleshawgoddard.com/en/insights/insights-briefings/2026/technology/eu-ai-act-ai-omnibus-formally-adopted/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "ISO/IEC 42001 controls via Probo",
+      "url": "https://github.com/getprobo/probo",
+      "what": "AI management-system framework inside the compliance tool",
+      "why": "For enterprise buyers asking for AI governance evidence",
+      "cost": "free",
+      "free_limits": "Self-host",
+      "windows_fit": "wsl/web",
+      "maintained": "2026-10-28",
+      "install": "self-host",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/getprobo/probo",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Common Paper AI Addendum",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Own ToS AI-output disclaimer",
+      "verdict": "Also add: outputs may be inaccurate, user is responsible for review, no professional advice"
+    },
+    {
+      "name": "ISO 42001",
+      "verdict": "Only for enterprise AI-governance asks"
+    },
+    {
+      "name": "Bonterms AI terms",
+      "verdict": "AI addendum not confirmed on its site"
+    }
+  ],
+  "decision": "Most of your products are low-risk under the EU AI Act. Your obligations are Article 50 transparency: tell users they're talking to AI, and machine-mark AI-generated media. Avoid Annex III uses (hiring, credit, medical triage) unless you're ready for high-risk duties from Dec 2027. Flow down the model providers' usage policies in your ToS.",
+  "note": "",
+  "details": "Sources conflict on the content-labelling grace period; verify against Regulation 2026/1744 and with a lawyer.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Common Paper AI Addendum v1.0 is CC BY 4.0 (confirmed). Addleshaw Goddard (1 Jul 2026) says the AI Omnibus was adopted: Art. 50 applies from 2 Aug 2026 with grace to 2 Dec 2026 for systems already on the market; Annex III high-risk moves to 2 Dec 2027, Annex I (product-embedded, e.g. medical-device software) to 2 Aug 2028. Add that healthcare AI that is a medical device falls under the Aug 2028 Annex I date. Regulation number 2026/1744 not confirmed.",
+    "url": "https://www.addleshawgoddard.com/en/insights/insights-briefings/2026/technology/eu-ai-act-ai-omnibus-formally-adopted/"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,93 @@
+{
+  "slug": "deep-research-market-sizing",
+  "slot": "Deep research + market sizing",
+  "track": "discover",
+  "stage": "discover",
+  "region": "Global",
+  "order": 138,
+  "pick": {
+    "name": "Gemini Deep Research (Google AI Pro)",
+    "url": "https://gemini.google.com",
+    "what": "Agentic multi-source web research reports with citations, exportable to Google Docs",
+    "why": "Grounded in Google Search, already paid until Jan 2028, and it does not draw down the Claude Max budget your coding depends on.",
+    "cost": "owned",
+    "free_limits": "AI Pro: 4x standard Gemini app limits, one shared compute meter (chat + Deep Research + images + video), refreshes every 5 h up to a weekly cap; no per-day report count published. Older 20 reports/day figure is superseded",
+    "windows_fit": "web",
+    "maintained": "live service (limits page undated; 9to5Google summary updated 25 May 2026)",
+    "install": "web",
+    "license": "Google ToS",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://support.google.com/gemini/answer/16275805",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Claude Research (Max)",
+      "url": "https://support.claude.com/en/articles/11088861-using-research-on-claude",
+      "what": "Claude's multi-step web + connector research (Opus 5.5)",
+      "why": "Better when the research must read your Gmail/Drive/Docs connectors or needs sharper reasoning; costs Claude usage.",
+      "cost": "owned",
+      "free_limits": "Same limits as Claude chats on Pro/Max/Team/Enterprise; uses limits faster",
+      "windows_fit": "web/desktop",
+      "maintained": "live service",
+      "install": "web",
+      "license": "Anthropic ToS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://support.claude.com/en/articles/11088861-using-research-on-claude",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "NotebookLM Deep Research",
+      "url": "https://9to5google.com/2025/12/24/google-ai-pro-ultra-features/",
+      "what": "Deep Research that lands its sources straight into a notebook",
+      "why": "Best when the output should become a reusable, source-grounded notebook rather than a one-off report.",
+      "cost": "owned",
+      "free_limits": "AI Pro: 20 NotebookLM Deep Research uses/day (per 9to5Google, May 2026)",
+      "windows_fit": "web",
+      "maintained": "live service",
+      "install": "web",
+      "license": "Google ToS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://9to5google.com/2025/12/24/google-ai-pro-ultra-features/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Gemini Deep Research",
+      "verdict": "pick"
+    },
+    {
+      "name": "Claude Research",
+      "verdict": "alt: connectors + reasoning, but spends coding budget"
+    },
+    {
+      "name": "NotebookLM Deep Research",
+      "verdict": "alt: research straight into a notebook"
+    },
+    {
+      "name": "Perplexity (free/Pro)",
+      "verdict": "good fast answers; Pro is an extra subscription you don't need"
+    },
+    {
+      "name": "ChatGPT deep research",
+      "verdict": "extra subscription for the same job"
+    },
+    {
+      "name": "Statista / paid analyst reports",
+      "verdict": "paid; use only for a fundraising-grade number"
+    }
+  ],
+  "decision": "Run market sizing as two independent passes (Gemini Deep Research then Claude Research) and reconcile; disagreements show where the TAM number is soft. Lead with Gemini because its quota is separate from Claude Code's.",
+  "note": "",
+  "details": "Google switched Gemini app limits to compute-based multipliers around I/O May 2026; per-feature counts are only visible in Settings > Usage limits.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Google page: AI Pro limits 4x standard, refresh every 5 hours up to a weekly limit, Deep Research rated high usage; no per-day count published. Matches.",
+    "url": "https://support.google.com/gemini/answer/16275805"
+  },
+  "better_pick": null
+}

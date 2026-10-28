@@ -1,0 +1,97 @@
+{
+  "slug": "colour-theming",
+  "slot": "Colour + theming",
+  "track": "design",
+  "stage": "discover",
+  "region": "Global",
+  "order": 1157,
+  "pick": {
+    "name": "tweakcn",
+    "url": "https://github.com/jnsahaj/tweakcn",
+    "what": "Visual theme editor that outputs shadcn/Tailwind CSS variables",
+    "why": "Produces exactly the token format your component library uses; free, open source.",
+    "cost": "free",
+    "free_limits": "Free",
+    "windows_fit": "web",
+    "maintained": "last commit date not shown (10.5k stars)",
+    "install": "web: tweakcn.com",
+    "license": "Apache-2.0",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/jnsahaj/tweakcn",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Radix Colors",
+      "url": "https://www.radix-ui.com/colors",
+      "what": "Accessible 12-step colour scales with dark-mode pairs",
+      "why": "Best-designed scales with contrast built in.",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "n/a",
+      "maintained": "npm 3.0.0 (2023-10-02); stable but dormant",
+      "install": "npm i @radix-ui/colors",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.radix-ui.com/colors",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Adobe Leonardo",
+      "url": "https://github.com/adobe/leonardo",
+      "what": "Contrast-ratio-driven palette generator",
+      "why": "Pick when WCAG contrast targets drive the palette (healthcare/enterprise).",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "web",
+      "maintained": "no releases listed",
+      "install": "npm i @adobe/leonardo-contrast-colors",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/adobe/leonardo",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "tweakcn",
+      "verdict": "pick"
+    },
+    {
+      "name": "Radix Colors",
+      "verdict": "alt"
+    },
+    {
+      "name": "Adobe Leonardo",
+      "verdict": "alt"
+    },
+    {
+      "name": "Realtime Colors",
+      "verdict": "CC BY-NC-ND, preview only"
+    },
+    {
+      "name": "Coolors",
+      "verdict": "pricing unverified"
+    },
+    {
+      "name": "uicolors.app",
+      "verdict": "partly paid"
+    },
+    {
+      "name": "Huemint",
+      "verdict": "terms unverified"
+    }
+  ],
+  "decision": "tweakcn edits the exact CSS variables shadcn uses, so a theme is a copy-paste. Use Leonardo when accessibility contrast is a contract requirement.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "tweakcn Apache-2.0 confirmed; no commit date shown.",
+    "url": "https://github.com/jnsahaj/tweakcn"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "notes-second-brain",
+  "slot": "notes / second brain",
+  "track": "productivity",
+  "stage": "run",
+  "region": "Global",
+  "order": 11208,
+  "pick": {
+    "name": "Obsidian",
+    "url": "https://obsidian.md",
+    "what": "Local Markdown vault app with plugins, Web Clipper and (since 1.12.4) an official CLI",
+    "why": "Plain .md files on disk mean Claude Code reads/writes notes with zero glue; official CLI (Feb 2026) adds search/daily-note automation; free for commercial use since Feb 2025",
+    "cost": "free",
+    "free_limits": "App free for all use incl. commercial; Sync $4/mo (annual) and Publish $8/mo optional",
+    "windows_fit": "native (Windows desktop app; Android app)",
+    "maintained": "1.14.5 released 2026-10-22 (obsidian-releases)",
+    "install": "winget install -e --id Obsidian.Obsidian",
+    "license": "Proprietary freeware (licence page updated 2025-02-20)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://obsidian.md/license",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Notion",
+      "url": "https://www.notion.com",
+      "what": "Cloud docs + databases with an official hosted MCP server",
+      "why": "Best if you want web-first docs you can share with clients and a hosted MCP (OAuth) that Claude connects to without local files",
+      "cost": "freemium",
+      "free_limits": "Free: unlimited blocks for solo workspace, 5 MB uploads, 7-day page history, Notion AI only as a limited trial; Plus $10/member/mo",
+      "windows_fit": "native + web",
+      "maintained": "notion-mcp-server v2.5.2 2026-09-20; hosted MCP active",
+      "install": "web (or Notion desktop installer)",
+      "license": "Proprietary SaaS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.notion.com/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Anytype",
+      "url": "https://anytype.io",
+      "what": "Local-first, end-to-end-encrypted object/graph notes with official MCP server",
+      "why": "Local-first + E2E sync for free with a real Android app; flips the choice if you want encrypted phone sync without paying Obsidian Sync",
+      "cost": "freemium",
+      "free_limits": "Free tier exists; exact storage/device limits not readable on pricing page",
+      "windows_fit": "native (Electron)",
+      "maintained": "anytype-ts v0.57.4 2026-10-03; anytype-mcp v2.0.1 2026-09-19",
+      "install": "download from https://anytype.io",
+      "license": "Any Source Available License 1.0 (source-available, not OSI)",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://github.com/anyproto/anytype-ts",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Obsidian",
+      "verdict": "PICK: files-on-disk is the best Claude Code/MCP surface; free commercial use; huge plugin ecosystem"
+    },
+    {
+      "name": "Notion",
+      "verdict": "Wins for shared client-facing docs and hosted MCP; loses on lock-in and offline/local access"
+    },
+    {
+      "name": "Anytype",
+      "verdict": "Wins for free encrypted mobile sync; source-available licence and object model are harder for Claude Code to edit directly"
+    },
+    {
+      "name": "Logseq",
+      "verdict": "DB version (2.0) only in beta since 2026-07-13 with data-loss warnings; file version in maintenance; wait"
+    },
+    {
+      "name": "AFFiNE",
+      "verdict": "Active (canary 2026-10-27) but whiteboard/doc hybrid with less mature plugin/AI-agent story"
+    },
+    {
+      "name": "SiYuan",
+      "verdict": "Active (v3.8.9-rc 2026-10-28) but stores blocks in its own format, weaker for direct Claude Code edits"
+    },
+    {
+      "name": "Trilium Notes",
+      "verdict": "Active (v0.106.1) but self-host/sync server needed and DB-backed notes"
+    },
+    {
+      "name": "Joplin",
+      "verdict": "Active, open source, but Markdown inside its own DB/sync model; smaller plugin ecosystem"
+    }
+  ],
+  "decision": "Obsidian wins because a folder of Markdown is the lowest-friction thing for Claude Code to read, grep and write, the 1.12.4 official CLI adds app-aware automation, and it costs $0 for commercial use. For phone sync at $0, use a private Git repo on your machine plus Syncthing-Fork (researchxxl, v2.1.7.0 2026-10-21) on Android; pay Obsidian Sync ($4/mo) when mobile editing becomes daily. Switch to Notion only if notes must be shared live with clients.",
+  "note": "",
+  "details": "Keep the vault in a personal folder (not the company OneDrive). obsidian-git author says mobile Git is 'very unstable'; use it on desktop only.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Licence page: 'free for all purposes, including personal, commercial, and non-profit use', last updated 2025-02-20. Official Obsidian CLI introduced in Desktop v1.12.4 (changelog 2026-02-27); v1.12.7 (2026-03-23) added a dedicated CLI binary.",
+    "url": "https://obsidian.md/changelog/2026-02-27-desktop-v1.12.4/"
+  },
+  "better_pick": null
+}

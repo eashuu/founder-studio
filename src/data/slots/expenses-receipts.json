@@ -1,0 +1,85 @@
+{
+  "slug": "expenses-receipts",
+  "slot": "Expenses / receipts",
+  "track": "money",
+  "stage": "run",
+  "region": "India",
+  "order": 9134,
+  "pick": {
+    "name": "Zoho Books Free (expenses + attachments)",
+    "url": "https://www.zoho.com/in/books/pricing/",
+    "what": "Record expenses and attach receipts in the same ledger",
+    "why": "No extra tool; CA sees it",
+    "cost": "free",
+    "free_limits": "Included in Books Free: 1,000 bills/expenses per year (Zoho pricing page)",
+    "windows_fit": "web + mobile scan",
+    "maintained": "active",
+    "install": "web",
+    "license": "service",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.zoho.com/in/books/pricing/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Google Drive folder + Sheet",
+      "url": "https://drive.google.com/",
+      "what": "Manual receipts",
+      "why": "YAGNI",
+      "cost": "free",
+      "free_limits": "15 GB Google storage",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://drive.google.com/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Zoho Expense",
+      "url": "https://www.zoho.com/in/expense/",
+      "what": "Receipt scanning/approvals",
+      "why": "Only with employees",
+      "cost": "freemium",
+      "free_limits": "Not verified",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://www.zoho.com/in/expense/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Zoho Books",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Drive + Sheet",
+      "verdict": "Alt"
+    },
+    {
+      "name": "Zoho Expense",
+      "verdict": "Alt"
+    },
+    {
+      "name": "Dext",
+      "verdict": "Paid"
+    }
+  ],
+  "decision": "Keep receipts in Books so GST ITC and your CA review sit in one place. Save foreign SaaS invoices showing GST charged (needed for ITC once registered).",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Zoho Books pricing page itself lists 1,000 bills/expenses per year on Free (no longer just a search snippet).",
+    "url": "https://www.zoho.com/in/books/pricing/"
+  },
+  "better_pick": null
+}

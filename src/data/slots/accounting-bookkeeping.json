@@ -1,0 +1,89 @@
+{
+  "slug": "accounting-bookkeeping",
+  "slot": "Accounting / bookkeeping",
+  "track": "money",
+  "stage": "run",
+  "region": "India",
+  "order": 9130,
+  "pick": {
+    "name": "Zoho Books Free",
+    "url": "https://www.zoho.com/in/books/pricing/",
+    "what": "Double-entry accounting with GST",
+    "why": "Free to Rs25 lakh revenue; accountant seat for your CA",
+    "cost": "free",
+    "free_limits": "<= Rs25 lakh/FY; 1,000 invoices/yr; 1 user + 1 accountant; bank reconciliation; Standard Rs899/mo (Rs749 annual)",
+    "windows_fit": "web",
+    "maintained": "active",
+    "install": "web",
+    "license": "service",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.zoho.com/in/books/pricing/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "TallyPrime",
+      "url": "https://tallysolutions.com/",
+      "what": "Desktop accounting most Indian CAs use",
+      "why": "If your CA insists",
+      "cost": "paid",
+      "free_limits": "Price not verified",
+      "windows_fit": "native Windows",
+      "maintained": "active",
+      "install": "web download",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://tallysolutions.com/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Invoice Ninja + spreadsheet",
+      "url": "https://invoiceninja.com/pricing-plans/",
+      "what": "Minimal books",
+      "why": "Bare minimum under 44ADA (no books needed)",
+      "cost": "free",
+      "free_limits": "see invoicing",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "Elastic-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://invoiceninja.com/pricing-plans/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Zoho Books",
+      "verdict": "PICK"
+    },
+    {
+      "name": "TallyPrime",
+      "verdict": "Alt"
+    },
+    {
+      "name": "Spreadsheet",
+      "verdict": "Alt under presumptive tax"
+    },
+    {
+      "name": "Vyapar",
+      "verdict": "Not verified"
+    },
+    {
+      "name": "QuickBooks India",
+      "verdict": "Exited India (2023, not re-verified)"
+    }
+  ],
+  "decision": "Zoho Books Free is enough until Rs25 lakh revenue and gives your CA direct access. Under presumptive taxation you may not need full books, but GST registration needs proper records.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Standard Rs899/mo, Rs749 annual (excl. tax) confirmed.",
+    "url": "https://www.zoho.com/in/books/pricing/"
+  },
+  "better_pick": null
+}

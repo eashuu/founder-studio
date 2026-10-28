@@ -1,0 +1,93 @@
+{
+  "slug": "local-model-runner-cpu",
+  "slot": "local model runner (CPU)",
+  "track": "ai-eng",
+  "stage": "build",
+  "region": "Global",
+  "order": 4066,
+  "pick": {
+    "name": "Ollama",
+    "url": "https://github.com/ollama/ollama",
+    "what": "Local model server with Windows installer, OpenAI-compatible API, model library",
+    "why": "Zero-config on Windows, providers exist in AI SDK/Pydantic AI, MIT",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native (OllamaSetup.exe / PowerShell installer)",
+    "maintained": "v0.40.12 on 2026-10-27",
+    "install": "irm https://ollama.com/install.ps1 | iex",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/ollama/ollama",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "llama.cpp (llama-server)",
+      "url": "https://github.com/ggml-org/llama.cpp",
+      "what": "Reference C/C++ engine: AVX2/AVX512, ZenDNN for AMD CPU, OpenAI-compatible server",
+      "why": "Max control and newest model support first",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native (winget / releases / PowerShell installer)",
+      "maintained": "b11954 on 2026-10-28 (pre-release tag)",
+      "install": "irm https://llama.app/install.ps1 | iex  (or releases zip)",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/ggml-org/llama.cpp",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "llama-cpp-python",
+      "url": "https://pypi.org/project/llama-cpp-python/",
+      "what": "In-process Python bindings",
+      "why": "Embed in your own server",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native (may need build tools)",
+      "maintained": "0.3.36 on 2026-10-01",
+      "install": "pip install llama-cpp-python",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://pypi.org/project/llama-cpp-python/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Ollama",
+      "verdict": "Pick: easiest, MIT, Windows-native"
+    },
+    {
+      "name": "llama.cpp",
+      "verdict": "Alt: raw control, AMD ZenDNN"
+    },
+    {
+      "name": "llama-cpp-python / node-llama-cpp",
+      "verdict": "Alt: embedded bindings"
+    },
+    {
+      "name": "LM Studio",
+      "verdict": "Closed GUI; work/commercial terms not stated on the page I opened"
+    },
+    {
+      "name": "Unsloth Studio",
+      "verdict": "UI for run+train, newer"
+    },
+    {
+      "name": "Jan / llamafile",
+      "verdict": "Not evaluated"
+    }
+  ],
+  "decision": "Ollama for day-to-day dev and the sidecar; drop to llama-server for latest-model/tuning control. On a no-GPU AMD laptop only small (1-8B Q4) models will be interactive (speeds unmeasured).",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Version/licence/limits match registry or official page.",
+    "url": "https://registry.npmjs.org/"
+  },
+  "better_pick": null
+}

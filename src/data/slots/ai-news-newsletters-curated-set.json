@@ -1,0 +1,93 @@
+{
+  "slug": "ai-news-newsletters-curated-set",
+  "slot": "AI news newsletters (curated set)",
+  "track": "learning",
+  "stage": "run",
+  "region": "Global",
+  "order": 12235,
+  "pick": {
+    "name": "Latent Space + AINews, Simon Willison, Import AI",
+    "url": "https://www.latent.space/",
+    "what": "Latent Space (AI-engineer essays 2-3x/week + AINews weekday digest), simonwillison.net (daily practical LLM notes, Atom feed), Import AI (weekly, Jack Clark)",
+    "why": "Engineer-focused, high signal, free, and all three publish RSS/Atom so they flow into one reader; AINews compresses Discords/X/Reddit into one email",
+    "cost": "free",
+    "free_limits": "Free",
+    "windows_fit": "web / email / RSS",
+    "maintained": "Latent Space AINews 2026-10-28; Simon Willison 2026-10-28; Import AI #478 2026-10-26",
+    "install": "subscribe by email or RSS",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.latent.space/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "The Batch (DeepLearning.AI)",
+      "url": "https://www.deeplearning.ai/the-batch/",
+      "what": "Weekly AI news with Andrew Ng's letter",
+      "why": "Best single weekly if you want breadth with less noise",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "web/email",
+      "maintained": "Issue 376 2026-10-23",
+      "install": "subscribe",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.deeplearning.ai/the-batch/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Interconnects (Nathan Lambert)",
+      "url": "https://www.interconnects.ai",
+      "what": "Deep takes on open models, post-training/RL",
+      "why": "Best for open-weight model strategy",
+      "cost": "freemium",
+      "free_limits": "Free posts; paid tier exists",
+      "windows_fit": "web/email",
+      "maintained": "Post 2026-10-25",
+      "install": "subscribe",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.interconnects.ai/archive",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Latent Space + AINews",
+      "verdict": "PICK: AI-engineer focus + daily digest"
+    },
+    {
+      "name": "Simon Willison",
+      "verdict": "PICK: practical, daily"
+    },
+    {
+      "name": "Import AI",
+      "verdict": "PICK: weekly policy + research"
+    },
+    {
+      "name": "The Batch",
+      "verdict": "Broad weekly"
+    },
+    {
+      "name": "Interconnects",
+      "verdict": "Open models depth"
+    },
+    {
+      "name": "TLDR AI / The Rundown / Ben's Bites",
+      "verdict": "Hype-heavy marketing newsletters; not verified"
+    }
+  ],
+  "decision": "Three sources cover the field for an AI engineer-founder: AINews for daily 'what happened', Simon Willison for hands-on tool reality, Import AI for weekly research/policy. Add The Batch only if you want a gentler weekly overview, Interconnects if you ship on open models.",
+  "note": "",
+  "details": "news.smol.ai now redirects to latent.space/news (AINews merged into Latent Space).",
+  "verify": {
+    "verdict": "ok",
+    "note": "Shallow: Latent Space archive shows AINews + articles dated Oct 27-28; AINews is part of Latent Space. Others not re-opened.",
+    "url": "https://www.latent.space/archive"
+  },
+  "better_pick": null
+}

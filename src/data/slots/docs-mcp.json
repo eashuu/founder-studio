@@ -1,0 +1,93 @@
+{
+  "slug": "docs-mcp",
+  "slot": "docs MCP",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2009,
+  "pick": {
+    "name": "Context7 (Upstash)",
+    "url": "https://context7.com/plans",
+    "what": "Version-specific library docs into context",
+    "why": "Largest library index; official marketplace plugin",
+    "cost": "freemium",
+    "free_limits": "1,000 API calls/month + 20 bonus/day after; Pro $10/seat/mo with 2,000 calls",
+    "windows_fit": "native (hosted)",
+    "maintained": "pushed 2026-10-28",
+    "install": "/plugin install context7@claude-plugins-official",
+    "license": "MIT (server)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://context7.com/plans",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "DeepWiki MCP (Cognition)",
+      "url": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
+      "what": "Ask questions about any public GitHub repo",
+      "why": "Free, no auth; great for understanding an OSS dependency",
+      "cost": "free",
+      "free_limits": "free, no auth for public repos",
+      "windows_fit": "native (remote https://mcp.deepwiki.com/mcp)",
+      "maintained": "live service",
+      "install": "claude mcp add --transport http deepwiki https://mcp.deepwiki.com/mcp",
+      "license": "proprietary service",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Built-in WebFetch on llms.txt",
+      "url": "https://code.claude.com/docs/llms.txt",
+      "what": "Fetch a project's llms.txt/docs",
+      "why": "$0, nothing to install",
+      "cost": "owned",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "core",
+      "install": "built-in",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/llms.txt",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Context7",
+      "verdict": "pick"
+    },
+    {
+      "name": "DeepWiki MCP",
+      "verdict": "free complement for repo internals"
+    },
+    {
+      "name": "WebFetch + llms.txt",
+      "verdict": "fallback once Context7 quota is hit"
+    },
+    {
+      "name": "Ref.tools",
+      "verdict": "credit-based (200 free then ~$9/mo; unverified)"
+    },
+    {
+      "name": "GitMCP",
+      "verdict": "repo-docs proxy; less coverage"
+    },
+    {
+      "name": "docs-mcp-server (local index)",
+      "verdict": "needs embeddings; more setup"
+    }
+  ],
+  "decision": "Context7's 1,000 calls a month covers a solo dev and stops API hallucinations on fast-moving libraries. When the quota runs out, fall back to WebFetch on llms.txt rather than paying.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Plans page confirms: 1,000 API calls/month, then 20 bonus calls/day when blocked; private repos Pro/Enterprise only; Pro $10/seat/mo with 2,000 calls/seat then $5 per 1,000 (never blocked).",
+    "url": "https://context7.com/plans"
+  },
+  "better_pick": null
+}

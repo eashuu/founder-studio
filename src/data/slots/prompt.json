@@ -1,0 +1,81 @@
+{
+  "slug": "prompt",
+  "slot": "prompt",
+  "track": "windows-dev",
+  "stage": "build",
+  "region": "Global",
+  "order": 3035,
+  "pick": {
+    "name": "Starship",
+    "url": "https://github.com/starship/starship",
+    "what": "Cross-shell prompt",
+    "why": "One TOML config for pwsh, Git Bash and WSL",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "v1.27.0 (2026-10-17)",
+    "install": "scoop install starship",
+    "license": "ISC",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/starship/starship/releases",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Oh My Posh",
+      "url": "https://github.com/JanDeDobbeleer/oh-my-posh",
+      "what": "Theme-rich prompt",
+      "why": "Better PowerShell theming",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "v31.9.1 (2026-10-20)",
+      "install": "winget install JanDeDobbeleer.OhMyPosh",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/JanDeDobbeleer/oh-my-posh",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Default prompt",
+      "url": "https://learn.microsoft.com/powershell",
+      "what": "No tool",
+      "why": "YAGNI",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "n/a",
+      "install": "n/a",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://learn.microsoft.com/powershell",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Starship",
+      "verdict": "pick"
+    },
+    {
+      "name": "Oh My Posh",
+      "verdict": "pwsh-first"
+    },
+    {
+      "name": "none",
+      "verdict": "fine"
+    }
+  ],
+  "decision": "Optional. Both are maintained; Starship is one binary across shells.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "v1.27.0 (17 Oct 2026); scoop manifest at 1.27.0.",
+    "url": "https://github.com/starship/starship/releases"
+  },
+  "better_pick": null
+}

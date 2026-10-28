@@ -1,0 +1,89 @@
+{
+  "slug": "business-entity-india",
+  "slot": "Business entity (India)",
+  "track": "legal",
+  "stage": "run",
+  "region": "India",
+  "order": 10170,
+  "pick": {
+    "name": "Sole proprietorship now, Private Limited at a trigger",
+    "url": "https://udyamregistration.gov.in/Default.aspx",
+    "what": "Trade as yourself (PAN + Udyam + GST when needed), incorporate a Pvt Ltd when a trigger hits",
+    "why": "Rs 0 setup, no ROC filings or audit; keeps presumptive taxation (s.58 of Income-tax Act 2025: old 44ADA for consulting, old 44AD for SaaS/product income, see final-C); Pvt Ltd costs much more each year and needs 2 directors/shareholders",
+    "cost": "free",
+    "free_limits": "No registration fee; Udyam is free with Aadhaar + PAN",
+    "windows_fit": "n/a (government portals, web)",
+    "maintained": "n/a (legal form)",
+    "install": "web",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://udyamregistration.gov.in/Default.aspx",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Private Limited Company",
+      "url": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html",
+      "what": "Limited-liability company under the Companies Act 2013",
+      "why": "Needed for DPIIT + 80-IAC tax holiday, equity funding and ESOPs; limited liability for healthcare/enterprise risk",
+      "cost": "paid",
+      "free_limits": "Incorporation + yearly ROC filings (AOC-4, MGT-7, DIR-3 KYC) + mandatory statutory audit; legalraasta estimates ~Rs 15-30k/yr for a small company; other blogs go far higher (unverified)",
+      "windows_fit": "n/a",
+      "maintained": "n/a",
+      "install": "web (MCA SPICe+)",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "yes",
+      "source_url": "https://www.legalraasta.com/blog/pvt-ltd-vs-llp-vs-opc-in-india/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "One Person Company (OPC)",
+      "url": "https://www.moneylife.in/article/mca-eases-norms-for-one-person-companies-lets-nris-in/62854.html",
+      "what": "Single-member private company with limited liability",
+      "why": "Limited liability without a second director; since 1 Apr 2021 there is no turnover/capital cap and it can convert any time",
+      "cost": "paid",
+      "free_limits": "Company-style compliance incl. audit; cannot take equity investors; OPC not named in DPIIT's official eligible list (Pvt Ltd/partnership/LLP/cooperative) and secondary sources conflict, so confirm with DPIIT",
+      "windows_fit": "n/a",
+      "maintained": "n/a",
+      "install": "web (MCA SPICe+)",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "yes",
+      "source_url": "https://scconline.com/blog/?p=243312",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Sole proprietorship",
+      "verdict": "PICK for now: zero overhead while revenue is small and liability is capped by contract + insurance"
+    },
+    {
+      "name": "Private Limited Company",
+      "verdict": "Wins once you raise money, want DPIIT/80-IAC, hire, or sign uncapped-liability enterprise/healthcare contracts"
+    },
+    {
+      "name": "One Person Company",
+      "verdict": "Wins only if you want limited liability now and truly have no second director; not DPIIT-eligible, must convert to raise"
+    },
+    {
+      "name": "LLP",
+      "verdict": "Needs 2 partners, can't issue equity/ESOPs, 30% tax per blogs; weaker than Pvt Ltd for a product company"
+    },
+    {
+      "name": "Partnership firm",
+      "verdict": "Unlimited liability and needs a partner; no advantage"
+    }
+  ],
+  "decision": "Start as a sole proprietor: it costs nothing, keeps 44ADA presumptive tax, and global SMB/B2C buyers rarely care. Incorporate a Private Limited (not OPC/LLP) on the first of: a funding conversation, the need for DPIIT/80-IAC, hiring, a healthcare/enterprise contract with uncapped liability or PHI, or revenue past the presumptive-tax limit. Verify all tax/compliance consequences with a CA.",
+  "note": "Consolidated: presumptive tax is now section 58 of the Income-tax Act 2025. Consulting income falls under the old 44ADA (50% deemed profit) and SaaS/product income under the old 44AD. See the income-tax slot in the money track. Verify with a CA.",
+  "details": "Sole proprietors have unlimited personal liability: cap liability in every contract (Common Paper) and buy PI cover before healthcare work. Verify with a CA/lawyer.",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Decision sound. But it says '44ADA'. final-C says presumptive tax now sits in s.58 of the Income-tax Act 2025, and SaaS/product income is 'business' (old 44AD, 6/8% of turnover), not 'profession' (44ADA, 50%). Pvt Ltd needing 2 directors/members is correct.",
+    "url": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html"
+  },
+  "better_pick": null
+}

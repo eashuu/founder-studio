@@ -1,0 +1,93 @@
+{
+  "slug": "security-scanning",
+  "slot": "Security scanning",
+  "track": "ship",
+  "stage": "ship",
+  "region": "Global",
+  "order": 6117,
+  "pick": {
+    "name": "GitHub-native + OSS scanners in Actions (Dependabot, Semgrep CE, Gitleaks, OSV-Scanner, zizmor)",
+    "url": "https://docs.github.com/en/code-security/getting-started/github-security-features",
+    "what": "Dependency, SAST, secret and workflow scanning for $0",
+    "why": "Dependabot is free on all plans; CodeQL/secret scanning free on public repos; OSS scanners cover private repos",
+    "cost": "free",
+    "free_limits": "GitHub Secret Protection ($19/committer) and Code Security ($30/committer) for PRIVATE repos need Team/Enterprise; free on public. OSS tools unlimited.",
+    "windows_fit": "web + CLIs (all have Windows builds except via Docker for some)",
+    "maintained": "Semgrep v1.182.0 2026-10-20 (PyPI 1.182.1); Gitleaks v8.30.1 2026-03-21; OSV-Scanner v2.7.0 2026-10-12; zizmor v1.31.1 2026-10-15 (latest stable)",
+    "install": "pipx install semgrep; pipx install zizmor; winget install --id Gitleaks.Gitleaks -e",
+    "license": "Semgrep LGPL-2.1; Gitleaks MIT; OSV-Scanner Apache-2.0; zizmor MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://docs.github.com/en/code-security/getting-started/github-security-features",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Trivy",
+      "url": "https://github.com/aquasecurity/trivy/security/advisories/GHSA-69fq-xp46-6x23",
+      "what": "Container/IaC/dependency scanner",
+      "why": "Best container image scanning",
+      "cost": "free",
+      "free_limits": "Unlimited (Apache-2.0). CVE-2026-33634: trivy-action tags 0.0.1-0.34.2 hijacked 2026-03-19/20, setup-trivy tags replaced, malicious trivy v0.69.4 (03-19) and Docker Hub v0.69.5/6 (03-22). Use trivy-action >=0.35.0 (now v0.36.0) pinned to a post-incident SHA; attacker unnamed in advisory",
+      "windows_fit": "CLI",
+      "maintained": "v0.76.1 2026-10-21",
+      "install": "winget install AquaSecurity.Trivy",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/aquasecurity/trivy/security/advisories/GHSA-69fq-xp46-6x23",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Keep core repos public",
+      "url": "https://docs.github.com/en/code-security/getting-started/github-security-features",
+      "what": "Open-core repos get CodeQL + secret scanning + push protection free",
+      "why": "Free GHAS features",
+      "cost": "free",
+      "free_limits": "public repos only",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://docs.github.com/en/code-security/getting-started/github-security-features",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "GitHub-native + OSS bundle",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Trivy",
+      "verdict": "Alt for containers; pin to SHA after 2026 compromise"
+    },
+    {
+      "name": "Public repos",
+      "verdict": "Alt"
+    },
+    {
+      "name": "Snyk Free",
+      "verdict": "Not re-checked"
+    },
+    {
+      "name": "Socket.dev",
+      "verdict": "Supply-chain alerts; free tier not checked"
+    },
+    {
+      "name": "GitHub Code Security paid",
+      "verdict": "$30/committer when private SAST matters"
+    }
+  ],
+  "decision": "Dependabot + Semgrep + Gitleaks + OSV-Scanner + zizmor in one workflow covers deps, code, secrets and Actions hardening at $0. The 2026 Trivy/trivy-action compromise is why every action must be SHA-pinned (zizmor flags this).",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "fixed",
+    "note": "GitHub doc confirms Dependabot on all plans, and Secret Protection/Code Security for private repos only on Team/Enterprise Cloud when purchased (that page lists no prices, so $19/$30 is unverified there). Versions: Semgrep v1.182.0 2026-10-20 (PyPI 1.182.1, ships a win_amd64 wheel), Gitleaks v8.30.1, OSV-Scanner v2.7.0 confirmed. zizmor's latest release is v1.31.1 (2026-10-15); 'v1.32.0-rc1' is a pre-release, so recommend stable. The winget ID is Gitleaks.Gitleaks (manifest 8.30.1 exists).",
+    "url": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,97 @@
+{
+  "slug": "free-llm-api-tier",
+  "slot": "free LLM API tier",
+  "track": "ai-eng",
+  "stage": "build",
+  "region": "Global",
+  "order": 4052,
+  "pick": {
+    "name": "Gemini API free tier (Google AI Studio)",
+    "url": "https://ai.google.dev/gemini-api/docs/pricing",
+    "what": "Free-of-charge Gemini Flash/Flash-Lite/2.5 Pro, Gemma 4 and Gemini Embedding 2 via API key",
+    "why": "Widest free model set incl. multimodal and embeddings; good for prototyping and eval-judge runs",
+    "cost": "freemium",
+    "free_limits": "Free input/output on Gemini 3.8/3.6 Flash, 3.5 Flash-Lite, 3 Flash Preview, 2.5 Pro/Flash/Flash-Lite, Gemini Embedding 2, Gemma 4 and Flash TTS models; NOT Gemini 4 Argon, 3.1 Pro or Nano Banana image models. Free-tier prompts/outputs used to improve Google products and may be human-reviewed; terms say do not submit sensitive, confidential or personal info. RPM/RPD shown only in AI Studio (docs updated 2026-10-26); RPD resets midnight Pacific. Search grounding: Gemini 3+ rows say free tier not available (tools section mentions 500 RPD shared Flash/Flash-Lite); 5,000/mo is the paid tier. Apps offered to EEA users must use Paid Services only.",
+    "windows_fit": "web; Windows fine",
+    "maintained": "Pricing page current 2026-10-28 (Gemini 3.8 Flash listed)",
+    "install": "npm i @google/genai  |  pip install google-genai",
+    "license": "Proprietary API terms",
+    "commercial_ok": "yes (free tier trains on data; use paid tier for client/PHI data)",
+    "needs_company": "no",
+    "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Groq (free plan)",
+      "url": "https://console.groq.com/docs/rate-limits",
+      "what": "Very fast inference of gpt-oss-120b/20b, Qwen3.8-27b, Whisper, Prompt Guard 2",
+      "why": "Best free latency; also free Whisper + safety classifiers",
+      "cost": "freemium",
+      "free_limits": "Table on page (unclear whether Free or Developer column): gpt-oss-120b 30 RPM / 1K RPD / 8K TPM / 200K TPD; whisper-large-v3-turbo 20 RPM / 2K RPD; Prompt Guard 2 30 RPM / 14.4K RPD",
+      "windows_fit": "web",
+      "maintained": "Page current 2026-10-28",
+      "install": "npm i groq-sdk",
+      "license": "Proprietary API terms",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://console.groq.com/docs/rate-limits",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "OpenRouter free (:free) models",
+      "url": "https://openrouter.ai/docs/api-reference/limits",
+      "what": "One OpenAI-compatible key for 25+ free models from 4 providers",
+      "why": "Single key, easy to swap; $10 top-up lifts daily cap",
+      "cost": "freemium",
+      "free_limits": "20 req/min; 50 req/day (<10 credits bought) or 1,000/day (>=10 credits bought); negative balance blocks free models",
+      "windows_fit": "web",
+      "maintained": "Page current 2026-10-28",
+      "install": "npm i @openrouter/ai-sdk-provider (3.1.0, 2026-09-19)",
+      "license": "Proprietary API; per-model licences",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://openrouter.ai/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Gemini API free tier",
+      "verdict": "Pick: broadest free models, multimodal, embeddings; trains on data"
+    },
+    {
+      "name": "Groq free",
+      "verdict": "Alt: fastest, small daily caps, free Whisper"
+    },
+    {
+      "name": "OpenRouter :free",
+      "verdict": "Alt: many models one key; 50/day unless $10 bought"
+    },
+    {
+      "name": "Cerebras free trial",
+      "verdict": "Only $5 credits expiring in 30 days, 5 RPM - a trial, not a free tier"
+    },
+    {
+      "name": "Mistral Experiment",
+      "verdict": "Docs URL 404 in my fetch; limits unverified"
+    },
+    {
+      "name": "Hugging Face Inference Providers",
+      "verdict": "Free users get no credits (PRO $2/mo)"
+    },
+    {
+      "name": "GitHub Models",
+      "verdict": "Retired 2026-07-30 (given)"
+    }
+  ],
+  "decision": "Gemini free tier is the default sandbox for non-sensitive prototyping; use Groq when latency/Whisper matters and OpenRouter to try many open models. Never send customer or PHI data to any free tier (Gemini free explicitly trains on it).",
+  "note": "",
+  "details": "Mistral limits not verified (page 404).",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Free model list mostly confirmed (Gemini 4 Argon now exists, not free). Errors: 5,000/mo Search grounding is the PAID-tier allowance; '3.1 Flash-Lite' is not a listed free text model (3.5 Flash-Lite is). Terms add rules the pick omits: do not submit sensitive/personal info to Unpaid Services, and apps made available to EEA users must use Paid Services only (matters for global sales).",
+    "url": "https://ai.google.dev/gemini-api/terms"
+  },
+  "better_pick": null
+}

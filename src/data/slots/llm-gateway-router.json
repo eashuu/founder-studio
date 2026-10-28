@@ -1,0 +1,97 @@
+{
+  "slug": "llm-gateway-router",
+  "slot": "LLM gateway / router",
+  "track": "ai-eng",
+  "stage": "build",
+  "region": "Global",
+  "order": 4054,
+  "pick": {
+    "name": "Cloudflare AI Gateway",
+    "url": "https://developers.cloudflare.com/ai-gateway/reference/pricing/",
+    "what": "Hosted proxy in front of any provider: analytics, caching, rate limiting, fallbacks, BYOK",
+    "why": "No servers to run, core features free on all plans, host-agnostic; exit cost is one base URL",
+    "cost": "freemium",
+    "free_limits": "Core features (analytics, caching, rate limiting) free. Legacy logs: 100,000 total on Workers Free; gateways created on/after 2026-09-24 use Workers Logs pricing. Unified Billing credits carry 5% fee; no markup on provider pricing. Guardrails billed as Workers AI inference.",
+    "windows_fit": "web",
+    "maintained": "Pricing page current 2026-10-28",
+    "install": "dashboard + change baseURL",
+    "license": "Proprietary service",
+    "commercial_ok": "yes",
+    "needs_company": "no (Cloudflare account)",
+    "source_url": "https://developers.cloudflare.com/ai-gateway/reference/pricing/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "LiteLLM (self-hosted proxy + SDK)",
+      "url": "https://github.com/BerriAI/litellm",
+      "what": "OpenAI-format gateway to 100+ providers with virtual keys, spend tracking, guardrails",
+      "why": "Right when PHI traffic must stay in your own VPC or you need per-customer keys/budgets",
+      "cost": "free",
+      "free_limits": "Self-host; core plus separate commercial-licence enterprise features",
+      "windows_fit": "wsl/docker (Python)",
+      "maintained": "litellm 1.106.5 on 2026-10-27 (per file). PyPI compromise 2026-03-24 (~10:39-16:00 UTC): 1.82.7 and 1.82.8 malicious credential stealers (1.82.8 adds litellm_init.pth); last clean 1.82.6; 1.83.0 (2026-03-30) first release via new CI/CD v2; Docker image ghcr.io/berriai/litellm unaffected. If either version was ever installed: remove litellm_init.pth, rotate all secrets, audit CI logs, block models.litellm[.]cloud and checkmarx[.]zone.",
+      "install": "pip install litellm  (pin version + hashes)",
+      "license": "MIT core (PyPI) + commercial enterprise features",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/BerriAI/litellm",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Vercel AI Gateway",
+      "url": "https://vercel.com/docs/ai-gateway/pricing",
+      "what": "TS-first managed gateway, zero markup",
+      "why": "Cleanest if the app is on Vercel with AI SDK",
+      "cost": "freemium",
+      "free_limits": "See edge slot",
+      "windows_fit": "web",
+      "maintained": "Doc 2026-09-08",
+      "install": "npm i ai",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "yes (Vercel account)",
+      "source_url": "https://vercel.com/docs/ai-gateway/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Cloudflare AI Gateway",
+      "verdict": "Pick: free, serverless, host-agnostic"
+    },
+    {
+      "name": "LiteLLM",
+      "verdict": "Alt: self-host for PHI/virtual keys; 2026 PyPI supply-chain compromise"
+    },
+    {
+      "name": "Vercel AI Gateway",
+      "verdict": "Alt: zero markup, TS-native"
+    },
+    {
+      "name": "OpenRouter",
+      "verdict": "Better as model source than control plane; 5.5% fee"
+    },
+    {
+      "name": "Bifrost (Maxim, Go, Apache-2.0)",
+      "verdict": "Fast self-host gateway; no TS SDK info seen"
+    },
+    {
+      "name": "Portkey OSS gateway",
+      "verdict": "Acquired by Palo Alto Networks (announced 2026-04-30, reported closed 2026-05-29) - roadmap now security-product driven"
+    },
+    {
+      "name": "No gateway (AI SDK provider swap only)",
+      "verdict": "Valid until multiple providers in prod"
+    }
+  ],
+  "decision": "A solo founder should not run a gateway server; Cloudflare AI Gateway gives caching, limits and logs free with one URL of lock-in. Switch to self-hosted LiteLLM (or Bifrost) when PHI must not transit a third-party proxy or you need per-tenant budgets.",
+  "note": "",
+  "details": "Gateways see all prompts - confirm BAA/DPA before routing PHI (Cloudflare BAA status unverified).",
+  "verify": {
+    "verdict": "ok",
+    "note": "Cloudflare AI Gateway pricing confirmed: core features + DLP free on all plans; Legacy logs 100,000 total on Workers Free (10M/gateway on Paid); accounts whose first gateway is created on/after 2026-09-24 use Workers Logs; Unified Billing 5% fee, no provider markup; Guardrails billed as Workers AI inference. Decision sound for a solo founder.",
+    "url": "https://developers.cloudflare.com/ai-gateway/reference/pricing/"
+  },
+  "better_pick": null
+}

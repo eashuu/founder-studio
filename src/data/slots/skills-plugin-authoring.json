@@ -1,0 +1,85 @@
+{
+  "slug": "skills-plugin-authoring",
+  "slot": "skills / plugin authoring",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2018,
+  "pick": {
+    "name": "plugin-dev + mcp-server-dev + skill-creator (official)",
+    "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins",
+    "what": "Authoring kits for plugins, MCP servers and skills, plus `claude plugin eval`",
+    "why": "You ship plugins/MCP servers; first-party",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "repo pushed 2026-10-28",
+    "install": "/plugin install plugin-dev@claude-plugins-official (repeat for mcp-server-dev)",
+    "license": "Apache-2.0",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "what": "Official reference skills (docx/pdf/pptx/xlsx, mcp-builder, webapp-testing)",
+      "why": "Already synced via claude.ai",
+      "cost": "free",
+      "free_limits": "doc skills source-available",
+      "windows_fit": "native",
+      "maintained": "pushed 2026-10-09",
+      "install": "already synced (anthropic-skills:*)",
+      "license": "Apache-2.0 / source-available",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/anthropics/skills",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "agent-sdk-dev (official)",
+      "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/agent-sdk-dev",
+      "what": "Agent SDK app scaffolding",
+      "why": "For agent products",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "repo pushed 2026-10-28",
+      "install": "/plugin install agent-sdk-dev@claude-plugins-official",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/agent-sdk-dev",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "plugin-dev/mcp-server-dev",
+      "verdict": "pick"
+    },
+    {
+      "name": "anthropics/skills",
+      "verdict": "have"
+    },
+    {
+      "name": "agent-sdk-dev",
+      "verdict": "when building agents"
+    },
+    {
+      "name": "find-skills",
+      "verdict": "discovery, have"
+    }
+  ],
+  "decision": "First-party authoring kits match your plugin/MCP products; don't also install document-skills locally (duplicates the synced ones).",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "plugin-dev, mcp-server-dev, skill-creator, agent-sdk-dev present in marketplace.json.",
+    "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins"
+  },
+  "better_pick": null
+}

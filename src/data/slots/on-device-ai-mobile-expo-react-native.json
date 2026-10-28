@@ -1,0 +1,101 @@
+{
+  "slug": "on-device-ai-mobile-expo-react-native",
+  "slot": "on-device AI: mobile (Expo / React Native)",
+  "track": "ai-eng",
+  "stage": "build",
+  "region": "Global",
+  "order": 4057,
+  "pick": {
+    "name": "llama.rn (llama.cpp for React Native)",
+    "url": "https://github.com/mybigday/llama.rn",
+    "what": "React Native binding for llama.cpp: GGUF LLMs, vision/audio via mmproj, tool calling, JSON-schema grammar, experimental TTS",
+    "why": "Most mature GGUF-on-phone path with an Expo config plugin; runs Gemma-4-E2B/E4B-class Q4 models on CPU; MIT",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "n/a (Android now / iOS later; develop on Windows with Expo dev client)",
+    "maintained": "Stable v0.12.9 (GitHub release 2026-08-04); npm latest tag = 0.13.0-rc.8 (2026-10-22, RC)",
+    "install": "npm i llama.rn@0.12.9 (pin stable; plain \"npm i llama.rn\" gives the RC)",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/mybigday/llama.rn",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "react-native-executorch (Software Mansion)",
+      "url": "https://executorch.swmansion.com/",
+      "what": "ExecuTorch for RN: Llama/Phi LLMs, VLMs, Whisper STT, Kokoro TTS, YOLO/SAM vision",
+      "why": "Wider modality set (STT+TTS+vision) in one lib; Expo supported via resource-fetcher companion",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "n/a (Android/iOS)",
+      "maintained": "0.11.0 on 2026-10-27 (pre-1.0)",
+      "install": "npm i react-native-executorch",
+      "license": "npm metadata says MIT; docs page does not state",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://executorch.swmansion.com/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "LiteRT-LM (Google AI Edge) / Gemini Nano via ML Kit",
+      "url": "https://developers.google.com/edge/litert-lm",
+      "what": "Google on-device LLM runtime: Gemma 4, Kotlin/Swift/JS/Python/C++; Android AICore Gemini Nano Prompt API",
+      "why": "Best native-Android performance (GPU/NPU); no RN binding so needs a native module",
+      "cost": "free",
+      "free_limits": "Gemini Nano subject to device support and ML Kit GenAI terms",
+      "windows_fit": "n/a (Android Kotlin; JVM Windows desktop)",
+      "maintained": "LiteRT-LM v0.18.1 on 2026-10-20",
+      "install": "Gradle/Maven dependency",
+      "license": "Apache-2.0 (code samples); model terms vary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://developers.google.com/edge/litert-lm",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "llama.rn",
+      "verdict": "Pick: GGUF, Expo plugin, tools+grammar, MIT; still RC"
+    },
+    {
+      "name": "react-native-executorch",
+      "verdict": "Alt: STT/TTS/vision too; pre-1.0"
+    },
+    {
+      "name": "LiteRT-LM / Gemini Nano (ML Kit)",
+      "verdict": "Alt: native Android, best HW accel; not RN"
+    },
+    {
+      "name": "MediaPipe LLM Inference (@mediapipe/tasks-genai 0.10.30)",
+      "verdict": "Web/Android; Google positions LiteRT-LM as the successor (inferred, not stated)"
+    },
+    {
+      "name": "MLC LLM",
+      "verdict": "Apache-2.0, WebGPU/OpenCL/Metal, heavy build pipeline"
+    },
+    {
+      "name": "ONNX Runtime RN 1.24.3",
+      "verdict": "General ML, LLM story weaker"
+    },
+    {
+      "name": "Cactus RN 1.13.1",
+      "verdict": "Smaller community"
+    },
+    {
+      "name": "Apple Foundation Models",
+      "verdict": "iOS 26+ Apple-Intelligence devices only; free; Swift-only, for later iOS (docs page content not retrievable)"
+    }
+  ],
+  "decision": "Choose llama.rn for first on-device features (summaries, classification, offline chat) with a 1-4B Q4 model; download size and RAM matter more than the library. Switch to react-native-executorch if you need on-device Whisper/Kokoro in one lib, or to native LiteRT-LM/Gemini Nano if you go Kotlin-native.",
+  "note": "",
+  "details": "On-device quality is far below Claude; keep cloud fallback. Mid-range Android CPU speed unmeasured.",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Stable is v0.12.9; npm latest is the RC, so pin.",
+    "url": "https://github.com/mybigday/llama.rn"
+  },
+  "better_pick": null
+}

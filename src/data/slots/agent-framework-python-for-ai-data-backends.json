@@ -1,0 +1,105 @@
+{
+  "slug": "agent-framework-python-for-ai-data-backends",
+  "slot": "agent framework (Python) - for AI/data backends",
+  "track": "ai-eng",
+  "stage": "build",
+  "region": "Global",
+  "order": 4056,
+  "pick": {
+    "name": "Pydantic AI",
+    "url": "https://pydantic.dev/docs/ai/overview/",
+    "what": "Typed Python agent framework: validated outputs, DI, MCP, durable execution (Temporal, DBOS, Prefect...), pydantic-evals, OTel/Logfire",
+    "why": "Same type-first ethos as the TS side, model-agnostic, validates structured output natively, small API Claude Code writes well",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "pydantic-ai 2.63.0 on 2026-10-28",
+    "install": "pip install pydantic-ai",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://pydantic.dev/docs/ai/overview/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "LangGraph (Python)",
+      "url": "https://docs.langchain.com/oss/javascript/langgraph/overview",
+      "what": "Low-level graph orchestration with durable execution and human-in-the-loop",
+      "why": "Best for resumable long-running stateful workflows",
+      "cost": "free",
+      "free_limits": "LangSmith optional paid",
+      "windows_fit": "native",
+      "maintained": "langgraph 1.2.18 on 2026-10-26",
+      "install": "pip install langgraph",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://docs.langchain.com/oss/javascript/langgraph/overview",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Claude Agent SDK (Python)",
+      "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+      "what": "Claude Code loop as Python library",
+      "why": "Pick if the backend is Claude-only and benefits from built-in tools; billed to Max credits",
+      "cost": "owned",
+      "free_limits": "Max credits cover Agent SDK",
+      "windows_fit": "native",
+      "maintained": "claude-agent-sdk 0.2.174 on 2026-10-24",
+      "install": "pip install claude-agent-sdk",
+      "license": "MIT (PyPI metadata) / Commercial Terms",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/en/agent-sdk/overview",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Pydantic AI",
+      "verdict": "Pick: typed, light, model-agnostic, built-in evals"
+    },
+    {
+      "name": "LangGraph",
+      "verdict": "Alt: durable workflows, big ecosystem"
+    },
+    {
+      "name": "Claude Agent SDK (Python)",
+      "verdict": "Alt: Claude-only built-in tools"
+    },
+    {
+      "name": "Google ADK 2.13.0",
+      "verdict": "Apache; Python/TS/Go/Java/Kotlin; Google-centric deploy"
+    },
+    {
+      "name": "OpenAI Agents SDK 0.24.0",
+      "verdict": "MIT, pre-1.0, OpenAI-first"
+    },
+    {
+      "name": "CrewAI 1.15.32",
+      "verdict": "MIT; anonymous telemetry on by default; commercial AMP upsell"
+    },
+    {
+      "name": "Agno 3.1.11",
+      "verdict": "Apache-2.0, AgentOS; younger"
+    },
+    {
+      "name": "smolagents 1.26.0 (2026-05-29)",
+      "verdict": "Slower cadence"
+    },
+    {
+      "name": "LlamaIndex 0.14.25",
+      "verdict": "Best for RAG pipelines, less for general agents"
+    }
+  ],
+  "decision": "Pydantic AI stays the Python pick: typed end to end, provider-neutral, ships evals/MCP/durable execution. Use Python only where work is data/ML-heavy; otherwise stay in TS. Switch to LangGraph for long-running resumable workflows.",
+  "note": "",
+  "details": "ADK page used: https://adk.dev/",
+  "verify": {
+    "verdict": "ok",
+    "note": "Version/licence/limits match registry or official page.",
+    "url": "https://registry.npmjs.org/"
+  },
+  "better_pick": null
+}

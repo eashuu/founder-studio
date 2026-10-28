@@ -1,0 +1,97 @@
+{
+  "slug": "personal-file-storage-backup-separate-from-company",
+  "slot": "personal file storage + backup (separate from company)",
+  "track": "productivity",
+  "stage": "run",
+  "region": "Global",
+  "order": 11217,
+  "pick": {
+    "name": "Google Drive (personal account, AI Pro storage) used via the personal browser profile",
+    "url": "https://one.google.com/about/plans",
+    "what": "Personal cloud storage bundled with your Google AI Pro plan",
+    "why": "Already paid for, large quota, Gemini works across Drive, and using it in a personal browser profile avoids installing personal sync clients on a work laptop",
+    "cost": "owned",
+    "free_limits": "Google AI Pro page lists 5 TB shared across Photos/Drive/Gmail (promo/free-until-2028 plan quota not verified)",
+    "windows_fit": "web (Drive for desktop optional)",
+    "maintained": "SaaS, current",
+    "install": "web; optional: winget install -e --id Google.GoogleDrive",
+    "license": "Proprietary",
+    "commercial_ok": "yes",
+    "needs_company": "unclear",
+    "source_url": "https://one.google.com/about/plans",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Kopia",
+      "url": "https://kopia.io",
+      "what": "Encrypted, deduplicated, versioned backup with Windows GUI",
+      "why": "Best free backup for anything that must exist only on your machine (e.g. Obsidian vault, code not yet pushed): encrypt and push to R2/B2 or Drive via rclone",
+      "cost": "free",
+      "free_limits": "Free; storage cost is your backend's",
+      "windows_fit": "native (KopiaUI)",
+      "maintained": "v0.23.1 2026-06-16; commits 2026-10-28",
+      "install": "https://github.com/kopia/kopia/releases (KopiaUI installer)",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "unclear",
+      "source_url": "https://github.com/kopia/kopia",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Syncthing",
+      "url": "https://syncthing.net",
+      "what": "Peer-to-peer folder sync between laptop and phone, no cloud",
+      "why": "Best for laptop<->Android sync of the notes vault; Android via Syncthing-Fork (researchxxl)",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "native",
+      "maintained": "v2.1.7 2026-10-21; Syncthing-Fork Android v2.1.7.0 2026-10-21",
+      "install": "winget install -e --id Syncthing.Syncthing",
+      "license": "MPL-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "unclear",
+      "source_url": "https://forum.syncthing.net/t/does-anyone-know-why-syncthing-fork-is-no-longer-available-on-github/25661/251",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Google Drive (personal)",
+      "verdict": "PICK: owned, huge quota, browser-only keeps separation"
+    },
+    {
+      "name": "Kopia",
+      "verdict": "Encrypted versioned backups; use for local-only folders"
+    },
+    {
+      "name": "Syncthing",
+      "verdict": "Laptop<->phone without cloud; official Android app retired 2024, fork maintained"
+    },
+    {
+      "name": "OneDrive personal",
+      "verdict": "5 GB free; confusing next to the company OneDrive client"
+    },
+    {
+      "name": "restic",
+      "verdict": "Excellent CLI backup (0.19.1 2026-07-05) but no GUI; Kopia easier"
+    },
+    {
+      "name": "rclone",
+      "verdict": "Swiss-army sync tool (v1.75.2); use under Kopia, not alone"
+    },
+    {
+      "name": "Dropbox / Proton Drive",
+      "verdict": "Small free quotas; not verified this pass"
+    }
+  ],
+  "decision": "Keep personal data in personal cloud (Google Drive via the personal browser profile, code in private GitHub repos) so a work laptop holds as little personal data as possible and can be wiped without loss. Add Kopia only for folders that must live locally, and Syncthing only for the notes vault to phone. Check company IT policy before installing Drive for desktop or Syncthing on a managed device.",
+  "note": "",
+  "details": "On a company-managed device, IT may be able to see or wipe local files. Never mix client/company data into personal storage.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Google plan pages list AI Pro at 5 TB (upgraded from 2 TB, no price change); promotional plans may differ.",
+    "url": "https://one.google.com/about/google-ai-plans/"
+  },
+  "better_pick": null
+}

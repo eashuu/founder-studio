@@ -1,0 +1,93 @@
+{
+  "slug": "competitor-website-pricing-page-monitoring",
+  "slot": "Competitor website + pricing-page monitoring",
+  "track": "discover",
+  "stage": "discover",
+  "region": "Global",
+  "order": 140,
+  "pick": {
+    "name": "Distill.io (free)",
+    "url": "https://distill.io/pricing",
+    "what": "Page-change monitor (cloud + local browser-extension monitors)",
+    "why": "No server to keep running (laptop is not always on), and 25 monitors covers a solo founder's competitor set.",
+    "cost": "freemium",
+    "free_limits": "Free: 25 monitors (5 cloud), 1,000 cloud checks/mo, min interval 6 h, 30 email alerts/mo. Starter $15/mo",
+    "windows_fit": "web + browser extension",
+    "maintained": "live service",
+    "install": "web / browser extension",
+    "license": "proprietary SaaS",
+    "commercial_ok": "unclear",
+    "needs_company": "no",
+    "source_url": "https://distill.io/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "changedetection.io",
+      "url": "https://github.com/dgtlmoon/changedetection.io",
+      "what": "Open-source page-change monitor, self-host or hosted",
+      "why": "Best if you already run a small always-on box (free) or want hosted for $8.99/mo with no monitor cap.",
+      "cost": "freemium",
+      "free_limits": "Self-host free (Apache-2.0); hosted $8.99/mo per README",
+      "windows_fit": "docker or pip",
+      "maintained": "release date unconfirmed",
+      "install": "docker run -d --restart always -p \"127.0.0.1:5000:5000\" -v datastore-volume:/datastore --name changedetection.io dgtlmoon/changedetection.io",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/dgtlmoon/changedetection.io",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Visualping (free)",
+      "url": "https://visualping.io/pricing",
+      "what": "Visual page-change alerts",
+      "why": "Faster interval on free (60 min) but only 5 pages and free is marketed to individuals.",
+      "cost": "freemium",
+      "free_limits": "Free: 150 checks/mo, 5 pages, 60-min interval. Personal 1K $14/mo",
+      "windows_fit": "web",
+      "maintained": "live service",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://visualping.io/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Distill.io",
+      "verdict": "pick"
+    },
+    {
+      "name": "changedetection.io",
+      "verdict": "alt: self-host/hosted, Apache-2.0"
+    },
+    {
+      "name": "Visualping",
+      "verdict": "alt"
+    },
+    {
+      "name": "Wappalyzer free",
+      "verdict": "50 tech lookups/mo: use for 'what stack/tools does the competitor run'"
+    },
+    {
+      "name": "BuiltWith free",
+      "verdict": "free single-site tech lookups"
+    },
+    {
+      "name": "Similarweb free",
+      "verdict": "sample traffic only"
+    }
+  ],
+  "decision": "Distill's free cloud monitors plus local extension monitors need no infrastructure. Move to hosted changedetection.io ($8.99/mo) or self-host it when you want unlimited monitors and webhooks into your own stack.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "All Distill free numbers and Starter $15/mo confirmed.",
+    "url": "https://distill.io/pricing"
+  },
+  "better_pick": null
+}

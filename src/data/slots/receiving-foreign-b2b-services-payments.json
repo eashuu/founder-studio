@@ -1,0 +1,93 @@
+{
+  "slug": "receiving-foreign-b2b-services-payments",
+  "slot": "Receiving foreign B2B / services payments",
+  "track": "money",
+  "stage": "run",
+  "region": "India",
+  "order": 9128,
+  "pick": {
+    "name": "Skydo",
+    "url": "https://www.skydo.com/compare/skydo-vs-payoneer",
+    "what": "Local USD/EUR/GBP collection accounts for Indian exporters, INR in ~1 business day, free FIRA",
+    "why": "Flat fee + 0% FX markup beats % fees on consulting-size invoices; RBI PA-CB final authorisation (inward) Jan 2026",
+    "cost": "paid",
+    "free_limits": "$19 up to $2,000; $29 $2,001-$10,000; 0.3% above $10,000; 0% FX markup; free per-transaction FIRA; no inactivity fee (Skydo's own pages; one page conflicts $19/$29). PA-CB rules cap Rs25 lakh per transaction.",
+    "windows_fit": "web",
+    "maintained": "active",
+    "install": "web",
+    "license": "service",
+    "commercial_ok": "yes",
+    "needs_company": "unclear",
+    "source_url": "https://www.skydo.com/compare/skydo-vs-wise (fees); https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12896 (Rs25 lakh PA-CB cap); https://www.theweek.in/wire-updates/business/2026/01/09/skydo-secures-final-rbi-authorisation-for-cross-border-payments.html (licence, PTI)",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Razorpay International Bank Transfer (MCA)",
+      "url": "https://razorpay.com/pricing/",
+      "what": "Virtual multi-currency accounts",
+      "why": "Cheaper than Skydo below ~$1,600 per invoice; same vendor as INR PG",
+      "cost": "paid",
+      "free_limits": "1% per transaction + GST, 0% FX markup, FIRC/eFIRC included; requires domestic activation",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://razorpay.com/docs/payments/international-payments/international-bank-transfer/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Wise Business (India)",
+      "url": "https://wise.com/help/articles/6Kpm9pXlJW79OGAktSnHos/how-to-verify-your-indian-business",
+      "what": "Receive via local account details, auto-convert to INR",
+      "why": "Freelancer/sole-trader type allowed (no company); familiar to foreign clients",
+      "cost": "paid",
+      "free_limits": "Receiving is business-accounts only (freelancer type OK with Aadhaar+PAN video KYC, physically in India, no VPN); 18% GST on fees; third-party: ~$6.11 per USD SWIFT receipt, ~1.5-1.7% conversion, ~$2.50 e-FIRA",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://wise.com/help/articles/6Kpm9pXlJW79OGAktSnHos/how-to-verify-your-indian-business",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Skydo",
+      "verdict": "PICK for invoices >= ~$1,600"
+    },
+    {
+      "name": "Razorpay MCA",
+      "verdict": "Alt: 1% + GST, cheaper for small invoices"
+    },
+    {
+      "name": "Wise Business",
+      "verdict": "Alt: freelancer-friendly"
+    },
+    {
+      "name": "Payoneer",
+      "verdict": "1% ACH / 3.2% + $0.49 card + 2-3% FX on withdrawal, $29.95/yr if < $6k received (competitor-sourced)"
+    },
+    {
+      "name": "PayPal",
+      "verdict": "Worst: 4.4% + $0.30 + 3% conversion spread (official India fee page)"
+    },
+    {
+      "name": "Direct SWIFT to bank",
+      "verdict": "Bank FX margin + intermediary fees; eBRC from bank"
+    }
+  ],
+  "decision": "Cost per invoice: $1,000 -> Razorpay ~$11.8, Skydo $19, Wise ~$22; $5,000 -> Skydo $29, Razorpay ~$59, Wise ~$86 (third-party Wise rates). Pick Skydo for typical consulting invoices; route small invoices through Razorpay MCA if you already use Razorpay.",
+  "note": "",
+  "details": "Use purpose code P0802 (software consultancy) or P0807 (off-site software exports) as appropriate. Export proceeds must be realised within 15 months (Nov 2025 amendment per secondary source; verify).",
+  "verify": {
+    "verdict": "fixed",
+    "note": "RBI Master Direction on Regulation of Payment Aggregators (15 Sep 2025, rbi.org.in id=12896) caps PA-CB inward/outward transactions at Rs25 lakh PER TRANSACTION (the 2023 circular said per unit of goods/services). The cap is confirmed from RBI; it excludes card-network-settled card payments. Skydo's final PA-CB authorisation (~9 Jan 2026) is reported by the PTI wire (The Week, Entrackr, YourStory), not an RBI page; RBI's PA list was not fetched. Skydo's fee slabs ($19 < $2,000; $29 $2,001-10,000; 0.3% above; 0% FX; free FIRA) are consistent across Skydo's own pages, but skydo.com/pricing returns 404. Razorpay MCA: '1% with Zero Forex Markup', FIRC included; GST not required and individuals appear eligible (Video KYC, purpose code). The source_url should be primary.",
+    "url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12896"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "claude-plugins-skills-distribution",
+  "slot": "Claude plugins / skills distribution",
+  "track": "app-stacks",
+  "stage": "build",
+  "region": "Global",
+  "order": 5099,
+  "pick": {
+    "name": "Own marketplace (.claude-plugin/marketplace.json in a GitHub repo) + Anthropic directory",
+    "url": "https://code.claude.com/docs/en/plugins/publish.md",
+    "what": "Users run claude plugin marketplace add owner/repo, then install; directory listing reaches claude.ai/Cowork/Claude Code",
+    "why": "Instant, free, private repos supported, you control releases; directory adds reach and auto-updates",
+    "cost": "free",
+    "free_limits": "Directory needs a paid claude.ai plan (you have Max); 'claude-plugins-official' not open to portal submissions; own-marketplace auto-update off by default",
+    "windows_fit": "native",
+    "maintained": "docs live 2026-10-28",
+    "install": "claude plugin validate --strict . && git push",
+    "license": "your choice",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://code.claude.com/docs/en/plugins/publish.md",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Zip / --plugin-dir / --plugin-url",
+      "url": "https://code.claude.com/docs/en/plugins/publish.md",
+      "what": "Hand-delivered plugin",
+      "why": "Services clients",
+      "cost": "free",
+      "free_limits": "No updates",
+      "windows_fit": "native",
+      "maintained": "2026-10-28",
+      "install": "claude --plugin-dir ./my-plugin",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/en/plugins/publish.md",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Bundle via your CLI/SDK post-install hint",
+      "url": "https://code.claude.com/docs/en/plugins/publish.md",
+      "what": "Installer prints marketplace add + install commands",
+      "why": "If you ship a CLI",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "2026-10-28",
+      "install": "claude plugin install <name> --marketplace <src>",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/en/plugins/publish.md",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Own marketplace + directory (pick)",
+      "verdict": "Control + reach."
+    },
+    {
+      "name": "Zip/plugin-dir",
+      "verdict": "Consulting deliveries."
+    },
+    {
+      "name": "CLI hint",
+      "verdict": "When you have a CLI."
+    },
+    {
+      "name": "Paid listing",
+      "verdict": "None exists; monetize via a gated remote MCP backend."
+    }
+  ],
+  "decision": "Publish to your own marketplace immediately, then submit to the directory for reach. Gate paid value behind your own MCP backend; the platform has no paid listings.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Version/licence/limits match registry or official page.",
+    "url": "https://registry.npmjs.org/"
+  },
+  "better_pick": null
+}

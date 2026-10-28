@@ -1,0 +1,69 @@
+{
+  "slug": "government-registrations-udyam-dpiit-startup-india",
+  "slot": "Government registrations (Udyam, DPIIT Startup India)",
+  "track": "legal",
+  "stage": "run",
+  "region": "India",
+  "order": 10172,
+  "pick": {
+    "name": "Udyam (MSME) registration",
+    "url": "https://udyamregistration.gov.in/Default.aspx",
+    "what": "Free MSME registration (Aadhaar; PAN + GSTIN pulled automatically)",
+    "why": "Free, works for a sole proprietor today, MSME protections (delayed-payment rules); after incorporating, it keeps the company on the Rs 4,500 'small enterprise' trademark rate (a sole proprietor already gets it as an individual)",
+    "cost": "free",
+    "free_limits": "Totally free; one registration per enterprise; micro = investment <= Rs 2.5 cr and turnover <= Rs 10 cr (from 1 Apr 2025)",
+    "windows_fit": "web",
+    "maintained": "portal live 2026-10-28",
+    "install": "web",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://udyamregistration.gov.in/Default.aspx",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "DPIIT Startup India recognition",
+      "url": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html",
+      "what": "Government 'startup' status",
+      "why": "Unlocks 80-IAC 3-year tax holiday (Pvt Ltd/LLP only), self-certification, procurement relaxations",
+      "cost": "free",
+      "free_limits": "Eligible: Pvt Ltd, partnership, LLP, co-op; <10 yrs old (20 for DeepTech); turnover < Rs 200 cr (Rs 300 cr DeepTech). Sole prop and OPC are not eligible",
+      "windows_fit": "web",
+      "maintained": "page updated 2026-10-26",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "yes",
+      "source_url": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Udyam",
+      "verdict": "PICK: free, sole-prop friendly, immediate fee benefits"
+    },
+    {
+      "name": "DPIIT recognition",
+      "verdict": "Do it the same week you incorporate a Pvt Ltd"
+    },
+    {
+      "name": "GeM seller registration",
+      "verdict": "Only if selling to Indian government buyers (not researched)"
+    },
+    {
+      "name": "State startup policies",
+      "verdict": "State grants exist (e.g. Karnataka/Kerala) but not researched"
+    }
+  ],
+  "decision": "Register on Udyam now (free, 10 minutes). Apply for DPIIT recognition only after incorporating a Pvt Ltd/LLP, because sole proprietors and OPCs are excluded. 80-IAC still needs a separate application to the inter-ministerial board.",
+  "note": "",
+  "details": "GSTIN is required only where GST registration applies (portal: 'subject to CGST Act applicability'), so GST-exempt proprietors register with Aadhaar + PAN.",
+  "verify": {
+    "verdict": "fixed",
+    "note": "Udyam is free, with micro <= Rs 2.5 cr investment / Rs 10 cr turnover from 1 Apr 2025 (confirmed). GSTIN is needed only 'subject to CGST Act applicability', which resolves the note. But the 'why' overstates Udyam's trademark benefit: a sole proprietor filing in their own name already pays the individual rate of Rs 4,500. Udyam matters for the TM fee only once a company files.",
+    "url": "https://udyamregistration.gov.in/Default.aspx"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "release-trackers-changelog-watchers",
+  "slot": "release trackers / changelog watchers",
+  "track": "learning",
+  "stage": "run",
+  "region": "Global",
+  "order": 12242,
+  "pick": {
+    "name": "GitHub custom watch (Releases only) + releases.atom feeds in the RSS reader",
+    "url": "https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/managing-subscriptions-for-activity-on-github/viewing-your-subscriptions",
+    "what": "Watch > Custom > Releases on key repos (anthropics/claude-code, MCP SDKs, your stack) and add https://github.com/<owner>/<repo>/releases.atom to Inoreader",
+    "why": "Free, native, no new service; release notes arrive with the rest of your reading",
+    "cost": "free",
+    "free_limits": "Free",
+    "windows_fit": "web",
+    "maintained": "GitHub SaaS; anthropics/claude-code v2.1.312 released 2026-10-27",
+    "install": "web",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/managing-subscriptions-for-activity-on-github/viewing-your-subscriptions",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "NewReleases.io",
+      "url": "https://newreleases.io",
+      "what": "Tracks GitHub/GitLab releases plus npm, PyPI, Docker, Cargo versions with email/Slack/Discord/webhook alerts",
+      "why": "Best when you need package-registry versions (not just GitHub) in one digest",
+      "cost": "freemium",
+      "free_limits": "Free tier not stated on homepage",
+      "windows_fit": "web",
+      "maintained": "Active",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://newreleases.io/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Dependabot",
+      "url": "https://docs.github.com/en/code-security/dependabot",
+      "what": "Automated dependency update PRs",
+      "why": "Covers your own repos' deps automatically",
+      "cost": "free",
+      "free_limits": "Free on GitHub",
+      "windows_fit": "web",
+      "maintained": "GitHub SaaS",
+      "install": "enable in repo settings",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/managing-subscriptions-for-activity-on-github/viewing-your-subscriptions",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "GitHub watch + releases.atom",
+      "verdict": "PICK: free, native"
+    },
+    {
+      "name": "NewReleases.io",
+      "verdict": "Multi-registry alerts"
+    },
+    {
+      "name": "Dependabot",
+      "verdict": "For your own repos"
+    },
+    {
+      "name": "GitHub Trending",
+      "verdict": "Discovery, not tracking; check weekly"
+    }
+  ],
+  "decision": "Watch releases of the 15-20 repos you depend on and pipe their Atom feeds into the reader, so changelogs are part of the weekly radar. Add NewReleases.io only if you track many npm/PyPI packages outside GitHub.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "GitHub Watch > Custom > Releases confirmed in GitHub docs; releases.atom not documented there but long-standing.",
+    "url": "https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications"
+  },
+  "better_pick": null
+}

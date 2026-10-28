@@ -1,0 +1,81 @@
+{
+  "slug": "hooks",
+  "slot": "hooks",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2017,
+  "pick": {
+    "name": "Official hooks-guide recipes",
+    "url": "https://code.claude.com/docs/en/hooks-guide.md",
+    "what": "Block edits/reads of .env and keys, auto-format after edit, notify, re-inject context after compaction",
+    "why": "First-party, Windows examples",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "doc current",
+    "install": "/hooks or ~/.claude/settings.json",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://code.claude.com/docs/en/hooks-guide.md",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "hookify (official)",
+      "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/hookify",
+      "what": "Create hook rules from conversation",
+      "why": "No hand-written JSON",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "repo pushed 2026-10-28",
+      "install": "/plugin install hookify@claude-plugins-official",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/hookify",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "disler/claude-code-hooks-mastery",
+      "url": "https://github.com/disler/claude-code-hooks-mastery",
+      "what": "Example hooks per event",
+      "why": "Reference only",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native (uv)",
+      "maintained": "last push 2026-03-04 (stale)",
+      "install": "read only",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/disler/claude-code-hooks-mastery",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Official recipes",
+      "verdict": "pick"
+    },
+    {
+      "name": "hookify",
+      "verdict": "convenience"
+    },
+    {
+      "name": "hooks-mastery",
+      "verdict": "stale reference"
+    }
+  ],
+  "decision": "Add two hooks: PreToolUse deny on .env*/secrets paths and PostToolUse formatter (biome/ruff). Watch latency: Orca + claude-mem + caveman + ponytail already hook most events.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "hookify present in official marketplace.",
+    "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins"
+  },
+  "better_pick": null
+}

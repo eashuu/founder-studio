@@ -1,0 +1,89 @@
+{
+  "slug": "selling-services-consulting-freelance",
+  "slot": "Selling services (consulting/freelance)",
+  "track": "sales",
+  "stage": "sell",
+  "region": "Global",
+  "order": 7195,
+  "pick": {
+    "name": "Upwork",
+    "url": "https://www.hireinsouth.com/post/how-much-does-upwork-cost",
+    "what": "Largest freelance marketplace",
+    "why": "Largest buyer pool for AI/automation work; variable 0-15% fee (~10% typical) disclosed per proposal",
+    "cost": "freemium",
+    "free_limits": "Free account; Connects needed to bid (price/free allotment unverified)",
+    "windows_fit": "web",
+    "maintained": "fee model since 2025-05-01",
+    "install": "web",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.hireinsouth.com/post/how-much-does-upwork-cost",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Contra",
+      "url": "https://contra.com/pricing",
+      "what": "Commission-free freelance platform + portfolio + payments",
+      "why": "0% commission; good for invoicing direct clients and a portfolio; Pro USD 29/mo",
+      "cost": "freemium",
+      "free_limits": "Free plan has client payment fee (USD 15-29 on >USD 500) and 5% digital-product fee",
+      "windows_fit": "web",
+      "maintained": "live page 2026-10-28",
+      "install": "web",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://contra.com/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Toptal",
+      "url": "https://www.toptal.com/talent/apply",
+      "what": "Screened premium network",
+      "why": "Highest rates if you pass screening; slow",
+      "cost": "free",
+      "free_limits": "Free to apply (details not on page)",
+      "windows_fit": "web",
+      "maintained": "live page 2026-10-28",
+      "install": "web",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.toptal.com/talent/apply",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Direct (site + LinkedIn + Apollo + Cal.com)",
+      "verdict": "Best margin long-term; use alongside the pick"
+    },
+    {
+      "name": "Upwork",
+      "verdict": "PICK for early demand + reviews"
+    },
+    {
+      "name": "Contra",
+      "verdict": "0% commission; for direct clients and portfolio"
+    },
+    {
+      "name": "Toptal",
+      "verdict": "Premium rates after screening"
+    },
+    {
+      "name": "Arc.dev / Braintrust",
+      "verdict": "Not checked"
+    }
+  ],
+  "decision": "Use Upwork to win the first paid AI projects and reviews (narrow niche profile, e.g. 'Claude agents / MCP integrations'). Run direct outbound in parallel and move repeat clients off-platform once contracts allow. Payout/FIRA handling to India was not checked.",
+  "note": "",
+  "details": "Upwork's official fee page blocked fetch (403); figures are from secondary 2026 sources (unverified).",
+  "verify": {
+    "verdict": "doubt",
+    "note": "Upwork's official fee page is blocked, and the source is a third-party blog (hireinsouth), which breaks the primary-source rule for a fee. Contra alt is confirmed (USD 15/29 client-payment fee, 5% digital fee min USD 3 max 29; Pro USD 29/mo or 199/yr). Verify Upwork's fee on upwork.com before relying on '0-15%'.",
+    "url": "https://contra.com/pricing"
+  },
+  "better_pick": null
+}

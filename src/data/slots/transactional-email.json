@@ -1,0 +1,97 @@
+{
+  "slug": "transactional-email",
+  "slot": "Transactional email",
+  "track": "ship",
+  "stage": "ship",
+  "region": "Global",
+  "order": 6107,
+  "pick": {
+    "name": "Resend",
+    "url": "https://resend.com/pricing",
+    "what": "Developer email API with React Email",
+    "why": "Best DX/typed SDK for Claude Code; ToS free tier has no non-commercial clause",
+    "cost": "freemium",
+    "free_limits": "3,000/mo, 100/day, 3 domains, 30-day retention; Pro $20/mo for 50k",
+    "windows_fit": "n/a (API)",
+    "maintained": "resend 6.35.0 on npm 2026-10-27",
+    "install": "npm i resend",
+    "license": "service (SDK MIT)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://resend.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Brevo Free",
+      "url": "https://www.brevo.com/pricing/",
+      "what": "Email platform with SMTP + transactional",
+      "why": "Best free volume (~300/day) if Resend's 100/day bites",
+      "cost": "freemium",
+      "free_limits": "300 emails/day per third-party reviews (Brevo page fetch was empty); Brevo branding on free",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://dreamlit.ai/blog/brevo-review",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Amazon SES",
+      "url": "https://aws.amazon.com/ses/pricing/",
+      "what": "Raw high-volume email",
+      "why": "Pay-later pick at scale: $0.10 per 1,000",
+      "cost": "paid",
+      "free_limits": "No permanent free tier; new AWS accounts get up to $200 credits for 12 months; dedicated IP $24.95/mo",
+      "windows_fit": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://aws.amazon.com/ses/pricing/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Resend",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Brevo",
+      "verdict": "Alt: more free volume, less dev-centric"
+    },
+    {
+      "name": "Amazon SES",
+      "verdict": "Alt: cheapest at scale, more setup"
+    },
+    {
+      "name": "Postmark",
+      "verdict": "Best deliverability reputation; free only 100/mo, Basic $15 for 10k"
+    },
+    {
+      "name": "Mailgun",
+      "verdict": "Free 100/day sandbox-ish; PAYG reportedly doubled Dec 2025 (third-party)"
+    },
+    {
+      "name": "SendGrid",
+      "verdict": "Rejected: permanent free plan retired May 2025 (60-day trial now)"
+    },
+    {
+      "name": "Cloudflare Email Service (Workers send_email)",
+      "verdict": "Beta, requires Workers Paid; watch it - could replace Resend inside Workers"
+    }
+  ],
+  "decision": "Resend has the cleanest API and 3 free domains, enough for several products' auth/receipts emails. Move to Pro ($20) or SES when you exceed 100/day; SES is cheapest above ~50k/mo.",
+  "note": "",
+  "details": "Use Mailpit locally for dev.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Resend: 3,000/mo, 100/day, 3 domains, 30-day retention; Pro $20 for 50k. ToS: the free tier has no non-commercial clause. SES: no permanent free tier; up to $200 credits for new accounts (free plan 6 months, credits within 12 months); dedicated IP $24.95. SendGrid's permanent free plan was retired in 2025 (Twilio changelog 2025-05-27; 60-day trial for new accounts from 2025-03-25), so excluding it was correct.",
+    "url": "https://resend.com/pricing"
+  },
+  "better_pick": null
+}

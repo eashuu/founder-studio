@@ -1,0 +1,40 @@
+{
+  "slug": "mcp-security-posture",
+  "slot": "MCP security posture",
+  "track": "claude-code",
+  "stage": "build",
+  "region": "Global",
+  "order": 2022,
+  "pick": {
+    "name": "Remote (HTTP/OAuth) vendor MCPs only; no filesystem MCP; disable idle local MCPs",
+    "url": "https://code.claude.com/docs/en/plugins/security.md",
+    "what": "stdio MCPs run outside any sandbox with your rights",
+    "why": "Least attack surface and context",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "doc current",
+    "install": "/mcp to disable",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://code.claude.com/docs/en/plugins/security.md",
+    "checked": "2026-10-28"
+  },
+  "alts": [],
+  "candidates": [
+    {
+      "name": "Policy above",
+      "verdict": "pick"
+    }
+  ],
+  "decision": "Keep MCP servers you rarely use disabled until needed; every enabled server costs context and widens the attack surface.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Policy advice, consistent with sandbox doc (native Windows runs commands unsandboxed).",
+    "url": "https://code.claude.com/docs/en/sandboxing.md"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "gdpr-ccpa-basics-for-global-users",
+  "slot": "GDPR / CCPA basics for global users",
+  "track": "legal",
+  "stage": "run",
+  "region": "Global",
+  "order": 10178,
+  "pick": {
+    "name": "GDPR baseline kit: Common Paper DPA + sub-processor list + RoPA",
+    "url": "https://commonpaper.com/standards/",
+    "what": "Sign DPAs as processor, publish sub-processors, keep a record of processing, honour data-subject rights",
+    "why": "Free and covers what B2B buyers actually ask for; EU representative only needed when processing isn't 'occasional'",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "n/a",
+    "maintained": "page 2026",
+    "install": "web",
+    "license": "CC BY 4.0",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://commonpaper.com/standards/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Prighter (EU/UK GDPR representative)",
+      "url": "https://prighter.com/pricing/",
+      "what": "Art. 27 representative service",
+      "why": "Needed once you regularly process EU/UK residents' data with no EU establishment",
+      "cost": "paid",
+      "free_limits": "Small tier EUR 852/yr per region (EUR 71/mo annual or EUR 79/mo monthly), EU and UK priced separately; no setup fee; no free tier",
+      "windows_fit": "web",
+      "maintained": "live page 2026-10-28",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://prighter.com/pricing/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "CCPA applicability check",
+      "url": "https://oag.ca.gov/privacy/ccpa",
+      "what": "California law applies only above thresholds",
+      "why": "Over USD 25M revenue, 100k+ CA consumers bought/sold/shared, or 50%+ revenue from selling data; a solo founder is below all three",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "web",
+      "maintained": "page live 2026-10-28",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://oag.ca.gov/privacy/ccpa",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Common Paper DPA kit",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Prighter",
+      "verdict": "Add when EU/UK B2C usage becomes regular"
+    },
+    {
+      "name": "EU-Rep.Global / DataRep",
+      "verdict": "Other Art. 27 reps (not checked)"
+    },
+    {
+      "name": "CCPA compliance tooling",
+      "verdict": "Not needed below thresholds"
+    }
+  ],
+  "decision": "Art. 27 requires an EU representative unless processing is occasional, low-risk and not large-scale special-category data, so a B2C app with regular EU users eventually needs one. CCPA thresholds (USD 25M revenue / 100k consumers) exclude you for now. Respect US state-law opt-outs anyway.",
+  "note": "",
+  "details": "GDPR applicability to non-EU sellers depends on targeting EU users; verify with a lawyer.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Baseline kit is sound. Note that the CCPA USD 25M revenue threshold has been CPI-adjusted since 1 Jan 2025 (USD 26.625M, from verifier memory, not fetched); harmless here.",
+    "url": "https://commonpaper.com/standards/"
+  },
+  "better_pick": null
+}

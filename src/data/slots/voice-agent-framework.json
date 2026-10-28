@@ -1,0 +1,89 @@
+{
+  "slug": "voice-agent-framework",
+  "slot": "voice-agent framework",
+  "track": "ai-eng",
+  "stage": "build",
+  "region": "Global",
+  "order": 4070,
+  "pick": {
+    "name": "LiveKit Agents",
+    "url": "https://livekit.com/pricing",
+    "what": "Realtime voice/video agent framework (Python + TS/Node SDKs) with WebRTC infra",
+    "why": "TS agents (@livekit/agents) fit the monorepo; Apache-2.0; cloud free tier; self-hostable",
+    "cost": "freemium",
+    "free_limits": "Build (free): 1,000 agent session minutes/mo, 5 concurrent sessions, $2.50 inference credits; Ship from $50/mo; no BAA listed on free plan",
+    "windows_fit": "native (Python/Node)",
+    "maintained": "livekit-agents 1.8.9 on 2026-10-24; @livekit/agents 1.9.4 on 2026-10-24",
+    "install": "pip install livekit-agents  |  npm i @livekit/agents",
+    "license": "Apache-2.0",
+    "commercial_ok": "yes",
+    "needs_company": "no (cloud account or self-host)",
+    "source_url": "https://livekit.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Pipecat",
+      "url": "https://github.com/pipecat-ai/pipecat",
+      "what": "Python voice/multimodal pipeline framework, many STT/TTS/LLM plugins, JS/RN/Swift/Kotlin client SDKs",
+      "why": "Most provider-neutral; Piper/Kokoro/Groq/Ollama plugins enable near-$0 stacks",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native Python 3.11+ (Windows steps not documented)",
+      "maintained": "pipecat-ai 1.14.0 on 2026-10-24",
+      "install": "pip install pipecat-ai",
+      "license": "BSD-2-Clause",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/pipecat-ai/pipecat",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Gemini Live API",
+      "url": "https://ai.google.dev/gemini-api/docs/live",
+      "what": "Speech-to-speech WebSocket API",
+      "why": "Lowest build effort for a prototype",
+      "cost": "freemium",
+      "free_limits": "Free tier/session limits not stated on page",
+      "windows_fit": "web",
+      "maintained": "Docs 2026-10-28",
+      "install": "npm i @google/genai",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://ai.google.dev/gemini-api/docs/live",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "LiveKit Agents",
+      "verdict": "Pick: TS+Python, Apache, free minutes"
+    },
+    {
+      "name": "Pipecat",
+      "verdict": "Alt: Python, max provider choice"
+    },
+    {
+      "name": "Gemini Live API",
+      "verdict": "Alt: fastest prototype"
+    },
+    {
+      "name": "OpenAI Agents JS realtime",
+      "verdict": "RealtimeAgent over WebRTC/WebSocket/SIP; OpenAI-bound"
+    },
+    {
+      "name": "Vapi / Retell / Bland",
+      "verdict": "Paid hosted, not evaluated"
+    }
+  ],
+  "decision": "LiveKit Agents gives a TS-capable stack with free minutes, but healthcare voice needs a plan with a BAA or self-hosting. Choose Pipecat for a fully local STT/LLM/TTS Python pipeline.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Version/licence/limits match registry or official page.",
+    "url": "https://registry.npmjs.org/"
+  },
+  "better_pick": null
+}

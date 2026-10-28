@@ -1,0 +1,85 @@
+{
+  "slug": "tunnels-local-previews",
+  "slot": "Tunnels / local previews",
+  "track": "ship",
+  "stage": "ship",
+  "region": "Global",
+  "order": 6120,
+  "pick": {
+    "name": "Cloudflare Tunnel (cloudflared)",
+    "url": "https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/do-more-with-tunnels/trycloudflare/",
+    "what": "Expose localhost on your own domain",
+    "why": "Named tunnels on your domain, available on all plans; quick tunnels need no account",
+    "cost": "free",
+    "free_limits": "Quick tunnels: 200 in-flight requests, no SSE, no uptime guarantee, testing only; use named tunnels for anything real (no SSE matters for MCP/streaming tests)",
+    "windows_fit": "native Windows binary",
+    "maintained": "2026.10.5 released 2026-10-27",
+    "install": "winget install Cloudflare.cloudflared; cloudflared tunnel --url http://localhost:3000",
+    "license": "Apache-2.0",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/do-more-with-tunnels/trycloudflare/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "ngrok Free",
+      "url": "https://ngrok.com/pricing",
+      "what": "Dev tunnels",
+      "why": "Best inspection UI",
+      "cost": "freemium",
+      "free_limits": "3 endpoints, 1 GB, 20k requests/mo, interstitial page, no custom domain; Hobbyist $10/mo",
+      "windows_fit": "native",
+      "maintained": "active",
+      "install": "winget install ngrok.ngrok",
+      "license": "proprietary",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://ngrok.com/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Tailscale Funnel",
+      "url": "https://tailscale.com/pricing",
+      "what": "Expose a tailnet service publicly",
+      "why": "Great for personal devices",
+      "cost": "freemium",
+      "free_limits": "Personal plan 'only suitable for non-commercial use'; 6 users",
+      "windows_fit": "native",
+      "maintained": "active",
+      "install": "winget install tailscale.tailscale",
+      "license": "BSD-3 client",
+      "commercial_ok": "no",
+      "needs_company": "no",
+      "source_url": "https://tailscale.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "cloudflared",
+      "verdict": "PICK"
+    },
+    {
+      "name": "ngrok",
+      "verdict": "Alt"
+    },
+    {
+      "name": "Tailscale Funnel",
+      "verdict": "Personal plan is non-commercial"
+    },
+    {
+      "name": "Pinggy / localtunnel",
+      "verdict": "Ad-hoc only"
+    }
+  ],
+  "decision": "Cloudflare Tunnel is free, on your domain and already pairs with the stack. Use a named tunnel (not trycloudflare) when testing SSE/streaming MCP.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Quick tunnels: 200 in-flight (429 beyond), no SSE, testing only. Confirmed. cloudflared 2026.10.5 (2026-10-27) confirmed; winget Cloudflare.cloudflared exists (winget-pkgs latest manifest seen 2026.9.3, so winget lags the GitHub release). ngrok (3 endpoints, 1 GB, 20k req, interstitial, $10) and Tailscale Personal ('only suitable for non-commercial use', 6 users) confirmed.",
+    "url": "https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/do-more-with-tunnels/trycloudflare/"
+  },
+  "better_pick": null
+}

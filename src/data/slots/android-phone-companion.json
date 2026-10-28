@@ -1,0 +1,85 @@
+{
+  "slug": "android-phone-companion",
+  "slot": "Android phone companion",
+  "track": "productivity",
+  "stage": "run",
+  "region": "Global",
+  "order": 11220,
+  "pick": {
+    "name": "Phone Link (Link to Windows) + Google Quick Share",
+    "url": "https://support.microsoft.com/en-us/phone-link",
+    "what": "Phone Link: texts, calls, notifications, recent photos, apps on PC; Quick Share: fast E2E-encrypted file transfer both ways",
+    "why": "Both are first-party and free; Phone Link is built into Windows 11 and Quick Share needs no app on Android 6+",
+    "cost": "free",
+    "free_limits": "Free; Phone Link needs Android 10+, same Wi-Fi, a personal Microsoft account (no work/school accounts)",
+    "windows_fit": "native",
+    "maintained": "First-party, current",
+    "install": "Phone Link preinstalled; Quick Share: https://www.android.com/better-together/quick-share-app/",
+    "license": "Proprietary",
+    "commercial_ok": "yes",
+    "needs_company": "unclear",
+    "source_url": "https://support.microsoft.com/en-us/phone-link",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "KDE Connect",
+      "url": "https://kdeconnect.kde.org",
+      "what": "Open-source phone<->PC notifications, clipboard, files, remote input; no account",
+      "why": "Wins if company policy blocks signing a personal Microsoft account into Windows: works over local network with no cloud identity",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "native (Microsoft Store or offline installer) + Android (Play/F-Droid)",
+      "maintained": "v26.08.2 2026-10-08",
+      "install": "Microsoft Store 'KDE Connect'",
+      "license": "GPL (KDE)",
+      "commercial_ok": "yes",
+      "needs_company": "unclear",
+      "source_url": "https://kdeconnect.kde.org/download.html",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Google Quick Share for Windows (alone)",
+      "url": "https://www.android.com/better-together/quick-share-app/",
+      "what": "File transfer only",
+      "why": "Minimal footprint if you only need files",
+      "cost": "free",
+      "free_limits": "Free; Win10+ 64-bit; Wi-Fi + Bluetooth on",
+      "windows_fit": "native",
+      "maintained": "Current",
+      "install": "download from android.com",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "unclear",
+      "source_url": "https://www.android.com/better-together/quick-share-app/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Phone Link + Quick Share",
+      "verdict": "PICK: first-party, richest features"
+    },
+    {
+      "name": "KDE Connect",
+      "verdict": "No account needed; best under strict IT policy"
+    },
+    {
+      "name": "Quick Share alone",
+      "verdict": "Files only"
+    },
+    {
+      "name": "Samsung Quick Share",
+      "verdict": "Only for Samsung PCs; Google's version does not support them"
+    }
+  ],
+  "decision": "Phone Link plus Quick Share is the most capable free pairing. Phone Link needs a personal Microsoft account on Windows, which company policy may not allow on a managed laptop; in that case use KDE Connect (no account, local network) plus Quick Share.",
+  "note": "",
+  "details": "Do not mirror personal phone notifications onto a device IT can inspect if that bothers you.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Phone Link: Android 10+, Microsoft account, work/school accounts not supported - confirmed on MS page. Same-Wi-Fi not stated on that page.",
+    "url": "https://support.microsoft.com/en-us/phone-link"
+  },
+  "better_pick": null
+}

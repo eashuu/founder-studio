@@ -1,0 +1,85 @@
+{
+  "slug": "dotfiles-config-backup",
+  "slot": "dotfiles / config backup",
+  "track": "windows-dev",
+  "stage": "build",
+  "region": "Global",
+  "order": 3046,
+  "pick": {
+    "name": "chezmoi",
+    "url": "https://github.com/twpayne/chezmoi",
+    "what": "Dotfiles manager with templates + secret integration",
+    "why": "Native Windows; backs up ~/.claude, skills, pwsh profile to a private repo",
+    "cost": "free",
+    "free_limits": "n/a",
+    "windows_fit": "native",
+    "maintained": "v2.73.3 (2026-10-20)",
+    "install": "scoop install chezmoi",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/twpayne/chezmoi",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Plain private git repo",
+      "url": "https://code.claude.com/docs/en/settings.md",
+      "what": "Manual",
+      "why": "Zero tools",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "n/a",
+      "install": "n/a",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://code.claude.com/docs/en/settings.md",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "winget export",
+      "url": "https://learn.microsoft.com/windows/package-manager/winget/export",
+      "what": "App list snapshot",
+      "why": "Rebuild apps",
+      "cost": "free",
+      "free_limits": "n/a",
+      "windows_fit": "native",
+      "maintained": "built-in",
+      "install": "winget export -o apps.json",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://learn.microsoft.com/windows/package-manager/winget/export",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "chezmoi",
+      "verdict": "pick"
+    },
+    {
+      "name": "git repo",
+      "verdict": "minimal"
+    },
+    {
+      "name": "yadm",
+      "verdict": "stale since 2025-03, needs bash"
+    },
+    {
+      "name": "GNU stow",
+      "verdict": "no native Windows"
+    }
+  ],
+  "decision": "Keep your config in a private repo so a new or reclaimed machine is set up in minutes.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "v2.73.3 (20 Oct 2026).",
+    "url": "https://github.com/twpayne/chezmoi/releases"
+  },
+  "better_pick": null
+}

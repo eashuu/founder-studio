@@ -1,0 +1,89 @@
+{
+  "slug": "meeting-notes-call-recording",
+  "slot": "Meeting notes / call recording",
+  "track": "sales",
+  "stage": "sell",
+  "region": "Global",
+  "order": 7199,
+  "pick": {
+    "name": "Fathom (Free)",
+    "url": "https://www.fathom.ai/pricing",
+    "what": "AI notetaker for Zoom, Meet and Teams",
+    "why": "Free unlimited recordings + transcripts + instant summaries across all three platforms your buyers use",
+    "cost": "freemium",
+    "free_limits": "Free: unlimited recordings/transcripts, instant summaries; Premium USD 16/mo annual",
+    "windows_fit": "web (+ desktop)",
+    "maintained": "live page 2026-10-28",
+    "install": "web",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.fathom.ai/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Granola",
+      "url": "https://www.granola.ai/pricing",
+      "what": "Bot-free notetaker that captures device audio",
+      "why": "No bot joins the call, which suits sensitive/healthcare prospects; free keeps 30 days of history; Business USD 14/mo",
+      "cost": "freemium",
+      "free_limits": "Free: 30-day meeting history",
+      "windows_fit": "unclear (Windows not listed on pricing page)",
+      "maintained": "live page 2026-10-28",
+      "install": "web/desktop",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://www.granola.ai/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Gemini 'Take notes for me' in Meet (Google AI Pro)",
+      "url": "https://alternativeto.net/news/2026/7/gemini-can-now-take-notes-in-google-meet-for-ai-pro-and-ultra-users/",
+      "what": "Native Meet note-taking",
+      "why": "Already paid until Jan 2028; Meet-only",
+      "cost": "owned",
+      "free_limits": "Google AI Pro/Ultra; Meet web/mobile",
+      "windows_fit": "web",
+      "maintained": "launched 2026-06",
+      "install": "web",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://alternativeto.net/news/2026/7/gemini-can-now-take-notes-in-google-meet-for-ai-pro-and-ultra-users/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Fathom Free",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Granola",
+      "verdict": "Pick for bot-free capture"
+    },
+    {
+      "name": "Gemini in Meet",
+      "verdict": "Use for calls you host on Meet"
+    },
+    {
+      "name": "tl;dv",
+      "verdict": "Free tier limits not shown; Pro EUR 18/mo"
+    },
+    {
+      "name": "Fireflies / Otter",
+      "verdict": "Tighter free limits (not checked)"
+    }
+  ],
+  "decision": "Fathom covers Zoom/Teams/Meet for free. Use Gemini when you host on Meet, and Granola when a prospect objects to bots. Always announce recording, and never record PHI-bearing calls without a BAA.",
+  "note": "Consolidated: same pick as the Productivity track. Use Meetily (local, botless) for healthcare or PHI calls.",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Fathom Free confirmed: unlimited recordings, transcription, storage and instant AI summaries (no stated cap); Premium USD 20 monthly / USD 16 annual. Granola alt confirmed (30-day history, Business USD 14). Granola Windows app still unconfirmed.",
+    "url": "https://www.fathom.ai/pricing"
+  },
+  "better_pick": null
+}

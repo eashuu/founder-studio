@@ -1,0 +1,85 @@
+{
+  "slug": "linkedin-prospecting",
+  "slot": "LinkedIn prospecting",
+  "track": "sales",
+  "stage": "sell",
+  "region": "Global",
+  "order": 7189,
+  "pick": {
+    "name": "Manual LinkedIn + Apollo Chrome extension",
+    "url": "https://www.linkedin.com/legal/user-agreement",
+    "what": "Personal profile content + manual connection requests/DMs; Apollo extension for contact data",
+    "why": "Free and inside LinkedIn's User Agreement, which bans bots, automation and scraping plugins (s.8.2)",
+    "cost": "free",
+    "free_limits": "LinkedIn free invitation limits apply",
+    "windows_fit": "web",
+    "maintained": "agreement live 2026-10-28",
+    "install": "web",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://www.linkedin.com/legal/user-agreement",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "LinkedIn Sales Navigator Core",
+      "url": "https://business.linkedin.com/sales-solutions/compare-plans",
+      "what": "Advanced lead search, lists, InMail",
+      "why": "Best enterprise account mapping; USD 119.99/mo or USD 1,079.88/yr; buy for focused enterprise pushes only",
+      "cost": "paid",
+      "free_limits": "Trial varies by region",
+      "windows_fit": "web",
+      "maintained": "live page 2026-10-28",
+      "install": "web",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://business.linkedin.com/sales-solutions/compare-plans",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Waalaxy",
+      "url": "https://www.waalaxy.com/pricing",
+      "what": "LinkedIn automation (invites/messages) + email",
+      "why": "Cheapest automation (Pro EUR 19/mo, 300 invites/mo) but violates LinkedIn's UA and risks restriction",
+      "cost": "paid",
+      "free_limits": "14-day trial; free inbox tier",
+      "windows_fit": "web (Chrome extension)",
+      "maintained": "live page 2026-10-28",
+      "install": "Chrome extension",
+      "license": "proprietary",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://www.waalaxy.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Manual + Apollo extension",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Sales Navigator Core",
+      "verdict": "During enterprise/healthcare account-based pushes"
+    },
+    {
+      "name": "Waalaxy / Expandi / HeyReach / Dripify",
+      "verdict": "Automation; account-ban risk under UA s.8.2"
+    },
+    {
+      "name": "lemlist Multichannel",
+      "verdict": "Same ToS risk, USD 87/mo"
+    }
+  ],
+  "decision": "Post consistently and send personal connection notes by hand; that is the safe, free channel. Rent Sales Navigator a month at a time for enterprise account mapping. Avoid automation tools on the account you sell from.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "User Agreement s.8.2 items 2 (scraping incl. browser plugins/add-ons) and 13 (bots/automation) confirmed. Note that the Apollo extension's profile-data copying sits close to item 2; use it for lookup, not bulk scraping.",
+    "url": "https://www.linkedin.com/legal/user-agreement"
+  },
+  "better_pick": null
+}

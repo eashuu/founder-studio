@@ -1,0 +1,97 @@
+{
+  "slug": "ai-video-generation",
+  "slot": "AI video generation",
+  "track": "design",
+  "stage": "discover",
+  "region": "Global",
+  "order": 1161,
+  "pick": {
+    "name": "Veo 3.1 / Omni Flash via Google Flow (Google AI Pro)",
+    "url": "https://support.google.com/flow/answer/16526234?hl=en",
+    "what": "Text/image-to-video with native audio, scene building in Flow",
+    "why": "Highest-rated generative video, included in your plan; Sora is discontinued.",
+    "cost": "owned",
+    "free_limits": "AI Pro: 1,000 Flow credits/month (no rollover) + 10,000 Flow Music credits. Veo 3.1 Lite 10, Fast 20, Quality 100 (8 s) credits per generation; Omni Flash 720p 7-15 credits; edits 40. = ~50 Fast or 10 Quality clips/month. Top-ups purchasable",
+    "windows_fit": "web",
+    "maintained": "live service",
+    "install": "web: labs.google/flow",
+    "license": "Google ToS",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://support.google.com/flow/answer/16526234?hl=en",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "HyperFrames (code-driven video)",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "what": "HTML+GSAP compositions rendered to MP4 via headless Chrome+ffmpeg, Claude Code plugin",
+      "why": "Best for product demo/explainer videos: exact UI, brand fonts, re-renderable, no credits.",
+      "cost": "free",
+      "free_limits": "Free, no per-render fees",
+      "windows_fit": "native (Node 22+)",
+      "maintained": "verified 2026-10-28 in user notes",
+      "install": "claude plugin marketplace add heygen-com/hyperframes ; claude plugin install hyperframes@hyperframes",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/heygen-com/hyperframes",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Kling",
+      "url": "https://kling.ai",
+      "what": "Generative video with a free daily-credit tier",
+      "why": "Best free/cheap generative video when Flow credits run out.",
+      "cost": "freemium",
+      "free_limits": "Free daily credits; exact numbers and commercial terms unverified (page JS-only)",
+      "windows_fit": "web",
+      "maintained": "live",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://kling.ai",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Veo 3.1 / Flow",
+      "verdict": "pick"
+    },
+    {
+      "name": "HyperFrames",
+      "verdict": "alt for product demos"
+    },
+    {
+      "name": "Kling",
+      "verdict": "alt free tier"
+    },
+    {
+      "name": "Sora",
+      "verdict": "DISCONTINUED: shutdown announced 24 Mar 2026"
+    },
+    {
+      "name": "Runway",
+      "verdict": "paid, strong editing"
+    },
+    {
+      "name": "Remotion",
+      "verdict": "code video; free only for companies up to 3 people"
+    },
+    {
+      "name": "Grok Imagine / PixVerse",
+      "verdict": "free tiers, unverified"
+    }
+  ],
+  "decision": "Use Flow for cinematic B-roll and ads (about 50 Fast clips a month); use HyperFrames for anything showing your product UI, where generative video looks fake. Buy Flow top-ups rather than another subscription if you run out.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Flow help page: AI Pro 1,000 Flow credits/month, no rollover; Veo 3.1 Lite 10, Fast 20, Quality 100; Omni Flash 720p 7/10/12/15; edits 40; top-ups for Plus/Pro/Ultra (not Japan). Google AI plans page confirms 10,000 Flow Music credits/month on Pro. Sora: OpenAI announced discontinuation 24 Mar 2026; app closed 26 Apr 2026, API 24 Sep 2026 (The Decoder citing OpenAI help article 20001152).",
+    "url": "https://support.google.com/flow/answer/16526234?hl=en"
+  },
+  "better_pick": null
+}

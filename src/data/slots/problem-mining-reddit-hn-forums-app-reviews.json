@@ -1,0 +1,109 @@
+{
+  "slug": "problem-mining-reddit-hn-forums-app-reviews",
+  "slot": "Problem mining (Reddit/HN/forums/app reviews)",
+  "track": "discover",
+  "stage": "discover",
+  "region": "Global",
+  "order": 136,
+  "pick": {
+    "name": "F5Bot",
+    "url": "https://f5bot.com",
+    "what": "Free keyword email alerts for Reddit, Hacker News and Lobsters",
+    "why": "The only credible $0 always-on listener now that GummySearch is gone. Pair it with Claude/Gemini Deep Research for one-off digs.",
+    "cost": "free",
+    "free_limits": "Free plan: keyword alerts (free keyword cap not stated). Silver $12.99/mo for 20 keywords is labelled non-commercial; Gold $49.99/mo for 200 keywords",
+    "windows_fit": "web",
+    "maintained": "live service (no release cadence)",
+    "install": "web",
+    "license": "proprietary SaaS",
+    "commercial_ok": "unclear",
+    "needs_company": "no",
+    "source_url": "https://f5bot.com",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Syften",
+      "url": "https://syften.com",
+      "what": "Paid multi-community monitor (Reddit, HN, forums, Slack/Discord communities) with API and MCP",
+      "why": "Best pay-later upgrade: wider sources, filters, an API/MCP Claude can read.",
+      "cost": "paid",
+      "free_limits": "No free plan; 14-day PRO trial, no card. Entry $29.95 (3 filters, 100 results/day); Standard $49.95 (20, 200/day); PRO $119.95 (100, 500/day)",
+      "windows_fit": "web",
+      "maintained": "live service",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://syften.com",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Appfigures (free)",
+      "url": "https://appfigures.com/pricing",
+      "what": "App-store review mining for your own and competitor apps",
+      "why": "B2C/Android: competitor 1-2 star reviews are the cheapest problem list there is.",
+      "cost": "freemium",
+      "free_limits": "Starter free: 5 connected apps, review management; no competitor download/revenue estimates. Connect $9.99/mo ($7.99 annual)",
+      "windows_fit": "web",
+      "maintained": "live service",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "unclear",
+      "needs_company": "no",
+      "source_url": "https://appfigures.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "F5Bot",
+      "verdict": "pick: free alerts on Reddit+HN+Lobsters"
+    },
+    {
+      "name": "GummySearch",
+      "verdict": "DEAD: could not get a commercial Reddit Data API licence; signups closed 30 Nov 2025, service and data deleted 1 Dec 2026"
+    },
+    {
+      "name": "Syften",
+      "verdict": "alt: best paid listener ($29.95/mo), has API/MCP"
+    },
+    {
+      "name": "Redreach",
+      "verdict": "no public price; sales-led Reddit lead tool"
+    },
+    {
+      "name": "PainOnSocial",
+      "verdict": "$19/mo Reddit-only pain-point scanner; Reddit-data dependency is the same risk that killed GummySearch"
+    },
+    {
+      "name": "HN Algolia search/API",
+      "verdict": "free, use ad hoc (or let Claude query it); not a monitor"
+    },
+    {
+      "name": "Reddit search / Reddit Answers",
+      "verdict": "free, manual; Reddit blocks most scraping"
+    },
+    {
+      "name": "Brand24",
+      "verdict": "$199+/mo, overkill"
+    },
+    {
+      "name": "Appfigures free",
+      "verdict": "alt for app-review mining"
+    },
+    {
+      "name": "AppFollow",
+      "verdict": "pricing not visible"
+    }
+  ],
+  "decision": "F5Bot gives free, always-on alerts across the two communities that matter most for AI/dev products; deep one-off mining is better done by Claude Research or Gemini Deep Research prompts than by a paid scraper. Switch to Syften when you need more sources, filters or an API feed into Claude.",
+  "note": "",
+  "details": "GummySearch shutdown: https://gummysearch.com/closing-time (seen via search result). Reddit's paid Data API is why most Reddit-mining tools are fragile.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Free cap not stated; Silver $12.99/20 keywords is non-commercial; Gold $49.99/200. commercial_ok 'unclear' is right.",
+    "url": "https://f5bot.com"
+  },
+  "better_pick": null
+}

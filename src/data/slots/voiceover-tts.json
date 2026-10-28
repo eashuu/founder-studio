@@ -1,0 +1,101 @@
+{
+  "slug": "voiceover-tts",
+  "slot": "Voiceover / TTS",
+  "track": "design",
+  "stage": "discover",
+  "region": "Global",
+  "order": 1162,
+  "pick": {
+    "name": "Kokoro-82M",
+    "url": "https://huggingface.co/hexgrad/Kokoro-82M",
+    "what": "Small open-weight TTS that runs on CPU",
+    "why": "Free, offline on a no-GPU laptop, Apache-2.0 so commercial use is clean; good quality for demos.",
+    "cost": "free",
+    "free_limits": "Free, local; 8 languages, 54 voices (v1.0)",
+    "windows_fit": "native (Python, CPU)",
+    "maintained": "v1.0, 27 Jan 2025",
+    "install": "uv pip install kokoro soundfile",
+    "license": "Apache-2.0",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://huggingface.co/hexgrad/Kokoro-82M",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Google Cloud TTS (Chirp 3 HD)",
+      "url": "https://cloud.google.com/text-to-speech/pricing",
+      "what": "Studio-grade cloud voices incl. Indian English/Hindi",
+      "why": "Higher quality and Indian voices; 1M free chars/month then $30 per 1M.",
+      "cost": "freemium",
+      "free_limits": "Chirp 3 HD: 1M chars/month free, then $30/1M (search summary matched official page)",
+      "windows_fit": "web/API",
+      "maintained": "live",
+      "install": "pip install google-cloud-texttospeech",
+      "license": "Google Cloud ToS",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://cloud.google.com/text-to-speech/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "ElevenLabs",
+      "url": "https://elevenlabs.io/pricing",
+      "what": "Most natural/expressive cloud voices, hosted MCP",
+      "why": "Pay-later pick for premium voiceover; free tier is not licensed for commercial use.",
+      "cost": "freemium",
+      "free_limits": "Free: 10,000 credits/mo, no commercial licence; commercial from Starter (~$6/mo)",
+      "windows_fit": "web/API",
+      "maintained": "live",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "no (free) / yes (Starter+)",
+      "needs_company": "no",
+      "source_url": "https://elevenlabs.io/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Kokoro-82M",
+      "verdict": "pick"
+    },
+    {
+      "name": "Google Cloud Chirp 3 HD",
+      "verdict": "alt free 1M chars"
+    },
+    {
+      "name": "ElevenLabs",
+      "verdict": "alt paid"
+    },
+    {
+      "name": "Gemini API TTS free tier",
+      "verdict": "free-tier data used to improve Google products; commercial terms unclear"
+    },
+    {
+      "name": "Azure TTS",
+      "verdict": "0.5M chars/mo free neural"
+    },
+    {
+      "name": "Piper",
+      "verdict": "GPL-3.0"
+    },
+    {
+      "name": "edge-tts",
+      "verdict": "unofficial endpoint, commercial risk"
+    },
+    {
+      "name": "Chatterbox",
+      "verdict": "MIT but adds watermark"
+    }
+  ],
+  "decision": "Kokoro is free, local and licence-clean. Use Chirp 3 HD (within 1M free chars) for Indian-accent or Hindi narration, and ElevenLabs Starter when a launch video needs the best voice.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Apache-2.0, v1.0, 8 languages, 54 voices. Windows install may also need espeak-ng.",
+    "url": "https://huggingface.co/hexgrad/Kokoro-82M"
+  },
+  "better_pick": null
+}

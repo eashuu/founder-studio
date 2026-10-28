@@ -1,0 +1,89 @@
+{
+  "slug": "crash-error-reporting",
+  "slot": "crash + error reporting",
+  "track": "app-stacks",
+  "stage": "build",
+  "region": "Global",
+  "order": 5094,
+  "pick": {
+    "name": "Sentry",
+    "url": "https://sentry.io/pricing/",
+    "what": "Errors, tracing, replay across web/mobile/desktop/backend",
+    "why": "One tool across Next, Hono, Expo (@sentry/react-native), Electron (@sentry/electron) and Python",
+    "cost": "freemium",
+    "free_limits": "Developer: 5,000 errors, 5M spans, 50 replays, 1 uptime + 1 cron monitor, 1 user, 30-day lookback; Team $29/mo",
+    "windows_fit": "web",
+    "maintained": "@sentry/react-native 8.32.0 (2026-10-22); @sentry/electron 8.3.0 (2026-10-19)",
+    "install": "npx @sentry/wizard@latest -i reactNative",
+    "license": "SDKs MIT; server FSL",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://sentry.io/pricing/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Firebase Crashlytics",
+      "url": "https://firebase.google.com/pricing",
+      "what": "Mobile crash reporting",
+      "why": "Unlimited, no-cost for mobile crashes",
+      "cost": "free",
+      "free_limits": "No-cost product",
+      "windows_fit": "web",
+      "maintained": "pricing live",
+      "install": "expo install @react-native-firebase/crashlytics",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://firebase.google.com/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "PostHog error tracking",
+      "url": "https://posthog.com/pricing",
+      "what": "Errors alongside product analytics",
+      "why": "If PostHog is already your analytics",
+      "cost": "freemium",
+      "free_limits": "free tier not verified",
+      "windows_fit": "web",
+      "maintained": "posthog-js 1.441.0 (2026-10-28)",
+      "install": "npm i posthog-js",
+      "license": "MIT (SDK)",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://posthog.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Sentry (pick)",
+      "verdict": "Single pane for all platforms."
+    },
+    {
+      "name": "Crashlytics",
+      "verdict": "Wins for mobile-only at scale (no quota)."
+    },
+    {
+      "name": "PostHog",
+      "verdict": "Wins if consolidating analytics + errors."
+    },
+    {
+      "name": "Expo Observability / EAS Observe",
+      "verdict": "New native crash reporting (Oct 2026); Expo-only, pricing not checked."
+    },
+    {
+      "name": "Bugsnag",
+      "verdict": "Paid-leaning."
+    }
+  ],
+  "decision": "Sentry covers every surface of the one-stack with one SDK family. Pair with Crashlytics only if mobile crash volume exceeds Sentry's 5k free errors.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "Version/licence/limits match registry or official page.",
+    "url": "https://registry.npmjs.org/"
+  },
+  "better_pick": null
+}

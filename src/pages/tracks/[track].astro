@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import Tear from '../../components/Tear.astro';
+import Slip from '../../components/Slip.astro';
+import { meta, slotsIn, stage } from '../../lib/data.js';
+
+export function getStaticPaths() {
+  return meta.tracks.map((t) => ({ params: { track: t.key }, props: { t } }));
+}
+const { t } = Astro.props;
+const list = slotsIn(t.key);
+---
+<Base title={t.name} description={t.blurb}>
+  <section class="sheet grain page-head">
+    <div class="crumbs"><a href="/tracks/">Tracks</a> / {stage(t.stage).name}</div>
+    <h1>{t.name}</h1>
+    <p>{t.blurb}</p>
+    {t.region !== 'Global' && <p class="src">Region: {t.region}. Tax, payment and legal slots are researched for India-based founders who sell globally.</p>}
+    <Tear seed={`h-${t.key}`} side="bottom" />
+  </section>
+  <div class="slips">
+    {list.map((s) => <Slip s={s} />)}
+  </div>
+</Base>

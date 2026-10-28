@@ -1,0 +1,93 @@
+{
+  "slug": "browser-profiles",
+  "slot": "browser + profiles",
+  "track": "productivity",
+  "stage": "run",
+  "region": "Global",
+  "order": 11218,
+  "pick": {
+    "name": "Google Chrome (personal profile) + Microsoft Edge (company profile)",
+    "url": "https://support.claude.com/en/articles/12012173-claude-in-chrome",
+    "what": "Chrome holds the personal Google account, Claude in Chrome and Gemini in Chrome; Edge holds the M365 work identity",
+    "why": "Claude in Chrome (included in Max) works only in Google Chrome; Gemini in Chrome launched in India Mar 2026; Edge is the natural home for Entra/M365 SSO and company policy",
+    "cost": "free",
+    "free_limits": "Free browsers; Claude in Chrome on paid Claude plans; Gemini agentic browsing still US-only",
+    "windows_fit": "native",
+    "maintained": "Chrome/Edge evergreen",
+    "install": "winget install -e --id Google.Chrome (Edge is preinstalled)",
+    "license": "Proprietary (Chromium-based)",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://support.claude.com/en/articles/12012173-claude-in-chrome",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Brave",
+      "url": "https://brave.com",
+      "what": "Privacy Chromium browser with profiles",
+      "why": "Best if you want ad-blocking by default for the personal profile; Claude in Chrome is not supported there",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "native",
+      "maintained": "v1.100.41 2026-10-28",
+      "install": "winget install -e --id Brave.Brave",
+      "license": "MPL-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/brave/brave-browser",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Zen Browser",
+      "url": "https://zen-browser.app",
+      "what": "Firefox-based browser with Arc-style workspaces/vertical tabs",
+      "why": "Best Arc replacement on Windows (Arc stops working 2026-12-22); loses Chrome-only AI extensions",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "native",
+      "maintained": "1.23.4b 2026-10-21",
+      "install": "https://zen-browser.app/download",
+      "license": "MPL-2.0",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/zen-browser/desktop",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Chrome + Edge",
+      "verdict": "PICK: Claude in Chrome + Gemini in Chrome personal; Edge for M365"
+    },
+    {
+      "name": "Brave",
+      "verdict": "Good privacy; no Claude in Chrome"
+    },
+    {
+      "name": "Zen",
+      "verdict": "Best Arc-like UX; Firefox engine"
+    },
+    {
+      "name": "Arc",
+      "verdict": "Sunsetting: stops working on Windows 2026-12-22; remove"
+    },
+    {
+      "name": "Dia",
+      "verdict": "Mac-only (Apple silicon)"
+    },
+    {
+      "name": "BrowserOS",
+      "verdict": "Open-source agentic Chromium (active 2026-10-28); keep as the agent browser, not the daily driver"
+    }
+  ],
+  "decision": "Two browsers split by identity is the cleanest separation, especially on a work laptop and puts each AI where it works: Claude in Chrome and Gemini in Chrome need Chrome, and M365 works best in Edge. Flip the personal side to Zen only if you value Arc-style workspaces more than Claude/Gemini browser agents.",
+  "note": "",
+  "details": "Claude in Chrome safety: Anthropic says it is 'still risky'; keep it out of the company profile.",
+  "verify": {
+    "verdict": "ok",
+    "note": "Arc shutdown confirmed by reporting of the 2026-10-22 announcement: Arc stops working on Windows and macOS on 2026-12-22, new accounts closed 2026-10-22, data deleted within 30 days of deactivation. | Claude in Chrome: Chrome only (not other Chromium, mobile), paid plans. Gemini in Chrome launched in India 2026-03-11 (sidebar, Hindi etc); agentic browsing US-only at launch. Google.Chrome winget ID exists.",
+    "url": "https://techcrunch.com/2026/10/22/arc-browser-sunsets-december-22-as-the-browser-company-doubles-down-on-dia/"
+  },
+  "better_pick": null
+}

@@ -1,0 +1,89 @@
+{
+  "slug": "whiteboard-sketch-diagrams",
+  "slot": "Whiteboard / sketch diagrams",
+  "track": "design",
+  "stage": "discover",
+  "region": "Global",
+  "order": 1166,
+  "pick": {
+    "name": "Excalidraw (+ official MCP)",
+    "url": "https://github.com/excalidraw/excalidraw",
+    "what": "Hand-drawn style whiteboard; official MCP lets Claude draw scenes",
+    "why": "Free, MIT, and the official hosted MCP (mcp.excalidraw.com) lets Claude create diagrams directly.",
+    "cost": "free",
+    "free_limits": "excalidraw.com free; Excalidraw+ free tier 1 scene, 10 AI requests/day; Plus $6/user/mo",
+    "windows_fit": "web",
+    "maintained": "v0.18.1, 21 Apr",
+    "install": "web; MCP: https://mcp.excalidraw.com",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "needs_company": "no",
+    "source_url": "https://github.com/excalidraw/excalidraw-mcp",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "draw.io Desktop",
+      "url": "https://github.com/jgraph/drawio-desktop",
+      "what": "Precise boxes-and-arrows diagramming, offline Windows app",
+      "why": "Best for exact network/cloud architecture diagrams and client .vsdx-like work.",
+      "cost": "free",
+      "free_limits": "Free",
+      "windows_fit": "native (.exe/.msi)",
+      "maintained": "v32.6.1, 23 Oct 2026",
+      "install": "winget install JGraph.Draw",
+      "license": "Apache-2.0 (app); GPL-3.0 for deb/rpm",
+      "commercial_ok": "yes",
+      "needs_company": "no",
+      "source_url": "https://github.com/jgraph/drawio-desktop/releases",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "tldraw.com",
+      "url": "https://tldraw.dev/community/license",
+      "what": "Infinite canvas whiteboard",
+      "why": "Nice free app; SDK embedding in your product needs a licence key (Hobby non-commercial or paid).",
+      "cost": "free",
+      "free_limits": "App free; SDK production use requires licence",
+      "windows_fit": "web",
+      "maintained": "live",
+      "install": "web",
+      "license": "tldraw licence",
+      "commercial_ok": "no (SDK commercial without paid licence)",
+      "needs_company": "no",
+      "source_url": "https://tldraw.dev/community/license",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Excalidraw",
+      "verdict": "pick"
+    },
+    {
+      "name": "draw.io",
+      "verdict": "alt"
+    },
+    {
+      "name": "tldraw",
+      "verdict": "alt app; SDK licence trap"
+    },
+    {
+      "name": "Miro free",
+      "verdict": "3 boards, collaboration-focused"
+    },
+    {
+      "name": "FigJam / Penpot",
+      "verdict": "inside design tools"
+    }
+  ],
+  "decision": "Excalidraw is free, open and Claude-drivable through its official MCP. Use draw.io when precision matters more than speed.",
+  "note": "",
+  "details": "",
+  "verify": {
+    "verdict": "ok",
+    "note": "excalidraw-mcp repo exists (MIT, remote https://mcp.excalidraw.com); @excalidraw/excalidraw 0.18.1 (2026-04-20); Excalidraw+ free 1 scene / 10 AI requests a day, Plus $6.",
+    "url": "https://github.com/excalidraw/excalidraw-mcp"
+  },
+  "better_pick": null
+}

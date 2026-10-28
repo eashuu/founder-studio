@@ -33,6 +33,21 @@ function seeded(str) {
   };
 }
 
+// Short display name: "Expo (React Native, ...) + Expo Router" -> "Expo"
+export const shortName = (n) => n.split(/\s[(+/:]|\s\+|,\s|;\s| via | with /)[0].trim();
+
+// clip-path polygon for a torn paper scrap: jagged on every side, stable per seed.
+export function tornPolygon(seed, jag = 2.2, n = 9) {
+  const r = seeded(seed);
+  const pts = [];
+  const j = () => (r() * jag).toFixed(2);
+  for (let i = 0; i <= n; i++) pts.push(`${((i / n) * 100).toFixed(1)}% ${j()}%`);
+  for (let i = 1; i <= n; i++) pts.push(`${(100 - +j()).toFixed(2)}% ${((i / n) * 100).toFixed(1)}%`);
+  for (let i = n - 1; i >= 0; i--) pts.push(`${((i / n) * 100).toFixed(1)}% ${(100 - +j()).toFixed(2)}%`);
+  for (let i = n - 1; i >= 1; i--) pts.push(`${j()}% ${((i / n) * 100).toFixed(1)}%`);
+  return `polygon(${pts.join(', ')})`;
+}
+
 // SVG path for a torn paper edge in a 100 x 8 viewBox. side "top": paper below the tear; "bottom": paper above.
 export function tearPath(seed, side = 'bottom', n = 34) {
   const r = seeded(seed);

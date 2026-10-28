@@ -1,7 +1,6 @@
 ---
-import Base from '../../layouts/Base.astro';
-import Tear from '../../components/Tear.astro';
-import { slots, track, stage, costKey, verdictLabel, editUrl } from '../../lib/data.js';
+import Brutal from '../../layouts/Brutal.astro';
+import { slots, slotsIn, track, stage, costKey, verdictLabel, editUrl, shortName } from '../../lib/data.js';
 
 export function getStaticPaths() {
   return slots.map((s) => ({ params: { slug: s.slug }, props: { s } }));
@@ -17,65 +16,101 @@ const facts = [
   ['Windows', p.windows_fit], ['Licence', p.license], ['Maintained', p.maintained], ['Region', s.region],
 ].filter(([, x]) => show(x));
 const hasInstall = p.install && !/^web$/i.test(p.install);
+const sib = slotsIn(s.track);
+const at = sib.indexOf(s);
+const prev = sib[(at - 1 + sib.length) % sib.length];
+const next = sib[(at + 1) % sib.length];
+const no = String(slots.indexOf(s) + 1).padStart(3, '0');
+const key = (n) => shortName(n).toLowerCase();
+const pickKey = key(p.name);
+const altKeys = new Set(s.alts.map((a) => key(a.name)));
+const isPick = (n) => /\(pick\)/i.test(n) || key(n) === pickKey || key(n).startsWith(pickKey);
 ---
-<Base title={`${s.slot}: ${p.name}`} description={`${p.name}: ${p.what}`}>
-  <article class="sheet grain">
-    <div class="crumbs"><a href={`/tracks/${t.key}/`}>{t.name}</a> / {stage(t.stage).name}</div>
-    <div class="tool">
+<Brutal title={`${shortName(p.name)}: ${s.slot}`} description={`${p.name}: ${p.what}`}>
+  <div class="wrap">
+    <div class="spec-top cap">
+      <span><a href="/" data-scramble>Index</a><span class="sl">/</span>{stage(t.stage).name}<span class="sl">/</span><a href={`/tracks/${t.key}/`} data-scramble>{t.name}</a><span class="sl">/</span>No. {no}</span>
+      <span>{s.slot}<span class="sl">/</span>Checked {p.checked}</span>
+    </div>
+
+    <section class="spec-hero">
       <div>
-        <span class="label">{s.slot}</span>
-        <h1>{p.name}</h1>
+        <span class="cap" style="color:var(--blue)">The pick</span>
+        <h1 class="display">{shortName(p.name)}</h1>
+        {shortName(p.name) !== p.name && <p class="cap" style="margin-top:14px">{p.name}</p>}
         <p class="what">{p.what}</p>
         {p.why && <p class="why">{p.why}</p>}
         {hasInstall && <div class="cmd"><code>{p.install}</code><button type="button" data-copy={p.install}>Copy</button></div>}
-        <p class="src" style="margin-top:14px"><a href={p.url || p.source_url}>Website</a> · <a href={p.source_url}>Source checked {p.checked}</a></p>
+        <div class="actions">
+          <button class="btn blue" type="button" data-add={s.slug} data-name={p.name} data-slot={s.slot}>+ Add to stack</button>
+          <a class="btn" href={p.url || p.source_url}>Website ↗</a>
+          <a class="btn" href={p.source_url}>Source ↗</a>
+        </div>
       </div>
       <aside>
-        <span class={`stamp ${good ? '' : 'warn'}`}>{verdictLabel(v)}</span>
+        <div class={`stamp ${good ? '' : 'warn'}`}>{verdictLabel(v)}<small>{good ? 'Primary source' : 'Needs a check'} · {p.checked}</small></div>
         <dl class="facts">{facts.map(([k, x]) => <div><dt>{k}</dt><dd>{x}</dd></div>)}</dl>
       </aside>
-    </div>
+    </section>
 
     {(s.decision || s.note) && (
-      <section class="section">
-        <h2>Why this pick</h2>
-        {s.decision && <p class="prose">{s.decision}</p>}
-        {s.note && <p class="margin-note">{s.note}</p>}
-        {s.details && <p class="src" style="margin-top:14px">{s.details}</p>}
+      <section class="block">
+        <div class="block-h"><h2>Why this</h2><span class="cap">Decision</span></div>
+        {s.decision && <p class="lede">{s.decision}</p>}
+        {s.note && <div class="slip">{s.note}</div>}
+        {s.details && <p class="why" style="max-width:70ch;margin-top:22px">{s.details}</p>}
       </section>
     )}
 
-    {s.alts.length > 0 && <section class="section">
-      <h2>Runners-up</h2>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Option</th><th>What and when</th><th>Cost and free tier</th></tr></thead>
-          <tbody>
-            {s.alts.map((a) => (
-              <tr>
-                <td><a href={a.url || a.source_url}><b>{a.name}</b></a></td>
-                <td>{a.what}{a.why && <small>{a.why}</small>}</td>
-                <td>{costKey(a.cost)}{show(a.free_limits) && <small>{a.free_limits}</small>}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </section>}
+    {s.alts.length > 0 && (
+      <section class="block">
+        <div class="block-h"><h2>Head to head</h2><span class="cap">Pick vs runners-up</span></div>
+        <div class="tbl">
+          <table>
+            <thead><tr><th>Option</th><th>What it is</th><th>When it wins</th><th>Cost</th></tr></thead>
+            <tbody>
+              {[{ ...p, why: 'Our pick' }, ...s.alts].map((a, i) => (
+                <tr class={i === 0 ? 'is-pick' : ''}>
+                  <td><a href={a.url || a.source_url} style="text-decoration:none"><span class="nm">{shortName(a.name)}</span></a>{i === 0 && <small style="color:var(--blue)">The pick</small>}</td>
+                  <td>{a.what}</td>
+                  <td>{a.why}</td>
+                  <td>{costKey(a.cost)}{show(a.free_limits) && <small>{a.free_limits}</small>}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    )}
 
     {s.candidates.length > 0 && (
-      <section class="section">
-        <h2>Every option considered</h2>
-        <ul class="cands">{s.candidates.map((c) => <li><b>{c.name}</b>: {c.verdict}</li>)}</ul>
+      <section class="block">
+        <div class="block-h"><h2>The graveyard</h2><span class="cap">{s.candidates.length} options considered</span></div>
+        <ul class="grave">
+          {s.candidates.map((c) => (
+            <li class={isPick(c.name) ? 'won' : altKeys.has(key(c.name)) ? '' : 'lost'}><b>{c.name}</b><span>{c.verdict}</span></li>
+          ))}
+        </ul>
       </section>
     )}
 
-    <section class="section">
-      <h2>Verification</h2>
-      {s.verify?.note ? <p class="prose">{s.verify.note} {s.verify.url && <a href={s.verify.url}>Evidence</a>}</p> : <p class="prose">This slot has not been independently verified.</p>}
-      {s.better_pick && <p class="margin-note">The verifier suggests <a href={s.better_pick.url}>{s.better_pick.name}</a>: {s.better_pick.reason}</p>}
-      <p class="src" style="margin-top:18px">Something out of date? <a href={editUrl(s.slug)}>Suggest an edit on GitHub</a>.</p>
+    <section class="block two">
+      <div>
+        <div class="block-h"><h2>Verification</h2><span class="cap">{verdictLabel(v)}</span></div>
+        <p class="why" style="max-width:62ch;color:var(--ink)">{s.verify?.note || 'This slot has not been independently verified yet.'}</p>
+        {s.verify?.url && <p class="cap" style="margin-top:12px"><a href={s.verify.url}>Evidence ↗</a></p>}
+        {s.better_pick && <div class="slip">The verifier suggests <a href={s.better_pick.url}>{s.better_pick.name}</a>: {s.better_pick.reason}</div>}
+      </div>
+      <div>
+        <div class="block-h"><h2>Fix it</h2><span class="cap">Open data</span></div>
+        <p class="why" style="color:var(--ink)">Prices and free tiers change. If something here is out of date, edit this slot's data file and include a source link.</p>
+        <a class="btn" style="margin-top:14px" href={editUrl(s.slug)}>Suggest an edit ↗</a>
+      </div>
     </section>
-    <Tear seed={`tool-${s.slug}`} side="bottom" />
-  </article>
-</Base>
+
+    <nav class="pager" aria-label="More in this track">
+      <a href={`/tools/${prev.slug}/`}><span class="cap">← Previous in {t.name}</span><b>{shortName(prev.pick.name)}</b></a>
+      <a href={`/tools/${next.slug}/`}><span class="cap">Next in {t.name} →</span><b>{shortName(next.pick.name)}</b></a>
+    </nav>
+  </div>
+</Brutal>

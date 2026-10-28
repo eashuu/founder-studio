@@ -1,56 +1,126 @@
 ---
-import Base from '../layouts/Base.astro';
-import Tear from '../components/Tear.astro';
-import { meta, slots, slotsIn } from '../lib/data.js';
+import Brutal from '../layouts/Brutal.astro';
+import { meta, slots, slotsIn, track, shortName, tornPolygon, tearPath, costKey } from '../lib/data.js';
+
 const options = slots.reduce((n, s) => n + Math.max(s.candidates.length, s.alts.length + 1), 0);
 const verified = slots.filter((s) => ['ok', 'fixed'].includes(s.verify?.verdict)).length;
-const free = slots.filter((s) => /^(free|owned)/i.test(s.pick.cost || 'free')).length;
+const bySlug = Object.fromEntries(slots.map((s) => [s.slug, s]));
+const featured = ['default-deploy-stack-saas-api-mcp-server', 'mobile-framework', 'merchant-of-record-saas-subscriptions', 'planning-tdd-workflow',
+  'llm-observability-tracing', 'crm', 'notes-second-brain', 'desktop-framework'].map((k) => bySlug[k]);
+const looks = [['v-ink', 'pat-dots'], ['v-blue', 'pat-dither'], ['v-tape', 'pat-lines'], ['v-paper', 'pat-dots'], ['v-blue', 'pat-lines'], ['v-paper', 'pat-dither'], ['v-ink', 'pat-lines'], ['v-tape', 'pat-dots']];
+const tickerNames = [...new Set(slots.filter((s) => ['ok', 'fixed'].includes(s.verify?.verdict)).map((s) => shortName(s.pick.name)).filter((n) => n.length <= 22))].slice(0, 28);
+const label = (s) => `${track(s.track).name} / ${costKey(s.pick.cost)}`;
 ---
-<Base>
-  <section class="sheet grain hero">
-    <span class="label">The solo AI founder's toolkit</span>
-    <h1 style="margin-top:14px">From problem to paid, on free tiers.</h1>
-    <p>Every slot a one-person AI company needs, from finding the problem to building, shipping, selling and getting paid. Each one has a pick, its two runners-up, every option that lost, and a verifier's check against primary sources.</p>
-    <div class="tally">
-      <span><b>{slots.length}</b> slots</span>
-      <span><b>{options.toLocaleString('en')}</b> options compared</span>
-      <span><b>{verified}</b> picks verified</span>
-      <span><b>{free}</b> picks free</span>
-    </div>
-    <Tear seed="hero" side="bottom" />
-  </section>
-
-  {meta.stages.map((st) => (
-    <section class="strip grain" id={st.key}>
-      <Tear seed={`${st.key}-t`} side="top" />
-      <div class="stage-head">
-        <span class="label">Stage</span>
-        <h2>{st.name}</h2>
-        <p>{st.blurb}</p>
+<Brutal>
+  <section class="slab">
+    <div class="wrap">
+      <div class="top-cap cap">
+        <span>Index 001<span class="sl">/</span>The solo AI founder's toolkit<span class="sl">/</span>Free first</span>
+        <span>Checked {meta.built}<span class="sl">/</span>India + global</span>
       </div>
-      <ul class="tracklist">
-        {meta.tracks.filter((t) => t.stage === st.key).map((t) => (
-          <li>
-            <a href={`/tracks/${t.key}/`}>
-              <strong>{t.name}</strong>
-              <span class="n">{slotsIn(t.key).length}{t.region !== 'Global' ? ` · ${t.region}` : ''}</span>
-              <span class="b">{t.blurb}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
-      <Tear seed={`${st.key}-b`} side="bottom" />
-    </section>
-  ))}
 
-  <section class="sheet grain" style="margin-top:48px">
-    <Tear seed="start-t" side="top" />
-    <span class="label">Start here</span>
-    <h2 style="font-size:clamp(26px,3.6vw,36px);margin-top:8px">Three ways in</h2>
-    <ul class="ledger" style="margin-top:18px">
-      <li><span>Plan</span><div><h3><a href="/playbook/">The playbook</a></h3><p>Seven phases from a secure machine to a weekly growth routine.</p></div></li>
-      <li><span>Pick</span><div><h3><a href="/stack/">Build your stack</a></h3><p>Tick the picks you'll use and take the list with you as Markdown.</p></div></li>
-      <li><span>Trust</span><div><h3><a href="/method/">How it was researched</a></h3><p>How picks were made and checked, and what is still unverified.</p></div></li>
-    </ul>
+      <h1 class="hero-h display">From problem<br /><span class="o">to paid,</span><br /><span class="b">on free tiers.</span></h1>
+
+      <div class="collage" aria-hidden="true">
+        <div class="piece" style="left:8%;top:4%;width:46%;height:52%;transform:rotate(-5deg)">
+          <div class="scrap ht" style={`clip-path:${tornPolygon('c1', 3)}`}></div>
+        </div>
+        <div class="piece" style="left:34%;top:0;width:52%;height:46%;transform:rotate(4deg)">
+          <div class="scrap" style={`clip-path:${tornPolygon('c2')};display:flex;flex-direction:column;justify-content:space-between`}>
+            <span class="cap">Cost to start<span class="sl">/</span>per month</span>
+            <span class="display" style="font-size:clamp(90px,11vw,170px);line-height:.8">$0</span>
+          </div>
+        </div>
+        <div class="piece" style="left:0;top:50%;width:44%;height:40%;transform:rotate(3deg)">
+          <div class="scrap bl" style={`clip-path:${tornPolygon('c3')}`}>
+            <span class="display" style="font-size:clamp(30px,3.4vw,54px);display:block">Discover<br />Build<br />Ship<br />Sell</span>
+          </div>
+        </div>
+        <div class="piece" style="left:47%;top:52%;width:40%;height:30%;transform:rotate(-3deg)">
+          <div class="scrap" style={`clip-path:${tornPolygon('c4')};position:relative`}>
+            <div class="dither" style="position:absolute;inset:0 30% 0 0;opacity:.85"></div>
+            <span class="cap" style="position:relative">Verified against<br />primary sources</span>
+          </div>
+        </div>
+        <div class="piece" style="left:62%;top:78%;width:30%;height:18%;transform:rotate(6deg)">
+          <div class="scrap tp" style={`clip-path:${tornPolygon('c5')}`}><span class="display" style="font-size:38px">{verified} ✓</span></div>
+        </div>
+        <span class="tape" style="left:44%;top:-2%;transform:rotate(-8deg)"></span>
+        <span class="tape" style="left:4%;top:47%;transform:rotate(14deg);width:70px"></span>
+      </div>
+
+      <div class="hero-foot">
+        <div class="stat"><div class="flap" data-flap={String(slots.length)}>{slots.length}</div><div class="cap">Slots, one per job</div></div>
+        <div class="stat"><div class="flap" data-flap={options.toLocaleString('en')}>{options.toLocaleString('en')}</div><div class="cap">Options compared</div></div>
+        <div class="stat"><div class="flap" data-flap={String(verified)}>{verified}</div><div class="cap">Picks verified</div></div>
+      </div>
+    </div>
   </section>
-</Base>
+  <svg class="rip" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path d={tearPath('hero-rip', 'bottom', 70)} /></svg>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="track">{[...tickerNames, ...tickerNames].map((n) => <span>{n}</span>)}</div>
+  </div>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display">The index</h2>
+        <p class="cap">5 stages<span class="sl">/</span>13 tracks<span class="sl">/</span>Hover a track to see its top picks</p>
+      </div>
+      <div class="matrix">
+        {meta.stages.map((st, i) => (
+          <div class="col">
+            <div class="col-h"><div class="num">0{i + 1}</div><h3>{st.name}</h3><p>{st.blurb}</p></div>
+            {meta.tracks.filter((t) => t.stage === st.key).map((t) => (
+              <a class="cell" href={`/tracks/${t.key}/`}>
+                <b>{t.name}</b>
+                <span class="cap">{slotsIn(t.key).length} slots{t.region !== 'Global' && <><span class="sl">/</span>{t.region}</>}</span>
+                <ul>{slotsIn(t.key).slice(0, 3).map((s) => <li>{shortName(s.pick.name)}</li>)}</ul>
+              </a>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display">Key picks</h2>
+        <p class="cap">The decisions that shape the rest of the stack</p>
+      </div>
+      <div class="archive">
+        {featured.map((s, i) => (
+          <a class="card" href={`/tools/${s.slug}/`}>
+            <div class={`cover ${looks[i][0]}`}>
+              <div class={`pat ${looks[i][1]}`}></div>
+              <span class="idx cap">No. {String(slots.indexOf(s) + 1).padStart(3, '0')}</span>
+              <span class={`nm ${shortName(s.pick.name).length > 9 ? 'long' : ''}`}>{shortName(s.pick.name)}</span>
+            </div>
+            <span class="cap"><b>{s.slot}</b><span class="sl">/</span>{label(s)}<span class="sl">/</span>{['ok', 'fixed'].includes(s.verify?.verdict) ? 'Verified' : 'Doubt'}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display">Playbook</h2>
+        <p class="cap">Seven phases<span class="sl">/</span>Start with 00<span class="sl">/</span>Scroll sideways</p>
+      </div>
+      <div class="rail">
+        {meta.phases.map((ph, i) => (
+          <a class="phase" href="/playbook/">
+            <span class="n">0{i}</span>
+            <h3>{ph.title}</h3>
+            <span class="cap">{ph.time}<span class="sl">/</span>{ph.steps.length} steps</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Brutal>

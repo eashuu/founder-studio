@@ -1,25 +1,35 @@
 ---
-import Base from '../layouts/Base.astro';
-import Tear from '../components/Tear.astro';
+import Brutal from '../layouts/Brutal.astro';
 import { meta } from '../lib/data.js';
-const sev = { high: 'Read first', med: 'Important', low: 'Good to know' };
+const lvl = { high: 'Read first', med: 'Important', low: 'Good to know' };
 ---
-<Base title="Decisions" description="Calls made where research tracks overlapped, and security notes for a solo founder's setup.">
-  <section class="sheet grain page-head">
-    <span class="label">Decisions</span>
-    <h1>One stack that fits together</h1>
-    <p>Where two tracks recommended different tools for the same job, or verification changed the advice, one call was made. The affected tool pages carry the same note.</p>
-    <ul class="ledger" style="margin-top:26px">
-      {meta.decisions.map((d) => <li><span>Decision</span><div><h3>{d.title}</h3><p>{d.body} {d.url && <a href={d.url}>Source</a>}</p></div></li>)}
-    </ul>
-    <Tear seed="dec" side="bottom" />
-  </section>
-  <section class="sheet grain" style="margin-top:48px">
-    <Tear seed="notes-t" side="top" />
-    <span class="label">Security notes</span>
-    <h2 style="font-size:clamp(26px,3.6vw,36px);margin-top:8px">Before you install anything</h2>
-    <ul class="ledger" style="margin-top:18px">
-      {meta.notes.map((n) => <li><span class={n.sev === 'high' ? 'sev-high' : ''}>{sev[n.sev]}</span><div><h3>{n.title}</h3><p>{n.body}</p></div></li>)}
-    </ul>
-  </section>
-</Base>
+<Brutal title="Decisions" description="Calls made where research tracks overlapped, and security notes for a solo founder's setup.">
+  <div class="wrap page">
+    <header class="ph">
+      <h1 class="display">Decisions</h1>
+      <div><p>Where two tracks picked different tools for the same job, or verification changed the advice, one call was made so the stack fits together.</p><span class="cap">{meta.decisions.length} case files<span class="sl">/</span>{meta.notes.length} security notes</span></div>
+    </header>
+
+    <div class="cases">
+      {meta.decisions.map((d, i) => (
+        <article class="case">
+          <span class="tab cap">Case {String(i + 1).padStart(2, '0')}</span>
+          <span class="decided" aria-hidden="true">Decided</span>
+          <h2>{d.title}</h2>
+          <p>{d.body}</p>
+          {d.url && <p class="cap" style="margin-top:12px"><a href={d.url}>Source ↗</a></p>}
+        </article>
+      ))}
+    </div>
+
+    <section class="hazard">
+      <div class="hazard-h"><h2>Before you install</h2></div>
+      {meta.notes.map((n) => (
+        <div class="note">
+          <span class={`lvl ${n.sev === 'high' ? 'high' : ''}`}>{lvl[n.sev]}</span>
+          <div><h3>{n.title}</h3><p>{n.body}</p></div>
+        </div>
+      ))}
+    </section>
+  </div>
+</Brutal>

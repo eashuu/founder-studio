@@ -1,12 +1,12 @@
 ---
-import Base from '../layouts/Base.astro';
-import Tear from '../components/Tear.astro';
+import Brutal from '../layouts/Brutal.astro';
 ---
-<Base title="Not found">
-  <section class="sheet grain page-head">
-    <span class="label">404</span>
-    <h1>This page was torn out.</h1>
-    <p>The link may be old. Try <a href="/search/">search</a> or go back to <a href="/">the start</a>.</p>
-    <Tear seed="404" side="bottom" />
+<Brutal title="Not found">
+  <section class="wrap torn404">
+    <div>
+      <span class="display">404</span>
+      <p class="cap" style="margin-top:18px">This page was torn out<span class="sl">/</span>The link may be old</p>
+      <p style="margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><button class="btn solid" type="button" data-palette>Search instead</button><a class="btn" href="/">Back to the index</a></p>
+    </div>
   </section>
-</Base>
+</Brutal>

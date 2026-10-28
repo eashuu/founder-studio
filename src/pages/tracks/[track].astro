@@ -1,24 +1,76 @@
 ---
-import Base from '../../layouts/Base.astro';
-import Tear from '../../components/Tear.astro';
-import Slip from '../../components/Slip.astro';
-import { meta, slotsIn, stage } from '../../lib/data.js';
+import Brutal from '../../layouts/Brutal.astro';
+import Card from '../../components/Card.astro';
+import { meta, slotsIn, stage, costKey } from '../../lib/data.js';
 
 export function getStaticPaths() {
-  return meta.tracks.map((t) => ({ params: { track: t.key }, props: { t } }));
+  return meta.tracks.map((t, i) => ({ params: { track: t.key }, props: { t, i } }));
 }
-const { t } = Astro.props;
+const { t, i } = Astro.props;
 const list = slotsIn(t.key);
+const prev = meta.tracks[(i - 1 + meta.tracks.length) % meta.tracks.length];
+const next = meta.tracks[(i + 1) % meta.tracks.length];
+const costs = ['free', 'owned', 'freemium', 'paid'].filter((c) => list.some((s) => costKey(s.pick.cost) === c));
+const regions = [...new Set(list.map((s) => s.region))];
+const verified = list.filter((s) => ['ok', 'fixed'].includes(s.verify?.verdict)).length;
 ---
-<Base title={t.name} description={t.blurb}>
-  <section class="sheet grain page-head">
-    <div class="crumbs"><a href="/tracks/">Tracks</a> / {stage(t.stage).name}</div>
-    <h1>{t.name}</h1>
-    <p>{t.blurb}</p>
-    {t.region !== 'Global' && <p class="src">Region: {t.region}. Tax, payment and legal slots are researched for India-based founders who sell globally.</p>}
-    <Tear seed={`h-${t.key}`} side="bottom" />
-  </section>
-  <div class="slips">
-    {list.map((s) => <Slip s={s} />)}
+<Brutal title={t.name} description={t.blurb}>
+  <div class="wrap page">
+    <div class="spec-top cap">
+      <span><a href="/tracks/" data-scramble>Tracks</a><span class="sl">/</span>{stage(t.stage).name}<span class="sl">/</span>T{String(i + 1).padStart(2, '0')}</span>
+      <span>{list.length} slots<span class="sl">/</span>{verified} verified{t.region !== 'Global' && <><span class="sl">/</span>Region {t.region}</>}</span>
+    </div>
+    <header class="ph">
+      <h1 class="display">{t.name}</h1>
+      <div><p>{t.blurb}</p>{t.region !== 'Global' && <span class="cap">Researched for India-based founders who sell globally<span class="sl">/</span>Verify tax and legal with a professional</span>}</div>
+    </header>
+
+    <div class="filters" data-filters>
+      <div class="fgroup"><span class="cap">Cost</span>{costs.map((c) => <button class="chip" type="button" data-f="cost" data-v={c} aria-pressed="false">{c}</button>)}</div>
+      <div class="fgroup"><span class="cap">Check</span><button class="chip" type="button" data-f="verdict" data-v="verified" aria-pressed="false">Verified</button><button class="chip" type="button" data-f="verdict" data-v="doubt" aria-pressed="false">Doubt</button></div>
+      {regions.length > 1 && <div class="fgroup"><span class="cap">Region</span>{regions.map((r) => <button class="chip" type="button" data-f="region" data-v={r} aria-pressed="false">{r}</button>)}</div>}
+      <div class="fgroup"><span class="cap">View</span><button class="chip" type="button" data-view="grid" aria-pressed="true">Grid</button><button class="chip" type="button" data-view="list" aria-pressed="false">List</button></div>
+      <span class="cap shown" data-shown>{list.length} of {list.length}</span>
+    </div>
+
+    <div class="archive" data-archive>
+      {list.map((s, k) => <Card s={s} i={k + i} caption="slot" />)}
+    </div>
+
+    <nav class="pager" aria-label="Other tracks">
+      <a href={`/tracks/${prev.key}/`}><span class="cap">← Previous track</span><b>{prev.name}</b></a>
+      <a href={`/tracks/${next.key}/`}><span class="cap">Next track →</span><b>{next.name}</b></a>
+    </nav>
   </div>
-</Base>
+  <script>
+    const bar = document.querySelector('[data-filters]')!;
+    const grid = document.querySelector('[data-archive]')!;
+    const cards = [...grid.querySelectorAll<HTMLElement>('.card')];
+    const on: Record<string, Set<string>> = { cost: new Set(), verdict: new Set(), region: new Set() };
+    let view = 'grid';
+    try { view = localStorage.getItem('fs-view') || 'grid'; } catch {}
+    const apply = () => {
+      let n = 0;
+      for (const c of cards) {
+        const hide = Object.entries(on).some(([k, set]) => set.size && !set.has(c.dataset[k]!));
+        c.hidden = hide;
+        if (!hide) n++;
+      }
+      bar.querySelector('[data-shown]')!.textContent = `${n} of ${cards.length}`;
+      grid.classList.toggle('list', view === 'list');
+      bar.querySelectorAll<HTMLElement>('[data-view]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
+    };
+    bar.addEventListener('click', (e) => {
+      const b = (e.target as HTMLElement).closest<HTMLElement>('button');
+      if (!b) return;
+      if (b.dataset.view) { view = b.dataset.view; try { localStorage.setItem('fs-view', view); } catch {} }
+      else {
+        const set = on[b.dataset.f!];
+        set.has(b.dataset.v!) ? set.delete(b.dataset.v!) : set.add(b.dataset.v!);
+        b.setAttribute('aria-pressed', String(set.has(b.dataset.v!)));
+      }
+      apply();
+    });
+    apply();
+  </script>
+</Brutal>

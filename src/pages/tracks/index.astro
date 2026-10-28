@@ -1,25 +1,26 @@
 ---
-import Base from '../../layouts/Base.astro';
-import Tear from '../../components/Tear.astro';
-import { meta, slotsIn } from '../../lib/data.js';
+import Brutal from '../../layouts/Brutal.astro';
+import { meta, slots, slotsIn } from '../../lib/data.js';
+let n = 0;
 ---
-<Base title="Tracks" description="All 13 research tracks, grouped by stage.">
-  <section class="sheet grain page-head">
-    <span class="label">Index</span>
-    <h1>Tracks</h1>
-    <p>Thirteen research tracks grouped into five stages. Each track is a stack of slips, one per job to be done.</p>
-    <Tear seed="tracks" side="bottom" />
-  </section>
-  {meta.stages.map((st) => (
-    <section class="strip grain">
-      <Tear seed={`ti-${st.key}`} side="top" />
-      <div class="stage-head"><span class="label">{st.name}</span></div>
-      <ul class="tracklist">
+<Brutal title="Tracks" description="All 13 research tracks of Founder Studio, grouped into five stages.">
+  <div class="wrap page">
+    <header class="ph">
+      <h1 class="display">Tracks</h1>
+      <div><p>Thirteen research tracks, each a stack of jobs to be done. Each job has a pick, its runners-up and every option that lost.</p><span class="cap">{meta.tracks.length} tracks<span class="sl">/</span>{slots.length} slots<span class="sl">/</span>5 stages</span></div>
+    </header>
+    {meta.stages.map((st, i) => (
+      <section>
+        <div class="stage-row"><span class="display">0{i + 1} {st.name}</span><span class="cap">{st.blurb}</span></div>
         {meta.tracks.filter((t) => t.stage === st.key).map((t) => (
-          <li><a href={`/tracks/${t.key}/`}><strong>{t.name}</strong><span class="n">{slotsIn(t.key).length}</span><span class="b">{t.blurb}</span></a></li>
+          <a class="trow" href={`/tracks/${t.key}/`}>
+            <span class="n">T{String(++n).padStart(2, '0')}</span>
+            <span class="t">{t.name}</span>
+            <p>{t.blurb}{t.region !== 'Global' ? ` Region: ${t.region}.` : ''}</p>
+            <span class="c">{slotsIn(t.key).length}</span>
+          </a>
         ))}
-      </ul>
-      <Tear seed={`tib-${st.key}`} side="bottom" />
-    </section>
-  ))}
-</Base>
+      </section>
+    ))}
+  </div>
+</Brutal>

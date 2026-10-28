@@ -2,7 +2,9 @@
 
 Every tool a solo AI founder needs, from problem to paid, on free tiers: 245 slots, each with a pick, two runners-up, every option compared, and an independent verification against primary sources.
 
-A static Astro site. Content lives in `src/data/`:
+A static Astro site in an "Index Brutal" style: archive-index typography (Tanker, General Sans, IBM Plex Mono), concrete paper, one Klein blue, torn-paper collage, split-flap counters, a scroll-speed marquee, a command palette (Ctrl+K or /) and a stack drawer that exports Markdown. Page changes rip the old page away (cross-document View Transitions, Chromium). Vanilla JS only.
+
+Content lives in `src/data/`:
 
 - `slots/<slug>.json`: one file per slot (pick, alternatives, candidates, decision, verification).
 - `meta.json`: stages, tracks, decisions, security notes, playbook phases, open questions.

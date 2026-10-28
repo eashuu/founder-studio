@@ -1,21 +1,50 @@
 ---
-import Base from '../layouts/Base.astro';
-import Tear from '../components/Tear.astro';
+import Brutal from '../layouts/Brutal.astro';
 import { meta } from '../lib/data.js';
+const total = meta.phases.reduce((n, p) => n + p.steps.length, 0);
 ---
-<Base title="Playbook" description="Seven phases from a secure machine to a weekly growth routine.">
-  <section class="sheet grain page-head">
-    <span class="label">Playbook</span>
-    <h1>Seven phases, in order</h1>
-    <p>Do the first phase before anything else. After that, start each phase when the work needs it. Each step points at a pick you can read about in the tracks.</p>
-    <Tear seed="pb" side="bottom" />
-  </section>
-  {meta.phases.map((ph, i) => (
-    <section class="strip grain">
-      <Tear seed={`ph${i}t`} side="top" />
-      <div class="stage-head"><span class="label">Phase {i} · {ph.time}</span><h2>{ph.title}</h2></div>
-      <ol class="steps">{ph.steps.map((x) => <li>{x}</li>)}</ol>
-      <Tear seed={`ph${i}b`} side="bottom" />
-    </section>
-  ))}
-</Base>
+<Brutal title="Playbook" description="Seven phases from a secure machine to a weekly growth routine. Tick steps off as you go.">
+  <div class="wrap page">
+    <header class="ph">
+      <h1 class="display">Playbook</h1>
+      <div><p>Seven phases, in order. Do phase 00 before anything else, then start each phase when the work needs it.</p><span class="cap">{total} steps<span class="sl">/</span>Progress saves in this browser only</span></div>
+    </header>
+    <div class="pbar">
+      <span class="cap"><b data-done>0</b> / {total} done</span>
+      <div class="meter" aria-hidden="true"><i data-meter></i></div>
+      <button class="chip" type="button" data-reset>Reset</button>
+    </div>
+    <div class="phases">
+      {meta.phases.map((ph, i) => (
+        <section class="phasecol" data-phase>
+          <span class="n">0{i}</span>
+          <h2>{ph.title}</h2>
+          <span class="cap">{ph.time}<span class="sl">/</span>{ph.steps.length} steps</span>
+          {ph.steps.map((x, k) => (
+            <label class="check"><input type="checkbox" id={`p${i}-${k}`} data-step={`${i}-${k}`} /><span>{x}</span></label>
+          ))}
+        </section>
+      ))}
+    </div>
+  </div>
+  <script>
+    const KEY = 'founder-studio-playbook';
+    const boxes = [...document.querySelectorAll<HTMLInputElement>('[data-step]')];
+    let saved: string[] = [];
+    try { saved = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch {}
+    boxes.forEach((b) => (b.checked = saved.includes(b.dataset.step!)));
+    const paint = () => {
+      const done = boxes.filter((b) => b.checked);
+      document.querySelector('[data-done]')!.textContent = String(done.length);
+      (document.querySelector('[data-meter]') as HTMLElement).style.width = `${(done.length / boxes.length) * 100}%`;
+      document.querySelectorAll<HTMLElement>('[data-phase]').forEach((p) => {
+        const bs = [...p.querySelectorAll<HTMLInputElement>('input')];
+        p.classList.toggle('done', bs.every((b) => b.checked));
+      });
+      try { localStorage.setItem(KEY, JSON.stringify(done.map((b) => b.dataset.step))); } catch {}
+    };
+    boxes.forEach((b) => b.addEventListener('change', paint));
+    document.querySelector('[data-reset]')!.addEventListener('click', () => { boxes.forEach((b) => (b.checked = false)); paint(); });
+    paint();
+  </script>
+</Brutal>

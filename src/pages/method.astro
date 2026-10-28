@@ -1,28 +1,40 @@
 ---
-import Base from '../layouts/Base.astro';
-import Tear from '../components/Tear.astro';
+import Brutal from '../layouts/Brutal.astro';
 import { meta, slots, REPO } from '../lib/data.js';
 const count = (v) => slots.filter((s) => s.verify?.verdict === v).length;
 ---
-<Base title="Method" description="How Founder Studio picks were researched, verified and consolidated, and what is still unverified.">
-  <section class="sheet grain page-head">
-    <span class="label">Method</span>
-    <h1>How the picks were made</h1>
-    <div class="prose" style="margin-top:18px">
-      <p><strong>Who it's for.</strong> A solo AI founder who takes a product from problem to sales. The defaults are free first, Claude Code as the coding agent, and a Windows 11 laptop without a GPU. The money and legal tracks are researched for founders based in India who sell globally.</p>
-      <p><strong>Research.</strong> Thirteen tracks were researched in six parallel passes. For each slot, at least four credible options were compared on fit, capability, maintenance, free-tier terms (including commercial use), lock-in and licence. The best option became the pick, the next two the runners-up. Tools you happen to own already get no head start.</p>
-      <p><strong>Verification.</strong> Four independent verifiers re-opened every pick's source and checked fees, limits, dates, acquisitions, shutdowns and legal claims against primary sources. Results: {count('ok')} confirmed, {count('fixed')} corrected, {count('doubt')} in doubt, {count('stale')} stale. Each tool page carries its stamp and the verifier's note.</p>
-      <p><strong>Consolidation.</strong> Where tracks overlapped, one call was made so the stack fits together. See <a href="/decisions/">Decisions</a>.</p>
-      <p><strong>Limits.</strong> Prices and free tiers change monthly, so check before you pay. Tax and legal content is research, not advice: confirm it with a chartered accountant or lawyer. Everything was checked on {meta.built}.</p>
-      <p><strong>Corrections.</strong> Every tool page links to its data file on <a href={REPO}>GitHub</a>. Pull requests with a source link are welcome.</p>
+<Brutal title="Method" description="How Founder Studio picks were researched, verified and consolidated, and what is still unverified.">
+  <div class="wrap page">
+    <header class="ph">
+      <h1 class="display">Method</h1>
+      <div><p>How every pick was made, how it was checked, and what is still open.</p><span class="cap">Checked {meta.built}</span></div>
+    </header>
+
+    <div class="tally">
+      <div><b>{count('ok')}</b><span class="cap">Confirmed</span></div>
+      <div><b>{count('fixed')}</b><span class="cap">Corrected</span></div>
+      <div><b>{count('doubt')}</b><span class="cap">In doubt</span></div>
+      <div><b>{count('stale')}</b><span class="cap">Stale</span></div>
     </div>
-    <Tear seed="method" side="bottom" />
-  </section>
-  <section class="sheet grain" style="margin-top:48px">
-    <Tear seed="unv-t" side="top" />
-    <span class="label">Open questions</span>
-    <h2 style="font-size:clamp(26px,3.6vw,36px);margin-top:8px">Not yet verified ({meta.unverified.length})</h2>
-    <p class="why">Claims the research could not confirm from a primary source.</p>
-    <ol class="steps" style="margin-top:16px">{meta.unverified.map((u) => <li>{u}</li>)}</ol>
-  </section>
-</Base>
+
+    <div class="essay">
+      <h2>Who</h2>
+      <div><p>A solo AI founder who takes a product from problem to sales. The defaults are free first, Claude Code as the coding agent, and a Windows 11 laptop without a GPU. The money and legal tracks are researched for founders based in India who sell globally.</p></div>
+      <h2>Research</h2>
+      <div><p>Thirteen tracks were researched in six parallel passes. For each slot, at least four credible options were compared on fit, capability, maintenance, free-tier terms including commercial use, lock-in and licence. The best became the pick and the next two the runners-up. Tools you already own get no head start.</p></div>
+      <h2>Verify</h2>
+      <div><p>Four independent verifiers re-opened every pick's source and checked fees, limits, dates, acquisitions, shutdowns and legal claims against primary sources. Each tool page shows its stamp and the verifier's note.</p></div>
+      <h2>Decide</h2>
+      <div><p>Where tracks overlapped, one call was made so the stack fits together. See <a href="/decisions/">Decisions</a>.</p></div>
+      <h2>Limits</h2>
+      <div><p>Prices and free tiers change monthly, so check before you pay. Tax and legal content is research, not advice: confirm it with a chartered accountant or a lawyer.</p></div>
+      <h2>Fix it</h2>
+      <div><p>Every tool page links to its data file on <a href={REPO}>GitHub</a>. Pull requests that include a source link are welcome.</p></div>
+    </div>
+
+    <section class="block">
+      <div class="block-h"><h2>Open questions</h2><span class="cap">{meta.unverified.length} not yet confirmed</span></div>
+      <ol class="qs">{meta.unverified.map((u) => <li>{u}</li>)}</ol>
+    </section>
+  </div>
+</Brutal>

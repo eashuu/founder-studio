@@ -1,5 +1,6 @@
 ---
 import Brutal from '../layouts/Brutal.astro';
+import Card from '../components/Card.astro';
 import { meta, slots, slotsIn, track, shortName, tornPolygon, tearPath, costKey } from '../lib/data.js';
 
 const options = slots.reduce((n, s) => n + Math.max(s.candidates.length, s.alts.length + 1), 0);
@@ -7,9 +8,7 @@ const verified = slots.filter((s) => ['ok', 'fixed'].includes(s.verify?.verdict)
 const bySlug = Object.fromEntries(slots.map((s) => [s.slug, s]));
 const featured = ['default-deploy-stack-saas-api-mcp-server', 'mobile-framework', 'merchant-of-record-saas-subscriptions', 'planning-tdd-workflow',
   'llm-observability-tracing', 'crm', 'notes-second-brain', 'desktop-framework'].map((k) => bySlug[k]);
-const looks = [['v-ink', 'pat-dots'], ['v-blue', 'pat-dither'], ['v-tape', 'pat-lines'], ['v-paper', 'pat-dots'], ['v-blue', 'pat-lines'], ['v-paper', 'pat-dither'], ['v-ink', 'pat-lines'], ['v-tape', 'pat-dots']];
 const tickerNames = [...new Set(slots.filter((s) => ['ok', 'fixed'].includes(s.verify?.verdict)).map((s) => shortName(s.pick.name)).filter((n) => n.length <= 22))].slice(0, 28);
-const label = (s) => `${track(s.track).name} / ${costKey(s.pick.cost)}`;
 ---
 <Brutal>
   <section class="slab">
@@ -92,16 +91,7 @@ const label = (s) => `${track(s.track).name} / ${costKey(s.pick.cost)}`;
         <p class="cap">The decisions that shape the rest of the stack</p>
       </div>
       <div class="archive">
-        {featured.map((s, i) => (
-          <a class="card" href={`/tools/${s.slug}/`}>
-            <div class={`cover ${looks[i][0]}`}>
-              <div class={`pat ${looks[i][1]}`}></div>
-              <span class="idx cap">No. {String(slots.indexOf(s) + 1).padStart(3, '0')}</span>
-              <span class={`nm ${shortName(s.pick.name).length > 9 ? 'long' : ''}`}>{shortName(s.pick.name)}</span>
-            </div>
-            <span class="cap"><b>{s.slot}</b><span class="sl">/</span>{label(s)}<span class="sl">/</span>{['ok', 'fixed'].includes(s.verify?.verdict) ? 'Verified' : 'Doubt'}</span>
-          </a>
-        ))}
+        {featured.map((s, i) => <Card s={s} i={i} />)}
       </div>
     </div>
   </section>

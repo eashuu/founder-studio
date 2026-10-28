@@ -1,0 +1,18 @@
+---
+import { slots, track, shortName, costKey } from '../lib/data.js';
+const { s, i = 0, caption = 'track' } = Astro.props;
+const looks = [['v-ink', 'pat-dots'], ['v-blue', 'pat-dither'], ['v-tape', 'pat-lines'], ['v-paper', 'pat-dots'], ['v-blue', 'pat-lines'], ['v-paper', 'pat-dither'], ['v-ink', 'pat-lines'], ['v-tape', 'pat-dots']];
+const [bg, pat] = looks[i % looks.length];
+const name = shortName(s.pick.name);
+const ok = ['ok', 'fixed'].includes(s.verify?.verdict);
+const cost = costKey(s.pick.cost);
+---
+<a class="card" href={`/tools/${s.slug}/`} data-cost={cost} data-verdict={ok ? 'verified' : 'doubt'} data-region={s.region}>
+  <div class={`cover ${bg}`}>
+    <div class={`pat ${pat}`}></div>
+    <span class="idx cap">No. {String(slots.indexOf(s) + 1).padStart(3, '0')}</span>
+    <span class={`nm ${name.length > 9 ? 'long' : ''}`}>{name}</span>
+  </div>
+  <span class="lname">{name}</span>
+  <span class="cap"><b>{s.slot}</b><span class="sl">/</span>{caption === 'track' ? `${track(s.track).name} / ` : ''}{cost}<span class="sl">/</span>{ok ? 'Verified' : 'Doubt'}{s.region === 'India' && <><span class="sl">/</span>India</>}</span>
+</a>

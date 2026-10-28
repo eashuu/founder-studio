@@ -2,7 +2,7 @@
 
 Every tool a solo AI founder needs, from problem to paid, on free tiers: 245 slots, each with a pick, two runners-up, every option compared, and an independent verification against primary sources.
 
-A static Astro site in an "Index Brutal" style: archive-index typography (Tanker, General Sans, IBM Plex Mono), concrete paper, one Klein blue, torn-paper collage, split-flap counters, a scroll-speed marquee, a command palette (Ctrl+K or /) and a stack drawer that exports Markdown. Page changes rip the old page away (cross-document View Transitions, Chromium). Vanilla JS only.
+A static Astro site in an "Index Brutal" style: archive-index typography (Tanker, General Sans, IBM Plex Mono), concrete paper, one Klein blue, torn-paper collage, split-flap counters, a scroll-speed marquee, a command palette (Ctrl+K or /) and a stack drawer that exports Markdown. Motion: Lenis smooth scroll; a torn halftone curtain between pages that shows the destination and rips apart on arrival (all browsers; skipped for back/forward); a one-per-visit landing intro; native CSS scroll-driven animations (parallax collage, masked section titles, dealt covers, filling numbers, reading-progress line); a cursor follower with context labels, magnetic buttons, cover tilt, tape and stamp feedback; Android haptics. Everything falls back to static with prefers-reduced-motion. Lenis is the only runtime dependency.
 
 Content lives in `src/data/`:
 

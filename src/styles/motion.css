@@ -1,0 +1,172 @@
+/* Motion pass: page transition, landing intro, scroll-linked motion, micro-interactions.
+   Only transform, opacity, clip-path and colour animate. Everything sits behind no-preference. */
+
+/* ---------- Page transition: torn halftone sheet ---------- */
+.curtain { position: fixed; inset: 0; z-index: 200; pointer-events: none; visibility: hidden; }
+.curtain .half { position: absolute; inset: 0; filter: drop-shadow(0 0 18px rgb(0 0 0 / 0.45)); will-change: transform; }
+.curtain .fiber, .curtain .face { position: absolute; inset: 0; }
+.curtain .fiber { background: #e9e8e4; }
+.curtain .face { background: #0b0b0c; background-image: radial-gradient(rgb(31 43 255 / 0.55) 30%, transparent 32%); background-size: 11px 11px; display: grid; place-items: center; }
+.curtain .dest { font: 400 clamp(72px, 15vw, 240px)/0.84 var(--f-display); text-transform: uppercase; color: #ecebe6; text-align: center; padding: 0 4vw; max-width: 100%; overflow-wrap: anywhere; }
+.curtain .meta { position: absolute; left: 4vw; top: 4vh; font: 600 12px var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: #ecebe6; }
+.curtain .meta i { font-style: normal; color: #f4e04d; }
+
+html.curtain-close .curtain, html.curtain-in .curtain { visibility: visible; pointer-events: auto; }
+html.curtain-close .curtain .l { animation: shut-l 0.38s cubic-bezier(0.7, 0, 0.3, 1) both; }
+html.curtain-close .curtain .r { animation: shut-r 0.38s cubic-bezier(0.7, 0, 0.3, 1) 0.04s both; }
+@keyframes shut-l { from { transform: translateX(-102%); } }
+@keyframes shut-r { from { transform: translateX(102%); } }
+html.curtain-open .curtain .l { animation: rip-l 0.72s cubic-bezier(0.6, 0, 0.25, 1) both; }
+html.curtain-open .curtain .r { animation: rip-r 0.72s cubic-bezier(0.6, 0, 0.25, 1) 0.03s both; }
+@keyframes rip-l { 0% { transform: none; } 16% { transform: translate(-10px, 2px) rotate(-0.6deg); } 100% { transform: translate(-112%, 9%) rotate(-8deg); } }
+@keyframes rip-r { 0% { transform: none; } 16% { transform: translate(10px, -2px) rotate(0.6deg); } 100% { transform: translate(112%, 13%) rotate(7deg); } }
+
+/* ---------- Reading progress ---------- */
+.bar::after { content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 3px; background: var(--blue); transform-origin: 0 50%; transform: scaleX(0); }
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .bar::after { animation-name: grow; animation-timing-function: linear; animation-fill-mode: both; animation-timeline: scroll(root); }
+  }
+}
+@keyframes grow { to { transform: scaleX(1); } }
+
+/* ---------- Landing intro (home) ---------- */
+.hero-h .line { display: block; overflow: hidden; padding-bottom: 0.09em; margin-bottom: -0.09em; }
+.hero-h .in { display: inline-block; }
+@media (prefers-reduced-motion: no-preference) {
+  html.intro .hero-h .in,
+  html.intro .collage .piece,
+  html.intro .collage .tape,
+  html.intro .hero-foot,
+  html.intro .slab .top-cap,
+  html.intro .ticker-wrap { animation-play-state: paused; animation-fill-mode: both; }
+  html.intro-run .hero-h .in, html.intro-run .collage .piece, html.intro-run .collage .tape,
+  html.intro-run .hero-foot, html.intro-run .slab .top-cap, html.intro-run .ticker-wrap { animation-play-state: running; }
+
+  html.intro .slab .top-cap { animation: fade-in 0.6s ease-out 0.05s; }
+  html.intro .hero-h .in { animation: rise 0.95s cubic-bezier(0.2, 0.8, 0.2, 1) calc(0.12s + var(--i, 0) * 0.11s); }
+  html.intro .collage .piece { animation: slap 0.7s cubic-bezier(0.2, 0.9, 0.25, 1.15) calc(0.45s + var(--k, 0) * 0.09s); }
+  html.intro .collage .tape { animation: tape 0.45s cubic-bezier(0.3, 1.4, 0.5, 1) calc(1s + var(--k, 0) * 0.08s); }
+  html.intro .hero-foot { animation: fade-up 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.85s; }
+  html.intro .ticker-wrap { animation: fade-in 0.6s ease-out 1.15s; }
+  /* repeat visits in the same session: same choreography, compressed */
+  html.intro.quick .hero-h .in { animation-duration: 0.6s; animation-delay: calc(var(--i, 0) * 0.05s); }
+  html.intro.quick .collage .piece { animation-duration: 0.45s, auto; animation-delay: calc(0.15s + var(--k, 0) * 0.04s); }
+  html.intro.quick .collage .tape, html.intro.quick .hero-foot, html.intro.quick .ticker-wrap, html.intro.quick .slab .top-cap { animation-delay: 0.3s; animation-duration: 0.4s; }
+}
+@keyframes rise { from { transform: translateY(108%); } }
+@keyframes slap { from { opacity: 0; scale: 1.35; rotate: 9deg; } 70% { opacity: 1; } }
+@keyframes tape { from { opacity: 0; scale: 1.8; } }
+@keyframes fade-in { from { opacity: 0; } }
+@keyframes fade-up { from { opacity: 0; transform: translateY(24px); } }
+
+/* Inner pages: the page title rises out of a mask as the curtain opens */
+@media (prefers-reduced-motion: no-preference) {
+  .ph h1, .spec-hero h1, .torn404 h1 { animation: unmask 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: var(--enter, 0.05s); }
+  .ph > div, .spec-hero .what, .spec-hero .cmd, .spec-hero .actions, .keyfacts { animation: fade-up 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--enter, 0.05s) + 0.18s); }
+  html.curtain-in { --enter: 0.42s; }
+}
+@keyframes unmask { from { clip-path: inset(0 0 100% 0); transform: translateY(18%); } to { clip-path: inset(0 0 -10% 0); } }
+
+/* ---------- Scroll-linked motion (native scroll timelines; Lenis drives the scroll) ----------
+   Longhands on purpose: the build minifier drops an `animation` shorthand followed by `animation-timeline`. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    /* hero layers drift at different speeds as you leave the hero */
+    .collage .piece { animation-name: drift; animation-timing-function: linear; animation-fill-mode: both; animation-timeline: scroll(root); animation-range: 0 100vh; }
+    html.intro .collage .piece { animation-name: slap, drift; animation-duration: 0.7s, auto; animation-timing-function: cubic-bezier(0.2, 0.9, 0.25, 1.15), linear; animation-timeline: auto, scroll(root); animation-range: normal, 0 100vh; }
+    .hero-h { animation-name: lift; animation-timing-function: linear; animation-fill-mode: both; animation-timeline: scroll(root); animation-range: 0 90vh; }
+
+    /* section titles wipe in */
+    .sec-head h2, .block-h h2, .stage-row .display { animation-name: wipe; animation-timing-function: linear; animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% cover 28%; }
+    /* index columns arrive one after another */
+    .matrix .col { animation-name: col-in; animation-timing-function: linear; animation-fill-mode: both; animation-timeline: view(); }
+    .matrix .col:nth-child(1) { animation-range: entry 0% cover 18%; }
+    .matrix .col:nth-child(2) { animation-range: entry 6% cover 22%; }
+    .matrix .col:nth-child(3) { animation-range: entry 12% cover 26%; }
+    .matrix .col:nth-child(4) { animation-range: entry 18% cover 30%; }
+    .matrix .col:nth-child(5) { animation-range: entry 24% cover 34%; }
+    /* covers are dealt in, patterns slide inside them */
+    .archive .card { animation-name: deal; animation-timing-function: linear; animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% cover 26%; }
+    .archive .card:nth-child(odd) { --deal: -5deg; }
+    .archive .card:nth-child(even) { --deal: 4deg; }
+    .cover .pat { animation-name: pat-slide; animation-timing-function: linear; animation-fill-mode: both; animation-timeline: view(); }
+    /* outlined numbers fill as they pass */
+    .phase .n, .phasecol .n { animation-name: fill; animation-timing-function: linear; animation-fill-mode: both; animation-timeline: view(); animation-range: entry 40% cover 55%; }
+    /* rows and case files slide in */
+    .trow, .case, .note, .grave li, .tbl tr { animation-name: slide-up; animation-timing-function: linear; animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% cover 20%; }
+    /* footer wordmark rises */
+    .foot .word { animation-name: word-up; animation-timing-function: linear; animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% cover 45%; }
+  }
+}
+@keyframes drift { to { translate: 0 calc(var(--sp, -40) * 1px); } }
+@keyframes lift { to { translate: 0 -10vh; opacity: 0.35; } }
+@keyframes wipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes col-in { from { opacity: 0; translate: 0 60px; } }
+@keyframes deal { from { opacity: 0; translate: 0 90px; rotate: var(--deal, 0deg); } }
+@keyframes pat-slide { from { background-position: 0 40px; } to { background-position: 0 -40px; } }
+@keyframes fill { to { color: var(--ink); } }
+@keyframes slide-up { from { translate: 0 36px; } }
+@keyframes word-up { from { translate: 0 35%; opacity: 0.2; } }
+
+/* ---------- Micro-interactions ---------- */
+/* cursor follower (desktop only, created hidden) */
+.cursor { position: fixed; left: 0; top: 0; z-index: 150; pointer-events: none; opacity: 0; transition: opacity 0.2s; }
+html.cursor-on .cursor { opacity: 1; }
+.cursor::before { content: ''; position: absolute; left: -7px; top: -7px; width: 14px; height: 14px; border: 2px solid var(--blue); border-radius: 50%; transition: transform 0.2s cubic-bezier(0.3, 1.4, 0.5, 1), background 0.2s; mix-blend-mode: difference; }
+.cursor span { position: absolute; left: 16px; top: 12px; font: 600 10px var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; background: var(--ink); color: var(--paper); padding: 3px 6px; opacity: 0; transform: translateY(4px); transition: opacity 0.15s, transform 0.15s; white-space: nowrap; }
+.cursor.active::before { transform: scale(2.2); background: rgb(31 43 255 / 0.15); }
+.cursor.active span { opacity: 1; transform: none; }
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) { .cursor { display: none; } }
+
+/* magnetic + springy buttons */
+.btn { transition: transform 0.12s, box-shadow 0.12s, translate 0.25s cubic-bezier(0.3, 1.4, 0.5, 1), background 0.15s, color 0.15s; }
+
+/* covers tilt toward the pointer (vars set in motion.ts) */
+.cover { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.15s; }
+.card:hover .cover { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translate(-4px, -4px); }
+
+/* index cells: ink wipes in from the left instead of an instant flip */
+.cell { isolation: isolate; }
+.cell::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--ink); transform: scaleX(0); transform-origin: 0 50%; transition: transform 0.32s cubic-bezier(0.7, 0, 0.2, 1); }
+.cell:hover, .cell:focus-visible { background: transparent; }
+.cell:hover::before, .cell:focus-visible::before { transform: scaleX(1); }
+.trow { isolation: isolate; position: relative; }
+.trow::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--ink); transform: scaleY(0); transform-origin: 50% 100%; transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1); }
+.trow:hover { background: transparent; }
+.trow:hover::before { transform: scaleY(1); }
+
+/* text links draw their underline */
+:is(.why, .lede, .essay, .slip, .note, .case, .foot, .spec-top, .stage-row, .torn404) a:not(.btn) {
+  text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat; transition: background-size 0.3s cubic-bezier(0.7, 0, 0.2, 1), color 0.2s;
+}
+:is(.why, .lede, .essay, .slip, .note, .case, .foot, .spec-top, .stage-row, .torn404) a:not(.btn):hover { background-size: 0% 1px; background-position: 100% 100%; color: var(--blue); }
+
+/* add-to-stack slaps a strip of tape on the button; the header counter bumps */
+[data-add] { position: relative; }
+[data-add].taped::after { content: ''; position: absolute; left: 50%; top: -9px; width: 64px; height: 18px; background: color-mix(in srgb, var(--tape) 85%, transparent); translate: -50% 0; animation: tape-slap 0.42s cubic-bezier(0.3, 1.4, 0.5, 1) both; }
+@keyframes tape-slap { from { opacity: 0; scale: 1.9; rotate: -18deg; } to { opacity: 1; scale: 1; rotate: -5deg; } }
+.count.bump { animation: bump 0.45s cubic-bezier(0.3, 1.6, 0.5, 1); }
+@keyframes bump { 0% { scale: 1; } 35% { scale: 1.7; } 100% { scale: 1; } }
+.stamped { animation: stamp 0.35s cubic-bezier(0.3, 1.5, 0.5, 1); }
+@keyframes stamp { from { scale: 1.25; rotate: -4deg; } }
+
+/* playbook ticks stamp in; the meter springs */
+.check input:checked::after { animation: tick 0.3s cubic-bezier(0.3, 1.6, 0.5, 1); }
+@keyframes tick { from { scale: 0; rotate: -25deg; } }
+.meter i { transition: width 0.55s cubic-bezier(0.3, 1.35, 0.5, 1); }
+
+/* dialogs open with a clip reveal */
+dialog.palette[open] { animation: clip-open 0.28s cubic-bezier(0.2, 0.8, 0.2, 1); }
+@keyframes clip-open { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 -20px -20px); } }
+dialog.menu[open] .menu-link { animation: rise-small 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+dialog.menu[open] .menu-link:nth-child(2) { animation-delay: 0.04s; }
+dialog.menu[open] .menu-link:nth-child(3) { animation-delay: 0.08s; }
+dialog.menu[open] .menu-link:nth-child(4) { animation-delay: 0.12s; }
+dialog.menu[open] .menu-link:nth-child(5) { animation-delay: 0.16s; }
+@keyframes rise-small { from { opacity: 0; transform: translateY(30px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .cell::before, .trow::before, .meter i, .btn, .cover { transition: none; }
+  [data-add].taped::after, .count.bump, .stamped, .check input:checked::after, dialog.palette[open], dialog.menu[open] .menu-link { animation: none; }
+}

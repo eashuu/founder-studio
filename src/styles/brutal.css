@@ -247,20 +247,7 @@ dialog.drawer::backdrop, dialog.menu::backdrop { background: rgb(11 11 12 / 0.45
 .drawer footer { padding: 16px 18px; border-top: 2px solid var(--ink); display: flex; flex-wrap: wrap; gap: 10px; background: var(--paper-2); }
 html:has(dialog[open]) { overflow: hidden; }
 
-/* Page transition: paper rip (public/tear.js randomises the tear line each time) */
-@view-transition { navigation: auto; }
-::view-transition-old(root) { animation: tear-away 0.5s cubic-bezier(0.55, 0, 0.7, 0.2) both; z-index: 2; }
-/* the header is its own transition group, so it stays put while the page rips */
-.bar { view-transition-name: site-bar; }
-::view-transition-group(site-bar), ::view-transition-old(site-bar), ::view-transition-new(site-bar) { animation: none; }
-::view-transition-group(site-bar) { z-index: 3; }
-::view-transition-new(root) { animation: none; z-index: 1; }
-@keyframes tear-away {
-  from { clip-path: polygon(0% -12%, 25% -10%, 50% -13%, 75% -9%, 100% -12%, 100% 100%, 0% 100%); }
-  to { clip-path: polygon(0% 108%, 25% 111%, 50% 107%, 75% 112%, 100% 109%, 100% 100%, 0% 100%); }
-}
 @media (prefers-reduced-motion: reduce) {
-  @view-transition { navigation: none; }
   .ticker .track { animation: none; }
   .btn, .cover, .cell ul { transition: none; }
   dialog.drawer[open] { animation: none; }

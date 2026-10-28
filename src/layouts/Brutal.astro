@@ -2,6 +2,7 @@
 import '../styles/brutal.css';
 import '../styles/pages.css';
 import '../styles/fixes.css';
+import '../styles/motion.css';
 import { REPO, REPO_LIVE, meta, tearPath } from '../lib/data.js';
 const { title, description = 'Every tool a solo AI founder needs, from problem to paid, on free tiers: picked, compared and verified.' } = Astro.props;
 const path = Astro.url.pathname;
@@ -31,13 +32,32 @@ const ogImage = new URL('/og.png', Astro.site);
     <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=tanker@400&display=swap" />
     <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&display=swap" />
-    <script is:inline src="/tear.js"></script>
+    <script is:inline>
+      // Runs before first paint: show the closed curtain when arriving via an in-site link, and arm the home intro.
+      (function () {
+        var h = document.documentElement, r = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        try {
+          var c = sessionStorage.getItem('fs-curtain'); sessionStorage.removeItem('fs-curtain');
+          if (c && !r) { h.classList.add('curtain-in'); window.__curtain = JSON.parse(c); setTimeout(function () { h.classList.remove('curtain-in'); }, 2600); }
+        } catch (e) {}
+        if (location.pathname === '/' && !r) {
+          h.classList.add('intro');
+          try { if (sessionStorage.getItem('fs-intro')) h.classList.add('quick'); sessionStorage.setItem('fs-intro', '1'); } catch (e) {}
+          setTimeout(function () { h.classList.add('intro-run'); }, 3000);
+        }
+      })();
+    </script>
   </head>
   <body>
+    <div class="curtain" aria-hidden="true">
+      <div class="half l"><div class="fiber"></div><div class="face"><span class="meta">Founder<i>/</i>Studio</span><span class="dest"></span></div></div>
+      <div class="half r"><div class="fiber"></div><div class="face"><span class="meta">Founder<i>/</i>Studio</span><span class="dest"></span></div></div>
+    </div>
+    <div class="cursor" aria-hidden="true"><span></span></div>
     <a class="skip" href="#main">Skip to content</a>
     <header class="bar">
       <div class="wrap">
-        <a class="logo" href="/" aria-label="Founder Studio, home">Founder<i>/</i>Studio</a>
+        <a class="logo" href="/" aria-label="Founder Studio, home" data-dest="Index">Founder<i>/</i>Studio</a>
         <nav aria-label="Main">
           {nav.map(([href, label]) => <a href={href} data-scramble aria-current={current(href) ? 'page' : undefined}>{label}</a>)}
         </nav>
@@ -93,6 +113,9 @@ const ogImage = new URL('/og.png', Astro.site);
     <div class="toast" role="status" aria-live="polite" hidden></div>
 
     <script>
+      import '../scripts/motion.ts';
+      const buzz = (ms: number | number[] = 8) => (window as any).fsBuzz?.(ms);
+      const pop = (el: Element | null, cls: string) => (window as any).fsPop?.(el, cls);
       const $ = (s: string, r: ParentNode = document) => r.querySelector(s) as HTMLElement;
       const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
       const esc = (x: string) => x.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
@@ -166,7 +189,7 @@ const ogImage = new URL('/og.png', Astro.site);
 
       // Mobile menu
       const menu = $('dialog.menu') as HTMLDialogElement;
-      document.querySelectorAll('[data-menu]').forEach((b) => b.addEventListener('click', () => menu.showModal()));
+      document.querySelectorAll('[data-menu]').forEach((b) => b.addEventListener('click', () => { menu.showModal(); buzz(); }));
       menu.addEventListener('click', (e) => { if ((e.target as HTMLElement).closest('a')) menu.close(); });
 
       // Command palette. The index is fetched once, on first open.
@@ -264,13 +287,16 @@ const ogImage = new URL('/og.png', Astro.site);
           if (i >= 0) { stack.splice(i, 1); say(`Removed ${esc(add.dataset.name!)}.`); }
           else { stack.push({ slug: add.dataset.add!, name: add.dataset.name!, slot: add.dataset.slot! }); say(`Added ${esc(add.dataset.name!)}. <button type="button" data-drawer>View stack</button>`); }
           save(); paint();
+          if (i < 0) pop(add, 'taped'); else add.classList.remove('taped');
+          pop($('.bar .count'), 'bump');
+          buzz(i < 0 ? [8, 30, 8] : 6);
         }
         const rm = t.closest<HTMLElement>('[data-remove]');
         if (rm) { stack = stack.filter((x) => x.slug !== rm.dataset.remove); save(); paint(); $('#drawer-title').focus(); }
         if (t.closest('[data-drawer]')) { const fromToast = !!t.closest('.toast'); toast.hidden = true; openDrawer(fromToast); }
         if (t.closest('[data-md-copy]')) {
           const b = t.closest<HTMLElement>('[data-md-copy]')!;
-          navigator.clipboard?.writeText(md()).then(() => { b.textContent = 'Copied'; setTimeout(() => (b.textContent = 'Copy Markdown'), 1500); }, () => (b.textContent = 'Copy failed'));
+          navigator.clipboard?.writeText(md()).then(() => { b.textContent = 'Copied'; pop(b, 'stamped'); buzz(); setTimeout(() => (b.textContent = 'Copy Markdown'), 1500); }, () => (b.textContent = 'Copy failed'));
         }
         if (t.closest('[data-md-dl]')) {
           const a = document.createElement('a');
@@ -278,7 +304,7 @@ const ogImage = new URL('/og.png', Astro.site);
           a.download = 'founder-stack.md'; a.click(); URL.revokeObjectURL(a.href);
         }
         const cp = t.closest<HTMLElement>('[data-copy]');
-        if (cp) navigator.clipboard?.writeText(cp.dataset.copy || '').then(() => { cp.textContent = 'Copied'; setTimeout(() => (cp.textContent = 'Copy'), 1400); });
+        if (cp) navigator.clipboard?.writeText(cp.dataset.copy || '').then(() => { cp.textContent = 'Copied'; pop(cp, 'stamped'); buzz(); setTimeout(() => (cp.textContent = 'Copy'), 1400); });
       });
       paint();
     </script>

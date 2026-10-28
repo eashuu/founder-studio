@@ -43,7 +43,7 @@ const total = meta.phases.reduce((n, p) => n + p.steps.length, 0);
       });
       try { localStorage.setItem(KEY, JSON.stringify(done.map((b) => b.dataset.step))); } catch {}
     };
-    boxes.forEach((b) => b.addEventListener('change', paint));
+    boxes.forEach((b) => b.addEventListener('change', () => { paint(); (window as any).fsBuzz?.(b.checked ? [6, 24, 6] : 4); }));
     document.querySelector('[data-reset]')!.addEventListener('click', () => { boxes.forEach((b) => (b.checked = false)); paint(); });
     paint();
   </script>

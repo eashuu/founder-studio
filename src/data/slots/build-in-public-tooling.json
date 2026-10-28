@@ -3,54 +3,51 @@
   "slot": "build-in-public tooling",
   "track": "brand",
   "stage": "sell",
-  "region": "Global",
-  "order": 8232,
+  "order": 8024,
   "pick": {
-    "name": "GitHub profile README + GitHub Releases as the public changelog",
+    "name": "GitHub profile README + Releases",
     "url": "https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme",
-    "what": "A public <username>/<username> repo README as your developer landing page; Releases (and their Atom feeds) as the changelog for each open-core product",
-    "why": "Free, where developer buyers and contributors look, and Claude Code can update it from commits; releases.atom feeds can also render on your Astro site",
+    "what": "Public profile and Releases as the changelog",
+    "why": "Source of truth for what you ship, no extra tool",
     "cost": "free",
-    "free_limits": "Free; repo must be public, named exactly as your username, README.md non-empty",
-    "windows_fit": "web",
+    "free_limits": "Free; repo must be public, named as your username",
+    "platforms": "web",
     "maintained": "GitHub SaaS",
-    "install": "gh repo create <username> --public --add-readme",
+    "install": "web",
     "license": "n/a",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
-      "name": "Astro site /changelog + /now pages",
+      "name": "Astro site /changelog + /now",
       "url": "https://astro.build",
-      "what": "Changelog and metrics pages on your own domain",
-      "why": "Best for non-developer buyers and SEO; reuse the release notes",
+      "what": "Changelog and /now pages on your own site",
+      "why": "Owned, SEO-friendly",
       "cost": "free",
       "free_limits": "Free",
-      "windows_fit": "native",
+      "platforms": "web",
       "maintained": "See site slot",
-      "install": "part of site",
+      "install": "npm create astro@latest",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://astro.build/blog/joining-cloudflare/",
       "checked": "2026-10-28"
     },
     {
-      "name": "Buffer queue for build-in-public posts",
+      "name": "Buffer queue",
       "url": "https://buffer.com",
-      "what": "Schedule weekly progress posts to LinkedIn/X",
-      "why": "Keeps a weekly cadence without daily effort",
+      "what": "Weekly build-in-public posts",
+      "why": "Consistent cadence",
       "cost": "freemium",
       "free_limits": "3 channels free",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "SaaS",
       "install": "web",
       "license": "Proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://buffer.com/pricing",
       "checked": "2026-10-28"
     }
@@ -58,28 +55,26 @@
   "candidates": [
     {
       "name": "GitHub README + Releases",
-      "verdict": "PICK: free, developer-native, automatable"
+      "verdict": "PICK"
     },
     {
       "name": "Astro /changelog",
-      "verdict": "Own-domain mirror for buyers"
+      "verdict": "Mirror"
     },
     {
-      "name": "Buffer weekly posts",
-      "verdict": "Distribution"
-    },
-    {
-      "name": "Hosted changelog SaaS (Featurebase, etc.)",
-      "verdict": "Not needed at this stage; not verified"
+      "name": "Buffer",
+      "verdict": "Posting"
     }
   ],
-  "decision": "Use GitHub as the source of truth (profile README, Releases), mirror it to the Astro site, and post a weekly summary via Buffer. A hosted changelog tool is unnecessary until you have customers asking for in-app announcements.",
+  "decision": "Use GitHub as the source of truth, mirror it on your site, and post a weekly summary. A hosted changelog tool is unnecessary until customers want in-app announcements.",
   "note": "",
-  "details": "Public metrics:",
+  "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Standard GitHub profile README mechanism.",
-    "url": ""
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme"
   },
-  "better_pick": null
+  "better": []
 }

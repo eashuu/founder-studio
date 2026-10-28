@@ -3,91 +3,107 @@
   "slot": "Deep research + market sizing",
   "track": "discover",
   "stage": "discover",
-  "region": "Global",
-  "order": 138,
+  "order": 2,
   "pick": {
-    "name": "Gemini Deep Research (Google AI Pro)",
-    "url": "https://gemini.google.com",
-    "what": "Agentic multi-source web research reports with citations, exportable to Google Docs",
-    "why": "Grounded in Google Search, already paid until Jan 2028, and it does not draw down the Claude Max budget your coding depends on.",
-    "cost": "owned",
-    "free_limits": "AI Pro: 4x standard Gemini app limits, one shared compute meter (chat + Deep Research + images + video), refreshes every 5 h up to a weekly cap; no per-day report count published. Older 20 reports/day figure is superseded",
-    "windows_fit": "web",
-    "maintained": "live service (limits page undated; 9to5Google summary updated 25 May 2026)",
+    "name": "ChatGPT deep research",
+    "url": "https://help.openai.com/en/articles/10500283-deep-research-faq",
+    "what": "OpenAI agentic research reports",
+    "why": "Mature, strong at long structured reports.",
+    "cost": "freemium",
+    "free_limits": "Free plan: 'limited deep research'; Plus 'expanded'; Pro 'maximum'. Exact counts are shown only in an in-product counter and reset every 30 days for fixed monthly allowances. Availability varies by country. Reports export to Markdown, Word and PDF",
+    "platforms": "web|macOS|Windows|iOS|Android",
+    "maintained": "live service",
+    "install": "web",
+    "license": "OpenAI ToS",
+    "commercial_ok": "yes",
+    "source_url": "https://help.openai.com/en/articles/10500283-deep-research-faq",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Gemini Deep Research (free tier)",
+    "url": "https://support.google.com/gemini/answer/16275805",
+    "what": "Agentic cited research reports grounded in Google Search, exportable to Docs",
+    "why": "Free Gemini accounts can run limited Deep Research; Perplexity free is the fast-answer fallback.",
+    "cost": "freemium",
+    "free_limits": "Deep Research is available without a Google AI plan under standard compute-based limits that refresh every 5 hours up to a weekly cap (Deep Research is a high-cost feature). Google AI Plus 2x, Pro 4x, Ultra 5x or 20x the Pro limit. Free context window 32k tokens",
+    "platforms": "web|iOS|Android",
+    "maintained": "live service",
     "install": "web",
     "license": "Google ToS",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://support.google.com/gemini/answer/16275805",
     "checked": "2026-10-28"
   },
   "alts": [
     {
-      "name": "Claude Research (Max)",
+      "name": "Claude Research",
       "url": "https://support.claude.com/en/articles/11088861-using-research-on-claude",
-      "what": "Claude's multi-step web + connector research (Opus 5.5)",
-      "why": "Better when the research must read your Gmail/Drive/Docs connectors or needs sharper reasoning; costs Claude usage.",
-      "cost": "owned",
-      "free_limits": "Same limits as Claude chats on Pro/Max/Team/Enterprise; uses limits faster",
-      "windows_fit": "web/desktop",
+      "what": "Multi-step web plus connector research with citations (Pro, Max, Team, Enterprise)",
+      "why": "Strong reasoning over messy sources and reads connected tools (Gmail, Calendar, Docs and other connectors) during research.",
+      "cost": "paid",
+      "free_limits": "No free plan: Research is available on Pro, Max, Team and Enterprise (web, desktop, mobile; mobile searches the web only). Same limits as normal chats but uses them faster",
+      "platforms": "web|macOS|Windows|iOS|Android",
       "maintained": "live service",
       "install": "web",
       "license": "Anthropic ToS",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://support.claude.com/en/articles/11088861-using-research-on-claude",
       "checked": "2026-10-28"
     },
     {
-      "name": "NotebookLM Deep Research",
-      "url": "https://9to5google.com/2025/12/24/google-ai-pro-ultra-features/",
-      "what": "Deep Research that lands its sources straight into a notebook",
-      "why": "Best when the output should become a reusable, source-grounded notebook rather than a one-off report.",
-      "cost": "owned",
-      "free_limits": "AI Pro: 20 NotebookLM Deep Research uses/day (per 9to5Google, May 2026)",
-      "windows_fit": "web",
+      "name": "Perplexity",
+      "url": "https://www.perplexity.ai",
+      "what": "Fast cited search plus Deep Research mode",
+      "why": "Best for quick sourced answers; less depth on long reports.",
+      "cost": "freemium",
+      "free_limits": "Free tier with limited Pro searches; deep research listed as a Pro feature. Pro was on a limited-time 50% discount ($9/mo billed annually) at check time. Consumer Pro/Max are marked 'for personal use only'; business use is on Enterprise plans",
+      "platforms": "web|iOS|Android",
       "maintained": "live service",
       "install": "web",
-      "license": "Google ToS",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://9to5google.com/2025/12/24/google-ai-pro-ultra-features/",
+      "license": "Perplexity ToS",
+      "commercial_ok": "unclear",
+      "source_url": "https://www.perplexity.ai",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Gemini Deep Research",
-      "verdict": "pick"
-    },
-    {
       "name": "Claude Research",
-      "verdict": "alt: connectors + reasoning, but spends coding budget"
+      "verdict": "pick: reasoning + connectors"
     },
     {
-      "name": "NotebookLM Deep Research",
-      "verdict": "alt: research straight into a notebook"
-    },
-    {
-      "name": "Perplexity (free/Pro)",
-      "verdict": "good fast answers; Pro is an extra subscription you don't need"
+      "name": "Gemini Deep Research",
+      "verdict": "best_free route; grounded in Google Search"
     },
     {
       "name": "ChatGPT deep research",
-      "verdict": "extra subscription for the same job"
+      "verdict": "alt: equally capable, subscription"
     },
     {
-      "name": "Statista / paid analyst reports",
-      "verdict": "paid; use only for a fundraising-grade number"
+      "name": "Perplexity",
+      "verdict": "alt: fast, cited"
+    },
+    {
+      "name": "Statista / analyst reports",
+      "verdict": "paid; only for investor-grade figures"
     }
   ],
-  "decision": "Run market sizing as two independent passes (Gemini Deep Research then Claude Research) and reconcile; disagreements show where the TAM number is soft. Lead with Gemini because its quota is separate from Claude Code's.",
+  "decision": "The major deep-research products are close in quality. Claude Research reasons well over many sources and can read connected Google Workspace and other connectors, but it has no free tier. ChatGPT deep research is the strongest alternative: an editable research plan, restriction to chosen sites, Word/PDF/Markdown export and a limited free allowance. Gemini Deep Research is the free route. Run market sizing through two vendors and reconcile, since disagreement shows where a TAM number is soft.",
   "note": "",
-  "details": "Google switched Gemini app limits to compute-based multipliers around I/O May 2026; per-feature counts are only visible in Settings > Usage limits.",
+  "details": "Gemini limits moved to compute-based multipliers around May 2026.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "ok",
-    "note": "Google page: AI Pro limits 4x standard, refresh every 5 hours up to a weekly limit, Deep Research rated high usage; no per-day count published. Matches.",
-    "url": "https://support.google.com/gemini/answer/16275805"
+    "verdict": "doubt",
+    "note": "The original decision justified the pick by 'consistent with its Claude Code stance'. BRIEF limits the Claude stance to the coding agent and Claude Code ecosystem slots, so that reasoning is removed. Not a clear wrong_pick, but the editor should consider ChatGPT deep research as pick.",
+    "url": "https://support.claude.com/en/articles/11088861-using-research-on-claude"
   },
-  "better_pick": null
+  "better": [
+    {
+      "target": "pick",
+      "name": "ChatGPT deep research",
+      "url": "https://help.openai.com/en/articles/10500283-deep-research-in-chatgpt",
+      "reason": "Comparable quality plus editable research plans, site restriction, Word/PDF export and a limited free tier (Plus 'expanded', Pro 'maximum'); arguably the better default for a neutral founder audience."
+    }
+  ]
 }

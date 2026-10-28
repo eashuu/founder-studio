@@ -3,7 +3,6 @@
   "slot": "docs MCP",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2009,
   "pick": {
     "name": "Context7 (Upstash)",
@@ -12,46 +11,58 @@
     "why": "Largest library index; official marketplace plugin",
     "cost": "freemium",
     "free_limits": "1,000 API calls/month + 20 bonus/day after; Pro $10/seat/mo with 2,000 calls",
-    "windows_fit": "native (hosted)",
     "maintained": "pushed 2026-10-28",
     "install": "/plugin install context7@claude-plugins-official",
     "license": "MIT (server)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://context7.com/plans",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
+  },
+  "best_free": {
+    "name": "DeepWiki MCP (Cognition)",
+    "url": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
+    "what": "Ask questions about any public GitHub repo",
+    "why": "Free, no auth; great for understanding an OSS dependency",
+    "cost": "free",
+    "free_limits": "Free, no auth, public repositories only; private repos need a Devin account and the Devin MCP",
+    "maintained": "live service",
+    "install": "claude mcp add -s user -t http deepwiki https://mcp.deepwiki.com/mcp",
+    "license": "proprietary service",
+    "commercial_ok": "yes",
+    "source_url": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
   "alts": [
-    {
-      "name": "DeepWiki MCP (Cognition)",
-      "url": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
-      "what": "Ask questions about any public GitHub repo",
-      "why": "Free, no auth; great for understanding an OSS dependency",
-      "cost": "free",
-      "free_limits": "free, no auth for public repos",
-      "windows_fit": "native (remote https://mcp.deepwiki.com/mcp)",
-      "maintained": "live service",
-      "install": "claude mcp add --transport http deepwiki https://mcp.deepwiki.com/mcp",
-      "license": "proprietary service",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
-      "checked": "2026-10-28"
-    },
     {
       "name": "Built-in WebFetch on llms.txt",
       "url": "https://code.claude.com/docs/llms.txt",
       "what": "Fetch a project's llms.txt/docs",
       "why": "$0, nothing to install",
-      "cost": "owned",
-      "free_limits": "n/a",
-      "windows_fit": "native",
+      "cost": "free",
+      "free_limits": "built in",
       "maintained": "core",
       "install": "built-in",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://code.claude.com/docs/llms.txt",
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
+    },
+    {
+      "name": "GitMCP",
+      "url": "https://github.com/idosal/git-mcp",
+      "what": "Remote MCP that turns any GitHub repo or Pages site into a docs source",
+      "why": "Zero setup, no key, repo-specific docs",
+      "cost": "free",
+      "free_limits": "free service, no cost per its FAQ",
+      "platforms": "macOS|Windows|Linux",
+      "maintained": "not shown",
+      "install": "claude mcp add --transport http gitmcp https://gitmcp.io/docs",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/idosal/git-mcp",
       "checked": "2026-10-28"
     }
   ],
@@ -84,10 +95,12 @@
   "decision": "Context7's 1,000 calls a month covers a solo dev and stops API hallucinations on fast-moving libraries. When the quota runs out, fall back to WebFetch on llms.txt rather than paying.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Plans page confirms: 1,000 API calls/month, then 20 bonus calls/day when blocked; private repos Pro/Enterprise only; Pro $10/seat/mo with 2,000 calls/seat then $5 per 1,000 (never blocked).",
+    "note": "Verified: 1,000 calls/month free then 20 bonus/day; Pro $10/seat with 2,000 calls/seat, $5 per extra 1k.",
     "url": "https://context7.com/plans"
   },
-  "better_pick": null
+  "better": []
 }

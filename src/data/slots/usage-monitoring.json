@@ -3,55 +3,66 @@
   "slot": "usage monitoring",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2013,
   "pick": {
     "name": "Built-in /usage",
     "url": "https://code.claude.com/docs/en/whats-new/2026-w16.md",
-    "what": "What drives your Max limits, by day/week",
+    "what": "Shows what drives your plan limits, by day/week",
     "why": "Authoritative for subscription limits",
-    "cost": "owned",
-    "free_limits": "n/a",
-    "windows_fit": "native",
+    "cost": "paid",
+    "free_limits": "Requires a Claude plan (Pro/Max plans/Team/Enterprise) or API billing; counts against plan usage",
     "maintained": "core",
     "install": "/usage",
     "license": "n/a",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://code.claude.com/docs/en/whats-new/2026-w16.md",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
+  },
+  "best_free": {
+    "name": "ccusage",
+    "url": "https://github.com/ccusage/ccusage",
+    "what": "Daily/weekly token+$ reports from local logs",
+    "why": "History and $-equivalent",
+    "cost": "free",
+    "free_limits": "n/a",
+    "maintained": "v20.0.45 (26 Oct 2026)",
+    "install": "npx ccusage@latest daily",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "source_url": "https://github.com/ccusage/ccusage",
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
   "alts": [
-    {
-      "name": "ccusage",
-      "url": "https://github.com/ccusage/ccusage",
-      "what": "Daily/weekly token+$ reports from local logs",
-      "why": "History and $-equivalent",
-      "cost": "free",
-      "free_limits": "n/a",
-      "windows_fit": "native via npx",
-      "maintained": "v20.0.45 (26 Oct 2026)",
-      "install": "npx ccusage@latest daily",
-      "license": "MIT",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://github.com/ccusage/ccusage",
-      "checked": "2026-10-28"
-    },
     {
       "name": "Orca usage tracking",
       "url": "https://github.com/stablyai/orca",
       "what": "Per-account Claude/Codex usage in Orca",
-      "why": "Already in your orchestrator",
+      "why": "Built into Orca if you use it",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "v1.4.243",
-      "install": "installed",
+      "install": "see source",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/stablyai/orca",
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
+    },
+    {
+      "name": "Claude-Code-Usage-Monitor",
+      "url": "https://github.com/Maciek-roboblog/Claude-Code-Usage-Monitor",
+      "what": "Real-time terminal usage monitor with predictions and warnings",
+      "why": "Burn-rate forecasts",
+      "cost": "free",
+      "free_limits": "fully free",
+      "platforms": "macOS|Windows|Linux",
+      "maintained": "release date not shown",
+      "install": "uv tool install claude-monitor",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/Maciek-roboblog/Claude-Code-Usage-Monitor",
       "checked": "2026-10-28"
     }
   ],
@@ -66,7 +77,7 @@
     },
     {
       "name": "Orca usage",
-      "verdict": "if Orca stays"
+      "verdict": "if you run Orca"
     },
     {
       "name": "Claude-Code-Usage-Monitor",
@@ -77,13 +88,15 @@
       "verdict": "redundant"
     }
   ],
-  "decision": "/usage is the only source that reflects actual Max limits; use ccusage only for trend history.",
+  "decision": "/usage is the authoritative view of plan limits; use ccusage for trend history from local logs, or API-billing dashboards if you use an API key.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "ccusage alt v20.0.45 (26 Oct 2026) confirmed.",
-    "url": "https://github.com/ryoppippi/ccusage/releases"
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://code.claude.com/docs/en/whats-new/2026-w16.md"
   },
-  "better_pick": null
+  "better": []
 }

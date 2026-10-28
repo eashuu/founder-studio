@@ -3,7 +3,6 @@
   "slot": "work tracker MCP",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2026,
   "pick": {
     "name": "GitHub Issues/Projects via gh",
@@ -12,47 +11,45 @@
     "why": "$0, one less SaaS, Claude already uses gh",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native",
-    "maintained": "installed",
-    "install": "gh auth login",
+    "maintained": "current (gh CLI)",
+    "install": "brew install gh | winget install GitHub.cli | apt install gh; then gh auth login",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://cli.github.com",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [
     {
-      "name": "Linear (via installed design plugin connector)",
+      "name": "Linear (official connector)",
       "url": "https://github.com/anthropics/claude-plugins-official",
       "what": "Linear MCP",
-      "why": "If you outgrow Issues",
+      "why": "Best UX once a team outgrows Issues",
       "cost": "freemium",
       "free_limits": "Linear free plan",
-      "windows_fit": "native",
       "maintained": "listed",
       "install": "authenticate from /mcp",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/anthropics/claude-plugins-official",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     },
     {
-      "name": "Notion (via installed design plugin connector)",
+      "name": "Notion (official connector)",
       "url": "https://github.com/anthropics/claude-plugins-official",
       "what": "Docs + light tracking",
       "why": "If Notion is your wiki",
       "cost": "freemium",
       "free_limits": "Notion free",
-      "windows_fit": "native",
       "maintained": "listed",
       "install": "authenticate from /mcp",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/anthropics/claude-plugins-official",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     }
   ],
   "candidates": [
@@ -70,16 +67,18 @@
     },
     {
       "name": "Atlassian/twg",
-      "verdict": "company work - keep separate"
+      "verdict": "Atlassian/Jira: use for employer-mandated trackers; keep separate"
     }
   ],
-  "decision": "Solo: one tracker, the one already next to the code.",
+  "decision": "For a solo founder or tiny team, one tracker next to the code (GitHub Issues via gh) avoids another SaaS. Move to Linear when a team grows, or Notion if it is already your wiki.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Consistent with D's GitHub Projects roadmap pick.",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
     "url": "https://cli.github.com"
   },
-  "better_pick": null
+  "better": []
 }

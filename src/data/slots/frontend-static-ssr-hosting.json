@@ -3,21 +3,34 @@
   "slot": "Frontend / static + SSR hosting",
   "track": "ship",
   "stage": "ship",
-  "region": "Global",
-  "order": 6101,
+  "order": 6000,
   "pick": {
+    "name": "Vercel Pro",
+    "url": "https://vercel.com/pricing",
+    "what": "Best-in-class Next.js hosting",
+    "why": "Best-in-class DX and first-party Next.js (ISR, image optimisation, previews); Pro is the commercial plan",
+    "cost": "paid",
+    "free_limits": "Pro $20/mo incl. $20 usage credit, 10M CDN requests, 1 TB transfer. Hobby is non-commercial only (1M requests, 100 GB)",
+    "platforms": "web + CLI (macOS, Windows, Linux)",
+    "maintained": "pricing page live 2026-10-28",
+    "install": "npm i -g vercel",
+    "license": "proprietary service",
+    "commercial_ok": "yes (Pro); no (Hobby)",
+    "source_url": "https://vercel.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
     "name": "Cloudflare Workers (static assets + SSR)",
     "url": "https://developers.cloudflare.com/workers/platform/pricing/",
     "what": "Static sites, SPAs and SSR apps on Cloudflare's edge, same runtime as your APIs",
     "why": "Only top host whose free tier allows commercial use AND serves static assets free/unlimited; one platform with R2, Queues, Cron, Logs",
     "cost": "freemium",
     "free_limits": "Static asset requests free + unlimited; dynamic: 100k req/day, 10 ms CPU/invocation, 100 Workers/account; Paid $5/mo = 10M req + 30M CPU-ms (pricing page updated 2026-10-02)",
-    "windows_fit": "web + native CLI (wrangler via npm on Windows)",
+    "platforms": "web + CLI (macOS, Windows, Linux)",
     "maintained": "wrangler 4.154.0 on npm 2026-10-27",
     "install": "npm create cloudflare@latest",
     "license": "service (wrangler MIT OR Apache-2.0)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://developers.cloudflare.com/workers/platform/pricing/",
     "checked": "2026-10-28"
   },
@@ -29,69 +42,69 @@
       "why": "Best free runner-up: easy previews and forms; credit model",
       "cost": "freemium",
       "free_limits": "300 credits/mo (bandwidth costs 20 credits/GB, i.e. ~15 GB if nothing else); Personal $9, Pro $20",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "active (pricing page live)",
       "install": "npm i -g netlify-cli",
       "license": "proprietary service",
       "commercial_ok": "unclear",
-      "needs_company": "no",
       "source_url": "https://answers.netlify.com/t/can-we-use-netlify-free-plan-for-commercial-purposes/41545",
       "checked": "2026-10-28"
     },
     {
-      "name": "Vercel Pro",
-      "url": "https://vercel.com/docs/limits/fair-use-guidelines",
-      "what": "Best-in-class Next.js hosting",
-      "why": "Pay-later pick if you want first-party Next.js features; Hobby is non-commercial only",
-      "cost": "paid",
-      "free_limits": "Hobby: NON-COMMERCIAL ONLY (any payment, ads, or a paid dev counts); Pro $20/user/mo (fair-use page updated 2026-09-14)",
-      "windows_fit": "web + native CLI",
-      "maintained": "docs updated 2026-09-14",
-      "install": "npm i -g vercel",
-      "license": "proprietary service",
-      "commercial_ok": "yes (Pro); no (Hobby)",
-      "needs_company": "no",
-      "source_url": "https://vercel.com/docs/limits/fair-use-guidelines",
+      "name": "Render",
+      "url": "https://render.com/pricing",
+      "what": "Git-based static and web-service PaaS",
+      "why": "Simple PaaS with free static sites",
+      "cost": "freemium",
+      "free_limits": "Static sites 'free, forever' per pricing page; plan tables not captured (unverified); free compute documented as not for production",
+      "platforms": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "unclear",
+      "source_url": "https://render.com/pricing",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
+      "name": "Vercel Pro",
+      "verdict": "PICK: best DX and Next.js support, $20/mo"
+    },
+    {
       "name": "Cloudflare Workers",
-      "verdict": "PICK: free commercial use, unlimited static, same platform as backend"
+      "verdict": "best_free: unlimited static assets, commercial use allowed"
+    },
+    {
+      "name": "Netlify",
+      "verdict": "Alt: previews and forms, credit-based free plan"
+    },
+    {
+      "name": "Render",
+      "verdict": "Alt: simple PaaS; free compute not for production"
     },
     {
       "name": "Cloudflare Pages",
-      "verdict": "Older product; Cloudflare now steers new projects to Workers static assets"
-    },
-    {
-      "name": "Netlify Free",
-      "verdict": "Alt: commercial OK per Netlify staff forum, but 300-credit cap is small"
+      "verdict": "Older product; Cloudflare steers new projects to Workers static assets"
     },
     {
       "name": "Vercel Hobby",
-      "verdict": "Rejected: non-commercial only per fair-use guidelines"
-    },
-    {
-      "name": "Vercel Pro",
-      "verdict": "Alt: $20/mo when you want native Next.js (ISR, image opt) without adapters"
+      "verdict": "Rejected: non-commercial only"
     },
     {
       "name": "GitHub Pages",
-      "verdict": "Rejected for products: docs forbid running an online business/SaaS on it; fine for OSS docs"
-    },
-    {
-      "name": "Render static sites",
-      "verdict": "Viable free static, but Render free compute is 'not for production'"
+      "verdict": "Rejected for products: terms forbid running an online business on it"
     }
   ],
-  "decision": "Cloudflare Workers wins on free commercial terms, unlimited static assets and co-location with the API, DB proxy, storage and cron. Next.js on Workers now uses vinext (beta) or OpenNext; if you hit Next.js compatibility gaps, pay for Vercel Pro ($20/mo) rather than using Hobby.",
-  "note": "",
-  "details": "Cloudflare's Next.js guide (fetched today) recommends vinext (beta) with OpenNext as fallback; prefer a Vite-based framework (React Router / TanStack Start / Astro) to avoid adapter risk.",
+  "decision": "Vercel Pro is the best overall host when the app is Next.js or needs polished previews and an integrated platform; budget $20 per seat per month. Cloudflare Workers is the best free host because its free tier allows commercial use and serves static assets without limits; prefer a Vite-based framework (Astro, React Router, TanStack Start) there to avoid Next.js adapter gaps.",
+  "note": "Same answer as App stacks: Vercel Pro for zero-friction Next.js, Cloudflare Workers as the free commercial option.",
+  "details": "Cloudflare's Next.js guide recommends vinext (beta) with OpenNext as fallback.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Pricing page (updated 2026-10-02): Free 100k req/day, 10 ms CPU; static asset requests free and unlimited; Paid min $5/mo incl. 10M req + 30M CPU-ms. Limits page: 100 Workers/account Free. ToS has no non-commercial clause. See cross_issues re Next.js in final-B.",
-    "url": "https://developers.cloudflare.com/workers/platform/pricing/"
+    "note": "Checked against primary sources; wording made neutral during verification.",
+    "url": "https://vercel.com/pricing"
   },
-  "better_pick": null
+  "better": []
 }

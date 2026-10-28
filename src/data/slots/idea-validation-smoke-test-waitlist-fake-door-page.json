@@ -3,24 +3,23 @@
   "slot": "Idea validation: smoke-test / waitlist / fake-door page",
   "track": "discover",
   "stage": "discover",
-  "region": "Global",
-  "order": 146,
+  "order": 10,
   "pick": {
-    "name": "Claude Code-built static page on Cloudflare Pages + Tally embed",
+    "name": "Static page on Cloudflare Pages + Tally embed",
     "url": "https://developers.cloudflare.com/pages/platform/limits/",
     "what": "Landing page in your own repo, deployed free, signups to Tally",
     "why": "$0, no bandwidth cap, custom domain, and it is the same stack Claude Code will later extend; no page-builder lock-in.",
     "cost": "free",
     "free_limits": "Cloudflare Pages free: 500 builds/mo, 20,000 files, 25 MiB/file, 100 custom domains/project",
-    "windows_fit": "web",
     "maintained": "live service",
     "install": "npm create cloudflare@latest",
     "license": "proprietary hosting (your code)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://developers.cloudflare.com/pages/platform/limits/",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "web"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Carrd",
@@ -29,14 +28,13 @@
       "why": "Fastest no-code page; Pro Standard is only $19/yr.",
       "cost": "freemium",
       "free_limits": "Free: 3 sites, no forms/custom domain; Pro Lite $9/yr, Pro Standard $19/yr",
-      "windows_fit": "web",
       "maintained": "live service",
       "install": "web",
       "license": "proprietary SaaS",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://carrd.co/pro",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     },
     {
       "name": "Framer",
@@ -45,14 +43,13 @@
       "why": "Best-looking no-code marketing sites; pay-later choice for a polished site.",
       "cost": "freemium",
       "free_limits": "Free: 1 GB bandwidth, no custom domain; Basic $10/mo",
-      "windows_fit": "web",
       "maintained": "live service",
       "install": "web",
       "license": "proprietary SaaS",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.framer.com/pricing",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     }
   ],
   "candidates": [
@@ -84,10 +81,12 @@
   "decision": "Claude Code writes the page in minutes and you own it. Use Carrd only when you want a test live in 15 minutes without touching a repo. Track fake-door clicks with whichever product analytics the build track picks.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "500 builds/mo, 20,000 files, 25 MiB, 100 domains confirmed. Carrd/Framer alts confirmed.",
+    "note": "Shallow check only: free/commercial terms are consistent with the cited licence; not re-opened in this pass.",
     "url": "https://developers.cloudflare.com/pages/platform/limits/"
   },
-  "better_pick": null
+  "better": []
 }

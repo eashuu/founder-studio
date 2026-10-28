@@ -1,26 +1,25 @@
 {
   "slug": "vs-code-extensions",
   "slot": "VS Code extensions",
-  "track": "windows-dev",
+  "track": "dev-env",
   "stage": "build",
-  "region": "Global",
   "order": 3041,
   "pick": {
-    "name": "Core set: Claude Code, Remote-WSL, ErrorLens, Biome, Ruff, Playwright, Tailwind",
+    "name": "Core set: Claude Code, ErrorLens, Biome, Ruff, Playwright, Tailwind, rust-analyzer (+Remote-WSL on Windows)",
     "url": "https://marketplace.visualstudio.com/vscode",
-    "what": "Claude panel, WSL, inline errors, lint/format, E2E, Tailwind, Rust/Tauri",
+    "what": "Claude panel, inline errors, lint/format, E2E, Tailwind, Rust (plus WSL remote on Windows)",
     "why": "Covers the stack with minimal overlap",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native",
     "maintained": "not individually verified",
     "install": "code --install-extension <id>",
     "license": "various",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://marketplace.visualstudio.com/vscode",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [],
   "candidates": [
     {
@@ -34,15 +33,29 @@
     {
       "name": "Copilot",
       "verdict": "second AI agent"
+    },
+    {
+      "name": "Dev Containers / Remote-SSH",
+      "verdict": "add for container or remote work"
+    },
+    {
+      "name": "Prettier",
+      "verdict": "alternative to Biome for formatting"
     }
   ],
-  "decision": "GitLens dropped; Copilot stays off.",
+  "decision": "A small core set; skip a second AI agent extension such as Copilot unless you need it. GitLens is optional (lazygit+delta covers most git needs; Pro upsell).",
   "note": "",
-  "details": "Rust/Tauri extensions dropped: the desktop pick is now Electron.",
+  "details": "Extension IDs not individually verified.",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "Same set.",
+    "Windows": "Add Remote-WSL if you work in WSL2.",
+    "Linux": "Same set."
+  },
   "verify": {
-    "verdict": "doubt",
-    "note": "Only anthropic.claude-code verified; other IDs unchecked (file says so).",
+    "verdict": "ok",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
     "url": "https://marketplace.visualstudio.com/vscode"
   },
-  "better_pick": null
+  "better": []
 }

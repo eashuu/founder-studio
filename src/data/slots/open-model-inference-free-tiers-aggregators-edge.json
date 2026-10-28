@@ -1,0 +1,118 @@
+{
+  "slug": "open-model-inference-free-tiers-aggregators-edge",
+  "slot": "open-model inference + free tiers (aggregators, edge)",
+  "track": "ai-eng",
+  "stage": "build",
+  "order": 4001,
+  "pick": {
+    "name": "OpenRouter",
+    "url": "https://openrouter.ai/pricing",
+    "what": "One OpenAI-compatible key for hundreds of models, including 25+ free ones",
+    "why": "Widest model breadth with one key and easy swap; no prompt storage unless opted in",
+    "cost": "freemium",
+    "free_limits": "Free models: 20 req/min; 50 req/day (1,000/day after buying 10+ credits). 5.5% fee on credit purchases (Standard).",
+    "platforms": "web",
+    "maintained": "Page current 2026-10-28; @openrouter/ai-sdk-provider 3.1.0 (2026-09-19)",
+    "install": "npm i @openrouter/ai-sdk-provider",
+    "license": "Proprietary service; per-model licences",
+    "commercial_ok": "yes",
+    "source_url": "https://openrouter.ai/docs/guides/privacy/data-collection",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Groq (free plan)",
+    "url": "https://console.groq.com/docs/rate-limits",
+    "what": "Very fast inference of gpt-oss-120b/20b, Qwen3.8-27b, Whisper, Prompt Guard 2",
+    "why": "Best free latency; also free Whisper + safety classifiers",
+    "cost": "freemium",
+    "free_limits": "The published table is labelled as the Developer plan's base limits (gpt-oss-120b/20b 30 RPM, 1K RPD, 8K TPM, 200K TPD; whisper-large-v3-turbo 20 RPM, 2K RPD; Prompt Guard 2 30 RPM, 14.4K RPD); Free-plan limits are lower or not published there. Data: Groq does not retain inference data by default; logs for abuse/troubleshooting kept up to 30 days; Zero Data Retention can be enabled by all customers.",
+    "maintained": "Page current 2026-10-28",
+    "install": "npm i groq-sdk",
+    "license": "Proprietary API terms",
+    "commercial_ok": "yes",
+    "source_url": "https://console.groq.com/docs/rate-limits",
+    "checked": "2026-10-28",
+    "platforms": "web"
+  },
+  "alts": [
+    {
+      "name": "Cloudflare Workers AI",
+      "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+      "what": "Serverless open-model inference at the edge, callable from Workers or REST",
+      "why": "10,000 free Neurons/day, good for embeddings/small LLM/Whisper next to a Workers-hosted app",
+      "cost": "freemium",
+      "free_limits": "10,000 Neurons/day on Free and Paid; $0.011 per 1,000 Neurons above that (Paid only); resets 00:00 UTC; Kimi K2.6/2.7-code, GLM-5.x, DeepSeek V4 need Workers Paid or prepaid AI Gateway credits",
+      "maintained": "Pricing page current 2026-10-28",
+      "install": "npm i wrangler  |  REST",
+      "license": "Proprietary service",
+      "commercial_ok": "yes",
+      "source_url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+      "checked": "2026-10-28",
+      "platforms": "web (wrangler CLI on macOS, Windows, Linux)"
+    },
+    {
+      "name": "Vercel AI Gateway",
+      "url": "https://vercel.com/docs/ai-gateway/pricing",
+      "what": "Aggregator with zero token markup, free tier subset of models",
+      "why": "TS-native with AI SDK; no markup incl. BYOK",
+      "cost": "freemium",
+      "free_limits": "Free tier = subset of models, per-model rate limits, monthly free credit (amount not on page); buying credits ends free credit; BYOK needs purchased credits",
+      "maintained": "Doc last_updated 2026-09-08",
+      "install": "npm i ai (model strings 'provider/model')",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://vercel.com/docs/ai-gateway/pricing",
+      "checked": "2026-10-28",
+      "platforms": "web"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "OpenRouter",
+      "verdict": "Pick: breadth, one key; 5.5% credit fee"
+    },
+    {
+      "name": "Groq",
+      "verdict": "Best free latency + free Whisper; small daily caps"
+    },
+    {
+      "name": "Cloudflare Workers AI",
+      "verdict": "10k Neurons/day free; best next to Workers apps"
+    },
+    {
+      "name": "Vercel AI Gateway",
+      "verdict": "Zero markup, TS-native; free credit amount unverified"
+    },
+    {
+      "name": "Together AI / Fireworks",
+      "verdict": "Strong paid open-model hosts; not evaluated for inference this pass"
+    },
+    {
+      "name": "Cerebras",
+      "verdict": "Trial credits only"
+    },
+    {
+      "name": "Hugging Face Inference Providers",
+      "verdict": "Free users get no credits"
+    },
+    {
+      "name": "Mistral Experiment",
+      "verdict": "Docs URL 404; limits unverified"
+    },
+    {
+      "name": "GitHub Models",
+      "verdict": "Retired 2026-07-30"
+    }
+  ],
+  "decision": "OpenRouter wins on breadth for trying and swapping open models; Groq is the best free tier for latency and Whisper; Cloudflare Workers AI is the free fallback for embeddings and small models near Workers code. Free tiers are for non-sensitive data only; prefer paid plans or self-hosting for customer data.",
+  "note": "",
+  "details": "",
+  "region_notes": {},
+  "os_notes": {},
+  "verify": {
+    "verdict": "ok",
+    "note": "Confirmed: free models 20 req/min and 50/day, 1,000/day after $10+ credits bought; 5.5% fee (Standard), 8% (Business); 25+ free models.",
+    "url": "https://openrouter.ai/pricing"
+  },
+  "better": []
+}

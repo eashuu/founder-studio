@@ -1,0 +1,92 @@
+{
+  "slug": "local-open-weight-models",
+  "slot": "local open-weight models",
+  "track": "ai-eng",
+  "stage": "build",
+  "order": 4015,
+  "pick": {
+    "name": "Gemma 4 (E2B/E4B small; 12B, 26B-A4B and 31B larger)",
+    "url": "https://ai.google.dev/gemma/docs/core",
+    "what": "Google open-weight multimodal models: 128K context on E2B/E4B, 256K on medium sizes; audio input on E2B, E4B and 12B",
+    "why": "Best capability per RAM at 2-4B effective params; runs in llama.cpp/Ollama/LiteRT-LM/llama.rn",
+    "cost": "free",
+    "free_limits": "n/a",
+    "maintained": "Gemma 4 released 2026-04-02 per secondary sources; docs list E2B, E4B, 12B, 26B-A4B, 31B",
+    "install": "ollama pull gemma4  (= gemma4:e4b; also gemma4:e2b, :12b, :26b, :31b and -mlx variants)",
+    "license": "Apache-2.0 (Google's 'Gemma 4 license' link points to Apache 2.0)",
+    "commercial_ok": "yes",
+    "source_url": "https://ai.google.dev/gemma/docs/core",
+    "checked": "2026-10-28",
+    "platforms": "native"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "gpt-oss-20b (OpenAI, MoE)",
+      "url": "https://console.groq.com/docs/rate-limits",
+      "what": "Open-weight 20B MoE reasoning model",
+      "why": "Strong reasoning, MoE keeps active params small; needs ~16GB RAM (unverified)",
+      "cost": "free",
+      "free_limits": "Also free on Groq (30 RPM, 1K RPD)",
+      "maintained": "Listed on Groq 2026-10-28",
+      "install": "ollama pull gpt-oss:20b",
+      "license": "Apache-2.0 (unverified here)",
+      "commercial_ok": "yes",
+      "source_url": "https://console.groq.com/docs/rate-limits",
+      "checked": "2026-10-28",
+      "platforms": "native (Ollama/llama.cpp)"
+    },
+    {
+      "name": "Qwen3.x small models",
+      "url": "https://unsloth.ai/docs",
+      "what": "Qwen3.8 family supported by Unsloth; permissive small models",
+      "why": "Alternative family with multilingual coverage",
+      "cost": "free",
+      "free_limits": "n/a",
+      "maintained": "Unsloth lists Qwen3.8 support 2026-10-28",
+      "install": "ollama pull qwen3",
+      "license": "Apache-2.0 for most sizes (unverified)",
+      "commercial_ok": "yes",
+      "source_url": "https://unsloth.ai/docs",
+      "checked": "2026-10-28",
+      "platforms": "native"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Gemma 4 E2B/E4B",
+      "verdict": "Pick: multimodal, small, 128K ctx"
+    },
+    {
+      "name": "gpt-oss-20b",
+      "verdict": "Alt: reasoning, needs RAM"
+    },
+    {
+      "name": "Qwen3 small family",
+      "verdict": "Alt: permissive, multilingual"
+    },
+    {
+      "name": "Liquid LFM small models",
+      "verdict": "Edge-focused, not source-verified"
+    },
+    {
+      "name": "Phi / Llama small",
+      "verdict": "Older, licences vary"
+    }
+  ],
+  "decision": "Gemma 4 is the broad default (small E2B/E4B for any machine, larger variants for GPUs/Macs), with gpt-oss-20b for stronger reasoning and Qwen for multilingual/coding. Always benchmark on your own eval set; none match frontier APIs.",
+  "note": "",
+  "details": "Speeds were not measured. Gemma 4 licence is reported as Apache-2.0 only in secondary sources (Google page does not name it).",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "Apple silicon: E2B on 8GB; E4B or 12B on 16GB; 26B-A4B or 31B (19-20GB downloads) on 32GB+. Ollama ships -mlx tags; MLX LM is the alternative.",
+    "Windows": "NVIDIA GPU: 8GB VRAM fits E4B; 12GB fits 12B; 24GB fits 26B-A4B or 31B at Q4. CPU-only: E2B/E4B on 16GB RAM, expect a few tokens/sec.",
+    "Linux": "Same as Windows; NVIDIA CUDA, AMD ROCm or Vulkan for GPU; CPU-only works with E2B/E4B."
+  },
+  "verify": {
+    "verdict": "fixed",
+    "note": "Google docs list E2B, E4B, 12B, 26B A4B, 31B; 12B was missing from the name. Ollama tags/sizes: e2b 4.6-7.5GB, e4b (latest) 6.6-9.5GB, 12b ~8GB, 26b 16-19GB, 31b 19-20GB. Old macOS note put E4B on 8GB (too tight) and Windows note put 20-30B on 16GB VRAM (26B download is 16-19GB). Release date still not on Google page.",
+    "url": "https://ollama.com/library/gemma4"
+  },
+  "better": []
+}

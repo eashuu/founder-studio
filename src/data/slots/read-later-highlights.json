@@ -3,99 +3,108 @@
   "slot": "read-later + highlights",
   "track": "productivity",
   "stage": "run",
-  "region": "Global",
-  "order": 11213,
+  "order": 11006,
   "pick": {
-    "name": "Instapaper (Free)",
+    "name": "Readwise Reader",
+    "url": "https://readwise.io/read",
+    "what": "Reader for articles, PDFs, newsletters, RSS with highlight export and hosted MCP/API",
+    "why": "Best-in-class reader with highlights that flow into notes and agents",
+    "cost": "paid",
+    "free_limits": "30-day trial; Reader-only $7.99/mo annual, Full $9.99/mo annual; 50% student discount",
+    "platforms": "web|iOS|Android",
+    "maintained": "SaaS; old readwise-mcp repo deprecated 2026-03 for hosted MCP",
+    "install": "web",
+    "license": "Proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://readwise.io/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Instapaper",
     "url": "https://www.instapaper.com",
-    "what": "Read-later app with web, Android and browser extension",
-    "why": "Survivor of the 2024-25 shutdowns (Omnivore Nov 2024, Pocket July 2025) with unlimited free saves and an Android app; nothing to host",
+    "what": "Read-later app with extension, web and mobile apps",
+    "why": "Survivor of the 2024-25 shutdowns with unlimited free saves",
     "cost": "freemium",
-    "free_limits": "Free: unlimited saves, sync web/iOS/Android, folders, API, 5 notes/month; Premium $5.99/mo or $59.99/yr adds full-text search, permanent archive, PDFs, TTS",
-    "windows_fit": "web + Android",
+    "free_limits": "Free: unlimited saves, folders, API, 5 notes/month; Premium $5.99/mo or $59.99/yr",
+    "platforms": "web|iOS|Android",
     "maintained": "Service active 2026-10",
     "install": "web + browser extension",
     "license": "Proprietary",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://www.instapaper.com/premium",
     "checked": "2026-10-28"
   },
   "alts": [
     {
-      "name": "Readwise Reader",
-      "url": "https://readwise.io/read",
-      "what": "Best-in-class reader for articles, PDFs, newsletters, RSS with highlight export to Obsidian and an MCP/CLI/API",
-      "why": "Best pay-later pick: highlights flow into the Obsidian vault and agents can query the library via MCP",
-      "cost": "paid",
-      "free_limits": "30-day trial; Reader-only $7.99/mo annual, Full $9.99/mo annual; 50% student discount",
-      "windows_fit": "web + Android",
-      "maintained": "SaaS; old readwise-mcp repo deprecated 2026-03 in favour of hosted MCP",
-      "install": "web",
-      "license": "Proprietary",
+      "name": "Karakeep (ex-Hoarder)",
+      "url": "https://github.com/karakeep-app/karakeep",
+      "what": "Self-hosted bookmark/read-later with AI tagging and highlights",
+      "why": "Best open-source option if you self-host",
+      "cost": "free",
+      "free_limits": "Self-host free; Karakeep Cloud price not checked",
+      "platforms": "web|iOS|Android",
+      "maintained": "extension v1.2.14 2026-10-27",
+      "install": "docker compose per https://docs.karakeep.app",
+      "license": "AGPL-3.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://readwise.io/pricing",
+      "source_url": "https://github.com/karakeep-app/karakeep",
       "checked": "2026-10-28"
     },
     {
-      "name": "Karakeep (ex-Hoarder)",
-      "url": "https://karakeep.app",
-      "what": "Self-hosted bookmark/read-later app with highlights, AI tagging (Ollama or API), RSS auto-save",
-      "why": "Best free open-source option if you already run the Oracle Always Free VM; AGPL is fine for self-use",
-      "cost": "free",
-      "free_limits": "Self-host free; Karakeep Cloud managed option (price not checked)",
-      "windows_fit": "web + Android app",
-      "maintained": "extension v1.2.14 2026-10-27",
-      "install": "docker compose (self-host) per https://docs.karakeep.app",
-      "license": "AGPL-3.0",
+      "name": "Raindrop.io",
+      "url": "https://raindrop.io",
+      "what": "Cross-browser bookmark manager with highlights",
+      "why": "Visual bookmark library",
+      "cost": "freemium",
+      "free_limits": "Free: unlimited bookmarks/highlights/devices; Pro adds full-text search, permanent copies, AI, MCP",
+      "platforms": "web|macOS|Windows|iOS|Android",
+      "maintained": "SaaS",
+      "install": "web + extension",
+      "license": "Proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://github.com/karakeep-app/karakeep",
+      "source_url": "https://raindrop.io/pro/buy",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Instapaper",
-      "verdict": "PICK: $0, unlimited saves, Android, zero maintenance; future ownership flagged as 'unclear' by a competitor"
+      "name": "Readwise Reader",
+      "verdict": "PICK: best product, paid"
     },
     {
-      "name": "Readwise Reader",
-      "verdict": "Best product; paid only"
+      "name": "Instapaper",
+      "verdict": "BEST FREE"
     },
     {
       "name": "Karakeep",
-      "verdict": "Best OSS; needs a server"
+      "verdict": "Open source, needs server, AGPL (fine for self-use)"
     },
     {
       "name": "Raindrop.io",
-      "verdict": "Free unlimited bookmarks + highlights, but full-text search/archive/MCP are Pro; more bookmark manager than reader"
+      "verdict": "Bookmark manager more than reader"
     },
     {
-      "name": "wallabag.it",
-      "verdict": "€11/yr hosted, open source; small but steady"
-    },
-    {
-      "name": "Matter",
-      "verdict": "iOS-centric; weak on Android"
+      "name": "wallabag",
+      "verdict": "Open source, ~EUR 11/yr hosted"
     },
     {
       "name": "Pocket",
-      "verdict": "Shut down 2025-07-08, data deleted; remove"
+      "verdict": "Shut down 2025-07-08"
     },
     {
       "name": "Omnivore",
-      "verdict": "Shut down Nov 2024; remove"
+      "verdict": "Shut down Nov 2024"
     }
   ],
-  "decision": "Instapaper Free covers 'save now, read on phone later' at $0 with no hosting. Anything worth keeping should be clipped into Obsidian (next slot), so Instapaper's 5-notes/month cap does not matter. Move to Readwise Reader when reading becomes a core research input and you want highlights + MCP access for Claude.",
+  "decision": "Readwise Reader is the best reading tool: highlights, PDFs, newsletters and an MCP for agents. Instapaper Free is enough for save-and-read. Never adopt a tool without an export path; Pocket and Omnivore both shut down.",
   "note": "",
-  "details": "Pocket and Omnivore are both dead; do not adopt any tool without an export path.",
+  "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Instapaper Premium $5.99/mo or $59.99/yr, free 5 notes/mo, API on free all confirmed on official page.",
-    "url": "https://www.instapaper.com/premium"
+    "note": "Verified: Full $9.99/mo, Reader-only $7.99/mo (annual), 30-day trial, 50% academic discount.",
+    "url": "https://readwise.io/pricing"
   },
-  "better_pick": null
+  "better": []
 }

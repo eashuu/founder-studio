@@ -1,0 +1,84 @@
+{
+  "slug": "speaking-events",
+  "slot": "speaking + events",
+  "track": "brand",
+  "stage": "sell",
+  "order": 8026,
+  "pick": {
+    "name": "confs.tech",
+    "url": "https://github.com/tech-conferences/conference-data",
+    "what": "Open list of tech conferences with CFP deadlines",
+    "why": "Global, open data, easiest way to find CFPs",
+    "cost": "free",
+    "free_limits": "Free",
+    "platforms": "web",
+    "maintained": "conference-data commits 2026-10-16",
+    "install": "web",
+    "license": "Open data on GitHub",
+    "commercial_ok": "yes",
+    "source_url": "https://github.com/tech-conferences/conference-data",
+    "checked": "2026-10-28"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "Sessionize",
+      "url": "https://sessionize.com/",
+      "what": "CFP platform used by many conferences with public speaker profiles",
+      "why": "One profile to apply to many events",
+      "cost": "freemium",
+      "free_limits": "Pricing shown is for organizers; speaker cost not stated",
+      "platforms": "web",
+      "maintained": "Current",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://sessionize.com/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "AI Tinkerers",
+      "url": "https://delhi.aitinkerers.org/",
+      "what": "Application-based local builder meetups worldwide",
+      "why": "Builder demos with strong reach",
+      "cost": "free",
+      "free_limits": "Free, application-based",
+      "platforms": "web",
+      "maintained": "Chapters active (pages returned 403 to fetcher)",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "source_url": "https://delhi.aitinkerers.org/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "confs.tech",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Sessionize",
+      "verdict": "Apply to many CFPs"
+    },
+    {
+      "name": "AI Tinkerers",
+      "verdict": "Demo meetups"
+    },
+    {
+      "name": "Meetup / Luma",
+      "verdict": "Local events; not verified"
+    }
+  ],
+  "decision": "Use confs.tech for CFPs worldwide, keep a Sessionize profile, and demo at local builder meetups. Recycle each talk into a video and a blog post.",
+  "note": "",
+  "details": "",
+  "region_notes": {},
+  "os_notes": {},
+  "verify": {
+    "verdict": "fixed",
+    "note": "Checked against primary sources; wording made neutral during verification.",
+    "url": ""
+  },
+  "better": []
+}

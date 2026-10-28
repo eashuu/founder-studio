@@ -3,87 +3,94 @@
   "slot": "Selling services (consulting/freelance)",
   "track": "sales",
   "stage": "sell",
-  "region": "Global",
-  "order": 7195,
+  "order": 7022,
   "pick": {
     "name": "Upwork",
-    "url": "https://www.hireinsouth.com/post/how-much-does-upwork-cost",
+    "url": "https://www.upwork.com/i/pricing",
     "what": "Largest freelance marketplace",
-    "why": "Largest buyer pool for AI/automation work; variable 0-15% fee (~10% typical) disclosed per proposal",
+    "why": "Largest buyer pool for AI/automation work; variable 0-15% fee (secondary source)",
     "cost": "freemium",
-    "free_limits": "Free account; Connects needed to bid (price/free allotment unverified)",
-    "windows_fit": "web",
-    "maintained": "fee model since 2025-05-01",
+    "free_limits": "Free account; Connects needed to bid (price unverified)",
+    "platforms": "web",
+    "maintained": "fee model since 2025-05-01 (secondary)",
     "install": "web",
     "license": "proprietary",
     "commercial_ok": "yes",
-    "needs_company": "no",
-    "source_url": "https://www.hireinsouth.com/post/how-much-does-upwork-cost",
+    "source_url": "https://support.upwork.com/hc/en-us/articles/211062538-Freelancer-Service-Fees",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Contra",
+    "url": "https://contra.com/pricing",
+    "what": "Commission-free freelance platform + portfolio",
+    "why": "Commission-free freelance marketplace and portfolio; free plan usable for commercial work with per-payment fees",
+    "cost": "freemium",
+    "free_limits": "0% commission; free plan charges a client-payment fee (USD 15-29 per payment) and 5% on digital products (min USD 3, max USD 29), plus third-party processing; Pro USD 29/mo or USD 199/yr removes these fees",
+    "platforms": "web",
+    "maintained": "live page 2026-10-28",
+    "install": "web",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://contra.com/pricing",
     "checked": "2026-10-28"
   },
   "alts": [
     {
-      "name": "Contra",
-      "url": "https://contra.com/pricing",
-      "what": "Commission-free freelance platform + portfolio + payments",
-      "why": "0% commission; good for invoicing direct clients and a portfolio; Pro USD 29/mo",
-      "cost": "freemium",
-      "free_limits": "Free plan has client payment fee (USD 15-29 on >USD 500) and 5% digital-product fee",
-      "windows_fit": "web",
-      "maintained": "live page 2026-10-28",
-      "install": "web",
-      "license": "proprietary",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://contra.com/pricing",
-      "checked": "2026-10-28"
-    },
-    {
       "name": "Toptal",
       "url": "https://www.toptal.com/talent/apply",
       "what": "Screened premium network",
-      "why": "Highest rates if you pass screening; slow",
+      "why": "Highest rates after screening; slow",
       "cost": "free",
-      "free_limits": "Free to apply (details not on page)",
-      "windows_fit": "web",
+      "free_limits": "Free to apply",
+      "platforms": "web",
       "maintained": "live page 2026-10-28",
       "install": "web",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.toptal.com/talent/apply",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Fiverr",
+      "url": "https://www.fiverr.com/",
+      "source_url": "https://www.fiverr.com/",
+      "what": "largest gig marketplace for productised fixed-scope services; seller fee reported at 20% (official page 403, verify)",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Direct (site + LinkedIn + Apollo + Cal.com)",
-      "verdict": "Best margin long-term; use alongside the pick"
-    },
-    {
       "name": "Upwork",
-      "verdict": "PICK for early demand + reviews"
+      "verdict": "PICK for early demand and reviews"
     },
     {
       "name": "Contra",
-      "verdict": "0% commission; for direct clients and portfolio"
+      "verdict": "0% commission"
     },
     {
       "name": "Toptal",
-      "verdict": "Premium rates after screening"
+      "verdict": "Premium after screening"
+    },
+    {
+      "name": "Direct outbound",
+      "verdict": "Best long-term margin"
     },
     {
       "name": "Arc.dev / Braintrust",
       "verdict": "Not checked"
     }
   ],
-  "decision": "Use Upwork to win the first paid AI projects and reviews (narrow niche profile, e.g. 'Claude agents / MCP integrations'). Run direct outbound in parallel and move repeat clients off-platform once contracts allow. Payout/FIRA handling to India was not checked.",
+  "decision": "Use Upwork for first projects and reviews with a narrow niche profile, run direct outbound in parallel, and move repeat clients off-platform where terms allow.",
   "note": "",
-  "details": "Upwork's official fee page blocked fetch (403); figures are from secondary 2026 sources (unverified).",
-  "verify": {
-    "verdict": "doubt",
-    "note": "Upwork's official fee page is blocked, and the source is a third-party blog (hireinsouth), which breaks the primary-source rule for a fee. Contra alt is confirmed (USD 15/29 client-payment fee, 5% digital fee min USD 3 max 29; Pro USD 29/mo or 199/yr). Verify Upwork's fee on upwork.com before relying on '0-15%'.",
-    "url": "https://contra.com/pricing"
+  "details": "Upwork official fee page blocked fetch; fee figures secondary.",
+  "region_notes": {
+    "India": "Payout/FIRA handling and GST on export of services not checked; verify with a CA."
   },
-  "better_pick": null
+  "os_notes": {},
+  "verify": {
+    "verdict": "fixed",
+    "note": "Pick url and source_url point to a third-party blog (hireinsouth.com); use Upwork's own pages. Upwork's official fee page returns 403 to the fetcher; the variable 0-15% fee remains secondary-sourced (keep in unverified).",
+    "url": "https://www.upwork.com/i/pricing"
+  },
+  "better": []
 }

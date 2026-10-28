@@ -1,0 +1,84 @@
+{
+  "slug": "agent-mcp-claude-plugin-distribution",
+  "slot": "Agent / MCP / Claude plugin distribution",
+  "track": "sales",
+  "stage": "sell",
+  "order": 7024,
+  "pick": {
+    "name": "Anthropic Connectors Directory",
+    "url": "https://claude.com/docs/connectors/building/submission",
+    "what": "Submit remote MCP servers and plugins; listed after automated scan",
+    "why": "Puts your connector inside Claude for Claude users; the site's recommended agent",
+    "cost": "free",
+    "free_limits": "Free to submit; needs HTTPS remote server, OAuth 2.0 for user data, tool annotations, privacy policy, test account",
+    "platforms": "web (claude.ai/directory/manage)",
+    "maintained": "docs live 2026-10-28",
+    "install": "web",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "source_url": "https://claude.com/docs/connectors/building/submission",
+    "checked": "2026-10-28"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "Official MCP Registry",
+      "url": "https://registry.modelcontextprotocol.io/",
+      "what": "Open registry of MCP servers",
+      "why": "Vendor-neutral discovery for every MCP client",
+      "cost": "free",
+      "free_limits": "Free",
+      "platforms": "web",
+      "maintained": "live 2026-10-28",
+      "install": "mcp-publisher CLI",
+      "license": "open source",
+      "commercial_ok": "yes",
+      "source_url": "https://registry.modelcontextprotocol.io/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Smithery / Glama / mcp.so",
+      "url": "https://registry.modelcontextprotocol.io/",
+      "what": "Third-party MCP directories",
+      "why": "Extra discovery surface",
+      "cost": "free",
+      "free_limits": "not checked",
+      "platforms": "web",
+      "maintained": "not checked",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "unclear",
+      "source_url": "https://registry.modelcontextprotocol.io/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Anthropic Connectors Directory",
+      "verdict": "PICK"
+    },
+    {
+      "name": "MCP Registry",
+      "verdict": "Publish everywhere"
+    },
+    {
+      "name": "Smithery / Glama / mcp.so",
+      "verdict": "Not checked"
+    },
+    {
+      "name": "Gumroad / Polar",
+      "verdict": "Digital goods channel, optional"
+    }
+  ],
+  "decision": "Ship each MCP server as a remote Streamable-HTTP server with OAuth and tool annotations, submit to Anthropic's directory and the MCP Registry. Local servers ship inside a Claude plugin.",
+  "note": "",
+  "details": "Third-party directory alt carries the registry URL as a placeholder; unverified.",
+  "region_notes": {},
+  "os_notes": {},
+  "verify": {
+    "verdict": "ok",
+    "note": "Shallow; Claude-centric by site stance (allowed).",
+    "url": "https://claude.com/docs/connectors/building/submission"
+  },
+  "better": []
+}

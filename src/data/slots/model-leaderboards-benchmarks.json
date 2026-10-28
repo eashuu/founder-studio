@@ -3,87 +3,82 @@
   "slot": "model leaderboards / benchmarks",
   "track": "learning",
   "stage": "run",
-  "region": "Global",
-  "order": 12241,
+  "order": 12033,
   "pick": {
     "name": "OpenRouter Rankings",
     "url": "https://openrouter.ai/rankings",
-    "what": "Real usage share by model/app, open vs closed share, top models by task spend, cost per coding-agent session, plus the Artificial Analysis Intelligence Index",
-    "why": "Shows what developers actually pay for and how much an agent session costs, which is what a founder picking models for products needs",
+    "what": "Usage-based model rankings",
+    "why": "Shows what builders actually use",
     "cost": "free",
     "free_limits": "Free",
-    "windows_fit": "web",
-    "maintained": "Usage data through 2026-10-27",
+    "platforms": "web",
+    "maintained": "Data through 2026-10-27",
     "install": "web",
     "license": "n/a",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://openrouter.ai/rankings",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Arena (ex-LMArena)",
       "url": "https://arena.ai/leaderboard",
-      "what": "Human-preference leaderboards: text, vision, WebDev, search, agent (with cost/task), image, video",
-      "why": "Best for 'which model do people prefer' and WebDev/agent comparisons; rebranded to Arena Jan 2026",
+      "what": "Human preference leaderboards",
+      "why": "Preference signal",
       "cost": "free",
       "free_limits": "Free",
-      "windows_fit": "web",
-      "maintained": "News post 2026-10-27",
+      "platforms": "web",
+      "maintained": "News 2026-10-27",
       "install": "web",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://arena.ai/leaderboard",
       "checked": "2026-10-28"
     },
     {
       "name": "Epoch AI Benchmarking Hub",
       "url": "https://epoch.ai/benchmarks",
-      "what": "412 models x 95 benchmarks, Epoch Capabilities Index, CSV download (CC BY 4.0)",
-      "why": "Best for rigorous capability trends and raw data",
+      "what": "Benchmark data hub",
+      "why": "Hard numbers, CC BY 4.0",
       "cost": "free",
-      "free_limits": "Free, CC BY 4.0 data",
-      "windows_fit": "web",
+      "free_limits": "Free",
+      "platforms": "web",
       "maintained": "Current",
       "install": "web",
       "license": "CC BY 4.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://epoch.ai/benchmarks",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "OpenRouter Rankings",
-      "verdict": "PICK: usage + cost + AA index in one page"
+      "name": "OpenRouter",
+      "verdict": "PICK"
     },
     {
       "name": "Arena",
-      "verdict": "Human preference + agent cost"
+      "verdict": "Preference"
     },
     {
-      "name": "Epoch Hub",
-      "verdict": "Rigorous benchmark data"
+      "name": "Epoch",
+      "verdict": "Hard numbers"
     },
     {
       "name": "Artificial Analysis",
-      "verdict": "Strong price/speed/quality comparisons; not opened during research (TLS error), so not verified"
-    },
-    {
-      "name": "SWE-bench / Aider leaderboards",
-      "verdict": "Coding-specific; included in Epoch Hub"
+      "verdict": "Site could not be opened"
     }
   ],
-  "decision": "Check OpenRouter Rankings and Arena during the weekly radar; go to Epoch when you need hard numbers for a model decision. Never pick a production model from one leaderboard: run your own promptfoo evals.",
+  "decision": "Check OpenRouter and Arena weekly; use Epoch for hard numbers. Never choose a production model from one leaderboard; run your own evals.",
   "note": "",
-  "details": "LMArena rebranded 'Arena' (arena.ai) on 2026-01-28 per Wikipedia; lmarena.ai redirects.",
+  "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "LMArena renamed 'Arena' on 2026-01-28 (Wikipedia, citing Arena blog 'LMArena is now Arena').",
-    "url": "https://en.wikipedia.org/wiki/LMArena"
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://openrouter.ai/rankings"
   },
-  "better_pick": null
+  "better": []
 }

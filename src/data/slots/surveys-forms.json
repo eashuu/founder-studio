@@ -3,8 +3,7 @@
   "slot": "Surveys + forms",
   "track": "discover",
   "stage": "discover",
-  "region": "Global",
-  "order": 145,
+  "order": 9,
   "pick": {
     "name": "Tally",
     "url": "https://tally.so/pricing",
@@ -12,14 +11,28 @@
     "why": "Unlimited forms and responses free, webhooks/integrations, fastest to build.",
     "cost": "freemium",
     "free_limits": "Free: unlimited forms and submissions (fair use). Pro $24/mo",
-    "windows_fit": "web",
     "maintained": "live service",
     "install": "web",
     "license": "proprietary SaaS",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://tally.so/pricing",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "web"
+  },
+  "best_free": {
+    "name": "Formbricks (self-host)",
+    "url": "https://github.com/formbricks/formbricks",
+    "what": "Open-source surveys incl. in-app/website surveys",
+    "why": "Pick when data must stay on your infra (healthcare) or for in-product surveys.",
+    "cost": "free",
+    "free_limits": "Community Edition self-host free; hosted cloud shown as 'coming soon'",
+    "maintained": "release date unconfirmed",
+    "install": "docker compose (see docs)",
+    "license": "AGPL-3.0 core + enterprise folder",
+    "commercial_ok": "yes",
+    "source_url": "https://github.com/formbricks/formbricks",
+    "checked": "2026-10-28",
+    "platforms": "docker"
   },
   "alts": [
     {
@@ -29,69 +42,65 @@
       "why": "Better for complex logic / writing to Airtable/Notion/Supabase; 1,000 responses/mo free.",
       "cost": "freemium",
       "free_limits": "Free: 1,000 responses/mo, unlimited forms, badge. Starter $15/mo",
-      "windows_fit": "web",
       "maintained": "live service",
       "install": "web",
       "license": "proprietary SaaS",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.fillout.com/pricing",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     },
     {
-      "name": "Formbricks (self-host)",
-      "url": "https://github.com/formbricks/formbricks",
-      "what": "Open-source surveys incl. in-app/website surveys",
-      "why": "Pick when data must stay on your infra (healthcare) or for in-product surveys.",
+      "name": "Google Forms",
+      "url": "https://forms.google.com",
+      "what": "Basic free forms",
+      "why": "Free and familiar; limited logic and branding control.",
       "cost": "free",
-      "free_limits": "Community Edition self-host free; hosted cloud shown as 'coming soon'",
-      "windows_fit": "docker",
-      "maintained": "release date unconfirmed",
-      "install": "docker compose (see docs)",
-      "license": "AGPL-3.0 core + enterprise folder",
+      "free_limits": "Free (unverified)",
+      "platforms": "web",
+      "maintained": "live service",
+      "install": "web",
+      "license": "Google ToS",
       "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://github.com/formbricks/formbricks",
+      "source_url": "https://forms.google.com",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
       "name": "Tally",
-      "verdict": "pick"
-    },
-    {
-      "name": "Fillout",
-      "verdict": "alt"
+      "verdict": "pick: unlimited forms free"
     },
     {
       "name": "Formbricks",
-      "verdict": "alt self-host, AGPL"
+      "verdict": "best_free: AGPL-3.0 self-host, in-product surveys"
+    },
+    {
+      "name": "Fillout",
+      "verdict": "alt: logic + DB sync"
     },
     {
       "name": "Google Forms",
-      "verdict": "free, basic"
+      "verdict": "alt: basic"
     },
     {
       "name": "Typeform",
-      "verdict": "free response cap unclear; Basic $39/mo"
-    },
-    {
-      "name": "Youform",
-      "verdict": "free unlimited, newer"
+      "verdict": "paid-heavy"
     },
     {
       "name": "Jotform",
-      "verdict": "5 forms/100 submissions free"
+      "verdict": "small free caps"
     }
   ],
-  "decision": "Tally is the most generous free form tool and doubles as the waitlist capture. Use Formbricks self-hosted when survey data is regulated.",
+  "decision": "Tally is the most generous hosted form tool and doubles as waitlist capture. Self-host Formbricks (AGPL) when survey data must stay on your infrastructure; mind AGPL if you modify and distribute it.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Free unlimited forms/submissions (fair use, 10 MB uploads); Pro $24/mo.",
+    "note": "Shallow check only: free/commercial terms are consistent with the cited licence; not re-opened in this pass.",
     "url": "https://tally.so/pricing"
   },
-  "better_pick": null
+  "better": []
 }

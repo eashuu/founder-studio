@@ -3,83 +3,78 @@
   "slot": "weekly radar routine (30-60 min)",
   "track": "learning",
   "stage": "run",
-  "region": "Global",
-  "order": 12244,
+  "order": 12036,
   "pick": {
-    "name": "Weekly radar: reader-first, 45 minutes, Friday",
-    "url": "https://www.inoreader.com",
-    "what": "1) 10 min: Inoreader 'AI' folder (AINews week, Simon Willison, Import AI, releases.atom). 2) 10 min: HF Daily Papers weekly view, star max 3. 3) 5 min: OpenRouter Rankings + Arena changes. 4) 10 min: one talk/podcast segment. 5) 10 min: write 3 bullets in Obsidian 'radar/YYYY-WW.md' and turn one into a LinkedIn/X post via Buffer",
-    "why": "Uses only tools already picked, ends with a written note and one public post, so learning also feeds the personal brand",
+    "name": "Weekly radar: reader-first, 45 min, Friday",
+    "url": "https://huggingface.co/papers",
+    "what": "Fixed weekly routine over reader, papers, leaderboards, releases",
+    "why": "A scheduled habit beats ad hoc scrolling",
     "cost": "free",
-    "free_limits": "All free/owned",
-    "windows_fit": "web + native",
+    "free_limits": "Free",
+    "platforms": "any",
     "maintained": "n/a",
     "install": "n/a",
     "license": "n/a",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://huggingface.co/papers",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Claude Code scheduled digest",
       "url": "https://obsidian.md/changelog/2026-02-27-desktop-v1.12.4/",
-      "what": "A scheduled Claude Code run that reads starred items (Miniflux API or exported feeds) and drafts radar/YYYY-WW.md",
-      "why": "Cuts the routine to ~20 min once Miniflux is in place",
-      "cost": "owned",
-      "free_limits": "Included in Max",
-      "windows_fit": "native",
+      "what": "Automated digest over feeds",
+      "why": "Automates steps 1-2",
+      "cost": "paid",
+      "free_limits": "Needs a Claude plan or API",
+      "platforms": "macOS|Windows|Linux",
       "maintained": "n/a",
-      "install": "claude (scheduled routine)",
+      "install": "n/a",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://miniflux.app/hosting.html",
       "checked": "2026-10-28"
     },
     {
-      "name": "Folo AI timeline summaries",
+      "name": "Folo",
       "url": "https://github.com/RSSNext/Folo",
-      "what": "Open-source AI RSS reader with scheduled daily/weekly briefings",
-      "why": "All-in-one AI digest without building anything; young project, AGPL, freemium",
+      "what": "AI timeline summaries",
+      "why": "AI summaries over feeds",
       "cost": "freemium",
-      "free_limits": "Free app; paid tiers for AI quota (reported)",
-      "windows_fit": "native + Android",
+      "free_limits": "Free app; AI quota paid (reported)",
+      "platforms": "macOS|Windows|Linux|iOS|Android",
       "maintained": "Mobile v0.6.1 2026-10-19",
-      "install": "https://github.com/RSSNext/Folo/releases",
+      "install": "GitHub releases",
       "license": "AGPL-3.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/RSSNext/Folo",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Manual 45-min routine",
-      "verdict": "PICK: zero setup, produces a post"
+      "name": "Manual Friday routine",
+      "verdict": "PICK"
     },
     {
-      "name": "Claude Code scheduled digest",
-      "verdict": "Upgrade path once Miniflux API exists"
+      "name": "Scheduled digest",
+      "verdict": "Automate later"
     },
     {
-      "name": "Folo AI briefings",
-      "verdict": "Turnkey AI digest; less control"
-    },
-    {
-      "name": "Gemini Deep Research weekly report",
-      "verdict": "Owned; broad but not tied to your own sources"
+      "name": "Folo",
+      "verdict": "AI reader"
     }
   ],
-  "decision": "Run the 45-minute Friday routine manually for a month, then automate step 1-2 with a Claude Code scheduled digest over Miniflux if it sticks. Daily: only the AINews email subject lines (2 min).",
+  "decision": "Run the 45-minute routine manually for a month, then automate the first steps with a scheduled digest over Miniflux. Daily: only AINews subject lines (2 min).",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Not independently re-opened (search budget exhausted); free curated content, low risk, no numeric/legal claims.",
-    "url": ""
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://huggingface.co/papers"
   },
-  "better_pick": null
+  "better": []
 }

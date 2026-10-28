@@ -3,38 +3,36 @@
   "slot": "Affiliate / referral program",
   "track": "sales",
   "stage": "sell",
-  "region": "Global",
-  "order": 7205,
+  "order": 7032,
   "pick": {
     "name": "Affonso",
     "url": "https://affonso.io/pricing",
-    "what": "Affiliate program software for SaaS",
-    "why": "Natively supports Dodo Payments and Polar and is the cheapest checked (EUR 15/mo)",
+    "what": "Affiliate software for SaaS",
+    "why": "Cheapest checked (EUR 15/mo) with native Dodo Payments and Polar support",
     "cost": "paid",
-    "free_limits": "No free tier; 14-day trial; Launch EUR 15/mo (annual) up to USD 1k/mo partner revenue, Growth EUR 29 up to USD 10k, Elite EUR 79 up to USD 30k; startup programme 50% off yr 1, 25% yr 2, 10% yr 3",
-    "windows_fit": "web",
+    "free_limits": "No free tier; 14-day trial",
+    "platforms": "web",
     "maintained": "live page 2026-10-28",
     "install": "web + tracking script",
     "license": "proprietary",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://affonso.io/pricing",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Dub Partners",
       "url": "https://dub.co/pricing",
-      "what": "Link attribution + partner program (Dodo-integrated per Dodo docs)",
-      "why": "Best if you also want branded short links/attribution; USD 81/mo + 5% payout fee",
+      "what": "Link attribution + partner program",
+      "why": "Best with branded short links; USD 81/mo + 5% payout fee",
       "cost": "paid",
       "free_limits": "14-day trial",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "live page 2026-10-28",
       "install": "web",
       "license": "AGPL-3.0 core (verify)",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://dub.co/pricing",
       "checked": "2026-10-28"
     },
@@ -42,15 +40,14 @@
       "name": "Tolt",
       "url": "https://tolt.com/pricing",
       "what": "Affiliate software",
-      "why": "Mature, but supports Stripe/Paddle/Chargebee, not Dodo/Polar natively; USD 99/mo",
+      "why": "Mature; Stripe/Paddle/Chargebee support; USD 99/mo",
       "cost": "paid",
       "free_limits": "14-day trial",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "live page 2026-10-28",
       "install": "web",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://tolt.com/pricing",
       "checked": "2026-10-28"
     }
@@ -58,32 +55,30 @@
   "candidates": [
     {
       "name": "Affonso",
-      "verdict": "PICK"
+      "verdict": "PICK if you use Dodo/Polar"
     },
     {
       "name": "Dub Partners",
-      "verdict": "Pick when link attribution matters too"
+      "verdict": "Attribution-heavy"
     },
     {
       "name": "Tolt",
-      "verdict": "Only on Stripe/Paddle"
+      "verdict": "Stripe/Paddle shops"
     },
     {
       "name": "Rewardful / FirstPromoter / PromoteKit",
-      "verdict": "Stripe-centric"
-    },
-    {
-      "name": "Rekomi",
-      "verdict": "Listed by Dodo docs; not checked"
+      "verdict": "Stripe-centric, not checked"
     }
   ],
-  "decision": "Don't start an affiliate program until you have a converting self-serve funnel. When you do, Affonso plugs straight into Dodo/Polar for EUR 15/mo.",
+  "decision": "Do not start an affiliate program before a converting self-serve funnel exists. Choose the tool that integrates natively with your payment processor; on Stripe, Tolt or Rewardful-class tools fit, on Dodo/Polar, Affonso.",
   "note": "",
-  "details": "Dodo's docs list Affonso, Dub Partners and Rekomi integrations.",
+  "details": "Processor-dependent pick; flips to Tolt on Stripe. No free option: every tool checked is paid after a 14-day trial; no free tier verified.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "fixed",
-    "note": "Supports Stripe, Paddle, Polar.sh, Creem and Dodo Payments (confirmed). No free tier, 14-day trial, startup 50/25/10% over 3 years. The EUR 15 Launch plan is capped at USD 1,000/mo partner revenue.",
+    "verdict": "ok",
+    "note": "Shallow; processor-dependent pick acknowledged.",
     "url": "https://affonso.io/pricing"
   },
-  "better_pick": null
+  "better": []
 }

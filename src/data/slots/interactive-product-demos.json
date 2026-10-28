@@ -3,38 +3,36 @@
   "slot": "Interactive product demos",
   "track": "sales",
   "stage": "sell",
-  "region": "Global",
-  "order": 7203,
+  "order": 7030,
   "pick": {
-    "name": "Supademo (Free)",
+    "name": "Supademo",
     "url": "https://supademo.com/pricing",
-    "what": "Click-through interactive demos from screen captures",
-    "why": "Most free demos among the tools checked (5 with unlimited views)",
+    "what": "Click-through interactive demos",
+    "why": "Most free demos checked (5 with unlimited views)",
     "cost": "freemium",
-    "free_limits": "Free: 5 demos, 1 creator, 50 recordings; Scale USD 38/mo annual",
-    "windows_fit": "web (Chrome extension)",
+    "free_limits": "Free: 5 demos, 1 creator; Scale USD 38/mo annual",
+    "platforms": "web (Chrome ext.)",
     "maintained": "live page 2026-10-28",
     "install": "Chrome extension",
     "license": "proprietary",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://supademo.com/pricing",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Arcade",
       "url": "https://www.arcade.software/pricing",
       "what": "Interactive demos + AI product videos",
-      "why": "Most polished output; free videos watermarked; Pro USD 49/mo annual",
+      "why": "Most polished output",
       "cost": "freemium",
-      "free_limits": "Free: 250 one-time credits, watermark",
-      "windows_fit": "web",
+      "free_limits": "Free: 250 one-time credits (no refresh), 30-second videos, 1080p, watermark, 1 seat; Pro USD 49/mo annual (USD 59 monthly), 1,000 credits/mo",
+      "platforms": "web",
       "maintained": "live page 2026-10-28",
       "install": "Chrome extension",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.arcade.software/pricing",
       "checked": "2026-10-28"
     },
@@ -42,15 +40,14 @@
       "name": "Storylane",
       "url": "https://www.storylane.io/pricing",
       "what": "Interactive demo platform for sales",
-      "why": "Strong for sales-led demos; free 1 live demo",
+      "why": "Strong for sales-led demos",
       "cost": "freemium",
-      "free_limits": "Free: 1 seat, 1 published demo",
-      "windows_fit": "web",
+      "free_limits": "Free: 1 seat, 1 demo",
+      "platforms": "web",
       "maintained": "live page 2026-10-28",
       "install": "web",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.storylane.io/pricing",
       "checked": "2026-10-28"
     }
@@ -62,24 +59,26 @@
     },
     {
       "name": "Arcade",
-      "verdict": "Best polish when paid"
+      "verdict": "Best polish"
     },
     {
       "name": "Storylane",
-      "verdict": "Sales-led demos"
+      "verdict": "Sales-led"
     },
     {
       "name": "Navattic",
-      "verdict": "Enterprise-priced (not checked)"
+      "verdict": "Enterprise-priced"
     }
   ],
-  "decision": "Use Supademo's 5 free demos for landing pages and outbound emails. Upgrade to Arcade only if demo polish starts driving conversions.",
+  "decision": "Use free demos on landing pages and outbound emails; upgrade for polish only when it drives conversion.",
   "note": "",
-  "details": "",
+  "details": "best_free set to null: Supademo's free plan (5 demos) is the best free option. Storylane moved to alts (free: 1 published demo; Starter USD 40/mo annual).",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Supademo Free confirmed: 1 creator, 5 demos, 50 recordings, unlimited views; Scale USD 38/mo annual. Arcade (250 one-time credits, watermark) and Storylane (1 seat, 1 live demo) alts confirmed.",
+    "note": "Supademo verified: Free 5 demos, 1 creator, unlimited views; Scale USD 38/mo annual (USD 50 monthly) per creator.",
     "url": "https://supademo.com/pricing"
   },
-  "better_pick": null
+  "better": []
 }

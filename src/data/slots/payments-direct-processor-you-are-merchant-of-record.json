@@ -1,0 +1,85 @@
+{
+  "slug": "payments-direct-processor-you-are-merchant-of-record",
+  "slot": "Payments: direct processor (you are merchant of record)",
+  "track": "money",
+  "stage": "run",
+  "order": 9024,
+  "pick": {
+    "name": "Stripe (Payments + Billing + Tax)",
+    "url": "https://stripe.com/pricing",
+    "what": "Card and wallet processing, subscriptions, invoicing, tax automation",
+    "why": "Best APIs and ecosystem, widest payment-method coverage, lowest fees when you can handle tax yourself",
+    "cost": "paid",
+    "free_limits": "No monthly fee. US: 2.9% + 30c per domestic card charge, +1.5% international cards, +1% if currency conversion (rates vary by country; check your local Stripe pricing page); Billing 0.7% of billing volume; Tax 0.5% per transaction where registered",
+    "platforms": "web + SDKs",
+    "maintained": "active",
+    "install": "npm install -g @stripe/cli",
+    "license": "service",
+    "commercial_ok": "yes",
+    "source_url": "https://stripe.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "Stripe Managed Payments",
+      "url": "https://docs.stripe.com/payments/managed-payments",
+      "what": "Stripe as merchant of record for digital products",
+      "why": "Stripe handles tax in 80+ countries, fraud, disputes and support",
+      "cost": "paid",
+      "free_limits": "+3.5% per successful transaction on top of standard Stripe processing (about 6.4% + 30c on US cards); no setup or monthly fee; Checkout/Payment Links only, no Connect; digital products only (not consulting or human-delivered services); business must be in US, CA, UK, EU/EEA, CH, AU, HK, JP or SG (not India)",
+      "platforms": "web + SDKs",
+      "maintained": "docs live 2026-10-28",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "yes",
+      "source_url": "https://docs.stripe.com/payments/managed-payments/eligibility",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "PayPal Braintree",
+      "url": "https://www.paypal.com/us/braintree",
+      "source_url": "https://www.paypal.com/us/braintree",
+      "what": "Direct processor with cards plus PayPal and Venmo in one integration, 200+ markets; per-transaction price not shown on the fetched page (verify)",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Stripe",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Stripe Managed Payments",
+      "verdict": "Alt: Stripe MoR with restricted countries and products"
+    },
+    {
+      "name": "Lemon Squeezy",
+      "verdict": "Alt: MoR under Stripe"
+    },
+    {
+      "name": "Razorpay / Cashfree",
+      "verdict": "Regional gateways for INR/UPI customers (India note)"
+    },
+    {
+      "name": "Adyen",
+      "verdict": "Enterprise processor; not researched"
+    }
+  ],
+  "decision": "Stripe is the best overall processor if you are willing to own tax registration (pair with Stripe Tax): fees are lowest and the API is the best documented. Use a merchant of record when you sell to many countries and have no one to file VAT or sales tax. Stripe Managed Payments is the middle path if your country is supported.",
+  "note": "",
+  "details": "No free option: every card processor charges a per-transaction fee.",
+  "region_notes": {
+    "India": "Stripe is invite-only for Indian businesses and, per Stripe docs, export payments are for registered businesses (not individuals); India is not among Stripe Managed Payments' supported business locations. Merchant-of-record platforms are the practical route; Razorpay or Cashfree cover INR/UPI customers. Razorpay domestic fee earlier researched at 2% + GST; Cashfree ~1.95%.",
+    "US": "Available directly; collect sales tax where nexus exists (Stripe Tax). Verify with a professional.",
+    "EU": "When Stripe is only the processor you are the seller, so VAT (including OSS) on consumer sales is yours.",
+    "UK": "As an overseas seller you are responsible for UK VAT registration on UK sales."
+  },
+  "os_notes": {},
+  "verify": {
+    "verdict": "fixed",
+    "note": "free_limits leads with India-page rates as the default. Stripe's own page geo-redirects to India for this fetcher; US standard 2.9% + 30c domestic cards, +1.5% international cards, +1% currency conversion are consistent across Xero and NerdWallet summaries of stripe.com/us/pricing. Billing 0.7% of volume is the same in the US. Pick itself (Stripe) stands.",
+    "url": "https://stripe.com/us/pricing"
+  },
+  "better": []
+}

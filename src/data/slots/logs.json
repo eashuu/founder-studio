@@ -3,8 +3,7 @@
   "slot": "Logs",
   "track": "ship",
   "stage": "ship",
-  "region": "Global",
-  "order": 6113,
+  "order": 6012,
   "pick": {
     "name": "Cloudflare Workers Logs",
     "url": "https://developers.cloudflare.com/workers/observability/logs/workers-logs/",
@@ -12,15 +11,15 @@
     "why": "Zero setup for the default stack; OTLP export to Grafana/Sentry/Axiom when you outgrow it",
     "cost": "freemium",
     "free_limits": "Free 200k log events/day, 3-day retention; Paid 20M/mo then $0.60/M, 7-day; pricing moves to 'Cloudflare Observability' on 2026-12-01",
-    "windows_fit": "web",
+    "platforms": "web",
     "maintained": "active",
     "install": "observability.enabled = true in wrangler config",
     "license": "service",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://developers.cloudflare.com/workers/observability/logs/workers-logs/",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Grafana Cloud Free",
@@ -29,12 +28,11 @@
       "why": "Best free volume + open standards (OTel) for VM/containers",
       "cost": "freemium",
       "free_limits": "50 GB logs, 50 GB traces, 10k metric series, 14-day retention, 3 users; 'Always free'; no commercial restriction stated",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "active",
       "install": "web + Grafana Alloy agent",
       "license": "service (OSS AGPL components)",
       "commercial_ok": "unclear",
-      "needs_company": "no",
       "source_url": "https://grafana.com/pricing/",
       "checked": "2026-10-28"
     },
@@ -45,12 +43,11 @@
       "why": "One tool for errors+logs",
       "cost": "freemium",
       "free_limits": "5 GB logs on free",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "active",
       "install": "Sentry SDK enableLogs",
       "license": "service",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://sentry.io/pricing/",
       "checked": "2026-10-28"
     }
@@ -84,10 +81,12 @@
   "decision": "Use what the platform gives you first; it costs nothing to wire. Add Grafana Cloud via OTLP when you have containers on Cloud Run/VM or need >3 days retention.",
   "note": "",
   "details": "Cloudflare observability pricing changes 2026-12-01: re-check after that date.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Workers Logs Free 200k events/day, 3-day retention; Paid 20M/mo + $0.60/M, 7 days; moves to Cloudflare Observability pricing from 2026-12-01. Grafana Free 50 GB logs/traces, 10k series, 14 days, 3 users; the page names 'early-stage startups' and states no commercial restriction.",
+    "note": "Shallow; re-check after the 2026-12-01 Observability pricing change.",
     "url": "https://developers.cloudflare.com/workers/observability/logs/workers-logs/"
   },
-  "better_pick": null
+  "better": []
 }

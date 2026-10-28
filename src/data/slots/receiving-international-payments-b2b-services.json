@@ -1,0 +1,103 @@
+{
+  "slug": "receiving-international-payments-b2b-services",
+  "slot": "Receiving international payments (B2B / services)",
+  "track": "money",
+  "stage": "run",
+  "order": 9029,
+  "pick": {
+    "name": "Wise Business",
+    "url": "https://wise.com/us/business",
+    "what": "Receive USD, EUR, GBP and more via local details",
+    "why": "Cheap, transparent, available in most countries",
+    "cost": "freemium",
+    "free_limits": "US: one-time USD 31 setup fee, no monthly fee; USD wire/Swift receive USD 6.11; non-wire USD receipts free; account details in 22 currencies; FX at mid-market plus a variable fee",
+    "platforms": "web + apps",
+    "maintained": "active",
+    "install": "web",
+    "license": "service",
+    "commercial_ok": "yes",
+    "source_url": "https://wise.com/us/business",
+    "checked": "2026-10-28"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "Mercury",
+      "url": "https://www.mercury.com/pricing",
+      "what": "US business bank",
+      "why": "Free ACH and USD wires for US entities",
+      "cost": "free",
+      "free_limits": "$0 base plan; ACH and domestic wires free per page",
+      "platforms": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "yes",
+      "source_url": "https://www.mercury.com/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Skydo (India)",
+      "url": "https://www.skydo.com/compare/skydo-vs-payoneer",
+      "what": "Local USD/EUR/GBP collection accounts for Indian exporters, INR in ~1 business day, free FIRA",
+      "why": "Flat fee + 0% FX markup beats % fees on consulting-size invoices; RBI PA-CB final authorisation (inward) Jan 2026",
+      "cost": "paid",
+      "free_limits": "$19 up to $2,000; $29 $2,001-$10,000; 0.3% above $10,000; 0% FX markup; free per-transaction FIRA; no inactivity fee (Skydo's own pages; one page conflicts $19/$29). PA-CB rules cap Rs25 lakh per transaction.",
+      "platforms": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "yes",
+      "source_url": "https://yourstory.com/2026/01/skydo-gets-final-rbi-approval-to-run-cross-border-payments-platform",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Airwallex",
+      "url": "https://www.airwallex.com/us/pricing",
+      "source_url": "https://www.airwallex.com/us/pricing",
+      "what": "replaces India-only Skydo as a global runner-up: Explore USD 0, 20+ currencies, FX 0.5% over interbank for majors",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Wise Business",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Mercury",
+      "verdict": "Alt for US entities"
+    },
+    {
+      "name": "Skydo / Razorpay MCA",
+      "verdict": "Alt: India-specific with FIRA/eBRC"
+    },
+    {
+      "name": "Payoneer",
+      "verdict": "Competitor-sourced fees only"
+    },
+    {
+      "name": "PayPal",
+      "verdict": "Highest effective cost per earlier research"
+    },
+    {
+      "name": "Direct SWIFT",
+      "verdict": "Bank FX margin and intermediary fees"
+    }
+  ],
+  "decision": "Wise Business is the best overall for getting paid across currencies: local receiving details, mid-market rates, no monthly fee. US entities should use Mercury; Indian freelancers compare Skydo and Razorpay MCA for FIRA and fee slabs by invoice size.",
+  "note": "",
+  "details": "",
+  "region_notes": {
+    "India": "Wise Business, Skydo (flat fee per invoice, free FIRA) and Razorpay MCA are the usual routes; check each issues e-FIRC/e-BRC. Under FEMA's 2026 export regulations (in force 1 Oct 2026) services export proceeds must be realised within 9 months of invoice (was 15). Verify with a CA.",
+    "US": "Foreign clients usually pay by ACH or wire to a US account; collect W-9 or W-8 forms as relevant. Verify with a professional.",
+    "EU": "SEPA to a local IBAN is cheap; Wise and Revolut provide IBANs."
+  },
+  "os_notes": {},
+  "verify": {
+    "verdict": "fixed",
+    "note": "Add the US setup fee.",
+    "url": "https://wise.com/us/pricing/business"
+  },
+  "better": []
+}

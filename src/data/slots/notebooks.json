@@ -3,8 +3,7 @@
   "slot": "notebooks",
   "track": "ai-eng",
   "stage": "build",
-  "region": "Global",
-  "order": 4073,
+  "order": 4021,
   "pick": {
     "name": "marimo",
     "url": "https://github.com/marimo-team/marimo",
@@ -12,15 +11,15 @@
     "why": "Git-diffable .py files Claude Code edits cleanly; no hidden state",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native (Windows not stated on page; pure-Python pip)",
     "maintained": "marimo 0.25.2 on 2026-10-19",
     "install": "pip install marimo",
     "license": "Apache-2.0",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/marimo-team/marimo",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native (Windows not stated on page; pure-Python pip)"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Google Colab (free)",
@@ -29,14 +28,13 @@
       "why": "Free GPU for fine-tuning/experiments",
       "cost": "freemium",
       "free_limits": "Dynamic undisclosed limits, 12h max session, idle timeouts; GPU not guaranteed; prohibits web-service hosting",
-      "windows_fit": "web",
       "maintained": "FAQ read 2026-10-28",
       "install": "web",
       "license": "Proprietary service",
       "commercial_ok": "unclear",
-      "needs_company": "yes (Google account)",
       "source_url": "https://research.google.com/colaboratory/faq.html",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     },
     {
       "name": "Kaggle Notebooks",
@@ -45,14 +43,13 @@
       "why": "Predictable weekly quota",
       "cost": "free",
       "free_limits": "Weekly GPU quota and session limits exist; numbers not retrievable (unverified)",
-      "windows_fit": "web",
       "maintained": "Docs page read 2026-10-28",
       "install": "web",
       "license": "Proprietary service",
       "commercial_ok": "unclear",
-      "needs_company": "yes (Kaggle account)",
       "source_url": "https://www.kaggle.com/docs/efficient-gpu-usage",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     }
   ],
   "candidates": [
@@ -80,10 +77,12 @@
   "decision": "marimo locally for data/eval exploration; Colab/Kaggle only when you need a GPU. Switch to Jupyter if a client or library requires .ipynb.",
   "note": "",
   "details": "Retained.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Version/licence/limits match registry or official page.",
-    "url": "https://registry.npmjs.org/"
+    "note": "Shallow.",
+    "url": "https://pypi.org/project/marimo/"
   },
-  "better_pick": null
+  "better": []
 }

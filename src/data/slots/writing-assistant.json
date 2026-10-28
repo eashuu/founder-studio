@@ -3,87 +3,96 @@
   "slot": "writing assistant",
   "track": "brand",
   "stage": "sell",
-  "region": "Global",
-  "order": 8227,
+  "order": 8019,
   "pick": {
-    "name": "Claude Project 'voice & style' + Harper",
+    "name": "Claude (voice & style Project) + Harper",
     "url": "https://writewithharper.com/",
-    "what": "A Claude Project holding your voice guide and best past posts for drafting; Harper as a local grammar checker in Chrome/Edge, VS Code and Obsidian",
-    "why": "Drafting quality comes from Claude (owned); Harper is free, open source and fully local, so nothing you type (incl. client info) goes to a grammar cloud",
-    "cost": "free",
-    "free_limits": "Harper free; Claude owned",
-    "windows_fit": "web (Chrome/Edge/Firefox extensions) + VS Code + Obsidian plugin",
+    "what": "Draft with a dedicated Claude Project carrying your voice, check with local Harper",
+    "why": "Voice consistency plus offline grammar checks",
+    "cost": "freemium",
+    "free_limits": "Harper free; Claude free/paid plans",
+    "platforms": "web|macOS|Windows|Linux",
     "maintained": "Harper v3.0.0 2026-10-27",
-    "install": "Chrome Web Store 'Harper'; Obsidian community plugin 'Harper'",
+    "install": "Harper: browser extension or app per writewithharper.com",
+    "license": "Apache-2.0 (Harper)",
+    "commercial_ok": "yes",
+    "source_url": "https://github.com/Automattic/harper",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Harper",
+    "url": "https://writewithharper.com/",
+    "what": "Local, free grammar checker",
+    "why": "Free, private, English-only",
+    "cost": "free",
+    "free_limits": "Free",
+    "platforms": "web|macOS|Windows|Linux",
+    "maintained": "v3.0.0 2026-10-27",
+    "install": "see site",
     "license": "Apache-2.0",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/Automattic/harper",
     "checked": "2026-10-28"
   },
   "alts": [
     {
-      "name": "Grammarly (company now 'Superhuman')",
-      "url": "https://www.grammarly.com",
-      "what": "Cloud grammar/tone assistant, now with Superhuman Go AI",
-      "why": "Best tone rewrites; cloud processing; paid features moved into Superhuman bundles",
+      "name": "Grammarly (Superhuman)",
+      "url": "https://www.engadget.com/ai/grammarly-has-rebranded-to-superhuman-151001417.html",
+      "what": "Cloud writing assistant, rebranded Superhuman Oct 2025",
+      "why": "Tone rewriting everywhere",
       "cost": "freemium",
-      "free_limits": "Free tier status for 2026 not verified; Pro $12/mo annual (reported)",
-      "windows_fit": "native + extension",
+      "free_limits": "Free plan listed on superhuman.com/plans; Pro ~$12/mo annual (reported)",
+      "platforms": "web|macOS|Windows|iOS|Android",
       "maintained": "Rebranded Oct 2025",
-      "install": "web / extension",
+      "install": "web",
       "license": "Proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.engadget.com/ai/grammarly-has-rebranded-to-superhuman-151001417.html",
       "checked": "2026-10-28"
     },
     {
-      "name": "Gemini in Gmail/Docs (Help me write, Proofread)",
+      "name": "Gemini in Gmail/Docs",
       "url": "https://one.google.com/about/plans",
-      "what": "Owned writing help inside Google apps",
-      "why": "Good for emails/docs written in Google apps",
-      "cost": "owned",
-      "free_limits": "Proofread on AI Pro",
-      "windows_fit": "web",
+      "what": "Help me write and Proofread",
+      "why": "Good inside Google Workspace",
+      "cost": "paid",
+      "free_limits": "Part of Google AI plans",
+      "platforms": "web",
       "maintained": "Current",
       "install": "web",
       "license": "Proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://one.google.com/about/plans",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Claude Project + Harper",
-      "verdict": "PICK: owned AI + free local checker"
+      "name": "Claude + Harper",
+      "verdict": "PICK"
     },
     {
-      "name": "Grammarly/Superhuman",
-      "verdict": "Cloud, upsell-heavy"
+      "name": "Grammarly",
+      "verdict": "Cloud, wide coverage"
     },
     {
-      "name": "Gemini in Workspace",
-      "verdict": "Owned; use inside Gmail/Docs"
+      "name": "Gemini",
+      "verdict": "Google-only"
     },
     {
       "name": "LanguageTool",
-      "verdict": "Not verified this pass"
-    },
-    {
-      "name": "Hemingway",
-      "verdict": "Not verified this pass"
+      "verdict": "Not verified"
     }
   ],
-  "decision": "Write with Claude using a dedicated voice Project and check with Harper, which is local and free. Grammarly only wins if you want tone rewriting everywhere and accept cloud processing.",
+  "decision": "Write with an AI assistant primed with your voice, and use Harper as a free local checker. Grammarly wins only if you want rewriting everywhere and accept cloud processing.",
   "note": "",
-  "details": "Harper is English-only.",
+  "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Harper Apache-2.0, v3.0.0 released 27 Oct 2026 (GitHub releases page).",
-    "url": "https://github.com/Automattic/harper/releases"
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://github.com/Automattic/harper"
   },
-  "better_pick": null
+  "better": []
 }

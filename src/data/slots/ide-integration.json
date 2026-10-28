@@ -3,39 +3,66 @@
   "slot": "IDE integration",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2030,
   "pick": {
     "name": "Claude Code VS Code extension",
     "url": "https://code.claude.com/docs/en/vs-code.md",
     "what": "Native panel, inline diffs, plan review",
-    "why": "Shares settings/plugins with CLI; needs VS Code >=1.98",
-    "cost": "owned",
-    "free_limits": "paid Claude plan",
-    "windows_fit": "native",
+    "why": "Shares settings/plugins with CLI; VS Code >=1.94",
+    "cost": "paid",
+    "free_limits": "Requires a Claude plan (Pro/Max plans/Team/Enterprise) or API billing; counts against plan usage",
     "maintained": "core",
-    "install": "code --install-extension anthropic.claude-code",
+    "install": "code --install-extension anthropic.claude-code (ID unverified)",
     "license": "proprietary",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://code.claude.com/docs/en/vs-code.md",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
+  },
+  "best_free": {
+    "name": "Zed + Claude Agent (ACP)",
+    "url": "https://zed.dev/docs/ai/external-agents",
+    "what": "Claude Code inside Zed via ACP",
+    "why": "Lighter editor",
+    "cost": "free",
+    "free_limits": "Zed charges nothing for external agents; Claude Agent still needs a Claude plan or API key (/login in the agent thread)",
+    "maintained": "Zed v1.26.2 (2026-10-28)",
+    "install": "Install Zed (brew install --cask zed | winget install ZedIndustries.Zed | curl -f https://zed.dev/install.sh | sh), then zed: acp registry > Claude Agent",
+    "license": "Multi-licence repo: editor GPL-3.0, server AGPL-3.0, GPUI Apache-2.0 (GitHub reports NOASSERTION; verify LICENSE files)",
+    "commercial_ok": "yes",
+    "source_url": "https://zed.dev/docs/ai/external-agents",
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
   "alts": [
     {
-      "name": "Zed + Claude Agent (ACP)",
-      "url": "https://zed.dev/docs/ai/external-agents",
-      "what": "Claude Code inside Zed via ACP",
-      "why": "Lighter editor",
-      "cost": "free",
-      "free_limits": "Zed charges nothing for external agents",
-      "windows_fit": "native (Windows builds exist)",
-      "maintained": "Zed v1.25.3 (23 Oct 2026)",
-      "install": "install Claude Agent from ACP registry",
-      "license": "GPL/Apache (unverified)",
+      "name": "JetBrains plugin (Claude Code [Beta])",
+      "url": "https://code.claude.com/docs/en/jetbrains.md",
+      "what": "Official plugin for IntelliJ, PyCharm, WebStorm, GoLand and more",
+      "why": "Official integration with diff viewing and diagnostics",
+      "cost": "paid",
+      "free_limits": "Plugin free; needs a Claude plan or Console account",
+      "platforms": "macOS|Windows|Linux",
+      "maintained": "beta",
+      "install": "JetBrains Marketplace: plugin 27310",
+      "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://zed.dev/docs/ai/external-agents",
+      "source_url": "https://code.claude.com/docs/en/jetbrains.md",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Terminal + /ide connection",
+      "url": "https://code.claude.com/docs/en/jetbrains.md",
+      "what": "Run claude in any terminal and /ide to attach to a running IDE",
+      "why": "No editor plugin install on the terminal side",
+      "cost": "paid",
+      "free_limits": "Needs a Claude plan or Console account",
+      "platforms": "macOS|Windows|Linux",
+      "maintained": "current docs",
+      "install": "claude, then /ide",
+      "license": "n/a (Claude Code)",
+      "commercial_ok": "yes",
+      "source_url": "https://code.claude.com/docs/en/jetbrains.md",
       "checked": "2026-10-28"
     }
   ],
@@ -51,15 +78,25 @@
     {
       "name": "JetBrains plugin",
       "verdict": "if on JetBrains"
+    },
+    {
+      "name": "JetBrains plugin",
+      "verdict": "official, beta"
+    },
+    {
+      "name": "Terminal only",
+      "verdict": "fully capable without an IDE"
     }
   ],
   "decision": "Follows the editor slot.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "fixed",
-    "note": "Extension ID anthropic.claude-code verified (publisher Anthropic, ~28.9M installs). Marketplace says VS Code 1.98+, not 1.94.",
-    "url": "https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code"
+    "verdict": "ok",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://code.claude.com/docs/en/vs-code.md"
   },
-  "better_pick": null
+  "better": []
 }

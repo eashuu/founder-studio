@@ -3,8 +3,7 @@
   "slot": "MCP testing",
   "track": "app-stacks",
   "stage": "build",
-  "region": "Global",
-  "order": 5096,
+  "order": 5045,
   "pick": {
     "name": "MCP Inspector",
     "url": "https://www.npmjs.com/package/@modelcontextprotocol/inspector",
@@ -12,31 +11,30 @@
     "why": "Official, works with stdio and HTTP",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native",
     "maintained": "2.12.0 (2026-10-21)",
     "install": "npx @modelcontextprotocol/inspector@latest",
-    "license": "Mixed: project transitioning MIT to Apache-2.0 (new contributions Apache-2.0, non-consenting older contributions MIT); npm says \"SEE LICENSE IN LICENSE\"; both permissive",
+    "license": "see LICENSE (verify)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://www.npmjs.com/package/@modelcontextprotocol/inspector",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Claude Code as real client",
       "url": "https://code.claude.com/docs/en/plugins/publish.md",
       "what": "claude mcp add --transport http ...",
       "why": "Test with the target host",
-      "cost": "owned",
-      "free_limits": "Max plan",
-      "windows_fit": "native",
+      "cost": "free",
+      "free_limits": "paid claude.ai plan",
       "maintained": "docs live 2026-10-28",
       "install": "claude mcp add --transport http myserver <url>/mcp",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://code.claude.com/docs/en/plugins/publish.md",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     },
     {
       "name": "promptfoo MCP evals",
@@ -45,14 +43,13 @@
       "why": "Regression tests for tool behaviour",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "0.125.1 (2026-10-25)",
       "install": "npx promptfoo@latest",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.npmjs.com/package/promptfoo",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     }
   ],
   "candidates": [
@@ -76,10 +73,12 @@
   "decision": "Inspector for interactive debugging plus unit tests through the SDK's in-memory client in Vitest; promptfoo when you need behavioural evals.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "fixed",
-    "note": "Licence resolved.",
-    "url": "https://raw.githubusercontent.com/modelcontextprotocol/inspector/main/LICENSE"
+    "verdict": "ok",
+    "note": "Shallow.",
+    "url": "https://www.npmjs.com/package/@modelcontextprotocol/inspector"
   },
-  "better_pick": null
+  "better": []
 }

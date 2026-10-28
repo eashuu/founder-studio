@@ -1,0 +1,101 @@
+{
+  "slug": "payments-merchant-of-record-for-software-sales",
+  "slot": "Payments: merchant of record for software sales",
+  "track": "money",
+  "stage": "run",
+  "order": 9023,
+  "pick": {
+    "name": "Paddle",
+    "url": "https://www.paddle.com/pricing",
+    "what": "Merchant of record for SaaS and software",
+    "why": "Longest-established software MoR; handles tax calculation, collection, filing and remittance; credible with enterprise buyers",
+    "cost": "paid",
+    "free_limits": "5% + 50c per checkout transaction, no monthly fee; custom pricing for volume or sub-$10 products; supported seller countries and payout details not on page (unverified)",
+    "platforms": "web",
+    "maintained": "active",
+    "install": "npm i @paddle/paddle-node-sdk",
+    "license": "service",
+    "commercial_ok": "yes",
+    "source_url": "https://www.paddle.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "Polar",
+      "url": "https://polar.sh/docs/merchant-of-record/fees",
+      "what": "Developer-first merchant of record with licence keys, usage billing and an open-source platform",
+      "why": "Best developer experience and an open-source platform; licence keys, usage billing and paid tiers that undercut Paddle at volume",
+      "cost": "paid",
+      "free_limits": "Starter 5% + 50c (no monthly fee); Pro $20/mo 3.8% + 40c; Growth $100/mo 3.6% + 35c; Scale $400/mo 3.4% + 30c; +1.5% non-US cards; $15 per dispute; Early Members (orgs before 2026-05-27) 4% + 40c + 0.5% subscriptions; Stripe payout fees $2/mo active + 0.25% + 25c per payout + 0.25-1% cross-border FX",
+      "platforms": "web + SDKs",
+      "maintained": "@polar-sh/sdk 1.0.2 2026-10-02",
+      "install": "npm i @polar-sh/sdk",
+      "license": "service (repo Apache-2.0, not re-checked)",
+      "commercial_ok": "yes",
+      "source_url": "https://polar.sh/docs/merchant-of-record/supported-countries",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Dodo Payments",
+      "url": "https://dodopayments.com/pricing",
+      "what": "Merchant of record with global cards/wallets, subscriptions, usage billing and licence keys",
+      "why": "Lowest headline MoR rate checked (4% + 40c) and onboards individuals without a company; younger company with inconsistent fee pages",
+      "cost": "paid",
+      "free_limits": "4% + 40c base (US cards); +1.5% non-US cards/APMs; +0.5% subscriptions/usage; +3% PayPal or BNPL; India domestic (INR cards+UPI) 4% + 15c (+intl fees where applicable); $1/refund; $30/dispute; payouts table says Free but FAQ says $5 if payout < $1,000; USD SWIFT $25",
+      "platforms": "web + SDKs",
+      "maintained": "SDK dodopayments 2.58.0 on npm 2026-10-28",
+      "install": "npm i dodopayments",
+      "license": "service (SDK Apache-2.0)",
+      "commercial_ok": "yes",
+      "source_url": "https://dodopayments.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Paddle",
+      "verdict": "PICK: mature MoR, 5% + 50c, tax filing included"
+    },
+    {
+      "name": "Polar",
+      "verdict": "Alt: best developer UX, open source, 3.4-5% + 30-50c by tier"
+    },
+    {
+      "name": "Dodo Payments",
+      "verdict": "Alt: low headline fees, India-native, young company, inconsistent fee pages"
+    },
+    {
+      "name": "Creem",
+      "verdict": "3.9% + 40c MoR, tax in 50+ countries; newer"
+    },
+    {
+      "name": "Lemon Squeezy",
+      "verdict": "MoR at 5% + 50c; site banner announces Stripe Managed Payments transition; unclear for new builds"
+    },
+    {
+      "name": "FastSpring",
+      "verdict": "Established MoR, quote-based pricing"
+    },
+    {
+      "name": "Stripe Managed Payments",
+      "verdict": "Stripe's own MoR; see direct-processor slot"
+    }
+  ],
+  "decision": "A merchant of record (MoR) is the legal seller to your customers and handles VAT, sales tax, fraud and chargebacks, the lowest-effort path for a small team selling software globally. Paddle is the best overall: the longest-established software MoR, one all-in rate (5% + 50c) with no international-card surcharge listed, and credible with enterprise buyers. Choose Polar for developer experience and open source (cheaper than Paddle only on its paid Pro/Growth tiers at volume), and Stripe direct when you need full control, marketplaces or services billing and can handle tax registration.",
+  "note": "",
+  "details": "Dodo payout-fee pages conflict (Free vs $5 under $1,000): unverified. No free option is recommended for this job.",
+  "region_notes": {
+    "India": "Stripe is invite-only for Indian businesses and India is not a Managed Payments business location; Paddle, Polar or Dodo (which also takes INR cards/UPI and pays out to Indian banks) are the practical routes, with Razorpay or Cashfree for domestic INR/UPI customers.",
+    "US": "MoRs remove sales-tax nexus tracking for the products they sell; you still handle your own income tax. Verify with a professional.",
+    "EU": "The MoR is the supplier of record, so you do not register for EU VAT (or the non-Union OSS) on sales it makes; the MoR pays you net. Verify with a professional.",
+    "UK": "The MoR accounts for UK VAT on its sales, so an overseas seller avoids UK VAT registration for those sales (GOV.UK: when a platform is responsible, it accounts for the VAT). Verify with a professional."
+  },
+  "os_notes": {},
+  "verify": {
+    "verdict": "ok",
+    "note": "Stress-tested vs Polar, Lemon Squeezy, Dodo: Paddle 5% + 50c, no monthly fee, tax filing/remittance, chargebacks and fraud included, no separate international-card surcharge listed. Polar Starter is the same 5% + 50c PLUS 1.5% on non-US cards, $15/dispute and Stripe payout fees ($2/mo active + 0.25% + 25c per payout + 0.25-1% FX), so Paddle is cheaper for global sales until Polar Pro/Growth tiers ($20-100/mo, 3.8%/3.6%) pay off at higher volume. Dodo 4% + 40c base but +1.5% non-US, +0.5% subscriptions, and its payout fee is contradictory (table 'Free' vs FAQ '$5 if payout < $1,000'). Lemon Squeezy is in transition to Stripe Managed Payments (Jan 2026 post: slower support, fewer updates) and should not be recommended for new builds. Paddle stays.",
+    "url": "https://www.paddle.com/pricing"
+  },
+  "better": []
+}

@@ -1,0 +1,96 @@
+{
+  "slug": "payments-desktop-apps-licence-keys-digital-goods",
+  "slot": "Payments: desktop apps / licence keys / digital goods",
+  "track": "money",
+  "stage": "run",
+  "order": 9025,
+  "pick": {
+    "name": "Polar",
+    "url": "https://polar.sh/docs/features/benefits/license-keys",
+    "what": "Licence keys with activation limits, expiry, usage quotas",
+    "why": "Licence keys with activation limits and usage quotas; open source",
+    "cost": "paid",
+    "free_limits": "Starter 5% + 50c (no monthly fee); Pro $20/mo 3.8% + 40c; Growth $100/mo 3.6% + 35c; Scale $400/mo 3.4% + 30c; +1.5% international cards; Early Members (orgs before 2026-05-27) keep 4% + 40c; payouts incur Stripe Connect fees",
+    "platforms": "web + SDKs",
+    "maintained": "active",
+    "install": "npm i @polar-sh/sdk",
+    "license": "service",
+    "commercial_ok": "yes",
+    "source_url": "https://polar.sh/docs/features/benefits/license-keys",
+    "checked": "2026-10-28"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "Dodo Payments",
+      "url": "https://docs.dodopayments.com/features/license-keys",
+      "what": "One-time or subscription sales with licence keys (activation limits, client-side activate/validate)",
+      "why": "Same MoR as your SaaS = one KYC, one payout, cheaper than Polar for one-time sales (no +0.5%)",
+      "cost": "paid",
+      "free_limits": "One-time: 4% + 40c (+1.5% non-US); licence keys included; activate/validate callable from client apps without API secret",
+      "platforms": "web + SDKs",
+      "maintained": "active",
+      "install": "npm i dodopayments",
+      "license": "service",
+      "commercial_ok": "yes",
+      "source_url": "https://docs.dodopayments.com/features/license-keys",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Gumroad",
+      "url": "https://gumroad.com/pricing",
+      "what": "Creator storefront MoR",
+      "why": "Easiest storefront + audience discovery",
+      "cost": "paid",
+      "free_limits": "10% + 50c direct; 30% via Discover; MoR for sales tax since 2025-01-01",
+      "platforms": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "yes",
+      "source_url": "https://gumroad.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Dodo",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Polar",
+      "verdict": "Alt: best licence API"
+    },
+    {
+      "name": "Gumroad",
+      "verdict": "Alt: storefront/discovery, expensive"
+    },
+    {
+      "name": "Paddle",
+      "verdict": "No built-in licence keys in Paddle Billing (not re-verified)"
+    },
+    {
+      "name": "Keygen",
+      "verdict": "Licensing server to pair with any MoR (not checked)"
+    },
+    {
+      "name": "Google Play Billing",
+      "verdict": "Mandatory for in-app digital goods on Android: 10%+5% billing fee subs in EEA/UK/US/AU/JP (new structure), 15% elsewhere; India alt-billing 4% lower"
+    },
+    {
+      "name": "Microsoft Store",
+      "verdict": "Not researched"
+    }
+  ],
+  "decision": "Keep licence sales on the same MoR as SaaS so there is one tax and payout stream. Polar's licence-key API is the most flexible; Dodo includes keys that client apps can validate without a secret; Gumroad adds discovery at 10% + 50c. In-app purchases on mobile must use Apple or Google billing regardless.",
+  "note": "",
+  "details": "No free option: every MoR/licensing store takes a per-sale fee; a self-hosted licence server (e.g. Keygen CE) still needs a paid payment processor. Candidates list must show Polar as PICK and Dodo as Alt.",
+  "region_notes": {},
+  "os_notes": {},
+  "verify": {
+    "verdict": "ok",
+    "note": "Polar licence keys (activation limits, expiry, usage) are a real built-in benefit; fees as verified above. Candidates table still says 'Dodo: PICK' (stale) - fix candidates verdicts to match.",
+    "url": "https://polar.sh/docs/features/benefits/license-keys"
+  },
+  "better": []
+}

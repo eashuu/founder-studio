@@ -70,3 +70,23 @@ dialog.menu[open] { display: flex; flex-direction: column; gap: 22px; padding-bo
 /* Dark mode: blue fills get dark ink so small text passes 4.5:1; the "read first" tag keeps fixed colours */
 @media (prefers-color-scheme: dark) { .btn.blue, .count { color: #0b0b0c; } }
 .note .lvl.high { background: #0b0b0c; color: #f4e04d; border-color: #0b0b0c; }
+
+/* Best free option band + OS/country notes */
+.free { margin-top: 44px; border: 2px solid var(--ink); background: var(--tape); color: #0b0b0c; padding: 18px 20px 20px; position: relative; }
+.free > .cap { display: inline-block; background: #0b0b0c; color: var(--tape); padding: 4px 8px; }
+.free-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 460px); gap: 16px 32px; align-items: end; margin-top: 12px; }
+.free h2 { font-size: clamp(44px, 6vw, 92px); }
+.free p { margin: 8px 0 0; max-width: 56ch; }
+.free .free-limits { color: #3a3a3d; }
+.free .cmd { margin-top: 0; border-color: #0b0b0c; }
+.free .cmd button { background: #0b0b0c; color: var(--tape); border-color: #0b0b0c; }
+.free .btn { border-color: #0b0b0c; color: #0b0b0c; background: transparent; }
+.free .btn:hover { box-shadow: 3px 3px 0 #0b0b0c; }
+.free .actions { margin-top: 12px; }
+@media (max-width: 900px) { .free-body { grid-template-columns: minmax(0, 1fr); } }
+tr.is-free td { background: color-mix(in srgb, var(--tape) 22%, transparent); }
+.notes-list { margin: 0; border: 2px solid var(--ink); }
+.notes-list div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 14px; padding: 12px 14px; border-top: 1px solid color-mix(in srgb, var(--ink) 25%, transparent); }
+.notes-list div:first-child { border-top: 0; }
+.notes-list dt { font: 400 26px/1 var(--f-display); text-transform: uppercase; color: var(--blue); }
+.notes-list dd { margin: 0; font-size: 15px; }

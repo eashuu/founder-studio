@@ -3,83 +3,82 @@
   "slot": "Bluesky / Threads (worth it?)",
   "track": "brand",
   "stage": "sell",
-  "region": "Global",
-  "order": 8225,
+  "order": 8017,
   "pick": {
-    "name": "Claim handles on both; cross-post only (no native effort)",
+    "name": "Claim handles, cross-post only",
     "url": "https://daringfireball.net/linked/2026/08/21/bluesky-user-base-is-tiny",
-    "what": "Reserve your name, let the scheduler cross-post, spend zero extra time",
-    "why": "Bluesky mobile MAU fell to 10.4M (Jun 2026, -27% YoY); Threads is big (147M DAU) but consumer-skewed; neither beats X/LinkedIn for AI B2B",
+    "what": "Claim names; no native effort",
+    "why": "Audience too small to justify native posting for AI B2B",
     "cost": "free",
     "free_limits": "Free",
-    "windows_fit": "web + Android",
+    "platforms": "web|iOS|Android",
     "maintained": "n/a",
     "install": "web",
     "license": "n/a",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://daringfireball.net/linked/2026/08/21/bluesky-user-base-is-tiny",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
-      "name": "Bluesky (active posting)",
+      "name": "Bluesky (active)",
       "url": "https://bsky.app",
-      "what": "Post natively to the ML/research crowd that moved there",
-      "why": "Only if your niche (e.g. open models research) is visibly active there",
+      "what": "Open protocol network",
+      "why": "Active only if your audience is there",
       "cost": "free",
       "free_limits": "Free",
-      "windows_fit": "web + Android",
+      "platforms": "web",
       "maintained": "Active",
       "install": "web",
       "license": "AT Protocol (open)",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://daringfireball.net/linked/2026/08/21/bluesky-user-base-is-tiny",
       "checked": "2026-10-28"
     },
     {
-      "name": "Threads (active posting)",
+      "name": "Threads (active)",
       "url": "https://www.threads.com",
-      "what": "Meta's text network linked to Instagram",
-      "why": "Only for B2C app audiences in India",
+      "what": "Meta text network",
+      "why": "Consumer-leaning",
       "cost": "free",
       "free_limits": "Free",
-      "windows_fit": "web + Android",
+      "platforms": "web|iOS|Android",
       "maintained": "Active",
       "install": "web",
       "license": "Proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://gigazine.net/gsc_news/en/20260812-blueskys-active-user/",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Cross-post only",
-      "verdict": "PICK: name reserved, near-zero time"
+      "name": "Claim + cross-post",
+      "verdict": "PICK"
     },
     {
-      "name": "Bluesky active",
-      "verdict": "Small, shrinking"
+      "name": "Bluesky",
+      "verdict": "Small user base"
     },
     {
-      "name": "Threads active",
-      "verdict": "Large but consumer"
+      "name": "Threads",
+      "verdict": "Consumer-leaning"
     },
     {
       "name": "Mastodon",
-      "verdict": "Tiny for this audience"
+      "verdict": "Not verified"
     }
   ],
-  "decision": "Not worth native effort for an AI B2B founder in 2026: claim both handles and cross-post via Buffer. Flip Threads to active only when you launch a consumer (B2C) app in India.",
+  "decision": "Not worth native effort for AI B2B in 2026: claim both handles and cross-post. Go active on Threads only when launching a consumer app.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "doubt",
-    "note": "Source is a Daring Fireball link-post; figures are Similarweb estimates: Bluesky ~10.4M mobile MAU Jun 2026 (down 27% YoY), ~46M registered; Threads 147M DAU Jul 2026. Label as estimates.",
-    "url": "https://techcrunch.com/?p=3151942"
+    "verdict": "ok",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://daringfireball.net/linked/2026/08/21/bluesky-user-base-is-tiny"
   },
-  "better_pick": null
+  "better": []
 }

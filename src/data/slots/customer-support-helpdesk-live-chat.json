@@ -3,54 +3,50 @@
   "slot": "Customer support / helpdesk / live chat",
   "track": "sales",
   "stage": "sell",
-  "region": "Global",
-  "order": 7200,
+  "order": 7027,
   "pick": {
     "name": "Chatwoot",
     "url": "https://www.chatwoot.com/pricing/",
-    "what": "Open-source omnichannel support inbox (chat, email, WhatsApp, etc.)",
-    "why": "MIT core, self-hostable with no seat limits, API + agent bots so Claude can answer first-line; cloud free tier to start",
+    "what": "Open-source omnichannel support inbox",
+    "why": "MIT core, self-hostable, API + agent bots",
     "cost": "freemium",
-    "free_limits": "Cloud Hacker: 2 agents, 500 conversations/mo, live chat only, 30-day retention; self-host CE free",
-    "windows_fit": "wsl/web (self-host via Docker on Linux VM)",
+    "free_limits": "Cloud Hacker: 2 agents, 500 conversations/mo; self-host CE free",
+    "platforms": "web, Docker",
     "maintained": "v4.19.1 released 2026-10-24",
-    "install": "web, or docker compose (Chatwoot self-host guide)",
+    "install": "web, or docker compose",
     "license": "MIT (enterprise folder separate)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://www.chatwoot.com/pricing/",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "tawk.to",
+    "url": "https://www.tawk.to/pricing/",
+    "what": "Free live chat + ticketing + knowledge base",
+    "why": "Most generous hosted free tier",
+    "cost": "freemium",
+    "free_limits": "Core free; remove branding USD 29/mo",
+    "platforms": "web",
+    "maintained": "live page 2026-10-28",
+    "install": "web",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://www.tawk.to/pricing/",
     "checked": "2026-10-28"
   },
   "alts": [
     {
-      "name": "tawk.to",
-      "url": "https://www.tawk.to/pricing/",
-      "what": "Free live chat + ticketing + knowledge base",
-      "why": "Most generous hosted free tier (free for life with branding)",
-      "cost": "freemium",
-      "free_limits": "Core free; remove branding USD 29/mo; AI Assist from USD 29/mo",
-      "windows_fit": "web",
-      "maintained": "live page 2026-10-28",
-      "install": "web",
-      "license": "proprietary",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://www.tawk.to/pricing/",
-      "checked": "2026-10-28"
-    },
-    {
       "name": "Crisp",
       "url": "https://crisp.chat/en/pricing/",
       "what": "Polished chat + shared inbox",
-      "why": "Best UX if you'll pay later (Mini USD 45/mo, 4 seats)",
+      "why": "Best UX if you'll pay (Mini USD 45/mo)",
       "cost": "freemium",
-      "free_limits": "Free: 2 seats, 100 customer profiles, no AI, watermark",
-      "windows_fit": "web",
+      "free_limits": "Free: 2 seats, watermark",
+      "platforms": "web",
       "maintained": "live page 2026-10-28",
       "install": "web",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://crisp.chat/en/pricing/",
       "checked": "2026-10-28"
     }
@@ -58,36 +54,38 @@
   "candidates": [
     {
       "name": "Chatwoot",
-      "verdict": "PICK: OSS, API-first, cloud free then self-host"
+      "verdict": "PICK: OSS, API-first"
     },
     {
       "name": "tawk.to",
-      "verdict": "Pick if you never want to host anything"
+      "verdict": "best_free hosted"
     },
     {
       "name": "Crisp",
       "verdict": "Best paid UX"
     },
     {
-      "name": "Zoho Desk / Freshdesk free",
-      "verdict": "Ticket-first helpdesks (not checked)"
+      "name": "Zoho Desk / Freshdesk",
+      "verdict": "Not checked"
     },
     {
-      "name": "Intercom",
-      "verdict": "Too expensive for solo"
+      "name": "Intercom / Zendesk",
+      "verdict": "Mature but costly; not checked"
     },
     {
       "name": "Plain",
-      "verdict": "API-first B2B support (not checked)"
+      "verdict": "API-first B2B (not checked)"
     }
   ],
-  "decision": "Start on Chatwoot Cloud's free tier. When volume passes 500 conversations/month or you want email/WhatsApp channels, self-host the MIT edition on a small always-free VM and wire a Claude-powered agent bot. tawk.to is the zero-ops fallback.",
+  "decision": "Start on Chatwoot Cloud's free tier and self-host when volume grows. tawk.to is the zero-ops fallback; Crisp if you will pay for polish.",
   "note": "",
-  "details": "",
+  "details": "Only one non-free alt verified.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Cloud Hacker plan confirmed: 2 agents, 500 conv/mo, live chat only, 30-day retention. LICENSE is MIT outside enterprise/ (GitHub reports NOASSERTION because of the split). v4.19.1 on 2026-10-24. tawk.to alt confirmed (USD 29 branding removal, AI Assist from USD 29). Crisp alt confirmed (2 seats, 100 profiles, no AI; Mini USD 45).",
-    "url": "https://www.chatwoot.com/pricing/"
+    "note": "Chatwoot v4.19.1 (2026-10-24). tawk.to verified free forever; branding removal USD 29/mo; AI Assist from USD 29/mo.",
+    "url": "https://www.tawk.to/pricing/"
   },
-  "better_pick": null
+  "better": []
 }

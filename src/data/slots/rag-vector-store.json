@@ -3,8 +3,7 @@
   "slot": "RAG vector store",
   "track": "ai-eng",
   "stage": "build",
-  "region": "Global",
-  "order": 4059,
+  "order": 4007,
   "pick": {
     "name": "pgvector (Postgres)",
     "url": "https://github.com/pgvector/pgvector",
@@ -12,15 +11,15 @@
     "why": "Vectors sit next to relational rows and tenant/RLS rules - one DB, one backup, one BAA scope; managed Postgres hosts offer it",
     "cost": "free",
     "free_limits": "Indexed dims: vector 2,000, halfvec 4,000; storage up to 16,000",
-    "windows_fit": "native (Postgres/docker)",
     "maintained": "extension v0.8.7 (README); pgvector-python 0.5.1 on 2026-10-09",
     "install": "CREATE EXTENSION vector;",
-    "license": "PostgreSQL License (confirmed from LICENSE file)",
+    "license": "PostgreSQL License",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/pgvector/pgvector",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native (Postgres/docker)"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "LanceDB (embedded)",
@@ -29,14 +28,13 @@
       "why": "Best for desktop/offline/local-first and no-server RAG",
       "cost": "free",
       "free_limits": "OSS embedded; Enterprise by contact",
-      "windows_fit": "native",
       "maintained": "lancedb 0.40.0 on 2026-10-07; @lancedb/lancedb 0.40.0",
       "install": "npm i @lancedb/lancedb  |  pip install lancedb",
       "license": "Apache-2.0 (npm/PyPI metadata)",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://docs.lancedb.com/",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     },
     {
       "name": "Qdrant",
@@ -45,20 +43,19 @@
       "why": "Move here when vector workload outgrows Postgres",
       "cost": "freemium",
       "free_limits": "Free cluster 0.5 vCPU / 1GB RAM / 4GB disk, no HA; HIPAA badge on site (tier coverage unverified)",
-      "windows_fit": "docker/web",
       "maintained": "qdrant-client 1.20.0 on 2026-10-22",
       "install": "pip install qdrant-client",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no (cloud account for managed)",
       "source_url": "https://qdrant.tech/pricing/",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "docker/web"
     }
   ],
   "candidates": [
     {
       "name": "pgvector",
-      "verdict": "Pick: colocated with app data, PHI in one place"
+      "verdict": "Pick: colocated with app data, regulated data in one place"
     },
     {
       "name": "LanceDB",
@@ -92,10 +89,12 @@
   "decision": "pgvector because the app needs Postgres anyway and colocating embeddings with tenant data simplifies access control and compliance. Move to Qdrant at millions of vectors or heavy filtering; use LanceDB for offline desktop RAG.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "fixed",
-    "note": "License confirmed.",
-    "url": "https://raw.githubusercontent.com/pgvector/pgvector/master/LICENSE"
+    "note": "LICENSE text is the PostgreSQL License; resolves the unverified item.",
+    "url": "https://github.com/pgvector/pgvector/blob/master/LICENSE"
   },
-  "better_pick": null
+  "better": []
 }

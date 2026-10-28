@@ -3,38 +3,36 @@
   "slot": "Trust page + security questionnaires",
   "track": "legal",
   "stage": "run",
-  "region": "Global",
-  "order": 10181,
+  "order": 10009,
   "pick": {
     "name": "Self-published /trust page + CSA CAIQ v4.1 answer bank",
     "url": "https://cloudsecurityalliance.org/artifacts/star-level-1-security-questionnaire-caiq-v4",
-    "what": "Static trust page (sub-processors, security practices, DPA/BAA links) + one pre-filled CAIQ reused for every questionnaire",
-    "why": "Free; CAIQ is the industry-standard question set, and Claude can draft answers from your real controls",
+    "what": "Static trust page plus one pre-filled CAIQ reused for every questionnaire",
+    "why": "Free; CAIQ is an industry-standard question set",
     "cost": "free",
-    "free_limits": "CAIQ downloadable without an account",
-    "windows_fit": "web",
+    "free_limits": "Downloadable without an account",
+    "platforms": "web",
     "maintained": "CAIQ v4.1",
     "install": "web",
     "license": "n/a",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://cloudsecurityalliance.org/artifacts/star-level-1-security-questionnaire-caiq-v4",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Probo compliance page",
       "url": "https://github.com/getprobo/probo",
-      "what": "Public compliance page with NDA-gated documents and custom domain",
-      "why": "Free once you run Probo",
+      "what": "Public compliance page with NDA-gated docs",
+      "why": "Free once Probo runs",
       "cost": "free",
       "free_limits": "Self-host free",
-      "windows_fit": "wsl/web",
+      "platforms": "Docker",
       "maintained": "2026-10-28",
       "install": "self-host",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/getprobo/probo",
       "checked": "2026-10-28"
     },
@@ -42,15 +40,14 @@
       "name": "SafeBase (Drata)",
       "url": "https://builtin.com/articles/drata-acquires-safebase-20250212",
       "what": "Enterprise trust centre + AI questionnaire answering",
-      "why": "Pay-later pick; acquired by Drata (Feb 2025, ~USD 250M reported)",
+      "why": "Pay-later; acquired by Drata Feb 2025",
       "cost": "paid",
       "free_limits": "No free tier",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "n/a",
       "install": "web",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "yes",
       "source_url": "https://builtin.com/articles/drata-acquires-safebase-20250212",
       "checked": "2026-10-28"
     }
@@ -61,25 +58,27 @@
       "verdict": "PICK"
     },
     {
-      "name": "Probo compliance page",
-      "verdict": "Use when Probo is running"
+      "name": "Probo page",
+      "verdict": "Use once running"
     },
     {
       "name": "SafeBase / Vanta Trust Center",
-      "verdict": "Paid, bundled with GRC suites"
+      "verdict": "Bundled with paid suites"
     },
     {
-      "name": "CSA STAR Level 1 listing",
-      "verdict": "Self-assessment listing; fee status not confirmed"
+      "name": "CSA STAR Level 1",
+      "verdict": "Fee status unconfirmed"
     }
   ],
-  "decision": "Publish a trust page on your Astro site and keep one CAIQ v4.1 workbook as the answer bank for every customer questionnaire. Move to Probo's page once the compliance program exists.",
+  "decision": "Publish a trust page and keep one CAIQ workbook as the answer bank. Move to your compliance tool's page once a program exists.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "CAIQ v4.1 (released 2026-01-27) can be downloaded without an account.",
+    "note": "Shallow.",
     "url": "https://cloudsecurityalliance.org/artifacts/star-level-1-security-questionnaire-caiq-v4"
   },
-  "better_pick": null
+  "better": []
 }

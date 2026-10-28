@@ -1,0 +1,86 @@
+{
+  "slug": "newsletter",
+  "slot": "newsletter",
+  "track": "brand",
+  "stage": "sell",
+  "order": 8021,
+  "pick": {
+    "name": "Substack",
+    "url": "https://substack.com",
+    "what": "Newsletter platform with a built-in recommendation network",
+    "why": "Best discovery for a personal audience from zero",
+    "cost": "freemium",
+    "free_limits": "Free while unpaid; paid subs 10% + Stripe fees; custom domain $50 one-time (web address only)",
+    "platforms": "web|iOS|Android",
+    "maintained": "SaaS",
+    "install": "web",
+    "license": "Proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://picktheplatform.pages.dev/guides/substack-cost",
+    "checked": "2026-10-28"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "Kit",
+      "url": "https://kit.com",
+      "what": "Creator email platform with automations",
+      "why": "Best for lead magnets and selling products",
+      "cost": "freemium",
+      "free_limits": "Free up to 10,000 subs, 1 automation, Kit branding; Creator ~$33-39/mo",
+      "platforms": "web",
+      "maintained": "Review updated 2026-08-17",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://skillscouter.com/kit-review/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Buttondown",
+      "url": "https://buttondown.com/pricing",
+      "what": "Indie newsletter tool",
+      "why": "Clean, API-first, custom-domain sending on free tier",
+      "cost": "freemium",
+      "free_limits": "Free to 100 subscribers; $9/$29/$79 tiers",
+      "platforms": "web",
+      "maintained": "SaaS",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://buttondown.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Substack",
+      "verdict": "PICK for audience growth"
+    },
+    {
+      "name": "Kit",
+      "verdict": "Product-selling"
+    },
+    {
+      "name": "Buttondown",
+      "verdict": "Indie"
+    },
+    {
+      "name": "Beehiiv / Ghost",
+      "verdict": "Beehiiv not verified; Ghost in site slot"
+    }
+  ],
+  "decision": "Substack wins for growing a personal audience; move to Kit when you want your own sending domain, lead magnets or product sales. Both export subscribers, so lock-in is low.",
+  "note": "Two audiences, two tools: this is for your personal founder audience. A product's lead and user list lives in the Sales track's newsletter pick.",
+  "details": "",
+  "region_notes": {
+    "India": "Paid Substack subscriptions need Stripe payouts; Stripe India was invite-only (verify)."
+  },
+  "os_notes": {},
+  "verify": {
+    "verdict": "ok",
+    "note": "India note about Stripe payouts is a legitimate payments difference; keep. Source is third-party; prefer substack.com support pages.",
+    "url": "https://picktheplatform.pages.dev/guides/substack-cost"
+  },
+  "better": []
+}

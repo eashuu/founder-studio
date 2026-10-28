@@ -3,8 +3,7 @@
   "slot": "Accessibility checks",
   "track": "design",
   "stage": "discover",
-  "region": "Global",
-  "order": 1168,
+  "order": 1032,
   "pick": {
     "name": "axe-core via @axe-core/playwright",
     "url": "https://github.com/dequelabs/axe-core",
@@ -12,15 +11,15 @@
     "why": "Catches most automatable WCAG issues on every PR, free; enterprise/healthcare buyers expect WCAG 2.1 AA evidence.",
     "cost": "free",
     "free_limits": "Free",
-    "windows_fit": "native (Node)",
     "maintained": "axe-core 4.14.0, 5 Oct; @axe-core/playwright 4.14.0, 15 Oct",
     "install": "npm i -D @axe-core/playwright",
     "license": "MPL-2.0 (axe-core)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/dequelabs/axe-core/releases",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native (Node)"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Accessibility Insights for Web",
@@ -29,14 +28,13 @@
       "why": "Best free guided manual audit (keyboard, screen reader steps) for a VPAT.",
       "cost": "free",
       "free_limits": "Free",
-      "windows_fit": "browser extension",
       "maintained": "v2.49.0, 8 Sep",
       "install": "Edge/Chrome web store",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/microsoft/accessibility-insights-web/releases",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "browser extension"
     },
     {
       "name": "Lighthouse",
@@ -45,14 +43,13 @@
       "why": "Built into Chrome; quick score plus performance/SEO.",
       "cost": "free",
       "free_limits": "Free",
-      "windows_fit": "built into Chrome",
       "maintained": "v13.6.0, 27 Oct 2026",
       "install": "npm i -g lighthouse",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/GoogleChrome/lighthouse/releases",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "built into Chrome"
     }
   ],
   "candidates": [
@@ -92,10 +89,12 @@
   "decision": "Automate axe in Playwright so every build is checked, then do one guided manual pass with Accessibility Insights before enterprise/healthcare deals.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "axe-core 4.14.0 (2026-10-05), @axe-core/playwright 4.14.0 (2026-10-15), MPL-2.0; Lighthouse 13.6.0 (2026-10-27).",
-    "url": "https://github.com/dequelabs/axe-core/releases"
+    "note": "Shallow check only: free/commercial terms are consistent with the cited licence; not re-opened in this pass.",
+    "url": "https://github.com/dequelabs/axe-core"
   },
-  "better_pick": null
+  "better": []
 }

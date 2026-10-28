@@ -3,41 +3,38 @@
   "slot": "logged-in agent browser",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2008,
   "pick": {
     "name": "Claude in Chrome",
     "url": "https://code.claude.com/docs/en/chrome.md",
     "what": "Anthropic extension that lets Claude drive tabs in Chrome",
-    "why": "First-party, maintained with Claude Code, already connected; run it in a dedicated Chrome profile for founder accounts",
-    "cost": "owned",
-    "free_limits": "Max",
-    "windows_fit": "native",
+    "why": "First-party and maintained with Claude Code; run it in a dedicated Chrome profile so agent actions stay away from personal accounts",
+    "cost": "paid",
+    "free_limits": "Requires a Claude plan (Pro/Max plans/Team/Enterprise) or API billing; counts against plan usage",
     "maintained": "core",
-    "install": "installed (Chrome extension)",
+    "install": "built in / see source",
     "license": "proprietary",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://code.claude.com/docs/llms.txt",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
+  },
+  "best_free": {
+    "checked": "2026-10-28",
+    "name": "Chrome DevTools MCP with --autoConnect (Google)",
+    "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+    "source_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/main/docs/advanced-usage.md",
+    "what": "Google's official MCP server that attaches to your running Chrome (M144+) after an Allow prompt, so the agent works in your logged-in profile",
+    "why": "Free, Apache-2.0, maintained by the Chrome DevTools team, ~54k stars; uses the browser you already keep updated instead of a separate Chromium fork",
+    "cost": "free",
+    "free_limits": "n/a; needs Node.js LTS and Chrome M144+; enable chrome://inspect/#remote-debugging and approve the connection dialog",
+    "platforms": "macOS|Windows|Linux",
+    "maintained": "active; release tags not shown on repo page",
+    "install": "claude mcp add chrome-devtools -- npx chrome-devtools-mcp@latest --autoConnect  (or /plugin marketplace add ChromeDevTools/chrome-devtools-mcp; /plugin install chrome-devtools-mcp@chrome-devtools-plugins)",
+    "license": "Apache-2.0",
+    "commercial_ok": "yes"
   },
   "alts": [
-    {
-      "name": "BrowserOS neo",
-      "url": "https://github.com/browseros-ai/BrowserOS",
-      "what": "Chromium fork with built-in MCP endpoint and persistent agent profile",
-      "why": "Hard separation from your main/company browser",
-      "cost": "free",
-      "free_limits": "anonymous usage events (toggle off)",
-      "windows_fit": "native",
-      "maintained": "14.1k stars; release not shown",
-      "install": "installed",
-      "license": "AGPL-3.0",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://github.com/browseros-ai/BrowserOS",
-      "checked": "2026-10-28"
-    },
     {
       "name": "Playwright CLI with saved storage state",
       "url": "https://github.com/microsoft/playwright-cli",
@@ -45,14 +42,28 @@
       "why": "Repeatable automations",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "see E2E slot",
       "install": "see E2E slot",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/microsoft/playwright-cli",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
+    },
+    {
+      "name": "Chrome DevTools MCP (Google)",
+      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "what": "Perf traces, network, console with source maps; CLI + 7 skills",
+      "why": "Best for debugging/perf (LCP, memory leaks)",
+      "cost": "free",
+      "free_limits": "usage stats on by default (--no-usage-statistics)",
+      "maintained": "54.3k stars",
+      "install": "/plugin marketplace add ChromeDevTools/chrome-devtools-mcp; /plugin install chrome-devtools-mcp@chrome-devtools-plugins",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     }
   ],
   "candidates": [
@@ -62,20 +73,30 @@
     },
     {
       "name": "BrowserOS neo",
-      "verdict": "wins if company policy blocks Chrome extensions or you want a separate binary"
+      "verdict": "wins if policy blocks Chrome extensions or you want a separate binary"
     },
     {
       "name": "Comet/Atlas/other agent browsers",
       "verdict": "bring a second AI vendor"
+    },
+    {
+      "name": "Chrome DevTools MCP",
+      "verdict": "attaches to a logged-in Chrome; free, Google-maintained"
+    },
+    {
+      "name": "browser-use",
+      "verdict": "Python agent framework with own browser; heavier setup"
     }
   ],
-  "decision": "Two browser agents duplicate each other. Claude in Chrome is first-party and needs no extra browser; keep BrowserOS neo only if you value a separate Chromium binary over first-party support.",
+  "decision": "Claude in Chrome is first-party and needs no extra browser. The best free route is Chrome DevTools MCP with --autoConnect, which drives your normal logged-in Chrome after you approve each connection; give it a dedicated Chrome profile if you do not want the agent near sensitive sessions. Choose BrowserOS neo only if you want a wholly separate agent browser binary and accept AGPL and a smaller project.",
   "note": "",
-  "details": "",
+  "details": "BrowserOS neo moved to candidates: AGPL-3.0 Chromium fork, ~14.2k stars, Linux x64 only for neo, anonymous usage events on by default.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "First-party; Remote Control doc references Chrome integration flags (--chrome). No issue.",
-    "url": "https://code.claude.com/docs/en/chrome.md"
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://code.claude.com/docs/llms.txt"
   },
-  "better_pick": null
+  "better": []
 }

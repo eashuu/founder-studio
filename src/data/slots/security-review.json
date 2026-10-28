@@ -3,40 +3,38 @@
   "slot": "security review",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2006,
   "pick": {
     "name": "claude-security (official plugin)",
     "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-security",
     "what": "Threat model, vuln hunt, independent verification, patches, SARIF",
-    "why": "Verified findings + SARIF for GitHub code scanning; matters for healthcare clients",
+    "why": "Verified findings plus SARIF for GitHub code scanning; useful when regulated-industry buyers ask for evidence",
     "cost": "free",
-    "free_limits": "Max usage; telemetry on by default",
-    "windows_fit": "native",
+    "free_limits": "Counts against plan usage; telemetry on by default",
     "maintained": "repo pushed 2026-10-28",
     "install": "/plugin install claude-security@claude-plugins-official",
     "license": "Apache-2.0",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-security",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Built-in /security-review",
       "url": "https://code.claude.com/docs/en/whats-new/2026-w16.md",
       "what": "Quick pass over branch changes",
       "why": "Per-PR, zero install",
-      "cost": "owned",
-      "free_limits": "n/a",
-      "windows_fit": "native",
+      "cost": "paid",
+      "free_limits": "Requires a Claude plan (Pro/Max plans/Team/Enterprise) or API billing; counts against plan usage",
       "maintained": "core",
       "install": "built-in",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://code.claude.com/docs/en/whats-new/2026-w16.md",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     },
     {
       "name": "security-guidance (official)",
@@ -45,14 +43,13 @@
       "why": "Preventive, always-on",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "repo pushed 2026-10-28",
       "install": "/plugin install security-guidance@claude-plugins-official",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/security-guidance",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     }
   ],
   "candidates": [
@@ -73,13 +70,15 @@
       "verdict": "deterministic SAST in CI; add when a client asks for scanner reports"
     }
   ],
-  "decision": "Use /security-review per PR and claude-security before releases; add Semgrep or CodeQL in CI when an enterprise/healthcare buyer asks for SAST evidence.",
+  "decision": "Use /security-review per PR and claude-security before releases; add Semgrep or CodeQL in CI when an enterprise buyer asks for SAST evidence.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "claude-security and security-guidance present in official marketplace.",
-    "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins"
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-security"
   },
-  "better_pick": null
+  "better": []
 }

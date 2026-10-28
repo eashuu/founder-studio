@@ -3,41 +3,38 @@
   "slot": "Postgres / database",
   "track": "ship",
   "stage": "ship",
-  "region": "Global",
-  "order": 6104,
+  "order": 6003,
   "pick": {
+    "name": "Supabase Pro",
+    "url": "https://supabase.com/pricing",
+    "what": "Postgres + auth + storage + realtime bundle",
+    "why": "Postgres plus auth, storage and realtime in one; Pro adds daily backups and removes pausing",
+    "cost": "freemium",
+    "free_limits": "Pro from $25/mo incl. $10/mo compute credits (covers one Micro instance; extra projects pay full compute), daily backups kept 7 days. Free: 500 MB DB, 50k MAU, 1 GB storage, 2 active projects, paused after 1 week of inactivity, no backups",
+    "platforms": "web + CLI (macOS, Windows, Linux)",
+    "maintained": "active",
+    "install": "npm i -g supabase",
+    "license": "service (Apache-2.0 OSS core)",
+    "commercial_ok": "yes",
+    "source_url": "https://supabase.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
     "name": "Neon Free",
     "url": "https://neon.com/pricing",
     "what": "Serverless Postgres with branching and scale-to-zero",
     "why": "Most generous commercial-OK free Postgres for many small products: 100 projects, no inactivity deletion, branch-per-PR",
     "cost": "freemium",
     "free_limits": "100 projects; 100 CU-h/project/mo; 1 GB/project (20 GB total); 5 GB egress/project; 10 branches; 6 h history (no instant restore); suspends after 5 min idle; Launch $0.106/CU-h + $0.35/GB-mo",
-    "windows_fit": "web + neonctl (npm, Windows OK)",
+    "platforms": "web + CLI (macOS, Windows, Linux)",
     "maintained": "active; owned by Databricks since May 2025",
     "install": "npx neonctl@latest init",
     "license": "service (Postgres)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://neon.com/pricing",
     "checked": "2026-10-28"
   },
   "alts": [
-    {
-      "name": "Supabase Free",
-      "url": "https://supabase.com/pricing",
-      "what": "Postgres + auth + storage + realtime bundle",
-      "why": "Best all-in-one if you want BaaS; weaker free tier for many products",
-      "cost": "freemium",
-      "free_limits": "500 MB DB, 50k MAU, 1 GB storage, 5 GB egress, 2 active projects, pauses after 1 week inactivity, NO backups; Pro $25/mo (daily backups 7 days)",
-      "windows_fit": "web + CLI",
-      "maintained": "active",
-      "install": "npm i -g supabase",
-      "license": "service (Apache-2.0 OSS core)",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://supabase.com/pricing",
-      "checked": "2026-10-28"
-    },
     {
       "name": "Prisma Postgres Free",
       "url": "https://www.prisma.io/pricing",
@@ -45,13 +42,27 @@
       "why": "Alt if you use Prisma ORM; spend fixed at $0",
       "cost": "freemium",
       "free_limits": "200k operations/mo, 2 GB storage, 50 DBs; Starter $10/mo (1M ops, 10 GB)",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "active",
       "install": "npx prisma init --db",
       "license": "service",
       "commercial_ok": "unclear",
-      "needs_company": "no",
       "source_url": "https://www.prisma.io/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Self-hosted Postgres",
+      "url": "https://www.postgresql.org/",
+      "what": "Run Postgres yourself on a VM",
+      "why": "No vendor lock-in; you own backups and HA",
+      "cost": "free",
+      "free_limits": "n/a",
+      "platforms": "Linux (VM)",
+      "maintained": "active (not re-checked)",
+      "install": "apt install postgresql",
+      "license": "PostgreSQL licence",
+      "commercial_ok": "yes",
+      "source_url": "https://www.postgresql.org/",
       "checked": "2026-10-28"
     }
   ],
@@ -81,17 +92,19 @@
       "verdict": "Free 5h tier only, company being acquired"
     },
     {
-      "name": "Self-host Postgres on Oracle VM",
+      "name": "Self-host Postgres on an always-free VM",
       "verdict": "Free but you own backups/HA; fine for internal tools"
     }
   ],
-  "decision": "Neon fits a founder shipping many small products: 100 free projects, standard Postgres (no lock-in, pg_dump out anytime), and ToS without a non-commercial clause. Choose Supabase instead if you want auth+storage+realtime in one dashboard and accept the 2-project/pausing limits; pay Neon Launch when a project needs >1 GB or real point-in-time restore.",
+  "decision": "Supabase Pro is the best overall when you want managed Postgres with auth, storage and backups on one bill. Neon Free is the best free Postgres: 100 projects, branching, commercial-OK, no deletion on inactivity. Choose Neon Launch instead of Supabase if you only need Postgres with branching and usage-based billing.",
   "note": "",
-  "details": "From Workers, connect via Neon serverless driver or Cloudflare Hyperdrive (Hyperdrive free-plan terms not verified).",
+  "details": "Neon owned by Databricks since May 2025. From Workers use the Neon serverless driver or Hyperdrive (free-plan terms unverified).",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "ok",
-    "note": "Every Neon Free number confirmed (100 projects, 100 CU-h/project, 1 GB/project 20 GB total, 5 GB egress, 10 branches, 6 h history, 5 min suspend; Launch $0.106/CU-h, $0.35/GB-mo; instant restore $0.20/GB-mo). Supabase and Prisma alts also confirmed.",
-    "url": "https://neon.com/pricing"
+    "verdict": "fixed",
+    "note": "Verified: Free 500 MB DB, 50k MAU, 1 GB storage, 2 active projects, paused after 1 week inactivity; Pro from $25/mo incl. $10 compute credits (one Micro instance), daily backups kept 7 days.",
+    "url": "https://supabase.com/pricing"
   },
-  "better_pick": null
+  "better": []
 }

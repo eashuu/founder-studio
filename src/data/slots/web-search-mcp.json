@@ -3,7 +3,6 @@
   "slot": "web search MCP",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2010,
   "pick": {
     "name": "Exa MCP",
@@ -12,14 +11,28 @@
     "why": "Best free volume ($10 credit refreshed monthly = up to 2,500 Lite searches) and code-example search; official marketplace plugin",
     "cost": "freemium",
     "free_limits": "$10/month free credit, no card; Search $4-7 per 1k",
-    "windows_fit": "native (hosted https://mcp.exa.ai/mcp)",
     "maintained": "exa-mcp-server pushed 2026-10-27",
     "install": "/plugin install exa@claude-plugins-official",
     "license": "MIT (server)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://exa.ai/pricing",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
+  },
+  "best_free": {
+    "name": "Tavily",
+    "url": "https://www.tavily.com/pricing",
+    "what": "Search/extract API for agents",
+    "why": "Runner-up free tier",
+    "cost": "freemium",
+    "free_limits": "Researcher: 1,000 API credits/month, no card; Project $30/mo for 4,000 credits; pay-as-you-go $0.008/credit",
+    "maintained": "live; Nebius agreed to acquire Tavily (announced 2026-02-10); brand continues as 'Tavily by Nebius'",
+    "install": "remote MCP per Tavily docs",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://www.tavily.com/pricing",
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
   "alts": [
     {
@@ -27,31 +40,29 @@
       "url": "https://code.claude.com/docs/llms.txt",
       "what": "Native search tools",
       "why": "Zero setup; enough for most lookups",
-      "cost": "owned",
-      "free_limits": "n/a",
-      "windows_fit": "native",
+      "cost": "paid",
+      "free_limits": "Requires a Claude plan (Pro/Max plans/Team/Enterprise) or API billing; counts against plan usage",
       "maintained": "core",
       "install": "built-in",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://code.claude.com/docs/llms.txt",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     },
     {
-      "name": "Tavily",
-      "url": "https://www.tavily.com/pricing",
-      "what": "Search/extract API for agents",
-      "why": "Runner-up free tier",
+      "name": "Brave Search API",
+      "url": "https://api-dashboard.search.brave.com/app/plans",
+      "what": "Independent web index API with MCP server",
+      "why": "Own index, no Google/Bing dependency",
       "cost": "freemium",
-      "free_limits": "1,000 credits/month free; $30/mo for 4,000",
-      "windows_fit": "native (hosted)",
-      "maintained": "live; now 'Tavily by Nebius'",
-      "install": "remote MCP per Tavily docs",
-      "license": "proprietary",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://www.tavily.com/pricing",
+      "free_limits": "plans page did not show limits; unverified",
+      "platforms": "macOS|Windows|Linux",
+      "maintained": "not shown",
+      "install": "see Brave MCP server docs",
+      "license": "proprietary service",
+      "commercial_ok": "unclear",
+      "source_url": "https://api-dashboard.search.brave.com/app/plans",
       "checked": "2026-10-28"
     }
   ],
@@ -81,13 +92,15 @@
       "verdict": "paid API"
     }
   ],
-  "decision": "Built-in search stays the default; Exa is the add-on when you need code examples or bulk research, with the most generous recurring free credit. Gemini Deep Research covers long-form research outside Claude Code.",
+  "decision": "Built-in search stays the default; Exa is the add-on for code examples or bulk research and offers a recurring free credit. Check the current pricing page before relying on it.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Pricing page: free balance resets to $10 on the 1st of every month, no payment method required (up to 2,500 Lite searches), plus a one-time $10 team bonus. Search Lite/Instant $4, Auto/Fast $7 per 1k; Contents $1/1k pages. Page is silent on MCP billing.",
+    "note": "Verified: $10 free credit resets monthly, no payment method; $4/1k lite/instant, $7/1k auto/fast.",
     "url": "https://exa.ai/pricing"
   },
-  "better_pick": null
+  "better": []
 }

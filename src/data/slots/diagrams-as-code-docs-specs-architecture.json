@@ -3,8 +3,7 @@
   "slot": "Diagrams as code (docs, specs, architecture)",
   "track": "design",
   "stage": "discover",
-  "region": "Global",
-  "order": 1165,
+  "order": 1029,
   "pick": {
     "name": "Mermaid",
     "url": "https://github.com/mermaid-js/mermaid",
@@ -12,15 +11,15 @@
     "why": "Claude writes it fluently, GitHub/most docs render it natively, diffs in Git.",
     "cost": "free",
     "free_limits": "Free; Mermaid Chart (mermaid.ai) free tier 3-6 diagrams, 15 AI credits",
-    "windows_fit": "n/a",
     "maintained": "v12.2.0, 13 Oct",
     "install": "npm i mermaid (or just ```mermaid blocks)",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/mermaid-js/mermaid/releases",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "n/a"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "D2",
@@ -29,14 +28,13 @@
       "why": "Prettier architecture diagrams than Mermaid; needs a binary.",
       "cost": "free",
       "free_limits": "Free",
-      "windows_fit": "native (Windows binary unconfirmed)",
       "maintained": "v0.9.0, 7 Sep",
       "install": "go install oss.terrastruct.com/d2@latest",
-      "license": "MPL-2.0",
+      "license": "MPL-2.0 (unconfirmed)",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/terrastruct/d2/releases",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native (Windows binary unconfirmed)"
     },
     {
       "name": "PlantUML",
@@ -45,14 +43,13 @@
       "why": "Best for strict UML (enterprise clients).",
       "cost": "free",
       "free_limits": "Free",
-      "windows_fit": "native (Java)",
       "maintained": "v1.2026.9, 17 Oct 2026",
-      "install": "winget install plantuml (needs Java)",
+      "install": "brew install plantuml | choco install plantuml | apt install plantuml, or download plantuml.jar (needs Java)",
       "license": "GPL-3/Apache/MIT etc. builds",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/plantuml/plantuml/releases",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native (Java)"
     }
   ],
   "candidates": [
@@ -73,17 +70,19 @@
       "verdict": "interactive HTML architecture diagrams from text/Mermaid"
     },
     {
-      "name": "Mermaid Chart MCP (connected)",
+      "name": "Mermaid Chart MCP",
       "verdict": "renders/validates Mermaid"
     }
   ],
   "decision": "Mermaid renders on GitHub with no tooling and Claude rarely gets it wrong. Use D2 for polished architecture images, archify for interactive client-facing diagrams.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "mermaid 12.2.0 (2026-10-13) MIT. Mermaid Chart now at mermaid.ai; its free tier page says both 3 and 6 diagrams.",
-    "url": "https://mermaid.ai/pricing"
+    "note": "Shallow check only: free/commercial terms are consistent with the cited licence; not re-opened in this pass.",
+    "url": "https://github.com/mermaid-js/mermaid"
   },
-  "better_pick": null
+  "better": []
 }

@@ -1,0 +1,106 @@
+{
+  "slug": "fine-tuning",
+  "slot": "fine-tuning",
+  "track": "ai-eng",
+  "stage": "build",
+  "order": 4020,
+  "pick": {
+    "name": "Together AI fine-tuning",
+    "url": "https://www.together.ai/pricing",
+    "what": "Managed supervised and DPO fine-tuning of open models, per-token billing",
+    "why": "No GPU ops: Llama 3.1 8B and Qwen3.5 0.8B-9B SFT at $0.34 per 1M training tokens; Gemma 4 26B/31B $1.05/M; Llama 3.3 70B $2.03/M",
+    "cost": "paid",
+    "free_limits": "No free credits stated. Every job has a per-model minimum charge: $4 for most models up to 70B, rising to $6-$60 for the largest (e.g. Kimi K2.6 $60). A second table lists slightly higher rates ($0.38/M small) without labelling LoRA vs full.",
+    "platforms": "web",
+    "maintained": "Pricing page current 2026-10-28",
+    "install": "pip install together",
+    "license": "Proprietary service",
+    "commercial_ok": "yes",
+    "source_url": "https://www.together.ai/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Unsloth on free Colab/Kaggle GPUs",
+    "url": "https://unsloth.ai/docs",
+    "what": "Fast LoRA/QLoRA/GRPO training with GGUF export; free Colab and Kaggle notebooks; optional Studio UI (AGPL-3.0)",
+    "why": "Fine-tune 1-8B models free on borrowed GPUs then export GGUF for llama.rn/Ollama",
+    "cost": "freemium",
+    "free_limits": "Library free (Apache-2.0). On free Colab/Kaggle: dynamic undisclosed limits, ~12h sessions, GPU not guaranteed; Colab terms prohibit hosting web services. Do not put regulated data in free notebooks.",
+    "maintained": "unsloth 2026.10.10 on 2026-10-28 (PyPI)",
+    "install": "pip install unsloth (inside Colab/Kaggle)",
+    "license": "Core Apache-2.0; Unsloth Studio UI is AGPL-3.0",
+    "commercial_ok": "yes",
+    "source_url": "https://unsloth.ai/docs",
+    "checked": "2026-10-28",
+    "platforms": "web (Colab/Kaggle notebooks); local on Linux, Windows (WSL or desktop app), macOS"
+  },
+  "alts": [
+    {
+      "name": "Modal (pay-per-second GPUs)",
+      "url": "https://modal.com/pricing",
+      "what": "Serverless GPUs for training jobs",
+      "why": "Scriptable, reproducible runs when Colab limits bite",
+      "cost": "freemium",
+      "free_limits": "Starter $0/mo includes $30 free compute/mo; T4 $0.000164/s, L4 $0.000222/s, A10 $0.000306/s; startup credits program",
+      "maintained": "Pricing page 2026-10-28",
+      "install": "pip install modal",
+      "license": "Proprietary service",
+      "commercial_ok": "yes",
+      "source_url": "https://modal.com/pricing",
+      "checked": "2026-10-28",
+      "platforms": "web (Python SDK)"
+    },
+    {
+      "name": "Hugging Face TRL",
+      "url": "https://github.com/huggingface/trl",
+      "what": "SFT/DPO/GRPO trainers with PEFT/QLoRA",
+      "why": "Standard library, more portable",
+      "cost": "free",
+      "free_limits": "n/a",
+      "maintained": "trl 1.16.0 on 2026-10-15",
+      "install": "pip install trl",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/huggingface/trl",
+      "checked": "2026-10-28",
+      "platforms": "web/wsl"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Together AI",
+      "verdict": "Pick: managed, cheap, no GPU ops"
+    },
+    {
+      "name": "Unsloth on Colab/Kaggle",
+      "verdict": "Best free; limited sessions"
+    },
+    {
+      "name": "Modal + Unsloth/TRL",
+      "verdict": "Best for repeatable runs; $30/mo free compute on Starter"
+    },
+    {
+      "name": "Hugging Face TRL",
+      "verdict": "Reference library"
+    },
+    {
+      "name": "OpenAI / Fireworks fine-tuning",
+      "verdict": "Not evaluated"
+    },
+    {
+      "name": "MLX LM LoRA (Apple) / local NVIDIA",
+      "verdict": "Free if you already own the hardware"
+    }
+  ],
+  "decision": "Fine-tune only after evals show prompting and RAG are failing. Together AI is the lowest-friction managed route; Unsloth on free Colab/Kaggle GPUs is the best free route; move to Modal when runs must be repeatable or need bigger GPUs. Owners of Apple silicon (MLX LM) or NVIDIA GPUs can train locally.",
+  "note": "",
+  "details": "Together page did not state its data-privacy terms (opened); check before training on customer data. Kaggle weekly GPU quota numbers were not retrievable.",
+  "region_notes": {},
+  "os_notes": {},
+  "verify": {
+    "verdict": "fixed",
+    "note": "$0.34/M and $4 minimum confirmed for small models; '$4 minimum on small models' understated that $4 is the floor for almost all models. Data-use terms still not on pricing page.",
+    "url": "https://www.together.ai/pricing"
+  },
+  "better": []
+}

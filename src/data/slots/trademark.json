@@ -3,87 +3,95 @@
   "slot": "Trademark",
   "track": "legal",
   "stage": "run",
-  "region": "India",
-  "order": 10173,
+  "order": 10002,
   "pick": {
-    "name": "Self-file on IP India (classes 9 + 42)",
-    "url": "https://ipindia.gov.in/",
-    "what": "Online TM-A filing at the Indian Trade Marks Registry",
-    "why": "Rs 4,500 per class for individuals/startups/small enterprises (Rs 9,000 others); class 9 (software/apps) + 42 (SaaS) covers the product; India filing is the base for Madrid",
+    "name": "WIPO Madrid System",
+    "url": "https://www.wipo.int/madrid/en/",
+    "what": "One international application designating many countries, based on a home-office filing",
+    "why": "Cheapest way to extend one home filing (USPTO, EUIPO, UKIPO, etc.) to many countries; requires that home application first; base fee CHF 653 plus per-country fees",
     "cost": "paid",
-    "free_limits": "TM-A e-filing Rs 4,500 per class per mark (individual/startup/small enterprise), Rs 9,000 others; expedited exam Rs 20,000 (individual/startup/small) or Rs 40,000 per class, e-filing only",
-    "windows_fit": "web",
-    "maintained": "fee table checked 2026-10-28 (ipindia fee page 404)",
-    "install": "web",
+    "free_limits": "No free tier; use the WIPO fee calculator",
+    "platforms": "web",
+    "maintained": "page live 2026-10-28",
+    "install": "web (madrid.wipo.int)",
     "license": "n/a",
     "commercial_ok": "yes",
-    "needs_company": "no",
-    "source_url": "https://ipindia.gov.in/pages/trade-marks/learn/forms-and-official-fees",
+    "source_url": "https://www.wipo.int/madrid/en/",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
-      "name": "WIPO Madrid System (via IP India)",
-      "url": "https://www.wipo.int/madrid/en/",
-      "what": "One international application designating many countries",
-      "why": "Cheapest way to extend to US/EU/UK later: base fee CHF 653 (CHF 903 colour) + per-country fees; needs the Indian application as the base",
+      "name": "USPTO direct filing",
+      "url": "https://www.uspto.gov/trademarks",
+      "what": "File a US trademark application",
+      "why": "Largest commercial market; USD 350 per class base fee since 18 Jan 2025, plus surcharges for free-text goods (law-firm alerts)",
       "cost": "paid",
-      "free_limits": "No free tier; use the fee calculator",
-      "windows_fit": "web",
-      "maintained": "page live 2026-10-28",
-      "install": "web (https://madrid.wipo.int/feecalcapp)",
+      "free_limits": "No free tier",
+      "platforms": "web",
+      "maintained": "fee change effective 2025-01-18",
+      "install": "web (USPTO Trademark Center)",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://www.wipo.int/madrid/en/",
+      "source_url": "https://www.fr.com/insights/thought-leadership/blogs/new-uspto-trademark-fees-go-into-effect-january-18-2025/",
       "checked": "2026-10-28"
     },
     {
-      "name": "Trademark agent/attorney filing",
-      "url": "https://ssrana.in/ip-laws/trademarks-in-india/tm-filing-fees-forms-india/",
-      "what": "Paid attorney handles search, filing, objections",
-      "why": "Worth it if the examiner objects or opposition is filed",
+      "name": "IP India self-file (classes 9 + 42)",
+      "url": "https://ipindia.gov.in/",
+      "what": "Indian trademark application",
+      "why": "Rs 4,500 per class for individuals/startups/small enterprises, Rs 9,000 others; base for Madrid from India",
       "cost": "paid",
-      "free_limits": "Professional fees on top of govt fees (unverified)",
-      "windows_fit": "web",
-      "maintained": "n/a",
-      "install": "n/a",
+      "free_limits": "No free tier",
+      "platforms": "web",
+      "maintained": "fee table checked earlier 2026-10-28 (ipindia page 404)",
+      "install": "web",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://ssrana.in/ip-laws/trademarks-in-india/tm-filing-fees-forms-india/",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Self-file on IP India",
-      "verdict": "PICK: lowest cost; Claude can draft the goods/services spec"
+      "name": "WIPO Madrid",
+      "verdict": "PICK to extend one home filing to many markets"
     },
     {
-      "name": "Madrid Protocol",
-      "verdict": "Add once you have US/EU revenue (base CHF 653 + designations)"
+      "name": "USPTO",
+      "verdict": "Best first filing if the US is the main market"
     },
     {
-      "name": "Direct USPTO filing",
-      "verdict": "Only if you need US-only fast; fees not verified"
+      "name": "EUIPO",
+      "verdict": "One EU-wide filing; fee page blocked fetch (unverified)"
     },
     {
-      "name": "Agent filing (Vakilsearch, law firms)",
-      "verdict": "Use for objections/oppositions, not for the first filing"
+      "name": "IP India",
+      "verdict": "Home filing for Indian founders"
     },
     {
-      "name": "Class 35/41",
-      "verdict": "Add 35 only for services/consulting branding; skip otherwise"
+      "name": "Trademark attorney",
+      "verdict": "Worth it for objections and oppositions"
+    },
+    {
+      "name": "Class choice",
+      "verdict": "Classes 9 (software) and 42 (SaaS) usually cover an AI product"
     }
   ],
-  "decision": "File the word mark yourself on IP India in classes 9 and 42 at the reduced rate (Udyam makes a company a small enterprise). Search the IP India public search and the WIPO Global Brand Database first. Go to Madrid when a foreign market matters.",
+  "decision": "File first where your main market or home office is (USPTO for US, IP India for India, UKIPO for UK, EUIPO for EU), search the free databases first, then extend through WIPO Madrid when foreign markets matter. Hire an attorney only when an objection or opposition arrives. verify with a professional.",
   "note": "",
-  "details": "India's Madrid membership (since 2013) is from memory and was not confirmed on the page fetched (unverified).",
+  "details": "No free option: government filing fees apply in every jurisdiction; self-filing (IP India, USPTO) is the cheapest route.",
+  "region_notes": {
+    "US": "USD 350/class base fee; free-text goods descriptions add surcharges, so pick from the ID Manual.",
+    "EU": "EUIPO online filing: EUR 850 for one class, EUR 50 for the second, EUR 150 for each class from the third (fee schedule unchanged since 2016; confirm in the EUIPO fee calculator).",
+    "UK": "UKIPO online filing costs from GBP 205 per GOV.UK, more for additional classes. Verify current fees.",
+    "India": "Rs 4,500/class for small enterprises/startups vs Rs 9,000; Udyam registration helps. India's Madrid membership date not confirmed."
+  },
+  "os_notes": {},
   "verify": {
     "verdict": "fixed",
-    "note": "The official IP India fee table (which did load) confirms TM-A e-filing at Rs 4,500 for individual/startup/small enterprise and Rs 9,000 for others, per class and per mark (physical Rs 5,000/10,000). Expedited exam (TM-M) is Rs 20,000 or Rs 40,000, e-filing only, per class, which resolves the conflict. Swap source_url to the official page.",
-    "url": "https://ipindia.gov.in/pages/trade-marks/learn/forms-and-official-fees"
+    "note": "Madrid cannot be the first filing: an international application must be based on a home (basic) application or registration, so the practical pick is 'home office filing, then Madrid'. Basic fee CHF 653 (b/w) not re-fetched (fees page lists only individual fees). Add that dependency to 'why'.",
+    "url": "https://www.wipo.int/madrid/en/"
   },
-  "better_pick": null
+  "better": []
 }

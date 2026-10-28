@@ -1,56 +1,53 @@
 {
   "slug": "editor",
   "slot": "editor",
-  "track": "windows-dev",
+  "track": "dev-env",
   "stage": "build",
-  "region": "Global",
   "order": 3033,
   "pick": {
     "name": "VS Code",
     "url": "https://github.com/microsoft/vscode",
-    "what": "Editor + Claude Code extension",
-    "why": "Largest extension ecosystem for web/Tauri/Electron/Python; first-class Claude extension",
+    "what": "Editor with the official Claude Code extension",
+    "why": "Best Claude Code integration and ecosystem; all platforms",
     "cost": "free",
-    "free_limits": "n/a",
-    "windows_fit": "native (user installer)",
+    "free_limits": "fully free",
+    "platforms": "macOS|Windows|Linux",
     "maintained": "1.143.1 (2026-10-22)",
-    "install": "installed",
-    "license": "MIT source / MS binary licence",
+    "install": "brew install --cask visual-studio-code | winget install Microsoft.VisualStudioCode | snap/apt",
+    "license": "MIT source; Microsoft binary licence",
     "commercial_ok": "yes",
-    "needs_company": "no",
-    "source_url": "https://github.com/microsoft/vscode/releases",
+    "source_url": "https://github.com/microsoft/vscode",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Zed",
       "url": "https://zed.dev/docs/ai/external-agents",
-      "what": "Fast native editor, Claude via ACP",
-      "why": "Lighter on a no-GPU laptop",
+      "what": "Fast editor that can host Claude as an external agent (ACP)",
+      "why": "Lighter and faster",
       "cost": "free",
-      "free_limits": "n/a",
-      "windows_fit": "native",
+      "free_limits": "fully free",
+      "platforms": "macOS|Windows|Linux",
       "maintained": "v1.25.3 (2026-10-23)",
-      "install": "winget install ZedIndustries.Zed",
+      "install": "brew install --cask zed | winget install ZedIndustries.Zed",
       "license": "GPL/Apache mix",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://zed.dev/docs/ai/external-agents",
       "checked": "2026-10-28"
     },
     {
-      "name": "IntelliJ IDEA / PyCharm (free unified)",
+      "name": "JetBrains IDEs (IntelliJ IDEA / PyCharm free)",
       "url": "https://sales.jetbrains.com/hc/en-gb/articles/360021922640",
-      "what": "JetBrains IDEs whose free tier allows commercial use",
-      "why": "Best refactoring for Kotlin/Java",
-      "cost": "free",
-      "free_limits": "free core features, commercial ok; WebStorm free is non-commercial",
-      "windows_fit": "native",
+      "what": "Full IDEs with Claude Code plugin; free unified edition 2025.3+",
+      "why": "Best for Java/Kotlin/Python-heavy projects",
+      "cost": "freemium",
+      "free_limits": "free tier terms differ by IDE; verify",
+      "platforms": "macOS|Windows|Linux",
       "maintained": "2025.3+",
-      "install": "winget/Toolbox",
+      "install": "Toolbox / winget / brew",
       "license": "proprietary",
-      "commercial_ok": "yes",
-      "needs_company": "no",
+      "commercial_ok": "unclear",
       "source_url": "https://sales.jetbrains.com/hc/en-gb/articles/360021922640",
       "checked": "2026-10-28"
     }
@@ -65,29 +62,31 @@
       "verdict": "lighter"
     },
     {
-      "name": "IntelliJ/PyCharm free",
-      "verdict": "Kotlin/Python heavy"
+      "name": "JetBrains",
+      "verdict": "best for JVM/Python depth"
     },
     {
-      "name": "Cursor / Windsurf (now Devin Desktop) / Antigravity",
-      "verdict": "second AI agent - redundant when Claude Code is the only agent"
+      "name": "Cursor / Windsurf / Antigravity",
+      "verdict": "second AI agent; redundant with Claude Code"
     },
     {
-      "name": "WebStorm free",
-      "verdict": "non-commercial only"
-    },
-    {
-      "name": "Android Studio",
-      "verdict": "required separately for Android builds"
+      "name": "WebStorm/DataGrip free",
+      "verdict": "non-commercial only (unverified)"
     }
   ],
-  "decision": "With Claude Code as the agent, the editor is for review; VS Code has the best Claude integration and ecosystem.",
+  "decision": "With Claude Code doing the editing, the editor is mostly for review; VS Code has the best Claude integration. Pick Zed for speed, JetBrains for deep language tooling.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "All editors native; install via Homebrew cask.",
+    "Windows": "VS Code Remote-WSL lets the editor work against a WSL2 checkout.",
+    "Linux": "VS Code ships deb/rpm/snap; Zed available as a native build."
+  },
   "verify": {
     "verdict": "ok",
-    "note": "1.143.1 (22 Oct 2026).",
-    "url": "https://github.com/microsoft/vscode/releases"
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://github.com/microsoft/vscode"
   },
-  "better_pick": null
+  "better": []
 }

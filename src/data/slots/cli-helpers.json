@@ -1,40 +1,38 @@
 {
   "slug": "cli-helpers",
   "slot": "CLI helpers",
-  "track": "windows-dev",
+  "track": "dev-env",
   "stage": "build",
-  "region": "Global",
   "order": 3043,
   "pick": {
-    "name": "fd + fzf + bat + zoxide (rg have)",
+    "name": "ripgrep + fd + fzf + bat + zoxide",
     "url": "https://github.com/junegunn/fzf",
     "what": "find, fuzzy picker, highlighted cat, smart cd",
     "why": "Speeds you up; Claude already uses rg",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native",
     "maintained": "fzf 0.74.5 (2026-10-11); fd 10.5.0 (2026-08-26); zoxide 0.10.0; bat 0.26.1 (2025-12-02)",
-    "install": "scoop install fd fzf bat zoxide",
+    "install": "brew install ripgrep fd fzf bat zoxide | scoop install ripgrep fd fzf bat zoxide",
     "license": "MIT/Apache-2.0",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/junegunn/fzf",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Everything",
       "url": "https://www.voidtools.com",
-      "what": "Instant disk-wide filename search",
-      "why": "Keep",
+      "what": "Instant file search (Windows)",
+      "why": "Fastest filename search on Windows",
       "cost": "free",
-      "free_limits": "n/a",
-      "windows_fit": "native",
+      "free_limits": "freeware",
+      "platforms": "Windows",
       "maintained": "1.4.1.1032",
-      "install": "installed",
+      "install": "winget install voidtools.Everything",
       "license": "freeware",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.voidtools.com",
       "checked": "2026-10-28"
     },
@@ -45,14 +43,13 @@
       "why": "Optional",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "v0.23.5 (2026-07-09)",
       "install": "scoop install eza",
       "license": "EUPL-1.2 (unverified)",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/eza-community/eza",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     }
   ],
   "candidates": [
@@ -67,15 +64,29 @@
     {
       "name": "eza",
       "verdict": "optional"
+    },
+    {
+      "name": "jq / yq",
+      "verdict": "JSON/YAML processing; worth adding"
+    },
+    {
+      "name": "tldr / httpie",
+      "verdict": "friendly docs and HTTP; optional"
     }
   ],
-  "decision": "Small, standard set.",
+  "decision": "ripgrep, fd, fzf, bat and zoxide are a small standard set that Claude Code and humans both benefit from. Everything is a Windows-only extra; macOS has Spotlight, Linux has plocate.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "brew install ripgrep fd fzf bat zoxide.",
+    "Windows": "scoop install ripgrep fd fzf bat zoxide.",
+    "Linux": "apt/dnf install; some distros name fd 'fdfind' and bat 'batcat'."
+  },
   "verify": {
     "verdict": "ok",
-    "note": "fzf 0.74.5, fd 10.5.0, bat 0.26.1, zoxide 0.10.0 confirmed; all in scoop Main.",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
     "url": "https://github.com/junegunn/fzf"
   },
-  "better_pick": null
+  "better": []
 }

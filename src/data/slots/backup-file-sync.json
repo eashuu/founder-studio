@@ -1,0 +1,92 @@
+{
+  "slug": "backup-file-sync",
+  "slot": "backup + file sync",
+  "track": "productivity",
+  "stage": "run",
+  "order": 11010,
+  "pick": {
+    "name": "Kopia",
+    "url": "https://kopia.io",
+    "what": "Encrypted, deduplicated, versioned backup with a GUI and CLI",
+    "why": "Best free backup tool with GUI: encrypted, incremental, any backend (S3/R2/B2/SFTP/rclone)",
+    "cost": "free",
+    "free_limits": "Free; storage cost is your backend's",
+    "platforms": "macOS|Windows|Linux",
+    "maintained": "v0.23.1 2026-06-16; commits 2026-10-28",
+    "install": "https://github.com/kopia/kopia/releases (KopiaUI) | brew install kopia",
+    "license": "Apache-2.0",
+    "commercial_ok": "yes",
+    "source_url": "https://github.com/kopia/kopia",
+    "checked": "2026-10-28"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "Syncthing",
+      "url": "https://syncthing.net",
+      "what": "Peer-to-peer folder sync with no cloud",
+      "why": "Best private device-to-device sync",
+      "cost": "free",
+      "free_limits": "Free",
+      "platforms": "macOS|Windows|Linux|Android",
+      "maintained": "v2.1.7 2026-10-21; Android fork v2.1.7.0",
+      "install": "web",
+      "license": "MPL-2.0",
+      "commercial_ok": "yes",
+      "source_url": "https://forum.syncthing.net/t/does-anyone-know-why-syncthing-fork-is-no-longer-available-on-github/25661/251",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "restic",
+      "url": "https://github.com/restic/restic",
+      "what": "Excellent CLI encrypted backup",
+      "why": "Scriptable, mature; no GUI",
+      "cost": "free",
+      "free_limits": "Free",
+      "platforms": "macOS|Windows|Linux",
+      "maintained": "0.19.1 2026-07-05 (earlier pass)",
+      "install": "brew install restic",
+      "license": "BSD-2-Clause",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/restic/restic",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Kopia",
+      "verdict": "PICK: GUI + encrypted, versioned, free"
+    },
+    {
+      "name": "restic",
+      "verdict": "CLI equivalent"
+    },
+    {
+      "name": "Syncthing",
+      "verdict": "Sync, not backup"
+    },
+    {
+      "name": "Google Drive / iCloud / OneDrive / Dropbox",
+      "verdict": "Cloud sync; pair with a backup, sync is not backup"
+    },
+    {
+      "name": "Backblaze / Arq",
+      "verdict": "Paid turnkey backup; not verified this pass"
+    },
+    {
+      "name": "rclone",
+      "verdict": "Use under Kopia/restic"
+    }
+  ],
+  "decision": "Pair one cloud drive for everyday sync (iCloud, Google Drive, OneDrive or Dropbox, whichever fits your ecosystem) with Kopia for versioned, encrypted backups to cheap object storage. Sync services mirror deletions and ransomware; only a backup protects you. Choose a paid turnkey service such as Backblaze or Arq if you want no setup.",
+  "note": "",
+  "details": "Cloud drive choice intentionally not ranked and not researched this pass.",
+  "region_notes": {},
+  "os_notes": {},
+  "verify": {
+    "verdict": "ok",
+    "note": "Apache-2.0, ~14.5k stars, v0.23.1 (2026-06-16), commits 2026-10-28. Defensible; a turnkey paid service (Backblaze/Arq) could flip it for non-technical founders, as the decision already says.",
+    "url": "https://github.com/kopia/kopia"
+  },
+  "better": []
+}

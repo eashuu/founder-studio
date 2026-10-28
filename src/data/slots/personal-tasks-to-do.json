@@ -1,0 +1,116 @@
+{
+  "slug": "personal-tasks-to-do",
+  "slot": "personal tasks / to-do",
+  "track": "productivity",
+  "stage": "run",
+  "order": 11002,
+  "pick": {
+    "checked": "2026-10-28",
+    "name": "Todoist",
+    "url": "https://www.todoist.com",
+    "source_url": "https://www.todoist.com/pricing",
+    "cost": "freemium",
+    "free_limits": "Free: 5 personal projects, 3 filter views, 5 MB uploads, 1-week activity history; Pro $5/mo annual ($60/yr) or $7 monthly",
+    "platforms": "web|macOS|Windows|Linux|iOS|Android"
+  },
+  "best_free": {
+    "checked": "2026-10-28",
+    "name": "Super Productivity",
+    "url": "https://github.com/super-productivity/super-productivity",
+    "source_url": "https://github.com/super-productivity/super-productivity",
+    "cost": "free",
+    "license": "MIT",
+    "platforms": "web|macOS|Windows|Linux|iOS|Android",
+    "maintained": "v19.3.1 (2026-10-25)",
+    "free_limits": "Free (Beginner): 5 personal projects, 3 filter views, 5 MB uploads, 1-week activity history; Pro $5/mo annual or $7 monthly"
+  },
+  "alts": [
+    {
+      "name": "Things 3",
+      "url": "https://culturedcode.com/things/",
+      "what": "Polished personal task manager with projects, areas and calendar view",
+      "why": "Best-designed personal to-do app; one-time purchase, no subscription",
+      "cost": "paid",
+      "free_limits": "Paid per platform (prices only shown in App Store); no Windows/Android app",
+      "platforms": "macOS|iOS",
+      "maintained": "Cultured Code product page current; release date not verified",
+      "install": "App Store",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://culturedcode.com/things/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "TickTick",
+      "url": "https://ticktick.com",
+      "what": "Task manager with habits and pomodoro",
+      "why": "Strong all-in-one for a low price",
+      "cost": "freemium",
+      "free_limits": "Free: 9 lists, 99 tasks/list; Premium $49.99/yr (earlier pass)",
+      "platforms": "web|macOS|Windows|Linux|iOS|Android",
+      "maintained": "SaaS",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://ticktick.com",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Super Productivity",
+      "url": "https://github.com/super-productivity/super-productivity",
+      "what": "Open-source planner with timeboxing, time tracking and GitHub/Linear/Jira import",
+      "why": "Free, offline, MIT; tasks and timesheets together",
+      "cost": "free",
+      "free_limits": "Fully free; optional E2E SuperSync, Dropbox or WebDAV sync",
+      "platforms": "macOS|Windows|Linux|Android",
+      "maintained": "v19.3.1 2026-10-25",
+      "install": "brew install --cask super-productivity | Microsoft Store | Snap/Flatpak",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/super-productivity/super-productivity",
+      "checked": "2026-10-28",
+      "alts[Super Productivity].platforms": "web|macOS|Windows|Linux|iOS|Android"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Things 3",
+      "verdict": "PICK: best personal to-do UX but Apple-only"
+    },
+    {
+      "name": "Todoist",
+      "verdict": "BEST FREE: works everywhere"
+    },
+    {
+      "name": "TickTick",
+      "verdict": "Good value, no official MCP found"
+    },
+    {
+      "name": "Super Productivity",
+      "verdict": "Open-source planner + timer"
+    },
+    {
+      "name": "Apple Reminders / Microsoft To Do",
+      "verdict": "Free, basic"
+    },
+    {
+      "name": "Sunsama / Akiflow / Motion",
+      "verdict": "Paid planners, no real free tier"
+    }
+  ],
+  "decision": "Todoist is the best personal task manager for a general founder: every platform, natural-language capture, an API and an official AI/MCP integration. Things 3 is the better-designed app if every device is Apple and a one-time price appeals. Keep product work in the backlog tracker and personal admin here.",
+  "note": "",
+  "details": "Things price is set per country in the App Store; not captured.",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "Todoist, or Things 3 (Mac $49.99 one-time in the US App Store; iPhone/iPad apps sold separately).",
+    "Windows": "Todoist or Super Productivity; Things is unavailable.",
+    "Linux": "Todoist desktop app or web; Super Productivity (Flathub/Snap)."
+  },
+  "verify": {
+    "verdict": "fixed",
+    "note": "If the editor keeps Things, at minimum fix pick.free_limits to 'Mac $49.99 one-time (US App Store); iPhone/iPad sold separately; free Mac trial', pick.maintained 'v3.24.1 (Sep 30)' and pick.platforms 'macOS|iOS|iPadOS|watchOS|visionOS'.",
+    "url": "https://apps.apple.com/us/app/things-3/id904280696"
+  },
+  "better": []
+}

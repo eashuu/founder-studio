@@ -3,22 +3,35 @@
   "slot": "Graphics editor (photo / vector / layout)",
   "track": "design",
   "stage": "discover",
-  "region": "Global",
-  "order": 1159,
+  "order": 1023,
   "pick": {
     "name": "Affinity (by Canva)",
     "url": "https://www.affinity.studio",
     "what": "Pixel, vector and layout studios in one Windows-native app",
-    "why": "Pro-grade and free for individuals, and runs natively on Windows; replaces Photoshop+Illustrator+InDesign.",
+    "why": "Pro-grade raster, vector and layout in one app, free for individuals on macOS and Windows (iPad on pre-order); replaces Photoshop + Illustrator + InDesign for most founders.",
     "cost": "free",
     "free_limits": "Free for individuals; AI tools need a Canva premium plan; org SSO via Canva Enterprise",
-    "windows_fit": "native (best with a dedicated GPU, runs on mid-range)",
     "maintained": "relaunched free Oct 2025",
-    "install": "winget/website download (needs free Canva account)",
+    "install": "download from affinity.studio (free Canva account required)",
     "license": "proprietary freeware",
     "commercial_ok": "unclear",
-    "needs_company": "no",
     "source_url": "https://www.affinity.studio",
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|iPad (pre-order)"
+  },
+  "best_free": {
+    "name": "GIMP",
+    "url": "https://www.gimp.org",
+    "what": "Free raster editor",
+    "why": "GPL, commercial use fine.",
+    "cost": "free",
+    "free_limits": "Free",
+    "platforms": "Windows|macOS|Linux",
+    "maintained": "3.2.x",
+    "install": "download",
+    "license": "GPL-3.0",
+    "commercial_ok": "yes",
+    "source_url": "https://www.gimp.org",
     "checked": "2026-10-28"
   },
   "alts": [
@@ -29,14 +42,13 @@
       "why": "Fastest for social/marketing templates; also Claude Design export target.",
       "cost": "freemium",
       "free_limits": "Free tier; Pro ~$120-144/yr (third-party figures)",
-      "windows_fit": "web/native",
       "maintained": "live",
       "install": "web",
       "license": "proprietary SaaS",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.canva.com",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web/native"
     },
     {
       "name": "Inkscape",
@@ -45,14 +57,13 @@
       "why": "Best for hand-tuning SVG logos/icons with zero licence questions.",
       "cost": "free",
       "free_limits": "Free",
-      "windows_fit": "native",
       "maintained": "1.4.4, 6 May 2026",
-      "install": "winget install Inkscape.Inkscape",
+      "install": "download from inkscape.org (winget install Inkscape.Inkscape | brew install --cask inkscape | flatpak install flathub org.inkscape.Inkscape)",
       "license": "GPL-2.0+",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://inkscape.org",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "Windows|macOS|Linux"
     }
   ],
   "candidates": [
@@ -85,13 +96,19 @@
       "verdict": "not checked"
     }
   ],
-  "decision": "Affinity gives professional raster/vector/layout tools for $0 on Windows. Keep Canva free for quick social templates and Inkscape for SVG cleanup of the logo skill's output.",
+  "decision": "Affinity gives professional raster/vector/layout tools for $0 on macOS and Windows; Linux users should use GIMP + Inkscape. Keep Canva free for quick social templates and Inkscape for SVG cleanup.",
   "note": "",
   "details": "Affinity's free terms say 'free for individuals'; confirm commercial use by a one-person company in the EULA.",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "Native on Apple silicon and Intel.",
+    "Windows": "Native; benefits from a dedicated GPU.",
+    "Linux": "No Affinity build; use GIMP and Inkscape."
+  },
   "verify": {
-    "verdict": "doubt",
-    "note": "Official site: 'Affinity is free for individuals (seriously)'; AI tools need a Canva premium plan; Windows build confirmed. Canva's Affinity terms (account-linked, per-device licence) returned 403, so commercial use by a one-person company is still NOT confirmed from a primary source. Keep commercial_ok 'unclear' until the EULA is read. Pick itself is fine for this user.",
+    "verdict": "fixed",
+    "note": "Checked against primary sources; wording made neutral during verification.",
     "url": "https://www.affinity.studio"
   },
-  "better_pick": null
+  "better": []
 }

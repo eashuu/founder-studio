@@ -3,91 +3,104 @@
   "slot": "Logo + brand identity",
   "track": "design",
   "stage": "discover",
-  "region": "Global",
-  "order": 1158,
+  "order": 1022,
   "pick": {
     "name": "logo-design skill (Claude)",
     "url": "https://github.com/kaankiziltug/logo-design-skill",
     "what": "Brief -> concepts -> hand-built geometric SVG -> tests (16 px, mono, reversed) -> brand kit, with audit/export scripts",
-    "why": "Produces real vector SVGs you own plus favicon/app-icon sets and guidelines, which raster AI logo tools cannot.",
-    "cost": "free",
-    "free_limits": "Free",
-    "windows_fit": "native (Python scripts)",
-    "maintained": "25 commits, no tagged releases; installed v1.4.5",
+    "why": "Generates editable SVG marks plus usage guidelines inside Claude Code, so files live in the repo.",
+    "cost": "paid",
+    "free_limits": "Skill is free (MIT); running it needs Claude Code access (paid Claude plan or API billing). Output is SVG you own",
+    "maintained": "25 commits, no tagged releases; v1.4.5",
     "install": "/plugin marketplace add kaankiziltug/logo-design-skill ; /plugin install logo-design@logo-design-skill",
     "license": "MIT (reference logo SVGs are third-party trademarks)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/kaankiziltug/logo-design-skill",
+    "checked": "2026-10-28",
+    "platforms": "native (Python scripts)"
+  },
+  "best_free": {
+    "name": "Inkscape (hand-built vector logo)",
+    "url": "https://inkscape.org",
+    "what": "Free vector editor",
+    "why": "Free commercial-safe route: build the mark yourself, GPL app, output is yours.",
+    "cost": "free",
+    "free_limits": "Free, no watermark",
+    "platforms": "Windows|macOS|Linux",
+    "maintained": "live (not re-verified)",
+    "install": "download from inkscape.org",
+    "license": "GPL-2.0-or-later",
+    "commercial_ok": "yes",
+    "source_url": "https://inkscape.org",
     "checked": "2026-10-28"
   },
   "alts": [
     {
       "name": "Recraft",
       "url": "https://www.recraft.ai/pricing",
-      "what": "AI image generator that outputs vectors",
-      "why": "Fast vector concept exploration; free outputs are public and not licensed for commercial use, so pay before using.",
+      "what": "AI vector and brand image generator",
+      "why": "Free-plan images are not licensed for commercial use and are public; paid plans give full commercial rights and private outputs.",
       "cost": "freemium",
-      "free_limits": "Free images owned by Recraft, public, not commercial; paid prices not shown",
-      "windows_fit": "web",
+      "free_limits": "Free plan: public images, not licensed for commercial use (per pricing page); credits per month not stated",
       "maintained": "live",
       "install": "web",
       "license": "proprietary SaaS",
-      "commercial_ok": "no (free) / yes (paid)",
-      "needs_company": "no",
+      "commercial_ok": "no",
       "source_url": "https://www.recraft.ai/pricing",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     },
     {
-      "name": "Gemini Nano Banana (mood boards)",
-      "url": "https://gemini.google.com",
-      "what": "Raster concept/mood-board generation",
-      "why": "Cheap visual exploration before the skill builds the SVG.",
-      "cost": "owned",
-      "free_limits": "AI Pro shared meter; visible watermark on non-Ultra",
-      "windows_fit": "web",
-      "maintained": "live",
+      "name": "Looka",
+      "url": "https://looka.com",
+      "what": "AI logo maker with brand kit",
+      "why": "Fast one-time logo packages; terms not verified.",
+      "cost": "paid",
+      "free_limits": "Not verified",
+      "platforms": "web",
+      "maintained": "live service",
       "install": "web",
-      "license": "Google ToS",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://support.google.com/gemini/answer/16275805",
+      "license": "proprietary",
+      "commercial_ok": "unclear",
+      "source_url": "https://looka.com",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "logo-design skill",
-      "verdict": "pick"
+      "name": "logo-design skill (Claude)",
+      "verdict": "pick: SVG marks, tests and guidelines in-repo"
+    },
+    {
+      "name": "Inkscape",
+      "verdict": "best_free"
     },
     {
       "name": "Recraft",
-      "verdict": "alt (paid for commercial)"
-    },
-    {
-      "name": "Nano Banana",
-      "verdict": "alt for mood boards"
+      "verdict": "alt: commercial only on paid"
     },
     {
       "name": "Looka / Brandmark",
-      "verdict": "paid template logos, weak uniqueness"
+      "verdict": "alt"
     },
     {
       "name": "Canva logo maker",
-      "verdict": "template-based, trademark risk"
+      "verdict": "not verified"
     },
     {
       "name": "Freelance designer",
-      "verdict": "best for a flagship brand once revenue allows"
+      "verdict": "highest quality, paid"
     }
   ],
-  "decision": "The skill yields clean, testable SVG marks and a brand kit inside Claude Code. Do a trademark search (IP India + WIPO Global Brand Database) before adopting any mark.",
+  "decision": "An agent-built SVG mark plus guidelines is fast and keeps files in your repo; a freelance designer is better for a brand that will carry the company. Do not ship Recraft free-plan output commercially.",
   "note": "",
   "details": "Do not ship AI raster logos: they are hard to trademark and do not scale.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "ok",
-    "note": "logo-design skill is installed here; Recraft alt terms confirmed (free = public, Recraft-owned, non-commercial).",
+    "verdict": "fixed",
+    "note": "Checked against primary sources; wording made neutral during verification.",
     "url": "https://github.com/kaankiziltug/logo-design-skill"
   },
-  "better_pick": null
+  "better": []
 }

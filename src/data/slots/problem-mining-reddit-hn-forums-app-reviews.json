@@ -3,107 +3,108 @@
   "slot": "Problem mining (Reddit/HN/forums/app reviews)",
   "track": "discover",
   "stage": "discover",
-  "region": "Global",
-  "order": 136,
+  "order": 0,
   "pick": {
+    "name": "Syften",
+    "url": "https://syften.com",
+    "what": "Multi-community monitor: Reddit, HN, Lobsters, forums, Slack communities, public web; API on all paid plans, MCP on PRO",
+    "why": "Widest coverage and filtering plus API/MCP; 14-day PRO trial, no card.",
+    "cost": "paid",
+    "free_limits": "No free plan; 14-day PRO trial, no card. Entry $29.95/mo (3 community filters, 1 web filter, API), Standard $49.95 (20 filters, AI filtering, Slack), PRO $119.95 (100 filters, full archive, webhooks, MCP added 10 May 2026); X +$40/mo, YouTube +$20/mo add-ons",
+    "maintained": "live service",
+    "install": "web",
+    "license": "proprietary SaaS",
+    "commercial_ok": "yes",
+    "source_url": "https://syften.com",
+    "checked": "2026-10-28",
+    "platforms": "web"
+  },
+  "best_free": {
     "name": "F5Bot",
     "url": "https://f5bot.com",
     "what": "Free keyword email alerts for Reddit, Hacker News and Lobsters",
     "why": "The only credible $0 always-on listener now that GummySearch is gone. Pair it with Claude/Gemini Deep Research for one-off digs.",
     "cost": "free",
-    "free_limits": "Free plan: keyword alerts (free keyword cap not stated). Silver $12.99/mo for 20 keywords is labelled non-commercial; Gold $49.99/mo for 200 keywords",
-    "windows_fit": "web",
+    "free_limits": "Free forever: keyword alerts for Reddit, HN and Lobsters, email only, basic filtering (free keyword cap not stated). Terms: unpaid accounts licensed for internal use, personal or within your own organisation; no resale/redistribution of alerts. Silver $12.99/mo (20 keywords) is marketed 'for individuals, non-commercial use'; Gold $49.99/mo (200 keywords) 'for professionals and small businesses'",
     "maintained": "live service (no release cadence)",
     "install": "web",
     "license": "proprietary SaaS",
-    "commercial_ok": "unclear",
-    "needs_company": "no",
+    "commercial_ok": "yes",
     "source_url": "https://f5bot.com",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "web"
   },
   "alts": [
-    {
-      "name": "Syften",
-      "url": "https://syften.com",
-      "what": "Paid multi-community monitor (Reddit, HN, forums, Slack/Discord communities) with API and MCP",
-      "why": "Best pay-later upgrade: wider sources, filters, an API/MCP Claude can read.",
-      "cost": "paid",
-      "free_limits": "No free plan; 14-day PRO trial, no card. Entry $29.95 (3 filters, 100 results/day); Standard $49.95 (20, 200/day); PRO $119.95 (100, 500/day)",
-      "windows_fit": "web",
-      "maintained": "live service",
-      "install": "web",
-      "license": "proprietary SaaS",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://syften.com",
-      "checked": "2026-10-28"
-    },
     {
       "name": "Appfigures (free)",
       "url": "https://appfigures.com/pricing",
       "what": "App-store review mining for your own and competitor apps",
       "why": "B2C/Android: competitor 1-2 star reviews are the cheapest problem list there is.",
       "cost": "freemium",
-      "free_limits": "Starter free: 5 connected apps, review management; no competitor download/revenue estimates. Connect $9.99/mo ($7.99 annual)",
-      "windows_fit": "web",
+      "free_limits": "Free: 5 connected apps, review reports; no download/revenue estimates. Connect $9.99/mo",
       "maintained": "live service",
       "install": "web",
       "license": "proprietary SaaS",
       "commercial_ok": "unclear",
-      "needs_company": "no",
       "source_url": "https://appfigures.com/pricing",
+      "checked": "2026-10-28",
+      "platforms": "web"
+    },
+    {
+      "name": "HN Algolia search API",
+      "url": "https://hn.algolia.com/api",
+      "what": "Free full-text search over Hacker News",
+      "why": "Free ad hoc HN mining that scripts or an agent can query; not a monitor.",
+      "cost": "free",
+      "free_limits": "Free public API",
+      "platforms": "web|API",
+      "maintained": "live service",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "source_url": "https://hn.algolia.com/api",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "F5Bot",
-      "verdict": "pick: free alerts on Reddit+HN+Lobsters"
-    },
-    {
-      "name": "GummySearch",
-      "verdict": "DEAD: could not get a commercial Reddit Data API licence; signups closed 30 Nov 2025, service and data deleted 1 Dec 2026"
-    },
-    {
       "name": "Syften",
-      "verdict": "alt: best paid listener ($29.95/mo), has API/MCP"
+      "verdict": "pick: broadest sources + API/MCP, paid"
     },
     {
-      "name": "Redreach",
-      "verdict": "no public price; sales-led Reddit lead tool"
-    },
-    {
-      "name": "PainOnSocial",
-      "verdict": "$19/mo Reddit-only pain-point scanner; Reddit-data dependency is the same risk that killed GummySearch"
-    },
-    {
-      "name": "HN Algolia search/API",
-      "verdict": "free, use ad hoc (or let Claude query it); not a monitor"
-    },
-    {
-      "name": "Reddit search / Reddit Answers",
-      "verdict": "free, manual; Reddit blocks most scraping"
-    },
-    {
-      "name": "Brand24",
-      "verdict": "$199+/mo, overkill"
+      "name": "F5Bot",
+      "verdict": "best_free: free keyword alerts for Reddit/HN/Lobsters; commercial terms of free plan unclear"
     },
     {
       "name": "Appfigures free",
-      "verdict": "alt for app-review mining"
+      "verdict": "alt: app-store review mining"
     },
     {
-      "name": "AppFollow",
-      "verdict": "pricing not visible"
+      "name": "HN Algolia",
+      "verdict": "alt: free ad hoc"
+    },
+    {
+      "name": "GummySearch",
+      "verdict": "DEAD: closed (signups ended 30 Nov 2025)"
+    },
+    {
+      "name": "Brand24",
+      "verdict": "overkill pricing"
+    },
+    {
+      "name": "PainOnSocial",
+      "verdict": "Reddit-only; same data-dependency risk"
     }
   ],
-  "decision": "F5Bot gives free, always-on alerts across the two communities that matter most for AI/dev products; deep one-off mining is better done by Claude Research or Gemini Deep Research prompts than by a paid scraper. Switch to Syften when you need more sources, filters or an API feed into Claude.",
+  "decision": "Syften monitors the widest set of communities and exposes an API and MCP so an agent can read the feed. F5Bot is the free option for Reddit, Hacker News and Lobsters; check its terms before commercial use. For app products add competitor app-review mining.",
   "note": "",
-  "details": "GummySearch shutdown: https://gummysearch.com/closing-time (seen via search result). Reddit's paid Data API is why most Reddit-mining tools are fragile.",
+  "details": "Pick changed from F5Bot to Syften on capability; F5Bot now best_free. GummySearch is shut down.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Free cap not stated; Silver $12.99/20 keywords is non-commercial; Gold $49.99/200. commercial_ok 'unclear' is right.",
-    "url": "https://f5bot.com"
+    "note": "Prices confirmed on official page. Best overall holds: widest sources, AI filtering, API/MCP; GummySearch is dead.",
+    "url": "https://syften.com/pricing"
   },
-  "better_pick": null
+  "better": []
 }

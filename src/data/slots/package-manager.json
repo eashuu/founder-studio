@@ -1,81 +1,96 @@
 {
   "slug": "package-manager",
   "slot": "package manager",
-  "track": "windows-dev",
+  "track": "dev-env",
   "stage": "build",
-  "region": "Global",
   "order": 3038,
   "pick": {
-    "name": "Scoop (CLIs) + winget (GUI apps)",
-    "url": "https://github.com/ScoopInstaller/Scoop",
-    "what": "Scoop installs per-user into ~\\scoop with no admin; winget for apps",
-    "why": "No UAC prompts on a managed laptop",
+    "name": "Homebrew (macOS, Linux) + winget (Windows)",
+    "url": "https://github.com/Homebrew/brew/releases",
+    "what": "Default package managers per OS",
+    "why": "Biggest catalogues on their OS; winget is first-party, brew the de facto standard",
     "cost": "free",
-    "free_limits": "n/a",
-    "windows_fit": "native",
-    "maintained": "Scoop v0.6.0 (30 Sep); winget v1.29.380",
-    "install": "irm get.scoop.sh | iex",
-    "license": "Unlicense/MIT",
+    "free_limits": "fully free",
+    "platforms": "macOS|Linux|Windows",
+    "maintained": "Homebrew 7.0.11 (2026-10-26)",
+    "install": "brew: install script at brew.sh; winget: built in on Windows 11",
+    "license": "BSD-2-Clause / MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
-    "source_url": "https://github.com/ScoopInstaller/Scoop/releases",
+    "source_url": "https://github.com/Homebrew/brew/releases",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
-      "name": "winget only",
-      "url": "https://learn.microsoft.com/windows/package-manager/winget",
-      "what": "Built-in",
-      "why": "Fewer tools",
+      "name": "Scoop",
+      "url": "https://github.com/ScoopInstaller/Scoop",
+      "what": "Per-user CLI installer for Windows, no admin",
+      "why": "Good for dev CLIs without admin rights",
       "cost": "free",
-      "free_limits": "n/a",
-      "windows_fit": "native",
-      "maintained": "built-in",
-      "install": "built-in",
-      "license": "MIT",
+      "free_limits": "fully free",
+      "platforms": "Windows",
+      "maintained": "v0.6.0 (2026-09-30)",
+      "install": "irm get.scoop.sh | iex",
+      "license": "Unlicense/MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://learn.microsoft.com/windows/package-manager/winget",
+      "source_url": "https://github.com/ScoopInstaller/Scoop",
       "checked": "2026-10-28"
     },
     {
-      "name": "mise (tool installs)",
-      "url": "https://github.com/jdx/mise",
-      "what": "Per-project CLI versions",
-      "why": "See runtime slot",
+      "name": "Nix",
+      "url": "https://github.com/NixOS/nix",
+      "what": "Reproducible declarative packages",
+      "why": "Reproducible dev shells on macOS/Linux",
       "cost": "free",
-      "free_limits": "n/a",
-      "windows_fit": "native",
-      "maintained": "v2026.10.21",
-      "install": "winget install jdx.mise",
-      "license": "MIT",
+      "free_limits": "fully free",
+      "platforms": "macOS|Linux",
+      "maintained": "not checked",
+      "install": "see nixos.org/download",
+      "license": "LGPL-2.1",
       "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://github.com/jdx/mise",
+      "source_url": "https://github.com/NixOS/nix",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Scoop + winget",
-      "verdict": "pick"
+      "name": "Homebrew",
+      "verdict": "pick on macOS/Linux"
     },
     {
-      "name": "winget only",
-      "verdict": "fine"
+      "name": "winget",
+      "verdict": "pick on Windows"
+    },
+    {
+      "name": "Scoop",
+      "verdict": "no-admin CLIs on Windows"
+    },
+    {
+      "name": "apt/dnf/pacman",
+      "verdict": "distro-native on Linux"
+    },
+    {
+      "name": "Nix",
+      "verdict": "powerful but steep"
     },
     {
       "name": "Chocolatey",
-      "verdict": "admin needed; community repo not recommended for org use"
+      "verdict": "needs admin; community repo"
     }
   ],
-  "decision": "Scoop for dev CLIs avoids admin; winget for GUI apps.",
+  "decision": "Use the dominant manager for your OS: Homebrew on macOS and Linux, winget on Windows, with Scoop for per-user CLI tools. Choose Nix for reproducible environments if you accept the learning curve.",
   "note": "",
-  "details": "",
+  "details": "Nix source not opened.",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "Homebrew (formulae and casks).",
+    "Windows": "winget for apps, Scoop for CLIs; run installs from a non-admin shell where possible.",
+    "Linux": "Distro package manager first (apt/dnf/pacman); Homebrew on Linux or Nix when you need newer tools."
+  },
   "verify": {
     "verdict": "ok",
-    "note": "Scoop v0.6.0 (30 Sep), winget-cli v1.29.380 confirmed.",
-    "url": "https://github.com/ScoopInstaller/Scoop/releases"
+    "note": "Homebrew BSD-2-Clause confirmed; 7.0.11 released 26 Oct.",
+    "url": "https://raw.githubusercontent.com/Homebrew/brew/master/LICENSE.txt"
   },
-  "better_pick": null
+  "better": []
 }

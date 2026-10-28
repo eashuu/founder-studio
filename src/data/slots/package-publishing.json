@@ -3,8 +3,7 @@
   "slot": "package publishing",
   "track": "app-stacks",
   "stage": "build",
-  "region": "Global",
-  "order": 5100,
+  "order": 5049,
   "pick": {
     "name": "npm trusted publishing (OIDC from GitHub Actions) + PyPI trusted publishing",
     "url": "https://docs.npmjs.com/trusted-publishers",
@@ -12,15 +11,15 @@
     "why": "No long-lived tokens to leak; same pattern on npm and PyPI",
     "cost": "free",
     "free_limits": "npm CLI >=11.5.1, Node >=22.14.0; GitHub/GitLab/CircleCI cloud runners; provenance only for public repo + public package",
-    "windows_fit": "web (CI)",
     "maintained": "docs live 2026-10-28",
     "install": "npm publish (GH Action with id-token: write); pypa/gh-action-pypi-publish@release/v1",
     "license": "n/a",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://docs.npmjs.com/trusted-publishers",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "web (CI)"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "JSR",
@@ -29,14 +28,13 @@
       "why": "Good for TS-only libs; npm-compatible",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "web",
       "maintained": "not checked",
       "install": "npx jsr publish",
       "license": "MIT (registry)",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://jsr.io",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     },
     {
       "name": "GitHub Releases",
@@ -45,14 +43,13 @@
       "why": "Desktop installers",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "web",
       "maintained": "n/a",
       "install": "gh release create v1.0.0 dist/*",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://docs.github.com/en/repositories/releasing-projects-on-github",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     }
   ],
   "candidates": [
@@ -76,10 +73,12 @@
   "decision": "Trusted publishing removes long-lived publish tokens, the main way npm packages got hijacked. After the first publish, set the package to require 2FA and disallow tokens.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Version/licence/limits match registry or official page.",
-    "url": "https://registry.npmjs.org/"
+    "note": "Shallow.",
+    "url": "https://docs.npmjs.com/trusted-publishers"
   },
-  "better_pick": null
+  "better": []
 }

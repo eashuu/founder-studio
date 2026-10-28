@@ -1,0 +1,99 @@
+{
+  "slug": "cold-email-sequencing-and-sending",
+  "slot": "Cold-email sequencing and sending",
+  "track": "sales",
+  "stage": "sell",
+  "order": 7015,
+  "pick": {
+    "name": "Instantly",
+    "url": "https://instantly.ai/pricing",
+    "what": "Cold-email sending: unlimited inboxes, warmup, campaigns",
+    "why": "Best at volume across many inboxes; Growth USD 37.6/mo annual (earlier pass)",
+    "cost": "paid",
+    "free_limits": "No free plan confirmed ('Start free' sign-up, trial terms unclear); Growth USD 47/mo or USD 37.6/mo annual (5,000 emails/mo, 1,000 contacts); Hypergrowth USD 97/mo or USD 77.6 annual",
+    "platforms": "web",
+    "maintained": "live page 2026-10-28",
+    "install": "web",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://instantly.ai/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Apollo sequences",
+    "url": "https://www.apollo.io/pricing",
+    "what": "Built-in email sequences and tasks",
+    "why": "Good enough at low volume without another tool; email campaigns included on every account",
+    "cost": "freemium",
+    "free_limits": "Free plan: Gmail connection only; sequence limits not shown",
+    "platforms": "web",
+    "maintained": "live page 2026-10-28",
+    "install": "web",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://www.apollo.io/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Smartlead",
+      "url": "https://www.smartlead.ai/pricing",
+      "what": "Cold-email platform with unlimited mailboxes and warmup",
+      "why": "Cheapest entry (Base USD 32/mo annual, 6,000 sends)",
+      "cost": "paid",
+      "free_limits": "Free trial",
+      "platforms": "web",
+      "maintained": "live page 2026-10-28",
+      "install": "web",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://www.smartlead.ai/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "lemlist",
+      "url": "https://www.lemlist.com/pricing",
+      "source_url": "https://www.lemlist.com/pricing",
+      "what": "Email USD 55/user/mo annual (USD 69 monthly), Multichannel USD 87 annual; 14-day trial",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Instantly",
+      "verdict": "PICK for volume"
+    },
+    {
+      "name": "Apollo sequences",
+      "verdict": "best_free for low volume"
+    },
+    {
+      "name": "Smartlead",
+      "verdict": "Cheaper rival"
+    },
+    {
+      "name": "lemlist",
+      "verdict": "Multichannel; ToS risk for LinkedIn automation"
+    },
+    {
+      "name": "Woodpecker / Reply.io",
+      "verdict": "Not checked"
+    }
+  ],
+  "decision": "Use the sequencer built into your data tool at low volume. Once cold email is a main channel, move sending to Instantly or Smartlead with several warmed inboxes on separate domains. Cold email carries legal duties that differ by region.",
+  "note": "",
+  "details": "Second alt added: lemlist (Email USD 55/user/mo annual, Multichannel USD 87 annual; 14-day trial).",
+  "region_notes": {
+    "EU": "B2B cold email needs a lawful basis and easy opt-out; rules vary by country.",
+    "UK": "PECR: corporate subscribers may be emailed with opt-out.",
+    "US": "CAN-SPAM: no consent needed but opt-out, address and honest headers are mandatory.",
+    "India": "No dedicated cold-email statute; DPDP applies from 2027."
+  },
+  "os_notes": {},
+  "verify": {
+    "verdict": "fixed",
+    "note": "Instantly Outreach: Growth USD 47/mo or USD 37.6/mo annual (5,000 emails, 1,000 contacts), Hypergrowth USD 97 or USD 77.6 annual; page does not clearly confirm a free trial. Slot has only one non-free alt: add lemlist.",
+    "url": "https://instantly.ai/pricing"
+  },
+  "better": []
+}

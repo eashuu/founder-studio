@@ -3,8 +3,7 @@
   "slot": "Colour + theming",
   "track": "design",
   "stage": "discover",
-  "region": "Global",
-  "order": 1157,
+  "order": 1021,
   "pick": {
     "name": "tweakcn",
     "url": "https://github.com/jnsahaj/tweakcn",
@@ -12,15 +11,15 @@
     "why": "Produces exactly the token format your component library uses; free, open source.",
     "cost": "free",
     "free_limits": "Free",
-    "windows_fit": "web",
     "maintained": "last commit date not shown (10.5k stars)",
     "install": "web: tweakcn.com",
     "license": "Apache-2.0",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/jnsahaj/tweakcn",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "web"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Radix Colors",
@@ -29,14 +28,13 @@
       "why": "Best-designed scales with contrast built in.",
       "cost": "free",
       "free_limits": "Free",
-      "windows_fit": "n/a",
-      "maintained": "npm 3.0.0 (2023-10-02); stable but dormant",
+      "maintained": "no releases listed",
       "install": "npm i @radix-ui/colors",
-      "license": "MIT",
+      "license": "MIT (from memory)",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.radix-ui.com/colors",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "n/a"
     },
     {
       "name": "Adobe Leonardo",
@@ -45,14 +43,13 @@
       "why": "Pick when WCAG contrast targets drive the palette (healthcare/enterprise).",
       "cost": "free",
       "free_limits": "Free",
-      "windows_fit": "web",
       "maintained": "no releases listed",
       "install": "npm i @adobe/leonardo-contrast-colors",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/adobe/leonardo",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     }
   ],
   "candidates": [
@@ -88,10 +85,12 @@
   "decision": "tweakcn edits the exact CSS variables shadcn uses, so a theme is a copy-paste. Use Leonardo when accessibility contrast is a contract requirement.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "tweakcn Apache-2.0 confirmed; no commit date shown.",
+    "note": "Shallow check only: free/commercial terms are consistent with the cited licence; not re-opened in this pass.",
     "url": "https://github.com/jnsahaj/tweakcn"
   },
-  "better_pick": null
+  "better": []
 }

@@ -3,8 +3,7 @@
   "slot": "Object storage",
   "track": "ship",
   "stage": "ship",
-  "region": "Global",
-  "order": 6106,
+  "order": 6006,
   "pick": {
     "name": "Cloudflare R2",
     "url": "https://developers.cloudflare.com/r2/pricing/",
@@ -12,15 +11,15 @@
     "why": "Zero egress fees on every class; same account as Workers",
     "cost": "freemium",
     "free_limits": "10 GB-month, 1M Class A, 10M Class B per month free; then $0.015/GB-mo; egress free",
-    "windows_fit": "web + wrangler / any S3 tool",
+    "platforms": "web + CLI (macOS, Windows, Linux)",
     "maintained": "active",
     "install": "npx wrangler r2 bucket create <name>",
     "license": "service",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://developers.cloudflare.com/r2/pricing/",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Backblaze B2",
@@ -29,12 +28,11 @@
       "why": "Best second location for backups (different vendor)",
       "cost": "freemium",
       "free_limits": "First 10 GB free; $6.95/TB-mo; free egress up to 3x stored",
-      "windows_fit": "web + rclone",
+      "platforms": "web + CLI (macOS, Windows, Linux)",
       "maintained": "active",
       "install": "rclone config (b2)",
       "license": "service",
       "commercial_ok": "unclear",
-      "needs_company": "no",
       "source_url": "https://www.backblaze.com/cloud-storage/pricing",
       "checked": "2026-10-28"
     },
@@ -45,12 +43,11 @@
       "why": "Only if you chose Supabase",
       "cost": "freemium",
       "free_limits": "1 GB free; Pro 100 GB",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "active",
       "install": "web",
       "license": "service",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://supabase.com/pricing",
       "checked": "2026-10-28"
     }
@@ -80,10 +77,12 @@
   "decision": "R2 is the default because egress is free and it lives next to Workers. Keep a second copy of backups on B2 so one vendor outage/lockout doesn't take everything.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "R2: 10 GB-mo, 1M Class A, 10M Class B, $0.015/GB-mo, free egress. B2: $6.95/TB, 10 GB free, egress free to 3x stored. Confirmed.",
+    "note": "Shallow: R2 10 GB-month free, zero egress, as documented.",
     "url": "https://developers.cloudflare.com/r2/pricing/"
   },
-  "better_pick": null
+  "better": []
 }

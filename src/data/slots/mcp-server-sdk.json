@@ -3,8 +3,7 @@
   "slot": "MCP server SDK",
   "track": "app-stacks",
   "stage": "build",
-  "region": "Global",
-  "order": 5095,
+  "order": 5044,
   "pick": {
     "name": "Official MCP TypeScript SDK (+ @hono/mcp or mcp-handler to mount in your API)",
     "url": "https://www.npmjs.com/package/@modelcontextprotocol/sdk",
@@ -12,15 +11,15 @@
     "why": "Spec-tracking, same TS stack, mounts into Hono/Next/Workers",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native",
     "maintained": "@modelcontextprotocol/sdk 1.32.2 (2026-10-23); @hono/mcp 0.3.5 (2026-10-28)",
     "install": "npm i @modelcontextprotocol/sdk",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://www.npmjs.com/package/@modelcontextprotocol/sdk",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "FastMCP (Python)",
@@ -29,14 +28,13 @@
       "why": "Fastest Python path, mounts on FastAPI",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "4.1.4 (2026-10-26)",
       "install": "pip install fastmcp",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://pypi.org/project/fastmcp/",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     },
     {
       "name": "xmcp",
@@ -45,14 +43,13 @@
       "why": "Next.js-like DX for MCP-only projects",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "1.9.0 (2026-10-22)",
       "install": "npx create-xmcp-app@latest",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.npmjs.com/package/xmcp",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     }
   ],
   "candidates": [
@@ -84,10 +81,12 @@
   "decision": "The official TS SDK fits the TS-first stack and tracks the spec first. Use FastMCP when the MCP server wraps Python AI code.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Version/licence/limits match registry or official page.",
-    "url": "https://registry.npmjs.org/"
+    "note": "1.32.2 on 2026-10-23, MIT.",
+    "url": "https://www.npmjs.com/package/@modelcontextprotocol/sdk"
   },
-  "better_pick": null
+  "better": []
 }

@@ -3,8 +3,7 @@
   "slot": "crash + error reporting",
   "track": "app-stacks",
   "stage": "build",
-  "region": "Global",
-  "order": 5094,
+  "order": 5043,
   "pick": {
     "name": "Sentry",
     "url": "https://sentry.io/pricing/",
@@ -12,32 +11,30 @@
     "why": "One tool across Next, Hono, Expo (@sentry/react-native), Electron (@sentry/electron) and Python",
     "cost": "freemium",
     "free_limits": "Developer: 5,000 errors, 5M spans, 50 replays, 1 uptime + 1 cron monitor, 1 user, 30-day lookback; Team $29/mo",
-    "windows_fit": "web",
     "maintained": "@sentry/react-native 8.32.0 (2026-10-22); @sentry/electron 8.3.0 (2026-10-19)",
     "install": "npx @sentry/wizard@latest -i reactNative",
     "license": "SDKs MIT; server FSL",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://sentry.io/pricing/",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "web"
+  },
+  "best_free": {
+    "name": "Firebase Crashlytics",
+    "url": "https://firebase.google.com/pricing",
+    "what": "Mobile crash reporting (iOS/Android); no-cost on Spark and Blaze",
+    "why": "Unlimited, no-cost for mobile crashes",
+    "cost": "free",
+    "free_limits": "No-cost product",
+    "maintained": "pricing live",
+    "install": "npx expo install @react-native-firebase/app @react-native-firebase/crashlytics  (needs a development build and the config plugins; not Expo Go)",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://firebase.google.com/pricing",
+    "checked": "2026-10-28",
+    "platforms": "iOS|Android"
   },
   "alts": [
-    {
-      "name": "Firebase Crashlytics",
-      "url": "https://firebase.google.com/pricing",
-      "what": "Mobile crash reporting",
-      "why": "Unlimited, no-cost for mobile crashes",
-      "cost": "free",
-      "free_limits": "No-cost product",
-      "windows_fit": "web",
-      "maintained": "pricing live",
-      "install": "expo install @react-native-firebase/crashlytics",
-      "license": "proprietary",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://firebase.google.com/pricing",
-      "checked": "2026-10-28"
-    },
     {
       "name": "PostHog error tracking",
       "url": "https://posthog.com/pricing",
@@ -45,13 +42,27 @@
       "why": "If PostHog is already your analytics",
       "cost": "freemium",
       "free_limits": "free tier not verified",
-      "windows_fit": "web",
       "maintained": "posthog-js 1.441.0 (2026-10-28)",
       "install": "npm i posthog-js",
       "license": "MIT (SDK)",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://posthog.com/pricing",
+      "checked": "2026-10-28",
+      "platforms": "web"
+    },
+    {
+      "name": "GlitchTip",
+      "url": "https://gitlab.com/glitchtip/glitchtip-backend",
+      "what": "Open-source Django error tracker",
+      "why": "Self-hostable MIT alternative for web/server errors",
+      "cost": "free",
+      "free_limits": "Self-host; infra cost only; Sentry SDK compatibility not stated on page (unverified)",
+      "platforms": "Linux (Docker)",
+      "maintained": "92 releases per repo page; dates not shown",
+      "install": "see README",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "source_url": "https://gitlab.com/glitchtip/glitchtip-backend",
       "checked": "2026-10-28"
     }
   ],
@@ -80,10 +91,12 @@
   "decision": "Sentry covers every surface of the one-stack with one SDK family. Pair with Crashlytics only if mobile crash volume exceeds Sentry's 5k free errors.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Version/licence/limits match registry or official page.",
-    "url": "https://registry.npmjs.org/"
+    "note": "Developer: 5k errors, 5M spans, 50 replays, 1 cron + 1 uptime monitor, 1 user, 30-day lookback; Team $29/mo ($26 annual).",
+    "url": "https://sentry.io/pricing/"
   },
-  "better_pick": null
+  "better": []
 }

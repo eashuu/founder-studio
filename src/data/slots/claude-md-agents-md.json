@@ -3,7 +3,6 @@
   "slot": "CLAUDE.md / AGENTS.md",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2020,
   "pick": {
     "name": "/init + AGENTS.md with CLAUDE.md import + claude-md-management",
@@ -12,15 +11,15 @@
     "why": "Open-core contributors on other agents read AGENTS.md",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native",
     "maintained": "repo pushed 2026-10-28",
     "install": "/init; /plugin install claude-md-management@claude-plugins-official",
     "license": "Apache-2.0",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://code.claude.com/docs/en/memory.md",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "claude-code-setup (official)",
@@ -29,14 +28,13 @@
       "why": "Contents not inspected",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "repo pushed 2026-10-28",
       "install": "/plugin install claude-code-setup@claude-plugins-official",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-code-setup",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     },
     {
       "name": "awesome-claude-code examples",
@@ -45,14 +43,13 @@
       "why": "Copy patterns",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "web",
       "maintained": "pushed 2026-10-28",
       "install": "web",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/hesreallyhim/awesome-claude-code",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     }
   ],
   "candidates": [
@@ -67,15 +64,25 @@
     {
       "name": "awesome lists",
       "verdict": "examples"
+    },
+    {
+      "name": "Hand-written minimal file",
+      "verdict": "short, specific rules beat long ones"
+    },
+    {
+      "name": "AGENTS.md alone",
+      "verdict": "works for other agents; Claude needs the CLAUDE.md import"
     }
   ],
   "decision": "Keep CLAUDE.md under 200 lines and path-scope the rest via .claude/rules.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "claude-md-management present; memory doc confirms AGENTS.md support.",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
     "url": "https://code.claude.com/docs/en/memory.md"
   },
-  "better_pick": null
+  "better": []
 }

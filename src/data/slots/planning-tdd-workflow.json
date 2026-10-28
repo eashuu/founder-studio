@@ -3,7 +3,6 @@
   "slot": "planning / TDD workflow",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2004,
   "pick": {
     "name": "Superpowers (obra)",
@@ -12,15 +11,15 @@
     "why": "Most adopted methodology (~307k stars), in official marketplace, MIT, very active",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native (no OS-specific notes)",
     "maintained": "v7.0.1 (21 Oct 2026)",
     "install": "/plugin install superpowers@claude-plugins-official",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/obra/superpowers/releases",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "feature-dev (official)",
@@ -29,14 +28,13 @@
       "why": "Lighter, first-party; no forced TDD",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "repo pushed 2026-10-28",
       "install": "/plugin install feature-dev@claude-plugins-official",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://code.claude.com/docs/en/plugins/anthropic-marketplaces.md",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     },
     {
       "name": "GitHub Spec Kit",
@@ -45,14 +43,13 @@
       "why": "Best for greenfield products or client specs you must hand over",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native (uv)",
       "maintained": "1.2.4 (27 Oct 2026)",
       "install": "uvx --from git+https://github.com/github/spec-kit.git specify init",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/github/spec-kit/releases",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     }
   ],
   "candidates": [
@@ -78,7 +75,7 @@
     },
     {
       "name": "claude-mem make-plan/do",
-      "verdict": "overlaps with other planners; pick one"
+      "verdict": "overlaps Superpowers; pick one"
     },
     {
       "name": "Built-in plan mode",
@@ -86,12 +83,14 @@
     }
   ],
   "decision": "Superpowers enforces the TDD + review gates a solo founder has no colleague to enforce, and is the most maintained. Its gates slow small tasks; use plain plan mode for one-file fixes and Spec Kit when a client wants a written spec.",
-  "note": "Consolidated: Superpowers is the one build workflow. Use GitHub Spec Kit only to write a spec or PRD document. Running two plan-and-execute workflows in one repo gives Claude conflicting instructions.",
+  "note": "",
   "details": "Disable overlapping planners (claude-mem make-plan/do, orchestration skill) to avoid conflicting instructions.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "v7.0.1 on 21 Oct 2026 (v7.0.0 10 Oct), MIT, 306,951 stars (API), pushed 2026-10-23; listed in the official marketplace as 'superpowers'.",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
     "url": "https://github.com/obra/superpowers/releases"
   },
-  "better_pick": null
+  "better": []
 }

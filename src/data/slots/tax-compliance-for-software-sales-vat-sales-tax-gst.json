@@ -1,0 +1,89 @@
+{
+  "slug": "tax-compliance-for-software-sales-vat-sales-tax-gst",
+  "slot": "Tax compliance for software sales (VAT / sales tax / GST)",
+  "track": "money",
+  "stage": "run",
+  "order": 9026,
+  "pick": {
+    "name": "Merchant of record (Paddle, Polar, Dodo, Lemon Squeezy)",
+    "url": "https://www.paddle.com/pricing",
+    "what": "Outsource tax calculation, collection, filing and remittance",
+    "why": "No registration in every jurisdiction; one fee covers it",
+    "cost": "paid",
+    "free_limits": "Included in the MoR percentage (e.g. Paddle 5% + 50c)",
+    "platforms": "web",
+    "maintained": "active",
+    "install": "web",
+    "license": "service",
+    "commercial_ok": "yes",
+    "source_url": "https://www.paddle.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "Stripe Tax",
+      "url": "https://stripe.com/tax",
+      "what": "Tax calculation, registration help and filing for Stripe sellers",
+      "why": "Keeps Stripe as processor while automating tax",
+      "cost": "paid",
+      "free_limits": "0.5% per transaction (dashboard/no-code) or $0.50 per transaction (API) where registered; 100+ countries; filing via TaxJar in US and Stripe in Canada/EU non-Union OSS",
+      "platforms": "web + API",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "yes",
+      "source_url": "https://stripe.com/tax",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Stripe Managed Payments (tax)",
+      "url": "https://docs.stripe.com/payments/managed-payments",
+      "what": "Stripe MoR handling tax in 80+ countries",
+      "why": "MoR inside Stripe",
+      "cost": "paid",
+      "free_limits": "See direct-processor slot",
+      "platforms": "web",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "yes",
+      "source_url": "https://docs.stripe.com/payments/managed-payments",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Merchant of record",
+      "verdict": "PICK: zero tax admin"
+    },
+    {
+      "name": "Stripe Tax",
+      "verdict": "Alt: you stay seller of record; 0.5% or $0.50 per registered transaction"
+    },
+    {
+      "name": "Anrok",
+      "verdict": "B2B SaaS sales-tax specialist; site returned 403 so pricing not verified"
+    },
+    {
+      "name": "TaxJar / Avalara / Taxually",
+      "verdict": "Not researched; Stripe names TaxJar and Taxually as filing partners"
+    }
+  ],
+  "decision": "For a solo founder, a merchant of record is the simplest way to stay compliant globally. Add Stripe Tax or a specialist like Anrok only if you must remain seller of record (enterprise contracts, marketplaces, margins). Verify with a professional.",
+  "note": "",
+  "details": "Merged: the India GST and income-tax slots fold into this global slot plus region_notes. Sources: EU OSS (europa.eu Your Europe + vat-one-stop-shop.ec.europa.eu), GOV.UK digital-services VAT guidance, GST portal LUT tutorial, RBI/FEMA 2026 export regulations (EY alert). Tax content: verify with a professional. No free option is recommended for this job.",
+  "region_notes": {
+    "US": "Since South Dakota v. Wayfair (2018) each state sets its own economic-nexus threshold, most commonly USD 100,000 of sales into the state (some add a transaction count, several removed the 200-transaction test in 2025-26; Alabama uses USD 250,000). Whether SaaS is taxable also varies by state. A MoR or Stripe Tax tracks this. Verify with a professional.",
+    "EU": "Non-EU businesses selling services to EU consumers charge VAT at the customer's member-state rate from the first euro (the EUR 10,000 threshold applies only to EU-established sellers). The non-Union OSS lets them register in one member state and file one quarterly return; B2B sales to VAT-registered EU businesses are generally reverse-charged. A MoR removes this for the sales it makes. Verify with a professional.",
+    "UK": "A business based outside the UK that supplies digital services to UK consumers must register for UK VAT, with no threshold (GOV.UK); if a platform or MoR makes the sale, the platform accounts for the VAT. Verify with HMRC guidance or an adviser.",
+    "India": "GST registration is required above Rs 20 lakh aggregate turnover (Rs 10 lakh in special-category states), and exports count toward it. Zero-rated export of services without paying IGST needs a Letter of Undertaking (Form GST RFD-11) filed each financial year before exporting, and payment in convertible foreign exchange evidenced by an e-FIRC/e-BRC. Under FEMA's 2026 export regulations (in force 1 Oct 2026) export proceeds must be realised within 9 months (previously 15). Whether sales routed through a foreign MoR qualify as export of services needs CA advice."
+  },
+  "os_notes": {},
+  "verify": {
+    "verdict": "fixed",
+    "note": "Region notes rewritten against official sources (EU OSS portal / Your Europe, GOV.UK, GST portal) plus current RBI rules. Note the India realisation period changed in 2026.",
+    "url": "https://europa.eu/youreurope/business/finance-and-tax/vat/one-stop-shop/index_en.htm"
+  },
+  "better": []
+}

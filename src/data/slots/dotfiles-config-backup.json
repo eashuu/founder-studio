@@ -1,9 +1,8 @@
 {
   "slug": "dotfiles-config-backup",
   "slot": "dotfiles / config backup",
-  "track": "windows-dev",
+  "track": "dev-env",
   "stage": "build",
-  "region": "Global",
   "order": 3046,
   "pick": {
     "name": "chezmoi",
@@ -12,15 +11,15 @@
     "why": "Native Windows; backs up ~/.claude, skills, pwsh profile to a private repo",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native",
     "maintained": "v2.73.3 (2026-10-20)",
-    "install": "scoop install chezmoi",
+    "install": "brew install chezmoi | scoop install chezmoi",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/twpayne/chezmoi",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Plain private git repo",
@@ -29,14 +28,13 @@
       "why": "Zero tools",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "n/a",
       "install": "n/a",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://code.claude.com/docs/en/settings.md",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     },
     {
       "name": "winget export",
@@ -45,14 +43,13 @@
       "why": "Rebuild apps",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "built-in",
-      "install": "winget export -o apps.json",
+      "install": "web",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://learn.microsoft.com/windows/package-manager/winget/export",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     }
   ],
   "candidates": [
@@ -73,13 +70,19 @@
       "verdict": "no native Windows"
     }
   ],
-  "decision": "Keep your config in a private repo so a new or reclaimed machine is set up in minutes.",
+  "decision": "chezmoi handles templates and per-machine differences across all three OSes; a plain private git repo is the minimal alternative. Keep config in your own account so a replaced or reclaimed machine is easy to rebuild.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "brew install chezmoi.",
+    "Windows": "scoop install chezmoi; GNU stow lacks native Windows support.",
+    "Linux": "Package or install script."
+  },
   "verify": {
     "verdict": "ok",
-    "note": "v2.73.3 (20 Oct 2026).",
-    "url": "https://github.com/twpayne/chezmoi/releases"
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://github.com/twpayne/chezmoi"
   },
-  "better_pick": null
+  "better": []
 }

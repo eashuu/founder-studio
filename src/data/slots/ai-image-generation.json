@@ -3,91 +3,111 @@
   "slot": "AI image generation",
   "track": "design",
   "stage": "discover",
-  "region": "Global",
-  "order": 1160,
+  "order": 1024,
   "pick": {
-    "name": "Nano Banana in Gemini app / Flow (Google AI Pro)",
-    "url": "https://gemini.google.com",
-    "what": "Google's image generation + editing (Nano Banana family) with strong text rendering and multi-image edits",
-    "why": "Already paid till Jan 2028, top-tier editing and consistency, and Google does not claim ownership of outputs.",
-    "cost": "owned",
-    "free_limits": "AI Pro: 'expanded' image limits on the shared compute meter (4x standard, 5-h refresh, weekly cap); no fixed daily count published. Visible watermark on non-Ultra Gemini-app images; SynthID invisible watermark on all",
-    "windows_fit": "web",
+    "name": "Midjourney",
+    "url": "https://www.midjourney.com",
+    "what": "Highest aesthetic-quality image generator",
+    "why": "Best artistic quality and style control; no free tier.",
+    "cost": "paid",
+    "free_limits": "No free plan; no trial on web or Discord (a limited trial exists only in the niji·journey mobile app). Basic $10/mo ($8 annual), Standard $30 ($24), Pro $60 ($48), Mega $120 ($96). Images are public unless on Pro/Mega (Stealth Mode). No public API",
+    "platforms": "web",
     "maintained": "live service",
     "install": "web",
-    "license": "Google ToS (effective 30 Jul 2026: 'Google won't claim ownership')",
+    "license": "Midjourney ToS: subscribers own outputs; businesses grossing over $1M/yr need Pro or Mega for commercial use",
     "commercial_ok": "yes",
-    "needs_company": "no",
-    "source_url": "https://support.google.com/gemini/answer/16275805",
+    "source_url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Nano Banana (Gemini image models)",
+    "url": "https://ai.google.dev/gemini-api/docs/pricing",
+    "what": "Google Gemini native image generation and editing",
+    "why": "Best for text rendering, edits and consistency; API about $0.034-0.24 per image; no free API image tier.",
+    "cost": "freemium",
+    "free_limits": "Gemini app: Nano Banana 2 image generation is available without a paid plan (compute-based limits refreshing every 5 h up to a weekly cap). SynthID and C2PA are always embedded; a visible watermark is added by default, and an Aug 2026 Media Watermark setting reportedly lets users turn it off where not legally required (secondary sources). API has no free image tier: Nano Banana 2.1 $0.034/1K image up to Nano Banana Pro $0.24/4K. Gemini 2.5 Flash Image shut down 2 Oct 2026",
+    "platforms": "web|API|iOS|Android",
+    "maintained": "live service",
+    "install": "web",
+    "license": "Google Gemini terms",
+    "commercial_ok": "yes",
+    "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
     "checked": "2026-10-28"
   },
   "alts": [
     {
-      "name": "Recraft",
-      "url": "https://www.recraft.ai/pricing",
-      "what": "Image + vector generation with brand styles",
-      "why": "Best when you need SVG output or consistent brand style sets; paid for commercial rights.",
+      "name": "GPT Image (OpenAI)",
+      "url": "https://openai.com",
+      "what": "OpenAI image generation in ChatGPT and API",
+      "why": "Strong instruction following and text; pricing not verified.",
       "cost": "freemium",
-      "free_limits": "Free: images public, owned by Recraft, not for commercial use",
-      "windows_fit": "web",
-      "maintained": "live",
+      "free_limits": "ChatGPT Free includes 'limited image creation'; API pricing not re-verified",
+      "platforms": "web|API",
+      "maintained": "live service",
       "install": "web",
-      "license": "proprietary SaaS",
-      "commercial_ok": "no (free) / yes (paid)",
-      "needs_company": "no",
-      "source_url": "https://www.recraft.ai/pricing",
+      "license": "OpenAI ToS",
+      "commercial_ok": "yes",
+      "source_url": "https://openai.com",
       "checked": "2026-10-28"
     },
     {
-      "name": "Ideogram",
-      "url": "https://ideogram.ai",
-      "what": "Image generator strong at typography/posters",
-      "why": "Best text-in-image layouts; pricing page blocked our fetch.",
-      "cost": "freemium",
-      "free_limits": "Unverified",
-      "windows_fit": "web",
-      "maintained": "live",
-      "install": "web",
-      "license": "proprietary SaaS",
-      "commercial_ok": "unclear",
-      "needs_company": "no",
-      "source_url": "https://ideogram.ai",
+      "name": "FLUX (Black Forest Labs)",
+      "url": "https://bfl.ai/pricing",
+      "what": "API plus open-weight image models",
+      "why": "Best open-weight/self-host route; API about $0.048 per image; commercial self-hosting needs a paid licence tier.",
+      "cost": "paid",
+      "free_limits": "API pay-as-you-go; open-weight commercial licence tiers; separate non-commercial licence",
+      "platforms": "API|self-host",
+      "maintained": "live service",
+      "install": "API",
+      "license": "BFL licences",
+      "commercial_ok": "yes",
+      "source_url": "https://bfl.ai/pricing",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Nano Banana (Gemini)",
-      "verdict": "pick"
+      "name": "Midjourney",
+      "verdict": "pick: quality; paid only"
     },
     {
-      "name": "Recraft",
-      "verdict": "alt for vectors"
+      "name": "Nano Banana",
+      "verdict": "best_free route; edits/text"
+    },
+    {
+      "name": "GPT Image",
+      "verdict": "alt"
+    },
+    {
+      "name": "FLUX",
+      "verdict": "alt open-weight"
     },
     {
       "name": "Ideogram",
-      "verdict": "alt for typography (unverified)"
+      "verdict": "free plan reportedly allows commercial use with public outputs; limits conflict across sources (unverified)"
     },
     {
-      "name": "Midjourney",
-      "verdict": "paid only, best aesthetics"
-    },
-    {
-      "name": "ChatGPT image gen",
-      "verdict": "extra subscription"
-    },
-    {
-      "name": "Flux (local)",
-      "verdict": "needs a GPU; no"
+      "name": "Recraft",
+      "verdict": "best for vector/brand SVG; not re-verified"
     }
   ],
-  "decision": "Nano Banana is already in the plan and leads on editing; Flow is the place to generate without the Gemini-app visible watermark if Flow outputs are unmarked (unverified). Pay for Recraft only when you need vector output.",
+  "decision": "Midjourney is the best overall for visual quality but needs a paid plan. For a free start, Gemini image generation covers most needs including text-in-image; Ideogram and Recraft are strong for typography and vector. Check each tool commercial and watermark terms before shipping.",
   "note": "",
-  "details": "Visible watermark removal is Ultra-only per coverage of the Nano Banana Pro launch.",
+  "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "ok",
-    "note": "Same Gemini limits page: image generation (Nano Banana 2) included with Pro on the shared 4x/5-h/weekly meter.",
-    "url": "https://support.google.com/gemini/answer/16275805"
+    "verdict": "doubt",
+    "note": "Prices and commercial terms are now confirmed from the official help centre. The pick is defensible for brand art only; the editor should weigh flipping it.",
+    "url": "https://docs.midjourney.com/hc/en-us/articles/27870375276557-Using-Images-Videos-Commercially"
   },
-  "better_pick": null
+  "better": [
+    {
+      "target": "pick",
+      "name": "Nano Banana Pro (Gemini 3 Pro Image) / GPT Image",
+      "url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "reason": "For founder work (text in images, product edits, consistent assets, API automation) these beat Midjourney's art-first, API-less, public-by-default model; Midjourney still leads on pure aesthetics."
+    }
+  ]
 }

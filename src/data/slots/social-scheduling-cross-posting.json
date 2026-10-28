@@ -1,0 +1,84 @@
+{
+  "slug": "social-scheduling-cross-posting",
+  "slot": "social scheduling / cross-posting",
+  "track": "brand",
+  "stage": "sell",
+  "order": 8018,
+  "pick": {
+    "name": "Buffer",
+    "url": "https://buffer.com/pricing",
+    "what": "Multi-network scheduler with API",
+    "why": "Simple, reliable, free tier covers three channels",
+    "cost": "freemium",
+    "free_limits": "Free: 3 channels, 10 scheduled posts/channel, 100 ideas, 30-day insights; Essentials paid",
+    "platforms": "web|iOS|Android",
+    "maintained": "SaaS; pricing page current",
+    "install": "web",
+    "license": "Proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://buffer.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "Typefully",
+      "url": "https://typefully.com",
+      "what": "Writing-first scheduler for X/LinkedIn/Threads/Bluesky",
+      "why": "Best for thread-heavy output",
+      "cost": "freemium",
+      "free_limits": "Reported 10-15 posts/mo free; Creator $99/yr",
+      "platforms": "web",
+      "maintained": "SaaS",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://opentweet.io/blog/typefully-pricing-2026",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Postiz",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "what": "Open-source scheduler, agent-friendly",
+      "why": "Self-host for agent-driven posting",
+      "cost": "free",
+      "free_limits": "Self-host free; Cloud paid after 7-day trial",
+      "platforms": "web",
+      "maintained": "v2.25.3 2026-10-24",
+      "install": "docker compose per repo",
+      "license": "AGPL-3.0",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/gitroomhq/postiz-app",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Buffer",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Typefully",
+      "verdict": "Thread UX"
+    },
+    {
+      "name": "Postiz",
+      "verdict": "Open source; AGPL"
+    },
+    {
+      "name": "Hypefury / Publer / Hootsuite",
+      "verdict": "Not verified"
+    }
+  ],
+  "decision": "Buffer Free covers three channels at $0 with an API. Typefully fits thread-heavy writers; Postiz fits agent-driven posting for those willing to self-host.",
+  "note": "",
+  "details": "X posting through any tool rides X's pay-per-use API.",
+  "region_notes": {},
+  "os_notes": {},
+  "verify": {
+    "verdict": "ok",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://buffer.com/pricing"
+  },
+  "better": []
+}

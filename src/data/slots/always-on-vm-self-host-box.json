@@ -3,41 +3,38 @@
   "slot": "Always-on VM / self-host box",
   "track": "ship",
   "stage": "ship",
-  "region": "Global",
-  "order": 6103,
+  "order": 6002,
   "pick": {
+    "name": "Hetzner Cloud",
+    "url": "https://www.hetzner.com/cloud/",
+    "what": "Cheap reliable VPS incl. Singapore region",
+    "why": "Predictable pricing, no reclaim risk, strong price-to-performance",
+    "cost": "paid",
+    "free_limits": "No free tier; from EUR 5.99/mo (Cost-Optimized) / EUR 6.49 (Regular) excl. VAT per page today; DE/FI/SG/US",
+    "platforms": "web",
+    "maintained": "active",
+    "install": "web",
+    "license": "service",
+    "commercial_ok": "yes",
+    "source_url": "https://www.hetzner.com/cloud/",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
     "name": "Oracle Cloud Always Free (Ampere A1)",
     "url": "https://docs.oracle.com/en-us/iaas/Content/FreeTier/resourceref.htm",
     "what": "Free ARM VM for Docker, Coolify, Uptime Kuma, self-hosted runners, cron",
     "why": "Only meaningful always-free VM: 2 OCPU/12 GB A1 + 2 AMD micros + 200 GB disk + 10 TB egress",
     "cost": "free",
     "free_limits": "A1: 1,500 OCPU-h + 9,000 GB-h/mo = 2 OCPU/12 GB (doc today; older guides say 4/24); 2x E2.1.Micro 1 GB; 200 GB block; 10 TB/mo out; reclaimed if 95th-pct CPU, network and (A1) memory all <20% over 7 days; capacity often unavailable; card verification",
-    "windows_fit": "web console; SSH from Windows OpenSSH",
+    "platforms": "web",
     "maintained": "Oracle doc live 2026-10-28",
     "install": "web (OCI console) then: curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash (Coolify, optional)",
     "license": "service",
     "commercial_ok": "unclear",
-    "needs_company": "no",
     "source_url": "https://docs.oracle.com/en-us/iaas/Content/FreeTier/resourceref.htm",
     "checked": "2026-10-28"
   },
   "alts": [
-    {
-      "name": "Hetzner Cloud",
-      "url": "https://www.hetzner.com/cloud/",
-      "what": "Cheap reliable VPS incl. Singapore region",
-      "why": "Best pay-later VM: predictable, no reclaim risk",
-      "cost": "paid",
-      "free_limits": "No free tier; from EUR 5.99/mo (Cost-Optimized) / EUR 6.49 (Regular) excl. VAT per page today; DE/FI/SG/US",
-      "windows_fit": "web + SSH",
-      "maintained": "active",
-      "install": "web",
-      "license": "service",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://www.hetzner.com/cloud/",
-      "checked": "2026-10-28"
-    },
     {
       "name": "Fly.io pay-as-you-go",
       "url": "https://docs.fly.io/about/pricing",
@@ -45,13 +42,27 @@
       "why": "Cheapest always-on container if you only need 256 MB",
       "cost": "paid",
       "free_limits": "No free tier for new orgs (2 h runtime or 7-day trial); shared-cpu-1x 256 MB $2.19/mo, 1 GB $6.70/mo; dedicated IPv4 $2/mo",
-      "windows_fit": "web + flyctl (native Windows)",
+      "platforms": "web + CLI (macOS, Windows, Linux)",
       "maintained": "active",
       "install": "pwsh -c \"iwr https://fly.io/install.ps1 -useb | iex\"",
       "license": "service",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://docs.fly.io/about/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Railway Hobby",
+      "url": "https://railway.com/pricing",
+      "what": "PaaS for containers, workers and DBs",
+      "why": "Pay-later pick: simplest container DX at $5/mo",
+      "cost": "paid",
+      "free_limits": "Free: $1/mo credit, NO custom domains, 1 project/3 services; Hobby $5/mo incl. $5 usage, 2 custom domains, 50 services",
+      "platforms": "web + CLI (macOS, Windows, Linux)",
+      "maintained": "active",
+      "install": "npm i -g @railway/cli",
+      "license": "service",
+      "commercial_ok": "yes (paid)",
+      "source_url": "https://railway.com/pricing",
       "checked": "2026-10-28"
     }
   ],
@@ -85,13 +96,15 @@
       "verdict": "Rejected: spin-down / free tier closed to new users"
     }
   ],
-  "decision": "Oracle is the only always-on VM at $0 with real capacity; keep anything on it reproducible (Docker Compose/Coolify) because Oracle can reclaim idle instances. Move to Hetzner (~EUR 6/mo) when you need guaranteed uptime for a paying customer.",
+  "decision": "Hetzner Cloud (about EUR 6/mo) is the best overall VM for a paying product: predictable and never reclaimed. Oracle Always Free is the only real $0 VM but can reclaim idle instances and often lacks capacity, so keep everything reproducible (Docker Compose). Fly.io suits tiny always-on containers.",
   "note": "",
-  "details": "Official doc now says A1 = 2 OCPU/12 GB, not the 4/24 quoted by older guides.",
+  "details": "Oracle's doc says A1 = 2 OCPU/12 GB, not the 4/24 older guides quote.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Oracle doc: 1,500 OCPU-h + 9,000 GB-h = 2 OCPU/12 GB for Always Free tenancies; 2x E2.1.Micro; 200 GB block; 10 TB egress; idle = 95th-pct CPU <20%, network <20%, memory <20% (A1) over 7 days. All confirmed. commercial_ok stays unclear (oracle.com/cloud/free/faq returned 403).",
-    "url": "https://docs.oracle.com/en-us/iaas/Content/FreeTier/resourceref.htm"
+    "note": "Cost-Optimized from EUR 5.99/mo, Regular Performance from EUR 6.49/mo excl. VAT; DE/FI/SG/US. No price change announced on page.",
+    "url": "https://www.hetzner.com/cloud/"
   },
-  "better_pick": null
+  "better": []
 }

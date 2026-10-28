@@ -3,24 +3,23 @@
   "slot": "mobile framework",
   "track": "app-stacks",
   "stage": "build",
-  "region": "Global",
-  "order": 5086,
+  "order": 5035,
   "pick": {
     "name": "Expo (React Native, New Architecture only) + Expo Router",
     "url": "https://expo.dev/changelog",
     "what": "Managed React Native: native UI, OTA updates, EAS cloud builds, config plugins",
     "why": "Shares TS/React/zod/API code with web+desktop; EAS builds iOS in the cloud from Windows; largest cross-platform JS ecosystem; on-device AI via react-native-executorch/llama.rn",
-    "cost": "freemium",
+    "cost": "free",
     "free_limits": "Framework free. EAS Free: up to 15 Android + 15 iOS builds (low priority, 45-min timeout), Update 1,000 MAU, 60 CI min; Starter $19/mo",
-    "windows_fit": "native (Android emulator on AMD via Windows Hypervisor Platform; iOS via EAS cloud)",
     "maintained": "expo 58.0.20 (SDK 58 released 2026-10-15); react-native 0.88.1 (2026-10-27); 10.3M/wk",
     "install": "npx create-expo-app@latest",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://expo.dev/pricing",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "iOS|Android (develop on macOS, Windows or Linux; iOS builds via EAS cloud without a Mac)"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Flutter",
@@ -29,14 +28,13 @@
       "why": "Best single-codebase performance and visual consistency; Codemagic gives 500 free macOS min/mo for iOS builds",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "3.47.8 (2026-10-23)",
       "install": "SDK zip / winget (verify id)",
       "license": "BSD-3-Clause",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://docs.flutter.dev/install/archive?os=windows",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     },
     {
       "name": "Capacitor (Ionic)",
@@ -45,14 +43,13 @@
       "why": "Fastest reuse of the existing React web UI",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "@capacitor/core 8.5.3 (2026-10-07); 4.9M/wk",
       "install": "npm i @capacitor/core @capacitor/cli && npx cap init",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.npmjs.com/package/@capacitor/core",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     }
   ],
   "candidates": [
@@ -70,7 +67,7 @@
     },
     {
       "name": "Kotlin + Jetpack Compose (native Android)",
-      "verdict": "Best Android performance/APIs; Android-only, nothing shared with web;"
+      "verdict": "Best Android performance/APIs; Android-only, nothing shared with web."
     },
     {
       "name": "Compose Multiplatform / KMP (1.12.2 stable)",
@@ -93,13 +90,15 @@
       "verdict": "Web UI on mobile via Rust shell; younger than Capacitor."
     }
   ],
-  "decision": "Expo wins on code reuse with the React web/desktop apps, the only turnkey iOS cloud-build path from Windows (EAS), and the most training data for Claude Code. Choose Flutter if the app is a standalone consumer product whose UI polish matters more than sharing code with the web SaaS; choose native Kotlin only for Android-only apps needing deep platform APIs.",
+  "decision": "Expo wins on code reuse with the React web/desktop apps, a turnkey iOS cloud-build path without a Mac (EAS), and the most training data for Claude Code. Choose Flutter if the app is a standalone consumer product whose UI polish matters more than sharing code with the web SaaS; choose native Kotlin only for Android-only apps needing deep platform APIs.",
   "note": "",
-  "details": "Legacy architecture support ended in SDK 55; SDK 58 targets iOS 27 (UIKit scene lifecycle). Migration cost from the Kotlin app: full UI rewrite - keep existing Kotlin app until a rewrite is justified.",
+  "details": "Legacy architecture support ended in SDK 55; SDK 58 targets iOS 27 (UIKit scene lifecycle). Migrating an existing native Kotlin/Swift app means a UI rewrite, so keep a working native app until a rewrite is justified. The Expo framework is MIT; EAS cloud builds are optional (Free: up to 15 iOS + 15 Android builds, low priority, 45-min timeout).",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "ok",
-    "note": "Expo pricing confirms Free: 15 Android + 15 iOS builds, low priority, 45-min timeout, 1,000 Update MAU, up to 60 workflow minutes; Starter $19/mo with $45 build credit. Billing docs: free build limits reset monthly.",
+    "verdict": "fixed",
+    "note": "Checked against primary sources; wording made neutral during verification.",
     "url": "https://expo.dev/pricing"
   },
-  "better_pick": null
+  "better": []
 }

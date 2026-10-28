@@ -1,0 +1,93 @@
+{
+  "slug": "business-banking",
+  "slot": "Business banking",
+  "track": "money",
+  "stage": "run",
+  "order": 9028,
+  "pick": {
+    "name": "Mercury",
+    "url": "https://www.mercury.com/pricing",
+    "what": "Startup-focused business banking",
+    "why": "$0 plan with free ACH, domestic wires and USD international wires; good API and invoicing",
+    "cost": "free",
+    "free_limits": "$0/mo base; Plus $29.90, Pro $299; non-USD wires 1% FX fee; banking via Choice Financial and Column N.A. (Mercury is not itself a bank)",
+    "platforms": "web + apps (iOS, Android)",
+    "maintained": "active",
+    "install": "web",
+    "license": "service",
+    "commercial_ok": "yes",
+    "source_url": "https://www.mercury.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "Wise Business",
+      "url": "https://wise.com/us/business",
+      "what": "Multi-currency business account with local receiving details",
+      "why": "Mid-market FX and local details in many currencies",
+      "cost": "freemium",
+      "free_limits": "US: one-time USD 31 setup fee, no monthly fee; USD wire/Swift receive USD 6.11; domestic USD receipts free; receive in 22 currencies (fees differ by country)",
+      "platforms": "web + apps",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "yes",
+      "source_url": "https://wise.com/us/business",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Revolut Business",
+      "url": "https://www.revolut.com/legal/business-fees-all-plans-current",
+      "what": "Multi-currency business account and cards",
+      "why": "Good for EU/UK teams with FX needs",
+      "cost": "freemium",
+      "free_limits": "UK Basic GBP 10, Grow GBP 35, Scale GBP 125 per search of Revolut's fee page; US figures conflict, unverified",
+      "platforms": "web + apps",
+      "maintained": "active",
+      "install": "web",
+      "license": "service",
+      "commercial_ok": "yes",
+      "source_url": "https://www.revolut.com/legal/business-fees-all-plans-current",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Mercury",
+      "verdict": "PICK for US entities"
+    },
+    {
+      "name": "Wise Business",
+      "verdict": "Alt: international"
+    },
+    {
+      "name": "Revolut Business",
+      "verdict": "Alt: UK/EU"
+    },
+    {
+      "name": "Brex / Relay / Novo",
+      "verdict": "Not researched"
+    },
+    {
+      "name": "RazorpayX / Indian current accounts",
+      "verdict": "India only; see region note"
+    }
+  ],
+  "decision": "Mercury is the best overall business bank for a US startup: free transfers, API and invoicing. Founders outside the US usually pair a local bank with Wise Business or Revolut Business for multi-currency. Keep business money separate from personal from day one.",
+  "note": "",
+  "details": "",
+  "region_notes": {
+    "US": "Mercury requires a company formed in the US (or a US territory) with existing or planned US operations; it accepts non-US-resident founders except those living in countries on its restricted list, and does not accept registered-agent or PO-box addresses as the business address. Check the list before forming a US entity for banking.",
+    "UK": "Revolut Business and Wise Business are common alongside high-street accounts.",
+    "EU": "Wise and Revolut offer local IBANs.",
+    "India": "Indian founders of a US company can usually open Mercury (check its restricted list) but owning that company is an Overseas Direct Investment under FEMA. For an Indian entity, open a current account that handles export receipts and issues e-FIRC/e-BRC (RazorpayX is a layer on a bank, not a bank)."
+  },
+  "os_notes": {},
+  "verify": {
+    "verdict": "fixed",
+    "note": "Mercury pricing verified ($0, Plus $29.90, Pro $299; free ACH and domestic wires; free USD international wires; 1% FX on non-USD wires). Eligibility per Mercury support (page 403 to fetcher, text via search): company must be formed in the US or a US territory, founders need not be US citizens or residents, founders living in certain listed countries are excluded, US operations existing or planned, registered-agent/PO box addresses not accepted, restricted industries excluded.",
+    "url": "https://support.mercury.com/hc/en-us/articles/28770467511060"
+  },
+  "better": []
+}

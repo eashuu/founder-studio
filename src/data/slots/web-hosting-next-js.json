@@ -1,0 +1,102 @@
+{
+  "slug": "web-hosting-next-js",
+  "slot": "web hosting (Next.js)",
+  "track": "app-stacks",
+  "stage": "build",
+  "order": 5028,
+  "pick": {
+    "name": "Vercel Pro (Next.js hosting)",
+    "url": "https://vercel.com/pricing",
+    "what": "Managed hosting made by the Next.js team: previews, edge network, AI Gateway integration",
+    "why": "Best Next.js experience; $20 per developer seat/month with $20 usage credit, 10M CDN requests, 1TB transfer; Hobby is personal non-commercial only",
+    "cost": "paid",
+    "free_limits": "Hobby: free, 1 seat, personal non-commercial use only",
+    "platforms": "web",
+    "maintained": "Pricing page current 2026-10-28",
+    "install": "npm i -g vercel",
+    "license": "Proprietary service",
+    "commercial_ok": "yes (Pro)",
+    "source_url": "https://vercel.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Cloudflare Workers (Next.js via adapter)",
+    "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+    "what": "Edge hosting: Free plan 100,000 requests/day, 10ms CPU per invocation; Paid from $5/month",
+    "why": "Cheapest scalable host; Next.js runs via OpenNext adapter",
+    "cost": "freemium",
+    "free_limits": "Free: 100,000 requests/day, 10ms CPU per invocation; Paid from $5/month (10M requests, 30M CPU-ms included). Free use is not limited to non-commercial purposes; Free Services may not process card data on the web property.",
+    "platforms": "web",
+    "maintained": "Pricing page current 2026-10-28",
+    "install": "npm i -D wrangler",
+    "license": "Proprietary service",
+    "commercial_ok": "yes",
+    "source_url": "https://developers.cloudflare.com/workers/platform/pricing/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Netlify",
+      "url": "https://www.netlify.com/pricing/",
+      "what": "Jamstack/Next hosting with credit-based pricing",
+      "why": "Mature, framework-agnostic; Personal $9/mo, Pro $20/mo",
+      "cost": "freemium",
+      "free_limits": "Free: 300 credits/month (production deploy 15 credits, bandwidth 20 credits/GB); commercial use on Free not stated",
+      "platforms": "web",
+      "maintained": "pricing page current 2026-10-28",
+      "install": "npm i -g netlify-cli",
+      "license": "Proprietary service",
+      "commercial_ok": "unclear",
+      "source_url": "https://www.netlify.com/pricing/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Coolify (self-hosted PaaS on a VPS)",
+      "url": "https://github.com/coollabsio/coolify",
+      "what": "Open-source self-hostable PaaS",
+      "why": "Lowest running cost and no lock-in; you own the ops",
+      "cost": "free",
+      "free_limits": "Software free; VPS cost only",
+      "platforms": "Linux server",
+      "maintained": "release date not shown on repo page (opened 2026-10-28)",
+      "install": "curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/coollabsio/coolify",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Vercel Pro",
+      "verdict": "Pick: best DX for Next.js"
+    },
+    {
+      "name": "Cloudflare Workers",
+      "verdict": "Best free/cheap"
+    },
+    {
+      "name": "Netlify",
+      "verdict": "Not evaluated"
+    },
+    {
+      "name": "Self-hosted PaaS",
+      "verdict": "Cheapest; ops burden"
+    },
+    {
+      "name": "Render / Railway / Fly.io",
+      "verdict": "Not evaluated; good for long-running backends"
+    }
+  ],
+  "decision": "Vercel Pro is the best overall host for a Next.js product (previews, zero-config, AI Gateway) at $20/seat/month, and Hobby cannot be used commercially. Cloudflare Workers is the best low-cost or free route and suits Hono APIs; self-host when ops skill exists and bills matter.",
+  "note": "Same answer as the Ship track: Vercel Pro when you want every Next.js feature with no adapter, Cloudflare Workers through OpenNext when you need a free plan that allows commercial use. Vercel's Hobby plan is non-commercial.",
+  "details": "Netlify and Coolify evaluated from their pricing/repo pages.",
+  "region_notes": {},
+  "os_notes": {},
+  "verify": {
+    "verdict": "ok",
+    "note": "Checked against primary sources; wording made neutral during verification.",
+    "url": "https://vercel.com/pricing"
+  },
+  "better": []
+}

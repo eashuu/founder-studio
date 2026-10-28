@@ -3,7 +3,6 @@
   "slot": "git / PR workflow",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2015,
   "pick": {
     "name": "gh CLI (authenticated) + commit-commands (official)",
@@ -12,15 +11,15 @@
     "why": "Zero MCP context cost; gh auth is a prerequisite for /install-github-app",
     "cost": "free",
     "free_limits": "GitHub API limits",
-    "windows_fit": "native",
     "maintained": "core/official",
     "install": "gh auth login; /plugin install commit-commands@claude-plugins-official",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://code.claude.com/docs/en/github-actions.md",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "GitHub MCP (official)",
@@ -29,30 +28,28 @@
       "why": "Needed only in cloud sessions without gh",
       "cost": "free",
       "free_limits": "API limits",
-      "windows_fit": "native (remote)",
       "maintained": "pushed 2026-10-28",
       "install": "/plugin install github@claude-plugins-official",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/github/github-mcp-server",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     },
     {
       "name": "claude-mem:babysit",
       "url": "https://github.com/thedotmack/claude-mem",
       "what": "Watch a PR until CI/reviews are green",
-      "why": "Common default, little setup",
+      "why": "Babysit PRs through review and CI",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "see memory slot",
-      "install": "installed",
+      "install": "see source",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/thedotmack/claude-mem",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     }
   ],
   "candidates": [
@@ -73,13 +70,15 @@
       "verdict": "only if on GitLab"
     }
   ],
-  "decision": "Install and authenticate gh (gh auth login) and let Claude use it directly. Add GitHub MCP only for cloud/remote sessions.",
+  "decision": "Authenticate gh (gh auth login) and let Claude use it directly via Bash. Add GitHub MCP only for cloud/remote sessions where no local gh exists.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "commit-commands present in official marketplace; gh is the right low-context choice.",
-    "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins"
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://code.claude.com/docs/en/github-actions.md"
   },
-  "better_pick": null
+  "better": []
 }

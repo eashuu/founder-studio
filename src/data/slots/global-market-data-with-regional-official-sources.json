@@ -1,0 +1,111 @@
+{
+  "slug": "global-market-data-with-regional-official-sources",
+  "slot": "Global market data (with regional official sources)",
+  "track": "discover",
+  "stage": "discover",
+  "order": 5,
+  "pick": {
+    "name": "World Bank Open Data",
+    "url": "https://data.worldbank.org",
+    "what": "Free cross-country economic, demographic and internet-adoption indicators with APIs",
+    "why": "Broadest free primary-source coverage across countries; Claude can query the APIs directly.",
+    "cost": "free",
+    "free_limits": "Free; default CC BY 4.0 permits commercial use with attribution; some datasets carry other licences",
+    "platforms": "web",
+    "maintained": "live service",
+    "install": "web",
+    "license": "CC BY 4.0 by default (per-dataset labels vary)",
+    "commercial_ok": "yes",
+    "source_url": "https://datacatalog.worldbank.org/public-licenses",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Our World in Data",
+    "url": "https://ourworldindata.org/faqs",
+    "what": "Curated charts and data on demographics, tech, economy, health",
+    "why": "Easy cited charts and CSV/JSON API; OWID-produced data is CC BY.",
+    "cost": "free",
+    "free_limits": "Free; CC BY for OWID data, third-party datasets keep their own licences",
+    "platforms": "web",
+    "maintained": "live service",
+    "install": "web",
+    "license": "CC BY (OWID-produced data)",
+    "commercial_ok": "yes",
+    "source_url": "https://ourworldindata.org/faqs",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "MoSPI eSankhyiki MCP server (India)",
+      "url": "https://github.com/nso-india/esankhyiki-mcp",
+      "what": "Official Indian statistics queryable by Claude via MCP",
+      "why": "Best India-specific source: official, free, MCP-native.",
+      "cost": "free",
+      "free_limits": "Free public beta (launched 6 Feb 2026); README lists 31 datasets",
+      "platforms": "n/a (remote MCP)",
+      "maintained": "repo active (103 commits; no release tags)",
+      "install": "claude mcp add --transport http esankhyiki-mcp https://mcp.mospi.gov.in/",
+      "license": "MIT (repo); data under GoI terms",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/nso-india/esankhyiki-mcp",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "FRED (St. Louis Fed)",
+      "url": "https://fred.stlouisfed.org/docs/api/fred/overview.html",
+      "what": "US and international macro time series with an API",
+      "why": "Cleanest US macro time-series API.",
+      "cost": "free",
+      "free_limits": "Free API; key and terms not confirmed on page",
+      "platforms": "web",
+      "maintained": "live service",
+      "install": "web",
+      "license": "FRED terms",
+      "commercial_ok": "unclear",
+      "source_url": "https://fred.stlouisfed.org/docs/api/fred/overview.html",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "World Bank Open Data",
+      "verdict": "pick: CC BY 4.0 default, global"
+    },
+    {
+      "name": "Our World in Data",
+      "verdict": "best_free: curated, CC BY"
+    },
+    {
+      "name": "MoSPI eSankhyiki MCP",
+      "verdict": "alt: India official, MCP"
+    },
+    {
+      "name": "FRED",
+      "verdict": "alt: US macro"
+    },
+    {
+      "name": "Eurostat / OECD.Stat",
+      "verdict": "official EU/OECD (not fetched)"
+    },
+    {
+      "name": "Statista / CMIE / Tracxn",
+      "verdict": "paid"
+    }
+  ],
+  "decision": "Start with official cross-country statistics, then add the home market statistics office; let Claude query APIs instead of downloading PDFs. Pay for Statista-type data only for investor decks.",
+  "note": "",
+  "details": "",
+  "region_notes": {
+    "US": "FRED and US Census APIs are free.",
+    "EU": "Eurostat provides free official EU statistics.",
+    "UK": "ONS publishes free official statistics.",
+    "India": "MoSPI eSankhyiki MCP (official, MCP-native); TRAI for telecom reach."
+  },
+  "os_notes": {},
+  "verify": {
+    "verdict": "ok",
+    "note": "Shallow check only: free/commercial terms are consistent with the cited licence; not re-opened in this pass.",
+    "url": "https://datacatalog.worldbank.org/public-licenses"
+  },
+  "better": []
+}

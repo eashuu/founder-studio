@@ -1,93 +1,100 @@
 {
   "slug": "terminal",
   "slot": "terminal",
-  "track": "windows-dev",
+  "track": "dev-env",
   "stage": "build",
-  "region": "Global",
   "order": 3032,
   "pick": {
-    "name": "Windows Terminal",
-    "url": "https://github.com/microsoft/terminal",
-    "what": "Tabs/panes, pwsh + WSL profiles",
-    "why": "Shift+Enter works with Claude Code out of the box; Microsoft-maintained; no login",
+    "name": "Ghostty",
+    "url": "https://ghostty.org/docs/install/binary",
+    "what": "GPU-accelerated native terminal, fast and low-config",
+    "why": "Fast, native UI, MIT, strong defaults; works well with Claude Code",
     "cost": "free",
-    "free_limits": "n/a",
-    "windows_fit": "native (MSIX per-user)",
-    "maintained": "v1.25.2733.0 (2026-10-02)",
-    "install": "installed (wt)",
+    "free_limits": "fully free",
+    "platforms": "macOS|Linux",
+    "maintained": "1.4.0 stable (2026-10-27)",
+    "install": "brew install --cask ghostty (macOS; community cask of the official dmg); apt install ghostty (Ubuntu 26.04+) or distro package (Arch, Fedora COPR, Nix, Snap, etc.)",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
-    "source_url": "https://github.com/microsoft/terminal/releases",
+    "source_url": "https://ghostty.org/docs/install/binary",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
-      "name": "Alacritty",
-      "url": "https://github.com/alacritty/alacritty",
-      "what": "Fast minimal terminal, kitty keyboard protocol (Shift+Enter ok from 0.16)",
-      "why": "Fastest; no tabs/splits",
+      "name": "Windows Terminal",
+      "url": "https://github.com/microsoft/terminal",
+      "what": "Tabs/panes, PowerShell + WSL profiles",
+      "why": "Best terminal on Windows; zero config",
       "cost": "free",
-      "free_limits": "n/a",
-      "windows_fit": "native (portable)",
-      "maintained": "v0.17.0 (2026-04-06)",
-      "install": "winget install Alacritty.Alacritty",
-      "license": "Apache-2.0",
+      "free_limits": "fully free",
+      "platforms": "Windows",
+      "maintained": "v1.25.2733.0 (2026-10-02)",
+      "install": "winget install Microsoft.WindowsTerminal",
+      "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://github.com/alacritty/alacritty",
+      "source_url": "https://github.com/microsoft/terminal",
       "checked": "2026-10-28"
     },
     {
       "name": "WezTerm",
       "url": "https://github.com/wezterm/wezterm",
-      "what": "Lua-configured multiplexing terminal",
-      "why": "Most features, but stable release stale since 2024-02-03",
+      "what": "Cross-platform, Lua-configurable terminal with multiplexer",
+      "why": "Only candidate here with identical builds on macOS, Windows and Linux",
       "cost": "free",
-      "free_limits": "n/a",
-      "windows_fit": "native",
-      "maintained": "20240203 (stale)",
-      "install": "winget install wez.wezterm",
+      "free_limits": "fully free",
+      "platforms": "macOS|Windows|Linux",
+      "maintained": "latest stable 20240203 (stale; nightlies exist)",
+      "install": "brew install --cask wezterm | winget install wez.wezterm",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/wezterm/wezterm",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Windows Terminal",
-      "verdict": "pick"
+      "name": "Ghostty",
+      "verdict": "pick for macOS/Linux; no official Windows build"
     },
     {
-      "name": "Alacritty",
-      "verdict": "speed"
+      "name": "Windows Terminal",
+      "verdict": "pick on Windows"
     },
     {
       "name": "WezTerm",
-      "verdict": "stale stable channel"
+      "verdict": "one config everywhere, but stale stable channel"
+    },
+    {
+      "name": "iTerm2",
+      "verdict": "macOS classic, feature-rich; not re-checked"
+    },
+    {
+      "name": "Kitty",
+      "verdict": "macOS/Linux, no Windows; not re-checked"
     },
     {
       "name": "Warp",
-      "verdict": "own AI agent duplicates Claude Code; login/commercial terms unconfirmed"
+      "verdict": "all 3 OS, free plan exists, but bundles its own AI agent and account flow"
     },
     {
-      "name": "Tabby / Wave",
-      "verdict": "Electron, not in Claude docs' key table"
-    },
-    {
-      "name": "Ghostty",
-      "verdict": "no Windows build"
+      "name": "Alacritty",
+      "verdict": "minimal, fast, no tabs"
     }
   ],
-  "decision": "Windows Terminal ships with Windows 11 and is zero-config with Claude Code. Set Claude's preferredNotifChannel to terminal_bell since WT has no default desktop notification.",
+  "decision": "Terminal choice is OS-dependent: Ghostty on macOS and Linux, Windows Terminal on Windows. Choose WezTerm for one identical setup across machines, or iTerm2/Kitty if you already prefer them. Warp is optional: its built-in agent duplicates Claude Code.",
   "note": "",
-  "details": "",
-  "verify": {
-    "verdict": "ok",
-    "note": "v1.25.2733.0 (2 Oct 2026) stable Latest.",
-    "url": "https://github.com/microsoft/terminal/releases"
+  "details": "Rebuilt from a Windows-only slot. Ghostty officially ships binaries only for macOS; Linux builds come from distro packagers; no Windows build.",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "Ghostty (brew install --cask ghostty) or iTerm2; Terminal.app is fine too.",
+    "Windows": "Windows Terminal (preinstalled on Windows 11); Ghostty has no Windows build. It has no default desktop notification, so set Claude's preferredNotifChannel to terminal_bell.",
+    "Linux": "Ghostty is in Arch, Ubuntu 26.04, Nix, Snap and other distro repos; Kitty and WezTerm also work."
   },
-  "better_pick": null
+  "verify": {
+    "verdict": "fixed",
+    "note": "Resolves the 'no stable tag' and licence unverified items. os_notes are correct.",
+    "url": "https://ghostty.org/docs/install/release-notes"
+  },
+  "better": []
 }

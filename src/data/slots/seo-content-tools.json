@@ -3,67 +3,74 @@
   "slot": "SEO + content tools",
   "track": "sales",
   "stage": "sell",
-  "region": "Global",
-  "order": 7192,
+  "order": 7020,
   "pick": {
     "name": "Google Search Console + Ahrefs Webmaster Tools",
     "url": "https://ahrefs.com/webmaster-tools",
-    "what": "GSC for indexing/queries; AWT for site audit, backlinks, keywords of verified sites",
-    "why": "Both free; AWT adds a 170+-issue site audit and Site Explorer data for your own sites",
+    "what": "GSC for indexing/queries; AWT for audit, backlinks, keywords of verified sites",
+    "why": "Both free; AWT adds a 170+-issue audit",
     "cost": "free",
-    "free_limits": "AWT: unlimited verified sites, 5,000 crawl credits/project/mo, 1,000 backlinks/keywords visible",
-    "windows_fit": "web",
+    "free_limits": "AWT: unlimited verified sites, 5,000 crawl credits/project/mo",
+    "platforms": "web",
     "maintained": "live page 2026-10-28",
     "install": "web",
     "license": "proprietary",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://ahrefs.com/webmaster-tools",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Semrush Free",
       "url": "https://www.semrush.com/prices/",
       "what": "Keyword/competitor research",
-      "why": "Free 10 reports/day for competitor keyword research; paid USD 117/mo annual",
+      "why": "Free 10 reports/day; paid USD 117/mo annual",
       "cost": "freemium",
       "free_limits": "1 project, 10 reports/day",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "live page 2026-10-28",
       "install": "web",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.semrush.com/prices/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Bing Webmaster Tools",
+      "url": "https://www.bing.com/webmasters",
+      "source_url": "https://www.bing.com/webmasters",
+      "what": "free second search console",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "GSC + Ahrefs Webmaster Tools",
+      "name": "GSC + AWT",
       "verdict": "PICK"
     },
     {
       "name": "Semrush Free",
-      "verdict": "For competitor keyword checks"
+      "verdict": "Competitor research"
     },
     {
       "name": "Bing Webmaster Tools",
-      "verdict": "Free; worth adding (not checked)"
+      "verdict": "Free, worth adding (not checked)"
     },
     {
       "name": "Ubersuggest / Keyword Planner",
       "verdict": "Weaker data"
     }
   ],
-  "decision": "Verify every site in GSC and AWT on day one. Use Semrush's free reports for competitor research. Write content with Claude, and use Gemini Deep Research for research briefs.",
+  "decision": "Verify every site in GSC and Ahrefs Webmaster Tools on day one, and use Semrush's free reports for competitor research.",
   "note": "",
-  "details": "",
+  "details": "Only one non-pick alt verified.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "AWT confirmed: unlimited verified sites, 5,000 crawl credits/project/mo, 1,000 backlinks/keywords visible, 170+ issues. Semrush free: 1 project, 10 reports/day (confirmed).",
+    "note": "Shallow. Slot has one alt; add Bing Webmaster Tools (free) as the second.",
     "url": "https://ahrefs.com/webmaster-tools"
   },
-  "better_pick": null
+  "better": []
 }

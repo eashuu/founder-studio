@@ -3,91 +3,104 @@
   "slot": "UI design canvas (vector editor)",
   "track": "design",
   "stage": "discover",
-  "region": "Global",
-  "order": 1150,
+  "order": 1014,
   "pick": {
+    "name": "Figma",
+    "url": "https://www.figma.com/pricing/",
+    "what": "Industry-standard collaborative UI design tool",
+    "why": "Largest ecosystem, plugins and community files; designers and agencies expect Figma files.",
+    "cost": "freemium",
+    "free_limits": "Starter free: unlimited drafts, 150 AI credits/day up to 500/mo; Professional Full seat $16/mo (3,000 AI credits); Dev $12; Collab $3",
+    "platforms": "web|macOS|Windows",
+    "maintained": "live service",
+    "install": "web",
+    "license": "proprietary SaaS",
+    "commercial_ok": "yes",
+    "source_url": "https://www.figma.com/pricing/",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
     "name": "Penpot",
-    "url": "https://penpot.app",
-    "what": "Open-source Figma-class design tool (web, self-hostable) with an MCP server",
-    "why": "Free with no tool limits, SVG/CSS-native output, an MCP server without Figma's call caps, and no lock-in.",
+    "url": "https://penpot.app/pricing",
+    "what": "Open-source design tool, web or self-hosted, with MCP",
+    "why": "Best free option: $0 Professional with no tool limits, open standards (SVG/CSS), self-hostable.",
     "cost": "free",
-    "free_limits": "Professional plan $0 per user, 'no limits on tools'; Unlimited $7/editor/mo (cap $175/mo)",
-    "windows_fit": "web (or self-host)",
-    "maintained": "v2.18.5, 26 Oct",
+    "free_limits": "Professional $0 (cloud): all design tools, unlimited files, up to 8 team members plus unlimited viewers, 10 GB storage, 7-day version history and file recovery. Unlimited $7/editor/mo (capped $175/mo, 25 GB, 30 days); Enterprise $25/member/mo; self-hosting free",
+    "platforms": "web|self-host (Docker)",
+    "maintained": "v2.18.5 (26 Oct 2026",
     "install": "web",
     "license": "MPL-2.0",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://penpot.app/pricing",
     "checked": "2026-10-28"
   },
   "alts": [
     {
-      "name": "Figma",
-      "url": "https://www.figma.com/pricing/",
-      "what": "Industry-standard UI design tool",
-      "why": "Pay-later pick when clients/designers hand you Figma files; free MCP is nearly useless.",
-      "cost": "freemium",
-      "free_limits": "Starter: 150 AI credits/day up to 500/mo; MCP up to 20 tool calls/month on Starter (and on View/Collab seats). Professional Full seat $16/mo (MCP 200 calls/day, 10/min), Dev seat $12/mo",
-      "windows_fit": "web/native",
-      "maintained": "live service",
-      "install": "web",
-      "license": "proprietary SaaS",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/",
-      "checked": "2026-10-28"
-    },
-    {
       "name": "Google Stitch",
       "url": "https://stitch.withgoogle.com",
-      "what": "AI-native design canvas (Google Labs) with MCP/SDK and DESIGN.md",
-      "why": "Free AI-first canvas; strong for generating many screen variants fast.",
+      "what": "AI-native design canvas from Google Labs",
+      "why": "Fast screen variants; free quota unverified.",
       "cost": "free",
-      "free_limits": "Free; exact quota unverified (third-party reports conflict)",
-      "windows_fit": "web",
-      "maintained": "updated 19 May 2026 (I/O)",
+      "free_limits": "Free; quota unverified",
+      "platforms": "web",
+      "maintained": "updated May 2026",
       "install": "web",
       "license": "Google Labs ToS",
       "commercial_ok": "unclear",
-      "needs_company": "no",
       "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-updates/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Sketch",
+      "url": "https://www.sketch.com",
+      "what": "macOS-native vector design tool",
+      "why": "Mature but macOS-only.",
+      "cost": "paid",
+      "free_limits": "Not verified",
+      "platforms": "macOS",
+      "maintained": "live",
+      "install": "download",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://www.sketch.com",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Penpot",
+      "name": "Figma",
       "verdict": "pick"
     },
     {
-      "name": "Figma",
-      "verdict": "alt pay-later: Professional Full seat $16/mo"
+      "name": "Penpot",
+      "verdict": "best_free; very close for most solo founders"
     },
     {
       "name": "Google Stitch",
       "verdict": "alt AI canvas"
     },
     {
-      "name": "Lunacy (Icons8)",
-      "verdict": "free Windows-native editor, smaller ecosystem"
-    },
-    {
-      "name": "Framer",
-      "verdict": "site builder, not app UI"
-    },
-    {
       "name": "Sketch",
       "verdict": "macOS only"
+    },
+    {
+      "name": "Lunacy",
+      "verdict": "free, smaller ecosystem"
     }
   ],
-  "decision": "Penpot is the strongest free canvas and its MCP lets Claude Code read and write designs without Figma's 20-calls/month Starter cap. Switch to Figma Professional ($16/mo) when collaborators work in Figma or you need its plugin/community ecosystem.",
+  "decision": "Figma is the best overall for a general founder because collaborators and the plugin ecosystem default to it. Penpot is a full-featured free alternative with open licensing and no tool limits; choose it when budget, self-hosting or lock-in matter. MCP call limits are very low on Figma free plans.",
   "note": "",
-  "details": "Most real design work for this user should start in Claude Design or Stitch and be refined in code; the canvas is for brand assets, flows and handoff.",
+  "details": "Pick flipped from Penpot to Figma; Penpot is best_free.",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "Figma desktop and web; Penpot web.",
+    "Windows": "Figma desktop and web; Penpot web.",
+    "Linux": "Both via browser (no official Figma desktop app); Penpot self-hostable."
+  },
   "verify": {
     "verdict": "ok",
-    "note": "Professional $0, Unlimited $7/editor capped at $175/mo, v2.18.5 (26 Oct 2026). Official MCP exists (help.penpot.app/mcp; local: npx @penpot/mcp@stable).",
-    "url": "https://penpot.app/pricing"
+    "note": "Starter 150 AI credits/day up to 500/mo; Professional Full $16/mo (+3,000 credits), Dev $12, Collab $3 confirmed. Figma remains the best overall because of the ecosystem and collaborator default.",
+    "url": "https://www.figma.com/pricing/"
   },
-  "better_pick": null
+  "better": []
 }

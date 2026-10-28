@@ -3,8 +3,7 @@
   "slot": "monorepo tooling",
   "track": "app-stacks",
   "stage": "build",
-  "region": "Global",
-  "order": 5077,
+  "order": 5025,
   "pick": {
     "name": "pnpm workspaces + Turborepo",
     "url": "https://turborepo.com",
@@ -12,15 +11,15 @@
     "why": "Lightest setup that Expo officially supports; Turborepo needs one turbo.json; Vercel Remote Cache now free",
     "cost": "free",
     "free_limits": "Remote cache free (Vercel changelog linked from fair-use page)",
-    "windows_fit": "native",
     "maintained": "turbo 2.11.10 (2026-10-20); pnpm 12.15.0 (2026-10-21)",
     "install": "npm i -g pnpm && pnpm dlx create-turbo@latest",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://www.npmjs.com/package/turbo",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Nx",
@@ -29,14 +28,13 @@
       "why": "Better when the repo grows to many apps/teams; affected-graph CI",
       "cost": "free",
       "free_limits": "Nx Cloud free tier not verified",
-      "windows_fit": "native",
       "maintained": "nx 24.0.2 (2026-10-26)",
       "install": "npx create-nx-workspace@latest",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.npmjs.com/package/nx",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     },
     {
       "name": "Bun workspaces (+Turborepo)",
@@ -45,14 +43,13 @@
       "why": "Fastest installs; Expo supports Bun workspaces",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native (Windows supported)",
       "maintained": "not version-checked",
       "install": "powershell -c \"irm bun.sh/install.ps1 | iex\"",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://docs.expo.dev/guides/monorepos/",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native (Windows supported)"
     }
   ],
   "candidates": [
@@ -81,13 +78,15 @@
       "verdict": "Now Nx-backed; no reason to choose over Nx/Turbo."
     }
   ],
-  "decision": "pnpm + Turborepo is the least config for a solo dev and is what the Better-T-Stack scaffold generates. Switch to Nx if you exceed ~10 apps/packages or need enforced module boundaries.",
+  "decision": "pnpm + Turborepo is the least config for a small team and is what the Better-T-Stack scaffold generates. Switch to Nx if you exceed ~10 apps/packages or need enforced module boundaries.",
   "note": "",
   "details": "Expo + pnpm: SDK 54+ supports isolated installs, but if a native module fails set nodeLinker: hoisted in pnpm-workspace.yaml (Expo docs). Never let two React Native or React versions coexist.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Version/licence/limits match registry or official page.",
-    "url": "https://registry.npmjs.org/"
+    "note": "turbo 2.11.10 (2026-10-20); pnpm is now 12.16.1 (2026-10-27), minor.",
+    "url": "https://www.npmjs.com/package/turbo"
   },
-  "better_pick": null
+  "better": []
 }

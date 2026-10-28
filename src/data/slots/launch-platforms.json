@@ -3,99 +3,94 @@
   "slot": "Launch platforms",
   "track": "sales",
   "stage": "sell",
-  "region": "Global",
-  "order": 7193,
+  "order": 7021,
   "pick": {
-    "name": "Hacker News (Show HN)",
-    "url": "https://news.ycombinator.com/showhn.html",
-    "what": "Show HN post for something people can try",
-    "why": "Free, highest-intent audience for dev tools, MCP servers, open-core and B2B AI; strict quality rules reward real products",
+    "name": "Product Hunt",
+    "url": "https://www.producthunt.com/launch",
+    "what": "Daily product leaderboard",
+    "why": "Broadest free launch audience for consumer, prosumer and tool products",
     "cost": "free",
-    "free_limits": "Free; no sign-up wall, no landing pages, no vote rings",
-    "windows_fit": "web",
-    "maintained": "rules live 2026-10-28",
+    "free_limits": "Free",
+    "platforms": "web",
+    "maintained": "live page 2026-10-28",
     "install": "web",
     "license": "n/a",
     "commercial_ok": "yes",
-    "needs_company": "no",
-    "source_url": "https://news.ycombinator.com/showhn.html",
+    "source_url": "https://www.producthunt.com/launch",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
-      "name": "Product Hunt",
-      "url": "https://www.producthunt.com/launch",
-      "what": "Daily product leaderboard",
-      "why": "Best for B2C/prosumer apps; free; launch 12:01 am PT; no company accounts",
+      "name": "Hacker News (Show HN)",
+      "url": "https://news.ycombinator.com/showhn.html",
+      "what": "Show HN post for something people can try",
+      "why": "Highest-intent audience for developer tools, open-core and B2B AI; strict rules",
       "cost": "free",
-      "free_limits": "Free",
-      "windows_fit": "web",
-      "maintained": "live page 2026-10-28",
+      "free_limits": "Free; no landing pages or vote rings",
+      "platforms": "web",
+      "maintained": "rules live 2026-10-28",
       "install": "web",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://www.producthunt.com/launch",
+      "source_url": "https://news.ycombinator.com/showhn.html",
       "checked": "2026-10-28"
     },
     {
       "name": "Peerlist Launchpad",
       "url": "https://help.peerlist.io/individual/launchpad",
-      "what": "Weekly launch board (Monday UTC window)",
-      "why": "Builder network, mostly software engineers; free launch, optional USD 29/day featured slot; only top 5 get a (rel=ugc) link",
+      "what": "Weekly launch board",
+      "why": "Builder network; free launch, optional paid slot",
       "cost": "freemium",
-      "free_limits": "Free weekly launch; one-time ID verification ~USD 19",
-      "windows_fit": "web",
+      "free_limits": "Free weekly launch; ID verification about USD 19",
+      "platforms": "web",
       "maintained": "2026",
       "install": "web",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://saascity.io/directories/peerlist",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
+      "name": "Product Hunt",
+      "verdict": "PICK for general products"
+    },
+    {
       "name": "Show HN",
       "verdict": "PICK for dev/B2B/open-core"
     },
     {
-      "name": "Product Hunt",
-      "verdict": "PICK for consumer apps"
-    },
-    {
-      "name": "Peerlist Launchpad",
-      "verdict": "India + builder audience, low effort"
+      "name": "Peerlist",
+      "verdict": "Builder audience"
     },
     {
       "name": "BetaList",
-      "verdict": "Pre-launch list; pricing not shown"
+      "verdict": "Pricing not shown"
     },
     {
-      "name": "Reddit (r/SideProject, r/SaaS, niche subs)",
-      "verdict": "Free; follow sub rules"
+      "name": "Reddit niche subs",
+      "verdict": "Free; follow rules"
     },
     {
       "name": "Indie Hackers",
-      "verdict": "Community posts; not checked"
-    },
-    {
-      "name": "DevHunt / Uneed / Microlaunch",
-      "verdict": "Small directories for backlinks"
+      "verdict": "Not checked"
     },
     {
       "name": "Anthropic Connectors Directory",
-      "verdict": "See marketplaces slot: biggest channel for MCP/Claude plugins"
+      "verdict": "See distribution slot"
     }
   ],
-  "decision": "Launch dev and AI-infrastructure products on Show HN, consumer apps on Product Hunt, and cross-post every launch to Peerlist and relevant subreddits the same week.",
+  "decision": "Launch consumer and prosumer products on Product Hunt and developer or open-core products on Show HN, then cross-post to builder communities the same week.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Show HN rules confirmed: no sign-up walls, no landing pages, no voting rings. Rules now also discourage 'quickly generated one-off projects', which matters for Claude-built launches.",
-    "url": "https://news.ycombinator.com/showhn.html"
+    "note": "Shallow.",
+    "url": "https://www.producthunt.com/launch"
   },
-  "better_pick": null
+  "better": []
 }

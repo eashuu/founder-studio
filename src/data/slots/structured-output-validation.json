@@ -3,24 +3,23 @@
   "slot": "structured output / validation",
   "track": "ai-eng",
   "stage": "build",
-  "region": "Global",
-  "order": 4062,
+  "order": 4010,
   "pick": {
     "name": "Provider-native structured outputs + Zod (TS) / Pydantic (Python)",
     "url": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs",
     "what": "Schema-constrained JSON: Claude output_config.format (GA; zodOutputFormat / messages.parse with Pydantic) and AI SDK object output",
     "why": "Constrained decoding makes retries unnecessary; no extra dependency beyond Zod/Pydantic; HIPAA/ZDR eligible",
     "cost": "free",
-    "free_limits": "Limits: no recursive schemas, no min/max or length constraints, 20 strict tools/request; schema cached 24h so no PHI in schema names/enums",
-    "windows_fit": "native",
+    "free_limits": "Limits: no recursive schemas, no min/max or length constraints, 20 strict tools/request; schema cached 24h so no regulated data in schema names/enums",
     "maintained": "zod 4.6.7 on 2026-10-12; @anthropic-ai/sdk 1.3.0 on 2026-10-23",
     "install": "npm i zod  |  pip install pydantic",
     "license": "MIT (Zod, Pydantic)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Instructor",
@@ -29,14 +28,13 @@
       "why": "For multi-provider Python extraction or providers without native schema output",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "1.17.0 on 2026-09-09",
       "install": "pip install instructor",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://python.useinstructor.com/",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     },
     {
       "name": "Outlines",
@@ -45,14 +43,13 @@
       "why": "For llama.cpp/vLLM local models",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "1.3.3 on 2026-08-06",
       "install": "pip install outlines",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://pypi.org/project/outlines/",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     }
   ],
   "candidates": [
@@ -84,10 +81,12 @@
   "decision": "Define schemas once in Zod/Pydantic and let the provider enforce them; add Instructor only for models lacking native schema output; use Outlines/GBNF for local and on-device models.",
   "note": "",
   "details": "Instructor demoted: native support removed its main advantage on Claude/Gemini.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Version/licence/limits match registry or official page.",
-    "url": "https://registry.npmjs.org/"
+    "note": "zod 4.6.7 on 2026-10-12, MIT (registry).",
+    "url": "https://www.npmjs.com/package/zod"
   },
-  "better_pick": null
+  "better": []
 }

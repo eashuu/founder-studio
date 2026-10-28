@@ -3,95 +3,78 @@
   "slot": "podcasts (curated set)",
   "track": "learning",
   "stage": "run",
-  "region": "Global",
-  "order": 12238,
+  "order": 12030,
   "pick": {
-    "name": "Latent Space, Dwarkesh Podcast, No Priors, The Cognitive Revolution",
+    "name": "Latent Space, Dwarkesh, No Priors, Cognitive Revolution",
     "url": "https://www.youtube.com/@LatentSpacePod",
-    "what": "Latent Space (AI engineering), Dwarkesh (deep interviews), No Priors (AI startups/investing), Cognitive Revolution (weekly, broad AI)",
-    "why": "All four published in the last week, cover builder, founder and frontier angles, and are free on YouTube and podcast apps",
+    "what": "Long-form AI interviews",
+    "why": "Best depth per hour",
     "cost": "free",
     "free_limits": "Free",
-    "windows_fit": "web / Android",
-    "maintained": "Latent Space 2026-10-27; Dwarkesh 2026-10-26; No Priors 2026-10-27; Cognitive Revolution weekly (Oct 2026)",
-    "install": "subscribe in player or YouTube",
+    "platforms": "web|iOS|Android",
+    "maintained": "Latent Space 2026-10-27; Dwarkesh 2026-10-26",
+    "install": "any podcast app",
     "license": "n/a",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://www.youtube.com/@LatentSpacePod",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
-      "name": "AntennaPod (player)",
+      "name": "AntennaPod",
       "url": "https://antennapod.org",
-      "what": "Open-source Android podcast player, no account",
-      "why": "Best free player; subscribe by RSS",
+      "what": "Open-source Android podcast player",
+      "why": "Free player on Android",
       "cost": "free",
       "free_limits": "Free",
-      "windows_fit": "Android",
+      "platforms": "Android",
       "maintained": "3.12.3 2026-10-15",
-      "install": "F-Droid / Play Store",
+      "install": "F-Droid / Play",
       "license": "GPL-3.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://f-droid.org/packages/de.danoeh.antennapod/",
       "checked": "2026-10-28"
     },
     {
       "name": "Interconnects podcast",
       "url": "https://www.interconnects.ai",
-      "what": "Open-model and post-training discussion",
-      "why": "Add if you build on open models",
+      "what": "Open-model interviews",
+      "why": "Open-model depth",
       "cost": "free",
       "free_limits": "Free",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "Episode 2026-10-25",
-      "install": "subscribe",
+      "install": "any podcast app",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.interconnects.ai/archive",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Latent Space",
+      "name": "Curated four",
       "verdict": "PICK"
     },
     {
-      "name": "Dwarkesh",
-      "verdict": "PICK"
-    },
-    {
-      "name": "No Priors",
-      "verdict": "PICK"
-    },
-    {
-      "name": "Cognitive Revolution",
-      "verdict": "PICK"
+      "name": "Interconnects podcast",
+      "verdict": "Open models"
     },
     {
       "name": "AntennaPod",
-      "verdict": "Player"
-    },
-    {
-      "name": "Lex Fridman",
-      "verdict": "Long, less builder-focused; not verified"
-    },
-    {
-      "name": "Practical AI",
-      "verdict": "Not verified this pass"
+      "verdict": "Android player only"
     }
   ],
-  "decision": "Pick two per week based on guest, listen at 1.5x in AntennaPod or YouTube. Latent Space is the must-keep for an AI engineer; the rest rotate.",
+  "decision": "Pick two episodes a week by guest at 1.5x. Latent Space is the must-keep; rotate the rest.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Not independently re-opened (search budget exhausted); free curated content, low risk, no numeric/legal claims.",
-    "url": ""
+    "note": "Cognitive Revolution has an Oct 2026 episode; Latent Space and Dwarkesh dated Oct 2026 in file; No Priors is active.",
+    "url": "https://www.cognitiverevolution.ai/"
   },
-  "better_pick": null
+  "better": []
 }

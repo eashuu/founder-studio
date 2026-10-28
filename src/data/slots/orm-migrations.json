@@ -3,8 +3,7 @@
   "slot": "ORM / migrations",
   "track": "app-stacks",
   "stage": "build",
-  "region": "Global",
-  "order": 5083,
+  "order": 5032,
   "pick": {
     "name": "Drizzle ORM + drizzle-kit",
     "url": "https://orm.drizzle.team",
@@ -12,15 +11,15 @@
     "why": "Same ORM on server Postgres AND on-device SQLite (expo-sqlite, op-sqlite, Electron libsql/better-sqlite3, PGlite) - key for one-stack; no engine binary",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native",
     "maintained": "0.45.4 (2026-10-08); v1.0.0-rc.5 (2026-10-21); 27.9M/wk",
     "install": "npm i drizzle-orm && npm i -D drizzle-kit",
     "license": "Apache-2.0",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://www.npmjs.com/package/drizzle-orm",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Prisma 7 (GA; 8 in RC)",
@@ -29,14 +28,13 @@
       "why": "Best migrations/DX for schema-first teams",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "latest tag 8.0.0-rc.28 (2026-10-27); 7.10.1 (2026-10-15)",
       "install": "npm i prisma @prisma/client",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.prisma.io/docs/orm/release-status",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     },
     {
       "name": "Kysely",
@@ -45,14 +43,13 @@
       "why": "Least magic and lock-in; stable",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "0.29.7 (2026-10-17); 18.5M/wk",
       "install": "npm i kysely",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.npmjs.com/package/kysely",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     }
   ],
   "candidates": [
@@ -84,10 +81,12 @@
   "decision": "Drizzle is the only popular TS ORM that runs the same schema on Postgres and on Expo/Electron SQLite, which matters for offline-capable apps. Flip to Prisma once 8.0 is GA if schema-first migrations matter more than on-device use.",
   "note": "",
   "details": "Drizzle core team joined PlanetScale (announced 2026-03-03, project stays independent OSS). Still 0.x; v1 in RC since May 2026 - pin versions.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Drizzle joining PlanetScale confirmed on PlanetScale blog dated 2026-03-03: 'Drizzle will remain an independent open source project with its own roadmap'; Drizzle's sustainability page says PlanetScale hired the entire core team.",
-    "url": "https://planetscale.com/blog/drizzle-joins-planetscale"
+    "note": "drizzle-orm 0.45.4 on 2026-10-08, Apache-2.0.",
+    "url": "https://www.npmjs.com/package/drizzle-orm"
   },
-  "better_pick": null
+  "better": []
 }

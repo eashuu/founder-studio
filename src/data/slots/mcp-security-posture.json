@@ -3,38 +3,51 @@
   "slot": "MCP security posture",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2022,
   "pick": {
     "name": "Remote (HTTP/OAuth) vendor MCPs only; no filesystem MCP; disable idle local MCPs",
     "url": "https://code.claude.com/docs/en/plugins/security.md",
-    "what": "stdio MCPs run outside any sandbox with your rights",
+    "what": "stdio MCPs run outside any sandbox with your user rights",
     "why": "Least attack surface and context",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native",
     "maintained": "doc current",
     "install": "/mcp to disable",
     "license": "n/a",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://code.claude.com/docs/en/plugins/security.md",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [],
   "candidates": [
     {
       "name": "Policy above",
       "verdict": "pick"
+    },
+    {
+      "name": "Local stdio MCPs, vetted",
+      "verdict": "acceptable if pinned and read; they run unsandboxed"
+    },
+    {
+      "name": "Managed-settings MCP allowlist",
+      "verdict": "org-level control; Team/Enterprise"
+    },
+    {
+      "name": "CLIs via Bash instead of MCP",
+      "verdict": "smaller attack and context surface"
     }
   ],
-  "decision": "Keep MCP servers you rarely use disabled until needed; every enabled server costs context and widens the attack surface.",
+  "decision": "Prefer remote (HTTP/OAuth) vendor MCPs, skip filesystem MCPs, and disable idle local MCP servers with /mcp. Local stdio servers run with your user rights outside any sandbox.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Policy advice, consistent with sandbox doc (native Windows runs commands unsandboxed).",
-    "url": "https://code.claude.com/docs/en/sandboxing.md"
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://code.claude.com/docs/en/plugins/security.md"
   },
-  "better_pick": null
+  "better": []
 }

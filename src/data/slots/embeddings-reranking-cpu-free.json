@@ -3,24 +3,23 @@
   "slot": "embeddings + reranking (CPU/free)",
   "track": "ai-eng",
   "stage": "build",
-  "region": "Global",
-  "order": 4060,
+  "order": 4008,
   "pick": {
     "name": "FastEmbed (Qdrant, ONNX)",
     "url": "https://github.com/qdrant/fastembed",
     "what": "CPU-only ONNX embeddings: dense, sparse (SPLADE), ColBERT and cross-encoder rerankers",
     "why": "No GPU, no PyTorch, one lib covers embeddings + reranking; default bge-small-en-v1.5 (384-d)",
     "cost": "free",
-    "free_limits": "n/a. FastEmbed supported-models page lists NO Qwen3-Embedding or EmbeddingGemma; rerankers: ms-marco-MiniLM, jina-reranker v1/v2, bge-reranker-base",
-    "windows_fit": "native",
+    "free_limits": "n/a",
     "maintained": "0.9.1 on 2026-10-24",
     "install": "pip install fastembed",
     "license": "Apache-2.0",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/qdrant/fastembed",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Gemini Embedding 2 (API)",
@@ -29,14 +28,13 @@
       "why": "Highest convenience; free on free tier, $0.20/M text tokens paid ($0.10 batch)",
       "cost": "freemium",
       "free_limits": "Free tier free of charge (free tier data used to improve Google products)",
-      "windows_fit": "web",
       "maintained": "Pricing page 2026-10-28",
       "install": "npm i @google/genai",
       "license": "Proprietary API",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     },
     {
       "name": "Transformers.js / sentence-transformers",
@@ -45,14 +43,13 @@
       "why": "TS-side embeddings with no Python service",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "transformers.js 4.3.2 on 2026-10-27; sentence-transformers 6.2.0 on 2026-10-21",
       "install": "npm i @huggingface/transformers",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/huggingface/transformers.js",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     }
   ],
   "candidates": [
@@ -62,7 +59,7 @@
     },
     {
       "name": "Gemini Embedding 2 API",
-      "verdict": "Alt: managed; paid tier ok for non-PHI"
+      "verdict": "Alt: managed; paid tier ok for non-regulated data"
     },
     {
       "name": "Transformers.js / sentence-transformers",
@@ -85,13 +82,15 @@
       "verdict": "CC-BY-NC - not usable commercially (secondary source)"
     }
   ],
-  "decision": "Embed locally with FastEmbed so PHI never leaves the box and cost stays $0; benchmark bge-small vs Qwen3-Embedding vs EmbeddingGemma on your own eval set before locking dimensions. Use Gemini Embedding 2 when multimodal or max quality matters and data is non-sensitive.",
+  "decision": "Embed locally with FastEmbed so regulated data never leaves the box and cost stays $0; benchmark bge-small vs Qwen3-Embedding vs EmbeddingGemma on your own eval set before locking dimensions. Use Gemini Embedding 2 when multimodal or max quality matters and data is non-sensitive.",
   "note": "",
   "details": "Whether FastEmbed supports Qwen3/EmbeddingGemma checkpoints is unverified.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "fixed",
-    "note": "Support gap noted (page may lag).",
-    "url": "https://qdrant.github.io/fastembed/examples/Supported_Models/"
+    "verdict": "ok",
+    "note": "Shallow: pick reasonable for CPU embeddings.",
+    "url": "https://pypi.org/project/fastembed/"
   },
-  "better_pick": null
+  "better": []
 }

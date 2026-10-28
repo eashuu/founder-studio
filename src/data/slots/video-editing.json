@@ -1,0 +1,98 @@
+{
+  "slug": "video-editing",
+  "slot": "video editing",
+  "track": "brand",
+  "stage": "sell",
+  "order": 8022,
+  "pick": {
+    "name": "DaVinci Resolve",
+    "url": "https://www.blackmagicdesign.com/products/davinciresolve",
+    "what": "Pro editor + colour + audio; free version plus one-time Studio licence",
+    "why": "Most powerful editor with a genuinely usable free version; Mac, Windows and Linux",
+    "cost": "freemium",
+    "free_limits": "Free: 8-bit formats to 60fps up to UHD; Studio $236 one-time (listed from $295; adds AI Neural Engine, text-based editing, 10-bit 120fps)",
+    "platforms": "macOS|Windows|Linux",
+    "maintained": "Resolve 21 current on vendor page",
+    "install": "download from blackmagicdesign.com",
+    "license": "Proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://www.blackmagicdesign.com/products/davinciresolve",
+    "checked": "2026-10-28"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "CapCut",
+      "url": "https://www.capcut.com/pricing",
+      "what": "Template-driven short-form editor with auto captions",
+      "why": "Fastest path to polished short-form clips",
+      "cost": "freemium",
+      "free_limits": "Free 1080p tier; Pro reported $19.99/mo or $179.99/yr (Oct 2026 secondary source; watermark rules conflict)",
+      "platforms": "macOS|Windows|iOS|Android|web",
+      "maintained": "Pricing page current; no Linux app",
+      "install": "download from capcut.com",
+      "license": "Proprietary (ByteDance)",
+      "commercial_ok": "yes",
+      "source_url": "https://www.capcut.com/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Descript",
+      "url": "https://www.descript.com/pricing",
+      "what": "Edit video by editing the transcript",
+      "why": "Best for talking-head, podcast and demo content",
+      "cost": "freemium",
+      "free_limits": "Free: 1 media hr/mo, 720p, watermark, 100 one-time AI credits; Hobbyist $16/mo annual",
+      "platforms": "macOS|Windows|web",
+      "maintained": "SaaS, current",
+      "install": "download from descript.com",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://www.descript.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "DaVinci Resolve",
+      "verdict": "PICK: best power and free tier"
+    },
+    {
+      "name": "CapCut",
+      "verdict": "Fast short-form"
+    },
+    {
+      "name": "Descript",
+      "verdict": "Transcript-based editing"
+    },
+    {
+      "name": "Final Cut Pro / Premiere Pro",
+      "verdict": "Pro editors; not verified this pass (Final Cut is Apple-only)"
+    },
+    {
+      "name": "Clipchamp",
+      "verdict": "Free on Windows, 1080p no watermark (earlier pass)"
+    },
+    {
+      "name": "Kdenlive",
+      "verdict": "Free GPL-3.0 editor, v26.08.2 2026-10-08"
+    }
+  ],
+  "decision": "DaVinci Resolve is the best overall editor and its free version is enough for most founder videos. CapCut is faster for short-form and Descript for talking-head and demo videos edited by transcript.",
+  "note": "",
+  "details": "CapCut free-tier watermark terms conflict across sources.",
+  "region_notes": {
+    "India": "CapCut is blocked in India; use Resolve, Clipchamp or Descript there."
+  },
+  "os_notes": {
+    "macOS": "Resolve, CapCut, Descript or Final Cut Pro.",
+    "Windows": "Resolve, CapCut, Descript, Clipchamp.",
+    "Linux": "Resolve and Kdenlive; CapCut and Descript have no Linux app."
+  },
+  "verify": {
+    "verdict": "ok",
+    "note": "Verified: Resolve 21; Studio $236 (down from $295); free capped at 8-bit, 60 fps, UHD.",
+    "url": "https://www.blackmagicdesign.com/products/davinciresolve/studio"
+  },
+  "better": []
+}

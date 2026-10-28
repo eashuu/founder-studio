@@ -1,0 +1,102 @@
+{
+  "slug": "voice-dictation-voice-notes",
+  "slot": "voice dictation + voice notes",
+  "track": "productivity",
+  "stage": "run",
+  "order": 11008,
+  "pick": {
+    "name": "Wispr Flow",
+    "url": "https://wisprflow.ai",
+    "what": "Cloud AI dictation with auto-formatting across apps",
+    "why": "Best accuracy and formatting; covers desktop and phone",
+    "cost": "freemium",
+    "free_limits": "Free: 2,000 words/week on desktop, limited weekly use on mobile; Pro $12/user/mo annual or $15 monthly. No Linux app",
+    "platforms": "macOS|Windows|iOS|Android",
+    "maintained": "SaaS, current",
+    "install": "https://wisprflow.ai",
+    "license": "Proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://wisprflow.ai/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Handy",
+    "url": "https://handy.computer",
+    "what": "Open-source push-to-talk dictation that transcribes locally and pastes anywhere",
+    "why": "Free, offline, MIT, runs on CPU",
+    "cost": "free",
+    "free_limits": "Free",
+    "platforms": "macOS|Windows|Linux",
+    "maintained": "v0.9.8 2026-10-03; commits 2026-10-27",
+    "install": "web",
+    "license": "MIT (name/logo excluded)",
+    "commercial_ok": "yes",
+    "source_url": "https://github.com/cjpais/Handy",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Vibe",
+      "url": "https://github.com/thewh1teagle/vibe",
+      "what": "Offline file transcription with diarization",
+      "why": "Best for batch-transcribing recorded memos",
+      "cost": "free",
+      "free_limits": "Free",
+      "platforms": "macOS|Windows|Linux",
+      "maintained": "v3.2.2 2026-09-05",
+      "install": "GitHub releases",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/thewh1teagle/vibe",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "OS built-in dictation (Windows Win+H / macOS Dictation)",
+      "url": "https://support.microsoft.com/en-us/windows/use-voice-typing-to-talk-instead-of-type-on-your-pc-fec94565-c4bd-329d-e59a-af033fa5689f",
+      "what": "Zero-install built-in dictation",
+      "why": "Fallback when you cannot install apps; Windows voice typing uses online recognition",
+      "cost": "free",
+      "free_limits": "Free, built in",
+      "platforms": "Windows|macOS",
+      "maintained": "OS built-in",
+      "install": "none",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://support.microsoft.com/en-us/windows/use-voice-typing-to-talk-instead-of-type-on-your-pc-fec94565-c4bd-329d-e59a-af033fa5689f",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Wispr Flow",
+      "verdict": "PICK: best polish, cloud, cross-device"
+    },
+    {
+      "name": "Handy",
+      "verdict": "BEST FREE: local, MIT"
+    },
+    {
+      "name": "Vibe",
+      "verdict": "File transcription"
+    },
+    {
+      "name": "OS dictation",
+      "verdict": "Built-in baseline"
+    },
+    {
+      "name": "Superwhisper / Raycast Dictation",
+      "verdict": "Not evaluated (Raycast Pro lists Dictation)"
+    }
+  ],
+  "decision": "Wispr Flow gives the most accurate, best-formatted dictation including on mobile, at the cost of cloud processing and a 2,000 word/week free cap. Handy is the best free, local alternative. Choose local tools for confidential material.",
+  "note": "",
+  "details": "Dictation quality varies by language; check yours before paying.",
+  "region_notes": {},
+  "os_notes": {},
+  "verify": {
+    "verdict": "fixed",
+    "note": "",
+    "url": "https://wisprflow.ai/pricing"
+  },
+  "better": []
+}

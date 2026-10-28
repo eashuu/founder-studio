@@ -3,8 +3,7 @@
   "slot": "on-device AI: mobile (Expo / React Native)",
   "track": "ai-eng",
   "stage": "build",
-  "region": "Global",
-  "order": 4057,
+  "order": 4005,
   "pick": {
     "name": "llama.rn (llama.cpp for React Native)",
     "url": "https://github.com/mybigday/llama.rn",
@@ -12,15 +11,15 @@
     "why": "Most mature GGUF-on-phone path with an Expo config plugin; runs Gemma-4-E2B/E4B-class Q4 models on CPU; MIT",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "n/a (Android now / iOS later; develop on Windows with Expo dev client)",
-    "maintained": "Stable v0.12.9 (GitHub release 2026-08-04); npm latest tag = 0.13.0-rc.8 (2026-10-22, RC)",
-    "install": "npm i llama.rn@0.12.9 (pin stable; plain \"npm i llama.rn\" gives the RC)",
+    "maintained": "npm dist-tag latest = 0.13.0-rc.8 on 2026-10-22 (still RC); >=0.10 requires RN New Architecture; Android arm64-v8a/x86_64 only",
+    "install": "npm i llama.rn (+ Expo config plugin; dev build needed)",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/mybigday/llama.rn",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "iOS|Android (Expo dev build; develop on macOS, Windows or Linux)"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "react-native-executorch (Software Mansion)",
@@ -29,14 +28,13 @@
       "why": "Wider modality set (STT+TTS+vision) in one lib; Expo supported via resource-fetcher companion",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "n/a (Android/iOS)",
       "maintained": "0.11.0 on 2026-10-27 (pre-1.0)",
       "install": "npm i react-native-executorch",
       "license": "npm metadata says MIT; docs page does not state",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://executorch.swmansion.com/",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "n/a (Android/iOS)"
     },
     {
       "name": "LiteRT-LM (Google AI Edge) / Gemini Nano via ML Kit",
@@ -45,14 +43,13 @@
       "why": "Best native-Android performance (GPU/NPU); no RN binding so needs a native module",
       "cost": "free",
       "free_limits": "Gemini Nano subject to device support and ML Kit GenAI terms",
-      "windows_fit": "n/a (Android Kotlin; JVM Windows desktop)",
       "maintained": "LiteRT-LM v0.18.1 on 2026-10-20",
       "install": "Gradle/Maven dependency",
       "license": "Apache-2.0 (code samples); model terms vary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://developers.google.com/edge/litert-lm",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "n/a (Android Kotlin; JVM Windows desktop)"
     }
   ],
   "candidates": [
@@ -92,10 +89,12 @@
   "decision": "Choose llama.rn for first on-device features (summaries, classification, offline chat) with a 1-4B Q4 model; download size and RAM matter more than the library. Switch to react-native-executorch if you need on-device Whisper/Kokoro in one lib, or to native LiteRT-LM/Gemini Nano if you go Kotlin-native.",
   "note": "",
   "details": "On-device quality is far below Claude; keep cloud fallback. Mid-range Android CPU speed unmeasured.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "fixed",
-    "note": "Stable is v0.12.9; npm latest is the RC, so pin.",
-    "url": "https://github.com/mybigday/llama.rn"
+    "note": "'Android now / iOS later; develop on Windows' is the previous single-user plan. Version 0.13.0-rc.8 (2026-10-22) still RC, MIT, confirmed.",
+    "url": "https://www.npmjs.com/package/llama.rn"
   },
-  "better_pick": null
+  "better": []
 }

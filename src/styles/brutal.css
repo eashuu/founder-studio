@@ -59,7 +59,7 @@ kbd { font: 600 10px var(--f-mono); border: 1px solid currentColor; padding: 1px
 .slab .wrap { position: relative; padding-block: 26px 70px; min-height: min(86vh, 820px); display: grid; grid-template-rows: auto 1fr auto; }
 .slab .top-cap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; border-bottom: 1px solid color-mix(in srgb, var(--slab-ink) 30%, transparent); padding-bottom: 12px; }
 /* fixed light ink + difference blend: reads on the slab and flips dark where it crosses a paper scrap */
-.hero-h { font-size: clamp(88px, 15.5vw, 250px); margin-top: 4vh; position: relative; z-index: 2; color: #ecebe6; mix-blend-mode: difference; }
+.hero-h { font-size: clamp(64px, 11.2vw, 184px); margin-top: 4vh; position: relative; z-index: 2; color: #ecebe6; mix-blend-mode: difference; }
 .hero-h .o { -webkit-text-stroke: 2px #ecebe6; color: transparent; }
 .hero-h .b { color: #1f2bff; }
 .hero-foot { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; border-top: 2px solid var(--slab-ink); position: relative; z-index: 3; background: var(--slab); }

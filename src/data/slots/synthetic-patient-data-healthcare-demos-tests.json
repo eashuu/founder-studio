@@ -3,40 +3,38 @@
   "slot": "synthetic patient data (healthcare demos/tests)",
   "track": "ai-eng",
   "stage": "build",
-  "region": "Global",
-  "order": 4075,
+  "order": 4023,
   "pick": {
     "name": "Synthea",
     "url": "https://github.com/synthetichealth/synthea",
     "what": "MITRE synthetic patient simulator exporting FHIR R4/STU3/DSTU2, C-CDA, CSV",
-    "why": "Realistic fake patient records so demos/tests never touch PHI; Apache-2.0",
+    "why": "Realistic fake patient records so demos/tests never touch regulated data; Apache-2.0",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native (needs Java JDK 17+)",
-    "maintained": "rolling release master-branch-latest 2026-10-21; Apache-2.0",
+    "maintained": "Repo active (5,008 commits); release date not shown",
     "install": "git clone + ./run_synthea",
     "license": "Apache-2.0",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/synthetichealth/synthea",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native (needs Java JDK 17+)"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Claude-generated clinical notes via Batch",
       "url": "https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers",
       "what": "Generate fake clinical narrative on top of Synthea records",
       "why": "Adds free-text realism Synthea lacks",
-      "cost": "owned",
-      "free_limits": "Max credits; Batch -50%",
-      "windows_fit": "web",
+      "cost": "free",
+      "free_limits": "API credits; Batch -50%",
       "maintained": "Doc 2026-10-28",
       "install": "pip install anthropic",
       "license": "Commercial terms",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     },
     {
       "name": "Presidio (de-identification)",
@@ -45,14 +43,13 @@
       "why": "Use when starting from real data (risk remains)",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "presidio-analyzer 2.2.366 on 2026-10-27",
       "install": "pip install presidio-analyzer",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/microsoft/presidio",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     }
   ],
   "candidates": [
@@ -76,10 +73,12 @@
   "decision": "Synthea for structured records, Claude for narrative notes.",
   "note": "",
   "details": "Added slot.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "fixed",
-    "note": "Release date found.",
-    "url": "https://github.com/synthetichealth/synthea/releases"
+    "verdict": "doubt",
+    "note": "A healthcare-specific 'synthetic patient data' slot (plus clinical/HIPAA emphasis in STT, voice and observability decisions) looks inherited from the previous single reader's domain. Keep only if the site deliberately targets health-tech; otherwise drop or fold into the synthetic-data slot.",
+    "url": "https://github.com/synthetichealth/synthea"
   },
-  "better_pick": null
+  "better": []
 }

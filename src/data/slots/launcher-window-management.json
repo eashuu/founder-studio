@@ -1,0 +1,92 @@
+{
+  "slug": "launcher-window-management",
+  "slot": "launcher + window management",
+  "track": "productivity",
+  "stage": "run",
+  "order": 11012,
+  "pick": {
+    "name": "Raycast",
+    "url": "https://www.raycast.com/pricing",
+    "what": "Launcher with clipboard history, snippets, window management and thousands of extensions",
+    "why": "Best launcher on macOS, now also on Windows; free tier does not expire",
+    "cost": "freemium",
+    "free_limits": "Free: core features and extensions, no AI; Pro $10/mo ($96/yr) adds AI, cloud sync, dictation",
+    "platforms": "macOS|Windows|iOS",
+    "maintained": "Windows v2.10.0.0",
+    "install": "brew install --cask raycast | winget install raycast (or Microsoft Store)",
+    "license": "Proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://www.raycast.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "PowerToys",
+      "url": "https://learn.microsoft.com/en-us/windows/powertoys/workspaces",
+      "what": "Microsoft utilities: FancyZones, Run launcher, Workspaces",
+      "why": "Free, first-party for Windows",
+      "cost": "free",
+      "free_limits": "Free",
+      "platforms": "Windows",
+      "maintained": "Release 2026-10-28; Workspaces doc updated 2026-10-21",
+      "install": "winget install -e --id Microsoft.PowerToys",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "source_url": "https://learn.microsoft.com/en-us/windows/powertoys/workspaces",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "GlazeWM",
+      "url": "https://github.com/glzr-io/glazewm",
+      "what": "i3-style tiling window manager for Windows",
+      "why": "Free keyboard-only tiling; development slowed",
+      "cost": "free",
+      "free_limits": "Free",
+      "platforms": "Windows",
+      "maintained": "v3.10.1 2026-03-21",
+      "install": "winget install -e --id glzr-io.glazewm",
+      "license": "GPL-3.0",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/glzr-io/glazewm",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Raycast",
+      "verdict": "PICK: macOS and Windows"
+    },
+    {
+      "name": "PowerToys",
+      "verdict": "Windows free alternative"
+    },
+    {
+      "name": "GlazeWM",
+      "verdict": "Tiling, slowed development"
+    },
+    {
+      "name": "komorebi",
+      "verdict": "Commercial use needs paid licence; avoid"
+    },
+    {
+      "name": "Alfred / Rectangle / Ulauncher",
+      "verdict": "Mac/Linux staples; not verified this pass"
+    }
+  ],
+  "decision": "Raycast is the best launcher on macOS and now Windows, and its free tier is generous. On Windows PowerToys is the free first-party route; on Linux use your desktop's launcher. Avoid komorebi for commercial work without its paid licence.",
+  "note": "",
+  "details": "",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "Raycast; a snapping tool such as Rectangle (not verified).",
+    "Windows": "Raycast or PowerToys.",
+    "Linux": "No Raycast; use a desktop launcher/tiling setup (not verified)."
+  },
+  "verify": {
+    "verdict": "fixed",
+    "note": "Pricing verified: Free usable in organisations; Pro $10/mo or $96/yr.",
+    "url": "https://www.raycast.com/windows"
+  },
+  "better": []
+}

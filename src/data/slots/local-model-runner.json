@@ -1,0 +1,96 @@
+{
+  "slug": "local-model-runner",
+  "slot": "local model runner",
+  "track": "ai-eng",
+  "stage": "build",
+  "order": 4014,
+  "pick": {
+    "name": "Ollama",
+    "url": "https://github.com/ollama/ollama",
+    "what": "Local model server with Windows installer, OpenAI-compatible API, model library",
+    "why": "Zero-config installers on macOS, Windows and Linux, OpenAI-compatible API, providers in AI SDK/Pydantic AI, MIT",
+    "cost": "free",
+    "free_limits": "n/a",
+    "maintained": "v0.40.12 on 2026-10-27",
+    "install": "macOS/Linux: curl -fsSL https://ollama.com/install.sh | sh ; Windows: irm https://ollama.com/install.ps1 | iex",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "source_url": "https://github.com/ollama/ollama",
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "llama.cpp (llama-server)",
+      "url": "https://github.com/ggml-org/llama.cpp",
+      "what": "Reference C/C++ engine: AVX2/AVX512, ZenDNN for AMD CPU, OpenAI-compatible server",
+      "why": "Maximum control and newest model support first",
+      "cost": "free",
+      "free_limits": "n/a",
+      "maintained": "v0.8.0 on 2026-10-28 (GitHub latest release)",
+      "install": "macOS/Linux: curl -LsSf https://llama.app/install.sh | sh ; Windows: irm https://llama.app/install.ps1 | iex",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/ggml-org/llama.cpp",
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
+    },
+    {
+      "name": "MLX LM (Apple)",
+      "url": "https://github.com/ml-explore/mlx-lm",
+      "what": "Python package to run and fine-tune LLMs on Apple silicon with MLX",
+      "why": "Fastest/most native path on Mac unified memory, includes LoRA fine-tuning",
+      "cost": "free",
+      "free_limits": "n/a",
+      "platforms": "macOS (Apple silicon)",
+      "maintained": "mlx-lm 0.32.2 on 2026-10-16 (PyPI)",
+      "install": "pip install mlx-lm",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/ml-explore/mlx-lm",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Ollama",
+      "verdict": "Pick: easiest install, MIT, all three OSes"
+    },
+    {
+      "name": "llama.cpp",
+      "verdict": "Most control, newest models first"
+    },
+    {
+      "name": "MLX LM",
+      "verdict": "Apple silicon only; fastest on Mac"
+    },
+    {
+      "name": "LM Studio",
+      "verdict": "Good GUI; licence/commercial terms not verified"
+    },
+    {
+      "name": "vLLM",
+      "verdict": "Production GPU serving (NVIDIA/AMD); not for laptops"
+    },
+    {
+      "name": "llama-cpp-python",
+      "verdict": "Python bindings; 0.3.36 (2026-10-01)"
+    }
+  ],
+  "decision": "Ollama is the default runner for development and sidecar use on any OS; drop to llama.cpp for bleeding-edge models and tuning, MLX LM on Apple silicon for speed, vLLM for multi-user GPU serving. Local models trade quality for privacy and zero marginal cost.",
+  "note": "",
+  "details": "GPU support per docs.ollama.com/gpu: NVIDIA compute capability 5.0+ (driver 550+), AMD Radeon via ROCm v7 (Linux broad; Windows select RX 7000/PRO W7000), Apple Metal, and Vulkan on Windows/Linux.",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "Apple silicon uses unified memory: 16GB runs 4-8B Q4 comfortably, 32GB+ runs 20-30B MoE; MLX LM is the fastest path.",
+    "Windows": "Native installer; NVIDIA GPUs (driver 550+) and select AMD RX 7000/PRO W7000 GPUs used automatically, Vulkan covers other GPUs, otherwise CPU. WSL not needed.",
+    "Linux": "NVIDIA (CUDA, compute capability 5.0+), AMD Radeon/Instinct via ROCm v7, or Vulkan; vLLM for multi-user server throughput."
+  },
+  "verify": {
+    "verdict": "fixed",
+    "note": "Checked against primary sources; wording made neutral during verification.",
+    "url": "https://docs.ollama.com/gpu"
+  },
+  "better": []
+}

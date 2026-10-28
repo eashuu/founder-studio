@@ -1,0 +1,84 @@
+{
+  "slug": "personal-site-blog",
+  "slot": "personal site + blog",
+  "track": "brand",
+  "stage": "sell",
+  "order": 8020,
+  "pick": {
+    "name": "Astro on Cloudflare",
+    "url": "https://astro.build/blog/joining-cloudflare/",
+    "what": "Static framework hosted on Cloudflare Workers/Pages, cross-posted to dev.to with canonical URLs",
+    "why": "Owned domain, free hosting, a stack Claude Code writes well",
+    "cost": "free",
+    "free_limits": "Astro free; Cloudflare free static assets",
+    "platforms": "macOS|Windows|Linux",
+    "maintained": "create-astro 5.3.1 2026-10-21; commits 2026-10-28",
+    "install": "npm create astro@latest",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "source_url": "https://astro.build/blog/joining-cloudflare/",
+    "checked": "2026-10-28"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "Ghost",
+      "url": "https://ghost.org/pricing/",
+      "what": "Publishing platform with newsletters and memberships",
+      "why": "Site + newsletter + paid memberships in one",
+      "cost": "paid",
+      "free_limits": "Ghost(Pro) Starter $18/mo annual; self-host free",
+      "platforms": "web",
+      "maintained": "v6.73.0 2026-10-27",
+      "install": "ghost install (self-host)",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "source_url": "https://ghost.org/pricing/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Hugo",
+      "url": "https://github.com/gohugoio/hugo",
+      "what": "Fast static site generator",
+      "why": "Fastest builds, single binary",
+      "cost": "free",
+      "free_limits": "Free",
+      "platforms": "macOS|Windows|Linux",
+      "maintained": "v0.169.0 2026-10-27",
+      "install": "brew install hugo | winget",
+      "license": "Apache-2.0",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/gohugoio/hugo",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Astro",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Ghost",
+      "verdict": "Newsletter + memberships"
+    },
+    {
+      "name": "Hugo",
+      "verdict": "Speed"
+    },
+    {
+      "name": "Next.js / WordPress / Webflow",
+      "verdict": "Not verified this pass"
+    }
+  ],
+  "decision": "Astro on Cloudflare gives an owned domain, free hosting and a stack Claude Code writes well. Choose Ghost if you want site, newsletter and paid memberships in one.",
+  "note": "",
+  "details": "Hashnode free tier cut (June 2026) is a 2026 free-tier reduction to flag.",
+  "region_notes": {},
+  "os_notes": {},
+  "verify": {
+    "verdict": "ok",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://astro.build/blog/joining-cloudflare/"
+  },
+  "better": []
+}

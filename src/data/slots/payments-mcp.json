@@ -3,79 +3,89 @@
   "slot": "payments MCP",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2025,
   "pick": {
-    "name": "Match billing-track provider (Razorpay MCP if Razorpay)",
-    "url": "https://github.com/razorpay/razorpay-mcp-server",
-    "what": "Official Razorpay MCP: payments, links, refunds, settlements; READ_ONLY flag",
-    "why": "India-based; vendor-official",
+    "name": "Stripe (official plugin)",
+    "url": "https://github.com/stripe/ai",
+    "what": "Stripe MCP/plugin",
+    "why": "Official vendor plugin from the most widely used payments provider; maintained in the official marketplace",
     "cost": "free",
-    "free_limits": "txn fees apply",
-    "windows_fit": "native (remote)",
+    "free_limits": "Stripe fees",
     "maintained": "pushed 2026-10-28",
-    "install": "remote MCP per README (Claude Code command unverified)",
+    "install": "/plugin install stripe@claude-plugins-official",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
-    "source_url": "https://github.com/razorpay/razorpay-mcp-server",
-    "checked": "2026-10-28"
+    "source_url": "https://github.com/stripe/ai",
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [
     {
-      "name": "Stripe (official plugin)",
-      "url": "https://github.com/stripe/ai",
-      "what": "Stripe MCP/plugin",
-      "why": "Global cards",
+      "name": "Razorpay MCP",
+      "url": "https://github.com/razorpay/razorpay-mcp-server",
+      "what": "Official Razorpay MCP: payments, links, refunds, settlements; READ_ONLY flag",
+      "why": "Best if billing runs on Razorpay (India)",
       "cost": "free",
-      "free_limits": "Stripe fees",
-      "windows_fit": "native",
+      "free_limits": "n/a",
+      "platforms": "macOS|Windows|Linux",
       "maintained": "pushed 2026-10-28",
-      "install": "/plugin install stripe@claude-plugins-official",
+      "install": "see README (Claude Code command unverified)",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://github.com/stripe/ai",
+      "source_url": "https://github.com/razorpay/razorpay-mcp-server",
       "checked": "2026-10-28"
     },
     {
       "name": "Merchant-of-record MCPs (Dodo/Polar/Paddle)",
       "url": "https://github.com/anthropics/claude-plugins-official",
-      "what": "MoR handles global tax",
-      "why": "Depends on billing track",
+      "what": "Vendor MCPs for merchant-of-record billing",
+      "why": "Pick when the MoR handles tax",
       "cost": "paid",
-      "free_limits": "% fees",
-      "windows_fit": "web",
+      "free_limits": "not checked",
+      "platforms": "web",
       "maintained": "not checked",
-      "install": "web",
+      "install": "see vendor docs",
       "license": "n/a",
-      "commercial_ok": "yes",
-      "needs_company": "no",
+      "commercial_ok": "unclear",
       "source_url": "https://github.com/anthropics/claude-plugins-official",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Provider's own MCP",
+      "name": "Stripe plugin",
       "verdict": "pick"
     },
     {
-      "name": "Stripe",
-      "verdict": "if Stripe"
+      "name": "Razorpay MCP",
+      "verdict": "if billing is Razorpay"
     },
     {
-      "name": "MoR",
-      "verdict": "if MoR"
+      "name": "MoR MCPs",
+      "verdict": "if using a merchant of record"
+    },
+    {
+      "name": "PayPal MCP",
+      "verdict": "useful when PayPal is required; not opened"
+    },
+    {
+      "name": "Polar / Lemon Squeezy MCP",
+      "verdict": "merchant-of-record options; not opened"
     }
   ],
-  "decision": "Always test-mode keys and read-only flag; never live secret keys in MCP config.",
+  "decision": "Use the MCP from whichever provider actually bills you; Stripe's official plugin is the default pick given adoption. Always use test-mode keys and read-only flags, and never put live secret keys in MCP config.",
   "note": "",
-  "details": "",
+  "details": "Previously matched a single provider; now Stripe-led with provider-matching advice.",
+  "region_notes": {
+    "India": "Razorpay and other local gateways are common for INR billing; use the Razorpay MCP if that is your processor.",
+    "EU": "Merchant-of-record services (Paddle, Polar, Dodo) can handle VAT; verify with a tax professional."
+  },
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "razorpay is NOT in the official marketplace (checked marketplace.json); file already says remote MCP per README.",
-    "url": "https://github.com/razorpay/razorpay-mcp-server"
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://github.com/stripe/ai"
   },
-  "better_pick": null
+  "better": []
 }

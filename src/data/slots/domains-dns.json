@@ -3,8 +3,7 @@
   "slot": "Domains + DNS",
   "track": "ship",
   "stage": "ship",
-  "region": "Global",
-  "order": 6109,
+  "order": 6008,
   "pick": {
     "name": "Cloudflare Registrar + DNS",
     "url": "https://www.cloudflare.com/tld-policies/",
@@ -12,29 +11,42 @@
     "why": "No markup, free DNS/WHOIS privacy, same account as hosting",
     "cost": "paid",
     "free_limits": ".com $10.46, .ai $80, .dev $8.20/$12.20 renew, .app $8.20/$14.20, .io $32/$50 (cfdomainpricing.com, 2026-10-21); .in NOT supported (TLD policy page)",
-    "windows_fit": "web",
+    "platforms": "web",
     "maintained": "active",
     "install": "web",
     "license": "service",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://cfdomainpricing.com/",
     "checked": "2026-10-28"
+  },
+  "best_free": {
+    "checked": "2026-10-28",
+    "name": "Cloudflare DNS (Free plan)",
+    "url": "https://www.cloudflare.com/plans/free/",
+    "what": "Authoritative DNS for a domain bought at any registrar",
+    "why": "Free, fast DNS with DNSSEC and email routing; the domain itself still has to be paid for",
+    "cost": "free",
+    "free_limits": "Free DNS zone; domain registration is never free",
+    "platforms": "web",
+    "maintained": "active",
+    "install": "web",
+    "license": "service",
+    "commercial_ok": "yes",
+    "source_url": "https://www.cloudflare.com/plans/free/"
   },
   "alts": [
     {
       "name": "Porkbun",
       "url": "https://porkbun.com/products/domains",
       "what": "Cheap registrar with .in",
-      "why": "Use for .in (and as a non-Cloudflare registrar)",
+      "why": "Low prices and free WHOIS privacy across a wide TLD range, including ccTLDs Cloudflare does not sell",
       "cost": "paid",
       "free_limits": ".in $7.83, .com $11.08, .ai $82.70, .dev $12.87 renew; free WHOIS privacy + 20 email forwards",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "active",
       "install": "web",
       "license": "service",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://porkbun.com/products/domains",
       "checked": "2026-10-28"
     },
@@ -45,12 +57,11 @@
       "why": "Needed for .in domains bought elsewhere",
       "cost": "free",
       "free_limits": "Free DNS on Free plan",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "active",
       "install": "web (change nameservers)",
       "license": "service",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.cloudflare.com/terms/",
       "checked": "2026-10-28"
     }
@@ -77,13 +88,17 @@
       "verdict": "Inherited Google Domains; not cheaper"
     }
   ],
-  "decision": "Cloudflare at-cost pricing is cheapest on renewals; it can't sell .in, so buy .in at Porkbun and point nameservers to Cloudflare.",
+  "decision": "Cloudflare Registrar sells domains at cost with free DNS and WHOIS redaction, so renewals are the cheapest of the major registrars. It does not support every TLD (some ccTLDs such as .in are missing), so buy those at Porkbun or a local registrar and point nameservers to Cloudflare's free DNS.",
   "note": "",
-  "details": ".ai usually requires a 2-year minimum registration (not re-verified).",
-  "verify": {
-    "verdict": "ok",
-    "note": "Cloudflare TLD policy page: .in not listed, .ai listed. Price figures come from a third-party tracker (cfdomainpricing.com), not Cloudflare; treat them as indicative.",
-    "url": "https://www.cloudflare.com/tld-policies/"
+  "details": "No free option for the domain itself: every TLD has a registry fee. DNS hosting is free (Cloudflare Free plan). .ai minimum registration term not re-verified.",
+  "region_notes": {
+    "India": "Cloudflare Registrar cannot sell .in; buy .in at Porkbun (or an Indian registrar) and point nameservers to Cloudflare DNS."
   },
-  "better_pick": null
+  "os_notes": {},
+  "verify": {
+    "verdict": "fixed",
+    "note": "Decision and alts are built around buying .in domains (an India default). Rewrite for any TLD. Paid slot: no free domains exist, so name free DNS as best_free.",
+    "url": "https://cfdomainpricing.com/"
+  },
+  "better": []
 }

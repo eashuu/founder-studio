@@ -3,8 +3,7 @@
   "slot": "Authentication (you own auth)",
   "track": "ship",
   "stage": "ship",
-  "region": "Global",
-  "order": 6105,
+  "order": 6005,
   "pick": {
     "name": "Better Auth",
     "url": "https://www.better-auth.com/docs/introduction",
@@ -12,15 +11,15 @@
     "why": "MIT, no per-MAU fees, users live in your own Postgres (good for regulated buyers), and Auth.js is now maintained under it",
     "cost": "free",
     "free_limits": "Library; unlimited users; you host it",
-    "windows_fit": "n/a (library, runs anywhere Node/Workers runs)",
+    "platforms": "any (library / API)",
     "maintained": "better-auth 1.7.14 on npm 2026-10-26",
     "install": "npm i better-auth",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://registry.npmjs.org/better-auth",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "WorkOS AuthKit",
@@ -29,12 +28,11 @@
       "why": "Pay-later pick for enterprise: 1M MAU free, then sells SSO per connection",
       "cost": "freemium",
       "free_limits": "AuthKit first 1M MAU free; SSO / Directory Sync $125 per connection (1-15); custom domain $99/mo",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "active",
       "install": "npm i @workos-inc/authkit-nextjs",
       "license": "service",
       "commercial_ok": "unclear",
-      "needs_company": "no",
       "source_url": "https://workos.com/pricing",
       "checked": "2026-10-28"
     },
@@ -45,12 +43,11 @@
       "why": "Fastest hosted DX, but free plan lacks MFA/passkeys/SSO",
       "cost": "freemium",
       "free_limits": "50k MRU/app; 'Secured by Clerk' branding; no MFA, passkeys, SMS, SSO on free; Pro $25/mo ($20 annual)",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "active",
       "install": "npm i @clerk/nextjs",
       "license": "service",
       "commercial_ok": "unclear",
-      "needs_company": "no",
       "source_url": "https://clerk.com/pricing",
       "checked": "2026-10-28"
     }
@@ -88,10 +85,12 @@
   "decision": "Better Auth gives you auth you own with no MAU bill and Claude Code-friendly typed APIs; it also absorbed Auth.js. Add WorkOS only when an enterprise contract requires SAML/SCIM and you don't want to run SSO yourself.",
   "note": "",
   "details": "Password hashing on Workers Free may exceed 10 ms CPU; use OAuth/magic link/passkeys or Workers Paid. Exact SSO/SAML plugin maturity not verified.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "npm: better-auth 1.7.14, MIT, modified 2026-10-27. authjs.dev: 'The Auth.js project is now part of Better Auth.' WorkOS (1M MAU, $125/connection, $99 domain) and Clerk (50k MRU, no MFA/passkeys/SSO, $25/$20) confirmed.",
+    "note": "Shallow check only (npm version as recorded). MIT library, no MAU fees.",
     "url": "https://registry.npmjs.org/better-auth"
   },
-  "better_pick": null
+  "better": []
 }

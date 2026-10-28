@@ -1,9 +1,8 @@
 {
   "slug": "runtime-manager",
   "slot": "runtime manager",
-  "track": "windows-dev",
+  "track": "dev-env",
   "stage": "build",
-  "region": "Global",
   "order": 3039,
   "pick": {
     "name": "mise",
@@ -12,15 +11,15 @@
     "why": "Very active; replaces nvm/fnm/volta; native Windows",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native",
     "maintained": "v2026.10.21 (2026-10-27)",
-    "install": "scoop install mise",
+    "install": "brew install mise | winget install jdx.mise | curl https://mise.run | sh",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/jdx/mise",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "fnm",
@@ -29,14 +28,13 @@
       "why": "Simplest if Node-only",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "v1.39.0 (2026-03-06)",
-      "install": "winget install Schniz.fnm",
+      "install": "web",
       "license": "GPL-3.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/Schniz/fnm",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     },
     {
       "name": "proto (moonrepo)",
@@ -45,14 +43,13 @@
       "why": "Younger alt",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "v0.63.2 (2026-10-22)",
       "install": "PowerShell script",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/moonrepo/proto",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     }
   ],
   "candidates": [
@@ -77,13 +74,19 @@
       "verdict": "unmaintained per README"
     }
   ],
-  "decision": "Python stays on uv; mise for everything else.",
+  "decision": "mise manages Node, Go, Java and more with one mise.toml per repo and also handles env vars and tasks; keep Python on uv. Choose fnm if you only need Node.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "brew install mise.",
+    "Windows": "winget install jdx.mise or scoop install mise.",
+    "Linux": "curl https://mise.run | sh or distro package."
+  },
   "verify": {
     "verdict": "ok",
-    "note": "v2026.10.21 (27 Oct 2026); scoop manifest current.",
-    "url": "https://github.com/jdx/mise/releases"
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://github.com/jdx/mise"
   },
-  "better_pick": null
+  "better": []
 }

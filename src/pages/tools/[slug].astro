@@ -12,9 +12,13 @@ const v = s.verify?.verdict;
 const good = v === 'ok' || v === 'fixed';
 const show = (x) => x && x !== 'n/a' && x !== 'unclear';
 const facts = [
-  ['Cost', p.cost], ['Pricing', p.free_limits], ['Commercial use', p.commercial_ok], ['Needs a company', p.needs_company],
-  ['Windows', p.windows_fit], ['Licence', p.license], ['Maintained', p.maintained], ['Region', s.region],
+  ['Cost', p.cost], ['Pricing', p.free_limits], ['Commercial use', p.commercial_ok], ['Platforms', p.platforms],
+  ['Licence', p.license], ['Maintained', p.maintained],
 ].filter(([, x]) => show(x));
+const bf = s.best_free;
+const bfInstall = bf?.install && !/^web$/i.test(bf.install);
+const regions = Object.entries(s.region_notes || {});
+const oses = Object.entries(s.os_notes || {});
 const hasInstall = p.install && !/^web$/i.test(p.install);
 const sib = slotsIn(s.track);
 const at = sib.indexOf(s);
@@ -23,7 +27,7 @@ const next = sib[at + 1];
 const no = String(slots.indexOf(s) + 1).padStart(3, '0');
 const key = (n) => shortName(n).toLowerCase();
 const pickKey = key(p.name);
-const altKeys = new Set(s.alts.map((a) => key(a.name)));
+const altKeys = new Set([...s.alts, ...(bf ? [bf] : [])].map((a) => key(a.name)));
 const isPick = (n) => /\(pick\)/i.test(n) || key(n) === pickKey || key(n).startsWith(pickKey);
 ---
 <Brutal title={`${shortName(p.name)}: ${s.slot}`} description={`${p.name}: ${p.what}`}>
@@ -35,7 +39,7 @@ const isPick = (n) => /\(pick\)/i.test(n) || key(n) === pickKey || key(n).starts
 
     <section class="spec-hero">
       <div>
-        <span class="cap" style="color:var(--blue)">The pick</span>
+        <span class="cap" style="color:var(--blue)">Best overall</span>
         <h1 class="display">{shortName(p.name)}</h1>
         {shortName(p.name) !== p.name && <p class="cap" style="margin-top:14px">{p.name}</p>}
         <p class="what" set:html={wbr(p.what)} />
@@ -53,6 +57,26 @@ const isPick = (n) => /\(pick\)/i.test(n) || key(n) === pickKey || key(n).starts
       </div>
     </section>
 
+    {bf && (
+      <section class="free" aria-label="Best free option">
+        <span class="cap">Best free option</span>
+        <div class="free-body">
+          <div>
+            <h2 class="display">{shortName(bf.name)}</h2>
+            <p set:html={wbr(bf.what)} />
+            {show(bf.free_limits) && <p class="cap free-limits">{bf.free_limits}</p>}
+          </div>
+          <div class="free-act">
+            {bfInstall && <div class="cmd"><code>{bf.install}</code><button type="button" data-copy={bf.install}>Copy</button></div>}
+            <div class="actions">
+              <button class="btn" type="button" data-add={`${s.slug}--free`} data-name={bf.name} data-slot={`${s.slot} (free)`}>+ Add to stack</button>
+              <a class="btn" href={bf.url || bf.source_url}>Website ↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
     {(s.decision || s.note) && (
       <section class="block">
         <div class="block-h"><h2>Why this</h2><span class="cap">Decision</span></div>
@@ -62,16 +86,29 @@ const isPick = (n) => /\(pick\)/i.test(n) || key(n) === pickKey || key(n).starts
       </section>
     )}
 
+    {(regions.length > 0 || oses.length > 0) && (
+      <section class="block two">
+        {oses.length > 0 && <div>
+          <div class="block-h"><h2>By OS</h2><span class="cap">Platform notes</span></div>
+          <dl class="notes-list">{oses.map(([k, x]) => <div><dt>{k}</dt><dd set:html={wbr(x)} /></div>)}</dl>
+        </div>}
+        {regions.length > 0 && <div>
+          <div class="block-h"><h2>By country</h2><span class="cap">Where it differs</span></div>
+          <dl class="notes-list">{regions.map(([k, x]) => <div><dt>{k}</dt><dd set:html={wbr(x)} /></div>)}</dl>
+        </div>}
+      </section>
+    )}
+
     {s.alts.length > 0 && (
       <section class="block">
-        <div class="block-h"><h2>Head to head</h2><span class="cap">Pick vs runners-up</span></div>
+        <div class="block-h"><h2>Head to head</h2><span class="cap">Best overall, best free, runners-up</span></div>
         <div class="tbl">
           <table>
             <thead><tr><th>Option</th><th>What it is</th><th>When it wins</th><th>Cost</th></tr></thead>
             <tbody>
-              {[{ ...p, why: 'Our pick' }, ...s.alts].map((a, i) => (
-                <tr class={i === 0 ? 'is-pick' : ''}>
-                  <td><a href={a.url || a.source_url} style="text-decoration:none"><span class="nm">{shortName(a.name)}</span></a>{i === 0 && <small style="color:var(--blue)">The pick</small>}</td>
+              {[{ ...p, tag: 'Best overall' }, ...(bf ? [{ ...bf, tag: 'Best free' }] : []), ...s.alts].map((a, i) => (
+                <tr class={i === 0 ? 'is-pick' : a.tag ? 'is-free' : ''}>
+                  <td><a href={a.url || a.source_url} style="text-decoration:none"><span class="nm">{shortName(a.name)}</span></a>{a.tag && <small style="color:var(--blue)">{a.tag}</small>}</td>
                   <td set:html={wbr(a.what)} />
                   <td set:html={wbr(a.why)} />
                   <td>{costKey(a.cost)}{show(a.free_limits) && <small>{a.free_limits}</small>}</td>

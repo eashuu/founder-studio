@@ -3,38 +3,36 @@
   "slot": "Proposals, quotes and SOWs",
   "track": "sales",
   "stage": "sell",
-  "region": "Global",
-  "order": 7190,
+  "order": 7018,
   "pick": {
     "name": "Common Paper Order Form + SOW, signed in DocuSeal",
     "url": "https://commonpaper.com/standards/",
-    "what": "Standard order form/SOW on top of CSA/PSA, sent for signature via DocuSeal",
-    "why": "Free, legally coherent with your contract stack, and Claude can fill the cover page from CRM data",
+    "what": "Standard order form/SOW on top of CSA/PSA",
+    "why": "Free and coherent with your contract stack",
     "cost": "free",
     "free_limits": "Free; DocuSeal 10 sends/mo free",
-    "windows_fit": "web",
+    "platforms": "web",
     "maintained": "page 2026",
     "install": "web",
     "license": "CC BY 4.0",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://commonpaper.com/standards/",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "PandaDoc Free eSign",
       "url": "https://support.pandadoc.com/en/articles/9715030-pandadoc-free-plan-guide",
       "what": "Document builder + eSignature",
-      "why": "Nicer proposal templates; free (new accounts) is 5 sends/mo, 5 templates",
+      "why": "Nicer proposal templates",
       "cost": "freemium",
-      "free_limits": "5 sends/mo (older annual free accounts 60/yr), 2 recipients/doc, 5 templates",
-      "windows_fit": "web",
+      "free_limits": "5 sends/mo, 5 templates, 2 recipients",
+      "platforms": "web",
       "maintained": "n/a",
       "install": "web",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://support.pandadoc.com/en/articles/9715030-pandadoc-free-plan-guide",
       "checked": "2026-10-28"
     },
@@ -42,15 +40,14 @@
       "name": "Qwilr",
       "url": "https://qwilr.com/pricing/",
       "what": "Interactive web proposals with quotes, e-sign, payments",
-      "why": "Pay-later pick for high-ticket services deals: Starter USD 35/user/mo annual",
+      "why": "For high-ticket services deals; Starter USD 35/user/mo annual",
       "cost": "paid",
       "free_limits": "14-day trial",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "live page 2026-10-28",
       "install": "web",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://qwilr.com/pricing/",
       "checked": "2026-10-28"
     }
@@ -61,29 +58,27 @@
       "verdict": "PICK"
     },
     {
-      "name": "PandaDoc Free eSign",
-      "verdict": "If you want WYSIWYG proposal templates"
+      "name": "PandaDoc",
+      "verdict": "WYSIWYG templates"
     },
     {
       "name": "Qwilr",
-      "verdict": "When proposals are a sales weapon for USD 10k+ services deals"
+      "verdict": "High-ticket services"
     },
     {
       "name": "Proposify / Better Proposals",
-      "verdict": "Paid-only; not checked"
-    },
-    {
-      "name": "Zoho Invoice estimates",
-      "verdict": "Your invoicing tool can send quotes/estimates"
+      "verdict": "Not checked"
     }
   ],
-  "decision": "Keep proposals inside the contract system: an order form or SOW plus a one-page scope narrative, signed in DocuSeal. Upgrade to Qwilr only if services deal size justifies interactive proposals.",
+  "decision": "Keep proposals inside the contract system with an order form or SOW and a one-page scope narrative. Upgrade to Qwilr only if deal size justifies interactive proposals.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Common Paper SOW and Order Form exist. DocuSeal 10/mo confirmed. PandaDoc alt confirmed: 5 sends/mo (60/yr legacy annual), 2 recipients/doc, 5 templates.",
-    "url": "https://support.pandadoc.com/en/articles/9715030-pandadoc-free-plan-guide"
+    "note": "Shallow.",
+    "url": "https://commonpaper.com/standards/"
   },
-  "better_pick": null
+  "better": []
 }

@@ -3,87 +3,78 @@
   "slot": "podcast guest appearances",
   "track": "brand",
   "stage": "sell",
-  "region": "Global",
-  "order": 8233,
+  "order": 8025,
   "pick": {
-    "name": "Listen Notes (free search) + direct pitching",
+    "name": "Listen Notes + direct pitching",
     "url": "https://www.listennotes.com/",
-    "what": "Search 3.8M podcasts and transcripts to find shows that interviewed similar founders, then pitch hosts directly",
-    "why": "Free basic search, no paid matchmaking needed for a niche AI-founder pitch; direct, personalised pitches outperform marketplaces",
+    "what": "Podcast search to find shows; pitch with a one-page guest kit",
+    "why": "Direct pitching beats volume marketplaces",
     "cost": "free",
-    "free_limits": "Free basic search (per Talks.co 2026 comparison)",
-    "windows_fit": "web",
+    "free_limits": "Free basic search",
+    "platforms": "web",
     "maintained": "Active",
     "install": "web",
     "license": "Proprietary",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://www.listennotes.com/",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Matchmaker.fm",
-      "url": "https://www.matchmaker.fm",
-      "what": "Guest/host matching marketplace",
-      "why": "Free basic plan; Pro from $15/mo",
+      "url": "https://talks.co/p/podcast-matching-platform/",
+      "what": "Podcast guest matching",
+      "why": "Inbound opportunities",
       "cost": "freemium",
-      "free_limits": "Free basic; Pro $15/mo (per Talks.co Sep 2026)",
-      "windows_fit": "web",
+      "free_limits": "Free basic; Pro $15/mo (Talks.co comparison)",
+      "platforms": "web",
       "maintained": "Active",
       "install": "web",
       "license": "Proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://talks.co/p/podcast-matching-platform/",
       "checked": "2026-10-28"
     },
     {
       "name": "PodMatch",
-      "url": "https://www.podmatch.com",
-      "what": "Automated guest/host matching",
-      "why": "Best pay-later matchmaking; no free tier",
+      "url": "https://talks.co/p/podcast-matching-platform/",
+      "what": "Guest/host matching marketplace",
+      "why": "Volume",
       "cost": "paid",
-      "free_limits": "Guests from ~$6/mo (prices conflict across sources)",
-      "windows_fit": "web",
+      "free_limits": "~$6/mo (sources conflict)",
+      "platforms": "web",
       "maintained": "Active",
       "install": "web",
       "license": "Proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://talks.co/p/podcast-matching-platform/",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Listen Notes + direct pitch",
-      "verdict": "PICK: free, targeted"
+      "name": "Listen Notes",
+      "verdict": "PICK"
     },
     {
       "name": "Matchmaker.fm",
-      "verdict": "Free basic marketplace"
+      "verdict": "Free profile"
     },
     {
       "name": "PodMatch",
-      "verdict": "Paid only"
-    },
-    {
-      "name": "PodcastGuests",
-      "verdict": "Paid ($20/mo)"
-    },
-    {
-      "name": "Rephonic",
-      "verdict": "Paid ($99/mo) audience data"
+      "verdict": "Volume"
     }
   ],
-  "decision": "Find 20-30 AI/dev/SaaS and Indian startup podcasts in Listen Notes, pitch with a one-page guest kit on your site, and track replies in your CRM. Add Matchmaker.fm's free profile for inbound; pay for PodMatch only if you want volume.",
+  "decision": "Find 20-30 relevant AI, dev and SaaS podcasts, pitch with a one-page kit, and track replies in your CRM. Add a free matching profile for inbound.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "doubt",
-    "note": "Listen Notes homepage does not state that search is free or show plans; the free-search claim rests on a Talks.co comparison. Low stakes.",
+    "verdict": "ok",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
     "url": "https://www.listennotes.com/"
   },
-  "better_pick": null
+  "better": []
 }

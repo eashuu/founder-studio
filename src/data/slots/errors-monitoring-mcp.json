@@ -3,24 +3,23 @@
   "slot": "errors / monitoring MCP",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2023,
   "pick": {
     "name": "Sentry (official plugin)",
     "url": "https://github.com/getsentry/toolkit",
     "what": "Read Sentry issues/traces from Claude",
     "why": "Vendor-official; match whatever error tracker the ops track picks",
-    "cost": "freemium",
-    "free_limits": "Sentry Developer plan (limits not checked)",
-    "windows_fit": "native (hosted)",
+    "cost": "free",
+    "free_limits": "Plugin free. Sentry Developer plan $0: 1 user, 5k errors, 5M spans, 50 replays, 1 cron monitor, 30-day lookback; Team $26/mo annual ($29 monthly)",
     "maintained": "pushed 2026-10-28",
-    "install": "/plugin install sentry@claude-plugins-official",
-    "license": "FSL (Sentry) / MCP Apache-2.0 (unverified)",
+    "install": "/plugin install sentry@claude-plugins-official  (or claude plugin marketplace add getsentry/sentry-mcp; claude plugin install sentry-mcp@sentry-mcp); remote URL https://mcp.sentry.dev/mcp",
+    "license": "Sentry and sentry-mcp (getsentry/toolkit): FSL-1.1-Apache-2.0 (each release becomes Apache-2.0 after two years)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/getsentry/toolkit",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "PostHog (official plugin)",
@@ -29,30 +28,28 @@
       "why": "If PostHog is your product analytics",
       "cost": "freemium",
       "free_limits": "not verified",
-      "windows_fit": "native",
       "maintained": "listed 2026-10-28",
       "install": "/plugin install posthog@claude-plugins-official",
       "license": "MIT (core)",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/anthropics/claude-plugins-official",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     },
     {
       "name": "Channels (built-in)",
       "url": "https://code.claude.com/docs/en/channels.md",
       "what": "Push CI/monitor events into a session",
       "why": "Event-driven fixes",
-      "cost": "owned",
-      "free_limits": "n/a",
-      "windows_fit": "native",
+      "cost": "paid",
+      "free_limits": "Requires a Claude plan (Pro/Max plans/Team/Enterprise) or API billing; counts against plan usage",
       "maintained": "core",
       "install": "see doc",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://code.claude.com/docs/en/channels.md",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     }
   ],
   "candidates": [
@@ -67,15 +64,25 @@
     {
       "name": "Channels",
       "verdict": "event push"
+    },
+    {
+      "name": "Datadog MCP",
+      "verdict": "strong for larger stacks; paid"
+    },
+    {
+      "name": "GlitchTip (Sentry-compatible, self-host)",
+      "verdict": "not opened"
     }
   ],
   "decision": "Install the MCP that matches the monitoring tool chosen in the ops track; not before.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "ok",
-    "note": "sentry plugin present in marketplace.json; free limits left unverified by the author.",
-    "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins"
+    "verdict": "fixed",
+    "note": "Pricing page does not address commercial use on the free plan; it describes Developer as 'for solo devs working on small projects'.",
+    "url": "https://sentry.io/pricing/"
   },
-  "better_pick": null
+  "better": []
 }

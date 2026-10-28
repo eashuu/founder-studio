@@ -3,8 +3,7 @@
   "slot": "evals",
   "track": "ai-eng",
   "stage": "build",
-  "region": "Global",
-  "order": 4063,
+  "order": 4011,
   "pick": {
     "name": "promptfoo",
     "url": "https://github.com/promptfoo/promptfoo",
@@ -12,15 +11,15 @@
     "why": "Language-neutral (TS monorepo + Python backends), declarative YAML Claude Code writes easily, red-teaming built in, runs locally on Windows",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native (npm)",
     "maintained": "0.125.1 on 2026-10-25; acquired by OpenAI 2026-03-09 (README: 'remains open source and MIT licensed')",
     "install": "npx promptfoo@latest init",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/promptfoo/promptfoo",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native (npm)"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "DeepEval",
@@ -29,14 +28,13 @@
       "why": "Best Python-native option; partial TS integrations",
       "cost": "freemium",
       "free_limits": "Confident AI cloud optional (free account, limits unverified)",
-      "windows_fit": "native",
       "maintained": "4.3.2 on 2026-10-27",
       "install": "pip install -U deepeval",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/confident-ai/deepeval",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     },
     {
       "name": "Inspect AI (UK AISI)",
@@ -45,14 +43,13 @@
       "why": "Best for agent/tool-use evals and benchmark runs",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "wsl/docker for sandboxes",
       "maintained": "0.3.285 on 2026-10-25",
       "install": "pip install inspect-ai",
       "license": "MIT (PyPI metadata)",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://inspect.aisi.org.uk/",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "wsl/docker for sandboxes"
     }
   ],
   "candidates": [
@@ -95,11 +92,13 @@
   ],
   "decision": "promptfoo remains the pick for cross-language CI-friendly evals, but OpenAI now owns it; MIT licence and local-only runs limit the risk (fork if governance changes). Use DeepEval if everything is Python, Inspect for deep agent evals.",
   "note": "",
-  "details": "",
+  "details": "acquisition risk newly flagged.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Version/licence/limits match registry or official page.",
-    "url": "https://registry.npmjs.org/"
+    "note": "promptfoo 0.125.1 on 2026-10-25, MIT (registry); OpenAI acquisition flag retained.",
+    "url": "https://www.npmjs.com/package/promptfoo"
   },
-  "better_pick": null
+  "better": []
 }

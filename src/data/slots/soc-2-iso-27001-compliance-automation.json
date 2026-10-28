@@ -1,0 +1,110 @@
+{
+  "slug": "soc-2-iso-27001-compliance-automation",
+  "slot": "SOC 2 / ISO 27001 compliance automation",
+  "track": "legal",
+  "stage": "run",
+  "order": 10008,
+  "pick": {
+    "name": "Vanta",
+    "url": "https://www.vanta.com/pricing",
+    "what": "Market-leading compliance automation: SOC 2, ISO 27001, HIPAA, GDPR, trust center",
+    "why": "Largest integration set and auditor network; Essentials/Plus/Professional/Enterprise tiers",
+    "cost": "paid",
+    "free_limits": "No free tier; price by demo (secondary sources suggest USD 10k+/yr)",
+    "platforms": "web",
+    "maintained": "live page 2026-10-28",
+    "install": "web",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://www.vanta.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Probo",
+    "url": "https://github.com/getprobo/probo",
+    "what": "Open-source compliance platform: controls, risks, vendors, policies, public compliance page",
+    "why": "MIT licence, very active, covers SOC 2/ISO 27001/GDPR/HIPAA/ISO 42001",
+    "cost": "free",
+    "free_limits": "Self-host free; managed offering exists (price unchecked)",
+    "platforms": "macOS/Windows/Linux (Docker)",
+    "maintained": "probod v0.331.0 released 2026-10-28",
+    "install": "see probo.com/docs/deployment/self-hosting",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "source_url": "https://github.com/getprobo/probo",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Drata",
+      "url": "https://drata.com/pricing",
+      "what": "Compliance automation: Foundation/Advanced/Enterprise plans",
+      "why": "Strong rival to Vanta; owns SafeBase trust centre; 25 trust-centre approved domains free",
+      "cost": "paid",
+      "free_limits": "No free tier; demo-priced",
+      "platforms": "web",
+      "maintained": "live page 2026-10-28",
+      "install": "web",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://drata.com/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Comp AI Community Edition",
+      "url": "https://github.com/trycompai/comp",
+      "what": "Open-source SOC 2/ISO automation with quote-based managed cloud",
+      "why": "Cheaper managed path to a first audit for small teams; OSS core",
+      "cost": "freemium",
+      "free_limits": "CE self-host free; managed pricing by 20-minute call",
+      "platforms": "web/Docker",
+      "maintained": "v3.111.1 released 2026-08-05; repo active 2026-10-24",
+      "install": "see repo",
+      "license": "AGPL-3.0",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/trycompai/comp",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Vanta",
+      "verdict": "PICK: market default"
+    },
+    {
+      "name": "Probo",
+      "verdict": "best_free: MIT, self-host"
+    },
+    {
+      "name": "Drata",
+      "verdict": "Equal tier; demo-priced"
+    },
+    {
+      "name": "Comp AI",
+      "verdict": "AGPL OSS + quote cloud"
+    },
+    {
+      "name": "Sprinto",
+      "verdict": "Often cheapest commercial (secondary: USD 6-8k/yr)"
+    },
+    {
+      "name": "Secureframe",
+      "verdict": "~USD 7k/yr (secondary)"
+    },
+    {
+      "name": "CISO Assistant",
+      "verdict": "Widest framework library; AGPL"
+    }
+  ],
+  "decision": "Do not buy SOC 2 tooling before a deal requires it. Write policies and collect evidence in an OSS tool like Probo now so a Type I takes weeks. When a buyer insists, Vanta or Drata (plus a separate auditor) give the smoothest path; Sprinto or Comp AI are cheaper options to quote.",
+  "note": "",
+  "details": "Pick changed from Probo (free) to Vanta (best overall); Probo moved to best_free. Prices are secondary sources; get quotes.",
+  "region_notes": {},
+  "os_notes": {},
+  "verify": {
+    "verdict": "ok",
+    "note": "Vanta demo-priced; market default. Prices secondary.",
+    "url": "https://www.vanta.com/pricing"
+  },
+  "better": []
+}

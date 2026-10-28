@@ -3,8 +3,7 @@
   "slot": "PRD / spec writing with Claude",
   "track": "discover",
   "stage": "discover",
-  "region": "Global",
-  "order": 148,
+  "order": 12,
   "pick": {
     "name": "GitHub Spec Kit",
     "url": "https://github.com/github/spec-kit",
@@ -12,15 +11,15 @@
     "why": "Free, MIT, GitHub-maintained, and it produces specs that Claude Code then implements in the same repo.",
     "cost": "free",
     "free_limits": "Free",
-    "windows_fit": "native (Python/uv CLI)",
     "maintained": "v1.2.4, 27 Oct",
     "install": "uvx --from git+https://github.com/github/spec-kit.git specify init <project>",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/github/spec-kit",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native (Python/uv CLI)"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "BMAD-METHOD",
@@ -29,14 +28,13 @@
       "why": "Richer PM-persona flow for bigger products; heavier ceremony.",
       "cost": "free",
       "free_limits": "Free",
-      "windows_fit": "native (npx)",
-      "maintained": "stable v6.12.4 (14 Oct 2026); v7 preview",
+      "maintained": "stable v6.12; v7 Claude Code plugin in alpha",
       "install": "npx bmad-method install",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/bmad-code-org/BMAD-METHOD",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native (npx)"
     },
     {
       "name": "ChatPRD",
@@ -45,14 +43,13 @@
       "why": "Polished PRD templates if you do not want a repo-based flow.",
       "cost": "freemium",
       "free_limits": "Free: 3 chats; Pro $15/mo",
-      "windows_fit": "web",
       "maintained": "live service",
       "install": "web",
       "license": "proprietary SaaS",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.chatprd.ai/pricing",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     }
   ],
   "candidates": [
@@ -82,12 +79,14 @@
     }
   ],
   "decision": "Spec Kit keeps the PRD, plan and tasks as files beside the code, which is what Claude Code works best from. Use BMAD when a product needs a fuller PM/architect pass, ChatPRD only for client-facing PRD documents.",
-  "note": "Consolidated: use Spec Kit for the spec/PRD document only, then build with Superpowers (Claude Code track). Install once: uv tool install specify-cli --from git+https://github.com/github/spec-kit.git",
+  "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "v1.2.4 (27 Oct 2026) latest. See cross-issue on overlap with Superpowers.",
-    "url": "https://github.com/github/spec-kit/releases"
+    "note": "Shallow check only: free/commercial terms are consistent with the cited licence; not re-opened in this pass.",
+    "url": "https://github.com/github/spec-kit"
   },
-  "better_pick": null
+  "better": []
 }

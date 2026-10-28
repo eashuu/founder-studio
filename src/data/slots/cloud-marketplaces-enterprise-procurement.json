@@ -3,54 +3,51 @@
   "slot": "Cloud marketplaces (enterprise procurement)",
   "track": "sales",
   "stage": "sell",
-  "region": "Global",
-  "order": 7196,
+  "order": 7023,
   "pick": {
-    "name": "Microsoft Marketplace (transactable SaaS)",
-    "url": "https://learn.microsoft.com/en-us/partner-center/marketplace-offers/marketplace-commercial-transaction-capabilities-and-considerations",
-    "what": "List SaaS/professional services so enterprises buy against their Microsoft agreement",
-    "why": "Flat 3% store fee; Microsoft bills and collects; no India-buyers-only restriction found (unlike AWS); also hosts a healthcare channel (Dragon Copilot physician apps)",
+    "name": "AWS Marketplace",
+    "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/listing-fees.html",
+    "what": "Largest cloud marketplace",
+    "why": "Biggest enterprise procurement channel; seller eligibility depends on entity country",
     "cost": "freemium",
-    "free_limits": "No listing cost; 3% of transactions (50% off on private-offer renewals)",
-    "windows_fit": "web",
-    "maintained": "doc updated 2026-08-18",
-    "install": "web (Partner Center)",
+    "free_limits": "No upfront listing cost; fee on each sale: 3% for public SaaS offers; private offers 3% (<USD 1M TCV), 2% (USD 1-10M), 1.5% (>= USD 10M); renewals 1.5%; regional uplifts may apply (e.g. India-based sellers)",
+    "platforms": "web",
+    "maintained": "FAQ live 2026-10-28",
+    "install": "web",
     "license": "n/a",
     "commercial_ok": "yes",
-    "needs_company": "yes",
-    "source_url": "https://learn.microsoft.com/en-us/partner-center/marketplace-offers/marketplace-commercial-transaction-capabilities-and-considerations",
+    "source_url": "https://docs.aws.amazon.com/marketplace/latest/userguide/listing-fees.html",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
-      "name": "AWS Marketplace (India seller track)",
-      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/india-seller-faq.html",
-      "what": "Largest cloud marketplace; India-based sellers supported since Nov 2025",
-      "why": "Pick for Indian enterprise buyers, or for global buyers once you have a non-India entity",
+      "name": "Microsoft Marketplace (transactable SaaS)",
+      "url": "https://learn.microsoft.com/en-us/partner-center/marketplace-offers/marketplace-commercial-transaction-capabilities-and-considerations",
+      "what": "List SaaS so enterprises buy against their Microsoft agreement",
+      "why": "Flat 3% store fee; Microsoft bills and collects",
       "cost": "freemium",
-      "free_limits": "Standard listing fees (+18% GST) in INR; needs GSTIN with e-invoicing, India bank, standalone AWS account",
-      "windows_fit": "web",
-      "maintained": "FAQ live 2026-10-28",
-      "install": "web",
+      "free_limits": "No listing cost; 3% of transactions",
+      "platforms": "web",
+      "maintained": "doc updated 2026-08-18",
+      "install": "web (Partner Center)",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "yes",
-      "source_url": "https://docs.aws.amazon.com/marketplace/latest/userguide/india-seller-faq.html",
+      "source_url": "https://learn.microsoft.com/en-us/partner-center/marketplace-offers/marketplace-commercial-transaction-capabilities-and-considerations",
       "checked": "2026-10-28"
     },
     {
       "name": "Google Cloud Marketplace",
       "url": "https://docs.cloud.google.com/marketplace/docs/partners/get-started",
       "what": "GCP marketplace",
-      "why": "Requires Partner Network membership, hosting primarily on Google Cloud and generating GCP consumption, which rules it out for a Cloudflare-hosted stack",
+      "why": "Needs Partner Network membership and GCP-hosted product",
       "cost": "freemium",
       "free_limits": "Revenue share not published",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "page live 2026-10-28",
       "install": "web",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "yes",
       "source_url": "https://docs.cloud.google.com/marketplace/docs/partners/get-started",
       "checked": "2026-10-28"
     }
@@ -58,24 +55,43 @@
   "candidates": [
     {
       "name": "Microsoft Marketplace",
-      "verdict": "PICK when a buyer asks to procure through a marketplace"
+      "verdict": "PICK for 3% flat"
     },
     {
       "name": "AWS Marketplace",
-      "verdict": "India sellers can sell only to India buyers; global needs a non-India entity"
+      "verdict": "Largest reach, entity rules apply"
     },
     {
       "name": "Google Cloud Marketplace",
-      "verdict": "Only if you host on GCP"
+      "verdict": "Only if hosted on GCP"
+    },
+    {
+      "name": "Oracle Cloud Marketplace",
+      "verdict": "Not checked"
+    },
+    {
+      "name": "Salesforce AppExchange",
+      "verdict": "Relevant if you sell to Salesforce customers; not checked"
+    },
+    {
+      "name": "Snowflake Marketplace",
+      "verdict": "Relevant for data products; not checked"
     }
   ],
-  "decision": "Defer all marketplaces until an enterprise buyer asks. Microsoft's 3% transact model is then the best fit; SaaS offers need multitenancy, sign-in with both Microsoft Accounts and Entra ID SSO, a landing page + webhook and the SaaS Fulfillment APIs (Claude Code can build these). Publisher enrolment asks for a company legal name and signing authority, so confirm a proprietorship qualifies before building. AWS's India track sells only to Indian buyers, so a global AWS listing needs the US entity.",
+  "decision": "Defer marketplaces until an enterprise buyer asks, then list where that buyer's committed cloud spend sits. Microsoft's 3% transact model is simple; AWS has the widest reach. Seller eligibility depends on the legal entity and country.",
   "note": "",
-  "details": "Microsoft payout/tax-profile support for India-registered publishers not confirmed (US-sales withholding default 30% without treaty forms, per Microsoft help); verify.",
+  "details": "No free option: marketplaces take a revenue share or listing fee on every sale; listing itself is free only until you transact.",
+  "region_notes": {
+    "US": "US entities have the broadest seller eligibility on all three marketplaces.",
+    "India": "AWS Marketplace supports India-based sellers (since Nov 2025) but they can sell only to buyers in India; global AWS sales need a non-India entity. Microsoft payout/tax profile for India publishers not confirmed.",
+    "EU": "Availability by country not checked (unverified).",
+    "UK": "Availability by country not checked (unverified)."
+  },
+  "os_notes": {},
   "verify": {
     "verdict": "fixed",
-    "note": "Confirmed: 3% store fee, 50% off for private-offer renewals, doc updated 2026-08-18, Dragon Copilot offer type. Two corrections. Transactable SaaS must support BOTH Microsoft Accounts (MSA) and Entra ID SSO, not just Entra ID. Publisher enrolment needs a company legal business name and authority to sign for the company, so a sole proprietor's eligibility is unconfirmed (likely needs the Udyam/GST business identity). Microsoft's tax page lists India as a 'Reseller' country for commercial buyers but says nothing about India-based publishers. AWS alt confirmed verbatim (India sellers sell only to India buyers, USD public pricing, INR payout, GSTIN with e-invoicing, standalone account).",
-    "url": "https://learn.microsoft.com/en-us/partner-center/marketplace-offers/plan-saas-offer"
+    "note": "Checked against primary sources; wording made neutral during verification.",
+    "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/listing-fees.html"
   },
-  "better_pick": null
+  "better": []
 }

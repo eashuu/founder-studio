@@ -3,22 +3,35 @@
   "slot": "code review",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2005,
   "pick": {
     "name": "Built-in /code-review",
     "url": "https://code.claude.com/docs/en/code-review.md",
     "what": "Local multi-agent review of your branch or PR on any plan; --comment posts inline",
-    "why": "First-party, on Max at no extra cost; managed Code Review is Team/Enterprise only",
-    "cost": "owned",
-    "free_limits": "uses Max usage",
-    "windows_fit": "native",
+    "why": "First-party and included in plan usage; managed Code Review is Team/Enterprise only",
+    "cost": "paid",
+    "free_limits": "Requires a Claude plan (Pro/Max plans/Team/Enterprise) or API billing; counts against plan usage",
     "maintained": "core",
     "install": "built-in: /code-review [level] [PR]",
     "license": "proprietary",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://code.claude.com/docs/en/code-review.md",
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
+  },
+  "best_free": {
+    "name": "pr-review-toolkit (official plugin)",
+    "url": "https://github.com/anthropics/claude-plugins-official",
+    "what": "Specialised review subagents (comments, tests, errors, types)",
+    "why": "Free plugin that runs local multi-agent PR review",
+    "cost": "free",
+    "free_limits": "plugin free; counts against Claude plan usage",
+    "platforms": "macOS|Windows|Linux",
+    "maintained": "pushed 2026-10-28",
+    "install": "/plugin install pr-review-toolkit@claude-plugins-official",
+    "license": "per-plugin (mostly Apache-2.0/MIT)",
+    "commercial_ok": "yes",
+    "source_url": "https://github.com/anthropics/claude-plugins-official",
     "checked": "2026-10-28"
   },
   "alts": [
@@ -27,16 +40,15 @@
       "url": "https://code.claude.com/docs/en/ultrareview.md",
       "what": "Cloud multi-agent review with verification",
       "why": "Pre-release deep pass",
-      "cost": "owned",
-      "free_limits": "requires claude.ai sign-in; allowance not checked",
-      "windows_fit": "web",
+      "cost": "paid",
+      "free_limits": "Requires a Claude plan (Pro/Max plans/Team/Enterprise) or API billing; counts against plan usage",
       "maintained": "core",
       "install": "/ultrareview",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://code.claude.com/docs/en/code-review.md",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     },
     {
       "name": "CodeRabbit",
@@ -45,14 +57,13 @@
       "why": "Free forever on public repos - good for open-core repos",
       "cost": "freemium",
       "free_limits": "public repos free; Essentials $24-30/dev/mo for private",
-      "windows_fit": "web",
       "maintained": "live",
       "install": "GitHub app",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.coderabbit.ai/pricing",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     }
   ],
   "candidates": [
@@ -81,13 +92,15 @@
       "verdict": "paid, second AI vendor"
     }
   ],
-  "decision": "Local /code-review is free on Max and first-party. Add CodeRabbit only on public open-core repos where outside contributors send PRs.",
+  "decision": "Local /code-review is first-party and runs on any plan, with managed Code Review limited to Team/Enterprise. Add CodeRabbit on public open-core repos where outside contributors send PRs.",
   "note": "",
-  "details": "",
+  "details": "No free option for the underlying model use: all Claude review options consume Claude plan or API usage; the plugin itself is free.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "First-party; not re-verified beyond doc existence.",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
     "url": "https://code.claude.com/docs/en/code-review.md"
   },
-  "better_pick": null
+  "better": []
 }

@@ -1,0 +1,88 @@
+{
+  "slug": "contract-templates-msa-sow-nda-dpa-baa-ai-addendum",
+  "slot": "Contract templates (MSA, SOW, NDA, DPA, BAA, AI addendum)",
+  "track": "legal",
+  "stage": "run",
+  "order": 10003,
+  "pick": {
+    "name": "Common Paper standard agreements",
+    "url": "https://commonpaper.com/standards/",
+    "what": "Free Cloud Service Agreement, PSA, mutual NDA, DPA, BAA, AI Addendum, SLA, order form/SOW",
+    "why": "Widest free set incl. BAA and AI Addendum; CC BY 4.0 so commercial use is fine; cover-page format buyers recognise",
+    "cost": "free",
+    "free_limits": "Free; keep licence notice",
+    "platforms": "web",
+    "maintained": "page live 2026",
+    "install": "web",
+    "license": "CC BY 4.0",
+    "commercial_ok": "yes",
+    "source_url": "https://commonpaper.com/standards/",
+    "checked": "2026-10-28"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "Bonterms",
+      "url": "https://bonterms.com/",
+      "what": "Standard Cloud Terms, PSA, NDA, DPA, BAA",
+      "why": "Committee-drafted alternative some enterprise buyers already know",
+      "cost": "free",
+      "free_limits": "Free download centre",
+      "platforms": "web",
+      "maintained": "page dated 2026-10-23",
+      "install": "web",
+      "license": "unverified",
+      "commercial_ok": "unclear",
+      "source_url": "https://bonterms.com/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Local-law templates drafted by counsel",
+      "url": "https://commonpaper.com/standards/",
+      "what": "Lawyer adapts governing law, arbitration and formalities",
+      "why": "Needed when your counterparty insists on local law (e.g. India stamp duty, EU consumer rules)",
+      "cost": "paid",
+      "free_limits": "n/a",
+      "platforms": "n/a",
+      "maintained": "n/a",
+      "install": "n/a",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "source_url": "https://commonpaper.com/standards/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Common Paper",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Bonterms",
+      "verdict": "Equal quality; use if the buyer proposes it"
+    },
+    {
+      "name": "oneNDA",
+      "verdict": "NDA-only standard (not checked)"
+    },
+    {
+      "name": "YC/Clerky docs",
+      "verdict": "Financing docs, not sales contracts"
+    },
+    {
+      "name": "Paid template shops",
+      "verdict": "Generic; lawyer review still needed"
+    }
+  ],
+  "decision": "Use Common Paper for SaaS (CSA + order form), services (PSA + SOW), NDA, DPA, BAA and AI Addendum. Set governing law deliberately and have a lawyer review the cover-page defaults once. Standard US-style terms may ignore local formalities: verify with a professional.",
+  "note": "",
+  "details": "",
+  "region_notes": {},
+  "os_notes": {},
+  "verify": {
+    "verdict": "ok",
+    "note": "Shallow: CC BY 4.0 standards, commercial OK.",
+    "url": "https://commonpaper.com/standards/"
+  },
+  "better": []
+}

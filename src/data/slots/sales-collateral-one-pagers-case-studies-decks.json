@@ -3,54 +3,73 @@
   "slot": "Sales collateral (one-pagers, case studies, decks)",
   "track": "sales",
   "stage": "sell",
-  "region": "Global",
-  "order": 7207,
+  "order": 7034,
   "pick": {
     "name": "Canva Free",
-    "url": "https://www.krea.ai/blog/is-canva-free-what-the-free-plan-and-canva-ai-include-in-2026",
-    "what": "Template-driven design for one-pagers, case studies, decks",
-    "why": "1.6M+ templates, PDF export, commercial use allowed per Canva licence (per secondary source); Claude writes the copy",
+    "url": "https://www.canva.com/pricing/",
+    "what": "Template-driven design for one-pagers and decks",
+    "why": "Huge template library, PDF export, commercial use per Canva licence (secondary)",
     "cost": "freemium",
-    "free_limits": "Free: templates, 5 GB, 1 brand kit (3 colours), ~20 AI uses/mo; Pro ~USD 144/yr or ~Rs 4,000/yr",
-    "windows_fit": "web",
+    "free_limits": "Free: templates, 5 GB, 1 brand kit; Pro about USD 144/yr",
+    "platforms": "web",
     "maintained": "2026-09 (secondary)",
     "install": "web",
     "license": "proprietary",
     "commercial_ok": "yes",
-    "needs_company": "no",
-    "source_url": "https://www.krea.ai/blog/is-canva-free-what-the-free-plan-and-canva-ai-include-in-2026",
+    "source_url": "https://www.canva.com/pricing/",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "LibreOffice Impress",
+    "url": "https://www.libreoffice.org/discover/impress/",
+    "what": "Free desktop presentation editor, exports PDF",
+    "why": "Free, open-source (MPL-2.0) offline editor that reads and writes PPTX; no per-seat cost and no commercial restriction",
+    "cost": "free",
+    "free_limits": "Free",
+    "platforms": "macOS/Windows/Linux",
+    "maintained": "26.8.1 (latest stable, Oct 2026)",
+    "install": "download from libreoffice.org",
+    "license": "MPL-2.0",
+    "commercial_ok": "yes",
+    "source_url": "https://www.libreoffice.org/discover/impress/",
     "checked": "2026-10-28"
   },
   "alts": [
     {
       "name": "Claude document skills (pptx/docx/pdf)",
       "url": "https://github.com/anthropics/skills",
-      "what": "Claude generates editable PPTX/DOCX/PDF directly",
-      "why": "Already paid (Max); best for data-heavy case studies and proposals generated from CRM notes",
-      "cost": "owned",
-      "free_limits": "Included with Claude",
-      "windows_fit": "native",
+      "what": "Claude generates editable PPTX/DOCX/PDF",
+      "why": "Best for data-heavy documents; requires a paid Claude plan or API",
+      "cost": "paid",
+      "free_limits": "Requires Claude paid plan",
+      "platforms": "macOS/Windows/Linux",
       "maintained": "2026",
-      "install": "built in",
+      "install": "built into Claude",
       "license": "source-available (document skills)",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/anthropics/skills",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Google Slides",
+      "url": "https://workspace.google.com/products/slides/",
+      "source_url": "https://workspace.google.com/products/slides/",
+      "what": "free, collaborative, PPTX import/export",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
       "name": "Canva Free",
-      "verdict": "PICK for designed collateral"
+      "verdict": "PICK"
     },
     {
       "name": "Claude document skills",
-      "verdict": "Use for text-heavy docs and fast drafts"
+      "verdict": "Text-heavy docs"
     },
     {
       "name": "Gamma",
-      "verdict": "AI decks; free 400 one-time credits, watermark (secondary; site blocked fetch)"
+      "verdict": "AI decks; site blocked fetch"
     },
     {
       "name": "Google Slides",
@@ -58,16 +77,18 @@
     },
     {
       "name": "Figma",
-      "verdict": "Overkill for collateral"
+      "verdict": "Overkill"
     }
   ],
-  "decision": "Claude drafts the copy (one-pager, case study using problem / solution / numbers / quote, security overview), and Canva templates make it look professional. Use Claude's pptx skill when a buyer wants an editable deck.",
+  "decision": "Draft copy with an LLM (problem, solution, numbers, quote), then use Canva templates for polish; use generated PPTX when a buyer wants an editable deck.",
   "note": "",
-  "details": "Canva's official licence page blocked fetch (403); commercial-use statement is secondary (unverified).",
+  "details": "Canva licence page blocked fetch; Google Slides page not opened (unverified).",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "doubt",
-    "note": "Source is a third-party blog (krea.ai), and Canva's licence page is 403. Commercial use on Canva Free is widely allowed but stays unverified here. Low stakes.",
-    "url": "https://www.krea.ai/blog/is-canva-free-what-the-free-plan-and-canva-ai-include-in-2026"
+    "verdict": "fixed",
+    "note": "Pick url/source_url are a third-party blog (krea.ai); use canva.com. Canva licence page blocked the fetcher earlier; free-content commercial use remains secondary-sourced.",
+    "url": "https://www.canva.com/pricing/"
   },
-  "better_pick": null
+  "better": []
 }

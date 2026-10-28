@@ -3,55 +3,66 @@
   "slot": "sandbox / permissions",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2021,
   "pick": {
-    "name": "Auto mode + allow/deny rules on Windows; WSL2 /sandbox for untrusted repos",
-    "url": "https://code.claude.com/docs/en/permission-modes.md",
-    "what": "Classifier-gated autonomy natively; bubblewrap sandbox only in WSL2",
-    "why": "Native Windows has no Bash sandbox, so bypass mode runs every command unisolated, which matters most on a company-managed laptop",
-    "cost": "owned",
-    "free_limits": "All plans; native Windows needs Claude Code v2.1.233+; auto is the default starting mode from v2.1.283",
-    "windows_fit": "native + wsl",
-    "maintained": "core",
-    "install": "~/.claude/settings.json: \"defaultMode\": \"auto\" (user settings only) + deny rules via /permissions; in WSL: sudo apt-get install bubblewrap socat, then /sandbox",
+    "name": "Auto mode + allow/deny rules, plus the Bash sandbox (macOS, Linux, WSL2)",
+    "url": "https://code.claude.com/docs/en/sandboxing.md",
+    "what": "Classifier-gated autonomy with explicit rules; OS-level sandbox for Bash",
+    "why": "First-party; sandbox gives filesystem/network isolation that rules alone cannot",
+    "cost": "paid",
+    "free_limits": "Requires a Claude plan or API billing",
+    "platforms": "macOS|Windows (sandbox only inside WSL2)|Linux",
+    "maintained": "current docs",
+    "install": "/permissions; /sandbox",
+    "license": "n/a (Claude Code)",
+    "commercial_ok": "yes",
+    "source_url": "https://code.claude.com/docs/en/sandboxing.md",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Dev containers",
+    "url": "https://code.claude.com/docs/en/sandbox-environments.md",
+    "what": "Run Claude inside a container",
+    "why": "Strongest isolation for client code",
+    "cost": "free",
+    "free_limits": "n/a",
+    "maintained": "doc current",
+    "install": "see doc",
     "license": "n/a",
     "commercial_ok": "yes",
-    "needs_company": "no",
-    "source_url": "https://code.claude.com/docs/en/setup",
-    "checked": "2026-10-28"
+    "source_url": "https://code.claude.com/docs/en/sandbox-environments.md",
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
   "alts": [
     {
-      "name": "Dev containers",
-      "url": "https://code.claude.com/docs/en/sandbox-environments.md",
-      "what": "Run Claude inside a container",
-      "why": "Strongest isolation for client code",
-      "cost": "free",
-      "free_limits": "n/a",
-      "windows_fit": "wsl",
-      "maintained": "doc current",
-      "install": "see doc",
-      "license": "n/a",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://code.claude.com/docs/en/sandbox-environments.md",
-      "checked": "2026-10-28"
-    },
-    {
-      "name": "Bypass permissions",
+      "name": "Bypass permissions (current)",
       "url": "https://code.claude.com/docs/en/permission-modes.md",
       "what": "No prompts",
-      "why": "Fastest but unsandboxed on Windows",
-      "cost": "owned",
-      "free_limits": "n/a",
-      "windows_fit": "native",
+      "why": "Fastest but unsandboxed; reserve for throwaway environments",
+      "cost": "paid",
+      "free_limits": "Requires a Claude plan (Pro/Max plans/Team/Enterprise) or API billing; counts against plan usage",
       "maintained": "core",
       "install": "current",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://code.claude.com/docs/en/permission-modes.md",
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
+    },
+    {
+      "name": "Anthropic sandbox-runtime",
+      "url": "https://code.claude.com/docs/en/sandboxing.md",
+      "what": "Optional npm package adding seccomp Unix-socket blocking and standalone sandboxing",
+      "why": "First-party OSS building block",
+      "cost": "free",
+      "free_limits": "fully free",
+      "platforms": "macOS|Linux",
+      "maintained": "current docs",
+      "install": "npm install -g @anthropic-ai/sandbox-runtime",
+      "license": "per package (unverified)",
+      "commercial_ok": "yes",
+      "source_url": "https://code.claude.com/docs/en/sandboxing.md",
       "checked": "2026-10-28"
     }
   ],
@@ -61,25 +72,31 @@
       "verdict": "pick"
     },
     {
-      "name": "WSL2 sandbox",
-      "verdict": "untrusted repos"
+      "name": "Bash sandbox",
+      "verdict": "macOS, Linux, WSL2; untrusted repos"
     },
     {
       "name": "Dev containers",
-      "verdict": "client/healthcare code"
+      "verdict": "regulated or client code, any OS"
     },
     {
       "name": "Bypass",
-      "verdict": "riskiest on a company machine"
+      "verdict": "riskiest; only in disposable VMs"
     }
   ],
-  "decision": "Swap bypass for auto mode with explicit deny rules; use the WSL2 sandbox or a dev container for unknown repos and healthcare client code.",
+  "decision": "Use auto mode with explicit deny rules instead of bypass permissions. For unknown repos turn on the Bash sandbox (/sandbox) where available, or use a dev container.",
   "note": "",
-  "details": "",
-  "verify": {
-    "verdict": "fixed",
-    "note": "Auto mode exists as described: a separate classifier reviews actions; available on ALL plans (not a Max feature), needs v2.1.233+ on native Windows, and is the built-in default mode from v2.1.283. Persist it with defaultMode 'auto' in ~/.claude/settings.json (project-level 'auto' does not take effect). Sandbox doc confirms: native Windows runs commands unsandboxed; WSL2 needs bubblewrap + socat.",
-    "url": "https://code.claude.com/docs/en/permission-modes.md"
+  "details": "Generalised: sandbox covers macOS and Linux natively, Windows only inside WSL2. Auto mode and the sandbox need Claude Code (a paid plan or API billing); dev containers are the free isolation option.",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "Bash sandbox uses built-in Seatbelt; nothing to install; run /sandbox.",
+    "Windows": "Native Windows is not sandboxed (commands run unsandboxed). Run Claude Code inside WSL2 (not WSL1) to get /sandbox; use deny rules or a dev container natively.",
+    "Linux": "Sandbox needs bubblewrap and socat (sudo apt-get install bubblewrap socat); on Ubuntu 24.04+ AppArmor may block user namespaces and need a bwrap profile."
   },
-  "better_pick": null
+  "verify": {
+    "verdict": "ok",
+    "note": "Verified: sandbox runs on macOS (Seatbelt), Linux and WSL2 (bubblewrap + socat); WSL1 unsupported; native Windows runs commands unsandboxed. os_notes accurate.",
+    "url": "https://code.claude.com/docs/en/sandboxing"
+  },
+  "better": []
 }

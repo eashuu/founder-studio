@@ -1,9 +1,8 @@
 {
   "slug": "git-client",
   "slot": "git client",
-  "track": "windows-dev",
+  "track": "dev-env",
   "stage": "build",
-  "region": "Global",
   "order": 3042,
   "pick": {
     "name": "lazygit + delta",
@@ -12,15 +11,15 @@
     "why": "Fastest way to review Claude's per-worktree changes; free",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native",
     "maintained": "lazygit v0.66.2 (2026-10-16); delta 0.20.1 (2026-10-04)",
-    "install": "scoop bucket add extras; scoop install lazygit delta",
+    "install": "brew install lazygit git-delta | scoop install lazygit delta",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/jesseduffield/lazygit",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "GitHub Desktop",
@@ -29,14 +28,13 @@
       "why": "Keep as the one GUI",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
-      "maintained": "3.6.7 (14 Oct 2026, latest stable)",
-      "install": "installed",
+      "maintained": "3.6.10 (2026-10-26)",
+      "install": "download installer from vendor site",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/desktop/desktop",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows"
     },
     {
       "name": "Fork",
@@ -45,14 +43,13 @@
       "why": "Best paid GUI",
       "cost": "paid",
       "free_limits": "$59.99 one-time, free eval",
-      "windows_fit": "native",
       "maintained": "2.21.1",
-      "install": "installer",
+      "install": "download installer from vendor site",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://git-fork.com",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows"
     }
   ],
   "candidates": [
@@ -77,21 +74,23 @@
       "verdict": "paid"
     },
     {
-      "name": "TortoiseGit",
-      "verdict": "third GUI - remove"
-    },
-    {
       "name": "gitui",
       "verdict": "smaller"
     }
   ],
-  "decision": "Orca already does diff review; lazygit fills terminal gaps. Remove TortoiseGit.",
+  "decision": "lazygit with delta gives fast keyboard git with readable diffs everywhere; use GitHub Desktop or Fork for a GUI.",
   "note": "",
   "details": "",
-  "verify": {
-    "verdict": "fixed",
-    "note": "Versions confirmed. lazygit is in the scoop Extras bucket, not Main (raw Main manifest 404, Extras 200).",
-    "url": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/lazygit.json"
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "brew install lazygit git-delta; Fork and GitHub Desktop are native.",
+    "Windows": "scoop install lazygit delta; GitHub Desktop and Fork are native.",
+    "Linux": "Distro/brew packages; no official GitHub Desktop or Fork build."
   },
-  "better_pick": null
+  "verify": {
+    "verdict": "ok",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://github.com/jesseduffield/lazygit"
+  },
+  "better": []
 }

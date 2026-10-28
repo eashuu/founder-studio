@@ -1,0 +1,92 @@
+{
+  "slug": "linux-environment-on-windows-wsl2",
+  "slot": "Linux environment on Windows (WSL2)",
+  "track": "dev-env",
+  "stage": "build",
+  "order": 3036,
+  "pick": {
+    "name": "Ubuntu 24.04 LTS",
+    "url": "https://learn.microsoft.com/windows/wsl/",
+    "what": "LTS distro for sandboxed Claude sessions, Docker Engine, Linux builds",
+    "why": "Best tool/doc coverage; Docker CE and bubblewrap documented",
+    "cost": "free",
+    "free_limits": "n/a",
+    "maintained": "supported LTS",
+    "install": "wsl --install -d Ubuntu-24.04",
+    "license": "various OSS",
+    "commercial_ok": "yes",
+    "source_url": "https://learn.microsoft.com/windows/wsl/",
+    "checked": "2026-10-28",
+    "platforms": "Windows"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "Ubuntu 26.04 LTS",
+      "url": "https://lists.ubuntu.com/archives/ubuntu-announce/2026-April/000323.html",
+      "what": "Newer LTS",
+      "why": "Switch after its .1 point release",
+      "cost": "free",
+      "free_limits": "n/a",
+      "maintained": "released 2026-04-23",
+      "install": "wsl --install ubuntu",
+      "license": "various OSS",
+      "commercial_ok": "yes",
+      "source_url": "https://lists.ubuntu.com/archives/ubuntu-announce/2026-April/000323.html",
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
+    },
+    {
+      "name": "Debian",
+      "url": "https://learn.microsoft.com/windows/wsl/",
+      "what": "Lean distro",
+      "why": "Smaller",
+      "cost": "free",
+      "free_limits": "n/a",
+      "maintained": "supported",
+      "install": "wsl --install Debian",
+      "license": "various OSS",
+      "commercial_ok": "yes",
+      "source_url": "https://learn.microsoft.com/windows/wsl/",
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Ubuntu 24.04",
+      "verdict": "pick"
+    },
+    {
+      "name": "Ubuntu 26.04",
+      "verdict": "after point release"
+    },
+    {
+      "name": "Debian",
+      "verdict": "lean"
+    },
+    {
+      "name": "Fedora/Arch/openSUSE on WSL",
+      "verdict": "available; smaller guide coverage"
+    },
+    {
+      "name": "NixOS-WSL",
+      "verdict": "declarative; niche"
+    }
+  ],
+  "decision": "Windows users who want Docker Engine, the Claude Bash sandbox or Linux-first projects should install Ubuntu LTS under WSL2. 24.04 is the safest target for third-party guides; move to 26.04 once its tooling catches up.",
+  "note": "",
+  "details": "Windows-only slot kept so Windows readers can find it; platform-neutral wording.",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "Not applicable; macOS is already Unix. Use a container or Linux VM only when you need Linux.",
+    "Windows": "wsl --install -d Ubuntu-24.04 (admin PowerShell). Keep repos inside the WSL filesystem for speed.",
+    "Linux": "Not applicable; you are on Linux."
+  },
+  "verify": {
+    "verdict": "fixed",
+    "note": "Microsoft documents the -d form for a named distro.",
+    "url": "https://learn.microsoft.com/en-us/windows/wsl/install"
+  },
+  "better": []
+}

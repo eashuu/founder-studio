@@ -1,0 +1,84 @@
+{
+  "slug": "x-twitter",
+  "slot": "X / Twitter",
+  "track": "brand",
+  "stage": "sell",
+  "order": 8015,
+  "pick": {
+    "name": "X",
+    "url": "https://x.com",
+    "what": "Real-time AI/dev conversation, launches and build-in-public threads",
+    "why": "AI researchers and devtool founders still announce here first",
+    "cost": "freemium",
+    "free_limits": "Free account; Premium tiers optional and priced by country and platform (see x.com/i/premium_sign_up); X API is pay-per-use since Feb 2026",
+    "platforms": "web|iOS|Android",
+    "maintained": "SaaS",
+    "install": "web",
+    "license": "Proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://x.com/i/premium_sign_up",
+    "checked": "2026-10-28"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "Typefully",
+      "url": "https://typefully.com",
+      "what": "Thread composer + scheduler for X, LinkedIn, Threads, Bluesky, Mastodon",
+      "why": "Best writing UX for threads",
+      "cost": "freemium",
+      "free_limits": "Reported free: 10-15 posts/mo, 1 social set; Creator $99/yr",
+      "platforms": "web",
+      "maintained": "SaaS",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://opentweet.io/blog/typefully-pricing-2026",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Bluesky",
+      "url": "https://bsky.app",
+      "what": "Open-protocol alternative",
+      "why": "Open protocol, small audience",
+      "cost": "free",
+      "free_limits": "Free",
+      "platforms": "web|iOS|Android",
+      "maintained": "Active",
+      "install": "web",
+      "license": "AT Protocol (open)",
+      "commercial_ok": "yes",
+      "source_url": "https://daringfireball.net/linked/2026/08/21/bluesky-user-base-is-tiny",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "X",
+      "verdict": "PICK for AI audience"
+    },
+    {
+      "name": "Typefully",
+      "verdict": "Thread tooling"
+    },
+    {
+      "name": "Bluesky",
+      "verdict": "Small audience"
+    },
+    {
+      "name": "Threads / Mastodon",
+      "verdict": "Low signal for B2B AI"
+    }
+  ],
+  "decision": "X remains the highest-signal network for AI builders. A free account is enough; scheduling through third parties now rides X's pay-per-use API, so expect restrictions.",
+  "note": "",
+  "details": "X API moved to pay-per-use in Feb 2026; legacy free tier effectively gone.",
+  "region_notes": {},
+  "os_notes": {},
+  "verify": {
+    "verdict": "fixed",
+    "note": "Only region note is India pricing from Jul 2025 and the source is an Indian news site; prices do not materially change the decision. Remove the India note.",
+    "url": ""
+  },
+  "better": []
+}

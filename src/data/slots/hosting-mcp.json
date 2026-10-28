@@ -3,24 +3,23 @@
   "slot": "hosting MCP",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2024,
   "pick": {
     "name": "Cloudflare (official plugin)",
     "url": "https://github.com/cloudflare/mcp-server-cloudflare",
     "what": "Workers/Wrangler skills + Cloudflare MCP",
     "why": "Match the hosting track's pick",
-    "cost": "freemium",
-    "free_limits": "Cloudflare free plan",
-    "windows_fit": "native",
+    "cost": "free",
+    "free_limits": "Plugin free. Workers Free: 100,000 requests/day and 10 ms CPU per invocation; static asset requests free and unlimited; Workers Paid from $5/month",
     "maintained": "pushed 2026-10-22",
     "install": "/plugin install cloudflare@claude-plugins-official",
     "license": "Apache-2.0",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/cloudflare/mcp-server-cloudflare",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Vercel (official plugin)",
@@ -29,14 +28,13 @@
       "why": "If on Vercel (Hobby is non-commercial - verify)",
       "cost": "freemium",
       "free_limits": "Hobby non-commercial (unverified)",
-      "windows_fit": "native",
       "maintained": "listed 2026-10-28",
       "install": "/plugin install vercel@claude-plugins-official",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/anthropics/claude-plugins-official",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     },
     {
       "name": "Firebase (official plugin)",
@@ -45,14 +43,13 @@
       "why": "Android backends",
       "cost": "freemium",
       "free_limits": "Spark plan",
-      "windows_fit": "native",
       "maintained": "listed 2026-10-28",
       "install": "/plugin install firebase@claude-plugins-official",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     }
   ],
   "candidates": [
@@ -67,15 +64,25 @@
     {
       "name": "Firebase",
       "verdict": "if Firebase"
+    },
+    {
+      "name": "Netlify MCP",
+      "verdict": "comparable to Vercel; not opened"
+    },
+    {
+      "name": "Railway / Fly.io CLIs",
+      "verdict": "use via Bash; no MCP needed"
     }
   ],
   "decision": "Install only the host you deploy to; CLIs (wrangler, vercel) via Bash often suffice.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "ok",
-    "note": "cloudflare plugin present in marketplace.json.",
-    "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins"
+    "verdict": "fixed",
+    "note": "",
+    "url": "https://developers.cloudflare.com/workers/platform/pricing/"
   },
-  "better_pick": null
+  "better": []
 }

@@ -1,0 +1,110 @@
+{
+  "slug": "interview-recording-transcription",
+  "slot": "Interview recording + transcription",
+  "track": "discover",
+  "stage": "discover",
+  "order": 7,
+  "pick": {
+    "name": "Granola",
+    "url": "https://www.granola.ai/pricing",
+    "what": "Botless desktop AI meeting notes",
+    "why": "Best summaries and templates without a visible bot; audio deleted after transcription, SOC 2 Type II and DPA on all plans.",
+    "cost": "freemium",
+    "free_limits": "Basic $0: bot-free device-audio capture, 30 days of meeting history; Business $14/user/mo (unlimited history); Enterprise $35/user/mo",
+    "platforms": "macOS|Windows|iOS",
+    "maintained": "live service",
+    "install": "download from granola.ai",
+    "license": "proprietary SaaS",
+    "commercial_ok": "yes",
+    "source_url": "https://www.granola.ai/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Meetily",
+    "url": "https://github.com/Zackriya-Solutions/meeting-minutes",
+    "what": "Local botless recorder + Whisper transcription + optional local-LLM summaries",
+    "why": "Free, open source, nothing leaves the device.",
+    "cost": "free",
+    "free_limits": "Free; summaries via local Ollama or own API key",
+    "platforms": "Windows|macOS|Linux (verify)",
+    "maintained": "v0.4.1 (Sep)",
+    "install": "Download from GitHub releases",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "source_url": "https://github.com/Zackriya-Solutions/meeting-minutes",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Fathom",
+      "url": "https://fathom.ai/pricing",
+      "what": "Free unlimited recording and AI summaries",
+      "why": "Most generous free cloud plan; bot capture by default, bot-free option is a Mac beta.",
+      "cost": "freemium",
+      "free_limits": "Free forever with unlimited recordings; some AI features limited",
+      "platforms": "web|macOS|iOS",
+      "maintained": "live service",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "yes",
+      "source_url": "https://fathom.ai/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Buzz",
+      "url": "https://github.com/chidiwilliams/buzz",
+      "what": "Local Whisper transcription of files",
+      "why": "Stable offline transcriber: record anywhere, transcribe locally.",
+      "cost": "free",
+      "free_limits": "Free offline",
+      "platforms": "Windows|macOS|Linux",
+      "maintained": "v1.4.5 (Aug)",
+      "install": "Download from GitHub releases",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/chidiwilliams/buzz",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Granola",
+      "verdict": "pick: botless cloud, best notes"
+    },
+    {
+      "name": "Meetily",
+      "verdict": "best_free: local botless"
+    },
+    {
+      "name": "Fathom",
+      "verdict": "alt: free but bot by default"
+    },
+    {
+      "name": "Otter",
+      "verdict": "bot; free minutes (unverified)"
+    },
+    {
+      "name": "Buzz",
+      "verdict": "alt: offline files"
+    },
+    {
+      "name": "tl;dv / Krisp / Jamie",
+      "verdict": "not re-checked"
+    }
+  ],
+  "decision": "Botless capture avoids bots joining customer interviews; Granola is the polished choice. Choose a local tool (Meetily/Buzz) when recordings cannot leave the device or for regulated clients; for cloud tools check where data is stored and that a DPA exists. Always get consent to record.",
+  "note": "",
+  "details": "Pick changed from Meetily to Granola on overall quality; Meetily is now best_free.",
+  "region_notes": {
+    "EU": "Cloud tools: check data residency and DPA (GDPR); local tools avoid transfers.",
+    "India": "DPDP Act consent and client NDAs apply.",
+    "US": "Two-party-consent states require everyone to agree to recording."
+  },
+  "os_notes": {},
+  "verify": {
+    "verdict": "fixed",
+    "note": "The official pricing page shows 'Download for Windows' on every tier, so Windows is confirmed. Best overall holds against Fathom, Otter and tl;dv for bot-free interviews.",
+    "url": "https://www.granola.ai/pricing"
+  },
+  "better": []
+}

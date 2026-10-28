@@ -3,87 +3,80 @@
   "slot": "Meeting notes / call recording",
   "track": "sales",
   "stage": "sell",
-  "region": "Global",
-  "order": 7199,
+  "order": 7026,
   "pick": {
-    "name": "Fathom (Free)",
+    "name": "Granola",
+    "url": "https://www.granola.ai/pricing",
+    "what": "Bot-free notetaker capturing device audio",
+    "why": "No bot joins the call; suits sensitive prospects",
+    "cost": "freemium",
+    "free_limits": "Free: 30-day history; Business USD 14/mo",
+    "platforms": "desktop (Windows availability unclear)",
+    "maintained": "live page 2026-10-28",
+    "install": "web/desktop",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://www.granola.ai/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Fathom",
     "url": "https://www.fathom.ai/pricing",
     "what": "AI notetaker for Zoom, Meet and Teams",
-    "why": "Free unlimited recordings + transcripts + instant summaries across all three platforms your buyers use",
+    "why": "Free unlimited recordings, transcripts and summaries",
     "cost": "freemium",
-    "free_limits": "Free: unlimited recordings/transcripts, instant summaries; Premium USD 16/mo annual",
-    "windows_fit": "web (+ desktop)",
+    "free_limits": "Free: unlimited recordings; Premium USD 16/mo annual",
+    "platforms": "web + desktop",
     "maintained": "live page 2026-10-28",
     "install": "web",
     "license": "proprietary",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://www.fathom.ai/pricing",
     "checked": "2026-10-28"
   },
   "alts": [
     {
-      "name": "Granola",
-      "url": "https://www.granola.ai/pricing",
-      "what": "Bot-free notetaker that captures device audio",
-      "why": "No bot joins the call, which suits sensitive/healthcare prospects; free keeps 30 days of history; Business USD 14/mo",
-      "cost": "freemium",
-      "free_limits": "Free: 30-day meeting history",
-      "windows_fit": "unclear (Windows not listed on pricing page)",
-      "maintained": "live page 2026-10-28",
-      "install": "web/desktop",
-      "license": "proprietary",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://www.granola.ai/pricing",
-      "checked": "2026-10-28"
-    },
-    {
-      "name": "Gemini 'Take notes for me' in Meet (Google AI Pro)",
-      "url": "https://alternativeto.net/news/2026/7/gemini-can-now-take-notes-in-google-meet-for-ai-pro-and-ultra-users/",
-      "what": "Native Meet note-taking",
-      "why": "Already paid until Jan 2028; Meet-only",
-      "cost": "owned",
-      "free_limits": "Google AI Pro/Ultra; Meet web/mobile",
-      "windows_fit": "web",
-      "maintained": "launched 2026-06",
-      "install": "web",
-      "license": "proprietary",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://alternativeto.net/news/2026/7/gemini-can-now-take-notes-in-google-meet-for-ai-pro-and-ultra-users/",
+      "name": "Otter.ai",
+      "url": "https://otter.ai/pricing",
+      "source_url": "https://otter.ai/pricing",
+      "what": "Mature transcription with a free Basic plan (300 min/user/mo, 30 min per conversation); Pro USD 8.33/user/mo annual or USD 16.99 monthly",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Fathom Free",
+      "name": "Fathom",
       "verdict": "PICK"
     },
     {
       "name": "Granola",
-      "verdict": "Pick for bot-free capture"
+      "verdict": "Bot-free"
     },
     {
       "name": "Gemini in Meet",
-      "verdict": "Use for calls you host on Meet"
+      "verdict": "Meet-only"
     },
     {
       "name": "tl;dv",
-      "verdict": "Free tier limits not shown; Pro EUR 18/mo"
+      "verdict": "Limits not shown"
     },
     {
       "name": "Fireflies / Otter",
-      "verdict": "Tighter free limits (not checked)"
+      "verdict": "Not checked"
     }
   ],
-  "decision": "Fathom covers Zoom/Teams/Meet for free. Use Gemini when you host on Meet, and Granola when a prospect objects to bots. Always announce recording, and never record PHI-bearing calls without a BAA.",
-  "note": "Consolidated: same pick as the Productivity track. Use Meetily (local, botless) for healthcare or PHI calls.",
-  "details": "",
+  "decision": "Fathom covers the three main meeting platforms for free. Use Granola when a prospect objects to bots. Always announce recording, and never record PHI-bearing calls without a BAA.",
+  "note": "One answer across the site: Granola for notes without a bot joining the call, Fathom's free plan when budget is zero. For calls with health or other regulated data, record only with consent, using a local tool.",
+  "details": "best_free set to null: Fathom's free plan is the best free option. Granola moved to alts (bot-free, free plan keeps 30 days of history; Business USD 14/user/mo).",
+  "region_notes": {
+    "EU": "Recording needs notice and a lawful basis under GDPR.",
+    "US": "Some states require all-party consent."
+  },
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Fathom Free confirmed: unlimited recordings, transcription, storage and instant AI summaries (no stated cap); Premium USD 20 monthly / USD 16 annual. Granola alt confirmed (30-day history, Business USD 14). Granola Windows app still unconfirmed.",
+    "note": "Fathom Free verified: unlimited recordings + transcriptions, instant AI summaries (some AI features 'limited use'); Premium USD 20 monthly / USD 16 annual, Team USD 15 annual (2-user min), Business USD 25 annual.",
     "url": "https://www.fathom.ai/pricing"
   },
-  "better_pick": null
+  "better": []
 }

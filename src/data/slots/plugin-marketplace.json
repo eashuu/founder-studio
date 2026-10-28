@@ -3,7 +3,6 @@
   "slot": "plugin marketplace",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2000,
   "pick": {
     "name": "claude-plugins-official (Anthropic)",
@@ -12,15 +11,15 @@
     "why": "Only marketplace that is auto-registered, auto-updated and reviewed by Anthropic; vendor plugins are the vendor's own servers",
     "cost": "free",
     "free_limits": "plugins free; some vendor services metered",
-    "windows_fit": "native",
     "maintained": "repo pushed 2026-10-28",
-    "install": "already registered; /plugin",
+    "install": "pre-registered; /plugin",
     "license": "per-plugin (mostly Apache-2.0/MIT)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://code.claude.com/docs/en/plugins/anthropic-marketplaces.md",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "claude-plugins-community",
@@ -29,14 +28,13 @@
       "why": "Commit pinning means what you reviewed is what runs",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "pushed 2026-10-28",
       "install": "/plugin marketplace add anthropics/claude-plugins-community",
       "license": "per-plugin",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://code.claude.com/docs/en/plugins/security.md",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     },
     {
       "name": "claude.com/marketplace web catalog",
@@ -45,14 +43,13 @@
       "why": "Compare before installing",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "web",
       "maintained": "live site",
       "install": "web",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://code.claude.com/docs/en/plugins/anthropic-marketplaces.md",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     }
   ],
   "candidates": [
@@ -76,10 +73,12 @@
   "decision": "Official marketplace is the default source; everything else is third-party code running with your user rights. Add a third-party marketplace only for a specific plugin you have read.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "marketplace.json lists 315 plugins incl. superpowers, exa, context7, claude-security, LSPs, sentry, cloudflare, stripe; razorpay is NOT in it (A already says remote MCP per README).",
-    "url": "https://raw.githubusercontent.com/anthropics/claude-plugins-official/main/.claude-plugin/marketplace.json"
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://code.claude.com/docs/en/plugins/anthropic-marketplaces.md"
   },
-  "better_pick": null
+  "better": []
 }

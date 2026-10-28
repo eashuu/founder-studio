@@ -11,24 +11,24 @@ const list = slotsIn(t.key);
 const prev = meta.tracks[(i - 1 + meta.tracks.length) % meta.tracks.length];
 const next = meta.tracks[(i + 1) % meta.tracks.length];
 const costs = ['free', 'owned', 'freemium', 'paid'].filter((c) => list.some((s) => costKey(s.pick.cost) === c));
-const regions = [...new Set(list.map((s) => s.region))];
+
 const verified = list.filter((s) => ['ok', 'fixed'].includes(s.verify?.verdict)).length;
 ---
 <Brutal title={t.name} description={t.blurb}>
   <div class="wrap page">
     <div class="spec-top cap">
       <span><a href="/tracks/" data-scramble>Tracks</a><span class="sl">/</span><a href={`/#${t.stage}`} data-scramble>{stage(t.stage).name}</a><span class="sl">/</span>T{String(i + 1).padStart(2, '0')}</span>
-      <span>{list.length} slots<span class="sl">/</span>{verified} verified{t.region !== 'Global' && <><span class="sl">/</span>Region {t.region}</>}</span>
+      <span>{list.length} slots<span class="sl">/</span>{verified} verified<span class="sl">/</span>{list.filter((s) => s.best_free || s.pick.cost === 'free').length} with a free option</span>
     </div>
     <header class="ph">
       <h1 class="display">{t.name}</h1>
-      <div><p>{t.blurb}</p>{t.region !== 'Global' && <span class="cap">Researched for India-based founders who sell globally<span class="sl">/</span>Verify tax and legal with a professional</span>}</div>
+      <div><p>{t.blurb}</p>{['money', 'legal'].includes(t.key) && <span class="cap">Global picks with country notes<span class="sl">/</span>Verify tax and legal with a professional</span>}</div>
     </header>
 
     <div class="filters" data-filters>
-      <div class="fgroup"><span class="cap">Cost</span>{costs.map((c) => <button class="chip" type="button" data-f="cost" data-v={c} aria-pressed="false">{c}</button>)}</div>
+      <div class="fgroup"><span class="cap">Best-pick cost</span>{costs.map((c) => <button class="chip" type="button" data-f="cost" data-v={c} aria-pressed="false">{c}</button>)}</div>
       <div class="fgroup"><span class="cap">Check</span><button class="chip" type="button" data-f="verdict" data-v="verified" aria-pressed="false">Verified</button><button class="chip" type="button" data-f="verdict" data-v="doubt" aria-pressed="false">Doubt</button></div>
-      {regions.length > 1 && <div class="fgroup"><span class="cap">Region</span>{regions.map((r) => <button class="chip" type="button" data-f="region" data-v={r} aria-pressed="false">{r}</button>)}</div>}
+      <div class="fgroup"><span class="cap">Free option</span><button class="chip" type="button" data-f="free" data-v="yes" aria-pressed="false">Has one</button></div>
       <div class="fgroup"><span class="cap">View</span><button class="chip" type="button" data-view="grid" aria-pressed="true">Grid</button><button class="chip" type="button" data-view="list" aria-pressed="false">List</button></div>
       <span class="cap shown" data-shown>{list.length} of {list.length}</span>
     </div>
@@ -46,7 +46,7 @@ const verified = list.filter((s) => ['ok', 'fixed'].includes(s.verify?.verdict))
     const bar = document.querySelector('[data-filters]')!;
     const grid = document.querySelector('[data-archive]')!;
     const cards = [...grid.querySelectorAll<HTMLElement>('.card')];
-    const on: Record<string, Set<string>> = { cost: new Set(), verdict: new Set(), region: new Set() };
+    const on: Record<string, Set<string>> = { cost: new Set(), verdict: new Set(), free: new Set() };
     let view = 'grid';
     try { view = localStorage.getItem('fs-view') || 'grid'; } catch {}
     const apply = () => {

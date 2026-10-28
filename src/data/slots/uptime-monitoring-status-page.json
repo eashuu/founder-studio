@@ -3,8 +3,7 @@
   "slot": "Uptime monitoring + status page",
   "track": "ship",
   "stage": "ship",
-  "region": "Global",
-  "order": 6112,
+  "order": 6011,
   "pick": {
     "name": "UptimeRobot Free",
     "url": "https://uptimerobot.com/pricing/",
@@ -12,15 +11,15 @@
     "why": "Pricing page explicitly says free is 'Good for personal and commercial projects'",
     "cost": "freemium",
     "free_limits": "50 monitors, 5-min interval, 1 basic status page, email alerts (SMS/voice credits extra), 5 integrations",
-    "windows_fit": "web",
+    "platforms": "web",
     "maintained": "active",
     "install": "web",
     "license": "service",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://uptimerobot.com/pricing/",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Uptime Kuma (self-host)",
@@ -29,12 +28,11 @@
       "why": "Unlimited, 20-second checks, on a box that is NOT your prod",
       "cost": "free",
       "free_limits": "Self-host",
-      "windows_fit": "Docker on VM; Windows native possible",
+      "platforms": "Linux (VM); web console",
       "maintained": "2.5.8 released 2026-10-27",
       "install": "docker run -d -p 3001:3001 louislam/uptime-kuma:2",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/louislam/uptime-kuma",
       "checked": "2026-10-28"
     },
@@ -45,12 +43,11 @@
       "why": "Nicer status pages/on-call",
       "cost": "freemium",
       "free_limits": "10 monitors, 1 status page, 3 GB logs (3-day), 100k exceptions; labelled 'Free for personal projects'",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "active",
       "install": "web",
       "license": "service",
       "commercial_ok": "unclear",
-      "needs_company": "no",
       "source_url": "https://betterstack.com/pricing",
       "checked": "2026-10-28"
     }
@@ -84,10 +81,12 @@
   "decision": "UptimeRobot is the only hosted option whose page explicitly allows commercial use on free. Run Uptime Kuma later if you need faster checks or more status pages.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "UptimeRobot Free: 50 monitors, 5-min checks, 1 basic status page, 5 integrations, 'Good for personal and commercial projects'. Better Stack alt: 'Free for personal projects', 10 monitors, 3 GB logs/3 days, 100k exceptions. Both confirmed.",
+    "note": "Checked against primary sources; wording made neutral during verification.",
     "url": "https://uptimerobot.com/pricing/"
   },
-  "better_pick": null
+  "better": []
 }

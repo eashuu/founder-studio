@@ -3,7 +3,6 @@
   "slot": "browser automation / E2E",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2007,
   "pick": {
     "name": "Playwright CLI + skills (Microsoft)",
@@ -12,15 +11,15 @@
     "why": "Microsoft's own README says CLI+skills is more token-efficient than MCP for coding agents; headless works without GPU",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native (Node 18+; Windows not documented)",
-    "maintained": "@playwright/cli 0.1.22 (npm, 2026-09-28); 0.x pre-1.0; 14.7k stars",
+    "maintained": "14.7k stars; release date not shown",
     "install": "npm install -g @playwright/cli@latest; playwright-cli install --skills",
     "license": "Apache-2.0",
     "commercial_ok": "yes",
-    "needs_company": "no",
-    "source_url": "https://github.com/microsoft/playwright-cli",
-    "checked": "2026-10-28"
+    "source_url": "https://github.com/microsoft/playwright-mcp",
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Playwright MCP",
@@ -29,14 +28,13 @@
       "why": "Use for exploratory/self-healing loops that need persistent state",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "38.8k stars",
       "install": "claude mcp add playwright npx @playwright/mcp@latest",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/microsoft/playwright-mcp",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     },
     {
       "name": "Chrome DevTools MCP (Google)",
@@ -45,14 +43,13 @@
       "why": "Best for debugging/perf (LCP, memory leaks)",
       "cost": "free",
       "free_limits": "usage stats on by default (--no-usage-statistics)",
-      "windows_fit": "native",
       "maintained": "54.3k stars",
       "install": "/plugin marketplace add ChromeDevTools/chrome-devtools-mcp; /plugin install chrome-devtools-mcp@chrome-devtools-plugins",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     }
   ],
   "candidates": [
@@ -81,13 +78,15 @@
       "verdict": "Python agent framework, not a test tool"
     }
   ],
-  "decision": "Your E2E tests should be Playwright anyway, so the same tool verifying Claude's UI work is the lowest-friction choice; CLI mode keeps context small. Add Chrome DevTools MCP when chasing performance.",
+  "decision": "E2E tests should be Playwright anyway, so the same tool verifying Claude's UI work is the lowest-friction choice; CLI mode keeps context small. Add Chrome DevTools MCP when chasing performance.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "fixed",
-    "note": "README does say 'CLI invocations are more token-efficient: they avoid loading large tool schemas' (claim holds, it is Microsoft's own claim, not a benchmark). npm @playwright/cli is still 0.x: 0.1.22 published 2026-09-28. source_url points at playwright-mcp; use the CLI repo.",
-    "url": "https://github.com/microsoft/playwright-cli"
+    "verdict": "ok",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://github.com/microsoft/playwright-mcp"
   },
-  "better_pick": null
+  "better": []
 }

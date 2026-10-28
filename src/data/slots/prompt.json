@@ -1,56 +1,53 @@
 {
   "slug": "prompt",
   "slot": "prompt",
-  "track": "windows-dev",
+  "track": "dev-env",
   "stage": "build",
-  "region": "Global",
   "order": 3035,
   "pick": {
     "name": "Starship",
     "url": "https://github.com/starship/starship",
     "what": "Cross-shell prompt",
-    "why": "One TOML config for pwsh, Git Bash and WSL",
+    "why": "One binary across shells and OSes",
     "cost": "free",
-    "free_limits": "n/a",
-    "windows_fit": "native",
+    "free_limits": "fully free",
+    "platforms": "macOS|Windows|Linux",
     "maintained": "v1.27.0 (2026-10-17)",
-    "install": "scoop install starship",
+    "install": "brew install starship | scoop install starship | curl -sS https://starship.rs/install.sh | sh",
     "license": "ISC",
     "commercial_ok": "yes",
-    "needs_company": "no",
-    "source_url": "https://github.com/starship/starship/releases",
+    "source_url": "https://github.com/starship/starship",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Oh My Posh",
       "url": "https://github.com/JanDeDobbeleer/oh-my-posh",
-      "what": "Theme-rich prompt",
-      "why": "Better PowerShell theming",
+      "what": "Prompt engine, PowerShell-first",
+      "why": "Rich themes",
       "cost": "free",
-      "free_limits": "n/a",
-      "windows_fit": "native",
+      "free_limits": "fully free",
+      "platforms": "macOS|Windows|Linux",
       "maintained": "v31.9.1 (2026-10-20)",
-      "install": "winget install JanDeDobbeleer.OhMyPosh",
+      "install": "brew install oh-my-posh | winget install JanDeDobbeleer.OhMyPosh",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/JanDeDobbeleer/oh-my-posh",
       "checked": "2026-10-28"
     },
     {
       "name": "Default prompt",
       "url": "https://learn.microsoft.com/powershell",
-      "what": "No tool",
-      "why": "YAGNI",
+      "what": "Shell default",
+      "why": "Zero setup",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
+      "platforms": "macOS|Windows|Linux",
       "maintained": "n/a",
       "install": "n/a",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://learn.microsoft.com/powershell",
       "checked": "2026-10-28"
     }
@@ -67,15 +64,29 @@
     {
       "name": "none",
       "verdict": "fine"
+    },
+    {
+      "name": "Spaceship",
+      "verdict": "feature-rich cross-shell; not re-checked"
+    },
+    {
+      "name": "Pure (zsh)",
+      "verdict": "minimal zsh-only; not re-checked"
     }
   ],
-  "decision": "Optional. Both are maintained; Starship is one binary across shells.",
+  "decision": "Optional. Starship is one binary that behaves the same across shells and systems.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "brew install starship.",
+    "Windows": "scoop or winget install; needs a Nerd Font for icons.",
+    "Linux": "Install script or distro package."
+  },
   "verify": {
     "verdict": "ok",
-    "note": "v1.27.0 (17 Oct 2026); scoop manifest at 1.27.0.",
-    "url": "https://github.com/starship/starship/releases"
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://github.com/starship/starship"
   },
-  "better_pick": null
+  "better": []
 }

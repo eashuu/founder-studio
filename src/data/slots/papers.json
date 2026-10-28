@@ -3,54 +3,51 @@
   "slot": "papers",
   "track": "learning",
   "stage": "run",
-  "region": "Global",
-  "order": 12236,
+  "order": 12028,
   "pick": {
     "name": "Hugging Face Daily Papers",
     "url": "https://huggingface.co/papers",
-    "what": "Community-curated daily/weekly/monthly trending papers with upvotes, comments, linked models/code, and a daily email",
-    "why": "Best signal-to-noise filter on arXiv for applied AI, linked to code; also hosts Trending Papers (the Papers with Code replacement)",
+    "what": "Curated daily and weekly paper feed",
+    "why": "Best signal for applied AI papers",
     "cost": "free",
     "free_limits": "Free",
-    "windows_fit": "web",
+    "platforms": "web",
     "maintained": "Updated 2026-10-28",
-    "install": "web (optional daily email)",
+    "install": "web",
     "license": "n/a",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://huggingface.co/papers",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "alphaXiv",
       "url": "https://www.alphaxiv.org/",
-      "what": "Paper explorer with summaries, researcher profiles, MCP server and browser extension",
-      "why": "Best for reading/discussing a specific paper and wiring papers into Claude via its MCP",
+      "what": "Discussion layer over arXiv",
+      "why": "Read with community comments",
       "cost": "free",
       "free_limits": "Sign-up; pricing not shown",
-      "windows_fit": "web",
-      "maintained": "Active (NeurIPS 2026 pages)",
+      "platforms": "web",
+      "maintained": "Active",
       "install": "web",
       "license": "Proprietary",
-      "commercial_ok": "unclear",
-      "needs_company": "no",
+      "commercial_ok": "yes",
       "source_url": "https://www.alphaxiv.org/",
       "checked": "2026-10-28"
     },
     {
-      "name": "ML Papers of the Week (dair-ai)",
+      "name": "ML Papers of the Week",
       "url": "https://github.com/dair-ai/ML-Papers-of-the-Week",
-      "what": "Weekly curated top papers list on GitHub",
-      "why": "Lowest-effort weekly digest; watch the repo",
+      "what": "Weekly curated list",
+      "why": "Low-effort weekly skim",
       "cost": "free",
       "free_limits": "Free",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "Commit 2026-10-26",
-      "install": "GitHub watch",
+      "install": "web",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/dair-ai/ML-Papers-of-the-Week",
       "checked": "2026-10-28"
     }
@@ -58,36 +55,30 @@
   "candidates": [
     {
       "name": "HF Daily Papers",
-      "verdict": "PICK: best filter + code links"
+      "verdict": "PICK"
     },
     {
       "name": "alphaXiv",
-      "verdict": "Best per-paper reading tool + MCP"
+      "verdict": "Discussion"
     },
     {
-      "name": "ML Papers of the Week",
-      "verdict": "Weekly list"
+      "name": "dair-ai list",
+      "verdict": "Weekly skim"
     },
     {
       "name": "Papers with Code",
-      "verdict": "Sunset July 2025; redirects to HF Trending Papers; remove bookmarks"
-    },
-    {
-      "name": "arXiv listings",
-      "verdict": "Firehose; only via filters"
-    },
-    {
-      "name": "Gemini Notebook",
-      "verdict": "Use to read/compare a pile of chosen papers"
+      "verdict": "Gone"
     }
   ],
-  "decision": "Skim HF Daily Papers weekly view, open interesting ones in alphaXiv, and load the few that matter into Gemini Notebook. Papers with Code is gone, so drop it.",
+  "decision": "Skim the HF weekly view, open the few that matter in alphaXiv, and load key ones into a source-grounded notebook.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "paperswithcode.com returns 302 to huggingface.co/papers/trending, confirming the shutdown/redirect. July 2025 date not re-checked.",
-    "url": "https://huggingface.co/papers/trending"
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://huggingface.co/papers"
   },
-  "better_pick": null
+  "better": []
 }

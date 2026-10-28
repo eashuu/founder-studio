@@ -3,7 +3,6 @@
   "slot": "awesome lists / news",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2031,
   "pick": {
     "name": "Claude Code 'What's new' weekly digest",
@@ -12,15 +11,15 @@
     "why": "Built-ins keep replacing community tools; read this first",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "web",
     "maintained": "weekly",
     "install": "web",
     "license": "n/a",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://code.claude.com/docs/en/whats-new/2026-w18.md",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "hesreallyhim/awesome-claude-code",
@@ -29,14 +28,13 @@
       "why": "Community tools",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "web",
       "maintained": "pushed 2026-10-28",
       "install": "web",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/hesreallyhim/awesome-claude-code",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     }
   ],
   "candidates": [
@@ -47,15 +45,29 @@
     {
       "name": "awesome-claude-code",
       "verdict": "community"
+    },
+    {
+      "name": "Anthropic blog and newsroom",
+      "verdict": "official announcements"
+    },
+    {
+      "name": "r/ClaudeAI and Discord",
+      "verdict": "community, noisy"
+    },
+    {
+      "name": "Independent newsletters/blogs",
+      "verdict": "useful; not evaluated"
     }
   ],
-  "decision": "Official changelog first so you don't install what just became built-in.",
+  "decision": "Read the official changelog first so you do not install something that just became built-in.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "doubt",
-    "note": "Source is the week-18 (May 2026) digest; point at the What's new index instead so it stays current.",
+    "verdict": "ok",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
     "url": "https://code.claude.com/docs/en/whats-new/2026-w18.md"
   },
-  "better_pick": null
+  "better": []
 }

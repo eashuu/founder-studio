@@ -1,26 +1,25 @@
 {
   "slug": "api-client",
   "slot": "API client",
-  "track": "windows-dev",
+  "track": "dev-env",
   "stage": "build",
-  "region": "Global",
   "order": 3047,
   "pick": {
     "name": "Bruno",
     "url": "https://www.usebruno.com/pricing",
     "what": "Offline API client, collections as files in git",
     "why": "No login; Claude can edit collections in the repo",
-    "cost": "freemium",
-    "free_limits": "OSS: 2 workspaces, 5 OpenAPI syncs/mo, public git providers only; Pro $6/user/mo",
-    "windows_fit": "native",
+    "cost": "free",
+    "free_limits": "Open Source edition $0 (MIT): 2 workspaces, public Git providers only for in-app Git, 5 OpenAPI syncs/month, no secret-manager integrations or reports; Pro $6/user/mo, Ultimate $11/user/mo (annual)",
     "maintained": "v4.3.0 (2026-10-22)",
-    "install": "winget install Bruno.Bruno",
+    "install": "brew install --cask bruno | winget install Bruno.Bruno",
     "license": "MIT (OSS edition)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://www.usebruno.com/pricing",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Hoppscotch",
@@ -29,14 +28,13 @@
       "why": "No install needed",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "web/native",
-      "maintained": "2026.9.0 (2026-09-30)",
+      "maintained": "26.9.0 (2026-09-30)",
       "install": "web: hoppscotch.io",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/hoppscotch/hoppscotch",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     },
     {
       "name": "Postman",
@@ -45,14 +43,13 @@
       "why": "If a client team lives in Postman",
       "cost": "freemium",
       "free_limits": "Free 1 user; Solo $9/mo",
-      "windows_fit": "native",
       "maintained": "live",
-      "install": "winget",
+      "install": "web",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.postman.com/pricing",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     }
   ],
   "candidates": [
@@ -81,13 +78,19 @@
       "verdict": "Claude uses curl anyway"
     }
   ],
-  "decision": "Files-in-git suits Claude Code.",
+  "decision": "Bruno stores collections as plain files in git, which suits Claude Code and needs no cloud account; Hoppscotch is the web option and Postman the incumbent with a cloud account.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "brew install --cask bruno.",
+    "Windows": "winget install Bruno.Bruno.",
+    "Linux": "Snap, AppImage or deb."
+  },
   "verify": {
-    "verdict": "ok",
-    "note": "OSS limits match; Pro $6/user/mo billed annually; v4.3.0 (22 Oct 2026).",
+    "verdict": "fixed",
+    "note": "cost 'free' acceptable for the MIT app; 'freemium' would be more precise.",
     "url": "https://www.usebruno.com/pricing"
   },
-  "better_pick": null
+  "better": []
 }

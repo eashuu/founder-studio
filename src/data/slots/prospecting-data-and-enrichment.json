@@ -1,0 +1,111 @@
+{
+  "slug": "prospecting-data-and-enrichment",
+  "slot": "Prospecting data and enrichment",
+  "track": "sales",
+  "stage": "sell",
+  "order": 7014,
+  "pick": {
+    "name": "Apollo.io",
+    "url": "https://www.apollo.io/pricing",
+    "what": "B2B contact database, enrichment, email, sequences, MCP connector",
+    "why": "Data + engagement in one tool with a free plan; exact prices not shown on the public page",
+    "cost": "freemium",
+    "free_limits": "Free and Starter plans exist; credits pooled monthly, reset each cycle; free plan connects Gmail only",
+    "platforms": "web + Chrome extension",
+    "maintained": "live page 2026-10-28",
+    "install": "web",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://www.apollo.io/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Clay (Free)",
+    "url": "https://www.clay.com/pricing",
+    "what": "Waterfall enrichment and AI research tables",
+    "why": "Best for combining many data providers; Free: 500 actions + 100 data credits/mo, 200 rows/table",
+    "cost": "freemium",
+    "free_limits": "Free: 500 actions/mo, 100 data credits/mo; Launch from about USD 167-185/mo",
+    "platforms": "web",
+    "maintained": "live page 2026-10-28",
+    "install": "web",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://www.clay.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "ZoomInfo",
+      "url": "https://www.zoominfo.com/pricing",
+      "what": "Enterprise B2B data platform",
+      "why": "Deepest data for US enterprise; quote-only pricing, credit-based exports",
+      "cost": "paid",
+      "free_limits": "Free trial for some plans; no public prices",
+      "platforms": "web",
+      "maintained": "live page 2026-10-28",
+      "install": "web",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://www.zoominfo.com/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "LinkedIn Sales Navigator Core",
+      "url": "https://business.linkedin.com/sales-solutions/compare-plans",
+      "what": "Advanced lead search and account mapping",
+      "why": "Best for named-account buying-committee mapping; USD 119.99/mo (earlier pass)",
+      "cost": "paid",
+      "free_limits": "Trial varies",
+      "platforms": "web",
+      "maintained": "live page 2026-10-28",
+      "install": "web",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://business.linkedin.com/sales-solutions/compare-plans",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Apollo",
+      "verdict": "PICK: best value across data + engagement"
+    },
+    {
+      "name": "Clay",
+      "verdict": "best_free for enrichment workflows"
+    },
+    {
+      "name": "ZoomInfo",
+      "verdict": "Enterprise depth, quote-priced"
+    },
+    {
+      "name": "Sales Navigator",
+      "verdict": "Account mapping"
+    },
+    {
+      "name": "NPPES NPI Registry",
+      "verdict": "Free US public data to build healthcare lists (API status unverified)"
+    },
+    {
+      "name": "Hunter / Lusha / Crunchbase",
+      "verdict": "Not checked"
+    }
+  ],
+  "decision": "Apollo wins on breadth and price for a small team; Clay wins when match rates need many providers; ZoomInfo only when budget and US enterprise coverage justify a contract. Verify emails before sending and respect local consent rules.",
+  "note": "",
+  "details": "Merged B2B lead sources slot. Apollo re-judged on merit; plan limits come from the public page, which omits prices.",
+  "region_notes": {
+    "EU": "Prospecting EU contacts needs a lawful basis (legitimate interest) and opt-out under GDPR/ePrivacy.",
+    "UK": "PECR allows B2B email to corporate addresses with opt-out; individual sole traders need consent.",
+    "US": "CAN-SPAM: opt-out and sender identification.",
+    "India": "DPDP applies to personal data from 13 May 2027."
+  },
+  "os_notes": {},
+  "verify": {
+    "verdict": "ok",
+    "note": "Checked against primary sources; wording made neutral during verification.",
+    "url": "https://www.apollo.io/pricing"
+  },
+  "better": []
+}

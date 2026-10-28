@@ -3,22 +3,35 @@
   "slot": "Usage-based billing for AI products",
   "track": "money",
   "stage": "run",
-  "region": "India",
-  "order": 9135,
+  "order": 9030,
   "pick": {
-    "name": "Dodo Payments usage-based billing",
-    "url": "https://docs.dodopayments.com/features/usage-based-billing/introduction",
-    "what": "Meters (count/sum/max/last), event ingestion API, credits, LLM token ingestion blueprints",
-    "why": "Metering + invoicing + tax in your MoR: no separate billing system",
+    "name": "Stripe Billing (incl. Metronome)",
+    "url": "https://stripe.com/pricing",
+    "what": "Subscriptions plus metered billing; Stripe owns Metronome",
+    "why": "Largest ecosystem; Metronome adds high-scale metering",
     "cost": "paid",
-    "free_limits": "+0.5% on usage/subscription billing on top of MoR rate; events POST /events/ingest with event_id, customer_id, event_name",
-    "windows_fit": "web",
-    "maintained": "SDK 2.58.0 2026-10-28",
-    "install": "npm i dodopayments",
+    "free_limits": "Billing 0.7% of billing volume (pay-as-you-go); Metronome Startup 0.8% of billing volume + $0.04 per 1K ingest events (Metronome figure not re-verified)",
+    "platforms": "web + SDKs",
+    "maintained": "Metronome acquisition completed 14 Jan 2026 (Stripe newsroom)",
+    "install": "npm i stripe",
     "license": "service",
     "commercial_ok": "yes",
-    "needs_company": "no",
-    "source_url": "https://docs.dodopayments.com/features/usage-based-billing/introduction",
+    "source_url": "https://stripe.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Lago (self-host)",
+    "url": "https://github.com/getlago/lago",
+    "what": "Open-source metering and billing engine",
+    "why": "Free if you host it; no vendor lock-in",
+    "cost": "free",
+    "free_limits": "Self-host free; managed Lago Cloud/Premium is quote-based; payments need a processor",
+    "platforms": "Linux (Docker)",
+    "maintained": "v1.55.0 2026-10-07",
+    "install": "docker compose up",
+    "license": "AGPL-3.0",
+    "commercial_ok": "yes",
+    "source_url": "https://github.com/getlago/lago",
     "checked": "2026-10-28"
   },
   "alts": [
@@ -29,65 +42,69 @@
       "why": "If Polar is your MoR",
       "cost": "paid",
       "free_limits": "No separate subscription fee on Starter+; docs flagged parts as alpha/new; Polar doesn't block usage past credits (you must)",
-      "windows_fit": "web",
+      "platforms": "web + SDKs",
       "maintained": "active",
       "install": "npm i @polar-sh/sdk",
       "license": "service",
       "commercial_ok": "yes",
-      "needs_company": "unclear",
       "source_url": "https://polar.sh/docs/features/usage-based-billing/introduction",
       "checked": "2026-10-28"
     },
     {
-      "name": "Lago (self-host)",
-      "url": "https://github.com/getlago/lago",
-      "what": "OSS metering + invoicing engine",
-      "why": "Processor-agnostic, no MoR lock-in",
-      "cost": "free",
-      "free_limits": "Self-host free; AGPL-3.0 (LICENSE fetched); payments still need a processor",
-      "windows_fit": "docker",
-      "maintained": "v1.55.0 2026-10-07",
-      "install": "git clone https://github.com/getlago/lago && docker compose up",
-      "license": "AGPL-3.0",
+      "name": "Dodo Payments usage-based billing",
+      "url": "https://docs.dodopayments.com/features/usage-based-billing/introduction",
+      "what": "Meters (count/sum/max/last), event ingestion API, credits, LLM token ingestion blueprints",
+      "why": "Metering + invoicing + tax in your MoR: no separate billing system",
+      "cost": "paid",
+      "free_limits": "+0.5% on usage/subscription billing on top of MoR rate; events POST /events/ingest with event_id, customer_id, event_name",
+      "platforms": "web + SDKs",
+      "maintained": "SDK 2.58.0 2026-10-28",
+      "install": "npm i dodopayments",
+      "license": "service",
       "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://github.com/getlago/lago",
+      "source_url": "https://docs.dodopayments.com/features/usage-based-billing/introduction",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Dodo UBB",
+      "name": "Stripe Billing",
       "verdict": "PICK"
     },
     {
-      "name": "Polar UBB",
-      "verdict": "Alt"
+      "name": "Lago",
+      "verdict": "best_free: AGPL-3.0 self-host"
     },
     {
-      "name": "Lago",
-      "verdict": "Alt: AGPL self-host"
+      "name": "Polar",
+      "verdict": "Alt: MoR with metering"
+    },
+    {
+      "name": "Dodo",
+      "verdict": "Alt: MoR with +0.5% usage fee"
+    },
+    {
+      "name": "Orb",
+      "verdict": "Acquired by Adyen 2026-07-01 per search; no public pricing"
+    },
+    {
+      "name": "Metronome",
+      "verdict": "Acquired by Stripe (announced Dec 2025, completed Jan 2026 per search)"
     },
     {
       "name": "OpenMeter",
-      "verdict": "Apache-2.0, acquired by Kong Sept 2025 (folding into Konnect)"
-    },
-    {
-      "name": "Stripe Billing meters",
-      "verdict": "Needs Stripe account (invite-only India)"
-    },
-    {
-      "name": "Flexprice / Autumn",
-      "verdict": "Newer OSS options; not checked"
+      "verdict": "Apache-2.0; acquired by Kong Sept 2025"
     }
   ],
-  "decision": "Keep metering in the MoR until pricing is stable: one ledger, one tax engine. Pull in Lago/OpenMeter only if you need processor-independent metering across multiple MoRs.",
+  "decision": "Stripe Billing is the best overall when Stripe is your processor; Metronome now sits inside Stripe for high-scale metering. Use Lago when you need processor-independent metering and accept AGPL self-hosting. If you sell through a merchant of record, keep metering in Polar or Dodo so one ledger handles tax.",
   "note": "",
-  "details": "",
+  "details": "Flagged 2025-2026 changes: Metronome to Stripe (completed Jan 2026), Orb to Adyen (agreed 11 Jun 2026 for USD 335M, closing expected about 1 Jul 2026), OpenMeter to Kong (Sept 2025). Pick was Dodo UBB.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "ok",
-    "note": "Doc confirms meters count/sum/max/last and POST /events/ingest with event_id, customer_id, event_name, metadata; +0.5% usage surcharge is on the pricing page. dodopayments SDK 2.58.0 (2026-10-28, Apache-2.0) confirmed. Lago AGPL-3.0, v1.55.0 2026-10-07 confirmed.",
-    "url": "https://docs.dodopayments.com/features/usage-based-billing/introduction"
+    "verdict": "fixed",
+    "note": "Checked against primary sources; wording made neutral during verification.",
+    "url": "https://stripe.com/newsroom/news/stripe-completes-metronome-acquisition"
   },
-  "better_pick": null
+  "better": []
 }

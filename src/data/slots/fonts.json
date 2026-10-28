@@ -3,8 +3,7 @@
   "slot": "Fonts",
   "track": "design",
   "stage": "discover",
-  "region": "Global",
-  "order": 1156,
+  "order": 1020,
   "pick": {
     "name": "Fontsource (Google Fonts, self-hosted via npm)",
     "url": "https://fontsource.org",
@@ -12,15 +11,15 @@
     "why": "Self-hosting avoids Google Fonts CDN privacy issues (GDPR), works offline in desktop/mobile builds, licence per package.",
     "cost": "free",
     "free_limits": "Free; fonts mostly OFL 1.1 / Apache-2.0",
-    "windows_fit": "n/a",
     "maintained": "active",
     "install": "npm i @fontsource-variable/inter",
     "license": "MIT (repo); OFL/Apache fonts",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/fontsource/fontsource",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "n/a"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Google Fonts (CDN)",
@@ -29,14 +28,13 @@
       "why": "Simplest for marketing pages; EU users raise privacy objections to the CDN.",
       "cost": "free",
       "free_limits": "Free; OFL/Apache",
-      "windows_fit": "web",
       "maintained": "live",
       "install": "<link> tag",
       "license": "OFL / Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://fonts.google.com",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     },
     {
       "name": "Fontshare (ITF)",
@@ -45,14 +43,13 @@
       "why": "More distinctive brand faces; web OK, app embedding needs a paid ITF licence (unconfirmed).",
       "cost": "free",
       "free_limits": "Free licence; app embedding restricted",
-      "windows_fit": "web",
       "maintained": "live",
       "install": "web download",
       "license": "ITF Free Font License",
       "commercial_ok": "unclear",
-      "needs_company": "no",
       "source_url": "https://www.fontshare.com",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     }
   ],
   "candidates": [
@@ -79,11 +76,13 @@
   ],
   "decision": "Fontsource gives you Google Fonts' OFL catalogue as code dependencies, so Claude Code can wire fonts identically in web, desktop and mobile. Use a Fontshare face only on the web until its app-embedding terms are confirmed.",
   "note": "",
-  "details": "For Indian-language UIs pair Inter/Geist with Noto Sans Devanagari etc.",
+  "details": "For non-Latin scripts (Devanagari, Arabic, CJK and others) pair the Latin face with the matching Noto family (OFL).",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "ok",
-    "note": "@fontsource-variable/inter 5.3.0 (2026-07-19), fonts OFL-1.1.",
-    "url": "https://github.com/fontsource/fontsource"
+    "verdict": "fixed",
+    "note": "India-specific note generalised.",
+    "url": "https://fontsource.org"
   },
-  "better_pick": null
+  "better": []
 }

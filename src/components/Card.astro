@@ -6,13 +6,14 @@ const [bg, pat] = looks[i % looks.length];
 const name = shortName(s.pick.name);
 const ok = ['ok', 'fixed'].includes(s.verify?.verdict);
 const cost = costKey(s.pick.cost);
+const free = cost === 'free' || !!s.best_free;
 ---
-<a class="card" href={`/tools/${s.slug}/`} data-cost={cost} data-verdict={ok ? 'verified' : 'doubt'} data-region={s.region}>
+<a class="card" href={`/tools/${s.slug}/`} data-cost={cost} data-verdict={ok ? 'verified' : 'doubt'} data-free={free ? 'yes' : 'no'}>
   <div class={`cover ${bg}`}>
     <div class={`pat ${pat}`}></div>
     <span class="idx cap">No. {String(slots.indexOf(s) + 1).padStart(3, '0')}</span>
     <span class={`nm ${name.length > 9 ? 'long' : ''}`}>{name}</span>
   </div>
   <span class="lname">{name}</span>
-  <span class="cap"><b>{s.slot}</b><span class="sl">/</span>{caption === 'track' ? `${track(s.track).name} / ` : ''}{cost}<span class="sl">/</span>{ok ? 'Verified' : 'Doubt'}{s.region === 'India' && <><span class="sl">/</span>India</>}</span>
+  <span class="cap"><b>{s.slot}</b><span class="sl">/</span>{caption === 'track' ? `${track(s.track).name} / ` : ''}{cost}<span class="sl">/</span>{ok ? 'Verified' : 'Doubt'}{s.best_free && <><span class="sl">/</span>Free option</>}</span>
 </a>

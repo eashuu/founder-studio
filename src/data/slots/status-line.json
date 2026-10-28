@@ -3,70 +3,86 @@
   "slot": "status line",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2012,
   "pick": {
-    "name": "ccstatusline",
-    "url": "https://github.com/sirmalloc/ccstatusline",
-    "what": "TUI-configured status line: context bar, session/weekly usage, reset timers, git",
-    "why": "Windows doc (PowerShell, fonts), pinned install avoids per-render npx cost",
+    "name": "Custom statusLine script via /statusline",
+    "url": "https://code.claude.com/docs/en/statusline.md",
+    "what": "Built-in setting: run any script to show model, context %, git branch and cost",
+    "why": "First-party and tiny; /statusline generates one from a prompt, no third-party tool needed",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native (docs/WINDOWS.md)",
-    "maintained": "v2.2.32; pushed 2026-10-26",
-    "install": "npm i -g ccstatusline  (then run `ccstatusline` TUI and choose Pinned global install)",
-    "source_url": "https://github.com/sirmalloc/ccstatusline",
+    "platforms": "macOS|Windows|Linux",
+    "maintained": "current docs",
+    "install": "/statusline",
+    "license": "n/a (Claude Code)",
+    "commercial_ok": "yes",
+    "source_url": "https://code.claude.com/docs/en/statusline.md",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
-      "name": "Built-in /statusline generator",
-      "url": "https://code.claude.com/docs/en/statusline.md",
-      "what": "Claude writes a script; JSON includes rate_limits.five_hour/seven_day used_percentage",
-      "why": "Zero dependency",
-      "cost": "owned",
+      "name": "ccstatusline",
+      "url": "https://github.com/sirmalloc/ccstatusline",
+      "what": "Configurable powerline-style status line",
+      "why": "Ready-made layouts and themes",
+      "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native (PowerShell examples in doc)",
-      "maintained": "core",
-      "install": "/statusline show model, context %, 5h and 7d limit %",
-      "source_url": "https://code.claude.com/docs/en/statusline.md",
+      "platforms": "macOS|Windows|Linux",
+      "maintained": "not opened",
+      "install": "npx -y ccstatusline@latest",
+      "license": "MIT (unverified)",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/sirmalloc/ccstatusline",
       "checked": "2026-10-28"
     },
     {
-      "name": "ccusage statusline (beta)",
+      "name": "ccusage statusline",
       "url": "https://github.com/ccusage/ccusage",
-      "what": "Compact cost line",
-      "why": "If you already use ccusage",
+      "what": "Cost/usage readout for the status line",
+      "why": "Adds spend and burn-rate",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native (not stated)",
-      "maintained": "v20.0.45, pushed 2026-10-28",
-      "install": "bunx ccusage statusline",
+      "platforms": "macOS|Windows|Linux",
+      "maintained": "v20.0.45 (2026-10-26)",
+      "install": "npx ccusage@latest statusline",
+      "license": "MIT",
+      "commercial_ok": "yes",
       "source_url": "https://github.com/ccusage/ccusage",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
+      "name": "Custom script",
+      "verdict": "pick"
+    },
+    {
       "name": "ccstatusline",
-      "verdict": "best configurable status line with usage and reset widgets"
+      "verdict": "fastest to a polished look"
     },
     {
-      "name": "Built-in /statusline",
-      "verdict": "zero dependency; Claude writes the script"
+      "name": "ccusage",
+      "verdict": "adds cost data"
     },
     {
-      "name": "ccusage statusline",
-      "verdict": "if you already use ccusage for cost reports"
+      "name": "Default footer",
+      "verdict": "no setup, minimal"
+    },
+    {
+      "name": "claude-powerline",
+      "verdict": "powerline-style theme; not opened"
     }
   ],
-  "decision": "Start with the built-in /statusline if you want zero dependencies; install ccstatusline when you want usage limits, reset timers and git in one line.",
+  "decision": "A status line is cosmetic; the built-in setting with a short script is enough. Use ccstatusline for a ready-made layout, or ccusage if cost visibility matters most.",
   "note": "",
-  "details": "",
+  "details": "Replaced a personal status-line pick with a general slot. ccstatusline repo not opened.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "ccstatusline repo and Windows docs checked during research.",
-    "url": "https://github.com/sirmalloc/ccstatusline"
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://code.claude.com/docs/en/statusline.md"
   },
-  "better_pick": null
+  "better": []
 }

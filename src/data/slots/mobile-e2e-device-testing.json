@@ -3,8 +3,7 @@
   "slot": "mobile E2E + device testing",
   "track": "app-stacks",
   "stage": "build",
-  "region": "Global",
-  "order": 5093,
+  "order": 5042,
   "pick": {
     "name": "Maestro (+ Android Emulator locally)",
     "url": "https://github.com/mobile-dev-inc/Maestro",
@@ -12,15 +11,15 @@
     "why": "Works with Expo/RN/Flutter alike, easy for Claude Code to write, runs in EAS Workflows/CI",
     "cost": "free",
     "free_limits": "CLI free; Maestro Cloud paid (7-day trial)",
-    "windows_fit": "native Windows supported: download maestro.zip, extract to C:\\maestro, add bin to PATH; needs Java 17+ (no WSL needed)",
-    "maintained": "Maestro CLI cli-2.12.0 on 2026-10-26",
-    "install": "Windows: download https://github.com/mobile-dev-inc/maestro/releases/latest/download/maestro.zip, extract, add bin to PATH, then maestro --help (curl|bash is macOS/Linux/WSL only)",
+    "maintained": "repo active (release date not shown)",
+    "install": "curl -fsSL \"https://get.maestro.mobile.dev\" | bash",
     "license": "Apache-2.0",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/mobile-dev-inc/Maestro",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "wsl (official install via WSL; native Windows install referenced in docs - verify)"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Firebase Test Lab (Spark quota)",
@@ -29,14 +28,13 @@
       "why": "Free real-device coverage until shutdown",
       "cost": "free",
       "free_limits": "Deprecated; shuts down 2027-09-30; successor Developer Device Platform (paid, billing required)",
-      "windows_fit": "web",
       "maintained": "FAQ updated 2026-10-27",
       "install": "gcloud firebase test android run",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://firebase.google.com/docs/test-lab/migrate-faq",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     },
     {
       "name": "Play Console pre-launch reports",
@@ -45,14 +43,13 @@
       "why": "Free with Play",
       "cost": "free",
       "free_limits": "limits not verified",
-      "windows_fit": "web",
       "maintained": "n/a",
       "install": "web",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://play.google.com/console",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     }
   ],
   "candidates": [
@@ -80,10 +77,12 @@
   "decision": "Maestro gives portable E2E tests that survive any framework change. Use Test Lab's free quota only until its 2027-09-30 shutdown.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "fixed",
-    "note": "Install command was wrong for Windows.",
-    "url": "https://docs.maestro.dev/getting-started/installing-maestro/windows"
+    "verdict": "ok",
+    "note": "Shallow; Windows install still unverified.",
+    "url": "https://github.com/mobile-dev-inc/maestro"
   },
-  "better_pick": null
+  "better": []
 }

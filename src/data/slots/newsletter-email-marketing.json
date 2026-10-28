@@ -3,54 +3,65 @@
   "slot": "Newsletter / email marketing",
   "track": "sales",
   "stage": "sell",
-  "region": "Global",
-  "order": 7204,
+  "order": 7031,
   "pick": {
-    "name": "Kit Newsletter (free)",
-    "url": "https://blog.mean.ceo/?p=11542",
+    "name": "Kit",
+    "url": "https://kit.com/pricing",
     "what": "Creator/B2B newsletter platform",
-    "why": "Biggest free tier found (10,000 subscribers, unlimited broadcasts, forms, landing pages on own domain)",
+    "why": "Biggest free tier found: 10,000 subscribers (secondary source)",
     "cost": "freemium",
-    "free_limits": "Free up to 10,000 subs; sequences/automations need Creator (USD 33/mo annual); Kit branding",
-    "windows_fit": "web",
-    "maintained": "Oct 2026 (secondary source)",
+    "free_limits": "Free to 10,000 subs; automations on Creator USD 33/mo annual",
+    "platforms": "web",
+    "maintained": "Oct 2026 (secondary)",
     "install": "web",
     "license": "proprietary",
     "commercial_ok": "yes",
-    "needs_company": "no",
-    "source_url": "https://blog.mean.ceo/?p=11542",
+    "source_url": "https://kit.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "listmonk",
+    "url": "https://github.com/knadh/listmonk",
+    "what": "Self-hosted newsletter and mailing-list manager",
+    "why": "Unlimited subscribers and sends; you pay only for hosting and an SMTP provider",
+    "cost": "free",
+    "free_limits": "Free self-host; needs SMTP service and ops work",
+    "platforms": "macOS/Windows/Linux",
+    "maintained": "v7.0.0-beta.1 released 2026-10-20 (pre-release); repo active 2026-10-28",
+    "install": "docker compose (see docs)",
+    "license": "AGPL-3.0",
+    "commercial_ok": "yes",
+    "source_url": "https://github.com/knadh/listmonk",
     "checked": "2026-10-28"
   },
   "alts": [
     {
-      "name": "beehiiv (Launch free)",
+      "name": "beehiiv",
       "url": "https://www.beehiiv.com/pricing",
       "what": "Newsletter + website + recommendation network",
-      "why": "Built-in growth (recommendation network), API + read-only MCP; free up to 2,500 subs",
+      "why": "Built-in growth; API + read-only MCP",
       "cost": "freemium",
-      "free_limits": "Free: 2,500 subs, unlimited sends; custom domain unclear",
-      "windows_fit": "web",
+      "free_limits": "Free: 2,500 subs",
+      "platforms": "web",
       "maintained": "live page 2026-10-28",
       "install": "web",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.beehiiv.com/pricing",
       "checked": "2026-10-28"
     },
     {
       "name": "Resend Broadcasts",
       "url": "https://resend.com/pricing",
-      "what": "Marketing broadcasts from your transactional email provider",
-      "why": "Code-first, same vendor/domain setup as transactional mail; free 1,000 contacts",
+      "what": "Marketing broadcasts from a code-first email API",
+      "why": "Same vendor as transactional mail",
       "cost": "freemium",
-      "free_limits": "Free marketing: 1,000 contacts, 3 segments; transactional 3,000/mo separate",
-      "windows_fit": "web",
+      "free_limits": "Free: 1,000 contacts",
+      "platforms": "web",
       "maintained": "live page 2026-10-28",
       "install": "npm i resend",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://resend.com/pricing",
       "checked": "2026-10-28"
     }
@@ -58,36 +69,38 @@
   "candidates": [
     {
       "name": "Kit",
-      "verdict": "PICK: 10k free"
+      "verdict": "PICK"
     },
     {
       "name": "beehiiv",
-      "verdict": "Pick if audience growth via recommendations matters"
+      "verdict": "Recommendation-driven growth"
     },
     {
       "name": "Resend Broadcasts",
-      "verdict": "Product-update emails to users from code"
+      "verdict": "Product updates from code"
     },
     {
       "name": "Loops",
-      "verdict": "SaaS lifecycle email; free 1,000 contacts/4,000 sends"
+      "verdict": "Lifecycle email"
     },
     {
       "name": "listmonk",
-      "verdict": "Self-host OSS + SES, active nightly builds; ops burden"
+      "verdict": "Self-host OSS"
     },
     {
       "name": "Brevo / MailerLite / Substack / Buttondown",
-      "verdict": "Not checked or weaker fit"
+      "verdict": "Not checked"
     }
   ],
-  "decision": "Run the founder newsletter on Kit's free plan. Send product-update and lifecycle emails to signed-up users through Resend (already in the stack) so app data drives them. Move to Loops if lifecycle email gets complex.",
-  "note": "Consolidated: Kit is for a product's leads and users. Your personal founder newsletter lives on Substack (Personal brand track). Start Kit when the first product has a list.",
-  "details": "kit.com pricing page returned 429; Kit's free limits are from an Oct 2026 secondary roundup (unverified).",
+  "decision": "Run a founder newsletter on Kit's free plan, and send in-product lifecycle email through your transactional provider.",
+  "note": "This is for a product's leads and users. A personal founder newsletter is covered in Personal brand.",
+  "details": "kit.com pricing returned 429; limits are secondary.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "doubt",
-    "note": "kit.com/pricing still returns 429, so the 10,000-subscriber free cap rests only on a secondary blog (source_url is blog.mean.ceo). The pick is plausible, but swap source_url to kit.com/pricing once it loads. beehiiv alt confirmed (2,500 subs, unlimited sends; its own page contradicts itself on custom domains). Resend marketing free tier of 1,000 contacts confirmed.",
-    "url": "https://www.beehiiv.com/pricing"
+    "verdict": "fixed",
+    "note": "url/source_url point to a third-party blog; use kit.com/pricing (429 to fetcher). Free Newsletter plan up to 10,000 subscribers is consistent across several 2026 reviews (one sequence/automation); Creator price conflicts (USD 33 annual vs USD 39 monthly) - keep unverified.",
+    "url": "https://kit.com/pricing"
   },
-  "better_pick": null
+  "better": []
 }

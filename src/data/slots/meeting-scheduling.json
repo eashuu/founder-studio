@@ -3,87 +3,101 @@
   "slot": "Meeting scheduling",
   "track": "sales",
   "stage": "sell",
-  "region": "Global",
-  "order": 7198,
+  "order": 7025,
   "pick": {
     "name": "Cal.com (Free cloud)",
     "url": "https://cal.com/pricing",
     "what": "Hosted booking pages",
-    "why": "Free forever for 1 user: unlimited event types and calendars, Stripe/PayPal payments, free Attio app (bookings sync into the CRM pick), embeds",
+    "why": "Free forever for 1 user: unlimited event types, Stripe payments, embeds",
     "cost": "freemium",
-    "free_limits": "Free: 1 user, unlimited event types, templated workflows only, Cal.com branding; Teams USD 12/user/mo",
-    "windows_fit": "web",
+    "free_limits": "Free: 1 user, unlimited event types, Cal.com branding; Teams USD 12/user/mo",
+    "platforms": "web",
     "maintained": "pricing live 2026-10-28",
     "install": "web",
     "license": "proprietary (cloud)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://cal.com/pricing",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
-    {
-      "name": "Google Calendar appointment schedules (via Google AI Pro)",
-      "url": "https://support.google.com/calendar/answer/16287038",
-      "what": "Booking pages inside Google Calendar",
-      "why": "Already paid until Jan 2028: premium appointment scheduling (multiple schedules, reminders, multi-calendar checks per Google); payments tier unclear",
-      "cost": "owned",
-      "free_limits": "Premium features while AI Pro lasts; free accounts get one booking page",
-      "windows_fit": "web",
-      "maintained": "help page live 2026-10-28",
-      "install": "web",
-      "license": "proprietary",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://support.google.com/calendar/answer/16287038",
-      "checked": "2026-10-28"
-    },
     {
       "name": "Calendly",
       "url": "https://calendly.com/pricing",
       "what": "Market-standard scheduler",
-      "why": "Buyers know it; but free is 1 event type",
+      "why": "Buyers know it; free is 1 event type",
       "cost": "freemium",
-      "free_limits": "Free: 1 event type, 1 calendar; Standard USD 10/seat",
-      "windows_fit": "web",
+      "free_limits": "Free: 1 event type; Standard USD 10/seat",
+      "platforms": "web",
       "maintained": "live page 2026-10-28",
       "install": "web",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://calendly.com/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Cal.diy (self-host)",
+      "url": "https://github.com/calcom/cal.diy",
+      "what": "MIT community edition of Cal.com",
+      "why": "Fully open source but README says personal, non-production use only",
+      "cost": "free",
+      "free_limits": "Free; no enterprise features",
+      "platforms": "macOS/Windows/Linux (Docker)",
+      "maintained": "no releases listed",
+      "install": "docker (see README)",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/calcom/cal.diy",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Google Calendar appointment schedules",
+      "url": "https://support.google.com/calendar/answer/16287038",
+      "what": "Booking pages inside Google Calendar",
+      "why": "Good if you live in Google Workspace; premium scheduling needs certain paid plans",
+      "cost": "freemium",
+      "free_limits": "Free accounts get one booking page",
+      "platforms": "web",
+      "maintained": "help page live 2026-10-28",
+      "install": "web",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://support.google.com/calendar/answer/16287038",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Cal.com Free",
+      "name": "Cal.com",
       "verdict": "PICK"
     },
     {
-      "name": "Google appointment schedules",
-      "verdict": "Good while AI Pro lasts; no CRM sync or payments"
-    },
-    {
       "name": "Calendly",
-      "verdict": "Free tier too thin"
+      "verdict": "Free tier thin"
     },
     {
-      "name": "Cal.diy self-host",
-      "verdict": "MIT community fork, missing teams/workflows; 'personal, non-production' per README"
+      "name": "Google appointment schedules",
+      "verdict": "Native to Google"
+    },
+    {
+      "name": "Cal.diy",
+      "verdict": "MIT fork, not for production"
     },
     {
       "name": "Zoho Bookings / TidyCal",
       "verdict": "Not checked"
     }
   ],
-  "decision": "Use Cal.com Free cloud for ALL scheduling (sales calls and customer-discovery interviews). It is production-grade; only the self-host route changed (closed source since 15 Apr 2026; public repo is the MIT Cal.diy fork, flagged non-production). Google appointment schedules (premium via AI Pro until Jan 2028) is the fallback.",
-  "note": "Consolidated: this same Cal.com account also handles customer interviews (Discover track). Sync it to Attio, the CRM pick, through Cal.com's free Attio app.",
-  "details": "Licence change flagged 2026: Cal.com production code private; GitHub repo now Cal.diy (MIT).",
+  "decision": "Cal.com's free plan is the best free booking tool. It went closed source on 15 Apr 2026, so self-hosting means the cut-down MIT Cal.diy fork; use the cloud.",
+  "note": "",
+  "details": "Licence change flagged 2026.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "fixed",
-    "note": "Cal.com Free confirmed: 1 user, unlimited event types/calendars, templated workflows, Stripe+PayPal, HubSpot/Salesforce two-way sync; Teams USD 12. Closed-source date confirmed: the 'refactor: Cal.diy' commit landed 2026-04-15 and calcom/cal.com now redirects to calcom/cal.diy (MIT, 'non-production'), whose README tells commercial users to use Cal.com cloud, so cloud Free is fine for production. Fix the 'why': the CRM pick is Attio, not HubSpot. Cal.com's App Store has a free Attio app that syncs bookings into Attio, which is the relevant point. Cal.com changed its ToS/DPA/Privacy on 1 Nov 2026 (changelog v6.9.5); skim it.",
-    "url": "https://cal.com/apps/attio"
+    "verdict": "ok",
+    "note": "Checked against primary sources; wording made neutral during verification.",
+    "url": "https://cal.com/pricing"
   },
-  "better_pick": null
+  "better": []
 }

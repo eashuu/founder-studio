@@ -3,41 +3,38 @@
   "slot": "Research synthesis (interviews, surveys, tickets)",
   "track": "discover",
   "stage": "discover",
-  "region": "Global",
-  "order": 144,
+  "order": 8,
   "pick": {
     "name": "Claude design:research-synthesis skill",
     "url": "https://claude.com/marketplace/plugins/design",
     "what": "Turns transcripts/survey exports into themes, segments and prioritised insights",
-    "why": "Runs inside Claude Code on local files (Meetily/Buzz output), so no new tool and no extra upload.",
-    "cost": "owned",
-    "free_limits": "Within Claude Max limits",
-    "windows_fit": "native (Claude Code)",
-    "maintained": "installed design plugin",
-    "install": "part of the design plugin in the Claude Code plugin marketplace",
+    "why": "Runs in Claude Code on local transcript files, so no new tool or upload.",
+    "cost": "paid",
+    "free_limits": "Needs Claude Code access (a paid Claude plan or API billing); counts toward that usage",
+    "maintained": "plugin",
+    "install": "Claude Code plugin marketplace: design plugin",
     "license": "Anthropic plugin",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://claude.com/marketplace/plugins/design",
+    "checked": "2026-10-28",
+    "platforms": "native (Claude Code)"
+  },
+  "best_free": {
+    "name": "Gemini Notebook (formerly NotebookLM)",
+    "url": "https://support.google.com/notebooklm/answer/16213268",
+    "what": "Cited Q&A across many transcripts",
+    "why": "Free tier; best for lookup across dozens of transcripts.",
+    "cost": "freemium",
+    "free_limits": "Free: 100 notebooks, 50 sources per notebook; visible watermark on generated outputs on free plans",
+    "platforms": "web",
+    "maintained": "live service",
+    "install": "web",
+    "license": "Google ToS",
+    "commercial_ok": "yes",
+    "source_url": "https://support.google.com/notebooklm/answer/16213268",
     "checked": "2026-10-28"
   },
   "alts": [
-    {
-      "name": "NotebookLM",
-      "url": "https://support.google.com/notebooklm/answer/16213268",
-      "what": "Cited Q&A across many transcripts",
-      "why": "Better for 'what did customers say about X' lookups across 50+ transcripts.",
-      "cost": "owned",
-      "free_limits": "Pro: 300 sources/notebook",
-      "windows_fit": "web",
-      "maintained": "live service",
-      "install": "web",
-      "license": "Google ToS",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://support.google.com/notebooklm/answer/16213268",
-      "checked": "2026-10-28"
-    },
     {
       "name": "Dovetail",
       "url": "https://dovetail.com/pricing",
@@ -45,45 +42,61 @@
       "why": "Only worth it once a team shares a research repository.",
       "cost": "freemium",
       "free_limits": "Free: 1 feedback channel, 1 project, 1 AI dashboard, basic AI chat/summaries; paid prices not public",
-      "windows_fit": "web",
       "maintained": "live service",
       "install": "web",
       "license": "proprietary SaaS",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://dovetail.com/pricing",
+      "checked": "2026-10-28",
+      "platforms": "web"
+    },
+    {
+      "name": "Condens",
+      "url": "https://condens.io",
+      "what": "Research repository",
+      "why": "Team repository for ongoing research.",
+      "cost": "paid",
+      "free_limits": "Not verified",
+      "platforms": "web",
+      "maintained": "live service",
+      "install": "web",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://condens.io",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
       "name": "Claude research-synthesis skill",
-      "verdict": "pick"
+      "verdict": "pick: runs on local files in Claude Code"
     },
     {
       "name": "NotebookLM",
-      "verdict": "alt"
+      "verdict": "best_free"
     },
     {
       "name": "Dovetail",
-      "verdict": "alt for teams; free = 1 project"
+      "verdict": "alt: team repository, free = 1 project"
     },
     {
       "name": "Condens",
-      "verdict": "paid repository"
+      "verdict": "alt: paid repository"
     },
     {
       "name": "Notion AI",
-      "verdict": "AI is paid on Plus+"
+      "verdict": "AI add-on is paid"
     }
   ],
-  "decision": "The skill already structures synthesis and Claude Code can read transcripts directly. Add NotebookLM for cross-transcript lookups; a repository tool only matters with a research team.",
+  "decision": "Synthesis on local transcripts in Claude Code needs no new tool, consistent with the site Claude Code stance. NotebookLM is the free alternative for cited lookups; a repository like Dovetail matters only when a team shares research.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "ok",
-    "note": "design:research-synthesis skill is installed in this environment.",
+    "verdict": "fixed",
+    "note": "Checked against primary sources; wording made neutral during verification.",
     "url": "https://claude.com/marketplace/plugins/design"
   },
-  "better_pick": null
+  "better": []
 }

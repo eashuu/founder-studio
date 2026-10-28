@@ -16,7 +16,7 @@ let n = 0;
           <a class="trow" href={`/tracks/${t.key}/`}>
             <span class="n">T{String(++n).padStart(2, '0')}</span>
             <span class="t">{t.name}</span>
-            <p>{t.blurb}{t.region !== 'Global' ? ` Region: ${t.region}.` : ''}</p>
+            <p>{t.blurb}</p>
             <span class="c">{slotsIn(t.key).length}</span>
           </a>
         ))}

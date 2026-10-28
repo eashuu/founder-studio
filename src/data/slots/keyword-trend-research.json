@@ -3,41 +3,38 @@
   "slot": "Keyword + trend research",
   "track": "discover",
   "stage": "discover",
-  "region": "Global",
-  "order": 137,
+  "order": 1,
   "pick": {
+    "name": "Ahrefs",
+    "url": "https://ahrefs.com/pricing",
+    "what": "SEO suite: keyword volumes, backlinks, site audit, AI visibility",
+    "why": "Best keyword and competitor data once SEO is a channel.",
+    "cost": "paid",
+    "free_limits": "Ahrefs Free for verified sites plus free tools; paid plans from Starter $29/mo, Lite $129, Standard $249 (page)",
+    "platforms": "web",
+    "maintained": "live service",
+    "install": "web",
+    "license": "proprietary SaaS",
+    "commercial_ok": "yes",
+    "source_url": "https://ahrefs.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
     "name": "Google Trends",
     "url": "https://trends.google.com",
     "what": "Relative search interest by region/time, related queries, rising topics",
-    "why": "Free, no account, India + global comparison in one view; enough to judge direction of demand before you have a site.",
+    "why": "Free, no account, compares any countries or regions side by side; enough to judge direction of demand before you have a site.",
     "cost": "free",
     "free_limits": "Free; shows relative 0-100 interest, not absolute volume",
-    "windows_fit": "web",
     "maintained": "live service",
     "install": "web",
     "license": "Google ToS",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://support.google.com/trends/answer/4365533",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "web"
   },
   "alts": [
-    {
-      "name": "Ahrefs Free (Webmaster Tools + free keyword generator)",
-      "url": "https://ahrefs.com/webmaster-tools",
-      "what": "Free SEO data for sites you verify plus a free keyword idea generator",
-      "why": "Best free absolute-volume-ish data once you have a live domain.",
-      "cost": "freemium",
-      "free_limits": "Verified sites only: Site Audit 5,000 crawl credits/mo, Site Explorer up to 1,000 backlinks/keywords, Web Analytics 1M events. Keywords Explorer and competitor analysis are paid",
-      "windows_fit": "web",
-      "maintained": "live service",
-      "install": "web",
-      "license": "proprietary SaaS",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://ahrefs.com/webmaster-tools",
-      "checked": "2026-10-28"
-    },
     {
       "name": "Google Keyword Planner",
       "url": "https://support.google.com/google-ads/answer/7337243",
@@ -45,57 +42,65 @@
       "why": "Only free source of Google's own volume ranges; needs an Ads account with billing info.",
       "cost": "free",
       "free_limits": "Needs a Google Ads account with billing details; volumes are estimates/ranges",
-      "windows_fit": "web",
       "maintained": "live service",
       "install": "web",
       "license": "Google Ads ToS",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://support.google.com/google-ads/answer/7337243",
+      "checked": "2026-10-28",
+      "platforms": "web"
+    },
+    {
+      "name": "Google Search Console",
+      "url": "https://search.google.com/search-console/about",
+      "what": "Real queries and impressions for your own site",
+      "why": "Free ground truth after launch.",
+      "cost": "free",
+      "free_limits": "Free",
+      "platforms": "web",
+      "maintained": "live service",
+      "install": "web",
+      "license": "Google ToS",
+      "commercial_ok": "yes",
+      "source_url": "https://search.google.com/search-console/about",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Google Trends",
-      "verdict": "pick"
+      "name": "Ahrefs",
+      "verdict": "pick: best data, paid"
     },
     {
-      "name": "Ahrefs Free",
-      "verdict": "alt once you own a site"
+      "name": "Google Trends",
+      "verdict": "best_free: direction of demand, relative only"
     },
     {
       "name": "Google Keyword Planner",
-      "verdict": "alt for volume ranges"
+      "verdict": "alt: volume ranges, needs Ads account"
     },
     {
       "name": "Google Search Console",
-      "verdict": "free, post-launch: real queries for your own site"
+      "verdict": "alt: own-site queries"
     },
     {
-      "name": "Ubersuggest",
-      "verdict": "pricing page blocked; limited free searches (unverified)"
+      "name": "Semrush",
+      "verdict": "paid peer (not fetched)"
     },
     {
-      "name": "Keywords Everywhere",
-      "verdict": "no free tier; $7/mo annual"
-    },
-    {
-      "name": "Exploding Topics",
-      "verdict": "no free plan, $39/mo"
-    },
-    {
-      "name": "Glimpse",
-      "verdict": "pricing unverified ($49-99/mo)"
+      "name": "Keywords Everywhere / Exploding Topics",
+      "verdict": "paid, lighter"
     }
   ],
-  "decision": "Trends answers 'is this growing and where' for free; Ahrefs Free and Search Console take over once there is a site. Pay for Ahrefs/Semrush only if SEO becomes a main acquisition channel.",
+  "decision": "Ahrefs gives the strongest keyword and competitor data; Semrush is the equal-tier alternative. Most founders need only Google Trends before launch and Search Console after, so pay only when SEO becomes a main acquisition channel.",
   "note": "",
-  "details": "",
+  "details": "Pick changed from Google Trends (now best_free) to a paid suite on capability.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Google Trends free, relative 0-100 index. Ahrefs alt numbers all confirmed.",
-    "url": "https://ahrefs.com/webmaster-tools"
+    "note": "Starter $29/mo, Lite $129/mo and Ahrefs Free confirmed; Standard price not re-seen in this pass. Semrush is the equal alternative, as decision says.",
+    "url": "https://ahrefs.com/pricing"
   },
-  "better_pick": null
+  "better": []
 }

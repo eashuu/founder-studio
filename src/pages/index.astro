@@ -6,19 +6,19 @@ import { meta, slots, slotsIn, shortName, tornPolygon, tearPath, topPicks } from
 const options = slots.reduce((n, s) => n + Math.max(s.candidates.length, s.alts.length + 1), 0);
 const verified = slots.filter((s) => ['ok', 'fixed'].includes(s.verify?.verdict)).length;
 const bySlug = Object.fromEntries(slots.map((s) => [s.slug, s]));
-const featured = ['default-deploy-stack-saas-api-mcp-server', 'mobile-framework', 'merchant-of-record-saas-subscriptions', 'planning-tdd-workflow',
-  'llm-observability-tracing', 'crm', 'notes-second-brain', 'desktop-framework'].map((k) => bySlug[k]);
+const featured = ['model-api-frontier-production', 'default-deploy-stack-saas-api-mcp-server', 'payments-merchant-of-record-for-software-sales', 'planning-tdd-workflow',
+  'mobile-framework', 'crm', 'llm-observability-tracing', 'notes-second-brain'].map((k) => bySlug[k]).filter(Boolean);
 const tickerNames = [...new Set(slots.filter((s) => ['ok', 'fixed'].includes(s.verify?.verdict)).map((s) => shortName(s.pick.name)).filter((n) => n.length <= 22))].slice(0, 28);
 ---
 <Brutal>
   <section class="slab">
     <div class="wrap">
       <div class="top-cap cap">
-        <span>Index 001<span class="sl">/</span>The solo AI founder's toolkit<span class="sl">/</span>Free first</span>
-        <span>Checked {meta.built}<span class="sl">/</span>India + global</span>
+        <span>Index 001<span class="sl">/</span>The AI founder's toolkit<span class="sl">/</span>Best overall + best free</span>
+        <span>Checked {meta.built}<span class="sl">/</span>Any OS<span class="sl">/</span>Any country</span>
       </div>
 
-      <h1 class="hero-h display"><span class="line"><span class="in" style="--i:0">From problem</span></span><span class="line"><span class="in o" style="--i:1">to paid,</span></span><span class="line"><span class="in b" style="--i:2">on free tiers.</span></span></h1>
+      <h1 class="hero-h display"><span class="line"><span class="in" style="--i:0">The best tool</span></span><span class="line"><span class="in o" style="--i:1">for every job,</span></span><span class="line"><span class="in b" style="--i:2">and the free one.</span></span></h1>
 
       <div class="collage" aria-hidden="true">
         <div class="piece" style="--k:0;--sp:-70;left:8%;top:4%;width:46%;height:52%;transform:rotate(-5deg)">
@@ -26,8 +26,8 @@ const tickerNames = [...new Set(slots.filter((s) => ['ok', 'fixed'].includes(s.v
         </div>
         <div class="piece" style="--k:1;--sp:-120;left:34%;top:0;width:52%;height:46%;transform:rotate(4deg)">
           <div class="scrap" style={`clip-path:${tornPolygon('c2')};display:flex;flex-direction:column;justify-content:space-between`}>
-            <span class="cap">Cost to start<span class="sl">/</span>per month</span>
-            <span class="display" style="font-size:clamp(90px,11vw,170px);line-height:.8">$0</span>
+            <span class="cap">Best overall<span class="sl">/</span>per job</span>
+            <span class="display" style="font-size:clamp(90px,11vw,170px);line-height:.8">No.1</span>
           </div>
         </div>
         <div class="piece" style="--k:2;--sp:-30;left:0;top:50%;width:44%;height:40%;transform:rotate(3deg)">
@@ -77,7 +77,7 @@ const tickerNames = [...new Set(slots.filter((s) => ['ok', 'fixed'].includes(s.v
             {meta.tracks.filter((t) => t.stage === st.key).map((t) => (
               <a class="cell" href={`/tracks/${t.key}/`}>
                 <b>{t.name}</b>
-                <span class="cap">{slotsIn(t.key).length} slots{t.region !== 'Global' && <><span class="sl">/</span>{t.region}</>}</span>
+                <span class="cap">{slotsIn(t.key).length} slots</span>
                 <ul>{topPicks(t.key, 3).map((n) => <li>{n}</li>)}</ul>
               </a>
             ))}

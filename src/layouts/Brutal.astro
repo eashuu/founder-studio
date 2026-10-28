@@ -3,8 +3,8 @@ import '../styles/brutal.css';
 import '../styles/pages.css';
 import '../styles/fixes.css';
 import '../styles/motion.css';
-import { REPO, REPO_LIVE, meta, tearPath } from '../lib/data.js';
-const { title, description = 'Every tool a solo AI founder needs, from problem to paid, on free tiers: picked, compared and verified.' } = Astro.props;
+import { REPO, REPO_LIVE, meta, slots, tearPath } from '../lib/data.js';
+const { title, description = 'The best tool for every job in building an AI company, and the best free one: compared and verified against primary sources.' } = Astro.props;
 const path = Astro.url.pathname;
 const full = title ? `${title} / Founder Studio` : 'Founder Studio';
 const nav = [['/', 'Index'], ['/tracks/', 'Tracks'], ['/playbook/', 'Playbook'], ['/decisions/', 'Decisions'], ['/method/', 'Method']];
@@ -91,11 +91,11 @@ const ogImage = new URL('/og.png', Astro.site);
           </div>
         ))}
       </div>
-      <button class="btn solid" type="button" data-palette>Search 245 tools</button>
+      <button class="btn solid" type="button" data-palette>Search {slots.length} tools</button>
     </dialog>
 
     <dialog class="palette" aria-label="Search">
-      <input type="text" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list" placeholder="Search 245 slots" aria-label="Search tools and slots" autocomplete="off" />
+      <input type="text" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list" placeholder={`Search ${slots.length} slots`} aria-label="Search tools and slots" autocomplete="off" />
       <ul role="listbox" id="palette-list" aria-label="Results"></ul>
       <div class="hint cap"><span aria-live="polite" data-results></span><span class="sl">/</span>↑ ↓ to move<span class="sl">/</span>Enter to open<span class="sl">/</span>Esc to close</div>
     </dialog>

@@ -3,23 +3,34 @@
   "slot": "memory",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2002,
   "pick": {
     "name": "Built-in auto memory + CLAUDE.md/AGENTS.md",
     "url": "https://code.claude.com/docs/en/memory.md",
-    "what": "Claude-written MEMORY.md + topic files per repo (shared across worktrees), plus your CLAUDE.md rules",
+    "what": "Claude-written MEMORY.md plus topic files per repo (shared across worktrees), alongside your CLAUDE.md rules",
     "why": "First-party, no daemon, plain markdown, loaded every session (first 200 lines/25KB)",
-    "cost": "owned",
-    "free_limits": "n/a",
-    "windows_fit": "native",
+    "cost": "paid",
+    "free_limits": "Requires a Claude plan (Pro/Max plans/Team/Enterprise) or API billing; counts against plan usage",
     "maintained": "core",
     "install": "built-in; /memory",
     "license": "proprietary (Claude Code)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://code.claude.com/docs/en/memory.md",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
+  },
+  "best_free": {
+    "checked": "2026-10-28",
+    "name": "claude-mem (thedotmack)",
+    "url": "https://github.com/thedotmack/claude-mem",
+    "source_url": "https://github.com/thedotmack/claude-mem",
+    "what": "Hook-based session capture, compression and search (local SQLite + Chroma) with MCP search tools",
+    "why": "The most adopted dedicated memory add-on for Claude Code; runs fully local without an account",
+    "cost": "freemium",
+    "free_limits": "Local use is free with no account (skip sign-in or set CLAUDE_MEM_ONLINE_OPTIN=false); compression uses your Claude plan or your own OpenRouter/Gemini key; hosted observer (30-day trial), Cloud Sync and TeamBrain are paid (prices not published on README)",
+    "maintained": "v15.4.0 (2026-10-28)",
+    "install": "npx claude-mem install  (or /plugin marketplace add thedotmack/claude-mem, then /plugin install claude-mem)",
+    "license": "Apache-2.0 (README points to docs/ip-boundary.md for commercial parts)"
   },
   "alts": [
     {
@@ -29,14 +40,13 @@
       "why": "Adds searchable session history that auto memory lacks",
       "cost": "freemium",
       "free_limits": "local free; hosted observer 30-day trial; cmem.ai cloud sync paid",
-      "windows_fit": "native (needs Node 20, Bun, uv; worker HTTP API)",
       "maintained": "v15.4.0 badge; ~103.9k stars",
-      "install": "installed",
+      "install": "see source",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/thedotmack/claude-mem",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     },
     {
       "name": "Basic Memory",
@@ -45,14 +55,13 @@
       "why": "Best if you want a human-curated notes vault the agent also uses",
       "cost": "freemium",
       "free_limits": "local free; cloud $15-19/mo",
-      "windows_fit": "native (uv) - Windows not explicitly documented",
       "maintained": "v0.23 referenced; 4.4k stars",
       "install": "uvx basic-memory mcp",
       "license": "AGPL-3.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/basicmachines-co/basic-memory",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     }
   ],
   "candidates": [
@@ -62,7 +71,7 @@
     },
     {
       "name": "claude-mem",
-      "verdict": "keep as add-on only if you actually search past sessions; heavy (Bun+uv+Chroma+local HTTP worker)"
+      "verdict": "add-on only if you search past sessions; heavy (Bun+uv+Chroma+local HTTP worker)"
     },
     {
       "name": "Basic Memory",
@@ -77,13 +86,15 @@
       "verdict": "third overlapping store; turn off"
     }
   ],
-  "decision": "Auto memory is first-party, zero-maintenance and already does the core job. claude-mem is the best add-on for cross-session search but costs a background worker, hooks on every prompt and a cloud sign-in prompt; keep it with a local provider (CLAUDE_MEM_ONLINE_OPTIN=false) or remove it if you don't use mem-search weekly.",
+  "decision": "Built-in auto memory plus CLAUDE.md is first-party, zero-maintenance and covers the core job. Add claude-mem only if you actually search past sessions: it costs a background worker, per-prompt hooks and model usage for compression. Serena's memories are a side feature of a code-navigation toolkit, not a memory product.",
   "note": "",
-  "details": "If you install claude-mem, don't also install its Cowork variant in Claude Code; the skills duplicate.",
+  "details": "Pick itself needs Claude Code (a Claude plan or API billing); no separate charge.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Doc confirms auto memory per repo, shared across worktrees, loaded every session (first 200 lines or 25KB); AGENTS.md supported.",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
     "url": "https://code.claude.com/docs/en/memory.md"
   },
-  "better_pick": null
+  "better": []
 }

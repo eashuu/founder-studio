@@ -3,8 +3,7 @@
   "slot": "mobile UI styling + components",
   "track": "app-stacks",
   "stage": "build",
-  "region": "Global",
-  "order": 5081,
+  "order": 5030,
   "pick": {
     "name": "Uniwind (Tailwind v4 for React Native)",
     "url": "https://uniwind.dev/",
@@ -12,32 +11,30 @@
     "why": "Same Tailwind v4 tokens/classes as shadcn web; free MIT core; Better-T-Stack default",
     "cost": "freemium",
     "free_limits": "Free core MIT incl. Expo Go; Pro adds C++ engine/Reanimated className (price not shown)",
-    "windows_fit": "native",
     "maintained": "uniwind 1.13.0 (2026-10-19)",
     "install": "npm i uniwind tailwindcss",
     "license": "MIT (core)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://uniwind.dev/",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native"
+  },
+  "best_free": {
+    "name": "NativeWind",
+    "url": "https://www.nativewind.dev",
+    "what": "Tailwind for React Native",
+    "why": "Most adopted (1.77M/wk); huge example base",
+    "cost": "free",
+    "free_limits": "n/a",
+    "maintained": "nativewind 4.2.7 (2026-09-14)",
+    "install": "npm i nativewind",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "source_url": "https://www.npmjs.com/package/nativewind",
+    "checked": "2026-10-28",
+    "platforms": "native"
   },
   "alts": [
-    {
-      "name": "NativeWind",
-      "url": "https://www.nativewind.dev",
-      "what": "Tailwind for React Native",
-      "why": "Most adopted (1.77M/wk); huge example base",
-      "cost": "free",
-      "free_limits": "n/a",
-      "windows_fit": "native",
-      "maintained": "nativewind 4.2.7 (2026-09-14)",
-      "install": "npm i nativewind",
-      "license": "MIT",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://www.npmjs.com/package/nativewind",
-      "checked": "2026-10-28"
-    },
     {
       "name": "Tamagui",
       "url": "https://tamagui.dev",
@@ -45,13 +42,27 @@
       "why": "Wins if you want one component set on web and native",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "tamagui 3.1.6 (2026-10-27)",
       "install": "npm create tamagui@latest",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.npmjs.com/package/tamagui",
+      "checked": "2026-10-28",
+      "platforms": "native"
+    },
+    {
+      "name": "React Native Paper",
+      "url": "https://github.com/callstack/react-native-paper",
+      "what": "Material Design component library for React Native",
+      "why": "Mature MIT component set when prebuilt widgets matter more than Tailwind tokens",
+      "cost": "free",
+      "free_limits": "n/a",
+      "platforms": "iOS|Android",
+      "maintained": "release date not shown on repo page (opened 2026-10-28)",
+      "install": "see getting-started guide",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/callstack/react-native-paper",
       "checked": "2026-10-28"
     }
   ],
@@ -88,10 +99,12 @@
   "decision": "Uniwind keeps one Tailwind design language across web, desktop and mobile. Choose NativeWind if a starter/template depends on it; add HeroUI Native for prebuilt components.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Uniwind homepage confirms: free MIT core with full Tailwind v4 and Expo Go; Pro adds C++ engine and Reanimated className, needs a dev build; Pro price not shown; built by the Unistyles team.",
-    "url": "https://uniwind.dev/"
+    "note": "uniwind 1.13.1 on 2026-10-28, MIT, ~745k weekly downloads.",
+    "url": "https://www.npmjs.com/package/uniwind"
   },
-  "better_pick": null
+  "better": []
 }

@@ -1,0 +1,106 @@
+{
+  "slug": "product-backlog-issue-tracking",
+  "slot": "product backlog + issue tracking",
+  "track": "productivity",
+  "stage": "run",
+  "order": 11001,
+  "pick": {
+    "name": "Linear",
+    "url": "https://linear.app",
+    "what": "Fast keyboard-first issue tracker with cycles, roadmaps and an official remote MCP",
+    "why": "Best UX and speed for a small product team; official MCP (claude mcp add --transport http linear-server https://mcp.linear.app/mcp)",
+    "cost": "freemium",
+    "free_limits": "Free: 250 issues total, 2 teams, unlimited members, 10 MB uploads; Basic $10/user/mo (annual)",
+    "platforms": "web|macOS|Windows|iOS|Android",
+    "maintained": "SaaS; MCP docs current",
+    "install": "web",
+    "license": "Proprietary SaaS",
+    "commercial_ok": "yes",
+    "source_url": "https://linear.app/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "GitHub Issues + Projects",
+    "url": "https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects",
+    "what": "Issues, milestones and Projects boards/tables/roadmaps next to the code",
+    "why": "No issue cap; Claude Code drives it through gh CLI and the GitHub MCP; issues link to PRs and releases",
+    "cost": "free",
+    "free_limits": "Included on GitHub Free; up to 50 fields per project",
+    "platforms": "web",
+    "maintained": "GitHub SaaS, continuously updated",
+    "install": "web; CLI: brew install gh | winget install -e --id GitHub.cli",
+    "license": "Proprietary SaaS",
+    "commercial_ok": "yes",
+    "source_url": "https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Plane",
+      "url": "https://plane.so",
+      "what": "Open-source project management with cycles, modules and pages",
+      "why": "Self-hostable Linear-style tracker; free plan up to 12 users",
+      "cost": "freemium",
+      "free_limits": "Free: 12 users, no AI credits/time tracking/integrations; Pro $6/user/mo annual",
+      "platforms": "web",
+      "maintained": "pricing page current; repo licence not checked",
+      "install": "web or self-host",
+      "license": "Open source (licence not verified)",
+      "commercial_ok": "unclear",
+      "source_url": "https://plane.so/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Jira",
+      "url": "https://www.atlassian.com/software/jira/pricing",
+      "what": "Enterprise-grade issue tracker",
+      "why": "Flips the choice when you need compliance, deep workflows or sell into Atlassian shops",
+      "cost": "freemium",
+      "free_limits": "Free/Standard/Premium plans exist; figures not readable on the fetched page",
+      "platforms": "web|iOS|Android",
+      "maintained": "SaaS",
+      "install": "web",
+      "license": "Proprietary SaaS",
+      "commercial_ok": "yes",
+      "source_url": "https://www.atlassian.com/software/jira/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Linear",
+      "verdict": "PICK: best UX + MCP; 250-issue free cap is the limit"
+    },
+    {
+      "name": "GitHub Issues + Projects",
+      "verdict": "BEST FREE: uncapped, native to the code"
+    },
+    {
+      "name": "Plane",
+      "verdict": "Open-source alternative; self-host or cloud"
+    },
+    {
+      "name": "Jira",
+      "verdict": "Heavy for a solo founder; wins with enterprise needs"
+    },
+    {
+      "name": "Notion databases",
+      "verdict": "Workable for tiny backlogs; weak code linkage"
+    },
+    {
+      "name": "Shortcut / Height",
+      "verdict": "Not verified this pass"
+    }
+  ],
+  "decision": "Linear is the best tracker for a small product team: speed, cycles and an official MCP for Claude Code. GitHub Issues + Projects is the zero-cost, uncapped alternative and often enough solo. Switch from free Linear to paid (or to GitHub) when the 250-issue cap bites.",
+  "note": "",
+  "details": "",
+  "region_notes": {},
+  "os_notes": {},
+  "verify": {
+    "verdict": "ok",
+    "note": "Verified: Free 250 issues, 2 teams, unlimited members, 10 MB/file; Basic $10, Business $16 per user/mo annual.",
+    "url": "https://linear.app/pricing"
+  },
+  "better": []
+}

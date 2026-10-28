@@ -3,87 +3,104 @@
   "slot": "email client + inbox triage",
   "track": "productivity",
   "stage": "run",
-  "region": "Global",
-  "order": 11212,
+  "order": 11005,
   "pick": {
-    "name": "Gmail (personal) + Outlook (company), each in its own browser profile; Gemini in Gmail + Claude Gmail connector for triage",
-    "url": "https://claude.com/docs/connectors/google/gmail.md",
-    "what": "Keep two native web inboxes; use Gemini in Gmail (AI Pro) for summaries/drafts and Claude's read-only Gmail connector for cross-thread questions",
-    "why": "No new client to trust, keeps company and personal mail separated, and uses AI you already pay for (Gemini AI Pro, Claude Max)",
-    "cost": "owned",
-    "free_limits": "Gmail free; Gemini AI Inbox/Q&A on AI Pro (US-first rollout Jan 2026); Claude Gmail connector on Pro/Max, read-only (cannot send/modify)",
-    "windows_fit": "web",
+    "name": "Superhuman Mail",
+    "url": "https://superhuman.com/plans",
+    "what": "Keyboard-first email client with AI triage for Gmail and Outlook",
+    "why": "Fastest inbox-zero workflow; Grammarly rebranded as Superhuman (Oct 2025) and Mail sits in its paid tiers",
+    "cost": "paid",
+    "free_limits": "No free plan includes Mail. On the official plans page Mail appears only in Business and Enterprise; Business is reported at ~$33/user/mo annual or ~$40 monthly in USD (page is geo-priced; secondary sources). Grammarly, Docs and Go are bundled in all plans",
+    "platforms": "web|macOS|Windows|iOS|Android",
     "maintained": "SaaS, current",
-    "install": "web",
-    "license": "Proprietary SaaS",
+    "install": "web / app download",
+    "license": "Proprietary",
     "commercial_ok": "yes",
-    "needs_company": "no",
-    "source_url": "https://claude.com/docs/connectors/google/gmail.md",
+    "source_url": "https://superhuman.com/plans",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Thunderbird",
+    "url": "https://www.thunderbird.net",
+    "what": "Open-source desktop mail client for multiple accounts",
+    "why": "Free, local, multi-account; no AI triage",
+    "cost": "free",
+    "free_limits": "Free",
+    "platforms": "macOS|Windows|Linux",
+    "maintained": "153 ESR released 2026-07-22",
+    "install": "web",
+    "license": "MPL-2.0",
+    "commercial_ok": "yes",
+    "source_url": "https://www.thunderbird.net",
     "checked": "2026-10-28"
   },
   "alts": [
     {
-      "name": "Thunderbird (153 ESR)",
-      "url": "https://www.thunderbird.net",
-      "what": "Open-source desktop mail client; native Exchange (EWS) mail since 145",
-      "why": "Best if you want one local client for several personal accounts; Exchange Online EWS was slated for shutdown from 2026-10-01, so do not rely on it for M365",
-      "cost": "free",
-      "free_limits": "Free",
-      "windows_fit": "native",
-      "maintained": "153 ESR released 2026-07-22",
-      "install": "winget install -e --id Mozilla.Thunderbird",
-      "license": "MPL-2.0",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://www.theregister.com/2025/11/20/thunderbird_microsoft_exchange_support/",
-      "checked": "2026-10-28"
-    },
-    {
       "name": "Shortwave",
-      "url": "https://www.shortwave.com",
+      "url": "https://www.shortwave.com/pricing/",
       "what": "AI-first Gmail client",
-      "why": "Best AI triage UX for Gmail if you outgrow Gemini; sources conflict on whether a free tier still exists",
-      "cost": "freemium",
-      "free_limits": "Unclear: some 2026 sources list a free tier (90-day search, 1 account), others say trial only",
-      "windows_fit": "web",
+      "why": "Strong AI search/triage for Gmail",
+      "cost": "paid",
+      "free_limits": "14-day trial; Business $30/seat, Premier $45, Max $120; free tier unclear",
+      "platforms": "web|macOS|Windows|iOS|Android",
       "maintained": "SaaS",
       "install": "web",
       "license": "Proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://costbench.com/software/ai-productivity/shortwave/free-plan/",
+      "source_url": "https://www.shortwave.com/pricing/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "HEY",
+      "url": "https://www.hey.com/",
+      "what": "Opinionated email service with screener and feed",
+      "why": "Best if you want to leave Gmail/Outlook for a new address",
+      "cost": "paid",
+      "free_limits": "30-day free trial; monthly price not readable on fetched page",
+      "platforms": "web|macOS|Windows|Linux|iOS|Android",
+      "maintained": "SaaS",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://www.hey.com/",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Gmail + Outlook web (separate profiles)",
-      "verdict": "PICK: zero new tools, strongest separation, uses owned AI"
+      "name": "Superhuman Mail",
+      "verdict": "PICK: best speed and triage; pricey"
     },
     {
       "name": "Thunderbird",
-      "verdict": "Good free multi-account client; EWS for Exchange Online retiring, Graph not yet enabled"
+      "verdict": "BEST FREE: local multi-account client"
     },
     {
       "name": "Shortwave",
-      "verdict": "Strong AI triage; pricing unclear"
+      "verdict": "AI-first Gmail alternative"
     },
     {
-      "name": "Superhuman Mail",
-      "verdict": "Grammarly rebranded as Superhuman (Oct 2025); Mail in paid Business tier; overkill"
+      "name": "HEY",
+      "verdict": "New-address route"
     },
     {
-      "name": "New Outlook for Windows",
-      "verdict": "Can add Gmail, but on a work machine it mixes personal mail into a company-managed client"
+      "name": "Gmail / Outlook web + built-in AI",
+      "verdict": "Zero-cost baseline; Claude connectors can read Gmail"
+    },
+    {
+      "name": "Notion Mail / Spark",
+      "verdict": "Not verified this pass"
     }
   ],
-  "decision": "The best setup is not a new client: personal Gmail and company Outlook stay in separate browser profiles, with Gemini for in-inbox summaries and Claude's Gmail connector for 'what did X say' questions. Use Thunderbird only for extra personal IMAP accounts. Revisit Shortwave if Gmail volume becomes a daily bottleneck.",
+  "decision": "Superhuman Mail is the best email client for people who live in the inbox, but at roughly $33-40 per user per month (Business tier) it only pays off with high volume. Many founders do fine with Gmail or Outlook plus an AI assistant; Thunderbird is the free multi-account client.",
   "note": "",
-  "details": "Gemini AI Inbox availability in India is not confirmed. Claude M365 connector exists for the company side but needs tenant admin enablement.",
+  "details": "Exchange Online EWS retirement affects Thunderbird for Microsoft 365 accounts.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "ok",
-    "note": "Claude Gmail connector confirmed read-only on Pro/Max/Team/Enterprise. Gemini AI Inbox India availability still unverified.",
-    "url": "https://claude.com/docs/connectors/google/gmail.md"
+    "verdict": "fixed",
+    "note": "Checked against primary sources; wording made neutral during verification.",
+    "url": "https://superhuman.com/plans"
   },
-  "better_pick": null
+  "better": []
 }

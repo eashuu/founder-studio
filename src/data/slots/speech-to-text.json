@@ -3,24 +3,23 @@
   "slot": "speech-to-text",
   "track": "ai-eng",
   "stage": "build",
-  "region": "Global",
-  "order": 4068,
+  "order": 4016,
   "pick": {
     "name": "whisper.cpp",
     "url": "https://github.com/ggml-org/whisper.cpp",
     "what": "C/C++ Whisper with CPU AVX, quantization, VAD, server, streaming example",
-    "why": "MIT, plain CPU on Windows (MSVC/MinGW), bindings for JS/Rust/Swift, whisper.rn for mobile; audio stays local (PHI)",
+    "why": "MIT, plain CPU on Windows (MSVC/MinGW), bindings for JS/Rust/Swift, whisper.rn for mobile; audio stays local (regulated data)",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native",
-    "maintained": "v1.9.5 released 2026-10-06 (GitHub API)",
+    "maintained": "v1.9.5 on 06 Oct (release page shows no year; assumed 2026)",
     "install": "download release zip / build with cmake",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/ggml-org/whisper.cpp",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Moonshine (Useful Sensors)",
@@ -29,14 +28,13 @@
       "why": "Claims higher accuracy than Whisper Large V3 with tiny streaming models; best latency for voice agents",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "Repo active (666 commits); release date unverified",
       "install": "see repo README (pip package name unverified)",
       "license": "MIT code; legacy non-English models under non-commercial Community License",
       "commercial_ok": "yes (check non-English models)",
-      "needs_company": "no",
       "source_url": "https://github.com/moonshine-ai/moonshine",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     },
     {
       "name": "Groq Whisper API",
@@ -45,14 +43,13 @@
       "why": "Free fast fallback for non-sensitive audio",
       "cost": "freemium",
       "free_limits": "20 RPM, 2K RPD, 7.2K audio-sec/hr, 28.8K audio-sec/day (table; plan column unclear)",
-      "windows_fit": "web",
       "maintained": "Page 2026-10-28",
       "install": "npm i groq-sdk",
       "license": "Proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://console.groq.com/docs/rate-limits",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     }
   ],
   "candidates": [
@@ -66,7 +63,7 @@
     },
     {
       "name": "Groq Whisper API",
-      "verdict": "Alt: free hosted, non-PHI"
+      "verdict": "Alt: free hosted, non-regulated data"
     },
     {
       "name": "faster-whisper 1.2.1 (2025-10-31)",
@@ -81,13 +78,17 @@
       "verdict": "Cloud; free tier trains on data"
     }
   ],
-  "decision": "whisper.cpp for local transcription (clinical dictation stays on-device); Moonshine when streaming latency for a voice agent matters. Indian-language accuracy of both unverified.",
+  "decision": "whisper.cpp for local transcription (audio stays on-device); Moonshine when streaming latency for a voice agent matters. Check accuracy for your target languages before committing.",
   "note": "",
   "details": "",
+  "region_notes": {
+    "India": "Accuracy on Indian languages for whisper.cpp and Moonshine is unverified; test on your own audio."
+  },
+  "os_notes": {},
   "verify": {
     "verdict": "fixed",
-    "note": "Year confirmed 2026.",
-    "url": "https://github.com/ggml-org/whisper.cpp/releases"
+    "note": "India-specific caveat moved out of the general decision.",
+    "url": "https://github.com/ggml-org/whisper.cpp"
   },
-  "better_pick": null
+  "better": []
 }

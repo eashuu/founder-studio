@@ -1,0 +1,92 @@
+{
+  "slug": "local-entity-and-startup-registrations-outside-the-us",
+  "slot": "Local entity and startup registrations (outside the US)",
+  "track": "legal",
+  "stage": "run",
+  "order": 10001,
+  "pick": {
+    "name": "Local limited company in your country (e.g. UK Ltd via Companies House)",
+    "url": "https://www.gov.uk/limited-company-formation/register-your-company",
+    "what": "Register a UK Ltd online",
+    "why": "GBP 100 online, usually done within 24 hours; low-friction, investor-recognised",
+    "cost": "paid",
+    "free_limits": "No free tier; GBP 100",
+    "platforms": "web",
+    "maintained": "live page 2026-10-28",
+    "install": "web",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "source_url": "https://www.gov.uk/limited-company-formation/register-your-company",
+    "checked": "2026-10-28"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "India Private Limited + DPIIT recognition",
+      "url": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html",
+      "what": "Pvt Ltd under Companies Act 2013, DPIIT startup status",
+      "why": "Needed for equity funding, ESOPs and 80-IAC tax holiday; sole prop and OPC not DPIIT-eligible",
+      "cost": "paid",
+      "free_limits": "DPIIT recognition free; Pvt Ltd has incorporation, ROC filings and audit costs",
+      "platforms": "web",
+      "maintained": "page updated 2026-10-26 (earlier pass)",
+      "install": "web (MCA SPICe+)",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "source_url": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "India sole proprietorship (PAN + Udyam + GST when needed)",
+      "url": "https://udyamregistration.gov.in/Default.aspx",
+      "what": "Trade as an individual",
+      "why": "No registration fee or ROC filings; unlimited personal liability so cap liability by contract",
+      "cost": "free",
+      "free_limits": "Free",
+      "platforms": "web",
+      "maintained": "n/a",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "source_url": "https://udyamregistration.gov.in/Default.aspx",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Companies House Ltd",
+      "verdict": "PICK for UK: GBP 100"
+    },
+    {
+      "name": "Udyam + sole prop (India)",
+      "verdict": "Free start in India; no DPIIT"
+    },
+    {
+      "name": "India Pvt Ltd",
+      "verdict": "Wins on funding, hiring, enterprise contracts"
+    },
+    {
+      "name": "EU local company (GmbH/BV/SAS/OU)",
+      "verdict": "Not researched here; costs and minimum capital vary by country (unverified)"
+    },
+    {
+      "name": "India OPC / LLP",
+      "verdict": "Weaker than Pvt Ltd for a funded product company"
+    }
+  ],
+  "decision": "Form the simplest local limited-liability company where you live and pay tax: a UK Ltd costs GBP 100 online and is usually registered within 24 hours; an Estonian OU via e-Residency suits EU-market founders who want a fully online EU company; India's Private Limited is the route for funding and DPIIT recognition. Switch to a Delaware C-corp (see entity slot) when US investors or US enterprise buyers require it.",
+  "note": "",
+  "details": "No free option: every limited-liability company carries a government fee (UK GBP 100, Estonia EUR 265, Delaware USD 109); sole-trader/proprietor registration is free in many countries but gives no liability protection.",
+  "region_notes": {
+    "UK": "Ltd via Companies House costs GBP 100 online; annual confirmation statement and accounts required.",
+    "EU": "Each member state has its own company form, fees and capital rules; Estonia's e-Residency gives non-residents an online OU (EUR 265 state registration fee plus the e-Residency card fee, EUR 100-150, rising to a flat EUR 165 from 1 Jan 2027). Verify locally.",
+    "India": "A sole proprietorship needs no incorporation (PAN + Udyam, which is free, + GST when required); a Private Limited company is needed for equity funding, ESOPs and DPIIT recognition (DPIIT is free; sole props and OPCs are not eligible). Annual compliance costs vary; verify with a CA."
+  },
+  "os_notes": {},
+  "verify": {
+    "verdict": "fixed",
+    "note": "Checked against primary sources; wording made neutral during verification.",
+    "url": "https://www.gov.uk/limited-company-formation/register-your-company"
+  },
+  "better": []
+}

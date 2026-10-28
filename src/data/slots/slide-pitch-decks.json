@@ -3,103 +3,108 @@
   "slot": "Slide / pitch decks",
   "track": "design",
   "stage": "discover",
-  "region": "Global",
-  "order": 1167,
+  "order": 1031,
   "pick": {
-    "name": "Claude Design (decks)",
-    "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
-    "what": "Generates decks on your design system; exports PPTX, PDF, Google Slides, HTML, Canva",
-    "why": "On-brand decks from your design system, editable exports to Google Slides/PPTX, and no watermark.",
-    "cost": "owned",
-    "free_limits": "Counts toward Claude usage limits",
-    "windows_fit": "web/desktop",
-    "maintained": "live",
+    "name": "Gamma",
+    "url": "https://gamma.app/pricing",
+    "what": "AI presentation and doc generator",
+    "why": "Most polished prompt-to-deck workflow for non-designers, with PPTX/Google Slides export so decks are not locked in.",
+    "cost": "freemium",
+    "free_limits": "Free: 400 one-time credits at signup (+200 per referral), up to 10 slides per prompt, import PDF/PPTX, export PDF/PPTX/PNG/Google Slides; Free PDF/PPTX exports carry a 'Made with Gamma' badge. Plus 1,000 credits/mo (removes branding, 100 slides/prompt), Pro 4,000/mo (custom branding, analytics, domains), Ultra 20,000/mo. USD prices are localised and were not visible: the India page shows ₹400 / ₹950 / ₹7,833 per seat per month billed annually; secondary sources put Plus at ~$8-12 and Pro at ~$15-25 per month",
+    "platforms": "web",
+    "maintained": "live service",
     "install": "web",
-    "license": "Anthropic ToS",
+    "license": "proprietary SaaS",
     "commercial_ok": "yes",
-    "needs_company": "no",
-    "source_url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+    "source_url": "https://gamma.app/pricing",
     "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Slidev",
+    "url": "https://github.com/slidevjs/slidev",
+    "what": "Markdown slides for developers (Vue), Git-versioned",
+    "why": "Best for technical talks/demos with live code; Claude Code writes it.",
+    "cost": "free",
+    "free_limits": "Free",
+    "maintained": "v53.0.0, 16 Sep",
+    "install": "npm init slidev@latest",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "source_url": "https://github.com/slidevjs/slidev/releases",
+    "checked": "2026-10-28",
+    "platforms": "native (Node)"
   },
   "alts": [
     {
-      "name": "Google Slides + Gemini (AI Pro)",
-      "url": "https://workspaceupdates.googleblog.com",
-      "what": "Slides with Gemini full-deck generation",
-      "why": "Best place to edit/present/share with investors; full-deck generation included in AI Pro (from 29 Jun 2026, English).",
-      "cost": "owned",
-      "free_limits": "Included in Google AI Pro",
-      "windows_fit": "web",
+      "name": "Claude Design",
+      "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+      "what": "Generates decks on your design system; exports PPTX, PDF, Google Slides, HTML, Canva",
+      "why": "Decks that share a design system with prototypes and code; exports PPTX/PDF.",
+      "cost": "paid",
+      "free_limits": "Counts toward Claude usage limits",
       "maintained": "live",
+      "install": "web",
+      "license": "Anthropic ToS",
+      "commercial_ok": "yes",
+      "source_url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+      "checked": "2026-10-28",
+      "platforms": "web/desktop"
+    },
+    {
+      "name": "Google Slides + Gemini",
+      "url": "https://workspace.google.com",
+      "what": "Slides with Gemini generation",
+      "why": "Free Slides; Gemini features depend on plan.",
+      "cost": "freemium",
+      "free_limits": "Slides is free; the Gemini app's slide generation is available without a Google AI plan (standard limits); Gemini side panel in Slides depends on Workspace/Google AI plan",
+      "platforms": "web",
+      "maintained": "live service",
       "install": "web",
       "license": "Google ToS",
       "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://one.google.com/about/google-ai-plans/",
-      "checked": "2026-10-28"
-    },
-    {
-      "name": "Slidev",
-      "url": "https://github.com/slidevjs/slidev",
-      "what": "Markdown slides for developers (Vue), Git-versioned",
-      "why": "Best for technical talks/demos with live code; Claude Code writes it.",
-      "cost": "free",
-      "free_limits": "Free",
-      "windows_fit": "native (Node)",
-      "maintained": "v53.0.0, 16 Sep",
-      "install": "npm init slidev@latest",
-      "license": "MIT",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://github.com/slidevjs/slidev/releases",
+      "source_url": "https://workspace.google.com",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Claude Design",
-      "verdict": "pick"
-    },
-    {
-      "name": "Google Slides + Gemini",
-      "verdict": "alt edit/present"
+      "name": "Gamma",
+      "verdict": "pick (unverified pricing)"
     },
     {
       "name": "Slidev",
-      "verdict": "alt dev talks"
+      "verdict": "best_free: MIT markdown decks"
     },
     {
-      "name": "Gamma",
-      "verdict": "400 one-time credits, watermark on free"
+      "name": "Claude Design",
+      "verdict": "alt: decks tied to your design system"
+    },
+    {
+      "name": "Google Slides + Gemini",
+      "verdict": "alt"
     },
     {
       "name": "Pitch",
-      "verdict": "free has no PPTX export"
+      "verdict": "paid peer"
     },
     {
       "name": "Beautiful.ai",
-      "verdict": "no free plan"
+      "verdict": "paid peer"
     },
     {
       "name": "Marp / reveal.js",
-      "verdict": "markdown alternatives"
-    },
-    {
-      "name": "NotebookLM slide decks",
-      "verdict": "from sources; PPTX export announced Feb 2026"
-    },
-    {
-      "name": "anthropic pptx skill",
-      "verdict": "programmatic PPTX"
+      "verdict": "free code decks"
     }
   ],
-  "decision": "Generate in Claude Design on your brand system, export to Google Slides, polish and present there. Use Slidev for technical talks where live code matters.",
+  "decision": "Gamma is the fastest prompt-to-deck route for most founders; flip to Claude Design when decks must match a codebase design system, or Slidev for developer talks in markdown. Pricing for Gamma is unverified.",
   "note": "",
-  "details": "Gemini-in-Slides inclusion in AI Pro came from a Workspace Updates post found via search (30 Jun 2026); not opened directly.",
+  "details": "Gemini app slide generation is listed for users without a Google AI plan on Google's Gemini Apps limits page (checked 2026-10-28).",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "ok",
-    "note": "Same article confirms PPTX, PDF, Google Slides, HTML and Canva integration.",
-    "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design"
+    "verdict": "fixed",
+    "note": "Checked against primary sources; wording made neutral during verification.",
+    "url": "https://gamma.app/pricing"
   },
-  "better_pick": null
+  "better": []
 }

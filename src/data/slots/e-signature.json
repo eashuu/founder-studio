@@ -3,21 +3,34 @@
   "slot": "E-signature",
   "track": "legal",
   "stage": "run",
-  "region": "Global",
-  "order": 10175,
+  "order": 10004,
   "pick": {
     "name": "DocuSeal",
     "url": "https://www.docuseal.com/pricing",
-    "what": "Open-source e-signature: cloud or self-hosted",
-    "why": "Most generous free tier (10 requests/mo cloud, unlimited self-hosted); AGPL self-host means no lock-in; API/embedding available from one Pro seat",
+    "what": "Open-source e-signature, cloud or self-hosted",
+    "why": "Most generous free tier checked (10 requests/mo cloud, unlimited self-hosted); API + embedding; no lock-in",
     "cost": "freemium",
-    "free_limits": "Cloud Basic: 10 signature-request emails/mo; self-host OSS edition unlimited (no automated reminders/SSO/webhook monitoring); Pro USD 20/user/mo; API USD 0.20/doc and requires >=1 Pro seat",
-    "windows_fit": "web (self-host via Docker on a Linux VM)",
+    "free_limits": "Cloud: 10 signature emails/mo; self-host unlimited; Pro USD 20/user/mo",
+    "platforms": "web, Docker (macOS/Windows/Linux)",
     "maintained": "3.3.4 released 2026-10-26",
     "install": "web, or docker run docuseal/docuseal",
-    "license": "AGPL-3.0 (self-host edition; licence named on GitHub)",
+    "license": "AGPL-3.0 (self-host)",
     "commercial_ok": "yes",
-    "needs_company": "no",
+    "source_url": "https://www.docuseal.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "DocuSeal self-hosted (unlimited)",
+    "url": "https://www.docuseal.com/pricing",
+    "what": "Self-host the open-source edition with your own SMTP",
+    "why": "No signature limits, no per-seat fee; you run the server",
+    "cost": "free",
+    "free_limits": "Unlimited signatures; you pay for hosting only",
+    "platforms": "web, Docker (macOS/Windows/Linux)",
+    "maintained": "3.3.4 released 2026-10-26",
+    "install": "web, or docker run docuseal/docuseal",
+    "license": "AGPL-3.0 (self-host)",
+    "commercial_ok": "yes",
     "source_url": "https://www.docuseal.com/pricing",
     "checked": "2026-10-28"
   },
@@ -25,16 +38,15 @@
     {
       "name": "Zoho Sign",
       "url": "https://www.zoho.com/sign/pricing.html",
-      "what": "Zoho e-signature with Aadhaar eSign identity",
-      "why": "Only mainstream tool here with Aadhaar eSign for Indian counterparties",
+      "what": "Zoho e-signature with Aadhaar eSign",
+      "why": "Low-cost mainstream e-signature inside the Zoho suite; also supports Aadhaar eSign for Indian counterparties",
       "cost": "freemium",
-      "free_limits": "Free: 1 user, 5 envelopes/mo; Aadhaar eSign via paid credits",
-      "windows_fit": "web",
+      "free_limits": "Free: 1 user, 5 envelopes/mo",
+      "platforms": "web",
       "maintained": "live page 2026-10-28",
       "install": "web",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.zoho.com/sign/pricing.html",
       "checked": "2026-10-28"
     },
@@ -42,15 +54,14 @@
       "name": "Documenso",
       "url": "https://documenso.com/pricing",
       "what": "Open-source DocuSign alternative",
-      "why": "Polished OSS option; free cloud 5 docs/mo; Individual USD 25/mo",
+      "why": "Polished OSS option; free cloud 5 docs/mo",
       "cost": "freemium",
-      "free_limits": "Free: 5 docs/mo, 10 recipients/doc; API from Individual",
-      "windows_fit": "web",
+      "free_limits": "Free: 5 docs/mo, 10 recipients/doc",
+      "platforms": "web, Docker",
       "maintained": "v2.21.1 released 2026-10-22",
       "install": "web",
       "license": "AGPL-3.0 (verify)",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://documenso.com/pricing",
       "checked": "2026-10-28"
     }
@@ -58,36 +69,42 @@
   "candidates": [
     {
       "name": "DocuSeal",
-      "verdict": "PICK: 10 free/mo cloud, unlimited self-hosted"
+      "verdict": "PICK on value and openness"
+    },
+    {
+      "name": "DocuSign",
+      "verdict": "Best-known brand; buyers' legal teams accept it everywhere, but its pricing page returned 404 so cost is unverified"
     },
     {
       "name": "Zoho Sign",
-      "verdict": "Wins when an Indian counterparty needs Aadhaar eSign"
+      "verdict": "Wins for Aadhaar eSign"
     },
     {
       "name": "Documenso",
-      "verdict": "Close OSS runner-up; smaller free tier"
+      "verdict": "Close OSS runner-up"
     },
     {
       "name": "PandaDoc Free eSign",
-      "verdict": "New accounts: 5 sends/mo, 5 templates, 2 recipients"
+      "verdict": "5 sends/mo, 5 templates (earlier pass)"
     },
     {
-      "name": "Dropbox Sign / DocuSign / Adobe Sign",
-      "verdict": "Paid-first; not needed"
-    },
-    {
-      "name": "Leegality / Digio",
-      "verdict": "Aadhaar eSign APIs, per-sign pricing (not checked)"
+      "name": "Adobe Sign / Dropbox Sign",
+      "verdict": "Paid-first"
     }
   ],
-  "decision": "DocuSeal's free cloud tier covers a solo founder's NDAs/order forms; self-host it on a small always-free VM if volume grows. Use Zoho Sign only when an Indian client wants Aadhaar eSign.",
+  "decision": "DocuSeal's free cloud tier covers a small team's NDAs and order forms, and self-hosting removes limits. Pick DocuSign instead when a large enterprise counterparty mandates it, or Zoho Sign when an Indian counterparty needs Aadhaar eSign.",
   "note": "",
-  "details": "Plain click/typed e-signatures are generally valid in US (ESIGN/UETA); in India the IT Act recognises electronic signatures incl. Aadhaar eSign; some documents are excluded. Verify with a lawyer.",
+  "details": "Verify with a lawyer.",
+  "region_notes": {
+    "US": "Typed/click e-signatures are generally valid under ESIGN/UETA.",
+    "EU": "eIDAS recognises simple, advanced and qualified signatures; some documents need qualified ones.",
+    "India": "IT Act recognises electronic signatures incl. Aadhaar eSign; some documents are excluded."
+  },
+  "os_notes": {},
   "verify": {
-    "verdict": "fixed",
-    "note": "Confirmed: Basic gets 10 request emails/mo, Pro USD 20/user/mo, API USD 0.20/doc, AGPL-3.0, 3.3.4 on 2026-10-26. But the API needs at least one Pro seat (USD 20/mo), so 'API + embedding' isn't on the free tier. The open-source self-host edition lacks reminders, SSO and webhook monitoring.",
+    "verdict": "doubt",
+    "note": "DocuSeal verified (cloud free 10 signature-request emails/mo, Pro USD 20/user/mo or USD 200/yr, self-host free unlimited, AGPL-3.0, release 3.3.4 on 2026-10-26). It is the best value, but 'best overall whatever the price' for counterparties' legal teams is arguably DocuSign (pricing unverified). Also best_free is the same product as the pick (self-host) - acceptable but say so.",
     "url": "https://www.docuseal.com/pricing"
   },
-  "better_pick": null
+  "better": []
 }

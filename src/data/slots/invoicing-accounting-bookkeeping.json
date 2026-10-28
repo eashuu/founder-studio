@@ -1,0 +1,111 @@
+{
+  "slug": "invoicing-accounting-bookkeeping",
+  "slot": "Invoicing + accounting / bookkeeping",
+  "track": "money",
+  "stage": "run",
+  "order": 9027,
+  "pick": {
+    "name": "QuickBooks Online",
+    "url": "https://quickbooks.intuit.com/pricing/",
+    "what": "Accounting, invoicing and bank feeds",
+    "why": "The default for US accountants and bookkeepers; widest integrations",
+    "cost": "paid",
+    "free_limits": "Free plan: 1 user, 2 invoices/mo, 1 bank connection, 3 reports, no accountant access, no app/integrations. Paid list: Simple Start $38/mo, Essentials $85, Plus $140, Advanced $340 (US; 50% off first 3 months)",
+    "platforms": "web + apps (iOS, Android)",
+    "maintained": "active",
+    "install": "web",
+    "license": "proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://quickbooks.intuit.com/pricing/",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Zoho Books Free",
+    "url": "https://www.zoho.com/us/books/pricing/",
+    "what": "Free accounting and invoicing",
+    "why": "Real accounting for $0 while small",
+    "cost": "free",
+    "free_limits": "Free while FY revenue <= $50K (US page); 1,000 invoices/yr; 1 user + 1 accountant; Standard $15-20/mo",
+    "platforms": "web",
+    "maintained": "active",
+    "install": "web",
+    "license": "service",
+    "commercial_ok": "yes",
+    "source_url": "https://www.zoho.com/us/books/pricing/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Xero",
+      "url": "https://www.xero.com/us/pricing-plans/",
+      "what": "Cloud accounting with strong multi-currency",
+      "why": "Strongest outside the US and for multi-currency (Established plan)",
+      "cost": "paid",
+      "free_limits": "Early $27/mo (20 invoices), Growing $59, Established $97; US intro 90% off for 6 months until 2026-11-02",
+      "platforms": "web + apps",
+      "maintained": "active",
+      "install": "web",
+      "license": "proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://www.xero.com/us/pricing-plans/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Invoice Ninja",
+      "url": "https://invoiceninja.com/pricing-plans/",
+      "what": "Invoicing with multi-currency, client portal, recurring",
+      "why": "Invoicing-only tool with multi-currency, client portal and recurring invoices; self-hostable",
+      "cost": "freemium",
+      "free_limits": "Hosted free: up to 5 clients (some reviews say 20), unlimited invoices; Pro $14/mo; self-host under Elastic License 2.0 (own use OK, no hosted resale)",
+      "platforms": "web; self-host (Docker)",
+      "maintained": "v5.13.50 2026-10-21",
+      "install": "web",
+      "license": "Elastic-2.0",
+      "commercial_ok": "yes",
+      "source_url": "https://invoiceninja.com/pricing-plans/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "QuickBooks Online",
+      "verdict": "PICK"
+    },
+    {
+      "name": "Zoho Books",
+      "verdict": "best_free"
+    },
+    {
+      "name": "Xero",
+      "verdict": "Alt: multi-currency, popular in UK/AU/NZ"
+    },
+    {
+      "name": "Invoice Ninja",
+      "verdict": "Alt: invoicing; Elastic License 2.0 self-host"
+    },
+    {
+      "name": "Mercury Books",
+      "verdict": "$35/mo, waived until 2026-12-31 per Mercury page; new"
+    },
+    {
+      "name": "Wave / FreshBooks / TallyPrime",
+      "verdict": "Not researched"
+    }
+  ],
+  "decision": "QuickBooks Online is the best overall for US-based founders because accountants already use it; Xero is better for UK/EU and multi-currency. Zoho Books Free is the best free option until revenue passes the plan cap. When a merchant of record bills customers, you only invoice B2B services and book MoR payouts.",
+  "note": "",
+  "details": "",
+  "region_notes": {
+    "US": "QuickBooks dominates; ask your accountant which they prefer.",
+    "UK": "Xero is the more common default with UK accountants; both Xero and QuickBooks support Making Tax Digital for VAT. Confirm with your adviser.",
+    "India": "Zoho Books includes GST returns (free cap Rs25 lakh) and TallyPrime is widely used; export invoices under LUT need specific wording (verify with a CA).",
+    "EU": "Xero or a local package your accountant uses; check local e-invoicing mandates (e.g. Germany, France, Italy) before choosing."
+  },
+  "os_notes": {},
+  "verify": {
+    "verdict": "fixed",
+    "note": "QuickBooks vs Xero stress-tested: QBO list Simple Start $38, Essentials $85, Plus $140, Advanced $340 (50% off 3 months); Free plan is very thin (1 user, 2 invoices/mo, 1 bank, no accountant access, no integrations). Xero Early $27 (20 invoices), Growing $59, Established $97 (multi-currency only on Established). QBO stays best overall for US entities; Xero is the better default in UK/AU/NZ and when multi-currency matters. Add the Free plan limits.",
+    "url": "https://quickbooks.intuit.com/pricing/"
+  },
+  "better": []
+}

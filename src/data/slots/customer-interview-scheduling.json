@@ -3,25 +3,53 @@
   "slot": "Customer interview scheduling",
   "track": "discover",
   "stage": "discover",
-  "region": "Global",
-  "order": 142,
+  "order": 6,
   "pick": {
-    "name": "Cal.com (cloud free)",
+    "name": "Cal.com",
     "url": "https://cal.com/pricing",
-    "what": "Full-featured scheduling SaaS",
-    "why": "Best pay-later for routing/teams/workflows; note open-source changes.",
+    "what": "Scheduling with routing, workflows, teams; Meet/Zoom links",
+    "why": "Most capable scheduler: routing forms, workflows, teams; free for one user.",
     "cost": "freemium",
-    "free_limits": "Free: single user, template workflows, Cal branding. Teams $12/user/mo annual",
-    "windows_fit": "web",
+    "free_limits": "Free: single user, unlimited event types and calendars, no usage limits; Teams $12/user/mo yearly, Organizations $28",
     "maintained": "live service",
     "install": "web",
     "license": "proprietary cloud; public repo now MIT 'Cal.diy' (non-production)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://cal.com/pricing",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "web"
+  },
+  "best_free": {
+    "name": "Google Calendar appointment schedules",
+    "url": "https://support.google.com/calendar/answer/10729749",
+    "what": "Booking page in Google Calendar with auto Meet links",
+    "why": "Zero new vendor and Meet links built in for anyone on Google Calendar; free for one booking page.",
+    "cost": "free",
+    "free_limits": "Personal account: one booking page; premium features need eligible Workspace or Google One plan (eligibility unverified)",
+    "maintained": "live service",
+    "install": "web",
+    "license": "Google ToS",
+    "commercial_ok": "yes",
+    "source_url": "https://support.google.com/calendar/answer/10729749",
+    "checked": "2026-10-28",
+    "platforms": "web"
   },
   "alts": [
+    {
+      "name": "Calendly",
+      "url": "https://calendly.com/pricing",
+      "what": "Incumbent scheduling tool",
+      "why": "Most familiar to invitees; free plan is one event type.",
+      "cost": "freemium",
+      "free_limits": "Free: 1 event type, 1 calendar; Standard $10/seat/mo, Teams $16",
+      "platforms": "web",
+      "maintained": "live service",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "yes",
+      "source_url": "https://calendly.com/pricing",
+      "checked": "2026-10-28"
+    },
     {
       "name": "TidyCal",
       "url": "https://tidycal.com/pricing",
@@ -29,61 +57,46 @@
       "why": "Most generous free plan (unlimited booking types) if Google's free tier is too thin.",
       "cost": "free",
       "free_limits": "Free forever: unlimited bookings and booking types, 1 calendar, 1% fee on payments",
-      "windows_fit": "web",
       "maintained": "live service",
       "install": "web",
       "license": "proprietary SaaS",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://tidycal.com/pricing",
-      "checked": "2026-10-28"
-    },
-    {
-      "name": "Google Calendar appointment schedules",
-      "url": "https://support.google.com/calendar/answer/10729749",
-      "what": "Booking page in Google Calendar with auto Meet links",
-      "why": "Zero new vendor, Meet links built in, and your AI Pro Google One storage tier likely unlocks premium booking features.",
-      "cost": "free",
-      "free_limits": "Personal account: one booking page. Premium (multiple pages, reminders, payments, multi-calendar checks) needs an eligible Workspace or Google One plan; Google AI Pro/Ultra is in the eligible list (per-feature chart not readable)",
-      "windows_fit": "web",
-      "maintained": "live service",
-      "install": "web",
-      "license": "Google ToS",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://support.google.com/calendar/answer/10729749",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     }
   ],
   "candidates": [
     {
+      "name": "Cal.com",
+      "verdict": "pick: most capable, free single user"
+    },
+    {
       "name": "Google Calendar appointment schedules",
-      "verdict": "pick"
+      "verdict": "best_free: no new vendor"
+    },
+    {
+      "name": "Calendly",
+      "verdict": "alt: incumbent, 1 free event type"
     },
     {
       "name": "TidyCal",
-      "verdict": "alt free"
-    },
-    {
-      "name": "Cal.com",
-      "verdict": "alt; production code went private ~Apr 2026, public repo is MIT Cal.diy"
-    },
-    {
-      "name": "Calendly free",
-      "verdict": "only 1 event type"
+      "verdict": "alt: generous free"
     },
     {
       "name": "Zcal",
-      "verdict": "free, Pro $7/mo"
+      "verdict": "free, Pro $7/mo (unverified)"
     }
   ],
-  "decision": "Use Google's booking page because interviews already happen on Meet. Switch to TidyCal if you need several interview types for free, or Cal.com if you need routing forms and team scheduling.",
-  "note": "Consolidated: one booking tool for interviews and sales calls. Cal.com Free has unlimited event types and a free Attio app, and it doesn't depend on the Google AI Pro perk that ends in Jan 2028. Google appointment schedules stay as the fallback.",
+  "decision": "Cal.com offers the best feature set, including routing and workflows, with a free single-user plan. Google appointment schedules are enough if interviews are one-off on Meet; Calendly if invitees expect it. Cal.com moved its production code private in 2026, so self-host depends on its MIT community edition.",
+  "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Same tool and free plan verified in the Sales track.",
-    "url": ""
+    "note": "Checked against primary sources; wording made neutral during verification.",
+    "url": "https://github.com/calcom/cal.com"
   },
-  "better_pick": null
+  "better": []
 }

@@ -3,8 +3,7 @@
   "slot": "desktop framework",
   "track": "app-stacks",
   "stage": "build",
-  "region": "Global",
-  "order": 5087,
+  "order": 5036,
   "pick": {
     "name": "Electron (+ Vite React renderer sharing packages/ui with web)",
     "url": "https://www.electronjs.org",
@@ -12,15 +11,15 @@
     "why": "In-process Node runs the AI-agent stack directly (Claude Agent SDK, MCP stdio servers, node-llama-cpp, onnxruntime-node, Playwright); same Chromium on every OS; biggest ecosystem (7.6M/wk)",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native",
     "maintained": "electron 45.1.0 (2026-10-27)",
     "install": "npm init electron-app@latest  (or Vite + electron-builder)",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://www.npmjs.com/package/electron",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Tauri 2",
@@ -29,14 +28,13 @@
       "why": "Installers of a few MB and lower RAM; strong permission model",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native (Rust + MSVC build tools + WebView2)",
       "maintained": "@tauri-apps/cli 2.12.4 (2026-10-21); 3.0.0-alpha.5 on 'next' tag",
       "install": "npm create tauri-app@latest",
       "license": "Apache-2.0 OR MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.npmjs.com/package/@tauri-apps/cli",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native (Rust + MSVC build tools + WebView2)"
     },
     {
       "name": "Electrobun",
@@ -45,14 +43,13 @@
       "why": "TS-only like Electron with Tauri-like size and built-in kilobyte delta updates",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native (Windows 11 x64 official)",
       "maintained": "electrobun 2.0.5 (2026-10-26); 13k stars; 46k/wk",
       "install": "npx electrobun init",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/blackboardsh/electrobun",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native (Windows 11 x64 official)"
     }
   ],
   "candidates": [
@@ -91,11 +88,13 @@
   ],
   "decision": "Electron is the pick because AI-agent features on device are first-class in Node (Agent SDK, MCP servers, local models) and the renderer reuses the web React code unchanged. Switch to Tauri 2 for lightweight utilities where a ~5-10MB installer matters, and re-evaluate Electrobun in 2027.",
   "note": "",
-  "details": "Migration cost: none if your existing desktop app is Electron; keep any .NET sidecar as a child process. Harden with contextIsolation, sandbox, @electron/fuses.",
+  "details": "Migration cost is low if an existing desktop app is already Electron; keep any native sidecar as a child process. Harden with contextIsolation, sandbox, @electron/fuses.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Stress-tested: Electron holds for an agent-heavy app. MCP stdio servers, Playwright, node-llama-cpp and onnxruntime-node all need a Node runtime; Tauri's official route is a per-target-triple sidecar binary compiled with pkg, short-lived per call, with long-lived IPC left to you. Caveat: the Claude Agent SDK itself 'runs the Claude Code binary' as a subprocess, so for that item Electron's edge is smaller than the 'why' implies.",
-    "url": "https://v2.tauri.app/learn/sidecar-nodejs/"
+    "note": "electron 45.1.0 on 2026-10-27. Notes line 'if an existing desktop app is already Electron' is conditional and acceptable.",
+    "url": "https://www.npmjs.com/package/electron"
   },
-  "better_pick": null
+  "better": []
 }

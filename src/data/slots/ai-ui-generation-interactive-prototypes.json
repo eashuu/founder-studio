@@ -3,41 +3,38 @@
   "slot": "AI UI generation + interactive prototypes",
   "track": "design",
   "stage": "discover",
-  "region": "Global",
-  "order": 1151,
+  "order": 1015,
   "pick": {
     "name": "Claude Design",
     "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
     "what": "Chat-to-design canvas: prototypes, wireframes, one-pagers, decks; imports your design system; hands off to Claude Code",
-    "why": "Direct handoff into Claude Code (/design, /design-sync), reads your codebase design system, and exports HTML/PPTX/PDF/Google Slides.",
-    "cost": "owned",
-    "free_limits": "Included on Free/Pro/Max; counts toward the same Claude usage pool as Claude Code (no separate weekly allowance)",
-    "windows_fit": "web/desktop",
-    "maintained": "live; standalone claude.ai/design closes 14 Dec 2026 (moves into Claude)",
+    "why": "Hands off prototypes directly to Claude Code and reads a codebase design system.",
+    "cost": "freemium",
+    "free_limits": "Available on Free, Pro, Max, Team and Enterprise (on by default); usage counts toward Claude plan limits. Now an artifact template in Claude chats and Claude Code (/design); standalone claude.ai/design closes 14 Dec 2026",
+    "maintained": "live; standalone claude.ai/design closes 14 Dec 2026 and moves into Claude",
     "install": "web; /design in Claude Code",
     "license": "Anthropic ToS",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "web/desktop"
+  },
+  "best_free": {
+    "name": "Google Stitch",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/",
+    "what": "Google Labs AI UI design with MCP server/SDK, export to AI Studio/Antigravity/Netlify",
+    "why": "Free and does not consume Claude usage; use for bulk screen exploration.",
+    "cost": "free",
+    "free_limits": "Free; monthly generation quota not published",
+    "maintained": "updates Mar/May 2026",
+    "install": "web",
+    "license": "Google Labs ToS",
+    "commercial_ok": "unclear",
+    "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/",
+    "checked": "2026-10-28",
+    "platforms": "web"
   },
   "alts": [
-    {
-      "name": "Google Stitch",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/",
-      "what": "Google Labs AI UI design with MCP server/SDK, export to AI Studio/Antigravity/Netlify",
-      "why": "Free and does not consume Claude usage; use for bulk screen exploration.",
-      "cost": "free",
-      "free_limits": "Free; quota unverified",
-      "windows_fit": "web",
-      "maintained": "updates Mar/May 2026",
-      "install": "web",
-      "license": "Google Labs ToS",
-      "commercial_ok": "unclear",
-      "needs_company": "no",
-      "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/",
-      "checked": "2026-10-28"
-    },
     {
       "name": "v0 (Vercel)",
       "url": "https://v0.app/pricing",
@@ -45,13 +42,27 @@
       "why": "Best when you want shadcn/Next.js code out of a generator.",
       "cost": "freemium",
       "free_limits": "Free: 7 messages/day, $5 one-time credits; Plus $30/user/mo",
-      "windows_fit": "web",
       "maintained": "live service",
       "install": "web",
       "license": "proprietary SaaS",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://v0.app/pricing",
+      "checked": "2026-10-28",
+      "platforms": "web"
+    },
+    {
+      "name": "Figma Make",
+      "url": "https://www.figma.com/pricing/",
+      "what": "Prompt-to-prototype inside Figma",
+      "why": "Best if designs live in Figma.",
+      "cost": "freemium",
+      "free_limits": "Draws on 500 AI credits/mo on Starter",
+      "platforms": "web",
+      "maintained": "live service",
+      "install": "web",
+      "license": "proprietary SaaS",
+      "commercial_ok": "yes",
+      "source_url": "https://www.figma.com/pricing/",
       "checked": "2026-10-28"
     }
   ],
@@ -81,13 +92,15 @@
       "verdict": "niche paid tools"
     }
   ],
-  "decision": "Claude Design wins on handoff: the prototype becomes code in the same toolchain. When Claude usage is tight (heavy coding weeks), explore in Stitch for free and import the result.",
+  "decision": "Claude Design wins for founders using Claude Code because prototypes become code in the same toolchain. Google Stitch is the free alternative; v0 suits shadcn/Next.js output.",
   "note": "",
   "details": "Prototyping slot merged here: Claude Design prototypes are clickable HTML.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "ok",
-    "note": "Support article: 'The standalone version at claude.ai/design closes on December 14, 2026'; same usage pool as Claude Code, separate weekly allowance retired; exports zip/PDF/PPTX/Google Slides/HTML plus Canva etc.; /design and /design-sync confirmed.",
+    "verdict": "fixed",
+    "note": "Support doc says it is available on the Free plan, so it is not paid-only. The close date was confirmed.",
     "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design"
   },
-  "better_pick": null
+  "better": []
 }

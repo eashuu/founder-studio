@@ -1,0 +1,102 @@
+{
+  "slug": "ios-builds-without-owning-a-mac",
+  "slot": "iOS builds without owning a Mac",
+  "track": "app-stacks",
+  "stage": "build",
+  "order": 5040,
+  "pick": {
+    "name": "Expo EAS Build + Submit",
+    "url": "https://expo.dev/pricing",
+    "what": "Cloud macOS builds + App Store submission, manages certs/profiles",
+    "why": "Zero Mac needed and integrated with the Expo pick",
+    "cost": "freemium",
+    "free_limits": "Free: up to 15 iOS + 15 Android builds, low priority, 45-min timeout; Starter $19/mo incl. $45 build credit; Apple $99/yr extra",
+    "maintained": "eas-cli 26.0.0 (2026-10-26)",
+    "install": "npm i -g eas-cli && eas build -p ios",
+    "license": "MIT (CLI)",
+    "commercial_ok": "yes",
+    "source_url": "https://expo.dev/pricing",
+    "checked": "2026-10-28",
+    "platforms": "web"
+  },
+  "best_free": {
+    "name": "GitHub Actions macOS runners",
+    "url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+    "what": "Hosted macOS CI",
+    "why": "Free for public repos; for private repos a small number of iOS builds fit in the included minutes",
+    "cost": "freemium",
+    "free_limits": "Public repos: free on standard GitHub-hosted runners, including macOS. Private repos on GitHub Free: 2,000 included minutes/month; macOS is billed at $0.062/min and how it draws down included minutes is not stated on the billing page.",
+    "maintained": "docs live 2026-10-28",
+    "install": "runs-on: macos-latest",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "source_url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+    "checked": "2026-10-28",
+    "platforms": "web"
+  },
+  "alts": [
+    {
+      "name": "Codemagic",
+      "url": "https://codemagic.io/pricing/",
+      "what": "CI/CD with Mac mini M2 machines (Flutter, RN, native)",
+      "why": "500 free macOS M2 build minutes/month; framework-agnostic",
+      "cost": "freemium",
+      "free_limits": "Free individual: 500 macOS M2 min/mo, 1 concurrent build; commercial use of free plan not stated",
+      "maintained": "pricing live 2026-10-28",
+      "install": "web (codemagic.yaml)",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "source_url": "https://codemagic.io/pricing/",
+      "checked": "2026-10-28",
+      "platforms": "web"
+    },
+    {
+      "name": "Bitrise (Hobby)",
+      "url": "https://bitrise.io/pricing",
+      "what": "Mobile CI/CD with macOS machines; Hobby plan 300 credits/month, 1 private app",
+      "why": "Mobile-specialised CI alternative",
+      "cost": "freemium",
+      "free_limits": "Hobby free: 300 credits/mo, 5 concurrency, 90-min timeout; described as for passion projects, commercial use not stated",
+      "platforms": "web",
+      "maintained": "pricing page current 2026-10-28",
+      "install": "web",
+      "license": "Proprietary service",
+      "commercial_ok": "unclear",
+      "source_url": "https://bitrise.io/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "EAS (pick)",
+      "verdict": "Turnkey with Expo."
+    },
+    {
+      "name": "Codemagic",
+      "verdict": "Wins for Flutter/KMP or when EAS free builds run out."
+    },
+    {
+      "name": "GitHub Actions macOS",
+      "verdict": "Wins for open-source repos (free)."
+    },
+    {
+      "name": "Rent a cloud Mac (MacinCloud etc.)",
+      "verdict": "Needed only for Xcode debugging; not checked."
+    },
+    {
+      "name": "Buy a used Mac mini",
+      "verdict": "Best long-term if iOS becomes core."
+    }
+  ],
+  "decision": "EAS Build is the pick because it pairs with Expo and needs no Mac on any OS. Codemagic (500 free macOS minutes) or GitHub Actions macOS runners are the fallbacks when free EAS builds run out.",
+  "note": "",
+  "details": "",
+  "region_notes": {},
+  "os_notes": {},
+  "verify": {
+    "verdict": "ok",
+    "note": "Free up to 15 iOS + 15 Android builds, low priority, 45-min timeout; Starter $19/mo with $45 credit. Reset period still not stated.",
+    "url": "https://expo.dev/pricing"
+  },
+  "better": []
+}

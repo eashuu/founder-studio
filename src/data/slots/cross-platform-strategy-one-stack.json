@@ -3,8 +3,7 @@
   "slot": "cross-platform strategy (one stack)",
   "track": "app-stacks",
   "stage": "build",
-  "region": "Global",
-  "order": 5076,
+  "order": 5024,
   "pick": {
     "name": "TypeScript + React everywhere: Next.js (web) + Expo (Android/iOS) + Electron (desktop) + Hono API + Drizzle, in a pnpm + Turborepo monorepo",
     "url": "https://docs.expo.dev/guides/monorepos/",
@@ -12,15 +11,15 @@
     "why": "One language and one React mental model across all 3 clients + API; the stack Claude Code writes best; every piece has the largest ecosystem in its category",
     "cost": "free",
     "free_limits": "all OSS; costs only come from hosting/stores",
-    "windows_fit": "native",
     "maintained": "expo 58.0.20 (2026-10-27), next 16.4.3 (2026-10-23), electron 45.1.0 (2026-10-27), hono 4.13.14 (2026-10-25), turbo 2.11.10 (2026-10-20)",
     "install": "npx create-better-t-stack@latest (see starter slot) or pnpm dlx create-turbo@latest",
     "license": "MIT (all parts)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://docs.expo.dev/guides/monorepos/",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Expo-universal (Expo Router for iOS/Android/web, Electron wraps the Expo web build)",
@@ -29,14 +28,13 @@
       "why": "Highest UI reuse (~80-90%) for app-like products with little SEO need",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "expo 58.0.20 (2026-10-27)",
       "install": "npx create-expo-app@latest",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://docs.expo.dev/guides/monorepos/",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     },
     {
       "name": "Flutter everywhere (mobile + desktop + web)",
@@ -45,14 +43,13 @@
       "why": "Single UI codebase including desktop with strong performance; best if you will never reuse React/web code",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "Flutter 3.47.8 (2026-10-23, releases_windows.json)",
       "install": "winget install Google.Flutter (verify id) or SDK zip",
       "license": "BSD-3-Clause",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://docs.flutter.dev/install/archive?os=windows",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     }
   ],
   "candidates": [
@@ -88,10 +85,12 @@
   "decision": "Pick the TS/React monorepo: shared zod schemas, API client, Drizzle schema and domain logic give 60-80% code reuse while each platform keeps a first-class UI. Trade-off: UI components are written twice (web/desktop vs native) - accept it, or switch to Expo-universal when the product is app-first and web is just another client.",
   "note": "",
   "details": "Typical share: logic/types 100%, state/data hooks (TanStack Query) ~100%, UI 0-30% (design tokens via Tailwind classes on both sides with Uniwind). Python only as a side service for Python-only AI libs (Docling, Presidio).",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "One-TS-stack strategy is consistent with the verified component picks (Expo free builds/iOS via EAS, Hono, Drizzle, Electron). Note Better-T-Stack cannot scaffold Electron (tauri/electrobun addons only), so Electron is added by hand.",
-    "url": "https://www.better-t-stack.dev/docs/cli/options"
+    "note": "expo 58.0.21 on 2026-10-28, next 16.4.3, electron 45.1.0 (registry).",
+    "url": "https://www.npmjs.com/package/expo"
   },
-  "better_pick": null
+  "better": []
 }

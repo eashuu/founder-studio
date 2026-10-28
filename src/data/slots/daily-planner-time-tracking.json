@@ -1,0 +1,102 @@
+{
+  "slug": "daily-planner-time-tracking",
+  "slot": "daily planner + time tracking",
+  "track": "productivity",
+  "stage": "run",
+  "order": 11003,
+  "pick": {
+    "name": "Toggl Track",
+    "url": "https://toggl.com/track",
+    "what": "Cloud time tracker with timers, calendar integrations and reports",
+    "why": "Best polished timesheets and client reports for billable work",
+    "cost": "freemium",
+    "free_limits": "Free: up to 3 users, timers, calendar integration, personal reports; Starter ~$9/user/mo",
+    "platforms": "web|macOS|Windows|Linux|iOS|Android",
+    "maintained": "SaaS, current",
+    "install": "web",
+    "license": "Proprietary SaaS",
+    "commercial_ok": "yes",
+    "source_url": "https://toggl.com/track/pricing/",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Super Productivity",
+    "url": "https://github.com/super-productivity/super-productivity",
+    "what": "Open-source daily planner with pomodoro, time tracking and issue import",
+    "why": "Free, offline-capable, MIT; imports issues into today's plan",
+    "cost": "free",
+    "free_limits": "Fully free",
+    "platforms": "web|macOS|Windows|Linux|iOS|Android",
+    "maintained": "v19.3.1 2026-10-25",
+    "install": "brew install --cask super-productivity | Microsoft Store | Flathub/Snap | App Store | Google Play/F-Droid",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "source_url": "https://github.com/super-productivity/super-productivity",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "ActivityWatch",
+      "url": "https://activitywatch.net",
+      "what": "Automatic local tracker of apps and sites used",
+      "why": "Zero-effort passive tracking; data stays local",
+      "cost": "free",
+      "free_limits": "Fully free; sync WIP",
+      "platforms": "macOS|Windows|Linux",
+      "maintained": "v0.14.2b1 2026-10-22",
+      "install": "https://github.com/ActivityWatch/activitywatch/releases",
+      "license": "MPL-2.0",
+      "commercial_ok": "yes",
+      "source_url": "https://github.com/ActivityWatch/activitywatch",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Motion",
+      "url": "https://www.usemotion.com/pricing",
+      "what": "Paid AI planner and auto-scheduler",
+      "why": "Full auto-planning of tasks and meetings",
+      "cost": "paid",
+      "free_limits": "Free trial; Pro AI $19/seat/mo, Business AI $29 (annual saves 33%)",
+      "platforms": "web|macOS|Windows|iOS|Android",
+      "maintained": "SaaS",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://www.usemotion.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Toggl Track",
+      "verdict": "PICK: best for client-facing timesheets"
+    },
+    {
+      "name": "Super Productivity",
+      "verdict": "BEST FREE: planner + timer, MIT"
+    },
+    {
+      "name": "ActivityWatch",
+      "verdict": "Passive audit of where time went"
+    },
+    {
+      "name": "WakaTime",
+      "verdict": "Coding time only; AI stats paid"
+    },
+    {
+      "name": "Sunsama / Akiflow",
+      "verdict": "Paid planners"
+    }
+  ],
+  "decision": "Toggl Track is the best if time is billed to clients or you want shareable reports. Super Productivity is the better free all-in-one planner. Use ActivityWatch occasionally to audit a week.",
+  "note": "",
+  "details": "",
+  "region_notes": {},
+  "os_notes": {},
+  "verify": {
+    "verdict": "ok",
+    "note": "Verified: Free up to 3 users; Starter $9 annual / $12 monthly; Premium $16 / $24.",
+    "url": "https://toggl.com/track/pricing/"
+  },
+  "better": []
+}

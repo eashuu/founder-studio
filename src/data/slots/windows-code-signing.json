@@ -1,0 +1,111 @@
+{
+  "slug": "windows-code-signing",
+  "slot": "Windows code signing",
+  "track": "app-stacks",
+  "stage": "build",
+  "order": 5038,
+  "pick": {
+    "name": "Azure Artifact Signing (formerly Trusted Signing)",
+    "url": "https://learn.microsoft.com/en-us/azure/artifact-signing/quickstart",
+    "what": "Microsoft-managed code-signing with short-lived certificates in HSMs; plugs into SignTool, GitHub Actions",
+    "why": "Managed public-trust signing with no hardware token, about $9.99/month (cheaper than a $150-300/yr OV cert), CI-friendly; SmartScreen reputation still builds over time",
+    "cost": "paid",
+    "free_limits": "Needs a paid Azure subscription. Basic $9.99/month incl. 5,000 signatures; Premium $99.99/month incl. 100,000; overage $0.005 per signature (Azure Retail Prices API, US list price).",
+    "platforms": "Windows (sign from any CI)",
+    "maintained": "FAQ updated 2026-10-27",
+    "install": "az extension add --name artifact-signing",
+    "license": "Proprietary service",
+    "commercial_ok": "yes",
+    "source_url": "https://learn.microsoft.com/en-us/azure/artifact-signing/faq",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Microsoft Store (MSIX; Store signs the package)",
+    "url": "https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/code-signing-options",
+    "what": "Submit MSIX; Microsoft signs after certification; winget can point users to it",
+    "why": "The only $0, worldwide route with no SmartScreen warnings: Microsoft re-signs MSIX packages after Store certification",
+    "cost": "free",
+    "free_limits": "Store re-signs MSIX for free; MSI/EXE submitted to the Store and any direct downloads still need your own Authenticode certificate. Developer account registration is free (storedeveloper.microsoft.com).",
+    "maintained": "doc updated 2026-08-29",
+    "install": "web (Partner Center); electron-builder target: appx",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "source_url": "https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/code-signing-options",
+    "checked": "2026-10-28",
+    "platforms": "native"
+  },
+  "alts": [
+    {
+      "name": "OV code-signing certificate (Sectigo/DigiCert/SSL.com/Certum) on HSM/cloud signing",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/code-signing-options",
+      "what": "CA cert for direct-download installers",
+      "why": "Needed for direct EXE/NSIS downloads without warnings building over time",
+      "cost": "paid",
+      "free_limits": "Paid, typically $150-300/yr (Microsoft guidance). CA/B Forum rules since June 2023 require HSM or hardware-token key storage. EV ($400+/yr) no longer bypasses SmartScreen.",
+      "maintained": "n/a",
+      "install": "vendor",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "source_url": "https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/code-signing-options",
+      "checked": "2026-10-28",
+      "platforms": "native"
+    },
+    {
+      "name": "SignPath Foundation",
+      "url": "https://signpath.org/terms",
+      "what": "Free signing for genuine OSS projects",
+      "why": "$0 for fully open-source builds",
+      "cost": "free",
+      "free_limits": "OSI licence, no proprietary components or dual-licensing",
+      "maintained": "terms live",
+      "install": "web (apply)",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "source_url": "https://signpath.org/terms",
+      "checked": "2026-10-28",
+      "platforms": "web (CI)"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Azure Artifact Signing",
+      "verdict": "Pick where eligible; no EV certs"
+    },
+    {
+      "name": "Microsoft Store MSIX",
+      "verdict": "Best free; Store distribution only"
+    },
+    {
+      "name": "OV/EV certificate from a CA (Sectigo, DigiCert, SSL.com, Certum)",
+      "verdict": "Works everywhere; costs and HSM handling"
+    },
+    {
+      "name": "SignPath Foundation",
+      "verdict": "Free for OSI-licensed open source only"
+    },
+    {
+      "name": "Unsigned",
+      "verdict": "SmartScreen warnings; testers only"
+    }
+  ],
+  "decision": "Azure Artifact Signing is the best overall managed option wherever the founder or company is eligible. Elsewhere, or for free, ship through the Microsoft Store as MSIX; buy a CA-issued OV certificate only when buyers require a directly downloaded installer.",
+  "note": "",
+  "details": "Eligibility: organizations in US, Canada, EU, UK, Australia, NZ, Japan, South Korea, Singapore, Switzerland, Norway, Israel; individuals US/Canada only. Not available on free/trial Azure subscriptions.",
+  "region_notes": {
+    "US": "Individual developers and organizations are eligible for Artifact Signing public-trust certificates.",
+    "EU": "Organizations in EU countries, Switzerland and Norway are eligible; individuals are not.",
+    "UK": "Organizations are eligible; individual developers are not (individuals only US/Canada).",
+    "India": "India is not in the eligible country list (quickstart, opened); use Microsoft Store MSIX, a CA-issued OV certificate, or a company formed in an eligible country."
+  },
+  "os_notes": {
+    "Windows": "Sign with SignTool/dlib, GitHub Action or Azure DevOps task.",
+    "macOS": "Signing from macOS is not covered by the docs read; use a Windows CI runner.",
+    "Linux": "Same; use a Windows runner or a CA cloud-signing API."
+  },
+  "verify": {
+    "verdict": "fixed",
+    "note": "Price resolved: Retail Prices API lists 'Trusted Signing' Basic Account $9.99/month, Premium Account $99.99/month, Signature Overage $0.005; Microsoft's code-signing-options page also says ~$9.99/month. Eligibility in notes matches the quickstart (updated 2026-10-08): organizations in US, Canada, EU, UK, Australia, NZ, Japan, South Korea, Singapore, Switzerland, Norway, Israel; individuals US/Canada only; India not listed. Note the older code-signing-options page (2026-08-29) still lists only US/CA/EU/UK for organizations.",
+    "url": "https://prices.azure.com/api/retail/prices?$filter=contains(meterName,'Signing')"
+  },
+  "better": []
+}

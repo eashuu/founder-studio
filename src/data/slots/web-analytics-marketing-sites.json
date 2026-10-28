@@ -3,8 +3,7 @@
   "slot": "Web analytics (marketing sites)",
   "track": "ship",
   "stage": "ship",
-  "region": "Global",
-  "order": 6115,
+  "order": 6014,
   "pick": {
     "name": "Cloudflare Web Analytics",
     "url": "https://developers.cloudflare.com/web-analytics/about/",
@@ -12,15 +11,15 @@
     "why": "$0 for every site, no proxy/DNS change required, no personal data collected",
     "cost": "free",
     "free_limits": "Free; site/retention/sampling limits not stated on the page",
-    "windows_fit": "web",
+    "platforms": "web",
     "maintained": "active",
     "install": "web (JS beacon snippet)",
     "license": "service",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://developers.cloudflare.com/web-analytics/about/",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Umami",
@@ -29,12 +28,11 @@
       "why": "Better reports/custom events; self-host free",
       "cost": "freemium",
       "free_limits": "Cloud Hobby 100k events/mo, 1 site, 6-month retention; Pro $20/mo; self-host free",
-      "windows_fit": "web/docker",
+      "platforms": "web + CLI (macOS, Windows, Linux)",
       "maintained": "v3.4.1 2026-10-23",
       "install": "docker compose up -d",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://umami.is/pricing",
       "checked": "2026-10-28"
     },
@@ -45,12 +43,11 @@
       "why": "No extra tool; counts against 1M events",
       "cost": "freemium",
       "free_limits": "Shares 1M events",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "active",
       "install": "PostHog snippet",
       "license": "MIT core",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://posthog.com/pricing",
       "checked": "2026-10-28"
     }
@@ -66,7 +63,7 @@
     },
     {
       "name": "PostHog web analytics",
-      "verdict": "Alt: if you already run PostHog"
+      "verdict": "Alt: if PostHog already installed"
     },
     {
       "name": "Plausible",
@@ -81,13 +78,15 @@
       "verdict": "Free for non-commercial per its own terms (not re-checked)"
     }
   ],
-  "decision": "You will have many product and landing sites; Cloudflare's beacon covers them all free. Switch to Umami when you need custom events/goals on marketing pages.",
+  "decision": "Cloudflare Web Analytics is free for any number of sites, needs no DNS change and collects no personal data, so most marketing sites need no cookie banner for it. Switch to Umami (or PostHog web analytics) when you need custom events and goals on marketing pages.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "ok",
-    "note": "Free; the page states no site/retention/sampling limits and no commercial restriction. Umami Hobby 100k events/1 site/6 months, Pro $20 confirmed.",
+    "verdict": "fixed",
+    "note": "Checked against primary sources; wording made neutral during verification.",
     "url": "https://developers.cloudflare.com/web-analytics/about/"
   },
-  "better_pick": null
+  "better": []
 }

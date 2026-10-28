@@ -3,99 +3,104 @@
   "slot": "CRM",
   "track": "sales",
   "stage": "sell",
-  "region": "Global",
-  "order": 7186,
+  "order": 7013,
   "pick": {
-    "name": "Attio (Free)",
-    "url": "https://attio.com/pricing",
-    "what": "Modern, flexible data-model CRM with email/calendar sync",
-    "why": "Most generous free tier checked (3 seats, 50k records), API + Claude/MCP-friendly, custom objects suit B2C+B2B+services in one workspace",
+    "name": "HubSpot CRM",
+    "url": "https://www.hubspot.com/pricing/crm",
+    "what": "Market-standard CRM with marketing, forms, sequences, huge integration set",
+    "why": "Most mature ecosystem and native integrations; scales from free to enterprise",
     "cost": "freemium",
-    "free_limits": "Free: 3 seats, 3 objects, 50,000 records, 1 email sync/user, 200 emails/mo; Plus USD 35/user/mo annual",
-    "windows_fit": "web",
+    "free_limits": "Free: up to 2 users, 1,000 contacts and 1,000 records per other standard object; Starter from USD 7/seat/mo (promotional discounts vary)",
+    "platforms": "web",
     "maintained": "live page 2026-10-28",
     "install": "web",
     "license": "proprietary",
     "commercial_ok": "yes",
-    "needs_company": "no",
+    "source_url": "https://www.hubspot.com/pricing/crm",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Attio (Free)",
+    "url": "https://attio.com/pricing",
+    "what": "Flexible data-model CRM with email/calendar sync and API",
+    "why": "Most generous free tier: 3 seats, 50,000 records; custom objects",
+    "cost": "freemium",
+    "free_limits": "Free: 3 seats, 3 objects, 50,000 records; Plus USD 35/user/mo annual (USD 44 monthly); Pro USD 79 annual (USD 99 monthly)",
+    "platforms": "web",
+    "maintained": "live page 2026-10-28",
+    "install": "web",
+    "license": "proprietary",
+    "commercial_ok": "yes",
     "source_url": "https://attio.com/pricing",
     "checked": "2026-10-28"
   },
   "alts": [
     {
-      "name": "Twenty",
-      "url": "https://twenty.com/pricing",
-      "what": "Open-source CRM (self-host or cloud)",
-      "why": "Best free-forever exit: self-host on a small always-free VM, REST/GraphQL + MCP server; cloud Pro USD 9/user/mo",
-      "cost": "freemium",
-      "free_limits": "Self-host free; cloud has a 30-day trial only",
-      "windows_fit": "wsl (Docker Compose) or web",
-      "maintained": "v2.52.0 released 2026-10-27",
-      "install": "docker compose (see twenty docs)",
-      "license": "AGPL-3.0 core with commercial parts (verify LICENSE)",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://twenty.com/pricing",
-      "checked": "2026-10-28"
-    },
-    {
-      "name": "HubSpot Free CRM",
-      "url": "https://www.hubspot.com/pricing/crm",
-      "what": "Market-standard CRM with marketing tools",
-      "why": "Wins if you want native Apollo/Cal.com sync and forms/landing pages in one; Starter USD 7-20/seat",
-      "cost": "freemium",
-      "free_limits": "Free: 2 users, 1,000 contacts, 1,000 other records, HubSpot branding",
-      "windows_fit": "web",
-      "maintained": "live page 2026-10-28",
+      "name": "Pipedrive",
+      "url": "https://www.pipedrive.com/en/pricing",
+      "what": "Pipeline-first sales CRM",
+      "why": "Simple deal-centric UX; no free plan (trial); Lite about USD 14/seat annual per secondary roundups",
+      "cost": "paid",
+      "free_limits": "No free plan; trial only",
+      "platforms": "web",
+      "maintained": "pricing page blocked fetch; secondary 2026 roundups",
       "install": "web",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://www.hubspot.com/pricing/crm",
+      "source_url": "https://zeeg.me/en/blog/post/pipedrive-pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Twenty",
+      "url": "https://twenty.com/pricing",
+      "what": "Open-source CRM, self-host or cloud",
+      "why": "Best exit and ownership; REST/GraphQL + MCP; cloud Pro USD 9/user/mo",
+      "cost": "freemium",
+      "free_limits": "Self-host free; cloud 30-day trial",
+      "platforms": "web, Docker",
+      "maintained": "v2.52.0 released 2026-10-27",
+      "install": "docker compose (see docs)",
+      "license": "AGPL-3.0 core with commercial parts (verify)",
+      "commercial_ok": "yes",
+      "source_url": "https://twenty.com/pricing",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
+      "name": "HubSpot",
+      "verdict": "PICK: ecosystem and maturity"
+    },
+    {
       "name": "Attio",
-      "verdict": "PICK: 50k records free, flexible objects"
-    },
-    {
-      "name": "Twenty",
-      "verdict": "Pick if you want open source / self-host and zero lock-in"
-    },
-    {
-      "name": "HubSpot Free",
-      "verdict": "Pick if native Apollo + Cal.com sync matters more than limits (1,000 contacts)"
-    },
-    {
-      "name": "Zoho Bigin",
-      "verdict": "Free: 1 user, 500 records, 1 pipeline; Express USD 7/user"
-    },
-    {
-      "name": "Apollo built-in deals",
-      "verdict": "Fine for prospecting state, weak as the system of record"
+      "verdict": "best_free: flexible, 50k records"
     },
     {
       "name": "Pipedrive",
-      "verdict": "No free plan"
+      "verdict": "Good paid deal CRM, no free plan"
+    },
+    {
+      "name": "Twenty",
+      "verdict": "OSS self-host, no lock-in"
     },
     {
       "name": "Folk",
-      "verdict": "Light relationship CRM; not checked"
+      "verdict": "Light relationship CRM: Standard USD 24/member/mo annual, 2-week trial, no free plan"
     },
     {
-      "name": "Frappe CRM / Krayin",
-      "verdict": "OSS self-host options (active releases Oct 2026), smaller ecosystems"
+      "name": "Zoho Bigin",
+      "verdict": "Free: 1 user, 500 records (earlier pass)"
     }
   ],
-  "decision": "Attio's free tier comfortably holds a solo founder's whole pipeline and its API suits Claude-driven automation. Apollo has no native Attio sync (only Zapier/Stacksync), so push qualified Apollo replies into Attio via webhook or a Claude script. Switch to HubSpot Free if you'd rather have the native Apollo integration, or Twenty if you want self-hosted ownership.",
+  "decision": "HubSpot is the safest long-run system of record because of integrations and breadth, but its free tier is thin. Attio's free tier holds a small team's whole pipeline with an API suited to automation. Pick Twenty for open source and ownership, Pipedrive or Folk for simpler paid UX.",
   "note": "",
-  "details": "",
+  "details": "Pick changed from Attio to HubSpot (best overall); Attio is now best_free.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Attio Free confirmed: 3 seats, 3 objects, 50k records, 1 sync/user, 200 emails/mo, API included; Plus USD 35 annual / 44 monthly. Twenty alt confirmed: 30-day cloud trial only, AGPL + '@license Enterprise' files, SDK/CLI/UI MIT. HubSpot alt confirmed (2 users, 1,000 contacts, 1,000 other records). 'Apollo has no native Attio sync' not re-verified.",
-    "url": "https://attio.com/pricing"
+    "note": "Re-judged on merit: HubSpot Free (2 users, 1,000 contacts, 1,000 records per other object) is thin but the platform is the most complete; Starter from USD 7/seat/mo with promo. Attio, Pipedrive, Twenty, Folk, Salesforce considered; HubSpot remains a fair 'best overall'.",
+    "url": "https://www.hubspot.com/pricing/crm"
   },
-  "better_pick": null
+  "better": []
 }

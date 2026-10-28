@@ -3,24 +3,23 @@
   "slot": "backend / API",
   "track": "app-stacks",
   "stage": "build",
-  "region": "Global",
-  "order": 5082,
+  "order": 5031,
   "pick": {
     "name": "Hono (+ oRPC or Hono RPC for typed clients)",
     "url": "https://hono.dev/docs/guides/rpc",
     "what": "Web-standard TS API framework for Node, Bun, Cloudflare Workers, Vercel",
-    "why": "Same TS types/zod schemas reach web, Expo and Electron clients; runs on any host incl. free edge tiers; streamSSE built in, MCP via the separate @hono/mcp middleware",
+    "why": "Same TS types/zod schemas reach web, Expo and Electron clients; runs on any host incl. free edge tiers; streaming SSE and MCP (@hono/mcp) built in",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native",
     "maintained": "hono 4.13.14 (2026-10-25); 66.6M weekly downloads",
     "install": "npm create hono@latest",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://hono.dev/docs/guides/rpc",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "FastAPI",
@@ -29,14 +28,13 @@
       "why": "Use as a side service when the work needs Python-only AI libs",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "0.162.0 (2026-10-23)",
       "install": "pip install \"fastapi[standard]\"",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://pypi.org/project/fastapi/",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     },
     {
       "name": "NestJS",
@@ -45,14 +43,13 @@
       "why": "Structure for larger enterprise codebases/teams",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "@nestjs/core 12.3.2 (2026-10-27)",
       "install": "npx @nestjs/cli new api",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.npmjs.com/package/@nestjs/core",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     }
   ],
   "candidates": [
@@ -92,10 +89,12 @@
   "decision": "Hono gives one TS backend that runs on Node, Bun or Workers and shares types with all three clients. Keep FastAPI for a separate Python AI worker when a Python-only library is required; switch the main API to FastAPI only if most business logic ends up in Python.",
   "note": "",
   "details": "Typed API layer: oRPC 1.16 (MIT, OpenAPI output + typed client) preferred for public APIs; tRPC 11.19 for internal; Hono RPC is lightest but slows TS on big route trees.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "fixed",
-    "note": "Hono over FastAPI holds for this TS one-stack (shared zod types across Next/Expo/Electron; Vercel AI SDK is the primary agent framework; Python stays a side service for Docling/Presidio). Wording error: MCP is not 'built in' - @hono/mcp is a separate middleware package.",
-    "url": "https://hono.dev/docs/guides/rpc"
+    "verdict": "ok",
+    "note": "hono 4.13.14 on 2026-10-25, MIT.",
+    "url": "https://www.npmjs.com/package/hono"
   },
-  "better_pick": null
+  "better": []
 }

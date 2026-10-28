@@ -3,8 +3,7 @@
   "slot": "document parsing",
   "track": "ai-eng",
   "stage": "build",
-  "region": "Global",
-  "order": 4061,
+  "order": 4009,
   "pick": {
     "name": "Docling (IBM Research / LF AI & Data)",
     "url": "https://github.com/docling-project/docling",
@@ -12,15 +11,15 @@
     "why": "Highest-fidelity open parser, runs on Windows (x86_64/arm64), MIT code, vendor-neutral foundation",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native",
-    "maintained": "docling 2.144.0 on 2026-10-28 (PyPI)",
+    "maintained": "2.143.1 on 2026-10-27",
     "install": "pip install docling",
     "license": "MIT code (model licences per package)",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/docling-project/docling",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "MarkItDown (Microsoft)",
@@ -29,14 +28,13 @@
       "why": "Quick and tiny when fidelity is not critical",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "0.1.9 on 2026-10-21",
       "install": "pip install 'markitdown[all]'",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/microsoft/markitdown",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     },
     {
       "name": "Unstructured (OSS)",
@@ -45,14 +43,13 @@
       "why": "Broad format coverage and chunking",
       "cost": "freemium",
       "free_limits": "OSS free; hosted API paid (unverified)",
-      "windows_fit": "wsl/native (heavy deps)",
       "maintained": "0.27.35 on 2026-10-27",
       "install": "pip install unstructured",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://pypi.org/project/unstructured/",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "wsl/native (heavy deps)"
     }
   ],
   "candidates": [
@@ -83,11 +80,13 @@
   ],
   "decision": "Docling for local ingestion of clinical/legal PDFs. Use MarkItDown for quick Office-to-text, and send hard scanned pages to Claude vision.",
   "note": "",
-  "details": "Docling CPU speed depends on your machine; test on a sample first.",
+  "details": "Docling CPU speed on target hardware not measured.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "fixed",
-    "note": "Version slightly stale.",
+    "verdict": "ok",
+    "note": "Shallow: pick reasonable.",
     "url": "https://pypi.org/project/docling/"
   },
-  "better_pick": null
+  "better": []
 }

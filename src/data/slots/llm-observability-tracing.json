@@ -3,23 +3,36 @@
   "slot": "LLM observability / tracing",
   "track": "ai-eng",
   "stage": "build",
-  "region": "Global",
-  "order": 4064,
+  "order": 4012,
   "pick": {
     "name": "Langfuse",
     "url": "https://langfuse.com/pricing",
     "what": "Open-source LLM tracing, prompt management, evals, datasets (OTel-based SDKs)",
-    "why": "Most adopted OSS option, strong TS SDK (@langfuse/tracing 6.0.2), generous free cloud, self-host for PHI",
+    "why": "Most adopted OSS option, strong TS SDK (@langfuse/tracing 6.0.2), generous free cloud, self-host for regulated data",
     "cost": "freemium",
-    "free_limits": "Hobby: 50k units/mo, 30 days data access, 2 users, 30 req/min API. Core $29/mo (100k units, 90 days data access, unlimited users). HIPAA/BAA on Pro ($199/mo) and Enterprise; 50% off first year for early-stage startups",
-    "windows_fit": "docker/cloud (self-host needs Postgres+ClickHouse+Redis+S3)",
+    "free_limits": "Hobby: 50k units/mo, 30-day retention, 2 users, 30 req/min API. Core $29/mo (100k units, 90 days). HIPAA/BAA only on Pro ($199/mo) and Enterprise; HIPAA US region Enterprise only; 50% startup discount year 1",
     "maintained": "langfuse py 5.0.4 on 2026-10-21; @langfuse/tracing 6.0.2 on 2026-10-22; acquired by ClickHouse 2026-01-16, MIT core retained",
     "install": "pip install langfuse  |  npm i @langfuse/tracing",
     "license": "MIT (enterprise features separate licence)",
     "commercial_ok": "yes",
-    "needs_company": "no (cloud account or self-host)",
     "source_url": "https://langfuse.com/pricing",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "docker/cloud (self-host needs Postgres+ClickHouse+Redis+S3)"
+  },
+  "best_free": {
+    "name": "Opik (Comet)",
+    "url": "https://github.com/comet-ml/opik",
+    "what": "Apache-2.0 tracing + evals + pytest integration, Python and TS SDKs",
+    "why": "Fully Apache-2.0 tracing and evals with free self-hosting; Langfuse (MIT) is also free to self-host",
+    "cost": "freemium",
+    "free_limits": "Self-hosted open source: free, unlimited spans and retention. Comet-hosted Free: 25k spans/month, 60-day retention, up to 10 team members. HIPAA not stated.",
+    "maintained": "opik 2.2.131 on 2026-10-28 (PyPI)",
+    "install": "pip install opik",
+    "license": "Apache-2.0",
+    "commercial_ok": "yes",
+    "source_url": "https://github.com/comet-ml/opik",
+    "checked": "2026-10-28",
+    "platforms": "Linux|macOS|Windows (Docker self-host) or web"
   },
   "alts": [
     {
@@ -29,29 +42,27 @@
       "why": "Lightest self-host, MCP endpoint for Claude Code, strong Python coverage",
       "cost": "freemium",
       "free_limits": "Self-host free; telemetry on by default (PHOENIX_TELEMETRY_ENABLED=false)",
-      "windows_fit": "native (pip) / docker",
       "maintained": "arize-phoenix 20.26.1 on 2026-10-25",
       "install": "pip install arize-phoenix",
       "license": "Elastic-2.0 (not OSI open source; cannot offer as managed service)",
       "commercial_ok": "yes (internal use)",
-      "needs_company": "no",
       "source_url": "https://github.com/Arize-ai/phoenix",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native (pip) / docker"
     },
     {
-      "name": "Opik (Comet)",
-      "url": "https://github.com/comet-ml/opik",
-      "what": "Apache-2.0 tracing + evals + pytest integration, Python and TS SDKs",
-      "why": "Fully Apache-licensed with Docker self-host incl. opik.ps1 for Windows",
-      "cost": "freemium",
-      "free_limits": "Free tier on cloud/self-host (limits unverified); HIPAA not stated",
-      "windows_fit": "docker (Windows script)",
-      "maintained": "opik 2.2.129 on 2026-10-28",
-      "install": "pip install opik",
+      "name": "OpenLIT",
+      "url": "https://github.com/openlit/openlit",
+      "what": "OpenTelemetry-based tracing, evals and guardrails for AI agents",
+      "why": "Fully Apache-2.0, OTel-native, pip/npm SDKs",
+      "cost": "free",
+      "free_limits": "Self-host; infra cost only",
+      "platforms": "any (Docker/pip/npm)",
+      "maintained": "release date not shown on repo page (opened 2026-10-28)",
+      "install": "pip install openlit  |  npm install openlit",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://github.com/comet-ml/opik",
+      "source_url": "https://github.com/openlit/openlit",
       "checked": "2026-10-28"
     }
   ],
@@ -93,13 +104,15 @@
       "verdict": "Paid SaaS"
     }
   ],
-  "decision": "Langfuse Cloud Hobby for dev; for any PHI or enterprise client self-host it (MIT) because Hobby/Core exclude HIPAA. Move to Phoenix if the ClickHouse stack is too heavy for solo ops, or Opik if you need strictly OSI licences.",
+  "decision": "Langfuse Cloud Hobby for dev; for any regulated data or enterprise client self-host it (MIT) because Hobby/Core exclude HIPAA. Move to Phoenix if the ClickHouse stack is too heavy for solo ops, or Opik if you need strictly OSI licences.",
   "note": "",
   "details": "Retained; ClickHouse acquisition flagged (MIT retained). Supported self-hosted Enterprise reportedly bundled with ClickHouse commercial plans (secondary source). OpenInference: https://github.com/Arize-ai/openinference",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "fixed",
-    "note": "Hobby 50k units, 2 users, 30 req/min; Core $29 (100k, 90 days); Pro $199 with BAA; 50% startup discount year 1 all confirmed. The 30-day figure is data ACCESS per the pricing FAQ, not retention; Core has unlimited users.",
+    "verdict": "ok",
+    "note": "Hobby 50k units/30 days/2 users, Core $29 (100k units), Pro $199 with BAA, 50% first-year startup discount: confirmed.",
     "url": "https://langfuse.com/pricing"
   },
-  "better_pick": null
+  "better": []
 }

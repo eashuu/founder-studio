@@ -1,0 +1,111 @@
+{
+  "slug": "business-entity-formation-global-default",
+  "slot": "Business entity formation (global default)",
+  "track": "legal",
+  "stage": "run",
+  "order": 10000,
+  "pick": {
+    "name": "Stripe Atlas (Delaware C-corp)",
+    "url": "https://stripe.com/atlas",
+    "what": "Delaware C-corp with EIN, 83(b) filing, YC SAFE templates, next-day filing",
+    "why": "VC-standard structure; USD 500 one-time incl. first-year registered agent, USD 100/yr after; USD 2,500 Stripe credits; apply from most countries",
+    "cost": "paid",
+    "free_limits": "No free tier; USD 500 refundable if USD 5,000 is deposited in Stripe Treasury",
+    "platforms": "web",
+    "maintained": "live page 2026-10-28",
+    "install": "web",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "source_url": "https://stripe.com/atlas",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "DIY Delaware filing (Division of Corporations)",
+    "url": "https://corp.delaware.gov/",
+    "what": "File the certificate of incorporation yourself with the state and appoint your own registered agent",
+    "why": "Avoids formation-service fees; you handle EIN, 83(b) and equity paperwork yourself",
+    "cost": "paid",
+    "free_limits": "No service fee, but not free: Delaware incorporation filing USD 109 (fee schedule revised 1 Aug 2026; varies with authorised stock) + optional USD 50 (24h) / USD 100 (same-day) expedite + USD 50 per certified copy; mandatory registered agent (third-party, about USD 50-300/yr); annual franchise tax minimum USD 175 (authorised-shares method) or USD 400 (assumed-par-value method) plus annual report fee; EIN free from the IRS",
+    "platforms": "web",
+    "maintained": "site live 2026-10-28",
+    "install": "web (corp.delaware.gov)",
+    "license": "n/a",
+    "commercial_ok": "yes",
+    "source_url": "https://corp.delaware.gov/",
+    "checked": "2026-10-28"
+  },
+  "alts": [
+    {
+      "name": "Clerky",
+      "url": "https://www.clerky.com/pricing",
+      "what": "Delaware C-corp + lifetime legal-doc packages",
+      "why": "Law-firm-built docs investors know; USD 427 pay-per-use, USD 819 lifetime package incl. first-year agent",
+      "cost": "paid",
+      "free_limits": "No free tier; Pay Per Use USD 427 one-time (state fees not itemised on the page); Lifetime Package USD 819 incl. USD 203 Delaware expedited filing fees and USD 125 first-year registered agent",
+      "platforms": "web",
+      "maintained": "live page 2026-10-28",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "source_url": "https://www.clerky.com/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "doola",
+      "url": "https://www.doola.com/pricing/",
+      "what": "LLC or C-corp formation + EIN + address, optional tax/bookkeeping",
+      "why": "Built for non-US founders; Starter USD 297/yr; tax and compliance tier USD 1,999/yr (carried from earlier pass)",
+      "cost": "paid",
+      "free_limits": "No free tier; state fees extra",
+      "platforms": "web",
+      "maintained": "live page checked earlier 2026-10-28",
+      "install": "web",
+      "license": "n/a",
+      "commercial_ok": "yes",
+      "source_url": "https://www.doola.com/pricing/",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Stripe Atlas",
+      "verdict": "PICK: best-known path for a startup that may raise money"
+    },
+    {
+      "name": "Clerky",
+      "verdict": "Strong alternative if you want law-firm docs and lifetime doc access"
+    },
+    {
+      "name": "doola",
+      "verdict": "Wins for an LLC or bundled US tax filing"
+    },
+    {
+      "name": "Firstbase",
+      "verdict": "Cheap formation promo but higher recurring agent/tax fees (earlier pass)"
+    },
+    {
+      "name": "Local entity in your own country",
+      "verdict": "Wins if you will never raise US VC and sell mostly locally"
+    },
+    {
+      "name": "US LLC",
+      "verdict": "Wins for bootstrapped, profitable, pass-through tax, no VC plans"
+    }
+  ],
+  "decision": "Default for a startup that may raise venture money is a Delaware C-corp, formed through Stripe Atlas for the lowest all-in first-year cost and broadest country support. Choose an LLC (doola or similar) if you are bootstrapped and want pass-through taxation, or a plain local company if you only sell and hire domestically. Non-US founders owning a US company face home-country tax and foreign-investment rules: verify with a professional.",
+  "note": "",
+  "details": "Delaware USD 109 incorporation fee confirmed on the official fee schedule revised 1 Aug 2026. No free option: state filing fees, a registered agent and annual franchise tax cannot be avoided; DIY only removes the service fee. Verify with a professional.",
+  "region_notes": {
+    "US": "Delaware C-corp is the VC default; an LLC suits bootstrapped businesses with pass-through tax.",
+    "EU": "A US C-corp with EU-resident founders can trigger local tax residency and CFC rules; some founders use a local GmbH/BV/SAS until a US investor requires Delaware.",
+    "UK": "A UK Ltd is quick and cheap (see local-entity slot); US investors often ask for a Delaware flip.",
+    "India": "Resident Indians owning a foreign company make an Overseas Direct Investment under FEMA/RBI rules (Form ODI via an AD bank plus annual reporting); sole proprietorship or Pvt Ltd is the common domestic start. Take CA advice."
+  },
+  "os_notes": {},
+  "verify": {
+    "verdict": "ok",
+    "note": "Atlas verified: USD 500 one-time incl. Delaware filing (next-day expedited), state fees and first-year registered agent, EIN, founder equity, 83(b) filing; USD 100/yr agent after year one; USD 500 refunded on a USD 5,000 Stripe Treasury deposit; USD 2,500 Stripe credits. Lowest all-in first-year cost vs Clerky (USD 427 + state/agent fees, or USD 819 lifetime incl. USD 203 filing + USD 125 agent).",
+    "url": "https://stripe.com/atlas"
+  },
+  "better": []
+}

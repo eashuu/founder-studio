@@ -3,24 +3,23 @@
   "slot": "guardrails + PII redaction",
   "track": "ai-eng",
   "stage": "build",
-  "region": "Global",
-  "order": 4065,
+  "order": 4013,
   "pick": {
     "name": "Microsoft Presidio",
     "url": "https://github.com/microsoft/presidio",
     "what": "PII detection/anonymization (spaCy NER + regex), text and image/DICOM redaction",
-    "why": "MIT, local CPU - scrub PHI before it reaches any LLM or log; DICOM redaction relevant to healthcare",
+    "why": "MIT, local CPU - scrub regulated data before it reaches any LLM or log; DICOM redaction relevant to healthcare",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native (Python; call via HTTP sidecar from TS)",
     "maintained": "presidio-analyzer 2.2.366 on 2026-10-27",
     "install": "pip install presidio-analyzer presidio-anonymizer",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/microsoft/presidio",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native (Python; call via HTTP sidecar from TS)"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "NeMo Guardrails (NVIDIA)",
@@ -29,14 +28,13 @@
       "why": "Full policy rails if you need dialog control",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native Python 3.10-3.13",
       "maintained": "0.24.1 on 2026-09-16",
       "install": "pip install nemoguardrails",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/NVIDIA-NeMo/Guardrails",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native Python 3.10-3.13"
     },
     {
       "name": "Llama Prompt Guard 2 (via Groq)",
@@ -45,14 +43,13 @@
       "why": "Cheap injection screen on free tier",
       "cost": "freemium",
       "free_limits": "30 RPM, 14.4K RPD, 500K TPD (table)",
-      "windows_fit": "web",
       "maintained": "Listed on Groq page 2026-10-28",
       "install": "Groq API model meta-llama/llama-prompt-guard-2-86m",
       "license": "Llama community licence (unverified)",
       "commercial_ok": "unclear",
-      "needs_company": "no",
       "source_url": "https://console.groq.com/docs/rate-limits",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     }
   ],
   "candidates": [
@@ -81,13 +78,17 @@
       "verdict": "Paid per token; gateway-level"
     }
   ],
-  "decision": "Presidio before logs/LLM calls handles the PHI risk; add Prompt Guard for injection screening on tool outputs. Indian identifiers (Aadhaar/PAN) need custom recognisers - not verified as built in.",
+  "decision": "Presidio before logs and LLM calls reduces regulated-data risk; add Prompt Guard for injection screening on tool outputs. Country-specific identifiers often need custom recognisers.",
   "note": "",
-  "details": "PII tools reduce, not eliminate, PHI exposure; not HIPAA compliance advice.",
-  "verify": {
-    "verdict": "ok",
-    "note": "Version/licence/limits match registry or official page.",
-    "url": "https://registry.npmjs.org/"
+  "details": "PII tools reduce, not eliminate, regulated data exposure; not HIPAA compliance advice.",
+  "region_notes": {
+    "India": "Aadhaar and PAN recognisers are not confirmed as built in; plan custom recognisers (verify)."
   },
-  "better_pick": null
+  "os_notes": {},
+  "verify": {
+    "verdict": "fixed",
+    "note": "India-specific identifiers sat in the general decision; moved to region_notes.India.",
+    "url": "https://pypi.org/project/presidio-analyzer/"
+  },
+  "better": []
 }

@@ -3,38 +3,36 @@
   "slot": "Marketing website / landing pages",
   "track": "sales",
   "stage": "sell",
-  "region": "Global",
-  "order": 7191,
+  "order": 7019,
   "pick": {
     "name": "Astro",
     "url": "https://astro.build/",
     "what": "Content-first web framework, static by default",
-    "why": "Fastest pages for SEO, MIT, Claude Code writes it well, and it deploys free on Cloudflare (which acquired the Astro team in Jan 2026)",
+    "why": "Fast SEO-friendly pages, MIT, Claude Code writes it well, free static hosting almost anywhere",
     "cost": "free",
-    "free_limits": "Free; hosting on Cloudflare free tier",
-    "windows_fit": "native (Node)",
+    "free_limits": "Free",
+    "platforms": "macOS/Windows/Linux",
     "maintained": "astro 7.4.2 published 2026-10-21",
     "install": "npm create astro@latest",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://registry.npmjs.org/astro",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Framer",
       "url": "https://www.framer.com/pricing",
       "what": "No-code visual site builder with CMS",
-      "why": "Wins if you want to design visually without code; Basic USD 10/mo for a custom domain",
+      "why": "Wins for visual design without code; Basic USD 10/mo for custom domain",
       "cost": "freemium",
-      "free_limits": "Free: framer domain only, 1 GB bandwidth, up to 1,000 pages",
-      "windows_fit": "web",
+      "free_limits": "Free: framer domain only, 1 GB bandwidth",
+      "platforms": "web",
       "maintained": "live page 2026-10-28",
       "install": "web",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.framer.com/pricing",
       "checked": "2026-10-28"
     },
@@ -42,15 +40,14 @@
       "name": "Next.js",
       "url": "https://nextjs.org/",
       "what": "React framework",
-      "why": "Wins if the marketing site must share components/auth with the app",
+      "why": "Wins if marketing site shares components/auth with the app",
       "cost": "free",
       "free_limits": "Free",
-      "windows_fit": "native",
+      "platforms": "macOS/Windows/Linux",
       "maintained": "next 16.4.3 published 2026-10-23",
       "install": "npx create-next-app@latest",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://registry.npmjs.org/next",
       "checked": "2026-10-28"
     }
@@ -62,7 +59,7 @@
     },
     {
       "name": "Framer",
-      "verdict": "Visual/no-code, USD 10/mo per custom-domain site"
+      "verdict": "No-code visual"
     },
     {
       "name": "Next.js",
@@ -70,24 +67,26 @@
     },
     {
       "name": "Webflow",
-      "verdict": "Powerful but paid for custom domain; heavier lock-in"
+      "verdict": "Powerful but paid for custom domain"
     },
     {
       "name": "Carrd",
-      "verdict": "Cheap one-pagers, limited"
+      "verdict": "Cheap one-pagers"
     },
     {
       "name": "WordPress",
       "verdict": "Plugin maintenance burden"
     }
   ],
-  "decision": "Astro plus Claude Code gives a fast, SEO-strong, free site with no builder lock-in. Docs (Starlight) live in the same framework. Choose Framer only if you want to hand-design pages visually and accept USD 10/mo per site.",
+  "decision": "Astro plus an AI coding agent gives a fast, SEO-strong site with no builder lock-in. Choose Framer if you want to hand-design visually and accept a monthly fee, or Next.js if the site must live in the app.",
   "note": "",
-  "details": "Cloudflare acquired the Astro team (press release 2026-01-16, per multiple search results; release not opened).",
+  "details": "Cloudflare acquiring the Astro team (Jan 2026) was seen in search results only; unverified.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "astro 7.4.2 (2026-10-21, MIT) confirmed. Astro blog (2026-01-16) confirms 'The Astro Technology Company is joining Cloudflare' and Astro stays MIT and platform-agnostic, which resolves the note. Framer alt confirmed (free: framer domain, 1 GB; Basic USD 10/mo with custom domain).",
-    "url": "https://astro.build/blog/joining-cloudflare/"
+    "note": "Shallow.",
+    "url": "https://registry.npmjs.org/astro"
   },
-  "better_pick": null
+  "better": []
 }

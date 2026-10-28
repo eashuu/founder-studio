@@ -3,8 +3,7 @@
   "slot": "Stock photos",
   "track": "design",
   "stage": "discover",
-  "region": "Global",
-  "order": 1155,
+  "order": 1019,
   "pick": {
     "name": "Unsplash",
     "url": "https://unsplash.com/license",
@@ -12,15 +11,15 @@
     "why": "Largest quality library, free commercial use, no attribution, has an API.",
     "cost": "free",
     "free_limits": "Free commercial use; cannot sell unmodified copies or build a competing service",
-    "windows_fit": "web",
     "maintained": "live",
     "install": "web",
     "license": "Unsplash Licence",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://unsplash.com/license",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "web"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Pexels",
@@ -29,14 +28,13 @@
       "why": "Adds free stock video for demos.",
       "cost": "free",
       "free_limits": "Free commercial use; no unaltered resale, no implied endorsement",
-      "windows_fit": "web",
       "maintained": "live",
       "install": "web",
       "license": "Pexels Licence",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.pexels.com/license/",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     },
     {
       "name": "Pixabay",
@@ -45,14 +43,13 @@
       "why": "One licence for photos, video and music.",
       "cost": "free",
       "free_limits": "Free, no attribution; no standalone resale",
-      "windows_fit": "web",
       "maintained": "live",
       "install": "web",
       "license": "Pixabay Content Licence",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://pixabay.com/service/license-summary/",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     }
   ],
   "candidates": [
@@ -76,10 +73,12 @@
   "decision": "All three are free for commercial use; Unsplash has the best quality, Pexels the best free video.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Licence terms confirmed.",
+    "note": "Shallow check only: free/commercial terms are consistent with the cited licence; not re-opened in this pass.",
     "url": "https://unsplash.com/license"
   },
-  "better_pick": null
+  "better": []
 }

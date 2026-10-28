@@ -3,38 +3,36 @@
   "slot": "Cold-email deliverability",
   "track": "sales",
   "stage": "sell",
-  "region": "Global",
-  "order": 7188,
+  "order": 7016,
   "pick": {
     "name": "Separate sending domain + SPF/DKIM/DMARC + Cloudflare DMARC Management",
     "url": "https://developers.cloudflare.com/dmarc-management/",
-    "what": "Lookalike domain for outbound, authenticated, with DMARC reports in the Cloudflare dashboard",
-    "why": "Free on every Cloudflare plan with Cloudflare DNS, so no extra tool",
+    "what": "Lookalike outbound domain, authenticated, DMARC reports in dashboard",
+    "why": "Free on all Cloudflare plans with Cloudflare DNS",
     "cost": "free",
     "free_limits": "Available on all plans",
-    "windows_fit": "web",
+    "platforms": "web",
     "maintained": "docs live 2026-10-28",
-    "install": "web (Cloudflare dashboard > Email > DMARC Management)",
+    "install": "web",
     "license": "n/a",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://developers.cloudflare.com/dmarc-management/",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Postmark DMARC Digests",
       "url": "https://dmarc.postmarkapp.com/",
-      "what": "Weekly DMARC report digests by email",
-      "why": "Free alternative if DNS isn't on Cloudflare; paid USD 14/mo/domain",
+      "what": "Weekly DMARC report digests",
+      "why": "Free alternative if DNS isn't on Cloudflare",
       "cost": "freemium",
-      "free_limits": "Free: top 10 sources, 7-day history, weekly email",
-      "windows_fit": "web",
+      "free_limits": "Free: top 10 sources, 7-day history",
+      "platforms": "web",
       "maintained": "live page 2026-10-28",
       "install": "web",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://dmarc.postmarkapp.com/",
       "checked": "2026-10-28"
     },
@@ -42,15 +40,14 @@
       "name": "Gmail sender guidelines + Postmaster Tools",
       "url": "https://support.google.com/a/answer/81126",
       "what": "Google's rules and spam-rate dashboard",
-      "why": "The thresholds that actually decide inbox placement",
+      "why": "The thresholds that decide inbox placement",
       "cost": "free",
       "free_limits": "Free",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "page live 2026-10-28",
       "install": "web",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://support.google.com/a/answer/81126",
       "checked": "2026-10-28"
     }
@@ -62,28 +59,26 @@
     },
     {
       "name": "Postmark DMARC",
-      "verdict": "Free weekly digests elsewhere"
+      "verdict": "Free digests elsewhere"
     },
     {
-      "name": "mail-tester.com",
-      "verdict": "Quick spam-score test (free limits not confirmed)"
+      "name": "mail-tester / MXToolbox",
+      "verdict": "Quick checks, not verified"
     },
     {
-      "name": "MXToolbox",
-      "verdict": "Free DNS checks (not checked)"
-    },
-    {
-      "name": "Sequencer warmup (Apollo/Instantly/lemwarm)",
-      "verdict": "Use the warmup built into your sender"
+      "name": "Built-in warmup",
+      "verdict": "Use your sender's"
     }
   ],
-  "decision": "Never cold-email from the main product domain. Buy one or two lookalike domains, set SPF + DKIM (2048-bit) + DMARC (p=none, then quarantine), warm each inbox, and keep spam rate under 0.3% (aim for 0.1%). Bulk senders (>5,000/day to Gmail) also need one-click unsubscribe. Zoho Mail Forever Free has no IMAP/POP, so sequencers can't connect to it. Sending inboxes need Zoho Mail Lite, Google Workspace, or mailboxes bought through Apollo.",
+  "decision": "Never cold-email from the main product domain. Use one or two lookalike domains with SPF, DKIM (2048-bit) and DMARC, warm inboxes, and keep spam rate under 0.3%. Bulk senders to Gmail also need one-click unsubscribe. Some free mailbox tiers lack IMAP/SMTP access, which sequencers need.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "DMARC Management is 'Available on all plans' and needs Cloudflare DNS; no extra charge stated. Zoho Forever Free has 'IMAP/POP/Active Sync not included' (confirmed). Postmark alt confirmed (free: top 10 sources, 7 days, weekly email; paid USD 14/mo/domain). Note Apollo's free plan connects Gmail only, so the outbound mailboxes should be Google Workspace if Apollo stays on free.",
+    "note": "Shallow; correct guidance.",
     "url": "https://developers.cloudflare.com/dmarc-management/"
   },
-  "better_pick": null
+  "better": []
 }

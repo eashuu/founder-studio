@@ -3,21 +3,34 @@
   "slot": "meeting notes",
   "track": "productivity",
   "stage": "run",
-  "region": "Global",
-  "order": 11216,
+  "order": 11009,
   "pick": {
-    "name": "Fathom (Free)",
+    "name": "Granola",
+    "url": "https://www.granola.ai/pricing",
+    "what": "Bot-free AI meeting notes that capture device audio and merge with your own notes",
+    "why": "Best-regarded bot-free workflow; notes shaped by what you typed",
+    "cost": "freemium",
+    "free_limits": "Basic $0: 30-day history, limited AI chat, Slack integration only; Business $14/user/mo; Enterprise $35",
+    "platforms": "macOS|Windows|iOS|Android",
+    "maintained": "Windows availability confirmed by help centre; launch date sources conflict",
+    "install": "download from granola.ai",
+    "license": "Proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://www.granola.ai/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Fathom",
     "url": "https://www.fathom.ai",
     "what": "Meeting recorder bot for Zoom, Meet and Teams with AI summaries",
-    "why": "Best when the prospect hosts on Zoom/Teams; unlimited free recordings",
+    "why": "Unlimited free recordings and transcripts",
     "cost": "freemium",
-    "free_limits": "Free: unlimited recordings + transcription; advanced summaries reportedly capped at 5 calls/mo; Premium $16/mo annual; HIPAA BAA listed (plan unclear)",
-    "windows_fit": "web",
+    "free_limits": "Free forever: unlimited recordings and transcription, instant AI summaries; some AI features marked 'limited use' (cap not stated on pricing page); Premium $16/mo annual or $20 monthly",
+    "platforms": "web",
     "maintained": "SaaS, current",
     "install": "web",
     "license": "Proprietary",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://www.fathom.ai/pricing",
     "checked": "2026-10-28"
   },
@@ -25,73 +38,76 @@
     {
       "name": "Meetily",
       "url": "https://github.com/Zackriya-Solutions/meeting-minutes",
-      "what": "Local meeting transcriber (Whisper/Parakeet) capturing mic + system audio, summaries via Ollama or Claude API",
-      "why": "Use for healthcare/regulated calls: audio never leaves your machine and no bot joins",
+      "what": "Local meeting transcriber with Ollama or API summaries",
+      "why": "Audio never leaves the machine; no bot",
       "cost": "free",
-      "free_limits": "Free; LLM summary costs depend on provider",
-      "windows_fit": "native (Windows x64, needs AVX2; Vulkan build)",
+      "free_limits": "Free; LLM costs depend on provider",
+      "platforms": "Windows|macOS",
       "maintained": "v0.4.1 2026-09-12",
       "install": "x64-setup.exe from GitHub Releases",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/Zackriya-Solutions/meeting-minutes",
       "checked": "2026-10-28"
     },
     {
-      "name": "Google Meet 'Take notes for me' (Gemini)",
+      "name": "Google Meet 'Take notes for me'",
       "url": "https://9to5google.com/2026/06/29/google-meet-take-notes-ai-pro-ultra/",
-      "what": "Gemini transcribes calls you host on Meet and writes summary/decisions/next steps into a Google Doc + email",
-      "why": "Already included in your Google AI Pro; no bot joins; notes land in Drive where Gemini/NotebookLM can use them",
-      "cost": "owned (if available on your AI Pro plan in India - test in Meet before relying on it)",
-      "free_limits": "Google AI Pro/Ultra, meetings you host, 8 languages (no Hindi); participants are notified",
-      "windows_fit": "web",
-      "maintained": "Launched for personal AI Pro 2026-06-29; in-person mode Aug 2026",
-      "install": "web (meet.google.com)",
+      "what": "Gemini notes inside Google Meet",
+      "why": "Convenient if you host calls in Meet",
+      "cost": "paid",
+      "free_limits": "Requires Google AI Pro/Ultra or Workspace; meetings you host; 8 languages",
+      "platforms": "web",
+      "maintained": "Personal-plan launch 2026-06-29",
+      "install": "web",
       "license": "Proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://9to5google.com/2026/06/29/google-meet-take-notes-ai-pro-ultra/",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Otter.ai",
+      "url": "https://otter.ai/pricing",
+      "source_url": "https://otter.ai/pricing",
+      "what": "free Basic 300 min/user/mo, 30 min per conversation; Pro USD 8.33/user/mo annual.  Replaces 'Gemini notes in Google Meet'",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "Google Meet Take notes for me",
-      "verdict": "PICK: owned, no bot, notes in Drive"
+      "name": "Granola",
+      "verdict": "PICK: bot-free, best notes UX; free tier limited to 30 days of history"
     },
     {
-      "name": "Fathom Free",
-      "verdict": "Best cross-platform free bot"
+      "name": "Fathom",
+      "verdict": "BEST FREE: bot, unlimited recordings"
     },
     {
       "name": "Meetily",
-      "verdict": "Best privacy/local; for PHI calls"
+      "verdict": "Local, for sensitive calls"
     },
     {
-      "name": "Granola",
-      "verdict": "Bot-free, Windows supported per 2026 reviews, but free tier limits conflict (30-day history vs 25 meetings)"
+      "name": "Google Meet notes",
+      "verdict": "Only if you host on Meet"
     },
     {
-      "name": "Microsoft Teams transcription/Copilot recap",
-      "verdict": "Use for company Teams calls if your tenant licence includes it"
+      "name": "Otter / tl;dv / Teams Copilot",
+      "verdict": "Not verified this pass"
     },
     {
       "name": "Wispr Flow Notetaker",
-      "verdict": "Free weekly cap; disabled on HIPAA accounts"
-    },
-    {
-      "name": "Otter / tl;dv",
-      "verdict": "Not verified this pass"
+      "verdict": "Capped free tier"
     }
   ],
-  "decision": "Host your own sales and discovery calls on Google Meet and let Gemini take notes: it is already paid for, needs no bot, and writes to Drive. When the other side hosts on Zoom/Teams, use Fathom Free. For healthcare clients or anything with PHI, record only with consent and use Meetily locally (or nothing) unless a BAA is in place.",
-  "note": "Consolidated: Fathom Free is the default because it is confirmed free on Meet, Zoom and Teams. Gemini 'Take notes for me' could not be confirmed for personal AI Pro accounts in India. For healthcare or PHI calls, record only with consent and use Meetily locally.",
-  "details": "Recording consent laws vary by country/state; always announce recording. Not legal advice.",
+  "decision": "Granola is the best meeting-notes tool for a founder: no bot joins, notes are shaped by what you typed, and it works on Mac and Windows. Fathom Free is the best free option when a bot is acceptable. Use a local tool like Meetily for regulated or confidential calls.",
+  "note": "Same pick as Sales + GTM. For regulated or health data, use a local recorder and get consent.",
+  "details": "Recording consent laws vary by country and US state; announce recording. Verify with a lawyer.",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Same tool and free plan verified in the Sales track.",
-    "url": ""
+    "note": "Verified Basic $0 (30-day history), Business $14, Enterprise $35.",
+    "url": "https://www.granola.ai/pricing"
   },
-  "better_pick": null
+  "better": []
 }

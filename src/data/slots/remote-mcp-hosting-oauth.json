@@ -3,41 +3,38 @@
   "slot": "remote MCP hosting + OAuth",
   "track": "app-stacks",
   "stage": "build",
-  "region": "Global",
-  "order": 5098,
+  "order": 5047,
   "pick": {
     "name": "Cloudflare Workers (createMcpHandler) + Workers OAuth Provider",
     "url": "https://developers.cloudflare.com/agents/guides/remote-mcp-server/",
     "what": "Stateless Streamable-HTTP MCP on Workers; OAuthAuthorizationServer + OAuthResourceServer",
     "why": "Free-tier edge hosting with a built-in OAuth 2.1 flow MCP clients expect",
     "cost": "freemium",
-    "free_limits": "Workers Free: 100,000 requests/day, 10 ms CPU/request, 128 MB, 50 subrequests, 5 cron triggers, 100 Workers. Durable Object availability on Free not shown on limits page (check DO pricing page)",
-    "windows_fit": "web (wrangler native on Windows)",
+    "free_limits": "Workers Free: 100,000 requests/day, 10ms CPU per invocation, commercial use allowed; Workers Paid $5/month minimum (10M requests, 30M CPU-ms).",
     "maintained": "workers-oauth-provider 1.2.4 (2026-10-22)",
     "install": "npm create cloudflare@latest -- my-mcp --template=cloudflare/ai/demos/remote-mcp-authless",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://developers.cloudflare.com/agents/guides/remote-mcp-server/",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "web (wrangler CLI on macOS, Windows, Linux)"
+  },
+  "best_free": {
+    "name": "Hono + @hono/mcp on your API host",
+    "url": "https://www.npmjs.com/package/@hono/mcp",
+    "what": "MCP endpoint inside the main API",
+    "why": "No extra deploy; reuse API auth",
+    "cost": "free",
+    "free_limits": "host-dependent",
+    "maintained": "0.3.5 (2026-10-28)",
+    "install": "npm i @hono/mcp",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "source_url": "https://www.npmjs.com/package/@hono/mcp",
+    "checked": "2026-10-28",
+    "platforms": "native"
   },
   "alts": [
-    {
-      "name": "Hono + @hono/mcp on your API host",
-      "url": "https://www.npmjs.com/package/@hono/mcp",
-      "what": "MCP endpoint inside the main API",
-      "why": "No extra deploy; reuse API auth",
-      "cost": "free",
-      "free_limits": "host-dependent",
-      "windows_fit": "native",
-      "maintained": "0.3.5 (2026-10-28)",
-      "install": "npm i @hono/mcp",
-      "license": "MIT",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://www.npmjs.com/package/@hono/mcp",
-      "checked": "2026-10-28"
-    },
     {
       "name": "FastMCP on a Python host",
       "url": "https://pypi.org/project/fastmcp/",
@@ -45,13 +42,27 @@
       "why": "Python services",
       "cost": "free",
       "free_limits": "host-dependent",
-      "windows_fit": "native",
       "maintained": "4.1.4 (2026-10-26)",
       "install": "pip install fastmcp",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://pypi.org/project/fastmcp/",
+      "checked": "2026-10-28",
+      "platforms": "native"
+    },
+    {
+      "name": "xmcp",
+      "url": "https://www.npmjs.com/package/xmcp",
+      "what": "TypeScript framework for building and deploying MCP servers",
+      "why": "Quick TS scaffolding; deploys to common hosts",
+      "cost": "free",
+      "free_limits": "n/a",
+      "platforms": "any (Node)",
+      "maintained": "1.9.0 (2026-10-22)",
+      "install": "npm i xmcp",
+      "license": "MIT",
+      "commercial_ok": "yes",
+      "source_url": "https://www.npmjs.com/package/xmcp",
       "checked": "2026-10-28"
     }
   ],
@@ -80,10 +91,12 @@
   "decision": "Workers gives free hosting plus a ready OAuth server for MCP clients. Mount @hono/mcp in the main API instead when the MCP tools are thin wrappers over existing endpoints.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "fixed",
-    "note": "Limits filled in.",
-    "url": "https://developers.cloudflare.com/workers/platform/limits/"
+    "note": "Limits were 'not re-verified'; now confirmed.",
+    "url": "https://developers.cloudflare.com/workers/platform/pricing/"
   },
-  "better_pick": null
+  "better": []
 }

@@ -3,55 +3,58 @@
   "slot": "Feedback board, public roadmap, changelog",
   "track": "sales",
   "stage": "sell",
-  "region": "Global",
-  "order": 7201,
+  "order": 7028,
   "pick": {
-    "name": "UserJot (Free)",
+    "name": "UserJot",
     "url": "https://userjot.com/pricing",
-    "what": "Feedback boards + public roadmap + changelog",
-    "why": "All three in the free plan with unlimited end users",
+    "what": "Feedback boards + roadmap + changelog",
+    "why": "All three in the free plan",
     "cost": "freemium",
-    "free_limits": "Free: 2 boards, 3 team members, roadmap + changelog (5 tags), UserJot branding; Starter USD 29/mo",
-    "windows_fit": "web",
+    "free_limits": "Free: 2 boards, 3 team members; Starter USD 29/mo",
+    "platforms": "web",
     "maintained": "live page 2026-10-28",
     "install": "web",
     "license": "proprietary",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://userjot.com/pricing",
+    "checked": "2026-10-28"
+  },
+  "best_free": {
+    "name": "Fider",
+    "url": "https://github.com/getfider/fider",
+    "what": "Open-source feedback portal",
+    "why": "Self-host, own data",
+    "cost": "free",
+    "free_limits": "Self-host free",
+    "platforms": "Docker",
+    "maintained": "v0.38.2 released 2026-10-05",
+    "install": "docker",
+    "license": "AGPL-3.0",
+    "commercial_ok": "yes",
+    "source_url": "https://github.com/getfider/fider",
     "checked": "2026-10-28"
   },
   "alts": [
     {
       "name": "Featurebase",
       "url": "https://www.featurebase.app/pricing",
-      "what": "Feedback + roadmap + changelog + help centre + surveys",
-      "why": "Free tier adds a 50-article help centre; startup discount 86%",
+      "what": "Feedback + roadmap + changelog + help centre",
+      "why": "Free tier adds 50-article help centre",
       "cost": "freemium",
-      "free_limits": "Free: 1 seat, 1 board, 1 roadmap, 50 help articles",
-      "windows_fit": "web",
+      "free_limits": "Free: 1 seat, 1 board",
+      "platforms": "web",
       "maintained": "live page 2026-10-28",
       "install": "web",
       "license": "proprietary",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.featurebase.app/pricing",
       "checked": "2026-10-28"
     },
     {
-      "name": "Fider",
-      "url": "https://github.com/getfider/fider",
-      "what": "Open-source feedback portal",
-      "why": "Self-host free, own data",
-      "cost": "free",
-      "free_limits": "Self-host free",
-      "windows_fit": "wsl/web (Docker)",
-      "maintained": "v0.38.2 released 2026-10-05",
-      "install": "docker (see Fider docs)",
-      "license": "AGPL-3.0",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://github.com/getfider/fider",
+      "name": "Canny",
+      "url": "https://canny.io/pricing",
+      "source_url": "https://canny.io/pricing",
+      "what": "Free 25 tracked users, 5 managers, unlimited boards; Pro USD 79/mo billed yearly",
       "checked": "2026-10-28"
     }
   ],
@@ -62,32 +65,34 @@
     },
     {
       "name": "Featurebase",
-      "verdict": "If you also want a help centre"
+      "verdict": "If you want a help centre"
     },
     {
       "name": "Fider",
-      "verdict": "Self-hosted open source"
+      "verdict": "Self-hosted OSS"
     },
     {
       "name": "Canny",
-      "verdict": "Free only 25 tracked users; Pro USD 79/mo"
+      "verdict": "Free only 25 tracked users"
     },
     {
       "name": "GitHub Discussions + Releases",
-      "verdict": "Use for open-core/dev products instead"
+      "verdict": "For dev products"
     },
     {
       "name": "LogChimp / Frill",
-      "verdict": "Smaller (LogChimp v0.9.2 2026-09)"
+      "verdict": "Smaller"
     }
   ],
-  "decision": "UserJot's free plan covers board, roadmap and changelog for SaaS/B2C apps. For open-core developer products, use GitHub Discussions + Releases where the users already are.",
+  "decision": "UserJot's free plan covers board, roadmap and changelog. Open-source developer products should use GitHub Discussions and Releases.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "UserJot Free confirmed: 2 boards, 3 team members, unlimited end users, roadmap and changelog, 5 tags each, branding; Starter USD 29. Featurebase alt confirmed (1 seat, 1 board, 1 roadmap, 50 articles). Fider AGPL-3.0, active.",
+    "note": "UserJot Free verified: unlimited posts/users, 2 boards, 3 team members, public roadmap and changelog; Starter USD 29, Professional USD 59.",
     "url": "https://userjot.com/pricing"
   },
-  "better_pick": null
+  "better": []
 }

@@ -3,39 +3,51 @@
   "slot": "Google Workspace MCP",
   "track": "claude-code",
   "stage": "build",
-  "region": "Global",
   "order": 2027,
   "pick": {
     "name": "claude.ai Google Drive/Gmail/Calendar connectors",
     "url": "https://code.claude.com/docs/en/discover-plugins",
     "what": "First-party OAuth connectors synced to Claude Code",
     "why": "No Google Cloud OAuth client to create",
-    "cost": "owned",
-    "free_limits": "n/a",
-    "windows_fit": "native",
+    "cost": "paid",
+    "free_limits": "Connectors need a Claude plan",
     "maintained": "core",
     "install": "authenticate from /mcp",
     "license": "n/a",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://code.claude.com/docs/en/discover-plugins",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
+  },
+  "best_free": {
+    "name": "workspace-mcp (taylorwilsdon)",
+    "url": "https://github.com/taylorwilsdon/google_workspace_mcp",
+    "what": "120+ tools across 12 Google services",
+    "why": "Broadest coverage",
+    "cost": "free",
+    "free_limits": "Free; you must create your own Google Cloud OAuth client with the needed APIs enabled",
+    "maintained": "v2.2.1 (2026-10-27)",
+    "install": "uvx workspace-mcp --tool-tier core  (stdio), or uvx workspace-mcp --transport streamable-http --tool-tier core then claude mcp add --transport http workspace-mcp http://localhost:8000/mcp",
+    "license": "MIT",
+    "commercial_ok": "yes",
+    "source_url": "https://github.com/taylorwilsdon/google_workspace_mcp",
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
   "alts": [
     {
-      "name": "workspace-mcp (taylorwilsdon)",
-      "url": "https://github.com/taylorwilsdon/google_workspace_mcp",
-      "what": "120+ tools across 12 Google services",
-      "why": "Broadest coverage",
+      "name": "gws (googleworkspace/cli)",
+      "url": "https://github.com/googleworkspace/cli",
+      "what": "One CLI for all of Google Workspace with 40+ agent skills (not an official Google product)",
+      "why": "Works through Bash; no MCP server to run",
       "cost": "free",
-      "free_limits": "own OAuth client",
-      "windows_fit": "native (uvx)",
-      "maintained": "pushed 2026-10-27",
-      "install": "uvx workspace-mcp --tool-tier core",
-      "license": "MIT",
+      "free_limits": "fully free",
+      "platforms": "macOS|Windows|Linux",
+      "maintained": "no dated release shown",
+      "install": "npm install -g @googleworkspace/cli | brew install googleworkspace-cli",
+      "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://github.com/taylorwilsdon/google_workspace_mcp",
+      "source_url": "https://github.com/googleworkspace/cli",
       "checked": "2026-10-28"
     }
   ],
@@ -46,16 +58,26 @@
     },
     {
       "name": "workspace-mcp",
-      "verdict": "stores a full mailbox token locally; higher risk"
+      "verdict": "full mailbox token on disk; higher risk"
+    },
+    {
+      "name": "gws CLI",
+      "verdict": "Apache-2.0 CLI with agent skills"
+    },
+    {
+      "name": "Zapier / Composio connectors",
+      "verdict": "hosted; third-party token custody; not opened"
     }
   ],
-  "decision": "Use founder Google account only, never company M365 data.",
+  "decision": "Use the first-party claude.ai connectors for a personal or business Google account; avoid pointing them at accounts governed by someone else's data policy. workspace-mcp stores a full mailbox token on disk.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "First-party connectors.",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
     "url": "https://code.claude.com/docs/en/discover-plugins"
   },
-  "better_pick": null
+  "better": []
 }

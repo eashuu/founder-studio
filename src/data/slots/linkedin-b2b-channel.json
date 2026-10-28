@@ -1,0 +1,84 @@
+{
+  "slug": "linkedin-b2b-channel",
+  "slot": "LinkedIn (B2B channel)",
+  "track": "brand",
+  "stage": "sell",
+  "order": 8014,
+  "pick": {
+    "name": "LinkedIn native",
+    "url": "https://www.linkedin.com",
+    "what": "Profile, native post scheduling (10 min to 3 months ahead), newsletters, Live and analytics",
+    "why": "Where B2B buyers are; core creator tools are free on every profile",
+    "cost": "free",
+    "free_limits": "Free; scheduling excludes group/event/job posts; Premium optional",
+    "platforms": "web|iOS|Android",
+    "maintained": "SaaS, current",
+    "install": "web",
+    "license": "Proprietary",
+    "commercial_ok": "yes",
+    "source_url": "https://buffer.com/resources/how-to-schedule-linkedin-posts/",
+    "checked": "2026-10-28"
+  },
+  "best_free": null,
+  "alts": [
+    {
+      "name": "AuthoredUp",
+      "url": "https://authoredup.com",
+      "what": "Chrome extension for LinkedIn drafting, preview and analytics",
+      "why": "Best tool once LinkedIn is a real pipeline source",
+      "cost": "paid",
+      "free_limits": "Free trial; Individual $19.95/mo",
+      "platforms": "web (extension)",
+      "maintained": "SaaS, current",
+      "install": "Chrome Web Store",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://authoredup.com/pricing",
+      "checked": "2026-10-28"
+    },
+    {
+      "name": "Buffer",
+      "url": "https://buffer.com",
+      "what": "Scheduler that also posts to LinkedIn",
+      "why": "Use when batch-writing for several networks",
+      "cost": "freemium",
+      "free_limits": "3 channels, 10 queued posts/channel",
+      "platforms": "web",
+      "maintained": "SaaS",
+      "install": "web",
+      "license": "Proprietary",
+      "commercial_ok": "yes",
+      "source_url": "https://buffer.com/pricing",
+      "checked": "2026-10-28"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "LinkedIn native",
+      "verdict": "PICK"
+    },
+    {
+      "name": "AuthoredUp",
+      "verdict": "$19.95/mo; worth it at volume"
+    },
+    {
+      "name": "Buffer",
+      "verdict": "Cross-network"
+    },
+    {
+      "name": "Taplio / Shield",
+      "verdict": "Not verified"
+    }
+  ],
+  "decision": "LinkedIn is the main channel for B2B and services buyers and its native scheduler and analytics are enough to start. Add AuthoredUp when you post several times a week.",
+  "note": "",
+  "details": "",
+  "region_notes": {},
+  "os_notes": {},
+  "verify": {
+    "verdict": "ok",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
+    "url": "https://buffer.com/resources/how-to-schedule-linkedin-posts/"
+  },
+  "better": []
+}

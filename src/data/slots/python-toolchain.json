@@ -1,26 +1,25 @@
 {
   "slug": "python-toolchain",
   "slot": "Python toolchain",
-  "track": "windows-dev",
+  "track": "dev-env",
   "stage": "build",
-  "region": "Global",
   "order": 3040,
   "pick": {
     "name": "uv (standalone)",
     "url": "https://github.com/astral-sh/uv",
     "what": "Python versions, venvs, tools, lockfiles",
-    "why": "Replaces pip, pyenv and pipx with one fast tool; install it standalone, not bundled inside another app",
+    "why": "Replaces pip/pyenv/pipx",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native (user scope)",
     "maintained": "0.13.6 (2026-10-27)",
-    "install": "powershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\"",
+    "install": "brew install uv | winget install astral-sh.uv | curl -LsSf https://astral.sh/uv/install.sh | sh",
     "license": "Apache-2.0/MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://github.com/astral-sh/uv/releases",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "macOS|Windows|Linux"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "pixi",
@@ -29,14 +28,13 @@
       "why": "Native binary deps",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "v0.83.0 (2026-10-22)",
-      "install": "winget install prefix-dev.pixi",
+      "install": "web",
       "license": "BSD-3",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/prefix-dev/pixi",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     },
     {
       "name": "Miniforge",
@@ -45,14 +43,13 @@
       "why": "Avoid Anaconda defaults channel (paid terms)",
       "cost": "free",
       "free_limits": "n/a",
-      "windows_fit": "native",
       "maintained": "26.9.4-1 (2026-10-26)",
-      "install": "winget install CondaForge.Miniforge3",
+      "install": "web",
       "license": "BSD-3",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/conda-forge/miniforge",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "macOS|Windows|Linux"
     }
   ],
   "candidates": [
@@ -77,13 +74,19 @@
       "verdict": "keep one global"
     }
   ],
-  "decision": "One standalone uv; per-project .venv; one global Python for py tools.",
+  "decision": "uv covers Python versions, venvs, tools and lockfiles in one fast binary; use pixi or Miniforge only when you need conda-forge binary packages.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "brew install uv.",
+    "Windows": "winget install astral-sh.uv or the PowerShell install script.",
+    "Linux": "curl -LsSf https://astral.sh/uv/install.sh | sh."
+  },
   "verify": {
     "verdict": "ok",
-    "note": "0.13.6 (26/27 Oct 2026).",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
     "url": "https://github.com/astral-sh/uv/releases"
   },
-  "better_pick": null
+  "better": []
 }

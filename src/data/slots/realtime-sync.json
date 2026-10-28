@@ -3,8 +3,7 @@
   "slot": "realtime + sync",
   "track": "app-stacks",
   "stage": "build",
-  "region": "Global",
-  "order": 5085,
+  "order": 5034,
   "pick": {
     "name": "Server-Sent Events from the API (Hono streamSSE / AI SDK streams)",
     "url": "https://hono.dev/docs/guides/rpc",
@@ -12,15 +11,15 @@
     "why": "Covers LLM token streaming, progress and notifications with no extra service; works in Expo and Electron fetch",
     "cost": "free",
     "free_limits": "n/a",
-    "windows_fit": "native",
     "maintained": "hono 4.13.14 (2026-10-25)",
     "install": "built-in (import { streamSSE } from 'hono/streaming')",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://www.npmjs.com/package/hono",
-    "checked": "2026-10-28"
+    "checked": "2026-10-28",
+    "platforms": "native"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Cloudflare Durable Objects / Agents SDK (WebSockets)",
@@ -29,14 +28,13 @@
       "why": "Two-way realtime + per-user state when you outgrow SSE",
       "cost": "freemium",
       "free_limits": "Workers free limits not re-verified",
-      "windows_fit": "web",
       "maintained": "agents npm 0.31.0 (2026-10-27)",
       "install": "npm i agents",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://developers.cloudflare.com/agents/",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "web"
     },
     {
       "name": "Zero (Rocicorp) sync engine",
@@ -45,14 +43,13 @@
       "why": "Local-first instant UI + offline on web/mobile when collaboration matters",
       "cost": "free",
       "free_limits": "self-host free",
-      "windows_fit": "native",
       "maintained": "@rocicorp/zero 1.11.3 (2026-10-23)",
       "install": "npm i @rocicorp/zero",
       "license": "Apache-2.0",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://www.npmjs.com/package/@rocicorp/zero",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "platforms": "native"
     }
   ],
   "candidates": [
@@ -92,10 +89,12 @@
   "decision": "Start with SSE because it is free and needs no new service. Add Durable Objects for true two-way rooms, or a sync engine (Zero/PowerSync) only when offline or collaborative editing is a product requirement.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
     "verdict": "ok",
-    "note": "Version/licence/limits match registry or official page.",
-    "url": "https://registry.npmjs.org/"
+    "note": "Shallow.",
+    "url": "https://www.npmjs.com/package/hono"
   },
-  "better_pick": null
+  "better": []
 }

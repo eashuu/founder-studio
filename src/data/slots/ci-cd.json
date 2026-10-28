@@ -3,8 +3,7 @@
   "slot": "CI/CD",
   "track": "ship",
   "stage": "ship",
-  "region": "Global",
-  "order": 6110,
+  "order": 6009,
   "pick": {
     "name": "GitHub Actions",
     "url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
@@ -12,15 +11,15 @@
     "why": "Free unlimited minutes on public repos (open-core) + 2,000/mo private; biggest action ecosystem; Claude Code writes it fluently",
     "cost": "freemium",
     "free_limits": "Free plan: 2,000 min/mo private, 500 MB artifacts, 10 GB cache/repo; public repos and self-hosted runners free; Linux 2-core $0.006/min; planned $0.002/min self-hosted fee was postponed (Dec 2025); Copilot code review consumes minutes",
-    "windows_fit": "web",
+    "platforms": "web",
     "maintained": "active",
     "install": "web (.github/workflows/*.yml)",
     "license": "service",
     "commercial_ok": "yes",
-    "needs_company": "no",
     "source_url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "Cloudflare Workers Builds",
@@ -29,30 +28,17 @@
       "why": "Zero-config deploys for Workers repos",
       "cost": "freemium",
       "free_limits": "Free 3,000 build min/mo, 1 concurrent, 20-min timeout",
-      "windows_fit": "web",
+      "platforms": "web",
       "maintained": "active",
       "install": "web",
       "license": "service",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://developers.cloudflare.com/workers/ci-cd/builds/limits-and-pricing/",
       "checked": "2026-10-28"
     },
     {
-      "name": "Self-hosted runner on Oracle VM",
-      "url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
-      "what": "Run Actions jobs on your free VM",
-      "why": "Unlimited private minutes for $0",
-      "cost": "free",
-      "free_limits": "No GitHub charge for self-hosted runners (fee postponed)",
-      "windows_fit": "linux VM",
-      "maintained": "active",
-      "install": "./config.sh (from repo Settings > Actions > Runners)",
-      "license": "MIT (runner)",
-      "commercial_ok": "yes",
-      "needs_company": "no",
-      "source_url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
-      "checked": "2026-10-28"
+      "checked": "2026-10-28",
+      "name": "Self-hosted runner on any VM"
     }
   ],
   "candidates": [
@@ -77,13 +63,15 @@
       "verdict": "No advantage for solo"
     }
   ],
-  "decision": "GitHub Actions is the default; keep core repos public to make CI free. Add a self-hosted runner on the Oracle VM only if private-repo minutes run out.",
+  "decision": "GitHub Actions is the default: free on public repos, 2,000 min/mo on private repos, largest action ecosystem. Add a self-hosted runner on any cheap VM only if private-repo minutes run out (self-hosted runners currently carry no GitHub charge).",
   "note": "",
   "details": "Pin third-party actions to commit SHAs (see Trivy incident in security slot).",
+  "region_notes": {},
+  "os_notes": {},
   "verify": {
-    "verdict": "ok",
-    "note": "GitHub doc: Free = 2,000 min private, 500 MB artifacts, 10 GB cache/repo; free for public repos + self-hosted; Linux 2-core $0.006/min; Copilot code review consumes Actions minutes. The doc does not mention the postponed $0.002/min self-hosted fee (it only says self-hosted is free), which is consistent with 'postponed'. Workers Builds 3,000 min/1 concurrent/20 min confirmed.",
+    "verdict": "fixed",
+    "note": "Checked against primary sources; wording made neutral during verification.",
     "url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions"
   },
-  "better_pick": null
+  "better": []
 }

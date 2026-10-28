@@ -1,40 +1,38 @@
 {
   "slug": "shell",
   "slot": "shell",
-  "track": "windows-dev",
+  "track": "dev-env",
   "stage": "build",
-  "region": "Global",
   "order": 3034,
   "pick": {
-    "name": "PowerShell 7.6 + Git for Windows (Git Bash for Claude's Bash tool)",
+    "name": "zsh/bash (macOS, Linux) and PowerShell 7 + Git for Windows (Windows)",
     "url": "https://github.com/PowerShell/PowerShell/releases",
-    "what": "Modern pwsh for you; Claude Code uses Git Bash for its Bash tool and PowerShell tool by default",
-    "why": "Matches how Claude Code runs on Windows (setup doc)",
+    "what": "Use the OS-native POSIX shell; on Windows pair modern PowerShell with Git for Windows",
+    "why": "Claude Code's Bash tool needs a POSIX shell; these are the supported defaults",
     "cost": "free",
-    "free_limits": "n/a",
-    "windows_fit": "native (ZIP/MSIX no admin)",
-    "maintained": "v7.6.9 (2026-10-25)",
-    "install": "winget install --id Microsoft.PowerShell --source winget",
+    "free_limits": "fully free",
+    "platforms": "macOS|Windows|Linux",
+    "maintained": "PowerShell v7.6.9 (2026-10-25)",
+    "install": "web",
     "license": "MIT",
     "commercial_ok": "yes",
-    "needs_company": "no",
-    "source_url": "https://code.claude.com/docs/en/setup",
+    "source_url": "https://github.com/PowerShell/PowerShell/releases",
     "checked": "2026-10-28"
   },
+  "best_free": null,
   "alts": [
     {
       "name": "bash in WSL2",
       "url": "https://learn.microsoft.com/windows/wsl/",
-      "what": "Linux shell",
-      "why": "For sandboxed sessions and Linux builds",
+      "what": "Real Linux shell on Windows",
+      "why": "Full Linux toolchain on Windows",
       "cost": "free",
-      "free_limits": "n/a",
-      "windows_fit": "wsl",
-      "maintained": "n/a",
-      "install": "wsl --install Ubuntu-24.04",
+      "free_limits": "fully free",
+      "platforms": "Windows",
+      "maintained": "supported",
+      "install": "wsl --install",
       "license": "n/a",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://learn.microsoft.com/windows/wsl/",
       "checked": "2026-10-28"
     },
@@ -42,44 +40,49 @@
       "name": "Nushell",
       "url": "https://github.com/nushell/nushell",
       "what": "Structured-data shell",
-      "why": "Nice, but Claude doesn't use it",
+      "why": "Interesting but non-POSIX",
       "cost": "free",
-      "free_limits": "n/a",
-      "windows_fit": "native",
+      "free_limits": "fully free",
+      "platforms": "macOS|Windows|Linux",
       "maintained": "0.116.1 (2026-10-04)",
-      "install": "winget install Nushell.Nushell",
+      "install": "brew install nushell | winget install Nushell.Nushell",
       "license": "MIT",
       "commercial_ok": "yes",
-      "needs_company": "no",
       "source_url": "https://github.com/nushell/nushell",
       "checked": "2026-10-28"
     }
   ],
   "candidates": [
     {
-      "name": "pwsh 7 + Git Bash",
+      "name": "OS-native shell",
       "verdict": "pick"
     },
     {
+      "name": "fish",
+      "verdict": "friendly interactive shell; not POSIX; not re-checked"
+    },
+    {
       "name": "WSL bash",
-      "verdict": "Linux work"
+      "verdict": "for Linux work on Windows"
     },
     {
       "name": "Nushell",
-      "verdict": "distraction"
-    },
-    {
-      "name": "Windows PowerShell 5.1",
-      "verdict": "legacy"
+      "verdict": "distraction for most"
     }
   ],
-  "decision": "Install pwsh 7 for your own shell; keep Git for Windows so Claude's Bash tool works.",
+  "decision": "Keep the OS-native shell. On Windows keep Git for Windows installed so Claude's Bash tool works, and add PowerShell 7 for your own use; use WSL2 when the project is Linux-first.",
   "note": "",
   "details": "",
+  "region_notes": {},
+  "os_notes": {
+    "macOS": "zsh is the default; nothing to install.",
+    "Windows": "Install PowerShell 7 plus Git for Windows; WSL2 is optional but unlocks the Claude sandbox.",
+    "Linux": "bash/zsh already present."
+  },
   "verify": {
     "verdict": "ok",
-    "note": "v7.6.9 (25 Oct 2026) Latest; Microsoft.PowerShell winget ID exists.",
+    "note": "Shallow check: no neutrality, pricing or licence defect found; not re-fetched.",
     "url": "https://github.com/PowerShell/PowerShell/releases"
   },
-  "better_pick": null
+  "better": []
 }

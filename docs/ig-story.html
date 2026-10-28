@@ -1,0 +1,65 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=tanker@400&display=block">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=block">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&display=block">
+<style>
+:root{--ink:#0b0b0c;--slab-ink:#ecebe6;--paper:#e9e8e4;--blue:#5b66ff;--klein:#1f2bff;--tape:#f4e04d;
+  --d:'Tanker',Impact,sans-serif;--b:'General Sans',Arial,sans-serif;--m:'IBM Plex Mono',monospace}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--ink)}
+body{position:relative;color:var(--slab-ink);font-family:var(--b)}
+body::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.12;mix-blend-mode:screen;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.cap{font:600 26px/1 var(--m);letter-spacing:.08em;text-transform:uppercase}
+.d{font-family:var(--d);text-transform:uppercase;line-height:.86;letter-spacing:.005em}
+.top{position:absolute;left:72px;right:72px;top:250px;display:flex;justify-content:space-between;padding-bottom:26px;border-bottom:3px solid var(--slab-ink)}
+.top i{font-style:normal;color:var(--blue)}
+h1{position:absolute;left:68px;top:350px;font-size:146px;font-weight:400}
+h1 .o{color:transparent;-webkit-text-stroke:4px var(--slab-ink)}
+h1 .b{color:var(--blue)}
+.scrap{position:absolute;right:70px;top:800px;width:330px;height:390px;transform:rotate(5deg);
+  background:radial-gradient(circle,var(--klein) 3.6px,transparent 4.2px) 0 0/19px 19px,var(--slab-ink)}
+.scrap .no{position:absolute;left:26px;top:34px;color:var(--ink);font-size:120px;background:var(--slab-ink);padding:8px 10px 0}
+.tape{position:absolute;right:110px;top:1140px;background:var(--tape);color:var(--ink);font-size:68px;padding:20px 30px 12px;transform:rotate(-5deg);box-shadow:8px 8px 0 #000}
+.stats{position:absolute;left:72px;top:810px;display:grid;gap:34px}
+.stat{display:flex;align-items:center;gap:22px}
+.stat b{font:400 124px/.8 var(--d);min-width:250px;padding-top:12px;color:var(--slab-ink)}
+.stat span{font:600 25px/1.2 var(--m);letter-spacing:.06em;text-transform:uppercase;color:#bdbcb6}
+.stages{position:absolute;left:72px;right:72px;top:1300px;font:600 30px/1 var(--m);letter-spacing:.08em;text-transform:uppercase;display:flex;justify-content:space-between;padding-top:26px;border-top:3px solid var(--slab-ink)}
+.stages em{font-style:normal;color:var(--blue)}
+.link{position:absolute;left:52px;right:52px;top:1410px;background:var(--paper);color:var(--ink);padding:44px 48px 40px;transform:rotate(-1.5deg)}
+.link .cap{color:#5d5d61;font-size:24px}
+.link .url{font:600 46px/1.1 var(--m);margin-top:16px;letter-spacing:-.01em}
+.link .url i{font-style:normal;color:var(--klein)}
+.foot{position:absolute;left:72px;right:72px;bottom:250px;color:#9b9a94;font:500 24px/1.4 var(--m);letter-spacing:.06em;text-transform:uppercase;text-align:center}
+</style></head><body>
+<div class="top cap"><span>Founder<i>/</i>Studio</span><span>New project ↗</span></div>
+<h1 class="d"><span>The best tool</span><br><span class="o">for every job,</span><br><span class="b">and the free one.</span></h1>
+
+<div class="stats">
+  <div class="stat"><b>238</b><span>tools,<br>one pick each</span></div>
+  <div class="stat"><b>13</b><span>tracks, problem<br>to paid</span></div>
+  <div class="stat"><b>232</b><span>verified against<br>primary sources</span></div>
+</div>
+<div class="scrap" data-tear><span class="no d">No.1</span></div>
+<div class="tape d">Verified</div>
+
+<div class="stages"><span>Discover</span><em>→</em><span>Build</span><em>→</em><span>Ship</span><em>→</em><span>Sell</span><em>→</em><span>Run</span></div>
+
+<div class="link" data-tear>
+  <div class="cap">Free. For solo AI founders. Open the site:</div>
+  <div class="url">eashuu.github.io/<i>founder-studio</i></div>
+</div>
+
+<div class="foot">Any OS · any budget · any country</div>
+<script>
+// torn-paper edges: jagged top and bottom on each [data-tear]
+let seed = 7; const r = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+document.querySelectorAll('[data-tear]').forEach((el) => {
+  const top = [], bot = [];
+  for (let x = 0; x <= 100; x += 2.5) { top.push(`${x}% ${r() * 3.2}%`); bot.unshift(`${x}% ${100 - r() * 3.2}%`); }
+  el.style.clipPath = `polygon(${top.concat(bot).join(',')})`;
+});
+</script>
+</body></html>

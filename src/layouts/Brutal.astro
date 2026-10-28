@@ -1,13 +1,15 @@
 ---
 import '../styles/brutal.css';
 import '../styles/pages.css';
-import { REPO, meta, slots, track, shortName, tearPath } from '../lib/data.js';
+import '../styles/fixes.css';
+import { REPO, REPO_LIVE, meta, tearPath } from '../lib/data.js';
 const { title, description = 'Every tool a solo AI founder needs, from problem to paid, on free tiers: picked, compared and verified.' } = Astro.props;
 const path = Astro.url.pathname;
 const full = title ? `${title} / Founder Studio` : 'Founder Studio';
-const nav = [['/tracks/', 'Tracks'], ['/playbook/', 'Playbook'], ['/decisions/', 'Decisions'], ['/method/', 'Method']];
-const index = slots.map((s) => ({ u: `/tools/${s.slug}/`, n: shortName(s.pick.name), s: s.slot, t: track(s.track).name,
-  h: [s.slot, s.pick.name, ...s.alts.map((a) => a.name), ...s.candidates.map((c) => c.name)].join(' ').toLowerCase() }));
+const nav = [['/', 'Index'], ['/tracks/', 'Tracks'], ['/playbook/', 'Playbook'], ['/decisions/', 'Decisions'], ['/method/', 'Method']];
+// Tool pages live inside tracks, so Tracks stays marked there too.
+const current = (href) => (href === '/' ? path === '/' : path.startsWith(href) || (href === '/tracks/' && path.startsWith('/tools/')));
+const ogImage = new URL('/og.png', Astro.site);
 ---
 <!doctype html>
 <html lang="en">
@@ -16,65 +18,98 @@ const index = slots.map((s) => ({ u: `/tools/${s.slug}/`, n: shortName(s.pick.na
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{full}</title>
     <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content={full} />
     <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href={new URL(path, Astro.site)} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=tanker@400&f[]=general-sans@400,500,600&display=swap" />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+    <!-- Fontshare's CSS API serves one family per request, so each family gets its own link. -->
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=tanker@400&display=swap" />
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&display=swap" />
     <script is:inline src="/tear.js"></script>
   </head>
   <body>
+    <a class="skip" href="#main">Skip to content</a>
     <header class="bar">
       <div class="wrap">
-        <a class="logo" href="/">Founder<i>/</i>Studio</a>
+        <a class="logo" href="/" aria-label="Founder Studio, home">Founder<i>/</i>Studio</a>
         <nav aria-label="Main">
-          {nav.map(([href, label]) => <a href={href} data-scramble aria-current={path.startsWith(href) ? 'page' : undefined}>{label}</a>)}
+          {nav.map(([href, label]) => <a href={href} data-scramble aria-current={current(href) ? 'page' : undefined}>{label}</a>)}
         </nav>
-        <button class="btn" type="button" data-palette>Search <kbd class="hide-s">Ctrl K</kbd></button>
-        <button class="btn solid" type="button" data-drawer>Stack <span class="count" data-count>0</span></button>
+        <button class="btn" type="button" data-palette aria-keyshortcuts="Control+K Meta+K /">Search <kbd class="hide-s" data-kbd>Ctrl K</kbd></button>
+        <button class="btn solid" type="button" data-drawer aria-label="Your stack, 0 tools">Stack <span class="count" data-count>0</span></button>
+        <button class="btn menu-btn" type="button" data-menu aria-haspopup="dialog">Menu</button>
       </div>
     </header>
 
-    <main><slot /></main>
+    <main id="main" tabindex="-1"><slot /></main>
 
     <footer class="foot">
       <svg class="rip" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path d={tearPath('foot', 'bottom', 60)} /></svg>
       <div class="wrap">
         <div class="row cap">
           <span>Checked {meta.built}<span class="sl">/</span>Prices and free tiers change. Check before you pay.</span>
-          <span><a href={REPO}>Source and corrections on GitHub</a><span class="sl">/</span><a href="/method/">Method</a></span>
+          <span>{REPO_LIVE && <><a href={REPO}>Source and corrections on GitHub</a><span class="sl">/</span></>}<a href="/method/">Method</a></span>
         </div>
         <svg class="word" viewBox="0 0 1000 156" aria-hidden="true"><text x="0" y="150" font-size="196" textLength="1000" lengthAdjust="spacingAndGlyphs">FOUNDER<tspan class="b">/</tspan>STUDIO</text></svg>
       </div>
     </footer>
 
-    <dialog class="palette" aria-label="Search">
-      <input type="text" placeholder="Search 245 slots" aria-label="Search tools and slots" autocomplete="off" />
-      <ul role="listbox"></ul>
-      <div class="hint cap">↑ ↓ to move<span class="sl">/</span>Enter to open<span class="sl">/</span>Esc to close</div>
+    <dialog class="menu" aria-label="Menu">
+      <div class="menu-top"><span class="logo">Founder<i>/</i>Studio</span><button class="btn" type="button" data-close>Close</button></div>
+      <nav aria-label="Menu">
+        {nav.map(([href, label]) => <a class="menu-link" href={href} aria-current={current(href) ? 'page' : undefined}>{label}</a>)}
+      </nav>
+      <div class="menu-stages">
+        {meta.stages.map((st) => (
+          <div><a class="cap" href={`/#${st.key}`}>{st.name}</a>
+            {meta.tracks.filter((t) => t.stage === st.key).map((t) => <a href={`/tracks/${t.key}/`}>{t.name}</a>)}
+          </div>
+        ))}
+      </div>
+      <button class="btn solid" type="button" data-palette>Search 245 tools</button>
     </dialog>
 
-    <aside class="drawer" aria-label="Your stack">
-      <header><h2>Your stack</h2><button class="btn" type="button" data-drawer-close>Close</button></header>
+    <dialog class="palette" aria-label="Search">
+      <input type="text" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list" placeholder="Search 245 slots" aria-label="Search tools and slots" autocomplete="off" />
+      <ul role="listbox" id="palette-list" aria-label="Results"></ul>
+      <div class="hint cap"><span aria-live="polite" data-results></span><span class="sl">/</span>↑ ↓ to move<span class="sl">/</span>Enter to open<span class="sl">/</span>Esc to close</div>
+    </dialog>
+
+    <dialog class="drawer" aria-labelledby="drawer-title">
+      <header><h2 id="drawer-title" tabindex="-1">Your stack</h2><button class="btn" type="button" data-close>Close</button></header>
       <ol></ol>
       <footer>
         <button class="btn solid" type="button" data-md-copy>Copy Markdown</button>
         <button class="btn" type="button" data-md-dl>Download .md</button>
       </footer>
-    </aside>
-    <div class="drawer-shade" data-drawer-close></div>
+    </dialog>
 
-    <script type="application/json" id="fs-index" set:html={JSON.stringify(index)} />
+    <div class="toast" role="status" aria-live="polite" hidden></div>
+
     <script>
       const $ = (s: string, r: ParentNode = document) => r.querySelector(s) as HTMLElement;
       const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const esc = (x: string) => x.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
 
-      // Scrambled text on hover (nav links, captions marked data-scramble)
+      // External links open in a new tab; the ↗ in the label is the cue.
+      document.querySelectorAll<HTMLAnchorElement>('a[href^="http"]').forEach((a) => {
+        if (a.host !== location.host) { a.target = '_blank'; a.rel = 'noopener'; }
+      });
+
+      // Shortcut hint matches the platform.
+      if (/Mac|iPhone|iPad/.test(navigator.platform)) document.querySelectorAll('[data-kbd]').forEach((k) => (k.textContent = '⌘K'));
+
+      // Scrambled text on hover. The accessible name is pinned first so screen readers never hear the noise.
       const glyphs = '!<>-_\\/[]{}=+*^?#ABCDEFGHIJKLMNOPQRSTUVWXYZ';
       document.querySelectorAll<HTMLElement>('[data-scramble]').forEach((el) => {
         const text = el.textContent || '';
+        el.setAttribute('aria-label', text);
         let raf = 0;
         el.addEventListener('mouseenter', () => {
           if (reduce) return;
@@ -91,7 +126,8 @@ const index = slots.map((s) => ({ u: `/tools/${s.slug}/`, n: shortName(s.pick.na
       // Split-flap counters
       document.querySelectorAll<HTMLElement>('[data-flap]').forEach((el) => {
         const target = el.dataset.flap || '';
-        const render = (s: string) => (el.innerHTML = [...s].map((c) => `<span class="${/\d/.test(c) ? '' : 'c'}">${c}</span>`).join(''));
+        // digits are decorative; one visually hidden copy carries the real number
+        const render = (s: string) => (el.innerHTML = `<span class="sr-only">${target}</span>` + [...s].map((c) => `<span aria-hidden="true" class="${/\d/.test(c) ? '' : 'c'}">${c}</span>`).join(''));
         if (reduce) return render(target);
         let step = 0;
         const id = setInterval(() => {
@@ -100,82 +136,142 @@ const index = slots.map((s) => ({ u: `/tools/${s.slug}/`, n: shortName(s.pick.na
         }, 45);
       });
 
-      // Marquee speeds up with scroll velocity
-      const track = $('.ticker .track');
-      const anim = track?.getAnimations()[0];
-      if (anim && !reduce) {
-        let last = scrollY, rate = 1;
-        addEventListener('scroll', () => { rate = Math.min(6, 1 + Math.abs(scrollY - last) / 12); last = scrollY; anim.playbackRate = rate; }, { passive: true });
-        setInterval(() => { rate = Math.max(1, rate * 0.9); anim.playbackRate = rate; }, 80);
+      // Marquee: speeds up with scroll, pauses on hover/focus or with its button.
+      const ticker = document.querySelector<HTMLElement>('.ticker');
+      const anim = ticker?.querySelector('.track')?.getAnimations()[0];
+      if (ticker && anim) {
+        let paused = false, rate = 1, last = scrollY;
+        const btn = $('[data-ticker]');
+        const sync = () => { anim.playbackRate = rate; paused || ticker.matches(':hover') ? anim.pause() : anim.play(); };
+        btn?.addEventListener('click', () => {
+          paused = !paused;
+          btn.textContent = paused ? 'Play' : 'Pause';
+          btn.setAttribute('aria-pressed', String(paused));
+          sync();
+        });
+        ticker.addEventListener('mouseenter', () => anim.pause());
+        ticker.addEventListener('mouseleave', sync);
+        if (!reduce) {
+          addEventListener('scroll', () => { rate = Math.min(6, 1 + Math.abs(scrollY - last) / 12); last = scrollY; anim.playbackRate = rate; }, { passive: true });
+          setInterval(() => { if (rate > 1) { rate = Math.max(1, rate * 0.9); anim.playbackRate = rate; } }, 80);
+        }
       }
 
-      // Command palette
-      const idx: { u: string; n: string; s: string; t: string; h: string }[] = JSON.parse($('#fs-index').textContent || '[]');
+      // Generic dialog close (backdrop click or [data-close])
+      document.querySelectorAll<HTMLDialogElement>('dialog').forEach((d) => {
+        d.addEventListener('click', (e) => {
+          if (e.target === d || (e.target as HTMLElement).closest('[data-close]')) d.close();
+        });
+      });
+
+      // Mobile menu
+      const menu = $('dialog.menu') as HTMLDialogElement;
+      document.querySelectorAll('[data-menu]').forEach((b) => b.addEventListener('click', () => menu.showModal()));
+      menu.addEventListener('click', (e) => { if ((e.target as HTMLElement).closest('a')) menu.close(); });
+
+      // Command palette. The index is fetched once, on first open.
+      type Row = { u: string; n: string; s: string; t: string; h: string };
+      let idx: Row[] | null = null;
       const dlg = $('dialog.palette') as HTMLDialogElement;
       const input = $('input', dlg) as HTMLInputElement;
       const list = $('ul', dlg);
+      const count = $('[data-results]', dlg);
       let sel = 0;
-      const esc = (x: string) => x.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
       const results = () => {
+        if (!idx) return [];
         const w = input.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
         return (w.length ? idx.filter((r) => w.every((x) => r.h.includes(x))) : idx).slice(0, 40);
       };
+      const mark = () => {
+        list.querySelectorAll('[role="option"]').forEach((o, i) => o.setAttribute('aria-selected', String(i === sel)));
+        const on = list.querySelector('[aria-selected="true"]');
+        input.setAttribute('aria-activedescendant', on?.id || '');
+        on?.scrollIntoView({ block: 'nearest' });
+      };
       const draw = () => {
+        if (!idx) { list.innerHTML = '<li class="hint cap">Loading the index…</li>'; return; }
         const r = results();
         sel = Math.min(sel, Math.max(0, r.length - 1));
         list.innerHTML = r.length
-          ? r.map((x, i) => `<li><a href="${x.u}" aria-selected="${i === sel}"><span><b>${esc(x.n)}</b> · ${esc(x.s)}</span><span class="cap">${esc(x.t)}</span></a></li>`).join('')
+          ? r.map((x, i) => `<li role="option" id="opt-${i}" data-i="${i}"><a href="${x.u}" tabindex="-1"><span><b>${esc(x.n)}</b> · ${esc(x.s)}</span><span class="cap">${esc(x.t)}</span></a></li>`).join('')
           : '<li class="hint cap">No match. Try a broader word, such as email or hosting.</li>';
-        list.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: 'nearest' });
+        count.textContent = input.value.trim() ? `${r.length}${r.length === 40 ? '+' : ''} results` : 'Type to search';
+        mark();
       };
-      const openPalette = () => { input.value = ''; sel = 0; draw(); dlg.showModal(); input.focus(); };
+      const openPalette = async () => {
+        menu.close();
+        input.value = ''; sel = 0; draw(); dlg.showModal(); input.focus();
+        if (!idx) {
+          try { idx = await (await fetch('/search.json')).json(); } catch { list.innerHTML = '<li class="hint cap">Search is offline. Browse the tracks instead.</li>'; return; }
+          draw();
+        }
+      };
       input.addEventListener('input', () => { sel = 0; draw(); });
       input.addEventListener('keydown', (e) => {
-        const n = list.querySelectorAll('a').length;
-        if (e.key === 'ArrowDown') { sel = (sel + 1) % Math.max(n, 1); draw(); e.preventDefault(); }
-        if (e.key === 'ArrowUp') { sel = (sel - 1 + n) % Math.max(n, 1); draw(); e.preventDefault(); }
-        if (e.key === 'Enter') (list.querySelector('[aria-selected="true"]') as HTMLAnchorElement)?.click();
+        const n = list.querySelectorAll('[role="option"]').length;
+        if (!n) return;
+        if (e.key === 'ArrowDown') { sel = (sel + 1) % n; mark(); e.preventDefault(); }
+        if (e.key === 'ArrowUp') { sel = (sel - 1 + n) % n; mark(); e.preventDefault(); }
+        if (e.key === 'Enter') { e.preventDefault(); (list.querySelector('[aria-selected="true"] a') as HTMLAnchorElement)?.click(); }
       });
-      dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+      list.addEventListener('mousemove', (e) => {
+        const o = (e.target as HTMLElement).closest<HTMLElement>('[role="option"]');
+        if (o && +o.dataset.i! !== sel) { sel = +o.dataset.i!; mark(); }
+      });
       addEventListener('keydown', (e) => {
-        const typing = /input|textarea/i.test((e.target as HTMLElement).tagName);
-        if ((e.key === 'k' && (e.ctrlKey || e.metaKey)) || (e.key === '/' && !typing)) { e.preventDefault(); openPalette(); }
+        const typing = /input|textarea|select/i.test((e.target as HTMLElement).tagName);
+        if ((e.key === 'k' && (e.ctrlKey || e.metaKey)) || (e.key === '/' && !typing)) { e.preventDefault(); if (!dlg.open) openPalette(); }
       });
       document.querySelectorAll('[data-palette]').forEach((b) => b.addEventListener('click', openPalette));
 
-      // Stack drawer (saved in this browser only)
+      // Stack (saved in this browser only)
       const KEY = 'founder-studio-stack';
       type Item = { slug: string; name: string; slot: string };
       let stack: Item[] = [];
       try { stack = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch {}
-      const drawer = $('.drawer');
-      const md = () => ['# My founder stack', '', ...stack.map((x) => `- **${x.slot}:** ${x.name}`), '', `From ${location.origin}/`].join('\n');
+      const drawer = $('dialog.drawer') as HTMLDialogElement;
+      const toast = $('.toast');
+      let toastTimer = 0;
+      const say = (html: string) => {
+        toast.innerHTML = html; toast.hidden = false;
+        clearTimeout(toastTimer); toastTimer = setTimeout(() => (toast.hidden = true), 3200);
+      };
+      const md = () => ['# My founder stack', '', ...stack.map((x) => `- **${x.slot}:** ${x.name} (${location.origin}/tools/${x.slug}/)`), ''].join('\n');
       const save = () => { try { localStorage.setItem(KEY, JSON.stringify(stack)); } catch {} };
       const paint = () => {
         document.querySelectorAll('[data-count]').forEach((c) => (c.textContent = String(stack.length)));
+        $('[data-drawer]').setAttribute('aria-label', `Your stack, ${stack.length} ${stack.length === 1 ? 'tool' : 'tools'}`);
         $('ol', drawer).innerHTML = stack.length
-          ? stack.map((x) => `<li><span><b>${esc(x.name)}</b><span class="cap">${esc(x.slot)}</span></span><button type="button" data-remove="${x.slug}" aria-label="Remove ${esc(x.name)}">×</button></li>`).join('')
-          : '<p class="empty">Nothing here yet. Press <b>+ Add to stack</b> on any tool.</p>';
+          ? stack.map((x) => `<li><a href="/tools/${x.slug}/"><b>${esc(x.name)}</b><span class="cap">${esc(x.slot)}</span></a><button type="button" data-remove="${x.slug}" aria-label="Remove ${esc(x.name)}">×</button></li>`).join('')
+          : '<p class="empty">Nothing here yet. Use <b>+ Add to stack</b> on any tool page.</p>';
         document.querySelectorAll<HTMLButtonElement>('[data-add]').forEach((b) => {
           const on = stack.some((x) => x.slug === b.dataset.add);
           b.textContent = on ? '✓ In your stack' : '+ Add to stack';
           b.setAttribute('aria-pressed', String(on));
         });
       };
-      const setOpen = (o: boolean) => (o ? drawer.setAttribute('data-open', '') : drawer.removeAttribute('data-open'));
+      // The dialog returns focus to whatever was focused before it opened. The toast disappears,
+      // so when opened from there, focus the header Stack button first and focus lands there on close.
+      const openDrawer = (fromToast: boolean) => {
+        if (fromToast) $('.bar [data-drawer]').focus();
+        drawer.showModal(); $('#drawer-title').focus();
+      };
       document.addEventListener('click', (e) => {
         const t = e.target as HTMLElement;
         const add = t.closest<HTMLButtonElement>('[data-add]');
         if (add) {
           const i = stack.findIndex((x) => x.slug === add.dataset.add);
-          i >= 0 ? stack.splice(i, 1) : stack.push({ slug: add.dataset.add!, name: add.dataset.name!, slot: add.dataset.slot! });
-          save(); paint(); if (i < 0) setOpen(true);
+          if (i >= 0) { stack.splice(i, 1); say(`Removed ${esc(add.dataset.name!)}.`); }
+          else { stack.push({ slug: add.dataset.add!, name: add.dataset.name!, slot: add.dataset.slot! }); say(`Added ${esc(add.dataset.name!)}. <button type="button" data-drawer>View stack</button>`); }
+          save(); paint();
         }
         const rm = t.closest<HTMLElement>('[data-remove]');
-        if (rm) { stack = stack.filter((x) => x.slug !== rm.dataset.remove); save(); paint(); }
-        if (t.closest('[data-drawer]')) setOpen(!drawer.hasAttribute('data-open'));
-        if (t.closest('[data-drawer-close]')) setOpen(false);
-        if (t.closest('[data-md-copy]')) navigator.clipboard?.writeText(md());
+        if (rm) { stack = stack.filter((x) => x.slug !== rm.dataset.remove); save(); paint(); $('#drawer-title').focus(); }
+        if (t.closest('[data-drawer]')) { const fromToast = !!t.closest('.toast'); toast.hidden = true; openDrawer(fromToast); }
+        if (t.closest('[data-md-copy]')) {
+          const b = t.closest<HTMLElement>('[data-md-copy]')!;
+          navigator.clipboard?.writeText(md()).then(() => { b.textContent = 'Copied'; setTimeout(() => (b.textContent = 'Copy Markdown'), 1500); }, () => (b.textContent = 'Copy failed'));
+        }
         if (t.closest('[data-md-dl]')) {
           const a = document.createElement('a');
           a.href = URL.createObjectURL(new Blob([md()], { type: 'text/markdown' }));
@@ -184,7 +280,6 @@ const index = slots.map((s) => ({ u: `/tools/${s.slug}/`, n: shortName(s.pick.na
         const cp = t.closest<HTMLElement>('[data-copy]');
         if (cp) navigator.clipboard?.writeText(cp.dataset.copy || '').then(() => { cp.textContent = 'Copied'; setTimeout(() => (cp.textContent = 'Copy'), 1400); });
       });
-      addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
       paint();
     </script>
   </body>

@@ -1,4 +1,5 @@
-// Generates a fresh jagged tear line for each page transition, so no two rips look the same.
+// Paper-rip page transition: a fresh jagged tear line each time.
+// Skipped for back/forward so history navigation feels instant.
 (function () {
   function line(y, tilt) {
     var pts = [], n = 28, j = 0;
@@ -11,10 +12,11 @@
   }
   window.addEventListener('pagereveal', function (e) {
     if (!e.viewTransition) return;
+    var nav = window.navigation && navigation.activation;
+    if (nav && (nav.navigationType === 'traverse' || nav.navigationType === 'reload')) { e.viewTransition.skipTransition(); return; }
     var tilt = (Math.random() - 0.5) * 22;
-    var css = '@keyframes tear-away{from{clip-path:' + line(-14 - Math.abs(tilt), tilt) + '}to{clip-path:' + line(112 + Math.abs(tilt), tilt) + '}}';
     var style = document.createElement('style');
-    style.textContent = css;
+    style.textContent = '@keyframes tear-away{from{clip-path:' + line(-14 - Math.abs(tilt), tilt) + '}to{clip-path:' + line(112 + Math.abs(tilt), tilt) + '}}';
     document.head.appendChild(style);
     e.viewTransition.finished.then(function () { style.remove(); });
   });

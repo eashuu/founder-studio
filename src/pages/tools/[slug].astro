@@ -1,6 +1,6 @@
 ---
 import Brutal from '../../layouts/Brutal.astro';
-import { slots, slotsIn, track, stage, costKey, verdictLabel, editUrl, shortName } from '../../lib/data.js';
+import { slots, slotsIn, track, stage, costKey, verdictLabel, editUrl, shortName, REPO_LIVE, wbr } from '../../lib/data.js';
 
 export function getStaticPaths() {
   return slots.map((s) => ({ params: { slug: s.slug }, props: { s } }));
@@ -18,8 +18,8 @@ const facts = [
 const hasInstall = p.install && !/^web$/i.test(p.install);
 const sib = slotsIn(s.track);
 const at = sib.indexOf(s);
-const prev = sib[(at - 1 + sib.length) % sib.length];
-const next = sib[(at + 1) % sib.length];
+const prev = sib[at - 1];
+const next = sib[at + 1];
 const no = String(slots.indexOf(s) + 1).padStart(3, '0');
 const key = (n) => shortName(n).toLowerCase();
 const pickKey = key(p.name);
@@ -29,7 +29,7 @@ const isPick = (n) => /\(pick\)/i.test(n) || key(n) === pickKey || key(n).starts
 <Brutal title={`${shortName(p.name)}: ${s.slot}`} description={`${p.name}: ${p.what}`}>
   <div class="wrap">
     <div class="spec-top cap">
-      <span><a href="/" data-scramble>Index</a><span class="sl">/</span>{stage(t.stage).name}<span class="sl">/</span><a href={`/tracks/${t.key}/`} data-scramble>{t.name}</a><span class="sl">/</span>No. {no}</span>
+      <span><a href="/" data-scramble>Index</a><span class="sl">/</span><a href={`/#${t.stage}`}>{stage(t.stage).name}</a><span class="sl">/</span><a href={`/tracks/${t.key}/`} data-scramble>{t.name}</a><span class="sl">/</span>No. {no}</span>
       <span>{s.slot}<span class="sl">/</span>Checked {p.checked}</span>
     </div>
 
@@ -38,8 +38,8 @@ const isPick = (n) => /\(pick\)/i.test(n) || key(n) === pickKey || key(n).starts
         <span class="cap" style="color:var(--blue)">The pick</span>
         <h1 class="display">{shortName(p.name)}</h1>
         {shortName(p.name) !== p.name && <p class="cap" style="margin-top:14px">{p.name}</p>}
-        <p class="what">{p.what}</p>
-        {p.why && <p class="why">{p.why}</p>}
+        <p class="what" set:html={wbr(p.what)} />
+        {p.why && <p class="why" set:html={wbr(p.why)} />}
         {hasInstall && <div class="cmd"><code>{p.install}</code><button type="button" data-copy={p.install}>Copy</button></div>}
         <div class="actions">
           <button class="btn blue" type="button" data-add={s.slug} data-name={p.name} data-slot={s.slot}>+ Add to stack</button>
@@ -47,10 +47,10 @@ const isPick = (n) => /\(pick\)/i.test(n) || key(n) === pickKey || key(n).starts
           <a class="btn" href={p.source_url}>Source ↗</a>
         </div>
       </div>
-      <aside>
+      <div class="keyfacts" role="group" aria-label="Key facts">
         <div class={`stamp ${good ? '' : 'warn'}`}>{verdictLabel(v)}<small>{good ? 'Primary source' : 'Needs a check'} · {p.checked}</small></div>
         <dl class="facts">{facts.map(([k, x]) => <div><dt>{k}</dt><dd>{x}</dd></div>)}</dl>
-      </aside>
+      </div>
     </section>
 
     {(s.decision || s.note) && (
@@ -72,8 +72,8 @@ const isPick = (n) => /\(pick\)/i.test(n) || key(n) === pickKey || key(n).starts
               {[{ ...p, why: 'Our pick' }, ...s.alts].map((a, i) => (
                 <tr class={i === 0 ? 'is-pick' : ''}>
                   <td><a href={a.url || a.source_url} style="text-decoration:none"><span class="nm">{shortName(a.name)}</span></a>{i === 0 && <small style="color:var(--blue)">The pick</small>}</td>
-                  <td>{a.what}</td>
-                  <td>{a.why}</td>
+                  <td set:html={wbr(a.what)} />
+                  <td set:html={wbr(a.why)} />
                   <td>{costKey(a.cost)}{show(a.free_limits) && <small>{a.free_limits}</small>}</td>
                 </tr>
               ))}
@@ -103,14 +103,16 @@ const isPick = (n) => /\(pick\)/i.test(n) || key(n) === pickKey || key(n).starts
       </div>
       <div>
         <div class="block-h"><h2>Fix it</h2><span class="cap">Open data</span></div>
-        <p class="why" style="color:var(--ink)">Prices and free tiers change. If something here is out of date, edit this slot's data file and include a source link.</p>
-        <a class="btn" style="margin-top:14px" href={editUrl(s.slug)}>Suggest an edit ↗</a>
+        <p class="why" style="color:var(--ink)">Prices and free tiers change. If something here is out of date, {REPO_LIVE ? "edit this slot's data file and include a source link." : 'corrections open when the source repository goes public.'}</p>
+        {REPO_LIVE && <a class="btn" style="margin-top:14px" href={editUrl(s.slug)}>Suggest an edit ↗</a>}
       </div>
     </section>
 
     <nav class="pager" aria-label="More in this track">
-      <a href={`/tools/${prev.slug}/`}><span class="cap">← Previous in {t.name}</span><b>{shortName(prev.pick.name)}</b></a>
-      <a href={`/tools/${next.slug}/`}><span class="cap">Next in {t.name} →</span><b>{shortName(next.pick.name)}</b></a>
+      {prev ? <a href={`/tools/${prev.slug}/`}><span class="cap">← Previous in {t.name}</span><b>{shortName(prev.pick.name)}</b></a>
+            : <a class="end" href={`/tracks/${t.key}/`}><span class="cap">First in {t.name}</span><b>All {sib.length} slots</b></a>}
+      {next ? <a href={`/tools/${next.slug}/`}><span class="cap">Next in {t.name} →</span><b>{shortName(next.pick.name)}</b></a>
+            : <a class="end" href={`/tracks/${t.key}/`}><span class="cap">Last in {t.name}</span><b>Back to the track</b></a>}
     </nav>
   </div>
 </Brutal>

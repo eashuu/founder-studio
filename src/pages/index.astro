@@ -1,7 +1,7 @@
 ---
 import Brutal from '../layouts/Brutal.astro';
 import Card from '../components/Card.astro';
-import { meta, slots, slotsIn, track, shortName, tornPolygon, tearPath, costKey } from '../lib/data.js';
+import { meta, slots, slotsIn, shortName, tornPolygon, tearPath, topPicks } from '../lib/data.js';
 
 const options = slots.reduce((n, s) => n + Math.max(s.candidates.length, s.alts.length + 1), 0);
 const verified = slots.filter((s) => ['ok', 'fixed'].includes(s.verify?.verdict)).length;
@@ -57,25 +57,28 @@ const tickerNames = [...new Set(slots.filter((s) => ['ok', 'fixed'].includes(s.v
   </section>
   <svg class="rip" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path d={tearPath('hero-rip', 'bottom', 70)} /></svg>
 
-  <div class="ticker" aria-hidden="true">
-    <div class="track">{[...tickerNames, ...tickerNames].map((n) => <span>{n}</span>)}</div>
+  <div class="ticker-wrap">
+    <div class="ticker" aria-hidden="true">
+      <div class="track">{[...tickerNames, ...tickerNames].map((n) => <span>{n}</span>)}</div>
+    </div>
+    <button class="ticker-btn" type="button" data-ticker aria-pressed="false" aria-label="Pause the moving list of picks">Pause</button>
   </div>
 
   <section class="sec">
     <div class="wrap">
       <div class="sec-head">
         <h2 class="display">The index</h2>
-        <p class="cap">5 stages<span class="sl">/</span>13 tracks<span class="sl">/</span>Hover a track to see its top picks</p>
+        <p class="cap">5 stages<span class="sl">/</span>13 tracks<span class="sl">/</span>Top picks under each track</p>
       </div>
       <div class="matrix">
         {meta.stages.map((st, i) => (
-          <div class="col">
+          <div class="col" id={st.key}>
             <div class="col-h"><div class="num">0{i + 1}</div><h3>{st.name}</h3><p>{st.blurb}</p></div>
             {meta.tracks.filter((t) => t.stage === st.key).map((t) => (
               <a class="cell" href={`/tracks/${t.key}/`}>
                 <b>{t.name}</b>
                 <span class="cap">{slotsIn(t.key).length} slots{t.region !== 'Global' && <><span class="sl">/</span>{t.region}</>}</span>
-                <ul>{slotsIn(t.key).slice(0, 3).map((s) => <li>{shortName(s.pick.name)}</li>)}</ul>
+                <ul>{topPicks(t.key, 3).map((n) => <li>{n}</li>)}</ul>
               </a>
             ))}
           </div>

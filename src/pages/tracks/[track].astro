@@ -17,7 +17,7 @@ const verified = list.filter((s) => ['ok', 'fixed'].includes(s.verify?.verdict))
 <Brutal title={t.name} description={t.blurb}>
   <div class="wrap page">
     <div class="spec-top cap">
-      <span><a href="/tracks/" data-scramble>Tracks</a><span class="sl">/</span>{stage(t.stage).name}<span class="sl">/</span>T{String(i + 1).padStart(2, '0')}</span>
+      <span><a href="/tracks/" data-scramble>Tracks</a><span class="sl">/</span><a href={`/#${t.stage}`} data-scramble>{stage(t.stage).name}</a><span class="sl">/</span>T{String(i + 1).padStart(2, '0')}</span>
       <span>{list.length} slots<span class="sl">/</span>{verified} verified{t.region !== 'Global' && <><span class="sl">/</span>Region {t.region}</>}</span>
     </div>
     <header class="ph">
@@ -60,6 +60,15 @@ const verified = list.filter((s) => ['ok', 'fixed'].includes(s.verify?.verdict))
       grid.classList.toggle('list', view === 'list');
       bar.querySelectorAll<HTMLElement>('[data-view]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
     };
+    // Filters live in the URL so a filtered view can be shared.
+    const params = new URLSearchParams(location.search);
+    for (const k of Object.keys(on)) for (const v of params.getAll(k)) on[k].add(v);
+    bar.querySelectorAll<HTMLElement>('[data-f]').forEach((b) => b.setAttribute('aria-pressed', String(on[b.dataset.f!].has(b.dataset.v!))));
+    const toUrl = () => {
+      const q = new URLSearchParams();
+      for (const [k, set] of Object.entries(on)) set.forEach((v) => q.append(k, v));
+      history.replaceState(null, '', q.size ? `?${q}` : location.pathname);
+    };
     bar.addEventListener('click', (e) => {
       const b = (e.target as HTMLElement).closest<HTMLElement>('button');
       if (!b) return;
@@ -68,6 +77,7 @@ const verified = list.filter((s) => ['ok', 'fixed'].includes(s.verify?.verdict))
         const set = on[b.dataset.f!];
         set.has(b.dataset.v!) ? set.delete(b.dataset.v!) : set.add(b.dataset.v!);
         b.setAttribute('aria-pressed', String(set.has(b.dataset.v!)));
+        toUrl();
       }
       apply();
     });

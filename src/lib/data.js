@@ -5,6 +5,8 @@ export const slots = Object.values(mods).map((m) => m.default).sort((a, b) => a.
 export { meta };
 
 export const REPO = 'https://github.com/eashuu/founder-studio';
+// Flip to true once the repo is public; until then GitHub links would 404.
+export const REPO_LIVE = false;
 export const editUrl = (slug) => `${REPO}/edit/main/src/data/slots/${slug}.json`;
 
 export const track = (key) => meta.tracks.find((t) => t.key === key);
@@ -32,6 +34,12 @@ function seeded(str) {
     return ((h ^= h >>> 16) >>> 0) / 4294967296;
   };
 }
+
+// Escape text and allow line breaks after slashes ("PDF/DOCX/PPTX" wraps cleanly instead of mid-word).
+export const wbr = (t = '') => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]).replace(/\//g, '/<wbr>');
+
+// Distinct short pick names in a track, for previews.
+export const topPicks = (key, n) => [...new Set(slotsIn(key).map((s) => shortName(s.pick.name)))].slice(0, n);
 
 // Short display name: "Expo (React Native, ...) + Expo Router" -> "Expo"
 export const shortName = (n) => n.split(/\s[(+/:]|\s\+|,\s|;\s| via | with /)[0].trim();

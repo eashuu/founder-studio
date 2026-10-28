@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://founder-studio.pages.dev/sitemap.xml

@@ -1,0 +1,72 @@
+/* Audit fixes 2026-10-28: navigation, accessibility, touch and contrast. Loaded after brutal.css and pages.css. */
+
+/* Skip link */
+.skip { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--blue); color: #fff; padding: 10px 14px; font: 600 12px var(--f-mono); text-transform: uppercase; text-decoration: none; }
+.skip:focus { top: 10px; }
+main:focus { outline: none; }
+
+/* Header: Menu button only on small screens */
+.menu-btn { display: none; }
+@media (max-width: 860px) { .menu-btn { display: inline-flex; } }
+
+/* Mobile menu sheet */
+dialog.menu { margin: 0; width: 100vw; max-width: none; height: 100dvh; max-height: none; padding: 0 max(20px, env(safe-area-inset-left)); border: 0; background: var(--slab); color: var(--slab-ink); overflow-y: auto; }
+dialog.menu[open] { display: flex; flex-direction: column; gap: 22px; padding-bottom: 28px; animation: menu-in 0.22s ease-out; }
+@keyframes menu-in { from { opacity: 0; transform: translateY(-12px); } }
+.menu-top { display: flex; justify-content: space-between; align-items: center; height: 58px; border-bottom: 2px solid var(--slab-ink); }
+.menu .btn { background: var(--slab); color: var(--slab-ink); border-color: var(--slab-ink); }
+.menu .btn.solid { background: var(--blue); border-color: var(--blue); color: #fff; align-self: flex-start; }
+.menu nav { display: flex; flex-direction: column; }
+.menu-link { font: 400 clamp(52px, 15vw, 96px)/0.95 var(--f-display); text-transform: uppercase; text-decoration: none; padding: 4px 0; border-bottom: 1px solid color-mix(in srgb, var(--slab-ink) 25%, transparent); }
+.menu-link[aria-current='page'] { color: var(--blue); }
+.menu-stages { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 16px; }
+.menu-stages div { display: flex; flex-direction: column; gap: 6px; }
+.menu-stages .cap { color: var(--tape); text-decoration: none; }
+.menu-stages a:not(.cap) { text-decoration: none; font-size: 15px; }
+@media (prefers-reduced-motion: reduce) { dialog.menu[open] { animation: none; } }
+
+/* Toast after adding to the stack */
+.toast { position: fixed; left: 50%; bottom: max(20px, env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 80; background: var(--ink); color: var(--paper); padding: 12px 16px; font: 500 14px var(--f-body); display: flex; gap: 14px; align-items: center; box-shadow: 6px 6px 0 var(--blue); max-width: calc(100vw - 40px); }
+.toast[hidden] { display: none; }
+.toast button { background: none; border: 0; color: var(--tape); font: 600 12px var(--f-mono); text-transform: uppercase; letter-spacing: 0.06em; cursor: pointer; text-decoration: underline; padding: 0; }
+
+/* Hero: a lighter blue line that passes 3:1 against the slab */
+.hero-h .b { color: #5866ff; }
+@media (prefers-color-scheme: dark) { .hero-h .b { color: #afa600; } }
+
+/* Index matrix: top picks always visible (touch has no hover); hover/focus shows a third */
+.cell ul { max-height: none; margin-top: 8px; }
+.cell li { color: var(--muted); }
+.cell li:nth-child(3) { display: none; }
+.cell:hover li, .cell:focus-visible li { color: inherit; }
+.cell:hover li:nth-child(3), .cell:focus-visible li:nth-child(3) { display: block; }
+.col { scroll-margin-top: 80px; }
+
+/* Ticker pause control */
+.ticker-wrap { position: relative; }
+.ticker-btn { position: absolute; right: max(12px, env(safe-area-inset-right)); top: 50%; transform: translateY(-50%); z-index: 2; background: var(--ink); color: var(--paper); border: 2px solid var(--paper); font: 600 11px var(--f-mono); text-transform: uppercase; letter-spacing: 0.06em; padding: 6px 10px; cursor: pointer; }
+
+/* Home playbook rail: all seven fit on desktop, scroll with a fade on smaller screens */
+@media (min-width: 1101px) { .rail { grid-auto-flow: row; grid-template-columns: repeat(7, minmax(0, 1fr)); overflow: visible; } .phase .n { font-size: 80px; } }
+@media (max-width: 1100px) { .rail { -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); scroll-snap-type: x mandatory; } .phase { scroll-snap-align: start; } }
+
+/* Playbook page: wrap 4 + 3 instead of a hidden horizontal rail */
+.phases { grid-auto-flow: row; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); overflow: visible; border-right: 0; border-bottom: 0; scroll-snap-type: none; }
+.phasecol { border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); min-height: 0; }
+.phasecol:last-child { border-right: 2px solid var(--ink); }
+
+/* Cover index numbers take the cover's own ink */
+.card .cover .idx { color: inherit; opacity: 0.75; }
+
+/* Pager end stops */
+.pager a.end { color: var(--muted); }
+
+/* Key facts box (was a nested aside landmark) */
+.keyfacts { min-width: 0; }
+
+/* Screen-reader-only text */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* Dark mode: blue fills get dark ink so small text passes 4.5:1; the "read first" tag keeps fixed colours */
+@media (prefers-color-scheme: dark) { .btn.blue, .count { color: #0b0b0c; } }
+.note .lvl.high { background: #0b0b0c; color: #f4e04d; border-color: #0b0b0c; }

@@ -228,24 +228,32 @@ dialog.palette::backdrop { background: rgb(11 11 12 / 0.55); backdrop-filter: gr
 .palette li a[aria-selected='true'] .cap { color: var(--tape); }
 .palette .hint { padding: 10px 18px; color: var(--muted); }
 
-/* Stack drawer */
-.drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 100vw); z-index: 70; background: var(--paper); border-left: 2px solid var(--ink); transform: translateX(105%); visibility: hidden; transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s 0.28s; display: flex; flex-direction: column; box-shadow: -10px 0 0 var(--blue); }
-.drawer[data-open] { transform: none; visibility: visible; transition-delay: 0s; }
+/* Stack drawer: a modal dialog sliding in from the right */
+dialog.drawer { margin: 0 0 0 auto; width: min(420px, 100vw); height: 100dvh; max-height: none; max-width: none; padding: 0; border: 0; border-left: 2px solid var(--ink); background: var(--paper); color: var(--ink); box-shadow: -10px 0 0 var(--blue); }
+dialog.drawer[open] { display: flex; flex-direction: column; animation: drawer-in 0.26s cubic-bezier(0.2, 0.8, 0.2, 1); }
+dialog.drawer::backdrop, dialog.menu::backdrop { background: rgb(11 11 12 / 0.45); }
+@keyframes drawer-in { from { transform: translateX(100%); } }
 .drawer header { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border-bottom: 2px solid var(--ink); }
-.drawer header h2 { font: 400 40px/0.9 var(--f-display); text-transform: uppercase; }
+.drawer header h2 { font: 400 40px/0.9 var(--f-display); text-transform: uppercase; outline: none; }
 .drawer ol { list-style: none; margin: 0; padding: 0; overflow: auto; flex: 1; counter-reset: k; }
 .drawer li { counter-increment: k; display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 10px; align-items: start; padding: 12px 18px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 20%, transparent); }
 .drawer li::before { content: counter(k, decimal-leading-zero); font: 600 12px var(--f-mono); color: var(--blue); padding-top: 3px; }
+.drawer li a { text-decoration: none; }
+.drawer li a:hover b { color: var(--blue); }
 .drawer li b { display: block; font-weight: 600; }
-.drawer li button { border: 0; background: none; color: var(--muted); cursor: pointer; font: 600 16px var(--f-mono); }
+.drawer li button { border: 0; background: none; color: var(--muted); cursor: pointer; font: 600 18px var(--f-mono); padding: 0 4px; }
+.drawer li button:hover { color: var(--ink); }
 .drawer .empty { padding: 30px 18px; color: var(--muted); }
 .drawer footer { padding: 16px 18px; border-top: 2px solid var(--ink); display: flex; flex-wrap: wrap; gap: 10px; background: var(--paper-2); }
-.drawer-shade { position: fixed; inset: 0; z-index: 65; background: rgb(11 11 12 / 0.4); opacity: 0; pointer-events: none; transition: opacity 0.2s; }
-.drawer[data-open] + .drawer-shade { opacity: 1; pointer-events: auto; }
+html:has(dialog[open]) { overflow: hidden; }
 
 /* Page transition: paper rip (public/tear.js randomises the tear line each time) */
 @view-transition { navigation: auto; }
-::view-transition-old(root) { animation: tear-away 0.75s cubic-bezier(0.55, 0, 0.7, 0.2) both; z-index: 2; }
+::view-transition-old(root) { animation: tear-away 0.5s cubic-bezier(0.55, 0, 0.7, 0.2) both; z-index: 2; }
+/* the header is its own transition group, so it stays put while the page rips */
+.bar { view-transition-name: site-bar; }
+::view-transition-group(site-bar), ::view-transition-old(site-bar), ::view-transition-new(site-bar) { animation: none; }
+::view-transition-group(site-bar) { z-index: 3; }
 ::view-transition-new(root) { animation: none; z-index: 1; }
 @keyframes tear-away {
   from { clip-path: polygon(0% -12%, 25% -10%, 50% -13%, 75% -9%, 100% -12%, 100% 100%, 0% 100%); }
@@ -254,5 +262,6 @@ dialog.palette::backdrop { background: rgb(11 11 12 / 0.55); backdrop-filter: gr
 @media (prefers-reduced-motion: reduce) {
   @view-transition { navigation: none; }
   .ticker .track { animation: none; }
-  .btn, .cover, .drawer, .cell ul { transition: none; }
+  .btn, .cover, .cell ul { transition: none; }
+  dialog.drawer[open] { animation: none; }
 }

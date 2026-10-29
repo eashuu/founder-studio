@@ -10,9 +10,10 @@ main:focus { outline: none; }
 @media (max-width: 860px) { .menu-btn { display: inline-flex; } }
 
 /* Mobile menu sheet */
-dialog.menu { margin: 0; width: 100vw; max-width: none; height: 100dvh; max-height: none; padding: 0 max(20px, env(safe-area-inset-left)); border: 0; background: var(--slab); color: var(--slab-ink); overflow-y: auto; }
-dialog.menu[open] { display: flex; flex-direction: column; gap: 22px; padding-bottom: 28px; animation: menu-in 0.22s ease-out; }
-@keyframes menu-in { from { opacity: 0; transform: translateY(-12px); } }
+dialog.menu { margin: 0; width: 100%; max-width: none; height: 100dvh; max-height: none; padding: 0 max(20px, env(safe-area-inset-left)); border: 0; background: var(--slab); color: var(--slab-ink); overflow-y: auto; }
+/* the sheet drops in from the top; its bottom edge is torn (clip-path set inline, seeded per page) */
+dialog.menu[open] { display: flex; flex-direction: column; gap: 22px; padding-bottom: 46px; animation: menu-in 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+@keyframes menu-in { from { transform: translateY(-100%); } }
 .menu-top { display: flex; justify-content: space-between; align-items: center; height: 58px; border-bottom: 2px solid var(--slab-ink); }
 .menu .btn { background: var(--slab); color: var(--slab-ink); border-color: var(--slab-ink); }
 .menu .btn.solid { background: var(--blue); border-color: var(--blue); color: #fff; align-self: flex-start; }
@@ -72,7 +73,8 @@ dialog.menu[open] { display: flex; flex-direction: column; gap: 22px; padding-bo
 .note .lvl.high { background: #0b0b0c; color: #f4e04d; border-color: #0b0b0c; }
 
 /* Best free option band + OS/country notes */
-.free { margin-top: 44px; border: 2px solid var(--ink); background: var(--tape); color: #0b0b0c; padding: 18px 20px 20px; position: relative; }
+/* torn off a pad: top and bottom edges ripped (clip-path set inline, seeded per tool) */
+.free { margin-top: 44px; background: var(--tape); color: #0b0b0c; padding: 28px 20px 30px; position: relative; }
 .free > .cap { display: inline-block; background: #0b0b0c; color: var(--tape); padding: 4px 8px; }
 .free-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 460px); gap: 16px 32px; align-items: end; margin-top: 12px; }
 .free h2 { font-size: clamp(44px, 6vw, 92px); }

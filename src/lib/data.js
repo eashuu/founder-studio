@@ -68,3 +68,16 @@ export function tearPath(seed, side = 'bottom', n = 34) {
   const base = side === 'top' ? 8 : 0;
   return `M0,${base} L${pts.join(' L')} L100,${base} Z`;
 }
+
+// clip-path polygon torn along the top and bottom only, `depth` px deep, so tall and short blocks tear alike.
+export function tornStrip(seed, depth = 9, n = 28, top = true) {
+  const r = seeded(seed);
+  const y = () => (r() * depth).toFixed(1);
+  const xs = Array.from({ length: n + 1 }, (_, i) => ((i / n) * 100).toFixed(2));
+  const t = top ? xs.map((x) => `${x}% ${y()}px`) : ['0 0', '100% 0'];
+  const b = xs.reverse().map((x) => `${x}% calc(100% - ${y()}px)`);
+  return `polygon(${[...t, ...b].join(', ')})`;
+}
+
+// The same tear left open (no top line): stroke it to outline a ripped bottom edge.
+export const tearLine = (seed, n = 34) => tearPath(seed, 'bottom', n).replace(/ Z$/, '');

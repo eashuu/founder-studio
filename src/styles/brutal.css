@@ -53,6 +53,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 kbd { font: 600 10px var(--f-mono); border: 1px solid currentColor; padding: 1px 4px; opacity: 0.7; }
 .count { background: var(--blue); color: #fff; padding: 0 6px; }
 @media (max-width: 860px) { .bar nav { display: none; } .bar .wrap { gap: 8px; } .logo { font-size: 24px; margin-right: auto; } .bar .btn { padding: 7px 9px; font-size: 11px; } .bar .hide-s { display: none; } }
+@media (max-width: 420px) { .bar .wrap { gap: 6px; } .logo { font-size: 20px; } .bar .btn { padding: 6px 7px; letter-spacing: 0.03em; } }
 
 /* Hero slab */
 .slab { position: relative; background: var(--slab); color: var(--slab-ink); overflow: hidden; }
@@ -96,6 +97,19 @@ kbd { font: 600 10px var(--f-mono); border: 1px solid currentColor; padding: 1px
 .ticker .track span { font: 400 30px/1 var(--f-display); text-transform: uppercase; padding-inline: 18px; }
 .ticker .track span::after { content: '✱'; margin-left: 36px; font-family: var(--f-body); font-size: 20px; vertical-align: 4px; }
 @keyframes marquee { to { transform: translateX(-50%); } }
+
+/* Crossed tapes straddling the hero/index seam: blue on top running left, yellow under it running right */
+.tapes { --tape-h: 58px; --spread: 9vw; --tilt-a: -4deg; --tilt-b: 3.2deg; position: relative; z-index: 4; height: calc(var(--tape-h) + var(--spread)); margin-top: calc((var(--tape-h) + var(--spread)) / -2 - 11px); overflow-x: clip; pointer-events: none; }
+.tapes .ticker { position: absolute; left: -10vw; width: 120vw; top: 50%; translate: 0 -50%; rotate: var(--tilt-a); pointer-events: auto; background-image: linear-gradient(currentColor 0 0), linear-gradient(currentColor 0 0); background-size: 100% 1px; background-repeat: no-repeat; background-position: 0 5px, 0 calc(100% - 5px); }
+.tapes .ticker.a { z-index: 2; filter: drop-shadow(0 6px 0 rgb(11 11 12 / 0.28)); }
+.tapes .ticker.b { z-index: 1; rotate: var(--tilt-b); background-color: var(--tape); color: #0b0b0c; }
+.tapes .ticker.b .track { animation-direction: reverse; }
+.tapes .ticker-btn { pointer-events: auto; z-index: 3; }
+@media (max-width: 700px) {
+  .tapes { --tape-h: 46px; --spread: 18vw; --tilt-a: -8deg; --tilt-b: 6.5deg; }
+  .tapes .ticker .track { padding-block: 9px; }
+  .tapes .ticker .track span { font-size: 22px; }
+}
 
 /* Section headers */
 .sec { padding-block: 72px 0; }
@@ -219,6 +233,11 @@ td small { display: block; color: var(--muted); margin-top: 4px; font-size: 13px
 
 /* Command palette */
 dialog.palette { width: min(720px, 94vw); max-height: 78vh; padding: 0; border: 2px solid var(--ink); background: var(--paper); color: var(--ink); box-shadow: 10px 10px 0 var(--blue); }
+/* the sheet's bottom is torn: border off, an outlined rip hangs below it over the blue shadow */
+dialog.palette { overflow: visible; border-bottom: 0; }
+.palette-rip { position: absolute; top: 100%; left: -2px; width: calc(100% + 4px); height: 16px; display: block; }
+.palette-rip .f { fill: var(--paper); }
+.palette-rip .s { fill: none; stroke: var(--ink); stroke-width: 2px; vector-effect: non-scaling-stroke; }
 dialog.palette::backdrop { background: rgb(11 11 12 / 0.55); backdrop-filter: grayscale(1); }
 .palette input { width: 100%; border: 0; border-bottom: 2px solid var(--ink); background: transparent; color: var(--ink); font: 400 34px/1 var(--f-display); text-transform: uppercase; padding: 18px 18px 12px; outline: none; }
 .palette ul { list-style: none; margin: 0; padding: 0; max-height: 56vh; overflow: auto; }

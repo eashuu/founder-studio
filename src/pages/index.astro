@@ -8,7 +8,10 @@ const verified = slots.filter((s) => ['ok', 'fixed'].includes(s.verify?.verdict)
 const bySlug = Object.fromEntries(slots.map((s) => [s.slug, s]));
 const featured = ['model-api-frontier-production', 'default-deploy-stack-saas-api-mcp-server', 'payments-merchant-of-record-for-software-sales', 'planning-tdd-workflow',
   'mobile-framework', 'crm', 'llm-observability-tracing', 'notes-second-brain'].map((k) => bySlug[k]).filter(Boolean);
+// The two crossed tapes: verified picks on one, the tracks on the other.
 const tickerNames = [...new Set(slots.filter((s) => ['ok', 'fixed'].includes(s.verify?.verdict)).map((s) => shortName(s.pick.name)).filter((n) => n.length <= 22))].slice(0, 28);
+const trackNames = meta.tracks.map((t) => t.name);
+const tapes = [{ cls: 'a', items: tickerNames }, { cls: 'b', items: [...trackNames, ...trackNames] }];
 ---
 <Brutal>
   <section class="slab">
@@ -57,11 +60,13 @@ const tickerNames = [...new Set(slots.filter((s) => ['ok', 'fixed'].includes(s.v
   </section>
   <svg class="rip" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path d={tearPath('hero-rip', 'bottom', 70)} /></svg>
 
-  <div class="ticker-wrap">
-    <div class="ticker" aria-hidden="true">
-      <div class="track">{[...tickerNames, ...tickerNames].map((n) => <span>{n}</span>)}</div>
-    </div>
-    <button class="ticker-btn" type="button" data-ticker aria-pressed="false" aria-label="Pause the moving list of picks">Pause</button>
+  <div class="ticker-wrap tapes">
+    {tapes.map((t) => (
+      <div class={`ticker ${t.cls}`} aria-hidden="true">
+        <div class="track">{[...t.items, ...t.items].map((n) => <span>{n}</span>)}</div>
+      </div>
+    ))}
+    <button class="ticker-btn" type="button" data-ticker aria-pressed="false" aria-label="Pause the moving tapes">Pause</button>
   </div>
 
   <section class="sec">

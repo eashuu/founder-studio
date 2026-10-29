@@ -1,6 +1,6 @@
 ---
 import Brutal from '../../layouts/Brutal.astro';
-import { slots, slotsIn, track, stage, costKey, verdictLabel, editUrl, shortName, REPO_LIVE, wbr } from '../../lib/data.js';
+import { slots, slotsIn, track, stage, costKey, verdictLabel, editUrl, shortName, REPO_LIVE, wbr, tornStrip } from '../../lib/data.js';
 
 export function getStaticPaths() {
   return slots.map((s) => ({ params: { slug: s.slug }, props: { s } }));
@@ -58,7 +58,7 @@ const isPick = (n) => /\(pick\)/i.test(n) || key(n) === pickKey || key(n).starts
     </section>
 
     {bf && (
-      <section class="free" aria-label="Best free option">
+      <section class="free" aria-label="Best free option" style={`clip-path:${tornStrip(s.slug)}`}>
         <span class="cap">Best free option</span>
         <div class="free-body">
           <div>

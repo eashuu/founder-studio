@@ -5,9 +5,10 @@
   "scripts": {
     "check:data": "node scripts/check-data.mjs",
     "dev": "astro dev",
-    "build": "npm run check:data && astro build",
+    "build": "npm run check:data && astro build && node scripts/snapshot.mjs",
     "preview": "astro preview",
-    "deploy": "npm run build && wrangler deploy"
+    "deploy": "npm run build && wrangler deploy",
+    "test": "node --test \"skills/**/*.test.mjs\""
   },
   "dependencies": {
     "astro": "^7.4.2",

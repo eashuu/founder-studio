@@ -81,3 +81,9 @@ export function tornStrip(seed, depth = 9, n = 28, top = true) {
 
 // The same tear left open (no top line): stroke it to outline a ripped bottom edge.
 export const tearLine = (seed, n = 34) => tearPath(seed, 'bottom', n).replace(/ Z$/, '');
+
+// Published data for the Founder Studio skills: one bundle plus a manifest that carries its hash.
+// The skill's data client checks the hash, so both endpoints must serialise the bundle identically.
+export const DATA_SCHEMA = 1;
+let bundleCache;
+export const bundleText = () => (bundleCache ??= JSON.stringify({ schema: DATA_SCHEMA, built: meta.built, ...meta, slots }));

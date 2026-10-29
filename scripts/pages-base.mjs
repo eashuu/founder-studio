@@ -19,7 +19,8 @@ const rules = [
 ];
 
 const walk = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(join(dir, e.name)) : [join(dir, e.name)]));
-for (const f of walk('dist').filter((f) => /\.(html|js|json|xml|txt)$/.test(f))) {
+// dist/data is hashed by its manifest, so it is published byte for byte.
+for (const f of walk('dist').filter((f) => /\.(html|js|json|xml|txt)$/.test(f) && !/^[\\/]data[\\/]/.test(f.slice(4)))) {
   const src = readFileSync(f, 'utf8');
   const out = rules.reduce((s, [re, to]) => s.replace(re, to), src);
   if (out !== src) writeFileSync(f, out);

@@ -18,6 +18,12 @@ for (const f of files) {
   need(/^https?:\/\//.test(s.pick?.source_url || ''), 'pick.source_url must be a URL');
   need(Array.isArray(s.alts), 'alts must be a list (empty for guidance-only slots)');
   for (const a of s.alts || []) need(a.name, 'alternative without a name');
+  // Optional until the setup research pass; shape per docs/DATA.md.
+  for (const p of [s.pick, s.best_free].filter((p) => p?.setup)) {
+    need(['plugin', 'mcp', 'skill', 'cli', 'package', 'app', 'saas'].includes(p.setup.kind), `${p.name}: unknown setup.kind "${p.setup.kind}"`);
+    need(Array.isArray(p.setup.steps), `${p.name}: setup.steps must be a list`);
+  }
+  if (s.applies) need(Array.isArray(s.applies.shapes) && Array.isArray(s.applies.customers), 'applies needs shapes and customers lists');
 }
 
 if (errors.length) {

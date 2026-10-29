@@ -5,8 +5,8 @@ export const slots = Object.values(mods).map((m) => m.default).sort((a, b) => a.
 export { meta };
 
 export const REPO = 'https://github.com/eashuu/founder-studio';
-// Flip to true once the repo is public; until then GitHub links would 404.
-export const REPO_LIVE = false;
+// The repo is public, so source and suggest-edit links are shown.
+export const REPO_LIVE = true;
 export const editUrl = (slug) => `${REPO}/edit/main/src/data/slots/${slug}.json`;
 
 export const track = (key) => meta.tracks.find((t) => t.key === key);

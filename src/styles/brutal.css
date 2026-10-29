@@ -211,7 +211,7 @@ kbd { font: 600 10px var(--f-mono); border: 1px solid currentColor; padding: 1px
 .slip { position: relative; background: var(--tape); color: #0b0b0c; padding: 20px 22px; max-width: 640px; margin-top: 26px; transform: rotate(-0.8deg); }
 .slip::before { content: 'Editor\'s note'; display: block; font: 600 11px var(--f-mono); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
 .two { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 40px; align-items: start; }
-.tbl { overflow-x: auto; border: 2px solid var(--ink); }
+.tbl { overflow-x: auto; overflow-y: hidden; border: 2px solid var(--ink); }
 table { width: 100%; border-collapse: collapse; min-width: 720px; font-size: 15px; }
 th { text-align: left; font: 600 11px var(--f-mono); text-transform: uppercase; letter-spacing: 0.08em; padding: 10px 12px; background: var(--ink); color: var(--paper); }
 td { padding: 14px 12px; border-top: 1px solid color-mix(in srgb, var(--ink) 25%, transparent); vertical-align: top; }

@@ -11,6 +11,7 @@ const featured = ['model-api-frontier-production', 'default-deploy-stack-saas-ap
 // The two crossed tapes: verified picks on one, the tracks on the other.
 const tickerNames = [...new Set(slots.filter((s) => ['ok', 'fixed'].includes(s.verify?.verdict)).map((s) => shortName(s.pick.name)).filter((n) => n.length <= 22))].slice(0, 28);
 const trackNames = meta.tracks.map((t) => t.name);
+const install = 'npx skills add eashuu/founder-studio --skill founder-studio --skill fs-stack';
 const tapes = [{ cls: 'a', items: tickerNames }, { cls: 'b', items: [...trackNames, ...trackNames] }];
 ---
 <Brutal>
@@ -100,6 +101,20 @@ const tapes = [{ cls: 'a', items: tickerNames }, { cls: 'b', items: [...trackNam
       </div>
       <div class="archive">
         {featured.map((s, i) => <Card s={s} i={i} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display">In Claude Code</h2>
+        <p class="cap">Two skills<span class="sl">/</span>Same data, always current</p>
+      </div>
+      <div class="cc-band">
+        <p class="lede">Ask "pick my stack for this project" and get a STACK.md built from this index, fitted to your budget, country and OS.</p>
+        <div class="cmd"><code>{install}</code><button type="button" data-copy={install}>Copy</button></div>
+        <a class="btn" href="/skills/">How the skills work</a>
       </div>
     </div>
   </section>

@@ -1,0 +1,90 @@
+---
+import { createHash } from 'node:crypto';
+import Brutal from '../layouts/Brutal.astro';
+import { meta, slots, bundleText, DATA_SCHEMA, REPO } from '../lib/data.js';
+
+const version = createHash('sha256').update(bundleText(), 'utf8').digest('hex').slice(0, 16);
+const install = 'npx skills add eashuu/founder-studio --skill founder-studio --skill fs-stack';
+const config = '{ "mode": "hybrid", "max_age_days": 90 }';
+
+const skills = [
+  { name: 'founder-studio', live: true, title: 'Ask for a tool', body: 'Ask "what should I use for payments?" or "best free Postgres?" and get the pick, the best free option, the runner-up and when it wins, with cost, free-tier limits, your country and OS notes, the source and the date it was checked. Also sets the data mode.' },
+  { name: 'fs-stack', live: true, title: 'Pick a whole stack', body: 'Reads your repo, asks only what it cannot see (budget, where you and your users are, team, regulated data), then writes STACK.md: every job the project needs, the tool, why for this project, cost and sources. It leaves out what you do not need.' },
+  { name: 'fs-setup', live: false, title: 'Install and configure', body: 'Turns STACK.md into a setup plan: Claude Code plugins, MCP servers and skills, local tools for your OS. Nothing runs until you approve it, and every step can be undone.' },
+  { name: 'fs-scaffold', live: false, title: 'Start the project', body: 'Repo, the framework\'s official create command, .env.example with where to get each key, deploy config and CI with pinned actions. Accounts stay a checklist; it never touches secrets.' },
+  { name: 'fs-refresh', live: false, title: 'Keep it current', body: 'Compares your STACK.md with the latest data and flags changed prices, free tiers, security incidents and better picks.' },
+];
+
+const modes = [
+  ['Hybrid', 'The default. Uses the published data when it can reach it, downloading only when the version changes; otherwise the last cached copy, then the snapshot inside the skill. It says when it fell back.'],
+  ['Online', 'Always the published data, and stops with an error when offline. For anyone who must never see an old pick.'],
+  ['Offline', 'Only the snapshot inside the skill; never touches the network. For locked-down machines and reproducible results.'],
+];
+
+// Rows from a real fs-stack run: a B2B invoice app, solo developer in India on Windows, zero budget.
+const example = [
+  ['Web hosting', 'Cloudflare Workers via OpenNext', 'Free plan allows commercial use; Vercel Hobby does not.', 'Free: 100,000 requests a day'],
+  ['Postgres', 'Neon Free', 'Best free Postgres; Supabase free pauses and has no backups.', 'Free: 1 GB per project'],
+  ['Model API', 'Claude API', 'Invoices are customer data, so a paid tier that does not train on inputs.', 'Paid per token'],
+  ['Durable jobs', 'Inngest', 'Extraction runs are multi-step LLM jobs with retries.', 'Free: 50,000 executions a month'],
+];
+---
+<Brutal title="Skills" description="Load Founder Studio into Claude Code: ask for a tool, or get a verified stack for your whole project, from always-current data.">
+  <div class="wrap page">
+    <header class="ph">
+      <h1 class="display">Skills</h1>
+      <div><p>Load Founder Studio into Claude Code. Ask for a tool, or get a verified stack for your whole project, from data that stays current.</p><span class="cap">Data {version}<span class="sl">/</span>Built {meta.built}<span class="sl">/</span>{slots.length} jobs</span></div>
+    </header>
+
+    <section class="block">
+      <div class="block-h"><h2>Install</h2><span class="cap">Node 20+<span class="sl">/</span>Claude Code</span></div>
+      <div class="cmd"><code>{install}</code><button type="button" data-copy={install}>Copy</button></div>
+      <p class="skills-note">Then ask Claude Code "pick my stack for this project", or "what should I use for auth?". The skills load in other coding agents too; setup targets Claude Code.</p>
+    </section>
+
+    <section class="block">
+      <div class="block-h"><h2>The pack</h2><span class="cap">{skills.filter((s) => s.live).length} live<span class="sl">/</span>{skills.filter((s) => !s.live).length} coming</span></div>
+      <div class="cases">
+        {skills.map((s) => (
+          <article class={`case${s.live ? '' : ' soon'}`}>
+            <span class="tab cap">{s.name}</span>
+            <span class="decided" aria-hidden="true">{s.live ? 'Live' : 'Coming'}</span>
+            <h2>{s.title}</h2>
+            <p>{s.body}</p>
+            {!s.live && <p class="cap sr-only">Coming soon</p>}
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-h"><h2>Data modes</h2><span class="cap">Per project, in .founder-studio/config.json</span></div>
+      <div class="essay">
+        {modes.map(([m, body]) => (<><h3 class="essay-h">{m}</h3><div><p>{body}</p></div></>))}
+      </div>
+      <div class="cmd"><code>{config}</code><button type="button" data-copy={config}>Copy</button></div>
+      <p class="skills-note"><code>max_age_days</code> sets when a pick counts as stale and gets flagged. <code>source</code> points at a mirror of the data.</p>
+    </section>
+
+    <section class="block">
+      <div class="block-h"><h2>Example</h2><span class="cap">From a STACK.md</span></div>
+      <p class="skills-note">A B2B invoice app, built by one developer in India on Windows, with no budget yet.</p>
+      <div class="tbl">
+        <table>
+          <thead><tr><th scope="col">Job</th><th scope="col">Tool</th><th scope="col">Why for this project</th><th scope="col">Cost and limits</th></tr></thead>
+          <tbody>{example.map(([job, tool, why, cost]) => <tr><td>{job}</td><td><b>{tool}</b></td><td>{why}</td><td>{cost}</td></tr>)}</tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-h"><h2>The data</h2><span class="cap">Schema {DATA_SCHEMA}<span class="sl">/</span>Open</span></div>
+      <p class="skills-note">Every job, pick, free option, note and decision on this site, as JSON. The skills download the bundle only when the manifest version changes, and reject it unless its SHA-256 matches. Build on it if you like.</p>
+      <div class="actions">
+        <a class="btn" href="/data/manifest.json">manifest.json</a>
+        <a class="btn" href="/data/bundle.json">bundle.json</a>
+        <a class="btn" href={`${REPO}/blob/main/docs/DATA.md`}>Format ↗</a>
+      </div>
+    </section>
+  </div>
+</Brutal>

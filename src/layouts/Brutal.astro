@@ -7,7 +7,7 @@ import { REPO, REPO_LIVE, meta, slots, tearPath, tearLine, tornStrip } from '../
 const { title, description = 'The best tool for every job in building an AI company, and the best free one: compared and verified against primary sources.' } = Astro.props;
 const path = Astro.url.pathname;
 const full = title ? `${title} / Founder Studio` : 'Founder Studio';
-const nav = [['/', 'Index'], ['/tracks/', 'Tracks'], ['/playbook/', 'Playbook'], ['/decisions/', 'Decisions'], ['/method/', 'Method']];
+const nav = [['/', 'Index'], ['/tracks/', 'Tracks'], ['/playbook/', 'Playbook'], ['/decisions/', 'Decisions'], ['/method/', 'Method'], ['/skills/', 'Skills']];
 // Tool pages live inside tracks, so Tracks stays marked there too.
 const current = (href) => (href === '/' ? path === '/' : path.startsWith(href) || (href === '/tracks/' && path.startsWith('/tools/')));
 const ogImage = new URL('/og.png', Astro.site);
@@ -73,7 +73,7 @@ const ogImage = new URL('/og.png', Astro.site);
       <div class="wrap">
         <div class="row cap">
           <span>Checked {meta.built}<span class="sl">/</span>Prices and free tiers change. Check before you pay.</span>
-          <span>{REPO_LIVE && <><a href={REPO}>Source and corrections on GitHub</a><span class="sl">/</span></>}<a href="/method/">Method</a></span>
+          <span>{REPO_LIVE && <><a href={REPO}>Source and corrections on GitHub</a><span class="sl">/</span></>}<a href="/method/">Method</a><span class="sl">/</span><a href="/skills/">Skills for Claude Code</a></span>
         </div>
         <svg class="word" viewBox="0 0 1000 156" aria-hidden="true"><text x="0" y="150" font-size="196" textLength="1000" lengthAdjust="spacingAndGlyphs">FOUNDER<tspan class="b">/</tspan>STUDIO</text></svg>
       </div>

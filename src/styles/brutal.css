@@ -23,7 +23,7 @@
 }
 
 * { box-sizing: border-box; }
-html { background: var(--paper); }
+html { background: var(--paper); scrollbar-gutter: stable; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.55 var(--f-body); -webkit-font-smoothing: antialiased; }
 body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 60; background-image: var(--noise); opacity: 0.22; mix-blend-mode: multiply; }
 @media (prefers-color-scheme: dark) { body::before { mix-blend-mode: screen; opacity: 0.1; } }
@@ -225,8 +225,8 @@ dialog.palette::backdrop { background: rgb(11 11 12 / 0.55); backdrop-filter: gr
 .palette li a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; padding: 11px 18px; text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); }
 .palette li a b { font-weight: 600; }
 .palette li a .cap { color: var(--muted); align-self: center; }
-.palette li a[aria-selected='true'] { background: var(--ink); color: var(--paper); }
-.palette li a[aria-selected='true'] .cap { color: var(--tape); }
+.palette li[aria-selected='true'] a { background: var(--ink); color: var(--paper); }
+.palette li[aria-selected='true'] a .cap { color: var(--tape); }
 .palette .hint { padding: 10px 18px; color: var(--muted); }
 
 /* Stack drawer: a modal dialog sliding in from the right */
@@ -247,6 +247,8 @@ dialog.drawer::backdrop, dialog.menu::backdrop { background: rgb(11 11 12 / 0.45
 .drawer .empty { padding: 30px 18px; color: var(--muted); }
 .drawer footer { padding: 16px 18px; border-top: 2px solid var(--ink); display: flex; flex-wrap: wrap; gap: 10px; background: var(--paper-2); }
 html:has(dialog[open]) { overflow: hidden; }
+/* Lenis stops with overflow: clip, which drops the scrollbar gutter and shifts the page; hidden keeps it */
+html.lenis:not(.lenis-autoToggle).lenis-stopped { overflow: hidden; }
 
 @media (prefers-reduced-motion: reduce) {
   .ticker .track { animation: none; }

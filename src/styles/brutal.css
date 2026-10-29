@@ -158,7 +158,8 @@ kbd { font: 600 10px var(--f-mono); border: 1px solid currentColor; padding: 1px
 @media (prefers-color-scheme: dark) { .phase:hover { color: #0b0b0c; } .phase:hover .n { -webkit-text-stroke-color: #0b0b0c; color: #0b0b0c; } }
 
 /* Footer */
-.foot { margin-top: 110px; background: var(--slab); color: var(--slab-ink); position: relative; overflow: clip; }
+.foot { margin-top: 110px; background: var(--slab); color: var(--slab-ink); position: relative; overflow-x: clip; }
+.foot .wrap { overflow: clip; }
 .foot .rip { position: absolute; bottom: 100%; color: var(--slab); transform: scaleY(-1); }
 .foot .wrap { padding-block: 34px 24px; }
 .foot .row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; }
